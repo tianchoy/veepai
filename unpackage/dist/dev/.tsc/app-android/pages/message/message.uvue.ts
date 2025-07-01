@@ -1,0 +1,42 @@
+import TopNavBar from '../../components/TopNavBar.uvue'
+	import { NavTitleItem } from '../../types/NavTitleItem'
+	
+const __sfc__ = defineComponent({
+  __name: 'message',
+  setup(__props): any | null {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+const _cache = __ins.renderCache;
+
+	const title:NavTitleItem[] = [{
+		name: '首页',
+		isCurrent: false,
+		url: '/pages/index/index'
+	}, {
+		name: '消息',
+		isCurrent: true,
+		url: '/pages/message/message'
+	}, {
+		name: '我的',
+		isCurrent: false,
+		url: '/pages/mine/mine'
+	}]
+
+
+return (): any | null => {
+
+  return createElementVNode("view", utsMapOf({ class: "container" }), [
+    createElementVNode("view", utsMapOf({ class: "nav_bar" }), [
+      createVNode(unref(TopNavBar), utsMapOf({
+        showBack: false,
+        title: title
+      }))
+    ]),
+    createElementVNode("view", utsMapOf({ class: "content" }), " Messages ")
+  ])
+}
+}
+
+})
+export default __sfc__
+const GenPagesMessageMessageStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["width", "100%"], ["height", "100%"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"], ["display", "flex"], ["flexDirection", "column"]]))]])]

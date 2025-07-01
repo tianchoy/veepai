@@ -1,0 +1,6 @@
+export type NavTitleItem = {
+    name: string;
+    isCurrent: boolean;
+    url: string;
+};
+//# sourceMappingURL=NavTitleItem.uts.map

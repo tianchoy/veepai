@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "top-nav-bar": "../../components/TopNavBar"
+  }
+}

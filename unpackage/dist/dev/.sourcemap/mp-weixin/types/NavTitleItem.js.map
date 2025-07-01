@@ -1,0 +1,1 @@
+{"version":3,"file":"NavTitleItem.js","sources":["types/NavTitleItem.uts"],"sourcesContent":["export type NavTitleItem = {\n    name: string\n    isCurrent: boolean\n    url: string\n}"],"names":[],"mappings":";MAAY,qBAAY,IAAA,QAAA;AAAA;;;;;;;;;;;;;;;;;;;;;;;"}

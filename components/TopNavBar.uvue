@@ -1,0 +1,110 @@
+<template>
+	<view class="custom-nav">
+		<view v-if="props.showBack" class="nav-back" @click="goBack">
+			<!-- <uv-icon name="arrow-left" color="#333" size="28"></uv-icon> -->
+			<image class="nav-icon" @click="goBack" src="/static/tabbar/back.png"/>
+		</view>
+		<view class="nav-item">
+			<text class="nav-title" :style="item.isCurrent ? 'font-size:40rpx; font-weight:900' : ''" v-for="(item,index) in props.title" :key="index" @click="changeNav(item)">
+				{{ item.name }}
+			</text>
+		</view>
+		<view class="nav-actions">
+			<image class="nav-icon" @click="onAdd" src="/static/tabbar/add.png"/>
+		</view>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import { NavTitleItem } from '../types/NavTitleItem.uts'
+
+	// 接收父组件传递的参数
+	const props = defineProps({
+		title: {
+			type: Array as PropType<NavTitleItem[]>,
+			default: () => []
+		},
+		showBack: {
+			type: Boolean,
+			default: false
+		},
+		messageCount: {
+			type: Number,
+			default: 0
+		}
+	})
+
+	// 定义触发给父组件的事件 
+	const emits = defineEmits(['back', 'message', 'add', 'changeNav'])
+
+	// 导航事件处理
+	const goBack = () => emits('back')
+	const onMessage = () => emits('message')
+	const onAdd = () => emits('add')
+	
+	// 使用类型别名
+	const changeNav = (item: NavTitleItem) => {
+		console.log(item.isCurrent)
+		uni.redirectTo({
+			url: item.url
+		})
+	}
+</script>
+
+<style scoped lang="scss">
+	.custom-nav {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		padding: 30rpx 25rpx;
+		background-color: #fff;
+		margin-top: 60rpx;
+	}
+
+	.nav-back {
+		width: 60rpx;
+		height: 60rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.nav-back {
+		width: 32rpx;
+		height: 32rpx;
+	}
+
+	.nav-item {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: space-around;
+	}
+
+	.nav-title {
+		color: #333;
+		margin: 0 20rpx;
+		max-width: 400rpx;
+		text-align: center;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.nav-actions {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.nav-icon {
+		width: 60rpx;
+		height: 60rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		margin-left: 16rpx;
+	}
+</style>

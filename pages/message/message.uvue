@@ -1,0 +1,39 @@
+<template>
+	<view class="container">
+		<view class="nav_bar">
+			<TopNavBar :showBack='false' :title="title" />
+		</view>
+		<view class="content">
+			Messages
+		</view>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import TopNavBar from '../../components/TopNavBar.uvue'
+	import { NavTitleItem } from '../../types/NavTitleItem'
+	const title:NavTitleItem[] = [{
+		name: '首页',
+		isCurrent: false,
+		url: '/pages/index/index'
+	}, {
+		name: '消息',
+		isCurrent: true,
+		url: '/pages/message/message'
+	}, {
+		name: '我的',
+		isCurrent: false,
+		url: '/pages/mine/mine'
+	}]
+
+</script>
+
+<style lang="scss" scoped>
+	.container {
+		width: 100%;
+		height: 100%;
+		padding: 0 20rpx;
+		display: flex;
+		flex-direction: column;
+	}
+</style>

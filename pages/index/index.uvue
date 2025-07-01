@@ -1,0 +1,156 @@
+<template>
+	<view class="container">
+		<view class="nav_bar">
+			<TopNavBar :showBack='false' :title="title"  @add="navAdd" />
+		</view>
+		<view class="content">
+			<video class="video" :src="videoSrc" :controls="false"></video>
+			<view class="video-top-title">{{deviceTitle}}</view>
+			<view class="video-right-control">
+				<uv-icon class="vedio-control-icon" :name="forward" @click="toDeviceDetail"></uv-icon>
+				<uv-icon class="vedio-control-icon" :name="errIcon" @click="errClick"></uv-icon>
+				<uv-icon class="vedio-control-icon" :name="transfer" @click="transferClick"></uv-icon>
+				<uv-icon class="vedio-control-icon" :name="replayIcon" @click="replay"></uv-icon>
+			</view>
+			<view class="video-bottom-control">
+				<uv-icon class="vedio-control-icon" @click="pauseClick" :name="pauseIcon"></uv-icon>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import TopNavBar from '../../components/TopNavBar.uvue'
+	import { NavTitleItem } from '../../types/NavTitleItem'
+
+	const title: NavTitleItem[] = [{
+		name: '首页',
+		isCurrent: true,
+		url: '/pages/index/index'
+	}, {
+		name: '消息',
+		isCurrent: false,
+		url: '/pages/message/message'
+	}, {
+		name: '我的',
+		isCurrent: false,
+		url: '/pages/mine/mine'
+	}]
+	
+	const deviceTitle = ref('设备名称')
+	const forward = '/static/video/forward.png'
+	const errIcon = '/static/video/error.png'
+	const transfer = '/static/video/transfer.png'
+	const replayIcon = '/static/video/replay.png'
+	const playIcon = '/static/video/play.png'
+	const pauseIcon = '/static/video/pause.png'
+	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
+	
+	
+	const navAdd = () =>{
+		uni.showToast({
+			title: '添加',
+			icon: 'none'
+		})
+	}
+	
+	const replay = () =>{
+		uni.showToast({
+			title: '重播',
+			icon: 'none'
+		})
+	}
+	
+	
+	const transferClick =()=>{
+		uni.showToast({
+			title:'传输',
+			icon: 'none'
+		})
+	}
+	
+	const errClick = () =>{
+		uni.showToast({
+			title:'警报',
+			icon: 'none'
+		})
+	}
+	
+	const toDeviceDetail = () =>{
+		uni.showToast({
+			title:'设备详情',
+			icon: 'none'
+		})
+	}
+	
+	const pauseClick =() =>{
+		uni.showToast({
+			title:'暂停',
+			icon: 'none'
+		})
+	}
+</script>
+
+<style lang="scss" scoped>
+	.container {
+		width: 100%;
+		height: 100%;
+		padding: 0 20rpx;
+		display: flex;
+		flex-direction: column;
+		.content{
+			position: relative;
+			.video{
+				width: 100%;
+			}
+			.video-top-title{
+				position: absolute;
+				top:0;
+				height: 60rpx;
+				width: 80%;
+				padding-left: 20rpx;
+				background: linear-gradient(
+				  to right, 
+				  rgba(255, 255, 255, 0.5), 
+				  rgba(255, 255, 255, 0) 
+				);
+			}
+			.video-right-control{
+				position: absolute;
+				top: 0;
+				right: 10rpx;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				height: 100%;
+				align-items: center;
+				z-index: 2;
+				.vedio-control-icon{
+					width: 50rpx;
+					height: 50rpx;
+					padding: 10rpx;
+					border-radius: 25rpx;
+					background: rgba(255, 255, 255, .7);
+				}
+			}
+			.video-bottom-control{
+				position: absolute;
+				bottom: 10rpx;
+				left: 0;
+				width: 100%;
+				height: 50rpx;
+				z-index: 1;
+				.vedio-control-icon{
+					margin: 0 auto;
+					width: 50rpx;
+					height: 50rpx;
+					padding: 10rpx;
+					border-radius: 25rpx;
+					background: rgba(255, 255, 255, .7);
+				}
+			}
+		}
+	}
+
+	
+</style>
