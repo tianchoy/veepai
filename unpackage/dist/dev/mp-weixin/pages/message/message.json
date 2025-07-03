@@ -1,6 +1,5 @@
 {
-  "navigationStyle": "custom",
   "usingComponents": {
-    "top-nav-bar": "../../components/TopNavBar"
+    "l-daily-punch": "../../uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch"
   }
 }

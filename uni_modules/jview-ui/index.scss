@@ -1,0 +1,14 @@
+
+@import "./bem.scss";
+@import "./colors/button.scss";
+@import "./colors/loading.scss";
+
+// 点击样式
+.j-click__hover{
+	opacity: 0.5;
+}
+
+// 表单的placeholder提示演示
+.j-form-placeholder{
+	color:$color-form-placeholder
+}

@@ -1,0 +1,66 @@
+// 公共前缀
+// @import '@/uni_modules/lime-ui/style/index.scss';
+@import './icon';
+
+$prefix: l !default;
+$icon: #{$prefix}-icon;
+
+/* #ifndef APP-NVUE || APP-ANDROID || APP-IOS || APP-HARMONY */
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* #endif */
+
+
+.#{$icon} {
+	// background: red;
+	/* #ifndef APP-NVUE || APP-ANDROID || APP-IOS || APP-HARMONY */
+	font-family: $prefix;
+	// display: inline-block;
+	display: inline-flex;
+	position: relative;
+	
+	/* #endif */
+	
+	/* #ifdef APP-NVUE || APP-ANDROID || APP-IOS || APP-HARMONY */
+	// width: 16px;
+	// height: 40rpx;
+	/* #endif */
+	
+	&--font {
+		font-family: $prefix;
+		// line-height: 1;
+		// height: 18;
+		// min-height: 1;
+		text-align: center;
+		// font-size: inherit;
+		/* #ifndef APP-NVUE || APP-ANDROID || APP-IOS || APP-HARMONY */
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		// -webkit-background-clip: text;
+		// background-clip: text;
+		/* #endif */
+	}
+	&--image {
+		/* #ifndef APP-NVUE || APP-ANDROID || APP-IOS || APP-HARMONY */
+		width: 1em;
+		height: 1em;
+		display: block;
+		/* #endif */
+		/* #ifdef WEB */
+		position: relative;
+		// :deep img {
+		// 	z-index: -1;
+		// }
+		::deep(img) {
+			z-index: -1;
+		}
+		/* #endif */
+	}
+}

@@ -1,33 +1,38 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
-const types_NavTitleItem = require("../../types/NavTitleItem.js");
-if (!Math) {
-  common_vendor.unref(TopNavBar)();
-}
-const TopNavBar = () => "../../components/TopNavBar.js";
+const common_assets = require("../../common/assets.js");
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
   __name: "mine",
   setup(__props) {
-    const title = [new types_NavTitleItem.NavTitleItem({
-      name: "首页",
-      isCurrent: false,
-      url: "/pages/index/index"
-    }), new types_NavTitleItem.NavTitleItem({
-      name: "消息",
-      isCurrent: false,
-      url: "/pages/message/message"
-    }), new types_NavTitleItem.NavTitleItem({
-      name: "我的",
-      isCurrent: true,
-      url: "/pages/mine/mine"
-    })];
+    const getUser = () => {
+      common_vendor.index.showToast({
+        title: "用户中心",
+        icon: "none"
+      });
+    };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: common_vendor.p({
-          showBack: false,
-          title
-        }),
-        b: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        a: common_assets._imports_0,
+        b: common_assets._imports_1,
+        c: common_assets._imports_2,
+        d: common_assets._imports_3,
+        e: common_assets._imports_4,
+        f: common_vendor.o(getUser),
+        g: common_assets._imports_5,
+        h: common_assets._imports_4,
+        i: common_assets._imports_6,
+        j: common_assets._imports_4,
+        k: common_assets._imports_7,
+        l: common_assets._imports_4,
+        m: common_assets._imports_8,
+        n: common_assets._imports_4,
+        o: common_assets._imports_9,
+        p: common_assets._imports_4,
+        q: common_assets._imports_10,
+        r: common_assets._imports_4,
+        s: common_assets._imports_11,
+        t: common_assets._imports_4,
+        v: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

@@ -31,4 +31,70 @@
   padding: 0 20rpx;
   display: flex;
   flex-direction: column;
+  background-color: #f1f1f1;
+}
+.container .files.data-v-284ae985 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+  padding: 70rpx 80rpx;
+  margin: 20rpx 0;
+}
+.container .files .file.data-v-284ae985 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .files .file .fileIcon.data-v-284ae985 {
+  display: block;
+  width: 48rpx;
+  height: 48rpx;
+  margin-bottom: 15rpx;
+}
+.container .files .file .file-text.data-v-284ae985 {
+  font-size: 20rpx;
+  color: #333;
+  font-weight: bold;
+}
+.container .tools-list.data-v-284ae985 {
+  background-color: #fff;
+  border-radius: 15rpx;
+  padding: 20rpx;
+}
+.container .tools-list .item.data-v-284ae985 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+.container .tools-list .item .info.data-v-284ae985 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 40rpx;
+}
+.container .tools-list .item .info .item-icon.data-v-284ae985 {
+  display: block;
+  width: 48rpx;
+  height: 48rpx;
+}
+.container .tools-list .item .info .item-text.data-v-284ae985 {
+  font-size: 25rpx;
+  color: #333;
+  margin-left: 20rpx;
+}
+.container .tools-list .item .right-icon.data-v-284ae985 {
+  display: block;
+  width: 35rpx;
+  height: 35rpx;
+}
+.container .tools-list .no-bottom.data-v-284ae985 {
+  border-bottom: none;
 }

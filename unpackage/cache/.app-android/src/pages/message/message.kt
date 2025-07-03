@@ -23,17 +23,47 @@ open class GenPagesMessageMessage : BasePage {
             val __ins = getCurrentInstance()!!
             val _ctx = __ins.proxy as GenPagesMessageMessage
             val _cache = __ins.renderCache
-            val title = utsArrayOf(
-                NavTitleItem(name = "首页", isCurrent = false, url = "/pages/index/index"),
-                NavTitleItem(name = "消息", isCurrent = true, url = "/pages/message/message"),
-                NavTitleItem(name = "我的", isCurrent = false, url = "/pages/mine/mine")
-            ) as UTSArray<NavTitleItem>
+            val today = ref(dayuts().format("MM-DD"))
+            val checkIns = ref(utsArrayOf(
+                "2025-06-09",
+                "2025-07-01",
+                "2025-07-02"
+            ))
+            val showCalendar = ref(false)
+            val videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
+            val select = fun(day: LDay){
+                today.value = dayuts(day.fullDate).format("MM-DD")
+                if (day.isToday) {
+                    console.log("今天", " at pages/message/message.uvue:30")
+                }
+                showCalendar.value = false
+            }
+            val change = fun(res: LYearMonth){
+                console.log("res", res, " at pages/message/message.uvue:36")
+            }
+            val ShowCalendar = fun(){
+                showCalendar.value = !showCalendar.value
+            }
+            val hideCalendar = fun(){
+                showCalendar.value = false
+            }
             return fun(): Any? {
+                val _component_l_daily_punch = resolveEasyComponent("l-daily-punch", GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunchClass)
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "nav_bar"), utsArrayOf(
-                        createVNode(unref(GenComponentsTopNavBarClass), utsMapOf("showBack" to false, "title" to title))
+                    createElementVNode("view", utsMapOf("class" to "vedio-box"), utsArrayOf(
+                        createElementVNode("video", utsMapOf("class" to "video", "src" to videoSrc, "controls" to false))
                     )),
-                    createElementVNode("view", utsMapOf("class" to "content"), " Messages ")
+                    createElementVNode("view", utsMapOf("class" to "today", "onClick" to ShowCalendar), toDisplayString(today.value), 1),
+                    if (isTrue(showCalendar.value)) {
+                        createElementVNode("view", utsMapOf("key" to 0, "class" to "calendar-box"), utsArrayOf(
+                            createVNode(_component_l_daily_punch, utsMapOf("signedDates" to checkIns.value, "onSelect" to select, "onPanelChange" to change, "dayHeight" to 60), null, 8, utsArrayOf(
+                                "signedDates"
+                            )),
+                            createElementVNode("button", utsMapOf("class" to "btn-chanel-box", "onClick" to hideCalendar), " 取消 ")
+                        ))
+                    } else {
+                        createCommentVNode("v-if", true)
+                    }
                 ))
             }
         }
@@ -46,7 +76,7 @@ open class GenPagesMessageMessage : BasePage {
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("width" to "100%", "height" to "100%", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx", "display" to "flex", "flexDirection" to "column")))
+                return utsMapOf("container" to padStyleMapOf(utsMapOf("width" to "100%", "height" to "100%", "position" to "relative")), "vedio-box" to utsMapOf(".container " to utsMapOf("width" to "100%")), "video" to utsMapOf(".container .vedio-box " to utsMapOf("width" to "100%")), "calendar-box" to utsMapOf(".container " to utsMapOf("position" to "absolute", "bottom" to 0, "left" to 0, "height" to "60%", "width" to "100%", "backgroundColor" to "#ffffff")), "btn-chanel-box" to utsMapOf(".container .calendar-box " to utsMapOf("position" to "absolute", "width" to "85%", "bottom" to "45rpx", "left" to "60rpx", "borderTopLeftRadius" to "50rpx", "borderTopRightRadius" to "50rpx", "borderBottomRightRadius" to "50rpx", "borderBottomLeftRadius" to "50rpx")), "today" to padStyleMapOf(utsMapOf("textAlign" to "center")))
             }
         var inheritAttrs = true
         var inject: Map<String, Map<String, Any?>> = utsMapOf()

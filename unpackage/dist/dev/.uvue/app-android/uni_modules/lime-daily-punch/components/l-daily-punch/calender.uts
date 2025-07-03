@@ -1,0 +1,556 @@
+import { LDay, LYearMonth, LGridSize, LMonthData, LOptions } from '../../index';
+// import { LDay } from '../../utssdk/interface';
+export class ArrowIcon {
+    x: number = 0;
+    y: number = 0;
+    size: number = 0;
+    type: string = '';
+    color: string = '';
+    constructor(x: number, y: number, size: number, type: string, color: string) {
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.type = type;
+        this.color = color;
+    }
+    draw(ctx: CanvasRenderingContext2D) {
+        const { x, y, size, color, type } = this;
+        // 设置绘图的填充颜色
+        ctx.strokeStyle = color;
+        ctx.beginPath();
+        ctx.lineJoin = 'round';
+        ctx.lineWidth = 2;
+        // 根据箭头类型绘制不同的形状
+        if (type === 'left') {
+            ctx.moveTo(x + size * 0.6042, y + size * 0.25);
+            ctx.lineTo(x + size * 0.3542, y + size * 0.5);
+            ctx.lineTo(x + size * 0.6042, y + size * 0.75);
+        }
+        else if (type === 'right') {
+            ctx.moveTo(x + size * (1 - 0.6042), y + size * 0.25);
+            ctx.lineTo(x + size * (1 - 0.3542), y + size * 0.5);
+            ctx.lineTo(x + size * (1 - 0.6042), y + size * 0.75);
+        }
+        ctx.stroke();
+    }
+    isCoordinateInside(x: number, y: number): boolean {
+        return x >= this.x && x <= this.x + this.size && y >= this.y && y <= this.y + this.size;
+    }
+}
+export class Day implements LDay {
+    override day: number = 0;
+    override month: number = 0;
+    override year: number = 0;
+    fullDay: string = '00';
+    fullMonth: string = '00';
+    override fullDate: string = '';
+    override isBeforeToday: boolean = false;
+    override isToday: boolean = false;
+    // isCheckedIn: boolean = false;
+    override isCurrentMonth: boolean = false;
+    private x: number = 0;
+    private y: number = 0;
+    private calendar: Calendar;
+    override width: number = 0;
+    override height: number = 0;
+    override originalMonth: number = 0;
+    override type: string = 'current';
+    override fontSize: number = 20;
+    override timestamp: number = 0;
+    constructor(day: number, month: number, year: number, isCurrentMonth: boolean, isToday: boolean, isBeforeToday: boolean, calendar: Calendar) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+        this.originalMonth = month - 1;
+        this.fullMonth = this.formatMonth(month);
+        this.fullDay = this.formatDay(day);
+        this.fullDate = `${year}-${this.fullMonth}-${this.fullDay}`;
+        this.isCurrentMonth = isCurrentMonth;
+        this.isBeforeToday = isBeforeToday;
+        this.isToday = isToday;
+        this.calendar = calendar;
+        this.timestamp = new Date(year, month - 1, day).getTime();
+    }
+    private formatDay(day: number): string {
+        return `${day}`.padStart(2, '0');
+    }
+    private formatMonth(month: number): string {
+        return `${month}`.padStart(2, '0');
+    }
+    override isCoordinateInside(x: number, y: number): boolean {
+        return x >= this.x && x <= this.x + this.width && y >= this.y && y <= this.y + this.height;
+    }
+    override setPosition(x: number, y: number): void {
+        this.x = x;
+        this.y = y;
+    }
+    override setDimensions(width: number, height: number): void {
+        this.width = width;
+        this.height = height;
+    }
+    private get opt(): LOptions {
+        return this.calendar.opt;
+    }
+    get selectDate(): LDay | null {
+        return this.calendar.selectDate;
+    }
+    set selectDate(_val: LDay | null) {
+    }
+    get canSupplement(): boolean {
+        // 在今日之前 并且 未签到 并且 支持补签
+        return this.opt.canSupplement! && this.isBeforeToday && !this.isCheckedIn;
+    }
+    set canSupplement(_v: boolean) {
+    }
+    get isCheckedIn(): boolean {
+        return this.calendar.signedDates.includes(this.timestamp);
+        // return true
+        // if (this.calendar.opt.signedDates == null) return false
+        // return this.calendar.opt.signedDates.some((dateString : string) : boolean => {
+        // 	const [year, month, day] = dateString.split('-').map((v : string) : number => parseInt(v));
+        // 	return year == this.year && month == this.month && day == this.day
+        // })
+    }
+    set isCheckedIn(_v: boolean) {
+    }
+    private drawCircle(ctx: CanvasRenderingContext2D, x: number, y: number, radius: number, color: string, border: boolean = false) {
+        ctx.beginPath();
+        if (border) {
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = 'white';
+        }
+        ctx.fillStyle = color;
+        ctx.arc(x, y, radius, 0, Math.PI * 2);
+        ctx.fill();
+        if (border) {
+            ctx.stroke();
+        }
+    }
+    override draw(ctx: CanvasRenderingContext2D) {
+        const size = Math.min(this.width, this.height) * 0.9;
+        const centerX = this.x + this.width / 2;
+        const centerY = this.y + this.height / 2;
+        const color = this.opt.color!;
+        const unsignedColor = this.opt.unsignedColor!;
+        const selectedDayBgColor = this.opt.selectedDayBgColor!;
+        const textColor = this.opt.textColor!;
+        const disabledColor = this.opt.disabledColor!;
+        const dayFontSize = this.opt.dayFontSize!;
+        ctx.textAlign = 'center';
+        ctx.font = this.isToday ? `${dayFontSize - 2}px Arial` : `${dayFontSize}px Arial`;
+        ctx.textBaseline = 'middle';
+        // 判断是否是当前选中日期
+        const isSelectedDate = this.selectDate == null || this.selectDate == this;
+        // 设置字体颜色
+        let txtColor = this.type == 'current' ? textColor : disabledColor;
+        if (this.isToday && !isSelectedDate) {
+            txtColor = color;
+        }
+        // 绘制选中效果
+        if (this.selectDate != null && this.selectDate == this) {
+            ctx.beginPath();
+            ctx.fillStyle = selectedDayBgColor;
+            ctx.arc(centerX, centerY, size / 2, 0, Math.PI * 2);
+            ctx.fill();
+        }
+        // 绘制今日效果
+        if (this.isToday && isSelectedDate) {
+            this.drawCircle(ctx, centerX, centerY, size / 2, color);
+            txtColor = 'white';
+        }
+        // 绘制已签到或可补签效果 小点
+        if (this.type == 'current' && (this.isCheckedIn || this.canSupplement)) {
+            this.drawCircle(ctx, centerX, centerY + this.fontSize * 0.9, 4, this.isCheckedIn ? (this.isToday && isSelectedDate ? 'white' : color) : unsignedColor);
+        }
+        // 绘制文字
+        ctx.fillStyle = txtColor;
+        ctx.fillText(this.isToday ? '今天' : this.fullDay, centerX, centerY);
+    }
+}
+export class Calendar {
+    private year: number = 0;
+    private month: number = 0;
+    private el: UniCanvasElement | null = null;
+    private ctx: CanvasRenderingContext2D | null = null;
+    private init: boolean = false;
+    private today: number = 0;
+    private currentMonth: number = 0;
+    private currentYear: number = 0;
+    // private headerHeight : number = 50
+    // private weekHeight : number = 30
+    private monthDateCache: Map<string, LMonthData>;
+    private week: string[] = [];
+    selectDate: LDay | null = null;
+    private containerHeight: number = 0;
+    private containerWidth: number = 0;
+    private arrowIcons: ArrowIcon[] = [];
+    opt: LOptions = {
+        canSupplement: false,
+        isFullCalendar: true,
+        yearMonth: '',
+        signedDates: [],
+        week: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+        weekStartsOn: 0,
+        weekColor: '#BDC0C3',
+        weekFontSize: 12,
+        weekHeight: 40,
+        selectedDayBgColor: 'rgba(0,0,0,0.06)',
+        dayFontSize: 12,
+        textColor: '#1A1F24',
+        disabledColor: '#BDC0C3',
+        monthTitleHeight: 50,
+        monthTitleFontSize: 20,
+        color: '#3B87F6',
+        unsignedColor: '#F1A33A',
+    } as LOptions;
+    constructor() {
+        const date = new Date();
+        this.currentYear = date.getFullYear();
+        this.currentMonth = date.getMonth() + 1;
+        this.today = date.getDate();
+        this.monthDateCache = new Map<string, LMonthData>();
+        this.week = this.opt.week ?? [];
+    }
+    get signedDates(): number[] {
+        if (this.opt.signedDates == null)
+            return [];
+        const values: number[] = [];
+        this.opt.signedDates!.forEach(item => {
+            const [year, month, day] = item.split('-').map((v: string): number => parseInt(v));
+            const time = new Date(year, month - 1, day).getTime();
+            if (!values.includes(time)) {
+                values.push(time);
+            }
+        });
+        return values;
+    }
+    get checkinDays(): number {
+        if (this.signedDates.length == 0)
+            return 0;
+        const sortedDates = this.signedDates.sort((a, b): number => {
+            // 这里的判断不能省略
+            if (a.compareTo(b) == 0) {
+                return 0;
+            }
+            return b - a;
+        });
+        return this.calculateContinuousCheckinDays(sortedDates);
+    }
+    private calculateContinuousCheckinDays(sortedDates: number[]): number {
+        const dayInMillis = 24 * 60 * 60 * 1000;
+        const todayTime = new Date(this.currentYear, this.currentMonth - 1, this.today).getTime();
+        let count = 0;
+        let streak = 0;
+        for (let i = 0; i < sortedDates.length; i++) {
+            if (i == 0) {
+                // 大于1天，即隔了一天就已经中断签到 不再计算
+                if (todayTime - sortedDates[i] > dayInMillis) {
+                    break;
+                }
+                if (sortedDates[i] == todayTime || todayTime - sortedDates[i] == dayInMillis) {
+                    streak = 1;
+                }
+            }
+            else {
+                if (sortedDates[i - 1] - sortedDates[i] == dayInMillis) {
+                    streak++;
+                }
+                else {
+                    break;
+                }
+            }
+        }
+        return streak;
+    }
+    setCanvas(el: UniCanvasElement | null) {
+        if (el == null)
+            return;
+        this.el = el;
+        this.containerHeight = 6 * (this.opt.dayHeight ?? 0) + this.opt.weekHeight! + this.opt.monthTitleHeight!; //6
+        this.containerWidth = this.el!.offsetWidth;
+        this.el!.style.setProperty('height', this.containerHeight + 'px');
+        this.ctx = el.getContext('2d')!;
+        const dpr = uni.getDeviceInfo().devicePixelRatio ?? 1;
+        this.el!.width = this.containerWidth * dpr;
+        this.el!.height = this.containerHeight * dpr;
+        this.ctx!.scale(dpr, dpr);
+        // this.ctx = el.getDrawableContext()
+        // this.ctx.fillStyle = 'red'
+        // this.ctx.fillRect(0,0,100,100)
+    }
+    setOptions(opt: LOptions) {
+        let datechange = false;
+        let weekStartsOn = -1;
+        for (let key in opt) {
+            const value = opt[key];
+            if (key == 'yearMonth' && value != null && value != this.opt.yearMonth) {
+                datechange = true;
+            }
+            if (key == 'weekStartsOn' && value != null && value != this.opt.weekStartsOn) {
+                weekStartsOn = value as number;
+            }
+            if (value != null) {
+                this.opt[key] = value;
+            }
+        }
+        if (weekStartsOn != -1) {
+            const normalWeek = [...this.opt.week!];
+            const sIndex = weekStartsOn < 0 ? 0 : weekStartsOn >= normalWeek.length ? normalWeek.length - 1 : weekStartsOn;
+            normalWeek.unshift(...normalWeek.slice(-sIndex));
+            normalWeek.length = 6;
+            this.week = normalWeek;
+        }
+        if (this.opt.yearMonth != '' && !this.init || datechange) {
+            const arr = this.opt.yearMonth!.split('-');
+            this.year = parseInt(arr[0]);
+            this.month = parseInt(arr[1]);
+            this.init = true;
+        }
+    }
+    /** 获取当月共多少天，也就是获取月的最后一天 */
+    getMonthDayLength(year: number, month: number): number {
+        return new Date(year, month, 0).getDate();
+    }
+    // 获取当月第一天星期几
+    getFirstDayOfWeek(year: number, month: number, day: number = 1): number {
+        return new Date(year, month - 1, day).getDay();
+    }
+    // 获取加/减一个月的日期
+    getOperateMonthDate(nowYear: number, nowMonth: number, num: number): LYearMonth {
+        let month = nowMonth + num;
+        let year = nowYear;
+        if (month > 12) {
+            month = 1;
+            year++;
+        }
+        else if (month < 1) {
+            month = 12;
+            year--;
+        }
+        return {
+            month,
+            year,
+        } as LYearMonth;
+    }
+    generateMonthDateCache(year: number = this.year, month: number = this.month): LMonthData {
+        // 检查是否可以切换到下个月
+        // const canSwitchToNextMonth = this.currentYear > year || (this.currentYear == year && this.currentMonth > month + 1);
+        const key = `${year}-${month}`;
+        if (this.monthDateCache.has(key)) {
+            return this.monthDateCache.get(key)!;
+        }
+        const arr: LDay[] = [];
+        const days = this.getMonthDayLength(year, month);
+        const firstday = this.getFirstDayOfWeek(year, month);
+        const beforeEmptyLength = (firstday + this.opt.weekStartsOn!) % 7; //this.getFirstDayOfWeek(year, month);
+        // Math.ceil((days + beforeEmptyLength) / 7)
+        const afterEmptyLength = 5 * 7 - beforeEmptyLength - days; //6 - this.getFirstDayOfWeek(year, month, days); //6
+        const last = this.getOperateMonthDate(year, month, -1);
+        const lastMonthEndDay = this.getMonthDayLength(last.year, last.month);
+        const next = this.getOperateMonthDate(year, month, 1);
+        const today = new Date(this.currentYear, this.currentMonth - 1, this.today).getTime();
+        let index = 0;
+        const getGridSize = (i: number): LGridSize => {
+            // 确保this.el存在并且可以获取到边界矩形
+            const rect = this.el?.getBoundingClientRect();
+            const height = this.opt.dayHeight ?? 0;
+            const width = rect == null ? 0 : rect.width / 7;
+            // 计算行和列
+            const row = Math.floor(i / 7);
+            const col = i % 7;
+            // 计算网格单元的位置
+            const x = col * width;
+            const y = row * height + this.opt.monthTitleHeight! + this.opt.weekHeight!;
+            return {
+                x,
+                y,
+                width,
+                height // 使用正确的变量名height
+            } as LGridSize;
+        };
+        for (var i = 0; i < beforeEmptyLength; i++) {
+            const { x, y, width, height } = getGridSize(index);
+            const date = lastMonthEndDay - beforeEmptyLength + i + 1;
+            const time = new Date(last.year, last.month - 1, date).getTime();
+            const day = new Day(date, last.month, last.year, last.year == this.currentYear && last.month == this.currentMonth, time == today, time < today, this);
+            day.type = 'last';
+            day.setPosition(x, y);
+            day.setDimensions(width, height);
+            arr.push(day);
+            index++;
+        }
+        for (var i = 0; i < days; i++) {
+            const { x, y, width, height } = getGridSize(index);
+            const date = i + 1;
+            const time = new Date(year, month - 1, date).getTime();
+            const day = new Day(date, month, year, year == this.currentYear && month == this.currentMonth, time == today, time < today, this);
+            day.setPosition(x, y);
+            day.setDimensions(width, height);
+            arr.push(day);
+            index++;
+        }
+        for (var i = 0; i < afterEmptyLength; i++) {
+            const { x, y, width, height } = getGridSize(index);
+            const date = i + 1;
+            const time = new Date(next.year, next.month - 1, date).getTime();
+            const day = new Day(date, next.month, next.year, next.year == this.currentYear && next.month == this.currentMonth, time == today, time < today, this);
+            day.type = 'next';
+            day.setPosition(x, y);
+            day.setDimensions(width, height);
+            arr.push(day);
+            index++;
+        }
+        const monthData: LMonthData = {
+            year,
+            month,
+            days: arr,
+        };
+        this.monthDateCache.set(key, monthData);
+        return monthData;
+    }
+    next() {
+        const { year, month } = this.getOperateMonthDate(this.year, this.month, 1);
+        // 检查是否可以切换到下个月
+        const canSwitchToNextMonth = this.currentYear > year || (this.currentYear == year && month - this.currentMonth <= 1);
+        if (canSwitchToNextMonth) {
+            this.year = year;
+            this.month = month;
+            this.render(year, month);
+        }
+        else {
+            uni.showToast({
+                icon: 'error',
+                title: '往后最多查看一个月'
+            });
+        }
+    }
+    last() {
+        const { year, month } = this.getOperateMonthDate(this.year, this.month, -1);
+        this.year = year;
+        this.month = month;
+        this.render(year, month);
+    }
+    /**
+    * 前往某一天
+    * @param {string} date 格式 YYYY-MM-DD
+    */
+    goToDate(date: string | null = null) {
+        if (date == null) {
+            this.render(this.currentYear, this.currentMonth, this.today);
+        }
+        else {
+            try {
+                const [year, month, day] = date.split('-').map((item): number => parseInt(item));
+                this.render(year, month, day);
+            }
+            catch (e: any) {
+                throw new Error('参数有误');
+            }
+        }
+    }
+    private drawIcon(ctx: CanvasRenderingContext2D, size: number, x: number, y: number, arrow: string, color: string) {
+        // 设置绘图的填充颜色
+        ctx.strokeStyle = color;
+        ctx.beginPath();
+        ctx.lineJoin = 'round';
+        ctx.lineWidth = 2;
+        // 根据箭头类型绘制不同的形状
+        if (arrow === 'left') {
+            ctx.moveTo(x + size * 0.6042, y + size * 0.25);
+            ctx.lineTo(x + size * 0.3542, y + size * 0.5);
+            ctx.lineTo(x + size * 0.6042, y + size * 0.75);
+        }
+        else if (arrow === 'right') {
+            ctx.moveTo(x + size * (1 - 0.6042), y + size * 0.25);
+            ctx.lineTo(x + size * (1 - 0.3542), y + size * 0.5);
+            ctx.lineTo(x + size * (1 - 0.6042), y + size * 0.75);
+        }
+        ctx.stroke();
+    }
+    private drawHead(monthData: LMonthData) {
+        const width = this.containerWidth;
+        if (this.ctx == null)
+            return;
+        const ctx = this.ctx!;
+        const height = this.opt.monthTitleHeight!;
+        // ctx.fillStyle = 'rgba(0,0,0,0.1)'
+        // ctx.rect(0,0,width, this.opt.monthTitleHeight!)
+        // ctx.fill()
+        ctx.textAlign = 'center';
+        ctx.fillStyle = this.opt.textColor!;
+        ctx.font = ` ${this.opt.monthTitleFontSize!}px sans-serif`;
+        ctx.textBaseline = 'middle';
+        ctx.fillText(`${monthData.year}年` + `${monthData.month}`.padStart(2, '0') + '月', width * 0.5, height * 0.55);
+        if (this.arrowIcons.length == 0) {
+            const offsetTop = (height - 30) / 2;
+            this.arrowIcons.push(new ArrowIcon(0, offsetTop, 30, 'left', `#A0A5AA`));
+            this.arrowIcons.push(new ArrowIcon(width - 30, offsetTop, 30, 'right', `#A0A5AA`));
+        }
+        this.arrowIcons.forEach(icon => {
+            icon.draw(ctx);
+        });
+    }
+    private drawWeek() {
+        if (this.ctx == null)
+            return;
+        const ctx = this.ctx!;
+        ctx.textAlign = 'center';
+        ctx.font = `${this.opt.weekFontSize}px Arial`;
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = this.opt.weekColor!;
+        this.week.forEach((week, index) => {
+            ctx.fillText(`${week}`, this.containerWidth / 7 * (index + 0.5), this.opt.monthTitleHeight! + this.opt.weekHeight! * 0.5);
+        });
+    }
+    render(year: number = this.year, month: number = this.month, day: number | null = null) {
+        const monthData = this.generateMonthDateCache(year, month);
+        if (day != null) {
+            this.selectDate = monthData.days.find((item): boolean => item.day == day);
+        }
+        if (this.el != null && this.ctx != null) {
+            this.ctx!.clearRect(0, 0, this.containerWidth, this.containerHeight);
+            this.drawHead(monthData);
+            this.drawWeek();
+            monthData.days.forEach(day => {
+                day.draw(this.ctx!);
+            });
+        }
+        return;
+    }
+    touch(e: UniPointerEvent) {
+        if (this.el == null)
+            return;
+        const rect = this.el!.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        // 判断 是点了左右
+        const icon = this.arrowIcons.find((icon): boolean => icon.isCoordinateInside(x, y));
+        if (icon != null) {
+            if (icon.type == 'left') {
+                this.last();
+            }
+            else {
+                this.next();
+            }
+            this.opt.panelChange?.({
+                year: this.year,
+                month: this.month
+            } as LYearMonth);
+            return;
+        }
+        // 判断是点了日历
+        const month = this.monthDateCache.get(`${this.year}-${this.month}`);
+        if (month == null)
+            return;
+        const day = month.days.find((day): boolean => day.isCoordinateInside(x, y));
+        // 只有点击当前月的
+        if (day != null && day.type == 'current') {
+            // if(this.selectDate != day) {
+            this.selectDate = day;
+            this.render();
+            // }
+            this.opt.select?.(day);
+        }
+    }
+}
+//# sourceMappingURL=calender.uts.map

@@ -1,0 +1,70 @@
+$namesapce:'j' !default;
+$block-sel:'-' !default;
+$doubleblock-sel:'--' !default;
+$underline:"_" !default;
+$doubleUnderline:"__" !default;
+
+// 块元素
+@mixin b($name){
+    $B:#{$namesapce+$block-sel+$name};
+    .#{$B}{
+        @content;
+    }
+}
+
+// 块元素下的元素
+@mixin m($name){
+		$selector:&;
+    @at-root{
+        #{$selector+$doubleblock-sel+$name}{
+            @content;
+        }
+    }
+}
+
+@mixin u($name){
+		$selector:&;
+    @at-root{
+        #{$selector+$underline+$name}{
+            @content;
+        }
+    }
+}
+// 修饰
+@mixin e($name){
+		$selector:&;
+    @at-root{
+        #{$selector+$doubleUnderline+$name}{
+            @content;
+        }
+    }
+}
+// 修饰
+@mixin brother($name1,$name2){
+		$selector:&;
+		@at-root{
+			#{$selector+$doubleblock-sel+$name1+$selector+$doubleblock-sel+$name2}{
+				@content;
+			}
+    }
+}
+@mixin flexRow($justifyContent:space-between, $alignItems: center) {
+	display: flex;
+	flex-direction: row;
+	justify-content: $justifyContent;
+	align-items: $alignItems;
+}
+@mixin formItemHeight {
+	height: 52rpx;
+	line-height: 52rpx;
+}
+@mixin formItemFontSize{
+	font-size: 30rpx;
+	line-height: 30rpx;
+}
+// @mixin flex($direction: row) {
+// 	/* #ifndef APP-NVUE */
+// 	display: flex;
+// 	/* #endif */
+// 	flex-direction: $direction;
+// }

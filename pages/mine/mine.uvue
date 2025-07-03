@@ -1,30 +1,104 @@
 <template>
 	<view class="container">
-		<view class="nav_bar">
-			<TopNavBar :showBack='false' :title="title" />
+		<view class="files">
+			<view class="file">
+				<image class="fileIcon" src="/static/mine/local.png" mode="aspectFit"></image>
+				<text class="file-text">本地文件</text>
+			</view>
+			<view class="file">
+				<image class="fileIcon" src="/static/mine/cloud.png" mode="aspectFit"></image>
+				<text class="file-text">永久备份</text>
+			</view>
+			<view class="file">
+				<image class="fileIcon" src="/static/mine/msgList.png" mode="aspectFit"></image>
+				<text class="file-text">消息列表</text>
+			</view>
 		</view>
-		<view class="content">
-			Mine
+		<view class="tools-list">
+			<view class="item" @click="getUser">
+				<view class="info">
+					<image class="item-icon" src="/static/mine/user.png" mode="aspectFit"></image>
+					<text class="item-text">个人信息</text>
+				</view>
+				<view>
+					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
+				</view>
+			</view>
+			<view class="item">
+				<view class="info">
+					<image class="item-icon" src="/static/mine/liuliang.png" mode="aspectFit"></image>
+					<text class="item-text">流量充值</text>
+				</view>
+				<view>
+					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
+				</view>
+			</view>
+			<view class="item">
+				<view class="info">
+					<image class="item-icon" src="/static/mine/order.png" mode="aspectFit"></image>
+					<text class="item-text">我的订单</text>
+				</view>
+				<view>
+					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
+				</view>
+			</view>
+			<view class="item">
+				<view class="info">
+					<image class="item-icon" src="/static/mine/quetion.png" mode="aspectFit"></image>
+					<text class="item-text">常见问题</text>
+				</view>
+				<view>
+					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
+				</view>
+			</view>
+			<view class="item">
+				<view class="info">
+					<image class="item-icon" src="/static/mine/online.png" mode="aspectFit"></image>
+					<text class="item-text">在线客服</text>
+				</view>
+				<view>
+					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
+				</view>
+			</view>
+			<view class="item">
+				<view class="info">
+					<image class="item-icon" src="/static/mine/advice.png" mode="aspectFit"></image>
+					<text class="item-text">意见反馈</text>
+				</view>
+				<view>
+					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
+				</view>
+			</view>
+			<view class="item">
+				<view class="info">
+					<image class="item-icon" src="/static/mine/setting.png" mode="aspectFit"></image>
+					<text class="item-text">设置</text>
+				</view>
+				<view>
+					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
+				</view>
+			</view>
+			<view class="item no-bottom">
+				<view class="info">
+					<image class="item-icon" src="/static/mine/about.png" mode="aspectFit"></image>
+					<text class="item-text">关于</text>
+				</view>
+				<view>
+					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
 
 <script setup>
-	import TopNavBar from '../../components/TopNavBar.uvue'
-	import { NavTitleItem } from '../../types/NavTitleItem';
-	const title:NavTitleItem[] = [{
-		name: '首页',
-		isCurrent: false,
-		url: '/pages/index/index'
-	}, {
-		name: '消息',
-		isCurrent: false,
-		url: '/pages/message/message'
-	}, {
-		name: '我的',
-		isCurrent: true,
-		url: '/pages/mine/mine'
-	}]
+	
+	const getUser = () => {
+		uni.showToast({
+			title:'用户中心',
+			icon:'none'
+		})
+	}
 </script>
 
 <style lang="scss" scoped>
@@ -34,5 +108,79 @@
 		padding: 0 20rpx;
 		display: flex;
 		flex-direction: column;
+		background-color: #f1f1f1;
+
+		.files {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			height: 100rpx;
+			background-color: #fff;
+			border-radius: 15rpx;
+			padding: 70rpx 80rpx;
+			margin: 20rpx 0;
+
+			.file {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				.fileIcon {
+					display: block;
+					width: 48rpx;
+					height: 48rpx;
+					margin-bottom: 15rpx;
+				}
+
+				.file-text {
+					font-size: 20rpx;
+					color: #333;
+					font-weight: bold;
+				}
+			}
+		}
+
+		.tools-list {
+			background-color: #fff;
+			border-radius: 15rpx;
+			padding: 20rpx;
+
+			.item {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				height: 100rpx;
+				border-bottom: 1rpx solid #f1f1f1;
+				.info {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					margin-left: 40rpx;
+					.item-icon {
+						display: block;
+						width: 48rpx;
+						height: 48rpx;
+					}
+
+					.item-text {
+						font-size: 25rpx;
+						color: #333;
+						margin-left: 20rpx;
+					}
+				}
+
+				.right-icon {
+					display: block;
+					width: 35rpx;
+					height: 35rpx;
+				}
+			}
+			.no-bottom{
+				border-bottom: none;
+			}
+		}
 	}
 </style>

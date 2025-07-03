@@ -1,42 +1,37 @@
 <template>
 	<view class="container">
-		<view class="nav_bar">
-			<TopNavBar :showBack='false' :title="title"  @add="navAdd" />
-		</view>
 		<view class="content">
-			<video class="video" :src="videoSrc" :controls="false"></video>
+			<view class="video-container" style="border-radius: 15rpx; overflow: hidden;">
+				<video class="video" :src="videoSrc" :controls="false" @click="vedioClick"></video>
+			</view>
 			<view class="video-top-title">{{deviceTitle}}</view>
 			<view class="video-right-control">
-				<uv-icon class="vedio-control-icon" :name="forward" @click="toDeviceDetail"></uv-icon>
-				<uv-icon class="vedio-control-icon" :name="errIcon" @click="errClick"></uv-icon>
-				<uv-icon class="vedio-control-icon" :name="transfer" @click="transferClick"></uv-icon>
-				<uv-icon class="vedio-control-icon" :name="replayIcon" @click="replay"></uv-icon>
+				<view class="vedio-control">
+					<image class="vedio-control-icon" :src="forward" @click="toDeviceDetail"></image>
+				</view>
+				<view class="vedio-control">
+					<image class="vedio-control-icon" :src="errIcon" @click="errClick"></image>
+				</view>
+				<view class="vedio-control">
+					<image class="vedio-control-icon" :src="transfer" @click="transferClick"></image>
+				</view>
+				<view class="vedio-control">
+					<image class="vedio-control-icon" :src="replayIcon" @click="replay"></image>
+				</view>
 			</view>
 			<view class="video-bottom-control">
-				<uv-icon class="vedio-control-icon" @click="pauseClick" :name="pauseIcon"></uv-icon>
+				<view class="vedio-control">
+					<image class="vedio-control-icon" @click="pauseClick" :src="pauseIcon"></image>
+				</view>
 			</view>
 		</view>
+
 	</view>
 </template>
 
 <script setup lang="uts">
-	import TopNavBar from '../../components/TopNavBar.uvue'
-	import { NavTitleItem } from '../../types/NavTitleItem'
+	import { ref } from 'vue'
 
-	const title: NavTitleItem[] = [{
-		name: '首页',
-		isCurrent: true,
-		url: '/pages/index/index'
-	}, {
-		name: '消息',
-		isCurrent: false,
-		url: '/pages/message/message'
-	}, {
-		name: '我的',
-		isCurrent: false,
-		url: '/pages/mine/mine'
-	}]
-	
 	const deviceTitle = ref('设备名称')
 	const forward = '/static/video/forward.png'
 	const errIcon = '/static/video/error.png'
@@ -44,48 +39,55 @@
 	const replayIcon = '/static/video/replay.png'
 	const playIcon = '/static/video/play.png'
 	const pauseIcon = '/static/video/pause.png'
+	const addIcon = '/static/tabbar/add.png'
+
 	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
-	
-	
-	const navAdd = () =>{
+
+	const addDevices = () => {
 		uni.showToast({
 			title: '添加',
 			icon: 'none'
 		})
 	}
-	
-	const replay = () =>{
+
+	const replay = () => {
 		uni.showToast({
 			title: '重播',
 			icon: 'none'
 		})
 	}
-	
-	
-	const transferClick =()=>{
+
+	const transferClick = () => {
 		uni.showToast({
-			title:'传输',
+			title: '传输',
 			icon: 'none'
 		})
 	}
-	
-	const errClick = () =>{
+
+	const errClick = () => {
 		uni.showToast({
-			title:'警报',
+			title: '警报',
 			icon: 'none'
 		})
 	}
-	
-	const toDeviceDetail = () =>{
+
+	const toDeviceDetail = () => {
 		uni.showToast({
-			title:'设备详情',
+			title: '设备详情',
 			icon: 'none'
 		})
 	}
-	
-	const pauseClick =() =>{
+
+	const pauseClick = () => {
 		uni.showToast({
-			title:'暂停',
+			title: '暂停',
+			icon: 'none'
+		})
+	}
+
+	const vedioClick = () => {
+		uni.showToast({
+			title: '播放',
 			icon: 'none'
 		})
 	}
@@ -98,24 +100,39 @@
 		padding: 0 20rpx;
 		display: flex;
 		flex-direction: column;
-		.content{
+
+		.content {
 			position: relative;
-			.video{
+			border-radius: 15rpx;
+			width: 100%;
+			height: 400rpx;
+			overflow: hidden;
+
+			.video-container {
 				width: 100%;
+				height: 100%;
 			}
-			.video-top-title{
+
+			.video {
+				width: 100%;
+				height: 100%;
+				object-fit: cover; // 使视频充满容器并保持比例
+				margin-bottom: 0; // 移除底部边距
+			}
+
+			.video-top-title {
 				position: absolute;
-				top:0;
+				top: 0;
 				height: 60rpx;
 				width: 80%;
-				padding-left: 20rpx;
-				background: linear-gradient(
-				  to right, 
-				  rgba(255, 255, 255, 0.5), 
-				  rgba(255, 255, 255, 0) 
-				);
+				padding: 15rpx 0 0 20rpx;
+				background: linear-gradient(to right,
+						rgba(255, 255, 255, 0.5),
+						rgba(255, 255, 255, 0));
+				z-index: 3; // 确保标题显示在视频上方
 			}
-			.video-right-control{
+
+			.video-right-control {
 				position: absolute;
 				top: 0;
 				right: 10rpx;
@@ -125,32 +142,43 @@
 				height: 100%;
 				align-items: center;
 				z-index: 2;
-				.vedio-control-icon{
+
+				.vedio-control {
 					width: 50rpx;
 					height: 50rpx;
 					padding: 10rpx;
 					border-radius: 25rpx;
 					background: rgba(255, 255, 255, .7);
+
+					.vedio-control-icon {
+						width: 100%;
+						height: 100%;
+					}
 				}
 			}
-			.video-bottom-control{
+
+			.video-bottom-control {
 				position: absolute;
 				bottom: 10rpx;
 				left: 0;
 				width: 100%;
 				height: 50rpx;
 				z-index: 1;
-				.vedio-control-icon{
+
+				.vedio-control {
 					margin: 0 auto;
 					width: 50rpx;
 					height: 50rpx;
 					padding: 10rpx;
 					border-radius: 25rpx;
 					background: rgba(255, 255, 255, .7);
+
+					.vedio-control-icon {
+						width: 100%;
+						height: 100%;
+					}
 				}
 			}
 		}
 	}
-
-	
 </style>

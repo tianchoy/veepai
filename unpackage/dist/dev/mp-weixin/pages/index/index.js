@@ -1,14 +1,5 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
-const types_NavTitleItem = require("../../types/NavTitleItem.js");
-if (!Array) {
-  const _component_uv_icon = common_vendor.resolveComponent("uv-icon");
-  _component_uv_icon();
-}
-if (!Math) {
-  common_vendor.unref(TopNavBar)();
-}
-const TopNavBar = () => "../../components/TopNavBar.js";
 const forward = "/static/video/forward.png";
 const errIcon = "/static/video/error.png";
 const transfer = "/static/video/transfer.png";
@@ -18,26 +9,7 @@ const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-de
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
   __name: "index",
   setup(__props) {
-    const title = [new types_NavTitleItem.NavTitleItem({
-      name: "首页",
-      isCurrent: true,
-      url: "/pages/index/index"
-    }), new types_NavTitleItem.NavTitleItem({
-      name: "消息",
-      isCurrent: false,
-      url: "/pages/message/message"
-    }), new types_NavTitleItem.NavTitleItem({
-      name: "我的",
-      isCurrent: false,
-      url: "/pages/mine/mine"
-    })];
     const deviceTitle = common_vendor.ref("设备名称");
-    const navAdd = () => {
-      common_vendor.index.showToast({
-        title: "添加",
-        icon: "none"
-      });
-    };
     const replay = () => {
       common_vendor.index.showToast({
         title: "重播",
@@ -68,36 +40,28 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         icon: "none"
       });
     };
+    const vedioClick = () => {
+      common_vendor.index.showToast({
+        title: "播放",
+        icon: "none"
+      });
+    };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: common_vendor.o(navAdd),
-        b: common_vendor.p({
-          showBack: false,
-          title
-        }),
-        c: videoSrc,
-        d: common_vendor.t(common_vendor.unref(deviceTitle)),
+        a: videoSrc,
+        b: common_vendor.o(vedioClick),
+        c: common_vendor.t(deviceTitle.value),
+        d: forward,
         e: common_vendor.o(toDeviceDetail),
-        f: common_vendor.p({
-          name: forward
-        }),
+        f: errIcon,
         g: common_vendor.o(errClick),
-        h: common_vendor.p({
-          name: errIcon
-        }),
+        h: transfer,
         i: common_vendor.o(transferClick),
-        j: common_vendor.p({
-          name: transfer
-        }),
+        j: replayIcon,
         k: common_vendor.o(replay),
-        l: common_vendor.p({
-          name: replayIcon
-        }),
-        m: common_vendor.o(pauseClick),
-        n: common_vendor.p({
-          name: pauseIcon
-        }),
-        o: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        l: common_vendor.o(pauseClick),
+        m: pauseIcon,
+        n: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

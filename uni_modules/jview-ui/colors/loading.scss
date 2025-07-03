@@ -1,0 +1,63 @@
+// j-view-loading该class只能在非app-nvue中生效
+.loading-view{
+	position: absolute;
+	top:calc(50% - 12rpx);
+	left:calc(50% - 12rpx);
+	display: block;
+	content: "";
+	width: 24rpx;
+	height: 24rpx;
+	border-radius: 50%;
+	z-index: 101;
+}
+.j-view-loading{
+	position: relative;
+	&::before{
+		transform: translateX(-100%);
+		@extend .loading-view;
+		background-color: #e43d33;
+		animation: loadingBefore 1.2s linear infinite;
+	}
+	&::after{
+		transform: translateX(100%);
+		@extend .loading-view;
+		background-color: #2979ff;
+		animation: loadingAfter 1.2s linear infinite;
+	}
+}
+@keyframes loadingBefore {
+    0%{
+      transform: translateX(-100%) scale(1);
+    }
+		25%{
+		  transform: translateX(0%) scale(1.2);
+		}
+    50%{
+      transform: translateX(100%) scale(1);
+    }
+		75%{
+		  transform: translateX(0%) scale(0.8);
+		}
+		100%{
+		  transform: translateX(-100%) scale(1);
+		}
+}
+@keyframes loadingAfter {
+    0%{
+      transform: translateX(100%) scale(1);
+    }
+		25%{
+		  transform: translateX(0%) scale(0.8);
+			z-index: 100;
+		}
+    50%{
+      transform: translateX(-100%) scale(1);
+    }
+		75%{
+		  transform: translateX(0%) scale(1.2);
+			z-index: 101;
+		}
+		100%{
+		  transform: translateX(100%) scale(1);
+		}
+}

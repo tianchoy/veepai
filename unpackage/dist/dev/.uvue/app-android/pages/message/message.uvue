@@ -1,37 +1,68 @@
-import TopNavBar from '../../components/TopNavBar.uvue';
-import { NavTitleItem } from '../../types/NavTitleItem';
+import _easycom_l_daily_punch from '@/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue';
+import { ref } from 'vue';
+import { LDay, LYearMonth } from '@/uni_modules/lime-daily-punch';
+import { dayuts } from '@/uni_modules/lime-dayuts';
 const __sfc__ = defineComponent({
     __name: 'message',
     setup(__props): any | null {
         const __ins = getCurrentInstance()!;
         const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
         const _cache = __ins.renderCache;
-        const title: NavTitleItem[] = [{
-                name: '首页',
-                isCurrent: false,
-                url: '/pages/index/index'
-            } as NavTitleItem, {
-                name: '消息',
-                isCurrent: true,
-                url: '/pages/message/message'
-            } as NavTitleItem, {
-                name: '我的',
-                isCurrent: false,
-                url: '/pages/mine/mine'
-            } as NavTitleItem];
+        const today = ref(dayuts().format('MM-DD'));
+        const checkIns = ref(['2025-06-09', '2025-07-01', '2025-07-02']);
+        const showCalendar = ref(false);
+        const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
+        const select = (day: LDay) => {
+            today.value = dayuts(day.fullDate).format('MM-DD');
+            if (day.isToday) {
+                console.log('今天', " at pages/message/message.uvue:30");
+            }
+            showCalendar.value = false;
+        };
+        const change = (res: LYearMonth) => {
+            console.log('res', res, " at pages/message/message.uvue:36");
+        };
+        const ShowCalendar = () => {
+            showCalendar.value = !showCalendar.value;
+        };
+        const hideCalendar = () => {
+            showCalendar.value = false;
+        };
         return (): any | null => {
+            const _component_l_daily_punch = resolveEasyComponent("l-daily-punch", _easycom_l_daily_punch);
             return createElementVNode("view", utsMapOf({ class: "container" }), [
-                createElementVNode("view", utsMapOf({ class: "nav_bar" }), [
-                    createVNode(unref(TopNavBar), utsMapOf({
-                        showBack: false,
-                        title: title
+                createElementVNode("view", utsMapOf({ class: "vedio-box" }), [
+                    createElementVNode("video", utsMapOf({
+                        class: "video",
+                        src: videoSrc,
+                        controls: false
                     }))
                 ]),
-                createElementVNode("view", utsMapOf({ class: "content" }), " Messages ")
+                createElementVNode("view", utsMapOf({
+                    class: "today",
+                    onClick: ShowCalendar
+                }), toDisplayString(today.value), 1 /* TEXT */),
+                isTrue(showCalendar.value)
+                    ? createElementVNode("view", utsMapOf({
+                        key: 0,
+                        class: "calendar-box"
+                    }), [
+                        createVNode(_component_l_daily_punch, utsMapOf({
+                            signedDates: checkIns.value,
+                            onSelect: select,
+                            onPanelChange: change,
+                            dayHeight: 60
+                        }), null, 8 /* PROPS */, ["signedDates"]),
+                        createElementVNode("button", utsMapOf({
+                            class: "btn-chanel-box",
+                            onClick: hideCalendar
+                        }), " 取消 ")
+                    ])
+                    : createCommentVNode("v-if", true)
             ]);
         };
     }
 });
 export default __sfc__;
-const GenPagesMessageMessageStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["width", "100%"], ["height", "100%"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"], ["display", "flex"], ["flexDirection", "column"]]))]])];
+const GenPagesMessageMessageStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["width", "100%"], ["height", "100%"], ["position", "relative"]]))], ["vedio-box", utsMapOf([[".container ", utsMapOf([["width", "100%"]])]])], ["video", utsMapOf([[".container .vedio-box ", utsMapOf([["width", "100%"]])]])], ["calendar-box", utsMapOf([[".container ", utsMapOf([["position", "absolute"], ["bottom", 0], ["left", 0], ["height", "60%"], ["width", "100%"], ["backgroundColor", "#ffffff"]])]])], ["btn-chanel-box", utsMapOf([[".container .calendar-box ", utsMapOf([["position", "absolute"], ["width", "85%"], ["bottom", "45rpx"], ["left", "60rpx"], ["borderTopLeftRadius", "50rpx"], ["borderTopRightRadius", "50rpx"], ["borderBottomRightRadius", "50rpx"], ["borderBottomLeftRadius", "50rpx"]])]])], ["today", padStyleMapOf(utsMapOf([["textAlign", "center"]]))]])];
 //# sourceMappingURL=message.uvue.map
