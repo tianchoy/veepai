@@ -6,12 +6,13 @@ const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
 
 	
-	const getUser = () => {
-		uni.showToast({
-			title:'用户中心',
-			icon:'none'
+	const userInfo = () => {
+		uni.navigateTo({
+			url: '/pages/mine/userInfo/userInfo'
 		})
 	}
+
+
 
 return (): any | null => {
 
@@ -45,7 +46,7 @@ return (): any | null => {
     createElementVNode("view", utsMapOf({ class: "tools-list" }), [
       createElementVNode("view", utsMapOf({
         class: "item",
-        onClick: getUser
+        onClick: userInfo
       }), [
         createElementVNode("view", utsMapOf({ class: "info" }), [
           createElementVNode("image", utsMapOf({

@@ -4,8 +4,10 @@
 			<video class="video" id="myVideo" :src="videoSrc" ref="videoRef" :controls="true" :show-play-btn="true"
 				:show-center-play-btn="true" :enable-progress-gesture="true" :show-fullscreen-btn="true"
 				:show-mute-btn="true" :title="testTitle"></video>
+				<view></view>
 		</view>
 		<button @click="playVideo">播放视频</button>
+		<button @click="pasueVideo">暂停视频</button>
 		<view class="content-box">
 			<view class="sub-nav">
 				<view class="today" @click="ShowCalendar">
@@ -63,6 +65,13 @@
 		// #endif
 		uni.createVideoContext('myVideo')!!.play();
 	};
+	
+	const pasueVideo = () =>{
+		// #ifdef APP-IOS
+		videoRef.value.pause()
+		// #endif
+		uni.createVideoContext('myVideo')!!.pause();
+	}
 
 	//构造函数的方式来定义event时间类型
 	class SecurityEvent {

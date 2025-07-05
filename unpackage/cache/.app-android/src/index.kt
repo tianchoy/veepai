@@ -2888,6 +2888,14 @@ val GenPagesMineMineClass = CreateVueComponent(GenPagesMineMine::class.java, fun
     return GenPagesMineMine(instance, renderer)
 }
 )
+val default1 = "/static/mine/right.png"
+val GenPagesMineUserInfoUserInfoClass = CreateVueComponent(GenPagesMineUserInfoUserInfo::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoUserInfo.inheritAttrs, inject = GenPagesMineUserInfoUserInfo.inject, props = GenPagesMineUserInfoUserInfo.props, propsNeedCastKeys = GenPagesMineUserInfoUserInfo.propsNeedCastKeys, emits = GenPagesMineUserInfoUserInfo.emits, components = GenPagesMineUserInfoUserInfo.components, styles = GenPagesMineUserInfoUserInfo.styles)
+}
+, fun(instance, renderer): GenPagesMineUserInfoUserInfo {
+    return GenPagesMineUserInfoUserInfo(instance, renderer)
+}
+)
 fun createApp(): UTSJSONObject {
     val app = createSSRApp(GenAppClass)
     return UTSJSONObject(Map<String, Any?>(utsArrayOf(
@@ -2914,6 +2922,7 @@ fun definePageRoutes() {
     __uniRoutes.push(UniPageRoute(path = "pages/index/index", component = GenPagesIndexIndexClass, meta = UniPageMeta(isQuit = true), style = utsMapOf()))
     __uniRoutes.push(UniPageRoute(path = "pages/message/message", component = GenPagesMessageMessageClass, meta = UniPageMeta(isQuit = false), style = utsMapOf()))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/mine", component = GenPagesMineMineClass, meta = UniPageMeta(isQuit = false), style = utsMapOf()))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/userInfo", component = GenPagesMineUserInfoUserInfoClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "个人信息")))
 }
 val __uniTabBar: Map<String, Any?>? = utsMapOf("list" to utsArrayOf(
     utsMapOf("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),

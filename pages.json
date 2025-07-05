@@ -7,6 +7,13 @@
 		},
 		{
 			"path": "pages/mine/mine"
+		},
+		{
+			"path" : "pages/mine/userInfo/userInfo",
+			"style" : 
+			{
+				"navigationBarTitleText" : "个人信息"
+			}
 		}
 	],
 	"tabBar": {

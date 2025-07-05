@@ -38,9 +38,12 @@ open class GenPagesMessageMessage : BasePage {
             val playVideo = fun(){
                 uni_createVideoContext("myVideo", null)!!!!.play()
             }
+            val pasueVideo = fun(){
+                uni_createVideoContext("myVideo", null)!!!!.pause()
+            }
             class SecurityEvent : IUTSSourceMap {
                 override fun `__$getOriginalPosition`(): UTSSourceMapPosition {
-                    return UTSSourceMapPosition("SecurityEvent", "pages/message/message.uvue", 68, 8)
+                    return UTSSourceMapPosition("SecurityEvent", "pages/message/message.uvue", 77, 8)
                 }
                 var id: Number
                 var type: String
@@ -55,7 +58,7 @@ open class GenPagesMessageMessage : BasePage {
             }
             class Tab : IUTSSourceMap {
                 override fun `__$getOriginalPosition`(): UTSSourceMapPosition {
-                    return UTSSourceMapPosition("Tab", "pages/message/message.uvue", 83, 8)
+                    return UTSSourceMapPosition("Tab", "pages/message/message.uvue", 92, 8)
                 }
                 var label: String
                 var type: String
@@ -81,14 +84,14 @@ open class GenPagesMessageMessage : BasePage {
             }
             val select = fun(day: LDay){
                 today.value = dayuts(day.fullDate).format("MM-DD")
-                console.log(today.value, " at pages/message/message.uvue:121")
+                console.log(today.value, " at pages/message/message.uvue:130")
                 if (day.isToday) {
-                    console.log("今天", " at pages/message/message.uvue:123")
+                    console.log("今天", " at pages/message/message.uvue:132")
                 }
                 showCalendar.value = false
             }
             val change = fun(res: LYearMonth){
-                console.log("res", res, " at pages/message/message.uvue:129")
+                console.log("res", res, " at pages/message/message.uvue:138")
             }
             val ShowCalendar = fun(){
                 showCalendar.value = !showCalendar.value
@@ -102,9 +105,11 @@ open class GenPagesMessageMessage : BasePage {
                     createElementVNode("view", utsMapOf("class" to "vedio-box"), utsArrayOf(
                         createElementVNode("video", utsMapOf("class" to "video", "id" to "myVideo", "src" to videoSrc, "ref_key" to "videoRef", "ref" to videoRef, "controls" to true, "show-play-btn" to true, "show-center-play-btn" to true, "enable-progress-gesture" to true, "show-fullscreen-btn" to true, "show-mute-btn" to true, "title" to testTitle.value), null, 8, utsArrayOf(
                             "title"
-                        ))
+                        )),
+                        createElementVNode("view")
                     )),
                     createElementVNode("button", utsMapOf("onClick" to playVideo), "播放视频"),
+                    createElementVNode("button", utsMapOf("onClick" to pasueVideo), "暂停视频"),
                     createElementVNode("view", utsMapOf("class" to "content-box"), utsArrayOf(
                         createElementVNode("view", utsMapOf("class" to "sub-nav"), utsArrayOf(
                             createElementVNode("view", utsMapOf("class" to "today", "onClick" to ShowCalendar), utsArrayOf(

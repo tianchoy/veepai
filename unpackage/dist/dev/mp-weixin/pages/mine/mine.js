@@ -4,10 +4,9 @@ const common_assets = require("../../common/assets.js");
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
   __name: "mine",
   setup(__props) {
-    const getUser = () => {
-      common_vendor.index.showToast({
-        title: "用户中心",
-        icon: "none"
+    const userInfo = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/mine/userInfo/userInfo"
       });
     };
     return (_ctx = null, _cache = null) => {
@@ -16,22 +15,22 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         b: common_assets._imports_1$1,
         c: common_assets._imports_2,
         d: common_assets._imports_3,
-        e: common_assets._imports_4,
-        f: common_vendor.o(getUser),
+        e: common_assets._imports_0$2,
+        f: common_vendor.o(userInfo),
         g: common_assets._imports_5,
-        h: common_assets._imports_4,
+        h: common_assets._imports_0$2,
         i: common_assets._imports_6,
-        j: common_assets._imports_4,
+        j: common_assets._imports_0$2,
         k: common_assets._imports_7,
-        l: common_assets._imports_4,
+        l: common_assets._imports_0$2,
         m: common_assets._imports_8,
-        n: common_assets._imports_4,
+        n: common_assets._imports_0$2,
         o: common_assets._imports_9,
-        p: common_assets._imports_4,
+        p: common_assets._imports_0$2,
         q: common_assets._imports_10,
-        r: common_assets._imports_4,
+        r: common_assets._imports_0$2,
         s: common_assets._imports_11,
-        t: common_assets._imports_4,
+        t: common_assets._imports_0$2,
         v: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;

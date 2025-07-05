@@ -25,11 +25,18 @@ const _cache = __ins.renderCache;
 
 		uni.createVideoContext('myVideo')!!.play();
 	};
+	
+	const pasueVideo = () =>{
+
+
+
+		uni.createVideoContext('myVideo')!!.pause();
+	}
 
 	//构造函数的方式来定义event时间类型
 	class SecurityEvent  implements IUTSSourceMap{
 // @ts-expect-error 
-override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMapPosition("SecurityEvent", "pages/message/message.uvue", 68, 8);}
+override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMapPosition("SecurityEvent", "pages/message/message.uvue", 77, 8);}
 
 		id : number;
 		type : string;
@@ -47,7 +54,7 @@ override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMa
 	//定义tab标签的类型
 	class Tab  implements IUTSSourceMap{
 // @ts-expect-error 
-override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMapPosition("Tab", "pages/message/message.uvue", 83, 8);}
+override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMapPosition("Tab", "pages/message/message.uvue", 92, 8);}
 
 		label : string;
 		type : string;
@@ -86,15 +93,15 @@ override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMa
 	//选择日期
 	const select = (day : LDay) => {
 		today.value = dayuts(day.fullDate).format('MM-DD')
-		console.log(today.value, " at pages/message/message.uvue:121")
+		console.log(today.value, " at pages/message/message.uvue:130")
 		if (day.isToday) {
-			console.log('今天', " at pages/message/message.uvue:123")
+			console.log('今天', " at pages/message/message.uvue:132")
 		}
 		showCalendar.value = false
 	}
 
 	const change = (res : LYearMonth) => {
-		console.log('res', res, " at pages/message/message.uvue:129")
+		console.log('res', res, " at pages/message/message.uvue:138")
 	}
 
 	const ShowCalendar = () => {
@@ -124,9 +131,11 @@ const _component_l_daily_punch = resolveEasyComponent("l-daily-punch",_easycom_l
         "show-fullscreen-btn": true,
         "show-mute-btn": true,
         title: testTitle.value
-      }), null, 8 /* PROPS */, ["title"])
+      }), null, 8 /* PROPS */, ["title"]),
+      createElementVNode("view")
     ]),
     createElementVNode("button", utsMapOf({ onClick: playVideo }), "播放视频"),
+    createElementVNode("button", utsMapOf({ onClick: pasueVideo }), "暂停视频"),
     createElementVNode("view", utsMapOf({ class: "content-box" }), [
       createElementVNode("view", utsMapOf({ class: "sub-nav" }), [
         createElementVNode("view", utsMapOf({

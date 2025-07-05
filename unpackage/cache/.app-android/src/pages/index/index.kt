@@ -15,6 +15,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
+import io.dcloud.uniapp.extapi.createVideoContext as uni_createVideoContext
 import io.dcloud.uniapp.extapi.showToast as uni_showToast
 open class GenPagesIndexIndex : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
@@ -31,8 +32,10 @@ open class GenPagesIndexIndex : BasePage {
             val replayIcon = "/static/video/replay.png"
             val pauseIcon = "/static/video/pause.png"
             val videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
+            val videoRef = ref(null)
             val replay = fun(){
                 uni_showToast(ShowToastOptions(title = "重播", icon = "none"))
+                uni_createVideoContext("myVideo", null)!!!!.play()
             }
             val transferClick = fun(){
                 uni_showToast(ShowToastOptions(title = "传输", icon = "none"))
@@ -44,19 +47,21 @@ open class GenPagesIndexIndex : BasePage {
                 uni_showToast(ShowToastOptions(title = "设备详情", icon = "none"))
             }
             val pauseClick = fun(){
+                uni_createVideoContext("myVideo", null)!!!!.pause()
                 uni_showToast(ShowToastOptions(title = "暂停", icon = "none"))
             }
-            val vedioClick = fun(){
-                uni_showToast(ShowToastOptions(title = "播放", icon = "none"))
+            val clickVdedio = fun(){
+                uni_showToast(ShowToastOptions(title = "sss", icon = "none"))
             }
             return fun(): Any? {
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
                     createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
                         createElementVNode("view", utsMapOf("class" to "video-container", "style" to normalizeStyle(utsMapOf("border-radius" to "15rpx", "overflow" to "hidden"))), utsArrayOf(
-                            createElementVNode("video", utsMapOf("class" to "video", "title" to deviceTitle.value, "src" to videoSrc, "controls" to false, "onClick" to vedioClick), null, 8, utsArrayOf(
+                            createElementVNode("video", utsMapOf("class" to "video", "id" to "myVideo", "title" to deviceTitle.value, "src" to videoSrc, "ref_key" to "videoRef", "ref" to videoRef, "controls" to true, "show-play-btn" to true, "show-center-play-btn" to true, "enable-progress-gesture" to true, "show-fullscreen-btn" to true, "show-mute-btn" to true, "onClick" to clickVdedio), null, 8, utsArrayOf(
                                 "title"
                             ))
                         ), 4),
+                        createElementVNode("view", null, toDisplayString(deviceTitle.value), 1),
                         createElementVNode("view", utsMapOf("class" to "video-right-control"), utsArrayOf(
                             createElementVNode("view", utsMapOf("class" to "vedio-control"), utsArrayOf(
                                 createElementVNode("image", utsMapOf("class" to "vedio-control-icon", "src" to forward, "onClick" to toDeviceDetail))

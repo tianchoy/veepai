@@ -10,11 +10,13 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
   __name: "index",
   setup(__props) {
     const deviceTitle = common_vendor.ref("设备名称");
+    const videoRef = common_vendor.ref(null);
     const replay = () => {
       common_vendor.index.showToast({
         title: "重播",
         icon: "none"
       });
+      common_vendor.index.createVideoContext("myVideo").play();
     };
     const transferClick = () => {
       common_vendor.index.showToast({
@@ -35,33 +37,38 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       });
     };
     const pauseClick = () => {
+      common_vendor.index.createVideoContext("myVideo").pause();
       common_vendor.index.showToast({
         title: "暂停",
         icon: "none"
       });
     };
-    const vedioClick = () => {
+    const clickVdedio = () => {
       common_vendor.index.showToast({
-        title: "播放",
+        title: "sss",
         icon: "none"
       });
     };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: deviceTitle.value,
-        b: videoSrc,
-        c: common_vendor.o(vedioClick),
-        d: forward,
-        e: common_vendor.o(toDeviceDetail),
-        f: errIcon,
-        g: common_vendor.o(errClick),
-        h: transfer,
-        i: common_vendor.o(transferClick),
-        j: replayIcon,
-        k: common_vendor.o(replay),
-        l: common_vendor.o(pauseClick),
-        m: pauseIcon,
-        n: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        a: common_vendor.sei("myVideo", "video", videoRef, {
+          "k": "videoRef"
+        }),
+        b: deviceTitle.value,
+        c: videoSrc,
+        d: common_vendor.o(clickVdedio),
+        e: common_vendor.t(deviceTitle.value),
+        f: forward,
+        g: common_vendor.o(toDeviceDetail),
+        h: errIcon,
+        i: common_vendor.o(errClick),
+        j: transfer,
+        k: common_vendor.o(transferClick),
+        l: replayIcon,
+        m: common_vendor.o(replay),
+        n: common_vendor.o(pauseClick),
+        o: pauseIcon,
+        p: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

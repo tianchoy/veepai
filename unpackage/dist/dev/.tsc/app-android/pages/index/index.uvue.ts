@@ -16,8 +16,8 @@ const _cache = __ins.renderCache;
 	const playIcon = '/static/video/play.png'
 	const pauseIcon = '/static/video/pause.png'
 	const addIcon = '/static/tabbar/add.png'
-
 	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
+	const videoRef = ref(null);
 
 	const addDevices = () => {
 		uni.showToast({
@@ -31,6 +31,10 @@ const _cache = __ins.renderCache;
 			title: '重播',
 			icon: 'none'
 		})
+
+
+
+		uni.createVideoContext('myVideo')!!.play();
 	}
 
 	const transferClick = () => {
@@ -55,6 +59,10 @@ const _cache = __ins.renderCache;
 	}
 
 	const pauseClick = () => {
+
+
+
+		uni.createVideoContext('myVideo')!!.pause();
 		uni.showToast({
 			title: '暂停',
 			icon: 'none'
@@ -64,6 +72,13 @@ const _cache = __ins.renderCache;
 	const vedioClick = () => {
 		uni.showToast({
 			title: '播放',
+			icon: 'none'
+		})
+	}
+	
+	const clickVdedio = () => {
+		uni.showToast({
+			title:'sss',
 			icon: 'none'
 		})
 	}
@@ -78,12 +93,21 @@ return (): any | null => {
       }), [
         createElementVNode("video", utsMapOf({
           class: "video",
+          id: "myVideo",
           title: deviceTitle.value,
           src: videoSrc,
-          controls: false,
-          onClick: vedioClick
+          ref_key: "videoRef",
+          ref: videoRef,
+          controls: true,
+          "show-play-btn": true,
+          "show-center-play-btn": true,
+          "enable-progress-gesture": true,
+          "show-fullscreen-btn": true,
+          "show-mute-btn": true,
+          onClick: clickVdedio
         }), null, 8 /* PROPS */, ["title"])
       ], 4 /* STYLE */),
+      createElementVNode("view", null, toDisplayString(deviceTitle.value), 1 /* TEXT */),
       createElementVNode("view", utsMapOf({ class: "video-right-control" }), [
         createElementVNode("view", utsMapOf({ class: "vedio-control" }), [
           createElementVNode("image", utsMapOf({

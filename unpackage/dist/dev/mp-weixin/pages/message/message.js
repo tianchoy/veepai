@@ -25,6 +25,9 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
     const playVideo = () => {
       common_vendor.index.createVideoContext("myVideo").play();
     };
+    const pasueVideo = () => {
+      common_vendor.index.createVideoContext("myVideo").pause();
+    };
     class SecurityEvent {
       constructor(id, type, time, location) {
         this.id = id;
@@ -57,14 +60,14 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
     };
     const select = (day) => {
       today.value = uni_modules_limeDayuts_common_index.dayuts(day.fullDate).format("MM-DD");
-      common_vendor.index.__f__("log", "at pages/message/message.uvue:121", today.value);
+      common_vendor.index.__f__("log", "at pages/message/message.uvue:130", today.value);
       if (day.isToday) {
-        common_vendor.index.__f__("log", "at pages/message/message.uvue:123", "今天");
+        common_vendor.index.__f__("log", "at pages/message/message.uvue:132", "今天");
       }
       showCalendar.value = false;
     };
     const change = (res) => {
-      common_vendor.index.__f__("log", "at pages/message/message.uvue:129", "res", res);
+      common_vendor.index.__f__("log", "at pages/message/message.uvue:138", "res", res);
     };
     const ShowCalendar = () => {
       showCalendar.value = !showCalendar.value;
@@ -80,10 +83,11 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         b: videoSrc,
         c: testTitle.value,
         d: common_vendor.o(playVideo),
-        e: common_vendor.t(today.value),
-        f: common_assets._imports_0,
-        g: common_vendor.o(ShowCalendar),
-        h: common_vendor.f(tabs.value, (tab = null, index = null, i0 = null) => {
+        e: common_vendor.o(pasueVideo),
+        f: common_vendor.t(today.value),
+        g: common_assets._imports_0,
+        h: common_vendor.o(ShowCalendar),
+        i: common_vendor.f(tabs.value, (tab = null, index = null, i0 = null) => {
           return new UTSJSONObject({
             a: common_vendor.t(tab.label),
             b: index,
@@ -93,7 +97,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
             }, index)
           });
         }),
-        i: common_vendor.f(getFilteredEvents(), (event = null, index = null, i0 = null) => {
+        j: common_vendor.f(getFilteredEvents(), (event = null, index = null, i0 = null) => {
           return new UTSJSONObject({
             a: event.type === "human" ? "/static/people.png" : "/static/mobile.png",
             b: common_vendor.t(event.type === "human" ? "人形侦测" : "移动侦测"),
@@ -101,18 +105,18 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
             d: index
           });
         }),
-        j: common_assets._imports_1,
-        k: showCalendar.value
+        k: common_assets._imports_1,
+        l: showCalendar.value
       }), showCalendar.value ? new UTSJSONObject({
-        l: common_vendor.o(select),
-        m: common_vendor.o(change),
-        n: common_vendor.p(new UTSJSONObject({
+        m: common_vendor.o(select),
+        n: common_vendor.o(change),
+        o: common_vendor.p(new UTSJSONObject({
           signedDates: checkIns.value,
           dayHeight: 60
         })),
-        o: common_vendor.o(hideCalendar)
+        p: common_vendor.o(hideCalendar)
       }) : new UTSJSONObject({}), new UTSJSONObject({
-        p: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        q: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       }));
       return __returned__;
     };

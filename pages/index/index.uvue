@@ -2,8 +2,11 @@
 	<view class="container">
 		<view class="content">
 			<view class="video-container" style="border-radius: 15rpx; overflow: hidden;">
-				<video class="video" :title="deviceTitle" :src="videoSrc" :controls="false" @click="vedioClick"></video>
+				<video class="video" id="myVideo" :title="deviceTitle" :src="videoSrc" ref="videoRef" :controls="true" :show-play-btn="true"
+				:show-center-play-btn="true" :enable-progress-gesture="true" :show-fullscreen-btn="true"
+				:show-mute-btn="true" @click="clickVdedio" ></video>
 			</view>
+			<view>{{deviceTitle}}</view>
 			<view class="video-right-control">
 				<view class="vedio-control">
 					<image class="vedio-control-icon" :src="forward" @click="toDeviceDetail"></image>
@@ -39,8 +42,8 @@
 	const playIcon = '/static/video/play.png'
 	const pauseIcon = '/static/video/pause.png'
 	const addIcon = '/static/tabbar/add.png'
-
 	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
+	const videoRef = ref(null);
 
 	const addDevices = () => {
 		uni.showToast({
@@ -54,6 +57,10 @@
 			title: '重播',
 			icon: 'none'
 		})
+		// #ifdef APP-IOS
+		videoRef.value.play()
+		// #endif
+		uni.createVideoContext('myVideo')!!.play();
 	}
 
 	const transferClick = () => {
@@ -78,6 +85,10 @@
 	}
 
 	const pauseClick = () => {
+		// #ifdef APP-IOS
+		videoRef.value.pause()
+		// #endif
+		uni.createVideoContext('myVideo')!!.pause();
 		uni.showToast({
 			title: '暂停',
 			icon: 'none'
@@ -87,6 +98,13 @@
 	const vedioClick = () => {
 		uni.showToast({
 			title: '播放',
+			icon: 'none'
+		})
+	}
+	
+	const clickVdedio = () => {
+		uni.showToast({
+			title:'sss',
 			icon: 'none'
 		})
 	}

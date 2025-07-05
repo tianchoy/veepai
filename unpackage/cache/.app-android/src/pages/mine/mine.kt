@@ -15,7 +15,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import io.dcloud.uniapp.extapi.showToast as uni_showToast
+import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 open class GenPagesMineMine : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     companion object {
@@ -24,8 +24,8 @@ open class GenPagesMineMine : BasePage {
             val __ins = getCurrentInstance()!!
             val _ctx = __ins.proxy as GenPagesMineMine
             val _cache = __ins.renderCache
-            val getUser = fun(){
-                uni_showToast(ShowToastOptions(title = "用户中心", icon = "none"))
+            val userInfo = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/userInfo/userInfo"))
             }
             return fun(): Any? {
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
@@ -44,7 +44,7 @@ open class GenPagesMineMine : BasePage {
                         ))
                     )),
                     createElementVNode("view", utsMapOf("class" to "tools-list"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to getUser), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to userInfo), utsArrayOf(
                             createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
                                 createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/user.png", "mode" to "aspectFit")),
                                 createElementVNode("text", utsMapOf("class" to "item-text"), "个人信息")

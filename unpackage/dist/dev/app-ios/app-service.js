@@ -74,12 +74,13 @@
   const pauseIcon = "/static/video/pause.png";
   const addIcon = "/static/tabbar/add.png";
   const videoSrc$1 = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "index",
     setup(__props, _a) {
       var __expose = _a.expose;
       __expose();
       const deviceTitle = vue.ref("设备名称");
+      const videoRef = vue.ref(null);
       const addDevices = () => {
         uni.showToast({
           title: "添加",
@@ -91,6 +92,8 @@
           title: "重播",
           icon: "none"
         });
+        videoRef.value.play();
+        uni.createVideoContext("myVideo").play();
       };
       const transferClick = () => {
         uni.showToast({
@@ -111,6 +114,8 @@
         });
       };
       const pauseClick = () => {
+        videoRef.value.pause();
+        uni.createVideoContext("myVideo").pause();
         uni.showToast({
           title: "暂停",
           icon: "none"
@@ -122,12 +127,18 @@
           icon: "none"
         });
       };
-      const __returned__ = { deviceTitle, forward, errIcon, transfer, replayIcon, playIcon, pauseIcon, addIcon, videoSrc: videoSrc$1, addDevices, replay, transferClick, errClick, toDeviceDetail, pauseClick, vedioClick };
+      const clickVdedio = () => {
+        uni.showToast({
+          title: "sss",
+          icon: "none"
+        });
+      };
+      const __returned__ = { deviceTitle, forward, errIcon, transfer, replayIcon, playIcon, pauseIcon, addIcon, videoSrc: videoSrc$1, videoRef, addDevices, replay, transferClick, errClick, toDeviceDetail, pauseClick, vedioClick, clickVdedio };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   }));
-  const _style_0$4 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
+  const _style_0$5 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
   const _export_sfc = (sfc, props) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
@@ -135,7 +146,7 @@
     }
     return target;
   };
-  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", {
@@ -144,12 +155,26 @@
         }, [
           vue.createElementVNode("video", {
             class: "video",
+            id: "myVideo",
             title: $setup.deviceTitle,
             src: $setup.videoSrc,
-            controls: false,
-            onClick: $setup.vedioClick
+            ref: "videoRef",
+            controls: true,
+            "show-play-btn": true,
+            "show-center-play-btn": true,
+            "enable-progress-gesture": true,
+            "show-fullscreen-btn": true,
+            "show-mute-btn": true,
+            onClick: $setup.clickVdedio
           }, null, 8, ["title"])
         ]),
+        vue.createElementVNode(
+          "view",
+          null,
+          vue.toDisplayString($setup.deviceTitle),
+          1
+          /* TEXT */
+        ),
         vue.createElementVNode("view", { class: "video-right-control" }, [
           vue.createElementVNode("view", { class: "vedio-control" }, [
             vue.createElementVNode("image", {
@@ -192,7 +217,7 @@
       ])
     ]);
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["styles", [_style_0$4]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["styles", [_style_0$5]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
   function __read(o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
     if (!m)
@@ -776,7 +801,7 @@
     }
     return 0;
   }
-  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
     __name: "l-daily-punch",
     props: {
       canSupplement: new UTSJSONObject({
@@ -947,8 +972,8 @@
       return __returned__;
     }
   });
-  const _style_0$3 = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$4 = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
+  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "calender" }, [
       vue.createElementVNode(
         "canvas",
@@ -965,7 +990,7 @@
       )
     ]);
   }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["styles", [_style_0$3]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["styles", [_style_0$4]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
   function resolveEasycom(component, easycom) {
     return typeof component === "string" ? easycom : component;
   }
@@ -2089,7 +2114,7 @@
     });
   }
   const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "message",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -2103,6 +2128,10 @@
       const playVideo = () => {
         videoRef.value.play();
         uni.createVideoContext("myVideo").play();
+      };
+      const pasueVideo = () => {
+        videoRef.value.pause();
+        uni.createVideoContext("myVideo").pause();
       };
       class SecurityEvent {
         constructor(id, type, time, location) {
@@ -2142,14 +2171,14 @@
       };
       const select = (day) => {
         today.value = dayuts(day.fullDate).format("MM-DD");
-        uni.__log__("log", "at pages/message/message.uvue:121", today.value);
+        uni.__log__("log", "at pages/message/message.uvue:130", today.value);
         if (day.isToday) {
-          uni.__log__("log", "at pages/message/message.uvue:123", "今天");
+          uni.__log__("log", "at pages/message/message.uvue:132", "今天");
         }
         showCalendar.value = false;
       };
       const change = (res) => {
-        uni.__log__("log", "at pages/message/message.uvue:129", "res", res);
+        uni.__log__("log", "at pages/message/message.uvue:138", "res", res);
       };
       const ShowCalendar = () => {
         showCalendar.value = !showCalendar.value;
@@ -2157,15 +2186,15 @@
       const hideCalendar = () => {
         showCalendar.value = false;
       };
-      const __returned__ = { checkIns, today, showCalendar, videoSrc, activeTab, testTitle, videoRef, playVideo, SecurityEvent, Tab, tabs, events, getFilteredEvents, changeTab, select, change, ShowCalendar, hideCalendar };
+      const __returned__ = { checkIns, today, showCalendar, videoSrc, activeTab, testTitle, videoRef, playVideo, pasueVideo, SecurityEvent, Tab, tabs, events, getFilteredEvents, changeTab, select, change, ShowCalendar, hideCalendar };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   }));
-  const _imports_0$1 = "/static/down.png";
+  const _imports_0$2 = "/static/down.png";
   const _imports_1$1 = "/static/vedio.png";
-  const _style_0$2 = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } } };
-  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$3 = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } } };
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "vedio-box" }, [
@@ -2181,9 +2210,11 @@
           "show-fullscreen-btn": true,
           "show-mute-btn": true,
           title: $setup.testTitle
-        }, null, 8, ["title"])
+        }, null, 8, ["title"]),
+        vue.createElementVNode("view")
       ]),
       vue.createElementVNode("button", { onClick: $setup.playVideo }, "播放视频"),
+      vue.createElementVNode("button", { onClick: $setup.pasueVideo }, "暂停视频"),
       vue.createElementVNode("view", { class: "content-box" }, [
         vue.createElementVNode("view", { class: "sub-nav" }, [
           vue.createElementVNode("view", {
@@ -2199,7 +2230,7 @@
             ),
             vue.createElementVNode("image", {
               class: "down",
-              src: _imports_0$1
+              src: _imports_0$2
             }),
             vue.createElementVNode("text", null, " | ")
           ]),
@@ -2280,28 +2311,27 @@
       ])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["styles", [_style_0$2]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
-  const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["styles", [_style_0$3]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
+  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "mine",
     setup(__props, _a) {
       var __expose = _a.expose;
       __expose();
-      const getUser = () => {
-        uni.showToast({
-          title: "用户中心",
-          icon: "none"
+      const userInfo = () => {
+        uni.navigateTo({
+          url: "/pages/mine/userInfo/userInfo"
         });
       };
-      const __returned__ = { getUser };
+      const __returned__ = { userInfo };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   }));
-  const _imports_0 = "/static/mine/local.png";
+  const _imports_0$1 = "/static/mine/local.png";
   const _imports_1 = "/static/mine/cloud.png";
   const _imports_2 = "/static/mine/msgList.png";
   const _imports_3 = "/static/mine/user.png";
-  const _imports_4 = "/static/mine/right.png";
+  const _imports_0 = "/static/mine/right.png";
   const _imports_5 = "/static/mine/liuliang.png";
   const _imports_6 = "/static/mine/order.png";
   const _imports_7 = "/static/mine/quetion.png";
@@ -2309,14 +2339,14 @@
   const _imports_9 = "/static/mine/advice.png";
   const _imports_10 = "/static/mine/setting.png";
   const _imports_11 = "/static/mine/about.png";
-  const _style_0$1 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
-  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$2 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "files" }, [
         vue.createElementVNode("view", { class: "file" }, [
           vue.createElementVNode("image", {
             class: "fileIcon",
-            src: _imports_0,
+            src: _imports_0$1,
             mode: "aspectFit"
           }),
           vue.createElementVNode("text", { class: "file-text" }, "本地文件")
@@ -2341,7 +2371,7 @@
       vue.createElementVNode("view", { class: "tools-list" }, [
         vue.createElementVNode("view", {
           class: "item",
-          onClick: $setup.getUser
+          onClick: $setup.userInfo
         }, [
           vue.createElementVNode("view", { class: "info" }, [
             vue.createElementVNode("image", {
@@ -2354,7 +2384,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_4,
+              src: _imports_0,
               mode: "aspectFit"
             })
           ])
@@ -2371,7 +2401,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_4,
+              src: _imports_0,
               mode: "aspectFit"
             })
           ])
@@ -2388,7 +2418,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_4,
+              src: _imports_0,
               mode: "aspectFit"
             })
           ])
@@ -2405,7 +2435,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_4,
+              src: _imports_0,
               mode: "aspectFit"
             })
           ])
@@ -2422,7 +2452,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_4,
+              src: _imports_0,
               mode: "aspectFit"
             })
           ])
@@ -2439,7 +2469,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_4,
+              src: _imports_0,
               mode: "aspectFit"
             })
           ])
@@ -2456,7 +2486,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_4,
+              src: _imports_0,
               mode: "aspectFit"
             })
           ])
@@ -2473,7 +2503,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_4,
+              src: _imports_0,
               mode: "aspectFit"
             })
           ])
@@ -2481,10 +2511,56 @@
       ])
     ]);
   }
-  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["styles", [_style_0$1]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
+  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["styles", [_style_0$2]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
+  const _style_0$1 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "35rpx", "height": "35rpx" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
+  const _sfc_main$1 = {};
+  function _sfc_render(_ctx, _cache) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
+      vue.createElementVNode("view", { class: "title" }, [
+        vue.createElementVNode("text", null, "个人信息")
+      ]),
+      vue.createElementVNode("view", { class: "info" }, [
+        vue.createElementVNode("view", { class: "info-item" }, [
+          vue.createElementVNode("text", null, "账号"),
+          vue.createElementVNode("text", null, "18888888888")
+        ]),
+        vue.createElementVNode("view", { class: "info-item nobottom" }, [
+          vue.createElementVNode("text", null, "账号"),
+          vue.createElementVNode("text", null, "18888888888")
+        ])
+      ]),
+      vue.createElementVNode("view", { class: "title" }, [
+        vue.createElementVNode("text", null, "安全信息")
+      ]),
+      vue.createElementVNode("view", { class: "info" }, [
+        vue.createElementVNode("view", { class: "info-item" }, [
+          vue.createElementVNode("text", null, "账号"),
+          vue.createElementVNode("image", {
+            class: "icon",
+            src: _imports_0,
+            mode: "aspectFit"
+          })
+        ]),
+        vue.createElementVNode("view", { class: "info-item nobottom" }, [
+          vue.createElementVNode("text", null, "账号"),
+          vue.createElementVNode("image", {
+            class: "icon",
+            src: _imports_0,
+            mode: "aspectFit"
+          })
+        ])
+      ]),
+      vue.createElementVNode("view", { class: "title" }, [
+        vue.createElementVNode("text", null, "第三方账号")
+      ]),
+      vue.createElementVNode("view", { class: "info" })
+    ]);
+  }
+  const PagesMineUserInfoUserInfo = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["styles", [_style_0$1]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/userInfo.uvue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   __definePage("pages/message/message", PagesMessageMessage);
   __definePage("pages/mine/mine", PagesMineMine);
+  __definePage("pages/mine/userInfo/userInfo", PagesMineUserInfoUserInfo);
   const _sfc_main = vue.defineComponent(new UTSJSONObject({
     onLaunch: function() {
       uni.__log__("log", "at App.uvue:5", "App Launch");
