@@ -18,17 +18,19 @@ const _cache = __ins.renderCache;
 			uni.showModal({
 				title: '确认解绑',
 				content: '确定要解除微信绑定吗？',
+				cancelText: '取消',
+				confirmText: '确定',
 				success: (res) => {
 					if (res.confirm) {
-						console.log('调用解绑API...', " at pages/mine/userInfo/userInfo.uvue:59")
-						
+						console.log('调用解绑API...', " at pages/mine/userInfo/userInfo.uvue:64")
+
 						switchVal.value = false
 						uni.showToast({
 							title: '已成功解绑微信',
 							icon: 'none'
 						})
 					} else {
-						switchVal.value = true
+						switchVal.value = isCurrentlyBound
 					}
 				}
 			})
@@ -36,9 +38,11 @@ const _cache = __ins.renderCache;
 			uni.showModal({
 				title: '确认绑定',
 				content: '确定要绑定微信账号吗？',
+				cancelText: '取消',
+				confirmText: '确定',
 				success: (res) => {
 					if (res.confirm) {
-						console.log('调用绑定API...', " at pages/mine/userInfo/userInfo.uvue:77")
+						console.log('调用绑定API...', " at pages/mine/userInfo/userInfo.uvue:84")
 
 						switchVal.value = true
 						uni.showToast({
@@ -46,7 +50,7 @@ const _cache = __ins.renderCache;
 							icon: 'none'
 						})
 					} else {
-						switchVal.value = false
+						switchVal.value = isCurrentlyBound
 					}
 				}
 			})
@@ -69,6 +73,20 @@ const _cache = __ins.renderCache;
 		})
 	}
 
+	//修改手机号
+	const changePhoneNumber = () => {
+		uni.navigateTo({
+			url: '/pages/mine/userInfo/changePhoneNumber/changePhoneNumber'
+		})
+	}
+
+	//注销账号
+	const cancelAnAccount = () => {
+		uni.navigateTo({
+			url: '/pages/mine/userInfo/CancelAnAccount/CancelAnAccount'
+		})
+	}
+
 return (): any | null => {
 
 const _component_fui_switch = resolveEasyComponent("fui-switch",_easycom_fui_switch)
@@ -83,9 +101,19 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
         createElementVNode("text", null, "账号"),
         createElementVNode("text", null, "18888888888")
       ]),
-      createElementVNode("view", utsMapOf({ class: "info-item nobottom" }), [
+      createElementVNode("view", utsMapOf({
+        class: "info-item nobottom",
+        onClick: changePhoneNumber
+      }), [
         createElementVNode("text", null, "手机号"),
-        createElementVNode("text", null, "18888888888")
+        createElementVNode("view", utsMapOf({ class: "phone" }), [
+          createElementVNode("text", null, "18888888888"),
+          createElementVNode("image", utsMapOf({
+            class: "icon",
+            src: _imports_0,
+            mode: "aspectFit"
+          }))
+        ])
       ])
     ]),
     createElementVNode("view", utsMapOf({ class: "title" }), [
@@ -100,7 +128,10 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
           mode: "aspectFit"
         }))
       ]),
-      createElementVNode("view", utsMapOf({ class: "info-item nobottom" }), [
+      createElementVNode("view", utsMapOf({
+        class: "info-item nobottom",
+        onClick: cancelAnAccount
+      }), [
         createElementVNode("text", null, "注销账号"),
         createElementVNode("image", utsMapOf({
           class: "icon",
@@ -129,7 +160,7 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
     createElementVNode("view", utsMapOf({ class: "btn-box" }), [
       createVNode(_component_fui_button, utsMapOf({
         color: "#fff",
-        text: "注销账号",
+        text: "退出登陆",
         background: "#1296db",
         onOnclick: logout
       }))
@@ -140,4 +171,4 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
 
 })
 export default __sfc__
-const GenPagesMineUserInfoUserInfoStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundImage", "none"], ["backgroundColor", "#f3f3f3"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"]]))], ["title", utsMapOf([[".container ", utsMapOf([["fontSize", "30rpx"], ["color", "#333333"], ["paddingTop", "50rpx"], ["paddingRight", 0], ["paddingBottom", "10rpx"], ["paddingLeft", "20rpx"]])]])], ["info", utsMapOf([[".container ", utsMapOf([["backgroundImage", "none"], ["backgroundColor", "#ffffff"], ["paddingTop", "10rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "30rpx"], ["borderTopLeftRadius", "10rpx"], ["borderTopRightRadius", "10rpx"], ["borderBottomRightRadius", "10rpx"], ["borderBottomLeftRadius", "10rpx"]])]])], ["info-item", utsMapOf([[".container .info ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"], ["paddingTop", "20rpx"], ["paddingRight", 0], ["paddingBottom", "20rpx"], ["paddingLeft", 0], ["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#f1f1f1"]])]])], ["icon", utsMapOf([[".container .info .info-item ", utsMapOf([["width", "35rpx"], ["height", "35rpx"]])]])], ["switch-state", utsMapOf([[".container .info .info-item ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-end"], ["alignItems", "center"]])]])], ["nobottom", utsMapOf([[".container .info ", utsMapOf([["borderBottomWidth", "medium"], ["borderBottomStyle", "none"], ["borderBottomColor", "#000000"]])]])], ["btn-box", utsMapOf([[".container ", utsMapOf([["marginTop", "200rpx"]])]])]])]
+const GenPagesMineUserInfoUserInfoStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundImage", "none"], ["backgroundColor", "#f3f3f3"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"]]))], ["title", utsMapOf([[".container ", utsMapOf([["fontSize", "30rpx"], ["color", "#333333"], ["paddingTop", "50rpx"], ["paddingRight", 0], ["paddingBottom", "10rpx"], ["paddingLeft", "20rpx"]])]])], ["info", utsMapOf([[".container ", utsMapOf([["backgroundImage", "none"], ["backgroundColor", "#ffffff"], ["paddingTop", "10rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "30rpx"], ["borderTopLeftRadius", "10rpx"], ["borderTopRightRadius", "10rpx"], ["borderBottomRightRadius", "10rpx"], ["borderBottomLeftRadius", "10rpx"]])]])], ["info-item", utsMapOf([[".container .info ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"], ["paddingTop", "20rpx"], ["paddingRight", 0], ["paddingBottom", "20rpx"], ["paddingLeft", 0], ["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#f1f1f1"]])]])], ["icon", utsMapOf([[".container .info .info-item ", utsMapOf([["width", "30rpx"], ["height", "30rpx"]])]])], ["switch-state", utsMapOf([[".container .info .info-item ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-end"], ["alignItems", "center"]])]])], ["phone", utsMapOf([[".container .info .info-item ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-end"], ["alignItems", "center"]])]])], ["nobottom", utsMapOf([[".container .info ", utsMapOf([["borderBottomWidth", "medium"], ["borderBottomStyle", "none"], ["borderBottomColor", "#000000"]])]])], ["btn-box", utsMapOf([[".container ", utsMapOf([["marginTop", "200rpx"]])]])]])]

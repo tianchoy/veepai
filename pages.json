@@ -1,5 +1,12 @@
 {
-	"pages": [{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"fui-(.*)": "firstui-uni/firstui/fui-$1/fui-$1.vue"
+		}
+	},
+	"pages": [
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页"
@@ -22,10 +29,23 @@
 			"style": {
 				"navigationBarTitleText": "个人信息"
 			}
+		},
+		{
+			"path": "pages/mine/userInfo/CancelAnAccount/CancelAnAccount",
+			"style": {
+				"navigationBarTitleText": "注销账号"
+			}
+		},
+		{
+			"path": "pages/mine/userInfo/changePhoneNumber/changePhoneNumber",
+			"style": {
+				"navigationBarTitleText": "修改手机号"
+			}
 		}
 	],
 	"tabBar": {
-		"list": [{
+		"list": [
+			{
 				"pagePath": "pages/index/index",
 				"iconPath": "./static/tabbar/home.png",
 				"selectedIconPath": "./static/tabbar/home1.png",

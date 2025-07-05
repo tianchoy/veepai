@@ -15,6 +15,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
+import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 import io.dcloud.uniapp.extapi.showModal as uni_showModal
 import io.dcloud.uniapp.extapi.showToast as uni_showToast
 open class GenPagesMineUserInfoUserInfo : BasePage {
@@ -29,23 +30,23 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
             val change = fun(){
                 val isCurrentlyBound = switchVal.value
                 if (isCurrentlyBound) {
-                    uni_showModal(ShowModalOptions(title = "确认解绑", content = "确定要解除微信绑定吗？", success = fun(res){
+                    uni_showModal(ShowModalOptions(title = "确认解绑", content = "确定要解除微信绑定吗？", cancelText = "取消", confirmText = "确定", success = fun(res){
                         if (res.confirm) {
-                            console.log("调用解绑API...", " at pages/mine/userInfo/userInfo.uvue:59")
+                            console.log("调用解绑API...", " at pages/mine/userInfo/userInfo.uvue:64")
                             switchVal.value = false
                             uni_showToast(ShowToastOptions(title = "已成功解绑微信", icon = "none"))
                         } else {
-                            switchVal.value = true
+                            switchVal.value = isCurrentlyBound
                         }
                     }))
                 } else {
-                    uni_showModal(ShowModalOptions(title = "确认绑定", content = "确定要绑定微信账号吗？", success = fun(res){
+                    uni_showModal(ShowModalOptions(title = "确认绑定", content = "确定要绑定微信账号吗？", cancelText = "取消", confirmText = "确定", success = fun(res){
                         if (res.confirm) {
-                            console.log("调用绑定API...", " at pages/mine/userInfo/userInfo.uvue:77")
+                            console.log("调用绑定API...", " at pages/mine/userInfo/userInfo.uvue:84")
                             switchVal.value = true
                             uni_showToast(ShowToastOptions(title = "已成功绑定微信", icon = "none"))
                         } else {
-                            switchVal.value = false
+                            switchVal.value = isCurrentlyBound
                         }
                     }
                     ))
@@ -59,6 +60,12 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
                 }
                 ))
             }
+            val changePhoneNumber = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/userInfo/changePhoneNumber/changePhoneNumber"))
+            }
+            val cancelAnAccount = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/userInfo/CancelAnAccount/CancelAnAccount"))
+            }
             return fun(): Any? {
                 val _component_fui_switch = resolveEasyComponent("fui-switch", GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitchClass)
                 val _component_fui_button = resolveEasyComponent("fui-button", GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass)
@@ -71,9 +78,12 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
                             createElementVNode("text", null, "账号"),
                             createElementVNode("text", null, "18888888888")
                         )),
-                        createElementVNode("view", utsMapOf("class" to "info-item nobottom"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "info-item nobottom", "onClick" to changePhoneNumber), utsArrayOf(
                             createElementVNode("text", null, "手机号"),
-                            createElementVNode("text", null, "18888888888")
+                            createElementVNode("view", utsMapOf("class" to "phone"), utsArrayOf(
+                                createElementVNode("text", null, "18888888888"),
+                                createElementVNode("image", utsMapOf("class" to "icon", "src" to default1, "mode" to "aspectFit"))
+                            ))
                         ))
                     )),
                     createElementVNode("view", utsMapOf("class" to "title"), utsArrayOf(
@@ -84,7 +94,7 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
                             createElementVNode("text", null, "修改密码"),
                             createElementVNode("image", utsMapOf("class" to "icon", "src" to default1, "mode" to "aspectFit"))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "info-item nobottom"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "info-item nobottom", "onClick" to cancelAnAccount), utsArrayOf(
                             createElementVNode("text", null, "注销账号"),
                             createElementVNode("image", utsMapOf("class" to "icon", "src" to default1, "mode" to "aspectFit"))
                         ))
@@ -107,7 +117,7 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
                         ))
                     )),
                     createElementVNode("view", utsMapOf("class" to "btn-box"), utsArrayOf(
-                        createVNode(_component_fui_button, utsMapOf("color" to "#fff", "text" to "注销账号", "background" to "#1296db", "onOnclick" to logout))
+                        createVNode(_component_fui_button, utsMapOf("color" to "#fff", "text" to "退出登陆", "background" to "#1296db", "onOnclick" to logout))
                     ))
                 ))
             }
@@ -121,7 +131,7 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundImage" to "none", "backgroundColor" to "#f3f3f3", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx")), "title" to utsMapOf(".container " to utsMapOf("fontSize" to "30rpx", "color" to "#333333", "paddingTop" to "50rpx", "paddingRight" to 0, "paddingBottom" to "10rpx", "paddingLeft" to "20rpx")), "info" to utsMapOf(".container " to utsMapOf("backgroundImage" to "none", "backgroundColor" to "#ffffff", "paddingTop" to "10rpx", "paddingRight" to "30rpx", "paddingBottom" to "10rpx", "paddingLeft" to "30rpx", "borderTopLeftRadius" to "10rpx", "borderTopRightRadius" to "10rpx", "borderBottomRightRadius" to "10rpx", "borderBottomLeftRadius" to "10rpx")), "info-item" to utsMapOf(".container .info " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between", "alignItems" to "center", "paddingTop" to "20rpx", "paddingRight" to 0, "paddingBottom" to "20rpx", "paddingLeft" to 0, "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f1f1f1")), "icon" to utsMapOf(".container .info .info-item " to utsMapOf("width" to "35rpx", "height" to "35rpx")), "switch-state" to utsMapOf(".container .info .info-item " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-end", "alignItems" to "center")), "nobottom" to utsMapOf(".container .info " to utsMapOf("borderBottomWidth" to "medium", "borderBottomStyle" to "none", "borderBottomColor" to "#000000")), "btn-box" to utsMapOf(".container " to utsMapOf("marginTop" to "200rpx")))
+                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundImage" to "none", "backgroundColor" to "#f3f3f3", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx")), "title" to utsMapOf(".container " to utsMapOf("fontSize" to "30rpx", "color" to "#333333", "paddingTop" to "50rpx", "paddingRight" to 0, "paddingBottom" to "10rpx", "paddingLeft" to "20rpx")), "info" to utsMapOf(".container " to utsMapOf("backgroundImage" to "none", "backgroundColor" to "#ffffff", "paddingTop" to "10rpx", "paddingRight" to "30rpx", "paddingBottom" to "10rpx", "paddingLeft" to "30rpx", "borderTopLeftRadius" to "10rpx", "borderTopRightRadius" to "10rpx", "borderBottomRightRadius" to "10rpx", "borderBottomLeftRadius" to "10rpx")), "info-item" to utsMapOf(".container .info " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between", "alignItems" to "center", "paddingTop" to "20rpx", "paddingRight" to 0, "paddingBottom" to "20rpx", "paddingLeft" to 0, "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f1f1f1")), "icon" to utsMapOf(".container .info .info-item " to utsMapOf("width" to "30rpx", "height" to "30rpx")), "switch-state" to utsMapOf(".container .info .info-item " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-end", "alignItems" to "center")), "phone" to utsMapOf(".container .info .info-item " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-end", "alignItems" to "center")), "nobottom" to utsMapOf(".container .info " to utsMapOf("borderBottomWidth" to "medium", "borderBottomStyle" to "none", "borderBottomColor" to "#000000")), "btn-box" to utsMapOf(".container " to utsMapOf("marginTop" to "200rpx")))
             }
         var inheritAttrs = true
         var inject: Map<String, Map<String, Any?>> = utsMapOf()

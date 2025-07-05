@@ -50,10 +50,16 @@
   border-bottom: 1rpx solid #f1f1f1;
 }
 .container .info .info-item .icon {
-  width: 35rpx;
-  height: 35rpx;
+  width: 30rpx;
+  height: 30rpx;
 }
 .container .info .info-item .switch-state {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.container .info .info-item .phone {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;

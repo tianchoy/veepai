@@ -71,7 +71,7 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
     )
 }
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
-    val hosts: String = "127.0.0.1,192.168.3.22"
+    val hosts: String = "127.0.0.1,192.168.3.34"
     val port: String = "8090"
     val id: String = "app-android_L-Af8E"
     if (hosts == "" || port == "" || id == "") {
@@ -2913,6 +2913,24 @@ val GenPagesMineUserInfoUserInfoClass = CreateVueComponent(GenPagesMineUserInfoU
     return GenPagesMineUserInfoUserInfo(instance, renderer)
 }
 )
+val default2 = "/static/error_big.png"
+val GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass = CreateVueComponent(GenPagesMineUserInfoCancelAnAccountCancelAnAccount::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoCancelAnAccountCancelAnAccount.inheritAttrs, inject = GenPagesMineUserInfoCancelAnAccountCancelAnAccount.inject, props = GenPagesMineUserInfoCancelAnAccountCancelAnAccount.props, propsNeedCastKeys = GenPagesMineUserInfoCancelAnAccountCancelAnAccount.propsNeedCastKeys, emits = GenPagesMineUserInfoCancelAnAccountCancelAnAccount.emits, components = GenPagesMineUserInfoCancelAnAccountCancelAnAccount.components, styles = GenPagesMineUserInfoCancelAnAccountCancelAnAccount.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesMineUserInfoCancelAnAccountCancelAnAccount.setup(props as GenPagesMineUserInfoCancelAnAccountCancelAnAccount)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesMineUserInfoCancelAnAccountCancelAnAccount {
+    return GenPagesMineUserInfoCancelAnAccountCancelAnAccount(instance, renderer)
+}
+)
+val GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass = CreateVueComponent(GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.inheritAttrs, inject = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.inject, props = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.props, propsNeedCastKeys = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.propsNeedCastKeys, emits = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.emits, components = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.components, styles = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.styles)
+}
+, fun(instance, renderer): GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber {
+    return GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber(instance, renderer)
+}
+)
 fun createApp(): UTSJSONObject {
     val app = createSSRApp(GenAppClass)
     return UTSJSONObject(Map<String, Any?>(utsArrayOf(
@@ -2940,6 +2958,8 @@ fun definePageRoutes() {
     __uniRoutes.push(UniPageRoute(path = "pages/message/message", component = GenPagesMessageMessageClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "消息")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/mine", component = GenPagesMineMineClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "我的")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/userInfo", component = GenPagesMineUserInfoUserInfoClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "个人信息")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/CancelAnAccount/CancelAnAccount", component = GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "注销账号")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/changePhoneNumber/changePhoneNumber", component = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "修改手机号")))
 }
 val __uniTabBar: Map<String, Any?>? = utsMapOf("list" to utsArrayOf(
     utsMapOf("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),

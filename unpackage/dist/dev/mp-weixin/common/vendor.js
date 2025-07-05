@@ -7887,7 +7887,7 @@ function isConsoleWritable() {
   return isWritable;
 }
 function initRuntimeSocketService() {
-  const hosts = "127.0.0.1,192.168.3.22";
+  const hosts = "127.0.0.1,192.168.3.22,169.254.103.179";
   const port = "8090";
   const id = "mp-weixin_6FOM61";
   const lazy = typeof swan !== "undefined";

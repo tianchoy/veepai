@@ -4,37 +4,45 @@
     "compiler_version": "4.66"
   },
   "files": {
-    "index.kt": {
-      "md5": "da8eb38b89e6efb21f54f7568fda843d0674c17d",
-      "class": ""
+    "uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.kt": {
+      "class": "GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch",
+      "md5": "e8c79e7ed16335debd18b1605cc223f62d44b4e9"
+    },
+    "pages/message/message.kt": {
+      "md5": "9366fa140493eb167bba7ea093c49be20e8c967f",
+      "class": "GenPagesMessageMessage"
+    },
+    "uni_modules/firstui-unix/components/fui-switch/fui-switch.kt": {
+      "md5": "37a8c379c9761bcb197e4a2a84078d4efd790a01",
+      "class": "GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch"
+    },
+    "pages/mine/userInfo/userInfo.kt": {
+      "md5": "ce702e49f371a4a840add3aedd09e579cb268f80",
+      "class": "GenPagesMineUserInfoUserInfo"
+    },
+    "pages/mine/userInfo/CancelAnAccount/CancelAnAccount.kt": {
+      "class": "GenPagesMineUserInfoCancelAnAccountCancelAnAccount",
+      "md5": "d48a43146509f9b88d071d27ac7e3bf3dfdce0ac"
     },
     "pages/index/index.kt": {
       "class": "GenPagesIndexIndex",
       "md5": "ee16accb1f9e4a29f5c95b95a68142d29049f447"
     },
-    "uni_modules/firstui-unix/components/fui-switch/fui-switch.kt": {
-      "class": "GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch",
-      "md5": "37a8c379c9761bcb197e4a2a84078d4efd790a01"
+    "pages/mine/userInfo/changePhoneNumber/changePhoneNumber.kt": {
+      "class": "GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber",
+      "md5": "efaf22aa58f2c4d542aae57dcf96bc08dc424f38"
+    },
+    "index.kt": {
+      "md5": "aba8873a3f8d37c10cad4f8af0b75247a2324bc9",
+      "class": ""
     },
     "pages/mine/mine.kt": {
-      "md5": "6fa67b881e4cec9def94d238b0a675459f4d7302",
-      "class": "GenPagesMineMine"
+      "class": "GenPagesMineMine",
+      "md5": "6fa67b881e4cec9def94d238b0a675459f4d7302"
     },
     "uni_modules/firstui-unix/components/fui-button/fui-button.kt": {
       "class": "GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton",
       "md5": "8efed2ae984875d0dc77d67e2f0bd2ee48f6463c"
-    },
-    "uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.kt": {
-      "class": "GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch",
-      "md5": "e8c79e7ed16335debd18b1605cc223f62d44b4e9"
-    },
-    "pages/mine/userInfo/userInfo.kt": {
-      "md5": "53bfb00fa865cda5dc8057afa877a83f407c0ca9",
-      "class": "GenPagesMineUserInfoUserInfo"
-    },
-    "pages/message/message.kt": {
-      "class": "GenPagesMessageMessage",
-      "md5": "9366fa140493eb167bba7ea093c49be20e8c967f"
     }
   }
 }

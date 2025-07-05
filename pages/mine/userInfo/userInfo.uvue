@@ -8,9 +8,12 @@
 				<text>账号</text>
 				<text>18888888888</text>
 			</view>
-			<view class="info-item nobottom">
+			<view class="info-item nobottom" @click="changePhoneNumber">
 				<text>手机号</text>
-				<text>18888888888</text>
+				<view class="phone">
+					<text>18888888888</text>
+					<image class="icon" src="@/static/mine/right.png" mode="aspectFit" />
+				</view>
 			</view>
 		</view>
 		<view class="title">
@@ -21,7 +24,7 @@
 				<text>修改密码</text>
 				<image class="icon" src="@/static/mine/right.png" mode="aspectFit" />
 			</view>
-			<view class="info-item nobottom">
+			<view class="info-item nobottom" @click="cancelAnAccount">
 				<text>注销账号</text>
 				<image class="icon" src="@/static/mine/right.png" mode="aspectFit" />
 			</view>
@@ -39,7 +42,7 @@
 			</view>
 		</view>
 		<view class="btn-box">
-			<fui-button color="#fff" text="注销账号" background="#1296db" @onclick="logout"></fui-button>
+			<fui-button color="#fff" text="退出登陆" background="#1296db" @onclick="logout"></fui-button>
 		</view>
 	</view>
 </template>
@@ -54,17 +57,19 @@
 			uni.showModal({
 				title: '确认解绑',
 				content: '确定要解除微信绑定吗？',
+				cancelText: '取消',
+				confirmText: '确定',
 				success: (res) => {
 					if (res.confirm) {
 						console.log('调用解绑API...')
-						
+
 						switchVal.value = false
 						uni.showToast({
 							title: '已成功解绑微信',
 							icon: 'none'
 						})
 					} else {
-						switchVal.value = true
+						switchVal.value = isCurrentlyBound
 					}
 				}
 			})
@@ -72,6 +77,8 @@
 			uni.showModal({
 				title: '确认绑定',
 				content: '确定要绑定微信账号吗？',
+				cancelText: '取消',
+				confirmText: '确定',
 				success: (res) => {
 					if (res.confirm) {
 						console.log('调用绑定API...')
@@ -82,7 +89,7 @@
 							icon: 'none'
 						})
 					} else {
-						switchVal.value = false
+						switchVal.value = isCurrentlyBound
 					}
 				}
 			})
@@ -102,6 +109,20 @@
 					})
 				}
 			}
+		})
+	}
+
+	//修改手机号
+	const changePhoneNumber = () => {
+		uni.navigateTo({
+			url: '/pages/mine/userInfo/changePhoneNumber/changePhoneNumber'
+		})
+	}
+
+	//注销账号
+	const cancelAnAccount = () => {
+		uni.navigateTo({
+			url: '/pages/mine/userInfo/CancelAnAccount/CancelAnAccount'
 		})
 	}
 </script>
@@ -134,11 +155,18 @@
 				border-bottom: 1rpx solid #f1f1f1;
 
 				.icon {
-					width: 35rpx;
-					height: 35rpx;
+					width: 30rpx;
+					height: 30rpx;
 				}
 
 				.switch-state {
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-end;
+					align-items: center;
+				}
+
+				.phone {
 					display: flex;
 					flex-direction: row;
 					justify-content: flex-end;

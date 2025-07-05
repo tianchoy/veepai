@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/message/message",
     "pages/mine/mine",
-    "pages/mine/userInfo/userInfo"
+    "pages/mine/userInfo/userInfo",
+    "pages/mine/userInfo/CancelAnAccount/CancelAnAccount",
+    "pages/mine/userInfo/changePhoneNumber/changePhoneNumber"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -1,0 +1,24 @@
+<template>
+	<view class="container">
+		<view class="content">
+			
+		</view>
+	</view>
+</template>
+
+<script setup>
+		
+</script>
+
+<style lang="scss" scoped>
+	.container {
+		height: 100%;
+		background: #f3f3f3;
+		padding: 0 20rpx;
+		.content{
+			background-color: #fff;
+			padding: 30rpx;
+			border-radius: 10rpx;
+		}
+	}
+</style>

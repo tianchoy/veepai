@@ -26,11 +26,15 @@ import GenPagesIndexIndexClass from './pages/index/index.uvue?type=page'
 import GenPagesMessageMessageClass from './pages/message/message.uvue?type=page'
 import GenPagesMineMineClass from './pages/mine/mine.uvue?type=page'
 import GenPagesMineUserInfoUserInfoClass from './pages/mine/userInfo/userInfo.uvue?type=page'
+import GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass from './pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue?type=page'
+import GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass from './pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue?type=page'
 function definePageRoutes() {
 __uniRoutes.push({ path: "pages/index/index", component: GenPagesIndexIndexClass, meta: { isQuit: true } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","首页"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/message/message", component: GenPagesMessageMessageClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","消息"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/mine/mine", component: GenPagesMineMineClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","我的"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/mine/userInfo/userInfo", component: GenPagesMineUserInfoUserInfoClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","个人信息"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/userInfo/CancelAnAccount/CancelAnAccount", component: GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","注销账号"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/userInfo/changePhoneNumber/changePhoneNumber", component: GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","修改手机号"]]) } as UniPageRoute)
 }
 const __uniTabBar: Map<string, any | null> | null = utsMapOf([["list",[utsMapOf([["pagePath","pages/index/index"],["iconPath","./static/tabbar/home.png"],["selectedIconPath","./static/tabbar/home1.png"],["text","首页"]]),utsMapOf([["pagePath","pages/message/message"],["iconPath","./static/tabbar/message.png"],["selectedIconPath","./static/tabbar/message1.png"],["text","消息"]]),utsMapOf([["pagePath","pages/mine/mine"],["iconPath","./static/tabbar/userCenter.png"],["selectedIconPath","./static/tabbar/userCenter1.png"],["text","我的"]])]]])
 const __uniLaunchPage: Map<string, any | null> = utsMapOf([["url","pages/index/index"],["style",utsMapOf([["navigationBarTitleText","首页"]])]])

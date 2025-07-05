@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/tianchoy/veepai#readme",
   "dependencies": {
+    "firstui-uni": "^2.4.0",
     "firstui-unix": "^1.4.0"
   }
 }

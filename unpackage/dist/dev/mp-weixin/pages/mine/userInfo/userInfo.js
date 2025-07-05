@@ -23,7 +23,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
           content: "确定要解除微信绑定吗？",
           success: (res) => {
             if (res.confirm) {
-              common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:59", "调用解绑API...");
+              common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:62", "调用解绑API...");
               switchVal.value = false;
               common_vendor.index.showToast({
                 title: "已成功解绑微信",
@@ -40,7 +40,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
           content: "确定要绑定微信账号吗？",
           success: (res) => {
             if (res.confirm) {
-              common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:77", "调用绑定API...");
+              common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:80", "调用绑定API...");
               switchVal.value = true;
               common_vendor.index.showToast({
                 title: "已成功绑定微信",
@@ -69,22 +69,35 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         }
       }));
     };
+    const changePhoneNumber = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/mine/userInfo/changePhoneNumber/changePhoneNumber"
+      });
+    };
+    const cancelAnAccount = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/mine/userInfo/CancelAnAccount/CancelAnAccount"
+      });
+    };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
         a: common_assets._imports_0$2,
-        b: common_assets._imports_0$2,
-        c: common_vendor.t(switchVal.value ? "已绑定" : "未绑定"),
-        d: common_vendor.o(change),
-        e: common_vendor.p({
+        b: common_vendor.o(changePhoneNumber),
+        c: common_assets._imports_0$2,
+        d: common_assets._imports_0$2,
+        e: common_vendor.o(cancelAnAccount),
+        f: common_vendor.t(switchVal.value ? "已绑定" : "未绑定"),
+        g: common_vendor.o(change),
+        h: common_vendor.p({
           color: "#1296db"
         }),
-        f: common_vendor.o(logout),
-        g: common_vendor.p({
+        i: common_vendor.o(logout),
+        j: common_vendor.p({
           color: "#fff",
-          text: "注销账号",
+          text: "退出登陆",
           background: "#1296db"
         }),
-        h: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        k: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };
