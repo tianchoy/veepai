@@ -2888,9 +2888,26 @@ val GenPagesMineMineClass = CreateVueComponent(GenPagesMineMine::class.java, fun
     return GenPagesMineMine(instance, renderer)
 }
 )
+val GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitchClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch.inject, props = GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch.emits, components = GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch.components, styles = GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch {
+    return GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch(instance)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.inject, props = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.emits, components = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.components, styles = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton {
+    return GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton(instance)
+}
+)
 val default1 = "/static/mine/right.png"
 val GenPagesMineUserInfoUserInfoClass = CreateVueComponent(GenPagesMineUserInfoUserInfo::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoUserInfo.inheritAttrs, inject = GenPagesMineUserInfoUserInfo.inject, props = GenPagesMineUserInfoUserInfo.props, propsNeedCastKeys = GenPagesMineUserInfoUserInfo.propsNeedCastKeys, emits = GenPagesMineUserInfoUserInfo.emits, components = GenPagesMineUserInfoUserInfo.components, styles = GenPagesMineUserInfoUserInfo.styles)
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoUserInfo.inheritAttrs, inject = GenPagesMineUserInfoUserInfo.inject, props = GenPagesMineUserInfoUserInfo.props, propsNeedCastKeys = GenPagesMineUserInfoUserInfo.propsNeedCastKeys, emits = GenPagesMineUserInfoUserInfo.emits, components = GenPagesMineUserInfoUserInfo.components, styles = GenPagesMineUserInfoUserInfo.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesMineUserInfoUserInfo.setup(props as GenPagesMineUserInfoUserInfo)
+    }
+    )
 }
 , fun(instance, renderer): GenPagesMineUserInfoUserInfo {
     return GenPagesMineUserInfoUserInfo(instance, renderer)
@@ -2919,9 +2936,9 @@ open class UniAppConfig : io.dcloud.uniapp.appframe.AppConfig {
     constructor() : super() {}
 }
 fun definePageRoutes() {
-    __uniRoutes.push(UniPageRoute(path = "pages/index/index", component = GenPagesIndexIndexClass, meta = UniPageMeta(isQuit = true), style = utsMapOf()))
-    __uniRoutes.push(UniPageRoute(path = "pages/message/message", component = GenPagesMessageMessageClass, meta = UniPageMeta(isQuit = false), style = utsMapOf()))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/mine", component = GenPagesMineMineClass, meta = UniPageMeta(isQuit = false), style = utsMapOf()))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/index", component = GenPagesIndexIndexClass, meta = UniPageMeta(isQuit = true), style = utsMapOf("navigationBarTitleText" to "首页")))
+    __uniRoutes.push(UniPageRoute(path = "pages/message/message", component = GenPagesMessageMessageClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "消息")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/mine", component = GenPagesMineMineClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "我的")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/userInfo", component = GenPagesMineUserInfoUserInfoClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "个人信息")))
 }
 val __uniTabBar: Map<String, Any?>? = utsMapOf("list" to utsArrayOf(
@@ -2929,7 +2946,7 @@ val __uniTabBar: Map<String, Any?>? = utsMapOf("list" to utsArrayOf(
     utsMapOf("pagePath" to "pages/message/message", "iconPath" to "./static/tabbar/message.png", "selectedIconPath" to "./static/tabbar/message1.png", "text" to "消息"),
     utsMapOf("pagePath" to "pages/mine/mine", "iconPath" to "./static/tabbar/userCenter.png", "selectedIconPath" to "./static/tabbar/userCenter1.png", "text" to "我的")
 ))
-val __uniLaunchPage: Map<String, Any?> = utsMapOf("url" to "pages/index/index", "style" to utsMapOf<String, Any?>())
+val __uniLaunchPage: Map<String, Any?> = utsMapOf("url" to "pages/index/index", "style" to utsMapOf("navigationBarTitleText" to "首页"))
 fun defineAppConfig() {
     __uniConfig.entryPagePath = "/pages/index/index"
     __uniConfig.globalStyle = utsMapOf("navigationBarTextStyle" to "black", "navigationBarTitleText" to "uniappX", "navigationBarBackgroundColor" to "#F8F8F8", "backgroundColor" to "#F8F8F8")

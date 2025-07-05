@@ -1,3 +1,4 @@
+@import "../../../uvue.wxss";
 :host{display:flex;flex-direction:column}
 /**
  * 这里是uni-app内置的常用样式变量
@@ -52,6 +53,15 @@
   width: 35rpx;
   height: 35rpx;
 }
+.container .info .info-item .switch-state {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
 .container .info .nobottom {
   border-bottom: none;
+}
+.container .btn-box {
+  margin-top: 200rpx;
 }

@@ -1,0 +1,351 @@
+
+	import { ComponentPublicInstance } from 'vue';
+	/**
+	 * Button 按钮
+	 * @description Button 按钮，支持自定义大小、颜色等。
+	 * @tutorial https://unix.firstui.cn/
+	 * @property {String} type {String} 按钮类型，可取值：primary、success、 warning、danger、link、purple、gray
+	 * @property {String} background {String} 按钮背景色，当传入值时type失效
+	 * @property {String} text {String}	按钮显示文本
+	 * @property {String} color	{String} 按钮字体颜色
+	 * @property {String} disabledBackground {String} 按钮禁用状态下背景色
+	 * @property {String} disabledColor {String} 按钮禁用状态下字体颜色
+	 * @property {String} borderWidth {String} 按钮边框宽度
+	 * @property {String} borderColor {String} 按钮边框颜色
+	 * @property {String} btnSize {String} 按钮大小，可选值：medium、small、mini，优先级高于width和height属性
+	 * @property {String} width	{String} 按钮宽度
+	 * @property {String} height 按钮高度
+	 * @property {Number} size {Number} 字体大小，单位rpx
+	 * @property {Boolean} bold {Boolean} 字体是否加粗
+	 * @property {String} margin {String} margin值：
+	 * @property {String} radius {String} 圆角大小
+	 * @property {Boolean} plain {Boolean} 是否镂空
+	 * @property {Boolean} highlight {Boolean} 是否需要点击效果 
+	 * @property {Boolean} disabled	{Boolean} 是否禁用
+	 * @property {Boolean}loading {Boolean} 是否显示加载图标
+	 * @property {String} iconColor	{String} loading圆环背景色
+	 * @property {String} activeColor {String} loading圆环高亮部分颜色
+	 * @property {String} formType {String} 用于 form 组件，点击分别会触发 form 组件的 submit/reset 事件
+	 * @event {Function} onclick 按钮点击事件，(event: MouseEvent) => void
+	 */
+	const __sfc__ = defineComponent({
+		name: 'fui-button',
+		emits: ['onclick'],
+		props: {
+			type: {
+				type: String,
+				default: 'primary'
+			},
+			background: {
+				type: String,
+				default: ''
+			},
+			text: {
+				type: String,
+				default: ''
+			},
+			color: {
+				type: String,
+				default: ''
+			},
+			disabledBackground: {
+				type: String,
+				default: ''
+			},
+			disabledColor: {
+				type: String,
+				default: ''
+			},
+			borderWidth: {
+				type: String,
+				default: '0.5px'
+			},
+			borderColor: {
+				type: String,
+				default: ''
+			},
+			btnSize: {
+				type: String,
+				default: ''
+			},
+			width: {
+				type: String,
+				default: '100%'
+			},
+			height: {
+				type: String,
+				default: ''
+			},
+			size: {
+				type: Number,
+				default: 0
+			},
+			bold: {
+				type: Boolean,
+				default: false
+			},
+			margin: {
+				type: String,
+				default: ''
+			},
+			radius: {
+				type: String,
+				default: ''
+			},
+			plain: {
+				type: Boolean,
+				default: false
+			},
+			highlight: {
+				type: Boolean,
+				default: true
+			},
+			disabled: {
+				type: Boolean,
+				default: false
+			},
+			loading: {
+				type: Boolean,
+				default: false
+			},
+			iconColor: {
+				type: String,
+				default: "#B2B2B2"
+			},
+			activeColor: {
+				type: String,
+				default: "#FFFFFF"
+			},
+			//V1.2.6+
+			formType: {
+				type: String,
+				default: ''
+			}
+		},
+		computed: {
+			getStyl() : object {
+				const mp : Map<string, string> = new Map()
+
+				mp.set('border-left-color', this.activeColor)
+				mp.set('border-right-color', this.iconColor)
+				mp.set('border-top-color', this.iconColor)
+				mp.set('border-bottom-color', this.iconColor)
+
+
+
+
+
+				return mp;
+			},
+			getBackground() : string {
+				let color = this.background;
+				if (this.disabled && this.disabledBackground != '') {
+					color = this.disabledBackground;
+				}
+				color = this.type == 'link' || this.plain ? 'rgba(0,0,0,0)' : color;
+				return color
+			},
+			getBorderColor() : string {
+				let color = this.borderColor
+				if (color == '') {
+					color = this.disabled && this.disabledBackground != '' ? this.disabledBackground : this.background
+				}
+				color = this.type == 'link' ? 'rgba(0,0,0,0)' : color;
+				return color;
+			},
+			getColor() : string {
+				let color : string;
+				if (this.color != '') {
+					color = this.disabled && this.disabledBackground != '' ? this.disabledColor : this.color
+				} else {
+					if (this.disabled && this.disabledBackground != '') {
+						color = this.disabledColor == '' ? '#FFFFFF' : this.disabledColor
+					} else {
+						color = this.type == 'gray' ? '#465CFF' : '#FFFFFF'
+					}
+				}
+				return color;
+			},
+			getSize() : string {
+				let size = this.size;
+				if (this.btnSize != '') {
+					size = size == 0 ? 32 : size;
+					if (this.btnSize == 'small') {
+						size = size > 28 ? 28 : size;
+					} else if (this.btnSize == 'mini') {
+						size = size > 28 ? 24 : size;
+					}
+				}
+				return `${size}rpx`
+			},
+			getWidth() : string {
+				//medium 400*84 / small 200*84/ mini 120 * 64
+				let width = this.width;
+				if (this.btnSize != '') {
+					width = ({
+						medium: '400rpx',
+						small: '200rpx',
+						mini: '120rpx'
+					}[this.btnSize]) as string
+				}
+				return width
+			},
+			getHeight() : string {
+				let height = this.height;
+				if (this.btnSize != '') {
+					height = ({
+						medium: '84rpx',
+						small: '72rpx',
+						mini: '64rpx'
+					}[this.btnSize]) as string
+				}
+				return height
+			}
+		},
+		watch: {
+			loading(newValue : boolean) {
+				if (newValue) {
+					this.$nextTick(() => {
+						setTimeout(() => {
+							this.startSpin()
+						}, 50)
+					})
+				} else {
+					this.endSpin()
+				}
+			}
+		},
+		data() {
+			return {
+				times: 0,
+				isSpin: false,
+				element: null as UniElement | null,
+				hoverEle: null as UniElement | null,
+				fuiForm: null as null | ComponentPublicInstance
+			};
+		},
+		created() {
+			this.getParent('fui-form')
+		},
+
+		mounted() {
+			this.$nextTick(() => {
+				setTimeout(() => {
+					if (this.loading) this.startSpin();
+				}, 200)
+			})
+		},
+
+		beforeUnmount() {
+			this.isSpin = false
+			this.element = null;
+			this.hoverEle = null
+		},
+		methods: {
+			handleStart() {
+
+				this.switchHover(true)
+
+			},
+			handleTap(e : MouseEvent) {
+				if (this.disabled) return;
+				this.$emit('onclick', e);
+				if (this.formType != '' && this.fuiForm != null) {
+					const form = this.fuiForm as ComponentPublicInstance;
+					form.$callMethod('buttonEvent', this.formType)
+				}
+			},
+			handleEnd() {
+
+				this.switchHover(false)
+
+			},
+			switchHover(show : boolean) {
+				if (!this.highlight || this.disabled) return;
+				if (this.hoverEle == null) {
+					this.hoverEle = this.$refs['fui_button_hover'] as UniElement;
+				}
+				this.hoverEle!.style.setProperty('visibility', show ? 'visible' : 'hidden')
+			},
+			startSpin() {
+				if (this.element != null && this.isSpin) return;
+				if (this.element == null) {
+					this.element = this.$refs['fui_button_loading'] as UniElement;
+				}
+				this.times = this.times + 1
+				this.element!.style.setProperty('transform', `rotate(${this.times * 360}deg)`)
+				this.element!.style.setProperty('transition-duration', '600ms')
+				this.isSpin = true
+			},
+			endSpin() {
+				this.isSpin = false
+				this.times = 0
+				this.element!.style.setProperty('transform', `rotate(${this.times * 360}deg)`)
+				this.element!.style.setProperty('transition-duration', '0s')
+				this.element = null;
+			},
+			onEnd() {
+
+				if (this.isSpin && this.loading) {
+					this.times = this.times + 1
+					this.element!.style.setProperty('transform', `rotate(${this.times * 360}deg)`)
+				}
+
+			},
+			getParent(name : string) : boolean {
+				if (this.$parent == null) return false;
+				let parent = this.$parent as ComponentPublicInstance;
+				let parentName = parent.$options['name'];
+				while (parentName != name) {
+					if (parent.$parent == null) return false;
+					parent = parent.$parent as ComponentPublicInstance;
+					if (parent.$options['name'] == '') return false;
+					parentName = parent.$options['name'];
+				}
+				this.fuiForm = parent;
+				return true;
+			}
+		}
+	});
+
+export default __sfc__
+function GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonRender(this: InstanceType<typeof __sfc__>): any | null {
+const _ctx = this
+const _cache = this.$.renderCache
+  return createElementVNode("view", utsMapOf({
+    class: normalizeClass(["fui-button__wrap", [_ctx.getWidth=='' || _ctx.getWidth=='100%'?'fui-button__flex-1':'',_ctx.disabled && _ctx.disabledBackground=='' ? 'fui-button__opacity' : '',_ctx.background=='' && _ctx.disabledBackground=='' && !_ctx.plain?`fui-button__${_ctx.type}`:'',_ctx.height=='' && _ctx.btnSize==''?'fui-button__height':'',_ctx.radius==''?'fui-button__radius':'',_ctx.highlight && !_ctx.disabled ?'fui-button__active':'']]),
+    style: normalizeStyle(utsMapOf({width: _ctx.getWidth,height: _ctx.getHeight,margin:_ctx.margin,borderRadius: _ctx.radius,background:_ctx.getBackground,border:`${_ctx.borderColor==''?'0px':_ctx.borderWidth} solid`,borderColor:_ctx.getBorderColor})),
+    onTouchstart: _ctx.handleStart,
+    onTouchend: _ctx.handleEnd,
+    onTouchcancel: _ctx.handleEnd,
+    onClick: _ctx.handleTap
+  }), [
+    isTrue(_ctx.loading)
+      ? createElementVNode("view", utsMapOf({
+          key: 0,
+          ref: "fui_button_loading",
+          onTransitionend: _ctx.onEnd,
+          class: "fui-button__spin",
+          style: normalizeStyle(_ctx.getStyl)
+        }), null, 44 /* STYLE, PROPS, NEED_HYDRATION */, ["onTransitionend"])
+      : createCommentVNode("v-if", true),
+    isTrue(_ctx.text)
+      ? createElementVNode("text", utsMapOf({
+          key: 1,
+          class: normalizeClass(["fui-button__text", utsMapOf({'fui-btn__gray-color':_ctx.background=='' && _ctx.disabledBackground=='' && !_ctx.plain && _ctx.type=='gray' && _ctx.color=='#fff','fui-text__bold':_ctx.bold,'fui-button__size':_ctx.size==0 && _ctx.btnSize=='','fui-button__height-text':_ctx.height=='' && _ctx.btnSize==''})]),
+          style: normalizeStyle(utsMapOf({fontSize: _ctx.getSize,color:_ctx.getColor,height: _ctx.getHeight,lineHeight:_ctx.getHeight}))
+        }), toDisplayString(_ctx.text), 7 /* TEXT, CLASS, STYLE */)
+      : createCommentVNode("v-if", true),
+    renderSlot(_ctx.$slots, "default"),
+    isTrue(_ctx.highlight)
+      ? createElementVNode("view", utsMapOf({
+          key: 2,
+          ref: "fui_button_hover",
+          class: normalizeClass(["fui-button__hover", utsMapOf({'fui-button__radius':_ctx.radius==''})]),
+          style: normalizeStyle(utsMapOf({borderRadius: _ctx.radius}))
+        }), null, 6 /* CLASS, STYLE */)
+      : createCommentVNode("v-if", true)
+  ], 46 /* CLASS, STYLE, PROPS, NEED_HYDRATION */, ["onTouchstart", "onTouchend", "onTouchcancel", "onClick"])
+}
+export type FuiButtonComponentPublicInstance = InstanceType<typeof __sfc__>;
+const GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonStyles = [utsMapOf([["fui-button__wrap", padStyleMapOf(utsMapOf([["position", "relative"], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "center"], ["boxSizing", "border-box"], ["overflow", "hidden"]]))], ["fui-button__flex-1", padStyleMapOf(utsMapOf([["width", "100%"]]))], ["fui-button__opacity", padStyleMapOf(utsMapOf([["opacity", 0.5]]))], ["fui-button__hover", padStyleMapOf(utsMapOf([["position", "absolute"], ["left", 0], ["right", 0], ["top", 0], ["bottom", 0], ["backgroundColor", "rgba(0,0,0,0.2)"], ["zIndex", 2], ["borderTopLeftRadius", 0], ["borderTopRightRadius", 0], ["borderBottomRightRadius", 0], ["borderBottomLeftRadius", 0], ["visibility", "hidden"], ["pointerEvents", "none"]]))], ["fui-button__spin", padStyleMapOf(utsMapOf([["width", "32rpx"], ["height", "32rpx"], ["borderTopWidth", 2], ["borderRightWidth", 2], ["borderBottomWidth", 2], ["borderLeftWidth", 2], ["borderTopStyle", "solid"], ["borderRightStyle", "solid"], ["borderBottomStyle", "solid"], ["borderLeftStyle", "solid"], ["borderTopLeftRadius", 100], ["borderTopRightRadius", 100], ["borderBottomRightRadius", 100], ["borderBottomLeftRadius", 100], ["transitionDuration", "600ms"], ["transitionProperty", "transform"], ["transitionTimingFunction", "linear"], ["transform", "rotate(0deg)"], ["boxSizing", "border-box"], ["marginRight", "8rpx"], ["position", "relative"]]))], ["fui-button__text", padStyleMapOf(utsMapOf([["textAlign", "center"]]))], ["fui-text__bold", padStyleMapOf(utsMapOf([["fontWeight", "bold"]]))], ["fui-button__link", padStyleMapOf(utsMapOf([["!borderTopColor", "rgba(0,0,0,0)"], ["!borderRightColor", "rgba(0,0,0,0)"], ["!borderBottomColor", "rgba(0,0,0,0)"], ["!borderLeftColor", "rgba(0,0,0,0)"], ["!backgroundColor", "rgba(0,0,0,0)"]]))], ["fui-button__primary", padStyleMapOf(utsMapOf([["!borderTopColor", "#465CFF"], ["!borderRightColor", "#465CFF"], ["!borderBottomColor", "#465CFF"], ["!borderLeftColor", "#465CFF"], ["!backgroundImage", "none"], ["!backgroundColor", "#465CFF"]]))], ["fui-button__success", padStyleMapOf(utsMapOf([["!borderTopColor", "#09BE4F"], ["!borderRightColor", "#09BE4F"], ["!borderBottomColor", "#09BE4F"], ["!borderLeftColor", "#09BE4F"], ["!backgroundImage", "none"], ["!backgroundColor", "#09BE4F"]]))], ["fui-button__warning", padStyleMapOf(utsMapOf([["!borderTopColor", "#FFB703"], ["!borderRightColor", "#FFB703"], ["!borderBottomColor", "#FFB703"], ["!borderLeftColor", "#FFB703"], ["!backgroundImage", "none"], ["!backgroundColor", "#FFB703"]]))], ["fui-button__danger", padStyleMapOf(utsMapOf([["!borderTopColor", "#FF2B2B"], ["!borderRightColor", "#FF2B2B"], ["!borderBottomColor", "#FF2B2B"], ["!borderLeftColor", "#FF2B2B"], ["!backgroundImage", "none"], ["!backgroundColor", "#FF2B2B"]]))], ["fui-button__purple", padStyleMapOf(utsMapOf([["!borderTopColor", "#6831FF"], ["!borderRightColor", "#6831FF"], ["!borderBottomColor", "#6831FF"], ["!borderLeftColor", "#6831FF"], ["!backgroundImage", "none"], ["!backgroundColor", "#6831FF"]]))], ["fui-button__gray", padStyleMapOf(utsMapOf([["!borderTopColor", "#F8F8F8"], ["!borderRightColor", "#F8F8F8"], ["!borderBottomColor", "#F8F8F8"], ["!borderLeftColor", "#F8F8F8"], ["!backgroundImage", "none"], ["!backgroundColor", "#F8F8F8"]]))], ["fui-btn__gray-color", padStyleMapOf(utsMapOf([["!color", "#465CFF"]]))], ["fui-button__height", padStyleMapOf(utsMapOf([["!height", "96rpx"]]))], ["fui-button__height-text", padStyleMapOf(utsMapOf([["!height", "96rpx"], ["!lineHeight", "96rpx"]]))], ["fui-button__size", padStyleMapOf(utsMapOf([["!fontSize", "32rpx"]]))], ["fui-button__radius", padStyleMapOf(utsMapOf([["!borderTopLeftRadius", "16rpx"], ["!borderTopRightRadius", "16rpx"], ["!borderBottomRightRadius", "16rpx"], ["!borderBottomLeftRadius", "16rpx"]]))], ["@TRANSITION", utsMapOf([["fui-button__spin", utsMapOf([["duration", "600ms"], ["property", "transform"], ["timingFunction", "linear"]])]])]])]
