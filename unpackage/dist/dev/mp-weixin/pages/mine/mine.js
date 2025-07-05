@@ -12,8 +12,8 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
     };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: common_assets._imports_0,
-        b: common_assets._imports_1,
+        a: common_assets._imports_0$1,
+        b: common_assets._imports_1$1,
         c: common_assets._imports_2,
         d: common_assets._imports_3,
         e: common_assets._imports_4,

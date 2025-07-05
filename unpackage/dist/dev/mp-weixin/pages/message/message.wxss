@@ -29,12 +29,75 @@
   width: 100%;
   height: 100%;
   position: relative;
+  background-color: #f3f3f3;
 }
-.container .vedio-box.data-v-0e403ad2 {
+.container .vedio-box.data-v-0e403ad2, .container .vedio-box .video.data-v-0e403ad2 {
   width: 100%;
 }
-.container .vedio-box .video.data-v-0e403ad2 {
+.container .content-box.data-v-0e403ad2 {
+  padding: 30rpx 20rpx;
+}
+.container .content-box .sub-nav.data-v-0e403ad2, .container .content-box .sub-nav .select.data-v-0e403ad2, .container .content-box .sub-nav .today.data-v-0e403ad2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .content-box .sub-nav .today.data-v-0e403ad2 {
+  width: 120rpx;
+  text-align: center;
+  align-items: center;
+}
+.container .content-box .sub-nav .today .down.data-v-0e403ad2 {
+  width: 25rpx;
+  height: 25rpx;
+}
+.container .content-box .sub-nav .select.data-v-0e403ad2 {
+  margin-left: 10rpx;
+}
+.container .content-box .sub-nav .select .select-item.data-v-0e403ad2 {
+  flex: 1;
+  background-color: #fff;
+  color: #333;
+  padding: 10rpx 20rpx;
+  border-radius: 5rpx;
+  margin: 0 5rpx;
+}
+.container .content-box .sub-nav .select .active.data-v-0e403ad2 {
+  color: #fff;
+  background-color: #1296db;
+}
+.container .content-box .tab-content.data-v-0e403ad2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.container .content-box .tab-content .tab-pane.data-v-0e403ad2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
   width: 100%;
+  margin-bottom: 30rpx;
+}
+.container .content-box .tab-content .tab-pane .item-content.data-v-0e403ad2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .content-box .tab-content .tab-pane .item-content .item-icon.data-v-0e403ad2 {
+  width: 60rpx;
+  height: 60rpx;
+}
+.container .content-box .tab-content .tab-pane .item-content .info.data-v-0e403ad2 {
+  margin-left: 20rpx;
+}
+.container .content-box .tab-content .tab-pane .item-img.data-v-0e403ad2 {
+  width: 100rpx;
+  height: 60rpx;
 }
 .container .calendar-box.data-v-0e403ad2 {
   position: absolute;
@@ -49,7 +112,4 @@
   bottom: 45rpx;
   left: 60rpx;
   border-radius: 50rpx;
-}
-.today.data-v-0e403ad2 {
-  text-align: center;
 }

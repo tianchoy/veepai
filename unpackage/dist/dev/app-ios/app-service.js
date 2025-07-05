@@ -44,7 +44,7 @@
   function initRuntimeSocketService() {
     const hosts = "127.0.0.1,192.168.3.22";
     const port = "8090";
-    const id = "app-ios_xta10O";
+    const id = "app-ios_GeQhkk";
     let socketTask = null;
     __registerWebViewUniConsole(() => {
       return '!function(){"use strict";"function"==typeof SuppressedError&&SuppressedError;var e=["log","warn","error","info","debug"],n=e.reduce((function(e,n){return e[n]=console[n].bind(console),e}),{}),t=null,r=new Set,o={};function i(e){if(null!=t){var n=e.map((function(e){if("string"==typeof e)return e;var n=e&&"promise"in e&&"reason"in e,t=n?"UnhandledPromiseRejection: ":"";if(n&&(e=e.reason),e instanceof Error&&e.stack)return e.message&&!e.stack.includes(e.message)?"".concat(t).concat(e.message,"\\n").concat(e.stack):"".concat(t).concat(e.stack);if("object"==typeof e&&null!==e)try{return t+JSON.stringify(e)}catch(e){return t+String(e)}return t+String(e)})).filter(Boolean);n.length>0&&t(JSON.stringify(Object.assign({type:"error",data:n},o)))}else e.forEach((function(e){r.add(e)}))}function a(e,n){try{return{type:e,args:u(n)}}catch(e){}return{type:e,args:[]}}function u(e){return e.map((function(e){return c(e)}))}function c(e,n){if(void 0===n&&(n=0),n>=7)return{type:"object",value:"[Maximum depth reached]"};switch(typeof e){case"string":return{type:"string",value:e};case"number":return function(e){return{type:"number",value:String(e)}}(e);case"boolean":return function(e){return{type:"boolean",value:String(e)}}(e);case"object":try{return function(e,n){if(null===e)return{type:"null"};if(function(e){return e.$&&s(e.$)}(e))return function(e,n){return{type:"object",className:"ComponentPublicInstance",value:{properties:Object.entries(e.$.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(s(e))return function(e,n){return{type:"object",className:"ComponentInternalInstance",value:{properties:Object.entries(e.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return e.style&&null!=e.tagName&&null!=e.nodeName}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e).filter((function(e){var n=e[0];return["id","tagName","nodeName","dataset","offsetTop","offsetLeft","style"].includes(n)})).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return"function"==typeof e.getPropertyValue&&"function"==typeof e.setProperty&&e.$styles}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e.$styles).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(Array.isArray(e))return{type:"object",subType:"array",value:{properties:e.map((function(e,t){return function(e,n,t){var r=c(e,t);return r.name="".concat(n),r}(e,t,n+1)}))}};if(e instanceof Set)return{type:"object",subType:"set",className:"Set",description:"Set(".concat(e.size,")"),value:{entries:Array.from(e).map((function(e){return function(e,n){return{value:c(e,n)}}(e,n+1)}))}};if(e instanceof Map)return{type:"object",subType:"map",className:"Map",description:"Map(".concat(e.size,")"),value:{entries:Array.from(e.entries()).map((function(e){return function(e,n){return{key:c(e[0],n),value:c(e[1],n)}}(e,n+1)}))}};if(e instanceof Promise)return{type:"object",subType:"promise",value:{properties:[]}};if(e instanceof RegExp)return{type:"object",subType:"regexp",value:String(e),className:"Regexp"};if(e instanceof Date)return{type:"object",subType:"date",value:String(e),className:"Date"};if(e instanceof Error)return{type:"object",subType:"error",value:e.message||String(e),className:e.name||"Error"};var t=void 0,r=e.constructor;r&&r.get$UTSMetadata$&&(t=r.get$UTSMetadata$().name);var o=Object.entries(e);(function(e){return e.modifier&&e.modifier._attribute&&e.nodeContent})(e)&&(o=o.filter((function(e){var n=e[0];return"modifier"!==n&&"nodeContent"!==n})));return{type:"object",className:t,value:{properties:o.map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n)}catch(e){return{type:"object",value:{properties:[]}}}case"undefined":return{type:"undefined"};case"function":return function(e){return{type:"function",value:"function ".concat(e.name,"() {}")}}(e);case"symbol":return function(e){return{type:"symbol",value:e.description}}(e);case"bigint":return function(e){return{type:"bigint",value:String(e)}}(e)}}function s(e){return e.type&&null!=e.uid&&e.appContext}function f(e,n,t){var r=c(n,t);return r.name=e,r}var l=null,p=[],y={},g="---BEGIN:EXCEPTION---",d="---END:EXCEPTION---";function v(e){null!=l?l(JSON.stringify(Object.assign({type:"console",data:e},y))):p.push.apply(p,e)}var m=/^\\s*at\\s+[\\w/./-]+:\\d+$/;function b(){function t(e){return function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];var o=function(e,n,t){if(t||2===arguments.length)for(var r,o=0,i=n.length;o<i;o++)!r&&o in n||(r||(r=Array.prototype.slice.call(n,0,o)),r[o]=n[o]);return e.concat(r||Array.prototype.slice.call(n))}([],t,!0);if(o.length){var u=o[o.length-1];"string"==typeof u&&m.test(u)&&o.pop()}if(n[e].apply(n,o),"error"===e&&1===t.length){var c=t[0];if("string"==typeof c&&c.startsWith(g)){var s=g.length,f=c.length-d.length;return void i([c.slice(s,f)])}if(c instanceof Error)return void i([c])}v([a(e,t)])}}return function(){var e=console.log,n=Symbol();try{console.log=n}catch(e){return!1}var t=console.log===n;return console.log=e,t}()?(e.forEach((function(e){console[e]=t(e)})),function(){e.forEach((function(e){console[e]=n[e]}))}):function(){}}function _(e){var n={type:"WEB_INVOKE_APPSERVICE",args:{data:{name:"console",arg:e}}};return window.__uniapp_x_postMessageToService?window.__uniapp_x_postMessageToService(n):window.__uniapp_x_.postMessageToService(JSON.stringify(n))}!function(){if(!window.__UNI_CONSOLE_WEBVIEW__){window.__UNI_CONSOLE_WEBVIEW__=!0;var e="[web-view]".concat(window.__UNI_PAGE_ROUTE__?"[".concat(window.__UNI_PAGE_ROUTE__,"]"):"");b(),function(e,n){if(void 0===n&&(n={}),l=e,Object.assign(y,n),null!=e&&p.length>0){var t=p.slice();p.length=0,v(t)}}((function(e){_(e)}),{channel:e}),function(e,n){if(void 0===n&&(n={}),t=e,Object.assign(o,n),null!=e&&r.size>0){var a=Array.from(r);r.clear(),i(a)}}((function(e){_(e)}),{channel:e}),window.addEventListener("error",(function(e){i([e.error])})),window.addEventListener("unhandledrejection",(function(e){i([e])}))}}()}();';
@@ -2103,15 +2103,53 @@
       const today = vue.ref(dayuts().format("MM-DD"));
       const checkIns = vue.ref(["2025-06-09", "2025-07-01", "2025-07-02"]);
       const showCalendar = vue.ref(false);
+      const activeTab = vue.ref(0);
+      class SecurityEvent {
+        constructor(id, type, time, location) {
+          this.id = id;
+          this.type = type;
+          this.time = time;
+          this.location = location;
+        }
+      }
+      class Tab {
+        constructor(label, type) {
+          this.label = label;
+          this.type = type;
+        }
+      }
+      const tabs = vue.ref([
+        { label: "全部类型", type: "all" },
+        { label: "人形侦测", type: "human" },
+        { label: "移动侦测", type: "motion" }
+      ]);
+      const events = vue.ref([
+        new SecurityEvent(1, "human", "15:29", "前门走廊"),
+        new SecurityEvent(2, "motion", "14:45", "车库入口"),
+        new SecurityEvent(3, "human", "13:20", "后花园"),
+        new SecurityEvent(4, "motion", "11:05", "侧门通道")
+      ]);
+      const getFilteredEvents = () => {
+        if (activeTab.value === 0)
+          return [...events.value];
+        const selectedType = tabs.value[activeTab.value].type;
+        return events.value.filter((event) => {
+          return event.type === selectedType;
+        });
+      };
+      const changeTab = (index) => {
+        activeTab.value = index;
+      };
       const select = (day) => {
         today.value = dayuts(day.fullDate).format("MM-DD");
+        uni.__log__("log", "at pages/message/message.uvue:108", today.value);
         if (day.isToday) {
-          uni.__log__("log", "at pages/message/message.uvue:30", "今天");
+          uni.__log__("log", "at pages/message/message.uvue:110", "今天");
         }
         showCalendar.value = false;
       };
       const change = (res) => {
-        uni.__log__("log", "at pages/message/message.uvue:36", "res", res);
+        uni.__log__("log", "at pages/message/message.uvue:116", "res", res);
       };
       const ShowCalendar = () => {
         showCalendar.value = !showCalendar.value;
@@ -2119,12 +2157,14 @@
       const hideCalendar = () => {
         showCalendar.value = false;
       };
-      const __returned__ = { today, checkIns, showCalendar, videoSrc, select, change, ShowCalendar, hideCalendar };
+      const __returned__ = { today, checkIns, showCalendar, videoSrc, activeTab, SecurityEvent, Tab, tabs, events, getFilteredEvents, changeTab, select, change, ShowCalendar, hideCalendar };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   }));
-  const _style_0$2 = { "container": { "": { "width": "100%", "height": "100%", "position": "relative" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "today": { "": { "textAlign": "center" } } };
+  const _imports_0$1 = "/static/down.png";
+  const _imports_1$1 = "/static/vedio.png";
+  const _style_0$2 = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx", "textAlign": "center" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } } };
   function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -2135,16 +2175,95 @@
           controls: false
         })
       ]),
-      vue.createElementVNode(
-        "view",
-        {
-          class: "today",
-          onClick: $setup.ShowCalendar
-        },
-        vue.toDisplayString($setup.today),
-        1
-        /* TEXT */
-      ),
+      vue.createElementVNode("view", { class: "content-box" }, [
+        vue.createElementVNode("view", { class: "sub-nav" }, [
+          vue.createElementVNode("view", {
+            class: "today",
+            onClick: $setup.ShowCalendar
+          }, [
+            vue.createElementVNode(
+              "view",
+              null,
+              vue.toDisplayString($setup.today),
+              1
+              /* TEXT */
+            ),
+            vue.createElementVNode("image", {
+              class: "down",
+              src: _imports_0$1
+            }),
+            vue.createElementVNode("text", null, " | ")
+          ]),
+          vue.createElementVNode("view", { class: "select" }, [
+            (vue.openBlock(true), vue.createElementBlock(
+              vue.Fragment,
+              null,
+              vue.renderList($setup.tabs, (tab, index) => {
+                return vue.openBlock(), vue.createElementBlock("view", {
+                  key: index,
+                  class: vue.normalizeClass(["select-item", { active: $setup.activeTab === index }]),
+                  onClick: ($event) => $setup.changeTab(index)
+                }, [
+                  vue.createElementVNode(
+                    "text",
+                    {
+                      class: vue.normalizeClass({ active: $setup.activeTab === index })
+                    },
+                    vue.toDisplayString(tab.label),
+                    3
+                    /* TEXT, CLASS */
+                  )
+                ], 10, ["onClick"]);
+              }),
+              128
+              /* KEYED_FRAGMENT */
+            ))
+          ])
+        ]),
+        vue.createElementVNode("view", { class: "tab-content" }, [
+          (vue.openBlock(true), vue.createElementBlock(
+            vue.Fragment,
+            null,
+            vue.renderList($setup.getFilteredEvents(), (event, index) => {
+              return vue.openBlock(), vue.createElementBlock("view", {
+                key: index,
+                class: "tab-pane"
+              }, [
+                vue.createElementVNode("view", { class: "item-content" }, [
+                  vue.createElementVNode("image", {
+                    class: "item-icon",
+                    mode: "aspectFit",
+                    src: event.type === "human" ? "/static/people.png" : "/static/mobile.png"
+                  }, null, 8, ["src"]),
+                  vue.createElementVNode("view", { class: "info" }, [
+                    vue.createElementVNode(
+                      "text",
+                      null,
+                      vue.toDisplayString(event.type === "human" ? "人形侦测" : "移动侦测"),
+                      1
+                      /* TEXT */
+                    ),
+                    vue.createElementVNode(
+                      "text",
+                      null,
+                      vue.toDisplayString(event.time),
+                      1
+                      /* TEXT */
+                    )
+                  ])
+                ]),
+                vue.createElementVNode("image", {
+                  class: "item-img",
+                  mode: "aspectFit",
+                  src: _imports_1$1
+                })
+              ]);
+            }),
+            128
+            /* KEYED_FRAGMENT */
+          ))
+        ])
+      ]),
       $setup.showCalendar ? (vue.openBlock(), vue.createElementBlock("view", {
         key: 0,
         class: "calendar-box"
