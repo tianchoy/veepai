@@ -53,9 +53,10 @@ open class GenPagesIndexIndex : BasePage {
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
                     createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
                         createElementVNode("view", utsMapOf("class" to "video-container", "style" to normalizeStyle(utsMapOf("border-radius" to "15rpx", "overflow" to "hidden"))), utsArrayOf(
-                            createElementVNode("video", utsMapOf("class" to "video", "src" to videoSrc, "controls" to false, "onClick" to vedioClick))
+                            createElementVNode("video", utsMapOf("class" to "video", "title" to deviceTitle.value, "src" to videoSrc, "controls" to false, "onClick" to vedioClick), null, 8, utsArrayOf(
+                                "title"
+                            ))
                         ), 4),
-                        createElementVNode("view", utsMapOf("class" to "video-top-title"), toDisplayString(deviceTitle.value), 1),
                         createElementVNode("view", utsMapOf("class" to "video-right-control"), utsArrayOf(
                             createElementVNode("view", utsMapOf("class" to "vedio-control"), utsArrayOf(
                                 createElementVNode("image", utsMapOf("class" to "vedio-control-icon", "src" to forward, "onClick" to toDeviceDetail))

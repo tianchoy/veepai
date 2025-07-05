@@ -4,25 +4,25 @@
     "compiler_version": "4.66"
   },
   "files": {
-    "pages/index/index.kt": {
-      "md5": "baf9f1a7157b989261b1f13a616a965327f6e0b5",
-      "class": "GenPagesIndexIndex"
-    },
     "pages/mine/mine.kt": {
       "class": "GenPagesMineMine",
       "md5": "f0eb230c6a0abbeb93c054a11dbc0489dded1293"
     },
+    "pages/message/message.kt": {
+      "class": "GenPagesMessageMessage",
+      "md5": "8efe1817cfda51d4a234cb17ae9feea6b4f2058b"
+    },
     "uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.kt": {
-      "class": "GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch",
-      "md5": "e8c79e7ed16335debd18b1605cc223f62d44b4e9"
+      "md5": "e8c79e7ed16335debd18b1605cc223f62d44b4e9",
+      "class": "GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch"
     },
     "index.kt": {
-      "md5": "f32d607283557359c57f860049043b48d745ec70",
-      "class": ""
+      "class": "",
+      "md5": "f32d607283557359c57f860049043b48d745ec70"
     },
-    "pages/message/message.kt": {
-      "md5": "e30d2acba52efb2af18536199872e9c9cbecda7f",
-      "class": "GenPagesMessageMessage"
+    "pages/index/index.kt": {
+      "class": "GenPagesIndexIndex",
+      "md5": "dbc52ada09f338926decec0a4f374cc8743e64db"
     }
   }
 }

@@ -48,9 +48,9 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
     };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: videoSrc,
-        b: common_vendor.o(vedioClick),
-        c: common_vendor.t(deviceTitle.value),
+        a: deviceTitle.value,
+        b: videoSrc,
+        c: common_vendor.o(vedioClick),
         d: forward,
         e: common_vendor.o(toDeviceDetail),
         f: errIcon,

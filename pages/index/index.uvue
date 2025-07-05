@@ -2,9 +2,8 @@
 	<view class="container">
 		<view class="content">
 			<view class="video-container" style="border-radius: 15rpx; overflow: hidden;">
-				<video class="video" :src="videoSrc" :controls="false" @click="vedioClick"></video>
+				<video class="video" :title="deviceTitle" :src="videoSrc" :controls="false" @click="vedioClick"></video>
 			</view>
-			<view class="video-top-title">{{deviceTitle}}</view>
 			<view class="video-right-control">
 				<view class="vedio-control">
 					<image class="vedio-control-icon" :src="forward" @click="toDeviceDetail"></image>

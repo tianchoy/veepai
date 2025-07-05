@@ -78,12 +78,12 @@ return (): any | null => {
       }), [
         createElementVNode("video", utsMapOf({
           class: "video",
+          title: deviceTitle.value,
           src: videoSrc,
           controls: false,
           onClick: vedioClick
-        }))
+        }), null, 8 /* PROPS */, ["title"])
       ], 4 /* STYLE */),
-      createElementVNode("view", utsMapOf({ class: "video-top-title" }), toDisplayString(deviceTitle.value), 1 /* TEXT */),
       createElementVNode("view", utsMapOf({ class: "video-right-control" }), [
         createElementVNode("view", utsMapOf({ class: "vedio-control" }), [
           createElementVNode("image", utsMapOf({

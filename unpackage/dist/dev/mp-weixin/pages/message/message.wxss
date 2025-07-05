@@ -44,7 +44,6 @@
 }
 .container .content-box .sub-nav .today.data-v-0e403ad2 {
   width: 120rpx;
-  text-align: center;
   align-items: center;
 }
 .container .content-box .sub-nav .today .down.data-v-0e403ad2 {

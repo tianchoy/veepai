@@ -144,18 +144,12 @@
         }, [
           vue.createElementVNode("video", {
             class: "video",
+            title: $setup.deviceTitle,
             src: $setup.videoSrc,
             controls: false,
             onClick: $setup.vedioClick
-          })
+          }, null, 8, ["title"])
         ]),
-        vue.createElementVNode(
-          "view",
-          { class: "video-top-title" },
-          vue.toDisplayString($setup.deviceTitle),
-          1
-          /* TEXT */
-        ),
         vue.createElementVNode("view", { class: "video-right-control" }, [
           vue.createElementVNode("view", { class: "vedio-control" }, [
             vue.createElementVNode("image", {
@@ -2100,10 +2094,16 @@
     setup(__props, _a) {
       var __expose = _a.expose;
       __expose();
-      const today = vue.ref(dayuts().format("MM-DD"));
       const checkIns = vue.ref(["2025-06-09", "2025-07-01", "2025-07-02"]);
+      const today = vue.ref(dayuts().format("MM-DD"));
       const showCalendar = vue.ref(false);
       const activeTab = vue.ref(0);
+      const testTitle = vue.ref("测试标题");
+      const videoRef = vue.ref(null);
+      const playVideo = () => {
+        videoRef.value.play();
+        uni.createVideoContext("myVideo").play();
+      };
       class SecurityEvent {
         constructor(id, type, time, location) {
           this.id = id;
@@ -2130,7 +2130,7 @@
         new SecurityEvent(4, "motion", "11:05", "侧门通道")
       ]);
       const getFilteredEvents = () => {
-        if (activeTab.value === 0)
+        if (activeTab.value == 0)
           return [...events.value];
         const selectedType = tabs.value[activeTab.value].type;
         return events.value.filter((event) => {
@@ -2142,14 +2142,14 @@
       };
       const select = (day) => {
         today.value = dayuts(day.fullDate).format("MM-DD");
-        uni.__log__("log", "at pages/message/message.uvue:108", today.value);
+        uni.__log__("log", "at pages/message/message.uvue:121", today.value);
         if (day.isToday) {
-          uni.__log__("log", "at pages/message/message.uvue:110", "今天");
+          uni.__log__("log", "at pages/message/message.uvue:123", "今天");
         }
         showCalendar.value = false;
       };
       const change = (res) => {
-        uni.__log__("log", "at pages/message/message.uvue:116", "res", res);
+        uni.__log__("log", "at pages/message/message.uvue:129", "res", res);
       };
       const ShowCalendar = () => {
         showCalendar.value = !showCalendar.value;
@@ -2157,24 +2157,33 @@
       const hideCalendar = () => {
         showCalendar.value = false;
       };
-      const __returned__ = { today, checkIns, showCalendar, videoSrc, activeTab, SecurityEvent, Tab, tabs, events, getFilteredEvents, changeTab, select, change, ShowCalendar, hideCalendar };
+      const __returned__ = { checkIns, today, showCalendar, videoSrc, activeTab, testTitle, videoRef, playVideo, SecurityEvent, Tab, tabs, events, getFilteredEvents, changeTab, select, change, ShowCalendar, hideCalendar };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   }));
   const _imports_0$1 = "/static/down.png";
   const _imports_1$1 = "/static/vedio.png";
-  const _style_0$2 = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx", "textAlign": "center" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } } };
+  const _style_0$2 = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } } };
   function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "vedio-box" }, [
         vue.createElementVNode("video", {
           class: "video",
+          id: "myVideo",
           src: $setup.videoSrc,
-          controls: false
-        })
+          ref: "videoRef",
+          controls: true,
+          "show-play-btn": true,
+          "show-center-play-btn": true,
+          "enable-progress-gesture": true,
+          "show-fullscreen-btn": true,
+          "show-mute-btn": true,
+          title: $setup.testTitle
+        }, null, 8, ["title"])
       ]),
+      vue.createElementVNode("button", { onClick: $setup.playVideo }, "播放视频"),
       vue.createElementVNode("view", { class: "content-box" }, [
         vue.createElementVNode("view", { class: "sub-nav" }, [
           vue.createElementVNode("view", {
@@ -2182,7 +2191,7 @@
             onClick: $setup.ShowCalendar
           }, [
             vue.createElementVNode(
-              "view",
+              "text",
               null,
               vue.toDisplayString($setup.today),
               1
@@ -2199,21 +2208,11 @@
               vue.Fragment,
               null,
               vue.renderList($setup.tabs, (tab, index) => {
-                return vue.openBlock(), vue.createElementBlock("view", {
+                return vue.openBlock(), vue.createElementBlock("text", {
                   key: index,
                   class: vue.normalizeClass(["select-item", { active: $setup.activeTab === index }]),
                   onClick: ($event) => $setup.changeTab(index)
-                }, [
-                  vue.createElementVNode(
-                    "text",
-                    {
-                      class: vue.normalizeClass({ active: $setup.activeTab === index })
-                    },
-                    vue.toDisplayString(tab.label),
-                    3
-                    /* TEXT, CLASS */
-                  )
-                ], 10, ["onClick"]);
+                }, vue.toDisplayString(tab.label), 11, ["onClick"]);
               }),
               128
               /* KEYED_FRAGMENT */

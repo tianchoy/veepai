@@ -1,20 +1,23 @@
 <template>
 	<view class="container">
 		<view class="vedio-box">
-			<video class="video" :src="videoSrc" :controls="false"></video>
+			<video class="video" id="myVideo" :src="videoSrc" ref="videoRef" :controls="true" :show-play-btn="true"
+				:show-center-play-btn="true" :enable-progress-gesture="true" :show-fullscreen-btn="true"
+				:show-mute-btn="true" :title="testTitle"></video>
 		</view>
+		<button @click="playVideo">播放视频</button>
 		<view class="content-box">
 			<view class="sub-nav">
 				<view class="today" @click="ShowCalendar">
-					<view>{{today}}</view>
+					<text>{{today}}</text>
 					<image class="down" src="/static/down.png" />
 					<text> | </text>
 				</view>
 				<view class="select">
-					<view v-for="(tab, index) in tabs" :key="index" class="select-item"
+					<text v-for="(tab, index) in tabs" :key="index" class="select-item"
 						:class="{ active: activeTab === index }" @click="changeTab(index)">
-						<text :class="{ active: activeTab === index }">{{ tab.label }}</text>
-					</view>
+						{{ tab.label }}
+					</text>
 				</view>
 			</view>
 			<view class="tab-content">
@@ -43,66 +46,76 @@
 
 <script lang="ts" setup>
 	import { ref, onMounted, computed } from 'vue'
-	const today = ref(dayuts().format('MM-DD'))
+	import { dayuts } from '@/uni_modules/lime-dayuts';
 	import { LDay, LYearMonth } from '@/uni_modules/lime-daily-punch'
 	const checkIns = ref(['2025-06-09', '2025-07-01', '2025-07-02'])
-	import { dayuts } from '@/uni_modules/lime-dayuts';
+	const today = ref(dayuts().format('MM-DD'))
 	const showCalendar = ref<boolean>(false)
 	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
 	const activeTab = ref(0)
-	
+	const testTitle = ref('测试标题')
+
+	const videoRef = ref(null);
+
+	const playVideo = () => {
+		// #ifdef APP-IOS
+		videoRef.value.play()
+		// #endif
+		uni.createVideoContext('myVideo')!!.play();
+	};
+
+	//构造函数的方式来定义event时间类型
 	class SecurityEvent {
-	    id: number;
-	    type: string;
-	    time: string;
-	    location: string;
-	    
-	    constructor(id: number, type: string, time: string, location: string) {
-	        this.id = id;
-	        this.type = type;
-	        this.time = time;
-	        this.location = location;
-	    }
+		id : number;
+		type : string;
+		time : string;
+		location : string;
+
+		constructor(id : number, type : string, time : string, location : string) {
+			this.id = id;
+			this.type = type;
+			this.time = time;
+			this.location = location;
+		}
 	}
-	
+
+	//定义tab标签的类型
 	class Tab {
-	    label: string;
-	    type: string;
-	    
-	    constructor(label: string, type: string) {
-	        this.label = label;
-	        this.type = type;
-	    }
+		label : string;
+		type : string;
+
+		constructor(label : string, type : string) {
+			this.label = label;
+			this.type = type;
+		}
 	}
-	
+
 	const tabs = ref<Tab[]>([
-	    { label: '全部类型', type: 'all' },
-	    { label: '人形侦测', type: 'human' },
-	    { label: '移动侦测', type: 'motion' }
+		{ label: '全部类型', type: 'all' },
+		{ label: '人形侦测', type: 'human' },
+		{ label: '移动侦测', type: 'motion' }
 	])
-	
-	// 使用类实例创建事件数组
+
 	const events = ref<SecurityEvent[]>([
-	    new SecurityEvent(1, 'human', '15:29', '前门走廊'),
-	    new SecurityEvent(2, 'motion', '14:45', '车库入口'),
-	    new SecurityEvent(3, 'human', '13:20', '后花园'),
-	    new SecurityEvent(4, 'motion', '11:05', '侧门通道')
+		new SecurityEvent(1, 'human', '15:29', '前门走廊'),
+		new SecurityEvent(2, 'motion', '14:45', '车库入口'),
+		new SecurityEvent(3, 'human', '13:20', '后花园'),
+		new SecurityEvent(4, 'motion', '11:05', '侧门通道')
 	])
-	
-	const getFilteredEvents = (): SecurityEvent[] => {
-	    if (activeTab.value === 0) return [...events.value];
-	    const selectedType = tabs.value[activeTab.value].type;
-	    return events.value.filter(event => event.type === selectedType);
+
+	//执行筛选数据的方法
+	const getFilteredEvents = () : SecurityEvent[] => {
+		if (activeTab.value == 0) return [...events.value];
+		const selectedType = tabs.value[activeTab.value].type;
+		return events.value.filter(event => event.type === selectedType);
 	}
-	
 
-
-
-
+	//切换tab
 	const changeTab = (index : number) => {
 		activeTab.value = index
 	}
 
+	//选择日期
 	const select = (day : LDay) => {
 		today.value = dayuts(day.fullDate).format('MM-DD')
 		console.log(today.value)
@@ -152,7 +165,6 @@
 
 				.today {
 					width: 120rpx;
-					text-align: center;
 					@extend .sub-nav;
 					align-items: center;
 
