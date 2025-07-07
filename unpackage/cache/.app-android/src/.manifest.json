@@ -4,25 +4,25 @@
     "compiler_version": "4.66"
   },
   "files": {
-    "index.kt": {
-      "class": "",
-      "md5": "114efa60ee83aceccf263594bb7da6bb840aad34"
-    },
     "components/TopNavBar.kt": {
       "class": "GenComponentsTopNavBar",
       "md5": "ed78673925c86ff317df6a2b3cc8ab4358bf804f"
     },
     "pages/mine/mine.kt": {
-      "md5": "d0f60af1047eaa6e8adfe29f4ead9968add50788",
-      "class": "GenPagesMineMine"
-    },
-    "pages/message/message.kt": {
-      "md5": "7be083a1c599f068c5995163a8038d3fa923351c",
-      "class": "GenPagesMessageMessage"
+      "class": "GenPagesMineMine",
+      "md5": "d0f60af1047eaa6e8adfe29f4ead9968add50788"
     },
     "pages/index/index.kt": {
       "class": "GenPagesIndexIndex",
       "md5": "3737883a8c9593042195749f8cc89f6a577d9d83"
+    },
+    "index.kt": {
+      "md5": "efcfe41f2a1da3ad1d1b8317633eb1723dd75ceb",
+      "class": ""
+    },
+    "pages/message/message.kt": {
+      "md5": "7be083a1c599f068c5995163a8038d3fa923351c",
+      "class": "GenPagesMessageMessage"
     }
   }
 }

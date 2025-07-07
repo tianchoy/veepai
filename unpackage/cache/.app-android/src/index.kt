@@ -69,9 +69,9 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
     )
 }
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
-    val hosts: String = "127.0.0.1,192.168.3.22"
+    val hosts: String = "127.0.0.1,192.168.3.34"
     val port: String = "8090"
-    val id: String = "app-android_t9kWRw"
+    val id: String = "app-android_FmYbUX"
     if (hosts == "" || port == "" || id == "") {
         return UTSPromise.resolve(false)
     }
@@ -287,12 +287,21 @@ fun definePageRoutes() {
     __uniRoutes.push(UniPageRoute(path = "pages/message/message", component = GenPagesMessageMessageClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationStyle" to "custom")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/mine", component = GenPagesMineMineClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationStyle" to "custom")))
 }
+val __uniTabBar: Map<String, Any?>? = utsMapOf("list" to utsArrayOf(
+    utsMapOf("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),
+    utsMapOf("pagePath" to "pages/message/message", "iconPath" to "./static/tabbar/message.png", "selectedIconPath" to "./static/tabbar/message1.png", "text" to "消息"),
+    utsMapOf("pagePath" to "pages/mine/mine", "iconPath" to "./static/tabbar/userCenter.png", "selectedIconPath" to "./static/tabbar/userCenter1.png", "text" to "我的")
+))
 val __uniLaunchPage: Map<String, Any?> = utsMapOf("url" to "pages/index/index", "style" to utsMapOf("navigationStyle" to "custom"))
 fun defineAppConfig() {
     __uniConfig.entryPagePath = "/pages/index/index"
     __uniConfig.globalStyle = utsMapOf("navigationBarTextStyle" to "black", "navigationBarTitleText" to "", "navigationBarBackgroundColor" to "#F8F8F8", "backgroundColor" to "#F8F8F8")
     __uniConfig.getTabBarConfig = fun(): Map<String, Any>? {
-        return null
+        return utsMapOf("list" to utsArrayOf(
+            utsMapOf("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),
+            utsMapOf("pagePath" to "pages/message/message", "iconPath" to "./static/tabbar/message.png", "selectedIconPath" to "./static/tabbar/message1.png", "text" to "消息"),
+            utsMapOf("pagePath" to "pages/mine/mine", "iconPath" to "./static/tabbar/userCenter.png", "selectedIconPath" to "./static/tabbar/userCenter1.png", "text" to "我的")
+        ))
     }
     __uniConfig.tabBar = __uniConfig.getTabBarConfig()
     __uniConfig.conditionUrl = ""
