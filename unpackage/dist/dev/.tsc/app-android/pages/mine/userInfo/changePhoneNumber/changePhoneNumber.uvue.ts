@@ -1,7 +1,6 @@
+import _easycom_fui_icon from '@/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue'
 import _easycom_fui_input from '@/uni_modules/firstui-unix/components/fui-input/fui-input.uvue'
 import _easycom_fui_button from '@/uni_modules/firstui-unix/components/fui-button/fui-button.uvue'
-import _imports_0 from '@/static/phone.png'
-import _imports_1 from '@/static/captcha.png'
 import { ref } from 'vue'
 	
 	
@@ -32,7 +31,7 @@ const _cache = __ins.renderCache;
 	const getPsw = () => {
 		if (isCounting.value) return
 		
-		console.log('发送验证码请求...', " at pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue:55")
+		console.log('发送验证码请求...', " at pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue:56")
 		isCounting.value = true
 		
 		countDown(60)
@@ -40,17 +39,22 @@ const _cache = __ins.renderCache;
 
 return (): any | null => {
 
+const _component_fui_icon = resolveEasyComponent("fui-icon",_easycom_fui_icon)
 const _component_fui_input = resolveEasyComponent("fui-input",_easycom_fui_input)
 const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_button)
 
   return createElementVNode("view", utsMapOf({ class: "container" }), [
     createElementVNode("view", utsMapOf({ class: "content" }), [
-      createVNode(_component_fui_input, utsMapOf({ placeholder: "请输入手机号" }), utsMapOf({
+      createVNode(_component_fui_input, utsMapOf({
+        placeholder: "请输入手机号",
+        placeholderStyle: "font-size: 26rpx;"
+      }), utsMapOf({
         left: withSlotCtx((): any[] => [
           createElementVNode("view", null, [
-            createElementVNode("image", utsMapOf({
-              class: "icon",
-              src: _imports_0
+            createVNode(_component_fui_icon, utsMapOf({
+              name: "mobile",
+              color: "#1296db",
+              size: 48
             }))
           ])
         ]),
@@ -59,20 +63,21 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
       createVNode(_component_fui_input, utsMapOf({
         padding: "20rpx 32rpx",
         placeholder: "请输入验证码",
-        bottomLeft: 0
+        bottomLeft: 0,
+        placeholderStyle: "font-size: 26rpx;"
       }), utsMapOf({
         left: withSlotCtx((): any[] => [
           createElementVNode("view", null, [
-            createElementVNode("image", utsMapOf({
-              class: "icon",
-              src: _imports_1
+            createVNode(_component_fui_icon, utsMapOf({
+              name: "captcha",
+              color: "#1296db",
+              size: 48
             }))
           ])
         ]),
         default: withSlotCtx((): any[] => [
           createVNode(_component_fui_button, utsMapOf({
             type: "gray",
-            bold: true,
             width: "200rpx",
             height: "64rpx",
             size: 28,

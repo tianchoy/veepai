@@ -1,8 +1,7 @@
-import _easycom_fui_icon from '@/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue'
 import _easycom_fui_input from '@/uni_modules/firstui-unix/components/fui-input/fui-input.uvue'
 import _easycom_fui_button from '@/uni_modules/firstui-unix/components/fui-button/fui-button.uvue'
 import { ref } from 'vue'
-	
+
 	
 const __sfc__ = defineComponent({
   __name: 'changePassword',
@@ -15,42 +14,67 @@ const _cache = __ins.renderCache;
 	const newPassword = ref<string>('')
 	const confirmPassword = ref<string>('')
 	const btnDisabled = ref<boolean>(true)
-	
-	// 创建单独的更新函数
-	const updateOldPassword = (e: string) => {
-		console.log(e, " at pages/mine/userInfo/changePassword/changePassword.uvue:28")
+	const errorMsg = ref<string>('') // 错误提示信息
+
+	// 增强密码规则：必须包含两类及以上字符
+	const passwordReg = /^(?:(?=.*[a-zA-Z])(?=.*\d)|(?=.*[a-zA-Z])(?=.*[^a-zA-Z\d])|(?=.*\d)(?=.*[^a-zA-Z\d])).{8,16}$/
+
+	// 验证密码格式
+	function verPassword(psw : string) : boolean {
+		return passwordReg.test(psw)
+	}
+
+	// 更新按钮状态
+	const updateBtnState = () => {
+		const allFieldsFilled = oldPassword.value.length > 0 &&
+			newPassword.value.length > 0 &&
+			confirmPassword.value.length > 0
+
+		const passwordsMatch = newPassword.value === confirmPassword.value
+		const newPwdValid = verPassword(newPassword.value)
+
+		btnDisabled.value = !(allFieldsFilled && newPwdValid && passwordsMatch)
+	}
+
+	// 更新旧密码
+	const updateOldPassword = (e : string) => {
 		oldPassword.value = e
+		updateBtnState()
 	}
-	
-	const updateNewPassword = (e: string) => {
-		// console.log(e)
-		// newPassword.value = e
-		if(verPassword(e)){
-			newPassword.value = e
 
+	// 更新新密码
+	const updateNewPassword = (e : string) => {
+		newPassword.value = e
+		errorMsg.value = ''
+
+		if (e.length > 0 && !verPassword(e)) {
+			errorMsg.value = '密码格式不符合要求'
+		} else if (confirmPassword.value.length > 0 && e != confirmPassword.value) {
+			errorMsg.value = '两次输入的密码不一致'
 		}
+
+		updateBtnState()
 	}
-	
-	const updateConfirmPassword = (e: string) => {
-		console.log(e, " at pages/mine/userInfo/changePassword/changePassword.uvue:42")
+
+	// 更新确认密码
+	const updateConfirmPassword = (e : string) => {
 		confirmPassword.value = e
+		errorMsg.value = ''
+
+		if (e.length > 0) {
+			if (!verPassword(e)) {
+				errorMsg.value = '确认密码格式不符合要求'
+			} else if (e != newPassword.value) {
+				errorMsg.value = '两次输入的密码不一致'
+			}
+		}
+
+		updateBtnState()
 	}
 
-	const verPassword = (psw:string) =>{
-		if(psw.length < 8 || psw.length > 16){
-			return false
-		}
-		if(!passwordReg(psw)){
-			return false
-		}
-		return true
-	}
-	
-	// 密码规则：8-16位，包含字母、数字、特殊字符中的至少两类
-	const passwordReg = /^(?=.*[a-zA-Z])(?=.*\d)|(?=.*[a-zA-Z])(?=.*[^a-zA-Z\d])|(?=.*\d)(?=.*[^a-zA-Z\d]).{8,16}$/
-
+	// 提交表单
 	const submit = () => {
-		if (!passwordReg.test(newPassword.value)) {
+		if (!verPassword(newPassword.value)) {
 			uni.showToast({
 				title: '密码格式错误',
 				icon: 'none'
@@ -72,13 +96,11 @@ const _cache = __ins.renderCache;
 
 return (): any | null => {
 
-const _component_fui_icon = resolveEasyComponent("fui-icon",_easycom_fui_icon)
 const _component_fui_input = resolveEasyComponent("fui-input",_easycom_fui_input)
 const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_button)
 
   return createElementVNode("view", utsMapOf({ class: "container" }), [
     createElementVNode("view", utsMapOf({ class: "content" }), [
-      createVNode(_component_fui_icon, utsMapOf({ name: "addfriends" })),
       createVNode(_component_fui_input, utsMapOf({
         label: "旧密码",
         placeholder: "请输入原密码",
@@ -98,6 +120,11 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
         onInput: updateConfirmPassword
       }), null, 8 /* PROPS */, ["modelValue"])
     ]),
+    isTrue(errorMsg.value)
+      ? createElementVNode("view", utsMapOf({ key: 0 }), [
+          createElementVNode("text", utsMapOf({ class: "error-msg" }), toDisplayString(errorMsg.value), 1 /* TEXT */)
+        ])
+      : createCommentVNode("v-if", true),
     createElementVNode("view", utsMapOf({ class: "tips" }), [
       createElementVNode("text", utsMapOf({ class: "tips-word" }), "密码8-16位,需包含英文字母、数字、特殊字符中两类及以上")
     ]),
@@ -117,4 +144,4 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
 
 })
 export default __sfc__
-const GenPagesMineUserInfoChangePasswordChangePasswordStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundColor", "#f5f5f5"], ["paddingTop", "50rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "50rpx"], ["paddingLeft", "20rpx"]]))], ["fui-input__label-size", utsMapOf([[".container ", utsMapOf([["!fontSize", "26rpx"]])]])], ["content", utsMapOf([[".container ", utsMapOf([["backgroundColor", "#ffffff"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]])]])], ["tips", utsMapOf([[".container ", utsMapOf([["marginTop", "40rpx"], ["marginRight", 0], ["marginBottom", "40rpx"], ["marginLeft", 0]])]])], ["tips-word", utsMapOf([[".container .tips ", utsMapOf([["fontSize", "30rpx"], ["color", "#999999"]])]])]])]
+const GenPagesMineUserInfoChangePasswordChangePasswordStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundColor", "#f5f5f5"], ["paddingTop", "50rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "50rpx"], ["paddingLeft", "20rpx"]]))], ["fui-input__label-size", utsMapOf([[".container ", utsMapOf([["!fontSize", "26rpx"]])]])], ["content", utsMapOf([[".container ", utsMapOf([["backgroundColor", "#ffffff"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]])]])], ["tips", utsMapOf([[".container ", utsMapOf([["marginTop", "40rpx"], ["marginRight", 0], ["marginBottom", "40rpx"], ["marginLeft", 0]])]])], ["tips-word", utsMapOf([[".container .tips ", utsMapOf([["fontSize", "30rpx"], ["color", "#999999"]])]])], ["error-msg", utsMapOf([[".container ", utsMapOf([["marginTop", "10rpx"], ["color", "#e64340"], ["fontSize", "24rpx"]])]])]])]

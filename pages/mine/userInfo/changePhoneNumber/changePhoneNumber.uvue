@@ -1,22 +1,23 @@
 <template>
 	<view class="container">
 		<view class="content">
-			<fui-input placeholder="请输入手机号">
+			<fui-input placeholder="请输入手机号" placeholderStyle="font-size: 26rpx;">
 				<template v-slot:left>
 					<view>
-						<image class="icon" src="@/static/phone.png"></image>
+						<!-- <image class="icon" src="@/static/phone.png"></image> -->
+						<fui-icon name="mobile" color="#1296db" :size="48"></fui-icon>
 					</view>
 				</template>
 			</fui-input>
-			<fui-input padding="20rpx 32rpx" placeholder="请输入验证码" :bottomLeft="0">
+			<fui-input padding="20rpx 32rpx" placeholder="请输入验证码" :bottomLeft="0" placeholderStyle="font-size: 26rpx;">
 				<template v-slot:left>
 					<view>
-						<image class="icon" src="@/static/captcha.png"></image>
+						<fui-icon name="captcha" color="#1296db" :size="48"></fui-icon>
+						<!-- <image class="icon" src="@/static/captcha.png"></image> -->
 					</view>
 				</template>
 				<fui-button 
 					type="gray" 
-					:bold="true" 
 					width="200rpx" 
 					height="64rpx" 
 					:size="28" 

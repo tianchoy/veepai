@@ -42,33 +42,34 @@ open class GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber : BasePage {
                 if (isCounting.value) {
                     return
                 }
-                console.log("发送验证码请求...", " at pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue:55")
+                console.log("发送验证码请求...", " at pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue:56")
                 isCounting.value = true
                 countDown(60)
             }
             return fun(): Any? {
+                val _component_fui_icon = resolveEasyComponent("fui-icon", GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass)
                 val _component_fui_input = resolveEasyComponent("fui-input", GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass)
                 val _component_fui_button = resolveEasyComponent("fui-button", GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass)
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
                     createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
-                        createVNode(_component_fui_input, utsMapOf("placeholder" to "请输入手机号"), utsMapOf("left" to withSlotCtx(fun(): UTSArray<Any> {
+                        createVNode(_component_fui_input, utsMapOf("placeholder" to "请输入手机号", "placeholderStyle" to "font-size: 26rpx;"), utsMapOf("left" to withSlotCtx(fun(): UTSArray<Any> {
                             return utsArrayOf(
                                 createElementVNode("view", null, utsArrayOf(
-                                    createElementVNode("image", utsMapOf("class" to "icon", "src" to default3))
+                                    createVNode(_component_fui_icon, utsMapOf("name" to "mobile", "color" to "#1296db", "size" to 48))
                                 ))
                             )
                         }
                         ), "_" to 1)),
-                        createVNode(_component_fui_input, utsMapOf("padding" to "20rpx 32rpx", "placeholder" to "请输入验证码", "bottomLeft" to 0), utsMapOf("left" to withSlotCtx(fun(): UTSArray<Any> {
+                        createVNode(_component_fui_input, utsMapOf("padding" to "20rpx 32rpx", "placeholder" to "请输入验证码", "bottomLeft" to 0, "placeholderStyle" to "font-size: 26rpx;"), utsMapOf("left" to withSlotCtx(fun(): UTSArray<Any> {
                             return utsArrayOf(
                                 createElementVNode("view", null, utsArrayOf(
-                                    createElementVNode("image", utsMapOf("class" to "icon", "src" to default4))
+                                    createVNode(_component_fui_icon, utsMapOf("name" to "captcha", "color" to "#1296db", "size" to 48))
                                 ))
                             )
                         }
                         ), "default" to withSlotCtx(fun(): UTSArray<Any> {
                             return utsArrayOf(
-                                createVNode(_component_fui_button, utsMapOf("type" to "gray", "bold" to true, "width" to "200rpx", "height" to "64rpx", "size" to 28, "onClick" to getPsw, "text" to btnWord.value, "disabled" to isCounting.value), null, 8, utsArrayOf(
+                                createVNode(_component_fui_button, utsMapOf("type" to "gray", "width" to "200rpx", "height" to "64rpx", "size" to 28, "onClick" to getPsw, "text" to btnWord.value, "disabled" to isCounting.value), null, 8, utsArrayOf(
                                     "text",
                                     "disabled"
                                 ))

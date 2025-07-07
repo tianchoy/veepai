@@ -2924,26 +2924,7 @@ val GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass = CreateVueComponent
     return GenPagesMineUserInfoCancelAnAccountCancelAnAccount(instance, renderer)
 }
 )
-val GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiInputFuiInput::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.inject, props = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.emits, components = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.components, styles = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiInputFuiInput {
-    return GenUniModulesFirstuiUnixComponentsFuiInputFuiInput(instance)
-}
-)
-val default3 = "/static/phone.png"
-val default4 = "/static/captcha.png"
-val GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass = CreateVueComponent(GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.inheritAttrs, inject = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.inject, props = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.props, propsNeedCastKeys = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.propsNeedCastKeys, emits = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.emits, components = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.components, styles = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.styles, setup = fun(props: ComponentPublicInstance): Any? {
-        return GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.setup(props as GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber)
-    }
-    )
-}
-, fun(instance, renderer): GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber {
-    return GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber(instance, renderer)
-}
-)
-val default5: UTSJSONObject = object : UTSJSONObject() {
+val default3: UTSJSONObject = object : UTSJSONObject() {
     var addressbook = "\ue80c"
     var `addfriends-fill` = "\ue80a"
     var addfriends = "\ue80b"
@@ -3113,6 +3094,23 @@ val GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass = CreateVueComponent(G
 }
 , fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon {
     return GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon(instance)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiInputFuiInput::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.inject, props = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.emits, components = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.components, styles = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiInputFuiInput {
+    return GenUniModulesFirstuiUnixComponentsFuiInputFuiInput(instance)
+}
+)
+val GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass = CreateVueComponent(GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.inheritAttrs, inject = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.inject, props = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.props, propsNeedCastKeys = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.propsNeedCastKeys, emits = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.emits, components = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.components, styles = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.setup(props as GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber {
+    return GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber(instance, renderer)
 }
 )
 val GenPagesMineUserInfoChangePasswordChangePasswordClass = CreateVueComponent(GenPagesMineUserInfoChangePasswordChangePassword::class.java, fun(): VueComponentOptions {

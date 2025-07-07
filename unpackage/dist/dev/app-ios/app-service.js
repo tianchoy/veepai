@@ -990,7 +990,7 @@
       )
     ]);
   }
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["styles", [_style_0$b]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["styles", [_style_0$b]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
   function resolveEasycom(component, easycom) {
     return typeof component === "string" ? easycom : component;
   }
@@ -2191,11 +2191,11 @@
       return __returned__;
     }
   }));
-  const _imports_0$4 = "/static/down.png";
-  const _imports_1$2 = "/static/vedio.png";
+  const _imports_0$3 = "/static/down.png";
+  const _imports_1$1 = "/static/vedio.png";
   const _style_0$a = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } } };
   function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$2);
+    const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "vedio-box" }, [
         vue.createElementVNode("video", {
@@ -2230,7 +2230,7 @@
             ),
             vue.createElementVNode("image", {
               class: "down",
-              src: _imports_0$4
+              src: _imports_0$3
             }),
             vue.createElementVNode("text", null, " | ")
           ]),
@@ -2285,7 +2285,7 @@
                 vue.createElementVNode("image", {
                   class: "item-img",
                   mode: "aspectFit",
-                  src: _imports_1$2
+                  src: _imports_1$1
                 })
               ]);
             }),
@@ -2327,11 +2327,11 @@
       return __returned__;
     }
   }));
-  const _imports_0$3 = "/static/mine/local.png";
-  const _imports_1$1 = "/static/mine/cloud.png";
+  const _imports_0$2 = "/static/mine/local.png";
+  const _imports_1 = "/static/mine/cloud.png";
   const _imports_2 = "/static/mine/msgList.png";
   const _imports_3 = "/static/mine/user.png";
-  const _imports_0$2 = "/static/mine/right.png";
+  const _imports_0$1 = "/static/mine/right.png";
   const _imports_5 = "/static/mine/liuliang.png";
   const _imports_6 = "/static/mine/order.png";
   const _imports_7 = "/static/mine/quetion.png";
@@ -2346,7 +2346,7 @@
         vue.createElementVNode("view", { class: "file" }, [
           vue.createElementVNode("image", {
             class: "fileIcon",
-            src: _imports_0$3,
+            src: _imports_0$2,
             mode: "aspectFit"
           }),
           vue.createElementVNode("text", { class: "file-text" }, "本地文件")
@@ -2354,7 +2354,7 @@
         vue.createElementVNode("view", { class: "file" }, [
           vue.createElementVNode("image", {
             class: "fileIcon",
-            src: _imports_1$1,
+            src: _imports_1,
             mode: "aspectFit"
           }),
           vue.createElementVNode("text", { class: "file-text" }, "永久备份")
@@ -2384,7 +2384,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$2,
+              src: _imports_0$1,
               mode: "aspectFit"
             })
           ])
@@ -2401,7 +2401,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$2,
+              src: _imports_0$1,
               mode: "aspectFit"
             })
           ])
@@ -2418,7 +2418,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$2,
+              src: _imports_0$1,
               mode: "aspectFit"
             })
           ])
@@ -2435,7 +2435,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$2,
+              src: _imports_0$1,
               mode: "aspectFit"
             })
           ])
@@ -2452,7 +2452,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$2,
+              src: _imports_0$1,
               mode: "aspectFit"
             })
           ])
@@ -2469,7 +2469,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$2,
+              src: _imports_0$1,
               mode: "aspectFit"
             })
           ])
@@ -2486,7 +2486,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$2,
+              src: _imports_0$1,
               mode: "aspectFit"
             })
           ])
@@ -2503,7 +2503,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$2,
+              src: _imports_0$1,
               mode: "aspectFit"
             })
           ])
@@ -2768,7 +2768,7 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["styles", [_style_0$8]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["styles", [_style_0$8]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
   const _sfc_main$7 = vue.defineComponent({
     name: "fui-button",
     emits: ["onclick"],
@@ -3103,7 +3103,7 @@
       /* CLASS, STYLE, NEED_HYDRATION */
     );
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["styles", [_style_0$7]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["styles", [_style_0$7]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
   const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "userInfo",
     setup(__props, _a) {
@@ -3195,8 +3195,8 @@
   }));
   const _style_0$6 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
   function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_0$1);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2);
+    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_0$2);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "title" }, [
         vue.createElementVNode("text", null, "个人信息")
@@ -3215,7 +3215,7 @@
             vue.createElementVNode("text", null, "18888888888"),
             vue.createElementVNode("image", {
               class: "icon",
-              src: _imports_0$2,
+              src: _imports_0$1,
               mode: "aspectFit"
             })
           ])
@@ -3232,7 +3232,7 @@
           vue.createElementVNode("text", null, "修改密码"),
           vue.createElementVNode("image", {
             class: "icon",
-            src: _imports_0$2,
+            src: _imports_0$1,
             mode: "aspectFit"
           })
         ]),
@@ -3243,7 +3243,7 @@
           vue.createElementVNode("text", null, "注销账号"),
           vue.createElementVNode("image", {
             class: "icon",
-            src: _imports_0$2,
+            src: _imports_0$1,
             mode: "aspectFit"
           })
         ])
@@ -3298,13 +3298,13 @@
       return __returned__;
     }
   }));
-  const _imports_0$1 = "/static/error_big.png";
+  const _imports_0 = "/static/error_big.png";
   const _style_0$5 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
   function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("image", {
-        src: _imports_0$1,
+        src: _imports_0,
         class: "close"
       }),
       vue.createElementVNode("view", { class: "content" }, [
@@ -3334,7 +3334,272 @@
     ]);
   }
   const PagesMineUserInfoCancelAnAccountCancelAnAccount = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["styles", [_style_0$5]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue"]]);
+  const icons = new UTSJSONObject({
+    "addressbook": "",
+    "addfriends-fill": "",
+    "addfriends": "",
+    "backspace-fill": "",
+    "backspace": "",
+    "bankcard-fill": "",
+    "bankcard": "",
+    "camera-fill": "",
+    "camera": "",
+    "captcha-fill": "",
+    "captcha": "",
+    "cart-fill": "",
+    "cart": "",
+    "classify": "",
+    "classify-fill": "",
+    "comment-fill": "",
+    "comment": "",
+    "community-fill": "",
+    "community": "",
+    "coupon-fill": "",
+    "coupon": "",
+    "delete": "",
+    "delete-fill": "",
+    "edit": "",
+    "edit-fill": "",
+    "fabulous-fill": "",
+    "fabulous": "",
+    "find": "",
+    "find-fill": "",
+    "help-fill": "",
+    "help": "",
+    "home-fill": "",
+    "home": "",
+    "idcard-fill": "",
+    "idcard": "",
+    "info": "",
+    "info-fill": "",
+    "invite-fill": "",
+    "invite": "",
+    "kefu-fill": "",
+    "kefu": "",
+    "like-fill": "",
+    "like": "",
+    "location": "",
+    "location-fill": "",
+    "lock": "",
+    "lock-fill": "",
+    "mail-fill": "",
+    "mail": "",
+    "message": "",
+    "message-fill": "",
+    "mobile-fill": "",
+    "mobile": "",
+    "more": "",
+    "more-fill": "",
+    "my-fill": "",
+    "my": "",
+    "principal": "",
+    "notice-fill": "",
+    "notice": "",
+    "order": "",
+    "order-fill": "",
+    "picture": "",
+    "picture-fill": "",
+    "setup-fill": "",
+    "setup": "",
+    "share": "",
+    "share-fill": "",
+    "shop": "",
+    "shop-fill": "",
+    "star-fill": "",
+    "star": "",
+    "starhalf": "",
+    "stepon-fill": "",
+    "stepon": "",
+    "wait-fill": "",
+    "wait": "",
+    "warning": "",
+    "warning-fill": "",
+    "plus": "",
+    "plussign-fill": "",
+    "plussign": "",
+    "minus": "",
+    "minussign": "",
+    "minussign-fill": "",
+    "close": "",
+    "clear": "",
+    "clear-fill": "",
+    "checkbox-fill": "",
+    "checkround": "",
+    "checkbox": "",
+    "check": "",
+    "pulldown-fill": "",
+    "pullup": "",
+    "pullup-fill": "",
+    "pulldown": "",
+    "roundright-fill": "",
+    "roundright": "",
+    "arrowright": "",
+    "arrowleft": "",
+    "arrowdown": "",
+    "left": "",
+    "up": "",
+    "right": "",
+    "back": "",
+    "top": "",
+    "dropdown": "",
+    "turningleft": "",
+    "turningup": "",
+    "turningright": "",
+    "turningdown": "",
+    "refresh": "",
+    "loading": "",
+    "search": "",
+    "rotate": "",
+    "screen": "",
+    "signin": "",
+    "calendar": "",
+    "scan": "",
+    "qrcode": "",
+    "wallet": "",
+    "telephone": "",
+    "visible": "",
+    "invisible": "",
+    "menu": "",
+    "operate": "",
+    "slide": "",
+    "list": "",
+    "nonetwork": "",
+    "partake": "",
+    "qa": "",
+    "barchart": "",
+    "piechart": "",
+    "linechart": "",
+    "at": "",
+    "face": "",
+    "redpacket": "",
+    "suspend": "",
+    "link": "",
+    "keyboard": "",
+    "play": "",
+    "video": "",
+    "voice": "",
+    "sina": "",
+    "browser": "",
+    "moments": "",
+    "qq": "",
+    "wechat": "",
+    "balance": "",
+    "bankcardpay": "",
+    "wxpay": "",
+    "alipay": "",
+    "payment": "",
+    "receive": "",
+    "sendout": "",
+    "evaluate": "",
+    "aftersale": "",
+    "warehouse": "",
+    "transport": "",
+    "delivery": "",
+    "switch": "",
+    "goods": "",
+    "goods-fill": ""
+  });
   const _sfc_main$4 = vue.defineComponent({
+    name: "fui-icon",
+    emits: ["onclick"],
+    props: {
+      name: {
+        type: String,
+        default: ""
+      },
+      size: {
+        type: [Object, String, Number],
+        default: 0
+      },
+      unit: {
+        type: String,
+        default: "rpx"
+      },
+      color: {
+        type: String,
+        default: ""
+      },
+      fontWeight: {
+        type: String,
+        default: "normal"
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      param: {
+        type: String,
+        default: "0"
+      },
+      //是否显示为主色调，color为空时有效。【内部保留属性】
+      primary: {
+        type: Boolean,
+        default: false
+      }
+    },
+    computed: {
+      getSize() {
+        let size;
+        if (typeof this.size == "number") {
+          size = this.size.toString() + this.unit;
+        } else if (typeof this.size == "string") {
+          size = this.size + this.unit;
+        } else {
+          size = this.size.toString() + this.unit;
+        }
+        return size;
+      },
+      isBind() {
+        const size = this.getSize;
+        let bind = false;
+        if (size == "" || size == "px" || size == "rpx" || size == "0rpx" || size == "0px") {
+          bind = true;
+        }
+        return bind;
+      },
+      getIcon() {
+        const icon = this.icons.getString(this.name);
+        return icon == null ? "" : icon;
+      },
+      getIconStyl() {
+        const mp = /* @__PURE__ */ new Map();
+        mp.set("fontWeight", this.fontWeight);
+        mp.set("fontSize", this.getSize);
+        mp.set("lineHeight", this.getSize);
+        if (this.color != "")
+          mp.set("color", this.color);
+        return mp;
+      }
+    },
+    data() {
+      return {
+        icons
+      };
+    },
+    methods: {
+      handleClick() {
+        if (this.disabled)
+          return null;
+        this.$emit("onclick", this.param);
+      }
+    }
+  });
+  const _style_0$4 = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
+  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "text",
+      {
+        style: vue.normalizeStyle($options.getIconStyl),
+        class: vue.normalizeClass(["fui-icon", { "fui-icon__fontsize": $options.isBind, "fui-icon__active-color": $props.primary && $props.color == "", "fui-icon__color": $props.color == "" && !$props.primary }]),
+        onClick: _cache[0] || (_cache[0] = (...args) => $options.handleClick && $options.handleClick(...args))
+      },
+      vue.toDisplayString($options.getIcon),
+      7
+      /* TEXT, CLASS, STYLE */
+    );
+  }
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["styles", [_style_0$4]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
+  const _sfc_main$3 = vue.defineComponent({
     name: "fui-input",
     emits: ["input", "update:modelValue", "focus", "blur", "confirm", "onclick", "keyboardheightchange"],
     props: {
@@ -3719,8 +3984,8 @@
       }
     }
   });
-  const _style_0$4 = { "fui-input__wrap": { "": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "position": "relative", "boxSizing": "border-box", "overflow": "visible" } }, "fui-input__border-uvue": { "": { "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "fui-input__border-color": { "": { "!borderTopColor": "#EEEEEE", "!borderRightColor": "#EEEEEE", "!borderBottomColor": "#EEEEEE", "!borderLeftColor": "#EEEEEE" } }, "fui-input__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#EEEEEE" } }, "fui-input__border-top": { "": { "position": "absolute", "top": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__required": { "": { "position": "absolute", "left": "12rpx", "height": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "fui-input__asterisk-text": { "": { "fontSize": "32rpx", "height": "32rpx", "lineHeight": "32rpx" } }, "fui-input__asterisk-color": { "": { "!color": "#FF2B2B" } }, "fui-input__label": { "": { "paddingRight": "12rpx", "flexShrink": 0 } }, "fui-input__label-size": { "": { "!fontSize": "32rpx", "!lineHeight": "32rpx" } }, "fui-input__self": { "": { "flex": 1, "paddingRight": "12rpx", "overflow": "visible", "backgroundColor": "rgba(0,0,0,0)", "boxSizing": "border-box" } }, "fui-input__size": { "": { "!fontSize": "32rpx" } }, "fui-input__clear-wrap": { "": { "width": "32rpx", "height": "32rpx", "transform": "rotate(45deg) scale(1.1)", "position": "relative", "flexShrink": 0, "borderTopLeftRadius": "32rpx", "borderTopRightRadius": "32rpx", "borderBottomRightRadius": "32rpx", "borderBottomLeftRadius": "32rpx" } }, "fui-input__clear": { "": { "width": "32rpx", "height": "32rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "absolute", "left": 0, "top": 0, "transform": "scale(0.5)" } }, "fui-input__clear-a": { "": { "width": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__clear-b": { "": { "height": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__placeholder": { "": { "color": "#CCCCCC", "overflow": "visible" } }, "fui-input__disabled": { "": { "pointerEvents": "none" } }, "fui-input__disabled-styl": { "": { "opacity": 0.6 } } };
-  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$3 = { "fui-input__wrap": { "": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "position": "relative", "boxSizing": "border-box", "overflow": "visible" } }, "fui-input__border-uvue": { "": { "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "fui-input__border-color": { "": { "!borderTopColor": "#EEEEEE", "!borderRightColor": "#EEEEEE", "!borderBottomColor": "#EEEEEE", "!borderLeftColor": "#EEEEEE" } }, "fui-input__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#EEEEEE" } }, "fui-input__border-top": { "": { "position": "absolute", "top": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__required": { "": { "position": "absolute", "left": "12rpx", "height": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "fui-input__asterisk-text": { "": { "fontSize": "32rpx", "height": "32rpx", "lineHeight": "32rpx" } }, "fui-input__asterisk-color": { "": { "!color": "#FF2B2B" } }, "fui-input__label": { "": { "paddingRight": "12rpx", "flexShrink": 0 } }, "fui-input__label-size": { "": { "!fontSize": "32rpx", "!lineHeight": "32rpx" } }, "fui-input__self": { "": { "flex": 1, "paddingRight": "12rpx", "overflow": "visible", "backgroundColor": "rgba(0,0,0,0)", "boxSizing": "border-box" } }, "fui-input__size": { "": { "!fontSize": "32rpx" } }, "fui-input__clear-wrap": { "": { "width": "32rpx", "height": "32rpx", "transform": "rotate(45deg) scale(1.1)", "position": "relative", "flexShrink": 0, "borderTopLeftRadius": "32rpx", "borderTopRightRadius": "32rpx", "borderBottomRightRadius": "32rpx", "borderBottomLeftRadius": "32rpx" } }, "fui-input__clear": { "": { "width": "32rpx", "height": "32rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "absolute", "left": 0, "top": 0, "transform": "scale(0.5)" } }, "fui-input__clear-a": { "": { "width": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__clear-b": { "": { "height": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__placeholder": { "": { "color": "#CCCCCC", "overflow": "visible" } }, "fui-input__disabled": { "": { "pointerEvents": "none" } }, "fui-input__disabled-styl": { "": { "opacity": 0.6 } } };
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -3840,8 +4105,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["styles", [_style_0$4]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
-  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["styles", [_style_0$3]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
+  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "changePhoneNumber",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -3862,7 +4127,7 @@
       const getPsw = () => {
         if (isCounting.value)
           return null;
-        uni.__log__("log", "at pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue:55", "发送验证码请求...");
+        uni.__log__("log", "at pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue:56", "发送验证码请求...");
         isCounting.value = true;
         countDown(60);
       };
@@ -3871,20 +4136,24 @@
       return __returned__;
     }
   }));
-  const _imports_0 = "/static/phone.png";
-  const _imports_1 = "/static/captcha.png";
-  const _style_0$3 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "icon": { ".container .content ": { "width": "40rpx", "height": "40rpx", "marginRight": "10rpx" } } };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_1);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2);
+  const _style_0$2 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "icon": { ".container .content ": { "width": "40rpx", "height": "40rpx", "marginRight": "10rpx" } } };
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$1);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_0);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
-        vue.createVNode(_component_fui_input, { placeholder: "请输入手机号" }, {
+        vue.createVNode(_component_fui_input, {
+          placeholder: "请输入手机号",
+          placeholderStyle: "font-size: 26rpx;"
+        }, {
           left: vue.withCtx(() => [
             vue.createElementVNode("view", null, [
-              vue.createElementVNode("image", {
-                class: "icon",
-                src: _imports_0
+              vue.createCommentVNode(' <image class="icon" src="@/static/phone.png"></image> '),
+              vue.createVNode(_component_fui_icon, {
+                name: "mobile",
+                color: "#1296db",
+                size: 48
               })
             ])
           ]),
@@ -3894,20 +4163,22 @@
         vue.createVNode(_component_fui_input, {
           padding: "20rpx 32rpx",
           placeholder: "请输入验证码",
-          bottomLeft: 0
+          bottomLeft: 0,
+          placeholderStyle: "font-size: 26rpx;"
         }, {
           left: vue.withCtx(() => [
             vue.createElementVNode("view", null, [
-              vue.createElementVNode("image", {
-                class: "icon",
-                src: _imports_1
-              })
+              vue.createVNode(_component_fui_icon, {
+                name: "captcha",
+                color: "#1296db",
+                size: 48
+              }),
+              vue.createCommentVNode(' <image class="icon" src="@/static/captcha.png"></image> ')
             ])
           ]),
           default: vue.withCtx(() => [
             vue.createVNode(_component_fui_button, {
               type: "gray",
-              bold: true,
               width: "200rpx",
               height: "64rpx",
               size: 28,
@@ -3922,272 +4193,7 @@
       ])
     ]);
   }
-  const PagesMineUserInfoChangePhoneNumberChangePhoneNumber = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["styles", [_style_0$3]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue"]]);
-  const icons = new UTSJSONObject({
-    "addressbook": "",
-    "addfriends-fill": "",
-    "addfriends": "",
-    "backspace-fill": "",
-    "backspace": "",
-    "bankcard-fill": "",
-    "bankcard": "",
-    "camera-fill": "",
-    "camera": "",
-    "captcha-fill": "",
-    "captcha": "",
-    "cart-fill": "",
-    "cart": "",
-    "classify": "",
-    "classify-fill": "",
-    "comment-fill": "",
-    "comment": "",
-    "community-fill": "",
-    "community": "",
-    "coupon-fill": "",
-    "coupon": "",
-    "delete": "",
-    "delete-fill": "",
-    "edit": "",
-    "edit-fill": "",
-    "fabulous-fill": "",
-    "fabulous": "",
-    "find": "",
-    "find-fill": "",
-    "help-fill": "",
-    "help": "",
-    "home-fill": "",
-    "home": "",
-    "idcard-fill": "",
-    "idcard": "",
-    "info": "",
-    "info-fill": "",
-    "invite-fill": "",
-    "invite": "",
-    "kefu-fill": "",
-    "kefu": "",
-    "like-fill": "",
-    "like": "",
-    "location": "",
-    "location-fill": "",
-    "lock": "",
-    "lock-fill": "",
-    "mail-fill": "",
-    "mail": "",
-    "message": "",
-    "message-fill": "",
-    "mobile-fill": "",
-    "mobile": "",
-    "more": "",
-    "more-fill": "",
-    "my-fill": "",
-    "my": "",
-    "principal": "",
-    "notice-fill": "",
-    "notice": "",
-    "order": "",
-    "order-fill": "",
-    "picture": "",
-    "picture-fill": "",
-    "setup-fill": "",
-    "setup": "",
-    "share": "",
-    "share-fill": "",
-    "shop": "",
-    "shop-fill": "",
-    "star-fill": "",
-    "star": "",
-    "starhalf": "",
-    "stepon-fill": "",
-    "stepon": "",
-    "wait-fill": "",
-    "wait": "",
-    "warning": "",
-    "warning-fill": "",
-    "plus": "",
-    "plussign-fill": "",
-    "plussign": "",
-    "minus": "",
-    "minussign": "",
-    "minussign-fill": "",
-    "close": "",
-    "clear": "",
-    "clear-fill": "",
-    "checkbox-fill": "",
-    "checkround": "",
-    "checkbox": "",
-    "check": "",
-    "pulldown-fill": "",
-    "pullup": "",
-    "pullup-fill": "",
-    "pulldown": "",
-    "roundright-fill": "",
-    "roundright": "",
-    "arrowright": "",
-    "arrowleft": "",
-    "arrowdown": "",
-    "left": "",
-    "up": "",
-    "right": "",
-    "back": "",
-    "top": "",
-    "dropdown": "",
-    "turningleft": "",
-    "turningup": "",
-    "turningright": "",
-    "turningdown": "",
-    "refresh": "",
-    "loading": "",
-    "search": "",
-    "rotate": "",
-    "screen": "",
-    "signin": "",
-    "calendar": "",
-    "scan": "",
-    "qrcode": "",
-    "wallet": "",
-    "telephone": "",
-    "visible": "",
-    "invisible": "",
-    "menu": "",
-    "operate": "",
-    "slide": "",
-    "list": "",
-    "nonetwork": "",
-    "partake": "",
-    "qa": "",
-    "barchart": "",
-    "piechart": "",
-    "linechart": "",
-    "at": "",
-    "face": "",
-    "redpacket": "",
-    "suspend": "",
-    "link": "",
-    "keyboard": "",
-    "play": "",
-    "video": "",
-    "voice": "",
-    "sina": "",
-    "browser": "",
-    "moments": "",
-    "qq": "",
-    "wechat": "",
-    "balance": "",
-    "bankcardpay": "",
-    "wxpay": "",
-    "alipay": "",
-    "payment": "",
-    "receive": "",
-    "sendout": "",
-    "evaluate": "",
-    "aftersale": "",
-    "warehouse": "",
-    "transport": "",
-    "delivery": "",
-    "switch": "",
-    "goods": "",
-    "goods-fill": ""
-  });
-  const _sfc_main$2 = vue.defineComponent({
-    name: "fui-icon",
-    emits: ["onclick"],
-    props: {
-      name: {
-        type: String,
-        default: ""
-      },
-      size: {
-        type: [Object, String, Number],
-        default: 0
-      },
-      unit: {
-        type: String,
-        default: "rpx"
-      },
-      color: {
-        type: String,
-        default: ""
-      },
-      fontWeight: {
-        type: String,
-        default: "normal"
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      param: {
-        type: String,
-        default: "0"
-      },
-      //是否显示为主色调，color为空时有效。【内部保留属性】
-      primary: {
-        type: Boolean,
-        default: false
-      }
-    },
-    computed: {
-      getSize() {
-        let size;
-        if (typeof this.size == "number") {
-          size = this.size.toString() + this.unit;
-        } else if (typeof this.size == "string") {
-          size = this.size + this.unit;
-        } else {
-          size = this.size.toString() + this.unit;
-        }
-        return size;
-      },
-      isBind() {
-        const size = this.getSize;
-        let bind = false;
-        if (size == "" || size == "px" || size == "rpx" || size == "0rpx" || size == "0px") {
-          bind = true;
-        }
-        return bind;
-      },
-      getIcon() {
-        const icon = this.icons.getString(this.name);
-        return icon == null ? "" : icon;
-      },
-      getIconStyl() {
-        const mp = /* @__PURE__ */ new Map();
-        mp.set("fontWeight", this.fontWeight);
-        mp.set("fontSize", this.getSize);
-        mp.set("lineHeight", this.getSize);
-        if (this.color != "")
-          mp.set("color", this.color);
-        return mp;
-      }
-    },
-    data() {
-      return {
-        icons
-      };
-    },
-    methods: {
-      handleClick() {
-        if (this.disabled)
-          return null;
-        this.$emit("onclick", this.param);
-      }
-    }
-  });
-  const _style_0$2 = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
-  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "text",
-      {
-        style: vue.normalizeStyle($options.getIconStyl),
-        class: vue.normalizeClass(["fui-icon", { "fui-icon__fontsize": $options.isBind, "fui-icon__active-color": $props.primary && $props.color == "", "fui-icon__color": $props.color == "" && !$props.primary }]),
-        onClick: _cache[0] || (_cache[0] = (...args) => $options.handleClick && $options.handleClick(...args))
-      },
-      vue.toDisplayString($options.getIcon),
-      7
-      /* TEXT, CLASS, STYLE */
-    );
-  }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["styles", [_style_0$2]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
+  const PagesMineUserInfoChangePhoneNumberChangePhoneNumber = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["styles", [_style_0$2]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue"]]);
   const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "changePassword",
     setup(__props, _a) {
@@ -4197,31 +4203,45 @@
       const newPassword = vue.ref("");
       const confirmPassword = vue.ref("");
       const btnDisabled = vue.ref(true);
+      const errorMsg = vue.ref("");
+      const passwordReg = /^(?:(?=.*[a-zA-Z])(?=.*\d)|(?=.*[a-zA-Z])(?=.*[^a-zA-Z\d])|(?=.*\d)(?=.*[^a-zA-Z\d])).{8,16}$/;
+      function verPassword(psw) {
+        return passwordReg.test(psw);
+      }
+      const updateBtnState = () => {
+        const allFieldsFilled = oldPassword.value.length > 0 && newPassword.value.length > 0 && confirmPassword.value.length > 0;
+        const passwordsMatch = newPassword.value === confirmPassword.value;
+        const newPwdValid = verPassword(newPassword.value);
+        btnDisabled.value = !(allFieldsFilled && newPwdValid && passwordsMatch);
+      };
       const updateOldPassword = (e) => {
-        uni.__log__("log", "at pages/mine/userInfo/changePassword/changePassword.uvue:28", e);
         oldPassword.value = e;
+        updateBtnState();
       };
       const updateNewPassword = (e) => {
-        if (verPassword(e)) {
-          newPassword.value = e;
+        newPassword.value = e;
+        errorMsg.value = "";
+        if (e.length > 0 && !verPassword(e)) {
+          errorMsg.value = "密码格式不符合要求";
+        } else if (confirmPassword.value.length > 0 && e != confirmPassword.value) {
+          errorMsg.value = "两次输入的密码不一致";
         }
+        updateBtnState();
       };
       const updateConfirmPassword = (e) => {
-        uni.__log__("log", "at pages/mine/userInfo/changePassword/changePassword.uvue:42", e);
         confirmPassword.value = e;
-      };
-      const verPassword = (psw) => {
-        if (psw.length < 8 || psw.length > 16) {
-          return false;
+        errorMsg.value = "";
+        if (e.length > 0) {
+          if (!verPassword(e)) {
+            errorMsg.value = "确认密码格式不符合要求";
+          } else if (e != newPassword.value) {
+            errorMsg.value = "两次输入的密码不一致";
+          }
         }
-        if (!passwordReg(psw)) {
-          return false;
-        }
-        return true;
+        updateBtnState();
       };
-      const passwordReg = /^(?=.*[a-zA-Z])(?=.*\d)|(?=.*[a-zA-Z])(?=.*[^a-zA-Z\d])|(?=.*\d)(?=.*[^a-zA-Z\d]).{8,16}$/;
       const submit = () => {
-        if (!passwordReg.test(newPassword.value)) {
+        if (!verPassword(newPassword.value)) {
           uni.showToast({
             title: "密码格式错误",
             icon: "none"
@@ -4240,19 +4260,17 @@
           icon: "none"
         });
       };
-      const __returned__ = { oldPassword, newPassword, confirmPassword, btnDisabled, updateOldPassword, updateNewPassword, updateConfirmPassword, verPassword, passwordReg, submit };
+      const __returned__ = { oldPassword, newPassword, confirmPassword, btnDisabled, errorMsg, passwordReg, verPassword, updateBtnState, updateOldPassword, updateNewPassword, updateConfirmPassword, submit };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   }));
-  const _style_0$1 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } } };
+  const _style_0$1 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } }, "error-msg": { ".container ": { "marginTop": "10rpx", "color": "#e64340", "fontSize": "24rpx" } } };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0);
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_1);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_0);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
-        vue.createVNode(_component_fui_icon, { name: "addfriends" }),
         vue.createVNode(_component_fui_input, {
           label: "旧密码",
           placeholder: "请输入原密码",
@@ -4272,6 +4290,15 @@
           onInput: $setup.updateConfirmPassword
         }, null, 8, ["modelValue"])
       ]),
+      $setup.errorMsg ? (vue.openBlock(), vue.createElementBlock("view", { key: 0 }, [
+        vue.createElementVNode(
+          "text",
+          { class: "error-msg" },
+          vue.toDisplayString($setup.errorMsg),
+          1
+          /* TEXT */
+        )
+      ])) : vue.createCommentVNode("v-if", true),
       vue.createElementVNode("view", { class: "tips" }, [
         vue.createElementVNode("text", { class: "tips-word" }, "密码8-16位,需包含英文字母、数字、特殊字符中两类及以上")
       ]),
