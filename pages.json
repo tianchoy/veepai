@@ -41,6 +41,13 @@
 			"style": {
 				"navigationBarTitleText": "修改手机号"
 			}
+		},
+		{
+			"path" : "pages/mine/userInfo/changePassword/changePassword",
+			"style" : 
+			{
+				"navigationBarTitleText" : "修改密码"
+			}
 		}
 	],
 	"tabBar": {

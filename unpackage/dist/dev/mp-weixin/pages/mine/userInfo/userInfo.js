@@ -21,16 +21,20 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         common_vendor.index.showModal(new UTSJSONObject({
           title: "确认解绑",
           content: "确定要解除微信绑定吗？",
+          cancelText: "取消",
+          confirmText: "确定",
           success: (res) => {
+            common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:62", res);
             if (res.confirm) {
-              common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:62", "调用解绑API...");
+              common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:64", "调用解绑API...");
               switchVal.value = false;
               common_vendor.index.showToast({
                 title: "已成功解绑微信",
                 icon: "none"
               });
-            } else {
-              switchVal.value = true;
+            } else if (res.cancel) {
+              common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:73", "用户点击取消", isCurrentlyBound);
+              switchVal.value = isCurrentlyBound;
             }
           }
         }));
@@ -38,16 +42,19 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         common_vendor.index.showModal(new UTSJSONObject({
           title: "确认绑定",
           content: "确定要绑定微信账号吗？",
+          cancelText: "取消",
+          confirmText: "确定",
           success: (res) => {
             if (res.confirm) {
-              common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:80", "调用绑定API...");
+              common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:86", "调用绑定API...");
               switchVal.value = true;
               common_vendor.index.showToast({
                 title: "已成功绑定微信",
                 icon: "none"
               });
-            } else {
-              switchVal.value = false;
+            } else if (res.cancel) {
+              common_vendor.index.__f__("log", "at pages/mine/userInfo/userInfo.uvue:94", "用户点击取消", isCurrentlyBound);
+              switchVal.value = isCurrentlyBound;
             }
           }
         }));
@@ -89,6 +96,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         f: common_vendor.t(switchVal.value ? "已绑定" : "未绑定"),
         g: common_vendor.o(change),
         h: common_vendor.p({
+          checked: switchVal.value,
           color: "#1296db"
         }),
         i: common_vendor.o(logout),

@@ -20,7 +20,7 @@
 			<text>安全信息</text>
 		</view>
 		<view class="info">
-			<view class="info-item">
+			<view class="info-item" @click="editPassword">
 				<text>修改密码</text>
 				<image class="icon" src="@/static/mine/right.png" mode="aspectFit" />
 			</view>
@@ -37,7 +37,7 @@
 				<text>微信</text>
 				<view class="switch-state">
 					<text style="margin-right: 10rpx;">{{switchVal ? '已绑定' : '未绑定'}}</text>
-					<fui-switch color="#1296db" @change="change"></fui-switch>
+					<fui-switch :checked="switchVal" color="#1296db" @change="change"></fui-switch>
 				</view>
 			</view>
 		</view>
@@ -53,13 +53,13 @@
 	const change = () => {
 		const isCurrentlyBound = switchVal.value
 		if (isCurrentlyBound) {
-			// 解绑操作
 			uni.showModal({
 				title: '确认解绑',
 				content: '确定要解除微信绑定吗？',
 				cancelText: '取消',
 				confirmText: '确定',
 				success: (res) => {
+					console.log(res)
 					if (res.confirm) {
 						console.log('调用解绑API...')
 
@@ -68,10 +68,12 @@
 							title: '已成功解绑微信',
 							icon: 'none'
 						})
-					} else {
+					}
+					else if (res.cancel) {
+						console.log('用户点击取消',isCurrentlyBound);
 						switchVal.value = isCurrentlyBound
 					}
-				}
+				},
 			})
 		} else {
 			uni.showModal({
@@ -88,7 +90,8 @@
 							title: '已成功绑定微信',
 							icon: 'none'
 						})
-					} else {
+					}else if (res.cancel) {
+						console.log('用户点击取消',isCurrentlyBound);
 						switchVal.value = isCurrentlyBound
 					}
 				}
@@ -124,6 +127,16 @@
 		uni.navigateTo({
 			url: '/pages/mine/userInfo/CancelAnAccount/CancelAnAccount'
 		})
+	}
+	
+	//修改密码
+	const editPassword = () => {
+		//通过接口返回类型判断是去找回密码还是修改密码
+		if(true){
+			uni.navigateTo({
+				url: '/pages/mine/userInfo/changePassword/changePassword'
+			})
+		}
 	}
 </script>
 

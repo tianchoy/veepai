@@ -44,7 +44,7 @@
   function initRuntimeSocketService() {
     const hosts = "127.0.0.1,192.168.3.34";
     const port = "8090";
-    const id = "app-ios_GeQhkk";
+    const id = "app-ios_0ktG6t";
     let socketTask = null;
     __registerWebViewUniConsole(() => {
       return '!function(){"use strict";"function"==typeof SuppressedError&&SuppressedError;var e=["log","warn","error","info","debug"],n=e.reduce((function(e,n){return e[n]=console[n].bind(console),e}),{}),t=null,r=new Set,o={};function i(e){if(null!=t){var n=e.map((function(e){if("string"==typeof e)return e;var n=e&&"promise"in e&&"reason"in e,t=n?"UnhandledPromiseRejection: ":"";if(n&&(e=e.reason),e instanceof Error&&e.stack)return e.message&&!e.stack.includes(e.message)?"".concat(t).concat(e.message,"\\n").concat(e.stack):"".concat(t).concat(e.stack);if("object"==typeof e&&null!==e)try{return t+JSON.stringify(e)}catch(e){return t+String(e)}return t+String(e)})).filter(Boolean);n.length>0&&t(JSON.stringify(Object.assign({type:"error",data:n},o)))}else e.forEach((function(e){r.add(e)}))}function a(e,n){try{return{type:e,args:u(n)}}catch(e){}return{type:e,args:[]}}function u(e){return e.map((function(e){return c(e)}))}function c(e,n){if(void 0===n&&(n=0),n>=7)return{type:"object",value:"[Maximum depth reached]"};switch(typeof e){case"string":return{type:"string",value:e};case"number":return function(e){return{type:"number",value:String(e)}}(e);case"boolean":return function(e){return{type:"boolean",value:String(e)}}(e);case"object":try{return function(e,n){if(null===e)return{type:"null"};if(function(e){return e.$&&s(e.$)}(e))return function(e,n){return{type:"object",className:"ComponentPublicInstance",value:{properties:Object.entries(e.$.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(s(e))return function(e,n){return{type:"object",className:"ComponentInternalInstance",value:{properties:Object.entries(e.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return e.style&&null!=e.tagName&&null!=e.nodeName}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e).filter((function(e){var n=e[0];return["id","tagName","nodeName","dataset","offsetTop","offsetLeft","style"].includes(n)})).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return"function"==typeof e.getPropertyValue&&"function"==typeof e.setProperty&&e.$styles}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e.$styles).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(Array.isArray(e))return{type:"object",subType:"array",value:{properties:e.map((function(e,t){return function(e,n,t){var r=c(e,t);return r.name="".concat(n),r}(e,t,n+1)}))}};if(e instanceof Set)return{type:"object",subType:"set",className:"Set",description:"Set(".concat(e.size,")"),value:{entries:Array.from(e).map((function(e){return function(e,n){return{value:c(e,n)}}(e,n+1)}))}};if(e instanceof Map)return{type:"object",subType:"map",className:"Map",description:"Map(".concat(e.size,")"),value:{entries:Array.from(e.entries()).map((function(e){return function(e,n){return{key:c(e[0],n),value:c(e[1],n)}}(e,n+1)}))}};if(e instanceof Promise)return{type:"object",subType:"promise",value:{properties:[]}};if(e instanceof RegExp)return{type:"object",subType:"regexp",value:String(e),className:"Regexp"};if(e instanceof Date)return{type:"object",subType:"date",value:String(e),className:"Date"};if(e instanceof Error)return{type:"object",subType:"error",value:e.message||String(e),className:e.name||"Error"};var t=void 0,r=e.constructor;r&&r.get$UTSMetadata$&&(t=r.get$UTSMetadata$().name);var o=Object.entries(e);(function(e){return e.modifier&&e.modifier._attribute&&e.nodeContent})(e)&&(o=o.filter((function(e){var n=e[0];return"modifier"!==n&&"nodeContent"!==n})));return{type:"object",className:t,value:{properties:o.map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n)}catch(e){return{type:"object",value:{properties:[]}}}case"undefined":return{type:"undefined"};case"function":return function(e){return{type:"function",value:"function ".concat(e.name,"() {}")}}(e);case"symbol":return function(e){return{type:"symbol",value:e.description}}(e);case"bigint":return function(e){return{type:"bigint",value:String(e)}}(e)}}function s(e){return e.type&&null!=e.uid&&e.appContext}function f(e,n,t){var r=c(n,t);return r.name=e,r}var l=null,p=[],y={},g="---BEGIN:EXCEPTION---",d="---END:EXCEPTION---";function v(e){null!=l?l(JSON.stringify(Object.assign({type:"console",data:e},y))):p.push.apply(p,e)}var m=/^\\s*at\\s+[\\w/./-]+:\\d+$/;function b(){function t(e){return function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];var o=function(e,n,t){if(t||2===arguments.length)for(var r,o=0,i=n.length;o<i;o++)!r&&o in n||(r||(r=Array.prototype.slice.call(n,0,o)),r[o]=n[o]);return e.concat(r||Array.prototype.slice.call(n))}([],t,!0);if(o.length){var u=o[o.length-1];"string"==typeof u&&m.test(u)&&o.pop()}if(n[e].apply(n,o),"error"===e&&1===t.length){var c=t[0];if("string"==typeof c&&c.startsWith(g)){var s=g.length,f=c.length-d.length;return void i([c.slice(s,f)])}if(c instanceof Error)return void i([c])}v([a(e,t)])}}return function(){var e=console.log,n=Symbol();try{console.log=n}catch(e){return!1}var t=console.log===n;return console.log=e,t}()?(e.forEach((function(e){console[e]=t(e)})),function(){e.forEach((function(e){console[e]=n[e]}))}):function(){}}function _(e){var n={type:"WEB_INVOKE_APPSERVICE",args:{data:{name:"console",arg:e}}};return window.__uniapp_x_postMessageToService?window.__uniapp_x_postMessageToService(n):window.__uniapp_x_.postMessageToService(JSON.stringify(n))}!function(){if(!window.__UNI_CONSOLE_WEBVIEW__){window.__UNI_CONSOLE_WEBVIEW__=!0;var e="[web-view]".concat(window.__UNI_PAGE_ROUTE__?"[".concat(window.__UNI_PAGE_ROUTE__,"]"):"");b(),function(e,n){if(void 0===n&&(n={}),l=e,Object.assign(y,n),null!=e&&p.length>0){var t=p.slice();p.length=0,v(t)}}((function(e){_(e)}),{channel:e}),function(e,n){if(void 0===n&&(n={}),t=e,Object.assign(o,n),null!=e&&r.size>0){var a=Array.from(r);r.clear(),i(a)}}((function(e){_(e)}),{channel:e}),window.addEventListener("error",(function(e){i([e.error])})),window.addEventListener("unhandledrejection",(function(e){i([e])}))}}()}();';
@@ -74,7 +74,7 @@
   const pauseIcon = "/static/video/pause.png";
   const addIcon = "/static/tabbar/add.png";
   const videoSrc$1 = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$c = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "index",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -138,7 +138,7 @@
       return __returned__;
     }
   }));
-  const _style_0$9 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
+  const _style_0$c = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
   const _export_sfc = (sfc, props) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
@@ -146,7 +146,7 @@
     }
     return target;
   };
-  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", {
@@ -217,7 +217,7 @@
       ])
     ]);
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["styles", [_style_0$9]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["styles", [_style_0$c]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
   function __read(o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
     if (!m)
@@ -801,7 +801,7 @@
     }
     return 0;
   }
-  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$b = /* @__PURE__ */ vue.defineComponent({
     __name: "l-daily-punch",
     props: {
       canSupplement: new UTSJSONObject({
@@ -972,8 +972,8 @@
       return __returned__;
     }
   });
-  const _style_0$8 = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
-  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$b = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
+  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "calender" }, [
       vue.createElementVNode(
         "canvas",
@@ -990,7 +990,7 @@
       )
     ]);
   }
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["styles", [_style_0$8]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["styles", [_style_0$b]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
   function resolveEasycom(component, easycom) {
     return typeof component === "string" ? easycom : component;
   }
@@ -2114,7 +2114,7 @@
     });
   }
   const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$7 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$a = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "message",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -2191,10 +2191,10 @@
       return __returned__;
     }
   }));
-  const _imports_0$3 = "/static/down.png";
-  const _imports_1$1 = "/static/vedio.png";
-  const _style_0$7 = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } } };
-  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  const _imports_0$4 = "/static/down.png";
+  const _imports_1$2 = "/static/vedio.png";
+  const _style_0$a = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } } };
+  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "vedio-box" }, [
@@ -2230,7 +2230,7 @@
             ),
             vue.createElementVNode("image", {
               class: "down",
-              src: _imports_0$3
+              src: _imports_0$4
             }),
             vue.createElementVNode("text", null, " | ")
           ]),
@@ -2285,7 +2285,7 @@
                 vue.createElementVNode("image", {
                   class: "item-img",
                   mode: "aspectFit",
-                  src: _imports_1$1
+                  src: _imports_1$2
                 })
               ]);
             }),
@@ -2311,8 +2311,8 @@
       ])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["styles", [_style_0$7]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
-  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["styles", [_style_0$a]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
+  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "mine",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -2327,11 +2327,11 @@
       return __returned__;
     }
   }));
-  const _imports_0$2 = "/static/mine/local.png";
-  const _imports_1 = "/static/mine/cloud.png";
+  const _imports_0$3 = "/static/mine/local.png";
+  const _imports_1$1 = "/static/mine/cloud.png";
   const _imports_2 = "/static/mine/msgList.png";
   const _imports_3 = "/static/mine/user.png";
-  const _imports_0$1 = "/static/mine/right.png";
+  const _imports_0$2 = "/static/mine/right.png";
   const _imports_5 = "/static/mine/liuliang.png";
   const _imports_6 = "/static/mine/order.png";
   const _imports_7 = "/static/mine/quetion.png";
@@ -2339,14 +2339,14 @@
   const _imports_9 = "/static/mine/advice.png";
   const _imports_10 = "/static/mine/setting.png";
   const _imports_11 = "/static/mine/about.png";
-  const _style_0$6 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
-  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$9 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
+  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "files" }, [
         vue.createElementVNode("view", { class: "file" }, [
           vue.createElementVNode("image", {
             class: "fileIcon",
-            src: _imports_0$2,
+            src: _imports_0$3,
             mode: "aspectFit"
           }),
           vue.createElementVNode("text", { class: "file-text" }, "本地文件")
@@ -2354,7 +2354,7 @@
         vue.createElementVNode("view", { class: "file" }, [
           vue.createElementVNode("image", {
             class: "fileIcon",
-            src: _imports_1,
+            src: _imports_1$1,
             mode: "aspectFit"
           }),
           vue.createElementVNode("text", { class: "file-text" }, "永久备份")
@@ -2384,7 +2384,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$1,
+              src: _imports_0$2,
               mode: "aspectFit"
             })
           ])
@@ -2401,7 +2401,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$1,
+              src: _imports_0$2,
               mode: "aspectFit"
             })
           ])
@@ -2418,7 +2418,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$1,
+              src: _imports_0$2,
               mode: "aspectFit"
             })
           ])
@@ -2435,7 +2435,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$1,
+              src: _imports_0$2,
               mode: "aspectFit"
             })
           ])
@@ -2452,7 +2452,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$1,
+              src: _imports_0$2,
               mode: "aspectFit"
             })
           ])
@@ -2469,7 +2469,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$1,
+              src: _imports_0$2,
               mode: "aspectFit"
             })
           ])
@@ -2486,7 +2486,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$1,
+              src: _imports_0$2,
               mode: "aspectFit"
             })
           ])
@@ -2503,7 +2503,7 @@
           vue.createElementVNode("view", null, [
             vue.createElementVNode("image", {
               class: "right-icon",
-              src: _imports_0$1,
+              src: _imports_0$2,
               mode: "aspectFit"
             })
           ])
@@ -2511,8 +2511,8 @@
       ])
     ]);
   }
-  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["styles", [_style_0$6]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
-  const _sfc_main$5 = vue.defineComponent({
+  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["styles", [_style_0$9]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
+  const _sfc_main$8 = vue.defineComponent({
     name: "fui-switch",
     emits: ["change", "update:checked"],
     props: {
@@ -2696,8 +2696,8 @@
       }
     }
   });
-  const _style_0$5 = { "fui-switch__input": { "": { "flexShrink": 0 } }, "fui-switch__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-switch__scale-center": { "": { "transformOrigin": "center center" } }, "fui-switch__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-switch__size-switch": { "": { "width": 52, "height": 32 } }, "fui-switch__size-checkbox": { "": { "width": "40rpx", "height": "40rpx" } }, "fui-switch__checkbox-self": { "": { "width": "40rpx", "height": "40rpx", "borderTopLeftRadius": 40, "borderTopRightRadius": 40, "borderBottomRightRadius": 40, "borderBottomLeftRadius": 40, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-switch__input-def": { "": { "position": "relative", "width": 52, "height": 32, "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "boxSizing": "border-box" } }, "fui-switch__normal-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#dfdfdf" } }, "fui-switch__checked-color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-switch__normal-bcolor": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-switch__input-before": { "": { "position": "absolute", "top": 0, "left": 0, "width": 50, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "transitionProperty": "transform", "transitionDuration": "0.3s" } }, "fui-switch__before-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input-after": { "": { "position": "absolute", "top": 0, "left": 0, "width": 30, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "boxShadow": "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty": "transform", "transitionDuration": "0.3s", "display": "flex", "alignItems": "center", "justifyContent": "center", "transform": "translateX(0)" } }, "fui-switch__after-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input--before": { "": { "transform": "scale(0)" } }, "fui-switch__input--after": { "": { "transform": "translateX(20px)" } }, "fui-switch__check-mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%", "boxSizing": "border-box" } }, "fui-switch__circle-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__checkbox-disabled": { "": { "opacity": 0.6 } }, "@TRANSITION": { "fui-switch__input-before": { "property": "transform", "duration": "0.3s" }, "fui-switch__input-after": { "property": "transform", "duration": "0.3s" } } };
-  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$8 = { "fui-switch__input": { "": { "flexShrink": 0 } }, "fui-switch__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-switch__scale-center": { "": { "transformOrigin": "center center" } }, "fui-switch__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-switch__size-switch": { "": { "width": 52, "height": 32 } }, "fui-switch__size-checkbox": { "": { "width": "40rpx", "height": "40rpx" } }, "fui-switch__checkbox-self": { "": { "width": "40rpx", "height": "40rpx", "borderTopLeftRadius": 40, "borderTopRightRadius": 40, "borderBottomRightRadius": 40, "borderBottomLeftRadius": 40, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-switch__input-def": { "": { "position": "relative", "width": 52, "height": 32, "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "boxSizing": "border-box" } }, "fui-switch__normal-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#dfdfdf" } }, "fui-switch__checked-color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-switch__normal-bcolor": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-switch__input-before": { "": { "position": "absolute", "top": 0, "left": 0, "width": 50, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "transitionProperty": "transform", "transitionDuration": "0.3s" } }, "fui-switch__before-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input-after": { "": { "position": "absolute", "top": 0, "left": 0, "width": 30, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "boxShadow": "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty": "transform", "transitionDuration": "0.3s", "display": "flex", "alignItems": "center", "justifyContent": "center", "transform": "translateX(0)" } }, "fui-switch__after-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input--before": { "": { "transform": "scale(0)" } }, "fui-switch__input--after": { "": { "transform": "translateX(20px)" } }, "fui-switch__check-mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%", "boxSizing": "border-box" } }, "fui-switch__circle-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__checkbox-disabled": { "": { "opacity": 0.6 } }, "@TRANSITION": { "fui-switch__input-before": { "property": "transform", "duration": "0.3s" }, "fui-switch__input-after": { "property": "transform", "duration": "0.3s" } } };
+  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2768,8 +2768,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["styles", [_style_0$5]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
-  const _sfc_main$4 = vue.defineComponent({
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["styles", [_style_0$8]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
+  const _sfc_main$7 = vue.defineComponent({
     name: "fui-button",
     emits: ["onclick"],
     props: {
@@ -3037,8 +3037,8 @@
       }
     }
   });
-  const _style_0$4 = { "fui-button__wrap": { "": { "position": "relative", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-button__flex-1": { "": { "width": "100%" } }, "fui-button__opacity": { "": { "opacity": 0.5 } }, "fui-button__hover": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "backgroundColor": "rgba(0,0,0,0.2)", "zIndex": 2, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "visibility": "hidden", "pointerEvents": "none" } }, "fui-button__spin": { "": { "width": "32rpx", "height": "32rpx", "borderTopWidth": 2, "borderRightWidth": 2, "borderBottomWidth": 2, "borderLeftWidth": 2, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "transitionDuration": "600ms", "transitionProperty": "transform", "transitionTimingFunction": "linear", "transform": "rotate(0deg)", "boxSizing": "border-box", "marginRight": "8rpx", "position": "relative" } }, "fui-button__spin-dot": { "": { "position": "absolute", "width": "12rpx", "height": "12rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx", "left": 0, "top": 0 } }, "fui-button__text": { "": { "textAlign": "center" } }, "fui-text__bold": { "": { "fontWeight": "bold" } }, "fui-button__link": { "": { "!borderTopColor": "rgba(0,0,0,0)", "!borderRightColor": "rgba(0,0,0,0)", "!borderBottomColor": "rgba(0,0,0,0)", "!borderLeftColor": "rgba(0,0,0,0)", "!backgroundColor": "rgba(0,0,0,0)" } }, "fui-button__primary": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF", "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-button__success": { "": { "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F", "!backgroundImage": "none", "!backgroundColor": "#09BE4F" } }, "fui-button__warning": { "": { "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703", "!backgroundImage": "none", "!backgroundColor": "#FFB703" } }, "fui-button__danger": { "": { "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B", "!backgroundImage": "none", "!backgroundColor": "#FF2B2B" } }, "fui-button__purple": { "": { "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF", "!backgroundImage": "none", "!backgroundColor": "#6831FF" } }, "fui-button__gray": { "": { "!borderTopColor": "#F8F8F8", "!borderRightColor": "#F8F8F8", "!borderBottomColor": "#F8F8F8", "!borderLeftColor": "#F8F8F8", "!backgroundImage": "none", "!backgroundColor": "#F8F8F8" } }, "fui-btn__gray-color": { "": { "!color": "#465CFF" } }, "fui-button__height": { "": { "!height": "96rpx" } }, "fui-button__height-text": { "": { "!height": "96rpx", "!lineHeight": "96rpx" } }, "fui-button__size": { "": { "!fontSize": "32rpx" } }, "fui-button__radius": { "": { "!borderTopLeftRadius": "16rpx", "!borderTopRightRadius": "16rpx", "!borderBottomRightRadius": "16rpx", "!borderBottomLeftRadius": "16rpx" } }, "@TRANSITION": { "fui-button__spin": { "duration": "600ms", "property": "transform", "timingFunction": "linear" } } };
-  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$7 = { "fui-button__wrap": { "": { "position": "relative", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-button__flex-1": { "": { "width": "100%" } }, "fui-button__opacity": { "": { "opacity": 0.5 } }, "fui-button__hover": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "backgroundColor": "rgba(0,0,0,0.2)", "zIndex": 2, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "visibility": "hidden", "pointerEvents": "none" } }, "fui-button__spin": { "": { "width": "32rpx", "height": "32rpx", "borderTopWidth": 2, "borderRightWidth": 2, "borderBottomWidth": 2, "borderLeftWidth": 2, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "transitionDuration": "600ms", "transitionProperty": "transform", "transitionTimingFunction": "linear", "transform": "rotate(0deg)", "boxSizing": "border-box", "marginRight": "8rpx", "position": "relative" } }, "fui-button__spin-dot": { "": { "position": "absolute", "width": "12rpx", "height": "12rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx", "left": 0, "top": 0 } }, "fui-button__text": { "": { "textAlign": "center" } }, "fui-text__bold": { "": { "fontWeight": "bold" } }, "fui-button__link": { "": { "!borderTopColor": "rgba(0,0,0,0)", "!borderRightColor": "rgba(0,0,0,0)", "!borderBottomColor": "rgba(0,0,0,0)", "!borderLeftColor": "rgba(0,0,0,0)", "!backgroundColor": "rgba(0,0,0,0)" } }, "fui-button__primary": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF", "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-button__success": { "": { "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F", "!backgroundImage": "none", "!backgroundColor": "#09BE4F" } }, "fui-button__warning": { "": { "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703", "!backgroundImage": "none", "!backgroundColor": "#FFB703" } }, "fui-button__danger": { "": { "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B", "!backgroundImage": "none", "!backgroundColor": "#FF2B2B" } }, "fui-button__purple": { "": { "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF", "!backgroundImage": "none", "!backgroundColor": "#6831FF" } }, "fui-button__gray": { "": { "!borderTopColor": "#F8F8F8", "!borderRightColor": "#F8F8F8", "!borderBottomColor": "#F8F8F8", "!borderLeftColor": "#F8F8F8", "!backgroundImage": "none", "!backgroundColor": "#F8F8F8" } }, "fui-btn__gray-color": { "": { "!color": "#465CFF" } }, "fui-button__height": { "": { "!height": "96rpx" } }, "fui-button__height-text": { "": { "!height": "96rpx", "!lineHeight": "96rpx" } }, "fui-button__size": { "": { "!fontSize": "32rpx" } }, "fui-button__radius": { "": { "!borderTopLeftRadius": "16rpx", "!borderTopRightRadius": "16rpx", "!borderBottomRightRadius": "16rpx", "!borderBottomLeftRadius": "16rpx" } }, "@TRANSITION": { "fui-button__spin": { "duration": "600ms", "property": "transform", "timingFunction": "linear" } } };
+  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -3103,8 +3103,8 @@
       /* CLASS, STYLE, NEED_HYDRATION */
     );
   }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["styles", [_style_0$4]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
-  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["styles", [_style_0$7]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
+  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "userInfo",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -3119,6 +3119,7 @@
             cancelText: "取消",
             confirmText: "确定",
             success: (res) => {
+              uni.__log__("log", "at pages/mine/userInfo/userInfo.uvue:62", res);
               if (res.confirm) {
                 uni.__log__("log", "at pages/mine/userInfo/userInfo.uvue:64", "调用解绑API...");
                 switchVal.value = false;
@@ -3126,7 +3127,8 @@
                   title: "已成功解绑微信",
                   icon: "none"
                 });
-              } else {
+              } else if (res.cancel) {
+                uni.__log__("log", "at pages/mine/userInfo/userInfo.uvue:73", "用户点击取消", isCurrentlyBound);
                 switchVal.value = isCurrentlyBound;
               }
             }
@@ -3139,13 +3141,14 @@
             confirmText: "确定",
             success: (res) => {
               if (res.confirm) {
-                uni.__log__("log", "at pages/mine/userInfo/userInfo.uvue:84", "调用绑定API...");
+                uni.__log__("log", "at pages/mine/userInfo/userInfo.uvue:86", "调用绑定API...");
                 switchVal.value = true;
                 uni.showToast({
                   title: "已成功绑定微信",
                   icon: "none"
                 });
-              } else {
+              } else if (res.cancel) {
+                uni.__log__("log", "at pages/mine/userInfo/userInfo.uvue:94", "用户点击取消", isCurrentlyBound);
                 switchVal.value = isCurrentlyBound;
               }
             }
@@ -3178,15 +3181,22 @@
           url: "/pages/mine/userInfo/CancelAnAccount/CancelAnAccount"
         });
       };
-      const __returned__ = { switchVal, change, logout, changePhoneNumber, cancelAnAccount };
+      const editPassword = () => {
+        {
+          uni.navigateTo({
+            url: "/pages/mine/userInfo/changePassword/changePassword"
+          });
+        }
+      };
+      const __returned__ = { switchVal, change, logout, changePhoneNumber, cancelAnAccount, editPassword };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   }));
-  const _style_0$3 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$6 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
+  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_0$1);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_0);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "title" }, [
         vue.createElementVNode("text", null, "个人信息")
@@ -3205,7 +3215,7 @@
             vue.createElementVNode("text", null, "18888888888"),
             vue.createElementVNode("image", {
               class: "icon",
-              src: _imports_0$1,
+              src: _imports_0$2,
               mode: "aspectFit"
             })
           ])
@@ -3215,11 +3225,14 @@
         vue.createElementVNode("text", null, "安全信息")
       ]),
       vue.createElementVNode("view", { class: "info" }, [
-        vue.createElementVNode("view", { class: "info-item" }, [
+        vue.createElementVNode("view", {
+          class: "info-item",
+          onClick: $setup.editPassword
+        }, [
           vue.createElementVNode("text", null, "修改密码"),
           vue.createElementVNode("image", {
             class: "icon",
-            src: _imports_0$1,
+            src: _imports_0$2,
             mode: "aspectFit"
           })
         ]),
@@ -3230,7 +3243,7 @@
           vue.createElementVNode("text", null, "注销账号"),
           vue.createElementVNode("image", {
             class: "icon",
-            src: _imports_0$1,
+            src: _imports_0$2,
             mode: "aspectFit"
           })
         ])
@@ -3250,9 +3263,10 @@
               /* TEXT */
             ),
             vue.createVNode(_component_fui_switch, {
+              checked: $setup.switchVal,
               color: "#1296db",
               onChange: $setup.change
-            })
+            }, null, 8, ["checked"])
           ])
         ])
       ]),
@@ -3266,8 +3280,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoUserInfo = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["styles", [_style_0$3]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/userInfo.uvue"]]);
-  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMineUserInfoUserInfo = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["styles", [_style_0$6]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/userInfo.uvue"]]);
+  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "CancelAnAccount",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -3284,13 +3298,13 @@
       return __returned__;
     }
   }));
-  const _imports_0 = "/static/error_big.png";
-  const _style_0$2 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
-  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_0);
+  const _imports_0$1 = "/static/error_big.png";
+  const _style_0$5 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
+  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("image", {
-        src: _imports_0,
+        src: _imports_0$1,
         class: "close"
       }),
       vue.createElementVNode("view", { class: "content" }, [
@@ -3319,21 +3333,968 @@
       ])
     ]);
   }
-  const PagesMineUserInfoCancelAnAccountCancelAnAccount = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["styles", [_style_0$2]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue"]]);
-  const _style_0$1 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } } };
-  const _sfc_main$1 = {};
-  function _sfc_render(_ctx, _cache) {
+  const PagesMineUserInfoCancelAnAccountCancelAnAccount = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["styles", [_style_0$5]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue"]]);
+  const _sfc_main$4 = vue.defineComponent({
+    name: "fui-input",
+    emits: ["input", "update:modelValue", "focus", "blur", "confirm", "onclick", "keyboardheightchange"],
+    props: {
+      required: {
+        type: Boolean,
+        default: false
+      },
+      requiredColor: {
+        type: String,
+        default: ""
+      },
+      label: {
+        type: String,
+        default: ""
+      },
+      labelSize: {
+        type: Number,
+        default: 0
+      },
+      labelColor: {
+        type: String,
+        default: "#333"
+      },
+      labelWidth: {
+        type: Number,
+        default: 140
+      },
+      clearable: {
+        type: Boolean,
+        default: false
+      },
+      clearColor: {
+        type: String,
+        default: "#CCCCCC"
+      },
+      focus: {
+        type: Boolean,
+        default: false
+      },
+      placeholder: {
+        type: String,
+        default: ""
+      },
+      placeholderStyle: {
+        type: String,
+        default: ""
+      },
+      name: {
+        type: String,
+        default: ""
+      },
+      value: {
+        type: [Object, String, Number],
+        default: ""
+      },
+      //保留属性
+      modelValue: {
+        type: [Object, String, Number],
+        default: ""
+      },
+      type: {
+        type: String,
+        default: "text"
+      },
+      password: {
+        type: Boolean,
+        default: false
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      disabledStyle: {
+        type: Boolean,
+        default: false
+      },
+      readonly: {
+        type: Boolean,
+        default: false
+      },
+      maxlength: {
+        type: Number,
+        default: 140
+      },
+      min: {
+        type: Number,
+        default: -1
+      },
+      max: {
+        type: Number,
+        default: -1
+      },
+      cursorSpacing: {
+        type: Number,
+        default: 0
+      },
+      cursorColor: {
+        type: String,
+        default: ""
+      },
+      confirmType: {
+        type: String,
+        default: "done"
+      },
+      confirmHold: {
+        type: Boolean,
+        default: false
+      },
+      cursor: {
+        type: Number,
+        default: -1
+      },
+      selectionStart: {
+        type: Number,
+        default: -1
+      },
+      selectionEnd: {
+        type: Number,
+        default: -1
+      },
+      adjustPosition: {
+        type: Boolean,
+        default: true
+      },
+      size: {
+        type: Number,
+        default: 0
+      },
+      color: {
+        type: String,
+        default: "#333"
+      },
+      inputBorder: {
+        type: Boolean,
+        default: false
+      },
+      isFillet: {
+        type: Boolean,
+        default: false
+      },
+      radius: {
+        type: Number,
+        default: 0
+      },
+      borderTop: {
+        type: Boolean,
+        default: false
+      },
+      topLeft: {
+        type: Number,
+        default: 0
+      },
+      topRight: {
+        type: Number,
+        default: 0
+      },
+      borderBottom: {
+        type: Boolean,
+        default: true
+      },
+      bottomLeft: {
+        type: Number,
+        default: 32
+      },
+      bottomRight: {
+        type: Number,
+        default: 0
+      },
+      borderColor: {
+        type: String,
+        default: ""
+      },
+      trim: {
+        type: Boolean,
+        default: true
+      },
+      textAlign: {
+        type: String,
+        default: "left"
+      },
+      padding: {
+        type: String,
+        default: "28rpx 32rpx"
+      },
+      backgroundColor: {
+        type: String,
+        default: "#FFFFFF"
+      },
+      marginTop: {
+        type: Number,
+        default: 0
+      }
+    },
+    data() {
+      const refInputId = "fui_input_".concat(parseInt(Math.ceil(Math.random() * 1e6).toString(), 36));
+      return {
+        refId: refInputId,
+        val: "",
+        fuiForm: null,
+        //1-string 2-number 3-boolean 4-string[] 5-number[]
+        valueType: 1
+      };
+    },
+    computed: {
+      getStyle() {
+        const mp = /* @__PURE__ */ new Map();
+        mp.set("padding", this.padding);
+        mp.set("background", this.backgroundColor);
+        mp.set("margin-top", "".concat(this.marginTop, "rpx"));
+        mp.set("border-radius", this.isFillet ? "120px" : "".concat(this.radius, "rpx"));
+        if (this.inputBorder && this.borderColor != "")
+          mp.set("border-color", this.borderColor);
+        return mp;
+      },
+      getBorderRadius() {
+        let radius = "".concat(this.radius * 2, "rpx");
+        if (this.isFillet) {
+          radius = "240px";
+        }
+        return radius;
+      },
+      getBtnLineStyl() {
+        const mp = /* @__PURE__ */ new Map();
+        if (this.borderColor != "")
+          mp.set("background", this.borderColor);
+        mp.set("left", "0");
+        mp.set("right", "".concat(this.bottomRight, "rpx"));
+        return mp;
+      },
+      getRequiredColor() {
+        const mp = /* @__PURE__ */ new Map();
+        if (this.requiredColor != "")
+          mp.set("color", this.requiredColor);
+        return mp;
+      },
+      getLabelStyl() {
+        const mp = /* @__PURE__ */ new Map();
+        if (this.labelColor != "")
+          mp.set("color", this.labelColor);
+        if (this.labelSize != 0) {
+          mp.set("fontSize", "".concat(this.labelSize, "rpx"));
+          mp.set("lineHeight", "".concat(this.labelSize, "rpx"));
+        }
+        return mp;
+      }
+    },
+    watch: {
+      focus(val) {
+        this.$nextTick(() => {
+          setTimeout(() => {
+            this.setFocusOrBlur(val);
+          }, 50);
+        });
+      },
+      modelValue() {
+        this.val = this.getStringVal(this.modelValue);
+      },
+      value() {
+        this.val = this.getStringVal(this.value);
+      }
+    },
+    created() {
+      setTimeout(() => {
+        const value = this.getStringVal(this.value);
+        const modelValue = this.getStringVal(this.modelValue);
+        if (value != "") {
+          this.val = value;
+        } else if (modelValue != "") {
+          this.val = modelValue;
+        }
+        const isForm = this.getParent("fui-form");
+        if (isForm) {
+          const form = this.fuiForm;
+          form.$data["formChildren"].push(this);
+        }
+      }, 50);
+    },
+    mounted() {
+      this.$nextTick(() => {
+        setTimeout(() => {
+          this.setFocusOrBlur(this.focus);
+        }, 300);
+      });
+    },
+    methods: {
+      getStringVal(val = null) {
+        let str;
+        if (typeof val == "string") {
+          str = val;
+        } else if (typeof val == "number") {
+          str = val.toString();
+        } else {
+          str = val.toString();
+        }
+        return str;
+      },
+      setFocusOrBlur(focus) {
+        if (focus) {
+          this.$refs[this.refId].focus();
+        } else {
+          this.$refs[this.refId].blur();
+        }
+      },
+      isSafeInteger(num) {
+        return num >= -9007199254740991 && num <= 9007199254740991;
+      },
+      onInput(event) {
+        let value = event.detail.value;
+        if (this.trim)
+          value = this.trimStr(value);
+        this.val = value;
+        let currentVal = parseFloat(value);
+        if ((this.type == "digit" || this.type == "number") && !isNaN(currentVal) && this.isSafeInteger(currentVal)) {
+          const min = this.min;
+          const max = this.max;
+          if (min != -1 && currentVal < min) {
+            currentVal = min;
+          } else if (max != -1 && max < currentVal) {
+            currentVal = max;
+          }
+          value = currentVal.toString();
+        }
+        this.$nextTick(() => {
+          if (event.detail.value != "")
+            this.val = value;
+        });
+        const inputValue = event.detail.value != "" ? value : "";
+        this.$emit("input", inputValue);
+        this.$emit("update:modelValue", inputValue);
+      },
+      onFocus(event) {
+        this.$emit("focus", event);
+      },
+      onBlur(event) {
+        this.$emit("blur", event);
+      },
+      onConfirm(event) {
+        this.$emit("confirm", event);
+      },
+      onClear() {
+        if (this.disabled && !this.readonly)
+          return null;
+        this.setFocusOrBlur(false);
+        this.val = "";
+        this.$emit("input", "");
+        this.$emit("update:modelValue", "");
+      },
+      fieldClick() {
+        this.$emit("onclick", this.name);
+      },
+      onKeyboardheightchange(e) {
+        this.$emit("keyboardheightchange", e);
+      },
+      trimStr(str) {
+        return str.replace(/^\s+|\s+$/g, "");
+      },
+      getParent(name) {
+        if (this.$parent == null)
+          return false;
+        let parent = this.$parent;
+        let parentName = parent.$options["name"];
+        while (parentName != name) {
+          if (parent.$parent == null)
+            return false;
+          parent = parent.$parent;
+          if (parent.$options["name"] == "")
+            return false;
+          parentName = parent.$options["name"];
+        }
+        this.fuiForm = parent;
+        return true;
+      },
+      //暂时做重置处理（还原需记录初始值）
+      reset() {
+        this.setFocusOrBlur(false);
+        this.val = "";
+        this.$emit("input", "");
+        this.$emit("update:modelValue", "");
+      },
+      getSubmitValue() {
+        return this.val;
+      }
+    }
+  });
+  const _style_0$4 = { "fui-input__wrap": { "": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "position": "relative", "boxSizing": "border-box", "overflow": "visible" } }, "fui-input__border-uvue": { "": { "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "fui-input__border-color": { "": { "!borderTopColor": "#EEEEEE", "!borderRightColor": "#EEEEEE", "!borderBottomColor": "#EEEEEE", "!borderLeftColor": "#EEEEEE" } }, "fui-input__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#EEEEEE" } }, "fui-input__border-top": { "": { "position": "absolute", "top": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__required": { "": { "position": "absolute", "left": "12rpx", "height": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "fui-input__asterisk-text": { "": { "fontSize": "32rpx", "height": "32rpx", "lineHeight": "32rpx" } }, "fui-input__asterisk-color": { "": { "!color": "#FF2B2B" } }, "fui-input__label": { "": { "paddingRight": "12rpx", "flexShrink": 0 } }, "fui-input__label-size": { "": { "!fontSize": "32rpx", "!lineHeight": "32rpx" } }, "fui-input__self": { "": { "flex": 1, "paddingRight": "12rpx", "overflow": "visible", "backgroundColor": "rgba(0,0,0,0)", "boxSizing": "border-box" } }, "fui-input__size": { "": { "!fontSize": "32rpx" } }, "fui-input__clear-wrap": { "": { "width": "32rpx", "height": "32rpx", "transform": "rotate(45deg) scale(1.1)", "position": "relative", "flexShrink": 0, "borderTopLeftRadius": "32rpx", "borderTopRightRadius": "32rpx", "borderBottomRightRadius": "32rpx", "borderBottomLeftRadius": "32rpx" } }, "fui-input__clear": { "": { "width": "32rpx", "height": "32rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "absolute", "left": 0, "top": 0, "transform": "scale(0.5)" } }, "fui-input__clear-a": { "": { "width": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__clear-b": { "": { "height": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__placeholder": { "": { "color": "#CCCCCC", "overflow": "visible" } }, "fui-input__disabled": { "": { "pointerEvents": "none" } }, "fui-input__disabled-styl": { "": { "opacity": 0.6 } } };
+  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass(["fui-input__wrap", { "fui-input__border-uvue": $props.inputBorder, "fui-input__border-color": $props.inputBorder && $props.borderColor == "", "fui-input__disabled-styl": $props.disabled && $props.disabledStyle }]),
+        style: vue.normalizeStyle($options.getStyle),
+        onClick: _cache[6] || (_cache[6] = (...args) => $options.fieldClick && $options.fieldClick(...args))
+      },
+      [
+        $props.borderTop && !$props.inputBorder ? (vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            key: 0,
+            style: vue.normalizeStyle({ background: $props.borderColor, left: "".concat($props.topLeft, "rpx"), right: "".concat($props.topRight, "rpx") }),
+            class: vue.normalizeClass(["fui-input__border-top", { "fui-input__background": $props.borderColor == "" }])
+          },
+          null,
+          6
+          /* CLASS, STYLE */
+        )) : vue.createCommentVNode("v-if", true),
+        $props.required ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 1,
+          class: "fui-input__required"
+        }, [
+          vue.createElementVNode(
+            "text",
+            {
+              style: vue.normalizeStyle($options.getRequiredColor),
+              class: vue.normalizeClass(["fui-input__asterisk-text", { "fui-input__asterisk-color": $props.requiredColor == "" }])
+            },
+            "*",
+            6
+            /* CLASS, STYLE */
+          )
+        ])) : vue.createCommentVNode("v-if", true),
+        $props.label != "" ? (vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            key: 2,
+            class: "fui-input__label",
+            style: vue.normalizeStyle({ minWidth: "".concat($props.labelWidth, "rpx") })
+          },
+          [
+            vue.createElementVNode(
+              "text",
+              {
+                class: vue.normalizeClass({ "fui-input__label-size": $props.labelSize == 0 }),
+                style: vue.normalizeStyle($options.getLabelStyl)
+              },
+              vue.toDisplayString($props.label),
+              7
+              /* TEXT, CLASS, STYLE */
+            )
+          ],
+          4
+          /* STYLE */
+        )) : vue.createCommentVNode("v-if", true),
+        vue.renderSlot(_ctx.$slots, "left"),
+        vue.createElementVNode("input", {
+          ref: $data.refId,
+          class: vue.normalizeClass(["fui-input__self", { "fui-input__disabled": $props.disabled || $props.readonly, "fui-input__size": $props.size == 0 }]),
+          style: vue.normalizeStyle({ fontSize: "".concat($props.size, "rpx"), color: $props.color, textAlign: $props.textAlign }),
+          "placeholder-class": "fui-input__placeholder",
+          type: $props.type,
+          name: $props.name,
+          value: $data.val,
+          placeholder: $props.placeholder,
+          password: $props.password || $props.type == "password",
+          "placeholder-style": $props.placeholderStyle,
+          disabled: $props.disabled || $props.readonly,
+          "cursor-spacing": $props.cursorSpacing,
+          maxlength: $props.maxlength,
+          "confirm-type": $props.confirmType,
+          "confirm-hold": $props.confirmHold,
+          cursor: $props.cursor,
+          "selection-start": $props.selectionStart,
+          "selection-end": $props.selectionEnd,
+          "adjust-position": $props.adjustPosition,
+          onFocus: _cache[0] || (_cache[0] = (...args) => $options.onFocus && $options.onFocus(...args)),
+          onBlur: _cache[1] || (_cache[1] = (...args) => $options.onBlur && $options.onBlur(...args)),
+          onInput: _cache[2] || (_cache[2] = (...args) => $options.onInput && $options.onInput(...args)),
+          onConfirm: _cache[3] || (_cache[3] = (...args) => $options.onConfirm && $options.onConfirm(...args)),
+          onKeyboardheightchange: _cache[4] || (_cache[4] = (...args) => $options.onKeyboardheightchange && $options.onKeyboardheightchange(...args))
+        }, null, 46, ["type", "name", "value", "placeholder", "password", "placeholder-style", "disabled", "cursor-spacing", "maxlength", "confirm-type", "confirm-hold", "cursor", "selection-start", "selection-end", "adjust-position"]),
+        $props.clearable && $data.val != "" ? (vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            key: 3,
+            class: "fui-input__clear-wrap",
+            style: vue.normalizeStyle({ background: $props.clearColor }),
+            onClick: _cache[5] || (_cache[5] = vue.withModifiers((...args) => $options.onClear && $options.onClear(...args), ["stop"]))
+          },
+          [
+            vue.createElementVNode("view", { class: "fui-input__clear" }, [
+              vue.createElementVNode("view", { class: "fui-input__clear-a" })
+            ]),
+            vue.createElementVNode("view", { class: "fui-input__clear" }, [
+              vue.createElementVNode("view", { class: "fui-input__clear-b" })
+            ])
+          ],
+          4
+          /* STYLE */
+        )) : vue.createCommentVNode("v-if", true),
+        vue.renderSlot(_ctx.$slots, "default"),
+        $props.borderBottom && !$props.inputBorder ? (vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            key: 4,
+            style: vue.normalizeStyle($options.getBtnLineStyl),
+            class: vue.normalizeClass(["fui-input__border-bottom", { "fui-input__background": $props.borderColor == "" }])
+          },
+          null,
+          6
+          /* CLASS, STYLE */
+        )) : vue.createCommentVNode("v-if", true)
+      ],
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["styles", [_style_0$4]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
+  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+    __name: "changePhoneNumber",
+    setup(__props, _a) {
+      var __expose = _a.expose;
+      __expose();
+      const btnWord = vue.ref("获取验证码");
+      const isCounting = vue.ref(false);
+      function countDown(seconds) {
+        if (seconds <= 0) {
+          btnWord.value = "获取验证码";
+          isCounting.value = false;
+          return null;
+        }
+        btnWord.value = "".concat(seconds, "秒后重发");
+        setTimeout(() => {
+          countDown(seconds - 1);
+        }, 1e3);
+      }
+      const getPsw = () => {
+        if (isCounting.value)
+          return null;
+        uni.__log__("log", "at pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue:55", "发送验证码请求...");
+        isCounting.value = true;
+        countDown(60);
+      };
+      const __returned__ = { btnWord, isCounting, countDown, getPsw };
+      Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+      return __returned__;
+    }
+  }));
+  const _imports_0 = "/static/phone.png";
+  const _imports_1 = "/static/captcha.png";
+  const _style_0$3 = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "icon": { ".container .content ": { "width": "40rpx", "height": "40rpx", "marginRight": "10rpx" } } };
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_1);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
-      vue.createElementVNode("view", { class: "content" })
+      vue.createElementVNode("view", { class: "content" }, [
+        vue.createVNode(_component_fui_input, { placeholder: "请输入手机号" }, {
+          left: vue.withCtx(() => [
+            vue.createElementVNode("view", null, [
+              vue.createElementVNode("image", {
+                class: "icon",
+                src: _imports_0
+              })
+            ])
+          ]),
+          _: 1
+          /* STABLE */
+        }),
+        vue.createVNode(_component_fui_input, {
+          padding: "20rpx 32rpx",
+          placeholder: "请输入验证码",
+          bottomLeft: 0
+        }, {
+          left: vue.withCtx(() => [
+            vue.createElementVNode("view", null, [
+              vue.createElementVNode("image", {
+                class: "icon",
+                src: _imports_1
+              })
+            ])
+          ]),
+          default: vue.withCtx(() => [
+            vue.createVNode(_component_fui_button, {
+              type: "gray",
+              bold: true,
+              width: "200rpx",
+              height: "64rpx",
+              size: 28,
+              onClick: $setup.getPsw,
+              text: $setup.btnWord,
+              disabled: $setup.isCounting
+            }, null, 8, ["text", "disabled"])
+          ]),
+          _: 1
+          /* STABLE */
+        })
+      ])
     ]);
   }
-  const PagesMineUserInfoChangePhoneNumberChangePhoneNumber = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["styles", [_style_0$1]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue"]]);
+  const PagesMineUserInfoChangePhoneNumberChangePhoneNumber = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["styles", [_style_0$3]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue"]]);
+  const icons = new UTSJSONObject({
+    "addressbook": "",
+    "addfriends-fill": "",
+    "addfriends": "",
+    "backspace-fill": "",
+    "backspace": "",
+    "bankcard-fill": "",
+    "bankcard": "",
+    "camera-fill": "",
+    "camera": "",
+    "captcha-fill": "",
+    "captcha": "",
+    "cart-fill": "",
+    "cart": "",
+    "classify": "",
+    "classify-fill": "",
+    "comment-fill": "",
+    "comment": "",
+    "community-fill": "",
+    "community": "",
+    "coupon-fill": "",
+    "coupon": "",
+    "delete": "",
+    "delete-fill": "",
+    "edit": "",
+    "edit-fill": "",
+    "fabulous-fill": "",
+    "fabulous": "",
+    "find": "",
+    "find-fill": "",
+    "help-fill": "",
+    "help": "",
+    "home-fill": "",
+    "home": "",
+    "idcard-fill": "",
+    "idcard": "",
+    "info": "",
+    "info-fill": "",
+    "invite-fill": "",
+    "invite": "",
+    "kefu-fill": "",
+    "kefu": "",
+    "like-fill": "",
+    "like": "",
+    "location": "",
+    "location-fill": "",
+    "lock": "",
+    "lock-fill": "",
+    "mail-fill": "",
+    "mail": "",
+    "message": "",
+    "message-fill": "",
+    "mobile-fill": "",
+    "mobile": "",
+    "more": "",
+    "more-fill": "",
+    "my-fill": "",
+    "my": "",
+    "principal": "",
+    "notice-fill": "",
+    "notice": "",
+    "order": "",
+    "order-fill": "",
+    "picture": "",
+    "picture-fill": "",
+    "setup-fill": "",
+    "setup": "",
+    "share": "",
+    "share-fill": "",
+    "shop": "",
+    "shop-fill": "",
+    "star-fill": "",
+    "star": "",
+    "starhalf": "",
+    "stepon-fill": "",
+    "stepon": "",
+    "wait-fill": "",
+    "wait": "",
+    "warning": "",
+    "warning-fill": "",
+    "plus": "",
+    "plussign-fill": "",
+    "plussign": "",
+    "minus": "",
+    "minussign": "",
+    "minussign-fill": "",
+    "close": "",
+    "clear": "",
+    "clear-fill": "",
+    "checkbox-fill": "",
+    "checkround": "",
+    "checkbox": "",
+    "check": "",
+    "pulldown-fill": "",
+    "pullup": "",
+    "pullup-fill": "",
+    "pulldown": "",
+    "roundright-fill": "",
+    "roundright": "",
+    "arrowright": "",
+    "arrowleft": "",
+    "arrowdown": "",
+    "left": "",
+    "up": "",
+    "right": "",
+    "back": "",
+    "top": "",
+    "dropdown": "",
+    "turningleft": "",
+    "turningup": "",
+    "turningright": "",
+    "turningdown": "",
+    "refresh": "",
+    "loading": "",
+    "search": "",
+    "rotate": "",
+    "screen": "",
+    "signin": "",
+    "calendar": "",
+    "scan": "",
+    "qrcode": "",
+    "wallet": "",
+    "telephone": "",
+    "visible": "",
+    "invisible": "",
+    "menu": "",
+    "operate": "",
+    "slide": "",
+    "list": "",
+    "nonetwork": "",
+    "partake": "",
+    "qa": "",
+    "barchart": "",
+    "piechart": "",
+    "linechart": "",
+    "at": "",
+    "face": "",
+    "redpacket": "",
+    "suspend": "",
+    "link": "",
+    "keyboard": "",
+    "play": "",
+    "video": "",
+    "voice": "",
+    "sina": "",
+    "browser": "",
+    "moments": "",
+    "qq": "",
+    "wechat": "",
+    "balance": "",
+    "bankcardpay": "",
+    "wxpay": "",
+    "alipay": "",
+    "payment": "",
+    "receive": "",
+    "sendout": "",
+    "evaluate": "",
+    "aftersale": "",
+    "warehouse": "",
+    "transport": "",
+    "delivery": "",
+    "switch": "",
+    "goods": "",
+    "goods-fill": ""
+  });
+  const _sfc_main$2 = vue.defineComponent({
+    name: "fui-icon",
+    emits: ["onclick"],
+    props: {
+      name: {
+        type: String,
+        default: ""
+      },
+      size: {
+        type: [Object, String, Number],
+        default: 0
+      },
+      unit: {
+        type: String,
+        default: "rpx"
+      },
+      color: {
+        type: String,
+        default: ""
+      },
+      fontWeight: {
+        type: String,
+        default: "normal"
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      param: {
+        type: String,
+        default: "0"
+      },
+      //是否显示为主色调，color为空时有效。【内部保留属性】
+      primary: {
+        type: Boolean,
+        default: false
+      }
+    },
+    computed: {
+      getSize() {
+        let size;
+        if (typeof this.size == "number") {
+          size = this.size.toString() + this.unit;
+        } else if (typeof this.size == "string") {
+          size = this.size + this.unit;
+        } else {
+          size = this.size.toString() + this.unit;
+        }
+        return size;
+      },
+      isBind() {
+        const size = this.getSize;
+        let bind = false;
+        if (size == "" || size == "px" || size == "rpx" || size == "0rpx" || size == "0px") {
+          bind = true;
+        }
+        return bind;
+      },
+      getIcon() {
+        const icon = this.icons.getString(this.name);
+        return icon == null ? "" : icon;
+      },
+      getIconStyl() {
+        const mp = /* @__PURE__ */ new Map();
+        mp.set("fontWeight", this.fontWeight);
+        mp.set("fontSize", this.getSize);
+        mp.set("lineHeight", this.getSize);
+        if (this.color != "")
+          mp.set("color", this.color);
+        return mp;
+      }
+    },
+    data() {
+      return {
+        icons
+      };
+    },
+    methods: {
+      handleClick() {
+        if (this.disabled)
+          return null;
+        this.$emit("onclick", this.param);
+      }
+    }
+  });
+  const _style_0$2 = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "text",
+      {
+        style: vue.normalizeStyle($options.getIconStyl),
+        class: vue.normalizeClass(["fui-icon", { "fui-icon__fontsize": $options.isBind, "fui-icon__active-color": $props.primary && $props.color == "", "fui-icon__color": $props.color == "" && !$props.primary }]),
+        onClick: _cache[0] || (_cache[0] = (...args) => $options.handleClick && $options.handleClick(...args))
+      },
+      vue.toDisplayString($options.getIcon),
+      7
+      /* TEXT, CLASS, STYLE */
+    );
+  }
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["styles", [_style_0$2]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
+  const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+    __name: "changePassword",
+    setup(__props, _a) {
+      var __expose = _a.expose;
+      __expose();
+      const oldPassword = vue.ref("");
+      const newPassword = vue.ref("");
+      const confirmPassword = vue.ref("");
+      const btnDisabled = vue.ref(true);
+      const updateOldPassword = (e) => {
+        uni.__log__("log", "at pages/mine/userInfo/changePassword/changePassword.uvue:28", e);
+        oldPassword.value = e;
+      };
+      const updateNewPassword = (e) => {
+        if (verPassword(e)) {
+          newPassword.value = e;
+        }
+      };
+      const updateConfirmPassword = (e) => {
+        uni.__log__("log", "at pages/mine/userInfo/changePassword/changePassword.uvue:42", e);
+        confirmPassword.value = e;
+      };
+      const verPassword = (psw) => {
+        if (psw.length < 8 || psw.length > 16) {
+          return false;
+        }
+        if (!passwordReg(psw)) {
+          return false;
+        }
+        return true;
+      };
+      const passwordReg = /^(?=.*[a-zA-Z])(?=.*\d)|(?=.*[a-zA-Z])(?=.*[^a-zA-Z\d])|(?=.*\d)(?=.*[^a-zA-Z\d]).{8,16}$/;
+      const submit = () => {
+        if (!passwordReg.test(newPassword.value)) {
+          uni.showToast({
+            title: "密码格式错误",
+            icon: "none"
+          });
+          return null;
+        }
+        if (newPassword.value != confirmPassword.value) {
+          uni.showToast({
+            title: "两次密码不一致",
+            icon: "none"
+          });
+          return null;
+        }
+        uni.showToast({
+          title: "提交成功",
+          icon: "none"
+        });
+      };
+      const __returned__ = { oldPassword, newPassword, confirmPassword, btnDisabled, updateOldPassword, updateNewPassword, updateConfirmPassword, verPassword, passwordReg, submit };
+      Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+      return __returned__;
+    }
+  }));
+  const _style_0$1 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } } };
+  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_1);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
+      vue.createElementVNode("view", { class: "content" }, [
+        vue.createVNode(_component_fui_icon, { name: "addfriends" }),
+        vue.createVNode(_component_fui_input, {
+          label: "旧密码",
+          placeholder: "请输入原密码",
+          modelValue: $setup.oldPassword,
+          onInput: $setup.updateOldPassword
+        }, null, 8, ["modelValue"]),
+        vue.createVNode(_component_fui_input, {
+          label: "新密码",
+          placeholder: "请输入新密码",
+          modelValue: $setup.newPassword,
+          onInput: $setup.updateNewPassword
+        }, null, 8, ["modelValue"]),
+        vue.createVNode(_component_fui_input, {
+          label: "确认新密码",
+          placeholder: "再次输入新密码",
+          modelValue: $setup.confirmPassword,
+          onInput: $setup.updateConfirmPassword
+        }, null, 8, ["modelValue"])
+      ]),
+      vue.createElementVNode("view", { class: "tips" }, [
+        vue.createElementVNode("text", { class: "tips-word" }, "密码8-16位,需包含英文字母、数字、特殊字符中两类及以上")
+      ]),
+      vue.createElementVNode("view", null, [
+        vue.createVNode(_component_fui_button, {
+          color: "#fff",
+          disabled: $setup.btnDisabled,
+          text: "提交",
+          background: "#1296db",
+          height: "80rpx",
+          onOnclick: $setup.submit
+        }, null, 8, ["disabled"])
+      ])
+    ]);
+  }
+  const PagesMineUserInfoChangePasswordChangePassword = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["styles", [_style_0$1]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePassword/changePassword.uvue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   __definePage("pages/message/message", PagesMessageMessage);
   __definePage("pages/mine/mine", PagesMineMine);
   __definePage("pages/mine/userInfo/userInfo", PagesMineUserInfoUserInfo);
   __definePage("pages/mine/userInfo/CancelAnAccount/CancelAnAccount", PagesMineUserInfoCancelAnAccountCancelAnAccount);
   __definePage("pages/mine/userInfo/changePhoneNumber/changePhoneNumber", PagesMineUserInfoChangePhoneNumberChangePhoneNumber);
+  __definePage("pages/mine/userInfo/changePassword/changePassword", PagesMineUserInfoChangePasswordChangePassword);
   const _sfc_main = vue.defineComponent(new UTSJSONObject({
     onLaunch: function() {
       uni.__log__("log", "at App.uvue:5", "App Launch");

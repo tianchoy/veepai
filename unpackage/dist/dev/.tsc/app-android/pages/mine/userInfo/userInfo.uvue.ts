@@ -14,13 +14,13 @@ const _cache = __ins.renderCache;
 	const change = () => {
 		const isCurrentlyBound = switchVal.value
 		if (isCurrentlyBound) {
-			// 解绑操作
 			uni.showModal({
 				title: '确认解绑',
 				content: '确定要解除微信绑定吗？',
 				cancelText: '取消',
 				confirmText: '确定',
 				success: (res) => {
+					console.log(res, " at pages/mine/userInfo/userInfo.uvue:62")
 					if (res.confirm) {
 						console.log('调用解绑API...', " at pages/mine/userInfo/userInfo.uvue:64")
 
@@ -29,10 +29,12 @@ const _cache = __ins.renderCache;
 							title: '已成功解绑微信',
 							icon: 'none'
 						})
-					} else {
+					}
+					else if (res.cancel) {
+						console.log('用户点击取消',isCurrentlyBound, " at pages/mine/userInfo/userInfo.uvue:73");
 						switchVal.value = isCurrentlyBound
 					}
-				}
+				},
 			})
 		} else {
 			uni.showModal({
@@ -42,14 +44,15 @@ const _cache = __ins.renderCache;
 				confirmText: '确定',
 				success: (res) => {
 					if (res.confirm) {
-						console.log('调用绑定API...', " at pages/mine/userInfo/userInfo.uvue:84")
+						console.log('调用绑定API...', " at pages/mine/userInfo/userInfo.uvue:86")
 
 						switchVal.value = true
 						uni.showToast({
 							title: '已成功绑定微信',
 							icon: 'none'
 						})
-					} else {
+					}else if (res.cancel) {
+						console.log('用户点击取消',isCurrentlyBound, " at pages/mine/userInfo/userInfo.uvue:94");
 						switchVal.value = isCurrentlyBound
 					}
 				}
@@ -86,6 +89,16 @@ const _cache = __ins.renderCache;
 			url: '/pages/mine/userInfo/CancelAnAccount/CancelAnAccount'
 		})
 	}
+	
+	//修改密码
+	const editPassword = () => {
+		//通过接口返回类型判断是去找回密码还是修改密码
+		if(true){
+			uni.navigateTo({
+				url: '/pages/mine/userInfo/changePassword/changePassword'
+			})
+		}
+	}
 
 return (): any | null => {
 
@@ -120,7 +133,10 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
       createElementVNode("text", null, "安全信息")
     ]),
     createElementVNode("view", utsMapOf({ class: "info" }), [
-      createElementVNode("view", utsMapOf({ class: "info-item" }), [
+      createElementVNode("view", utsMapOf({
+        class: "info-item",
+        onClick: editPassword
+      }), [
         createElementVNode("text", null, "修改密码"),
         createElementVNode("image", utsMapOf({
           class: "icon",
@@ -151,9 +167,10 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
             style: normalizeStyle(utsMapOf({"margin-right":"10rpx"}))
           }), toDisplayString(switchVal.value ? '已绑定' : '未绑定'), 5 /* TEXT, STYLE */),
           createVNode(_component_fui_switch, utsMapOf({
+            checked: switchVal.value,
             color: "#1296db",
             onChange: change
-          }))
+          }), null, 8 /* PROPS */, ["checked"])
         ])
       ])
     ]),

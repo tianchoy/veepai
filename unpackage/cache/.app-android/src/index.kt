@@ -73,7 +73,7 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
     val hosts: String = "127.0.0.1,192.168.3.34"
     val port: String = "8090"
-    val id: String = "app-android_L-Af8E"
+    val id: String = "app-android_FmYbUX"
     if (hosts == "" || port == "" || id == "") {
         return UTSPromise.resolve(false)
     }
@@ -2924,11 +2924,205 @@ val GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass = CreateVueComponent
     return GenPagesMineUserInfoCancelAnAccountCancelAnAccount(instance, renderer)
 }
 )
+val GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiInputFuiInput::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.inject, props = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.emits, components = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.components, styles = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiInputFuiInput {
+    return GenUniModulesFirstuiUnixComponentsFuiInputFuiInput(instance)
+}
+)
+val default3 = "/static/phone.png"
+val default4 = "/static/captcha.png"
 val GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass = CreateVueComponent(GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.inheritAttrs, inject = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.inject, props = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.props, propsNeedCastKeys = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.propsNeedCastKeys, emits = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.emits, components = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.components, styles = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.styles)
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.inheritAttrs, inject = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.inject, props = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.props, propsNeedCastKeys = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.propsNeedCastKeys, emits = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.emits, components = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.components, styles = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber.setup(props as GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber)
+    }
+    )
 }
 , fun(instance, renderer): GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber {
     return GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber(instance, renderer)
+}
+)
+val default5: UTSJSONObject = object : UTSJSONObject() {
+    var addressbook = "\ue80c"
+    var `addfriends-fill` = "\ue80a"
+    var addfriends = "\ue80b"
+    var `backspace-fill` = "\ue808"
+    var backspace = "\ue809"
+    var `bankcard-fill` = "\ue806"
+    var bankcard = "\ue807"
+    var `camera-fill` = "\ue804"
+    var camera = "\ue805"
+    var `captcha-fill` = "\ue802"
+    var captcha = "\ue803"
+    var `cart-fill` = "\ue800"
+    var cart = "\ue801"
+    var classify = "\ue7fe"
+    var `classify-fill` = "\ue7ff"
+    var `comment-fill` = "\ue7fc"
+    var comment = "\ue7fd"
+    var `community-fill` = "\ue7fa"
+    var community = "\ue7fb"
+    var `coupon-fill` = "\ue7f8"
+    var coupon = "\ue7f9"
+    var `delete` = "\ue7f6"
+    var `delete-fill` = "\ue7f7"
+    var edit = "\ue7f4"
+    var `edit-fill` = "\ue7f5"
+    var `fabulous-fill` = "\ue7f2"
+    var fabulous = "\ue7f3"
+    var find = "\ue7f0"
+    var `find-fill` = "\ue7f1"
+    var `help-fill` = "\ue7ee"
+    var help = "\ue7ef"
+    var `home-fill` = "\ue7ec"
+    var home = "\ue7ed"
+    var `idcard-fill` = "\ue7ea"
+    var idcard = "\ue7eb"
+    var info = "\ue7e8"
+    var `info-fill` = "\ue7e9"
+    var `invite-fill` = "\ue7e6"
+    var invite = "\ue7e7"
+    var `kefu-fill` = "\ue7e4"
+    var kefu = "\ue7e5"
+    var `like-fill` = "\ue7e2"
+    var like = "\ue7e3"
+    var location = "\ue7e0"
+    var `location-fill` = "\ue7e1"
+    var lock = "\ue7de"
+    var `lock-fill` = "\ue7df"
+    var `mail-fill` = "\ue7dc"
+    var mail = "\ue7dd"
+    var message = "\ue7da"
+    var `message-fill` = "\ue7db"
+    var `mobile-fill` = "\ue7d8"
+    var mobile = "\ue7d9"
+    var more = "\ue7d6"
+    var `more-fill` = "\ue7d7"
+    var `my-fill` = "\ue7d4"
+    var my = "\ue7d5"
+    var principal = "\ue80d"
+    var `notice-fill` = "\ue7d2"
+    var notice = "\ue7d3"
+    var order = "\ue7d0"
+    var `order-fill` = "\ue7d1"
+    var picture = "\ue7ce"
+    var `picture-fill` = "\ue7cf"
+    var `setup-fill` = "\ue7cc"
+    var setup = "\ue7cd"
+    var share = "\ue7ca"
+    var `share-fill` = "\ue7cb"
+    var shop = "\ue7c8"
+    var `shop-fill` = "\ue7c9"
+    var `star-fill` = "\ue7c5"
+    var star = "\ue7c6"
+    var starhalf = "\ue7c7"
+    var `stepon-fill` = "\ue7c3"
+    var stepon = "\ue7c4"
+    var `wait-fill` = "\ue7c1"
+    var wait = "\ue7c2"
+    var warning = "\ue7bf"
+    var `warning-fill` = "\ue7c0"
+    var plus = "\ue7bc"
+    var `plussign-fill` = "\ue7bd"
+    var plussign = "\ue7be"
+    var minus = "\ue7b9"
+    var minussign = "\ue7ba"
+    var `minussign-fill` = "\ue7bb"
+    var close = "\ue7b8"
+    var clear = "\ue7b6"
+    var `clear-fill` = "\ue7b7"
+    var `checkbox-fill` = "\ue7b5"
+    var checkround = "\ue7b4"
+    var checkbox = "\ue7b3"
+    var check = "\ue7b2"
+    var `pulldown-fill` = "\ue7ae"
+    var pullup = "\ue7af"
+    var `pullup-fill` = "\ue7b0"
+    var pulldown = "\ue7b1"
+    var `roundright-fill` = "\ue7ac"
+    var roundright = "\ue7ad"
+    var arrowright = "\ue7a9"
+    var arrowleft = "\ue7aa"
+    var arrowdown = "\ue7ab"
+    var left = "\ue7a6"
+    var up = "\ue7a7"
+    var right = "\ue7a8"
+    var back = "\ue7a3"
+    var top = "\ue7a4"
+    var dropdown = "\ue7a5"
+    var turningleft = "\ue79f"
+    var turningup = "\ue7a0"
+    var turningright = "\ue7a1"
+    var turningdown = "\ue7a2"
+    var refresh = "\ue79c"
+    var loading = "\ue79d"
+    var search = "\ue79e"
+    var rotate = "\ue79b"
+    var screen = "\ue79a"
+    var signin = "\ue799"
+    var calendar = "\ue798"
+    var scan = "\ue797"
+    var qrcode = "\ue796"
+    var wallet = "\ue795"
+    var telephone = "\ue794"
+    var visible = "\ue793"
+    var invisible = "\ue792"
+    var menu = "\ue78e"
+    var operate = "\ue78f"
+    var slide = "\ue790"
+    var list = "\ue791"
+    var nonetwork = "\ue78d"
+    var partake = "\ue78c"
+    var qa = "\ue78b"
+    var barchart = "\ue788"
+    var piechart = "\ue789"
+    var linechart = "\ue78a"
+    var at = "\ue787"
+    var face = "\ue77f"
+    var redpacket = "\ue780"
+    var suspend = "\ue781"
+    var link = "\ue782"
+    var keyboard = "\ue783"
+    var play = "\ue784"
+    var video = "\ue785"
+    var voice = "\ue786"
+    var sina = "\ue77a"
+    var browser = "\ue77b"
+    var moments = "\ue77c"
+    var qq = "\ue77d"
+    var wechat = "\ue77e"
+    var balance = "\ue779"
+    var bankcardpay = "\ue778"
+    var wxpay = "\ue777"
+    var alipay = "\ue776"
+    var payment = "\ue818"
+    var receive = "\ue817"
+    var sendout = "\ue816"
+    var evaluate = "\ue815"
+    var aftersale = "\ue814"
+    var warehouse = "\ue813"
+    var transport = "\ue812"
+    var delivery = "\ue811"
+    var `switch` = "\ue810"
+    var goods = "\ue80f"
+    var `goods-fill` = "\ue80e"
+}
+val GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.inject, props = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.emits, components = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.components, styles = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon {
+    return GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon(instance)
+}
+)
+val GenPagesMineUserInfoChangePasswordChangePasswordClass = CreateVueComponent(GenPagesMineUserInfoChangePasswordChangePassword::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoChangePasswordChangePassword.inheritAttrs, inject = GenPagesMineUserInfoChangePasswordChangePassword.inject, props = GenPagesMineUserInfoChangePasswordChangePassword.props, propsNeedCastKeys = GenPagesMineUserInfoChangePasswordChangePassword.propsNeedCastKeys, emits = GenPagesMineUserInfoChangePasswordChangePassword.emits, components = GenPagesMineUserInfoChangePasswordChangePassword.components, styles = GenPagesMineUserInfoChangePasswordChangePassword.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesMineUserInfoChangePasswordChangePassword.setup(props as GenPagesMineUserInfoChangePasswordChangePassword)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesMineUserInfoChangePasswordChangePassword {
+    return GenPagesMineUserInfoChangePasswordChangePassword(instance, renderer)
 }
 )
 fun createApp(): UTSJSONObject {
@@ -2960,6 +3154,7 @@ fun definePageRoutes() {
     __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/userInfo", component = GenPagesMineUserInfoUserInfoClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "个人信息")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/CancelAnAccount/CancelAnAccount", component = GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "注销账号")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/changePhoneNumber/changePhoneNumber", component = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "修改手机号")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/changePassword/changePassword", component = GenPagesMineUserInfoChangePasswordChangePasswordClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "修改密码")))
 }
 val __uniTabBar: Map<String, Any?>? = utsMapOf("list" to utsArrayOf(
     utsMapOf("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),

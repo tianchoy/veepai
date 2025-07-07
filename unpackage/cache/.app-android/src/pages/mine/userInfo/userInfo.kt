@@ -31,21 +31,24 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
                 val isCurrentlyBound = switchVal.value
                 if (isCurrentlyBound) {
                     uni_showModal(ShowModalOptions(title = "确认解绑", content = "确定要解除微信绑定吗？", cancelText = "取消", confirmText = "确定", success = fun(res){
+                        console.log(res, " at pages/mine/userInfo/userInfo.uvue:62")
                         if (res.confirm) {
                             console.log("调用解绑API...", " at pages/mine/userInfo/userInfo.uvue:64")
                             switchVal.value = false
                             uni_showToast(ShowToastOptions(title = "已成功解绑微信", icon = "none"))
-                        } else {
+                        } else if (res.cancel) {
+                            console.log("用户点击取消", isCurrentlyBound, " at pages/mine/userInfo/userInfo.uvue:73")
                             switchVal.value = isCurrentlyBound
                         }
                     }))
                 } else {
                     uni_showModal(ShowModalOptions(title = "确认绑定", content = "确定要绑定微信账号吗？", cancelText = "取消", confirmText = "确定", success = fun(res){
                         if (res.confirm) {
-                            console.log("调用绑定API...", " at pages/mine/userInfo/userInfo.uvue:84")
+                            console.log("调用绑定API...", " at pages/mine/userInfo/userInfo.uvue:86")
                             switchVal.value = true
                             uni_showToast(ShowToastOptions(title = "已成功绑定微信", icon = "none"))
-                        } else {
+                        } else if (res.cancel) {
+                            console.log("用户点击取消", isCurrentlyBound, " at pages/mine/userInfo/userInfo.uvue:94")
                             switchVal.value = isCurrentlyBound
                         }
                     }
@@ -65,6 +68,9 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
             }
             val cancelAnAccount = fun(){
                 uni_navigateTo(NavigateToOptions(url = "/pages/mine/userInfo/CancelAnAccount/CancelAnAccount"))
+            }
+            val editPassword = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/userInfo/changePassword/changePassword"))
             }
             return fun(): Any? {
                 val _component_fui_switch = resolveEasyComponent("fui-switch", GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitchClass)
@@ -90,7 +96,7 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
                         createElementVNode("text", null, "安全信息")
                     )),
                     createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "info-item"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "info-item", "onClick" to editPassword), utsArrayOf(
                             createElementVNode("text", null, "修改密码"),
                             createElementVNode("image", utsMapOf("class" to "icon", "src" to default1, "mode" to "aspectFit"))
                         )),
@@ -112,7 +118,9 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
                                     "未绑定"
                                 }
                                 ), 5),
-                                createVNode(_component_fui_switch, utsMapOf("color" to "#1296db", "onChange" to change))
+                                createVNode(_component_fui_switch, utsMapOf("checked" to switchVal.value, "color" to "#1296db", "onChange" to change), null, 8, utsArrayOf(
+                                    "checked"
+                                ))
                             ))
                         ))
                     )),
