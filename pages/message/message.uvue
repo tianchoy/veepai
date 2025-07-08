@@ -1,39 +1,276 @@
 <template>
 	<view class="container">
-		<view class="nav_bar">
-			<TopNavBar :showBack='false' :title="title" />
+		<view class="vedio-box">
+			<video class="video" id="myVideo" :src="videoSrc" ref="videoRef" :controls="true" :show-play-btn="true"
+				:show-center-play-btn="true" :enable-progress-gesture="true" :show-fullscreen-btn="true"
+				:show-mute-btn="true" :title="testTitle"></video>
+				<view></view>
 		</view>
-		<view class="content">
-			Messages
+		<button @click="playVideo">播放视频</button>
+		<button @click="pasueVideo">暂停视频</button>
+		<view class="content-box">
+			<view class="sub-nav">
+				<view class="today" @click="ShowCalendar">
+					<text>{{today}}</text>
+					<image class="down" src="/static/down.png" />
+					<text> | </text>
+				</view>
+				<view class="select">
+					<text v-for="(tab, index) in tabs" :key="index" class="select-item"
+						:class="{ active: activeTab === index }" @click="changeTab(index)">
+						{{ tab.label }}
+					</text>
+				</view>
+			</view>
+			<view class="tab-content">
+				<view v-for="(event, index) in getFilteredEvents()" :key="index" class="tab-pane"  @click="msgDetail(event)">
+					<view class="item-content">
+						<image class="item-icon" mode="aspectFit"
+							:src="event.type === 'human' ? '/static/people.png' : '/static/mobile.png'" />
+						<view class="info">
+							<text>{{ event.type === 'human' ? '人形侦测' : '移动侦测' }}</text>
+							<text>{{ event.time }}</text>
+						</view>
+					</view>
+					<image class="item-img" mode="aspectFit" src="/static/vedio.png" />
+				</view>
+			</view>
+		</view>
+		<view class="calendar-box" v-if="showCalendar">
+			<l-daily-punch :signedDates="checkIns" @select="select" @panelChange="change"
+				:dayHeight="60"></l-daily-punch>
+			<button class="btn-chanel-box" @click="hideCalendar">
+				取消
+			</button>
 		</view>
 	</view>
 </template>
 
-<script setup lang="uts">
-	import TopNavBar from '../../components/TopNavBar.uvue'
-	import { NavTitleItem } from '../../types/NavTitleItem'
-	const title:NavTitleItem[] = [{
-		name: '首页',
-		isCurrent: false,
-		url: '/pages/index/index'
-	}, {
-		name: '消息',
-		isCurrent: true,
-		url: '/pages/message/message'
-	}, {
-		name: '我的',
-		isCurrent: false,
-		url: '/pages/mine/mine'
-	}]
+<script lang="ts" setup>
+	import { ref, onMounted, computed } from 'vue'
+	import { dayuts } from '@/uni_modules/lime-dayuts';
+	import { LDay, LYearMonth } from '@/uni_modules/lime-daily-punch'
+	const checkIns = ref(['2025-06-09', '2025-07-01', '2025-07-02'])
+	const today = ref(dayuts().format('MM-DD'))
+	const showCalendar = ref<boolean>(false)
+	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
+	const activeTab = ref(0)
+	const testTitle = ref('测试标题')
 
+	const videoRef = ref(null);
+
+	const playVideo = () => {
+		// #ifdef APP-IOS
+		videoRef.value.play()
+		// #endif
+		uni.createVideoContext('myVideo')!!.play();
+	};
+	
+	const pasueVideo = () =>{
+		// #ifdef APP-IOS
+		videoRef.value.pause()
+		// #endif
+		uni.createVideoContext('myVideo')!!.pause();
+	}
+
+	//构造函数的方式来定义event时间类型
+	class SecurityEvent {
+		id : number;
+		type : string;
+		time : string;
+		location : string;
+
+		constructor(id : number, type : string, time : string, location : string) {
+			this.id = id;
+			this.type = type;
+			this.time = time;
+			this.location = location;
+		}
+	}
+
+	//定义tab标签的类型
+	class Tab {
+		label : string;
+		type : string;
+
+		constructor(label : string, type : string) {
+			this.label = label;
+			this.type = type;
+		}
+	}
+
+	const tabs = ref<Tab[]>([
+		{ label: '全部类型', type: 'all' },
+		{ label: '人形侦测', type: 'human' },
+		{ label: '移动侦测', type: 'motion' }
+	])
+
+	const events = ref<SecurityEvent[]>([
+		new SecurityEvent(1, 'human', '15:29', '前门走廊'),
+		new SecurityEvent(2, 'motion', '14:45', '车库入口'),
+		new SecurityEvent(3, 'human', '13:20', '后花园'),
+		new SecurityEvent(4, 'motion', '11:05', '侧门通道')
+	])
+
+	//执行筛选数据的方法
+	const getFilteredEvents = () : SecurityEvent[] => {
+		if (activeTab.value == 0) return [...events.value];
+		const selectedType = tabs.value[activeTab.value].type;
+		return events.value.filter(event => event.type === selectedType);
+	}
+
+	//切换tab
+	const changeTab = (index : number) => {
+		activeTab.value = index
+	}
+
+	//选择日期
+	const select = (day : LDay) => {
+		today.value = dayuts(day.fullDate).format('MM-DD')
+		console.log(today.value)
+		if (day.isToday) {
+			console.log('今天')
+		}
+		showCalendar.value = false
+	}
+	
+	const msgDetail = (e:SecurityEvent) => {
+		uni.navigateTo({
+			url: '/pages/message/messageDetail/messageDetail?id=' + e.id
+		})
+	}
+
+	const change = (res : LYearMonth) => {
+		console.log('res', res)
+	}
+
+	const ShowCalendar = () => {
+		showCalendar.value = !showCalendar.value
+	}
+
+	const hideCalendar = () => {
+		showCalendar.value = false
+	}
 </script>
+
+
 
 <style lang="scss" scoped>
 	.container {
 		width: 100%;
 		height: 100%;
-		padding: 0 20rpx;
-		display: flex;
-		flex-direction: column;
+		position: relative;
+		background-color: #f3f3f3;
+
+		.vedio-box {
+			width: 100%;
+
+			.video {
+				@extend .vedio-box
+			}
+		}
+
+		.content-box {
+			padding: 30rpx 20rpx;
+
+			.sub-nav {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+
+				.today {
+					width: 120rpx;
+					@extend .sub-nav;
+					align-items: center;
+
+					.down {
+						width: 25rpx;
+						height: 25rpx;
+					}
+				}
+
+				.select {
+					@extend .sub-nav;
+					margin-left: 10rpx;
+
+					.select-item {
+						flex: 1;
+						background-color: #fff;
+						color: #333;
+						padding: 10rpx 20rpx;
+						border-radius: 5rpx;
+						margin: 0 5rpx;
+					}
+
+					.active {
+						color: #fff;
+						background-color: #1296db;
+					}
+				}
+			}
+
+			.tab-content {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: 20rpx;
+
+				.tab-pane {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+					background-color: #fff;
+					border-radius: 20rpx;
+					padding: 20rpx;
+					width: 100%;
+					margin-bottom: 30rpx;
+
+					.item-content {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+
+						.item-icon {
+							width: 60rpx;
+							height: 60rpx;
+						}
+
+						.info {
+							margin-left: 20rpx;
+						}
+					}
+
+					.item-img {
+						width: 100rpx;
+						height: 60rpx
+					}
+				}
+			}
+
+
+		}
+
+		.calendar-box {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			// #ifdef APP-ANDROID
+			height: 60%;
+			// #endif
+			// #ifdef APP-IOS
+			height: 60%;
+			// #endif
+			width: 100%;
+			background-color: #fff;
+
+			.btn-chanel-box {
+				position: absolute;
+				width: 85%;
+				bottom: 45rpx;
+				left: 60rpx;
+				border-radius: 50rpx;
+			}
+		}
 	}
 </style>

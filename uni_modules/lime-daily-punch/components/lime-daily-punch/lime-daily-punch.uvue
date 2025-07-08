@@ -1,0 +1,54 @@
+<template>
+	<view>
+		<text style="height: 100px;">22jiji j你2</text>
+		<l-daily-punch :day-height="58" :signedDates="checkIns" @select="select" @streak="streak"></l-daily-punch>
+	</view>
+</template>
+<script setup>
+	import { LDay } from '@/uni_modules/lime-daily-punch'
+	const checkIns = ref(['2024-09-12', '2024-09-02', '2024-09-10', '2024-09-03'])
+
+
+	const streak = (num : number) => {
+		console.log('已经连续签到：', num)
+	}
+	const select = (day : LDay) => {
+		// console.log('day', day)
+		if (day.canSupplement) {
+			console.log('可补签')
+			uni.showModal({
+				title: '补签',
+				content: '是否补签？',
+				success: (res : ShowModalSuccess) => {
+					if (!res.confirm) return
+					// this.checkIns.value = [...checkIns.value,day.fullDate]
+					checkIns.value.push(day.fullDate)
+				}
+			})
+		} else if (day.isCheckedIn) {
+			console.log('已签')
+			uni.showModal({
+				title: '退签',
+				content: '是否退签？',
+				success: (res : ShowModalSuccess) => {
+					if (!res.confirm) return
+					checkIns.value = checkIns.value.filter((date) : boolean => date != day.fullDate)
+				}
+			})
+		} else if (!day.isCheckedIn && day.isToday) {
+			console.log('这是今天？并且未签到')
+			uni.showModal({
+				title: '签到',
+				content: '是否签到？',
+				success: (res : ShowModalSuccess) => {
+					if (!res.confirm) return
+
+					checkIns.value.push(day.fullDate)
+					console.log('这是今天？并且未签到???????????', checkIns.value)
+				}
+			})
+		}
+	}
+</script>
+<style>
+</style>

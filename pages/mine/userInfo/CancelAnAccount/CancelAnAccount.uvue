@@ -1,0 +1,57 @@
+<template>
+	<view class="container">
+		<image src="@/static/error_big.png" class="close"></image>
+		<view class="content">
+			<text class="content-word">账号注销后将会删除个人数据且无法恢复，请谨慎操作。</text>
+			<text class="content-word">注销前，请您自行备份重要数据及信息。</text>
+		</view>
+		<view class="btn-box">
+			<view class="btn">
+				<fui-button text="取消" background="#fff" color="#1296db" borderColor="#666" height="70rpx"></fui-button>
+			</view>
+			<view class="btn">
+				<fui-button text="申请注销" background="#1296db" color="#fff" height="70rpx" @onclick="cancelAccount"></fui-button>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script setup lang="uts">
+	const cancelAccount = () => {
+		uni.showToast({
+			title: '注销成功',
+			icon: 'success',
+			duration: 2000
+		})
+	}
+</script>
+
+<style lang="scss" scoped>
+	.container{
+		height: 100%;
+		background: #F5F5F5;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 100rpx;
+		.content{
+			margin: 50rpx 0;
+			.content-word{
+				margin: 20rpx 0;
+			}
+		}
+		.close{
+			width: 120rpx;
+			height: 120rpx;
+		}
+		.btn-box{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 100%;
+			.btn{
+				width:45%
+			}
+		}
+	}	
+</style>

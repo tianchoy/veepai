@@ -1,0 +1,27 @@
+import Paint from 'android.graphics.Paint';
+// import Rect from 'android.graphics.Rect';
+// type MeasureTextReturn = {
+// 	height : number
+// 	width : number
+// }
+/**
+ * 测量文本的尺寸
+ * @param fontSize - 字体大小
+ * @param text - 要测量的文本，默认为'￥'
+ * @returns 返回文本的宽度和高度
+ */
+export function measureText(fontSize: number, text: string = '￥'): number[] {
+    // 创建一个Paint对象
+    const paint = new Paint();
+    // paint.setFakeBoldText(true); // 启用粗体样式
+    // const boldTypeface = Typeface.create(Typeface.SANS_SERIF, Typeface.BOLD);
+    // paint.setTypeface(boldTypeface);
+    paint.setTextSize((fontSize).toFloat());
+    // 测量文本宽度
+    const textWidth = paint.measureText(text);
+    // 获取文本高度
+    const fontMetrics = paint.getFontMetrics();
+    const textHeight = fontMetrics.bottom - fontMetrics.top;
+    return [textWidth, textHeight];
+}
+//# sourceMappingURL=index.uts.map

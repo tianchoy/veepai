@@ -1,0 +1,1 @@
+<radio-group name="{{b}}" id="{{a}}" change:eS="{{uV.sS}}" eS="{{$eS[a]}}" change:eA="{{uV.sA}}" eA="{{$eA[a]}}" class="{{[virtualHostClass]}}" style="{{virtualHostStyle}}" hidden="{{virtualHostHidden || false}}"><slot></slot></radio-group><wxs src="/common/uniView.wxs" module="uV"/>

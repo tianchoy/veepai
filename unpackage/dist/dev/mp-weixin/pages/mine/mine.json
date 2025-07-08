@@ -1,6 +1,4 @@
 {
-  "navigationStyle": "custom",
-  "usingComponents": {
-    "top-nav-bar": "../../components/TopNavBar"
-  }
+  "navigationBarTitleText": "我的",
+  "usingComponents": {}
 }

@@ -1,0 +1,130 @@
+@import '~@/uni_modules/lime-style/index.scss';
+
+$daily-punch-month-title-height: create-var(daily-punch-month-title-height, 50px);
+$daily-punch-month-title-font-size: create-var(daily-punch-month-title-font-size, 18px);
+$daily-punch-month-title-color: create-var(daily-punch-month-title-color, #1A1F24);
+$daily-punch-arrow-size: create-var(daily-punch-arrow-size, 28px);
+$daily-punch-arrow-color: create-var(daily-punch-arrow-color, #A0A5AA);
+
+$daily-punch-week-height: create-var(daily-punch-week-height, 30px);
+$daily-punch-week-font-size: create-var(daily-punch-week-font-size, 14px);
+$daily-punch-week-color: create-var(daily-punch-week-color, #BDC0C3);
+
+$daily-punch-disabled-color: create-var(daily-punch-disabled-color, #BDC0C3);
+$daily-punch-color: create-var(daily-punch-color, #3B87F6);
+$daily-punch-unsigned-color: create-var(daily-punch-unsigned-color, #F1A33A);
+$daily-punch-selected-bg-color: create-var(daily-punch-selected-bg-color, $fill-2);
+
+$daily-punch-day-height: create-var(daily-punch-day-height, 76px);
+$daily-punch-day-font-size: create-var(daily-punch-day-font-size, 16px);
+$daily-punch-text-color: create-var(daily-punch-text-color, #1A1F24);
+
+$daily-punch-dot-size: create-var(daily-punch-dot-size, 6px);
+
+
+.l-daily-punch {
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: $daily-punch-month-title-height;
+		font-size: $daily-punch-arrow-size;
+		color: $daily-punch-arrow-color;
+		.month {
+			color: $daily-punch-month-title-color;
+			font-size: $daily-punch-month-title-font-size;
+		}
+	}
+	&__week {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		height: $daily-punch-week-height;
+		font-size: $daily-punch-week-font-size;
+		color: $daily-punch-week-color;
+	}
+	&__days {
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		color: $daily-punch-text-color;
+		&-item {
+			position: relative;
+			flex: 1 1 calc(100% / 7);
+			height: $daily-punch-day-height;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: $daily-punch-day-font-size;
+			&--outer {
+				color: $daily-punch-disabled-color;
+			}
+			&--inner {
+				width: 100%;
+				&::before {
+					transition: background-color 300ms linear;
+				}
+			}
+			.is-selected {
+				&::before {
+					position: absolute;
+					content: '';
+					width: 0;
+					height: 0;
+					padding: 50%;
+					background-color: $daily-punch-selected-bg-color;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%,-50%);
+					z-index: -1;
+					border-radius: 50%;
+				}
+			}
+			.is-selected.is-today {
+				color: white;
+				&::before {
+					background-color: $daily-punch-color;
+				}
+			}
+			.is-can-supplement,.is-checked-in {
+				position: relative;
+				&::after {
+					position: absolute;
+					content: '';
+					width: $daily-punch-dot-size;
+					height: $daily-punch-dot-size;
+					background-color: $daily-punch-unsigned-color;
+					transition: background-color 300ms linear;
+					left: 50%;
+					top: 100%;
+					transform: translate(-50%, 100%);
+					border-radius: 50%;
+				}
+			}
+			// .is-can-supplement {
+			// 	position: relative;
+			// 	&::after {
+			// 		position: absolute;
+			// 		content: '';
+			// 		width: $daily-punch-dot-size;
+			// 		height: $daily-punch-dot-size;
+			// 		background-color: $daily-punch-unsigned-color;
+			// 		left: 50%;
+			// 		top: 100%;
+			// 		transform: translate(-50%, 30%);
+			// 		border-radius: 50%;
+			// 	}
+			// }
+			.is-checked-in {
+				&::after {
+					background-color: $daily-punch-color;
+				}
+				&.is-today.is-selected {
+					&::after {
+						background-color: white;
+					}
+				}
+			}
+		}
+	}
+}

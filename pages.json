@@ -1,56 +1,115 @@
 {
-	// "easycom": {
-	// 	"autoscan": true,
-	// 	"custom": {
-	// 		"^uv-(.*)": "@climblee/uv-ui/components/uv-$1/uv-$1.vue"
-	// 	}
-	// },
-	"pages": [{
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"fui-(.*)": "firstui-uni/firstui/fui-$1/fui-$1.vue"
+		}
+	},
+	"pages": [
+		{
+			"path" : "pages/login/login",
+			"style" : 
+			{
+				"navigationBarTitleText" : "登陆"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationBarTitleText": "首页"
 			}
 		},
 		{
 			"path": "pages/message/message",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationBarTitleText": "消息"
 			}
 		},
 		{
 			"path": "pages/mine/mine",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/mine/userInfo/userInfo",
+			"style": {
+				"navigationBarTitleText": "个人信息"
+			}
+		},
+		{
+			"path": "pages/mine/userInfo/CancelAnAccount/CancelAnAccount",
+			"style": {
+				"navigationBarTitleText": "注销账号"
+			}
+		},
+		{
+			"path": "pages/mine/userInfo/changePhoneNumber/changePhoneNumber",
+			"style": {
+				"navigationBarTitleText": "修改手机号"
+			}
+		},
+		{
+			"path" : "pages/mine/userInfo/changePassword/changePassword",
+			"style" : 
+			{
+				"navigationBarTitleText" : "修改密码"
+			}
+		},
+		{
+			"path" : "pages/mine/rechargeDataTraffic/rechargeDataTraffic",
+			"style" : 
+			{
+				"navigationBarTitleText" : "流量充值"
+			}
+		},
+		{
+			"path" : "pages/mine/helpCenter/helpCenter",
+			"style" : 
+			{
+				"navigationBarTitleText" : "帮助中心"
+			}
+		},
+		{
+			"path" : "pages/mine/helpCenter/questionDetail/questionDetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "问题详情"
+			}
+		},
+		{
+			"path" : "pages/message/messageDetail/messageDetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "消息详情"
 			}
 		}
 	],
-	// "tabBar": {
-	// 	"custom": true,
-	// 	"list": [
-	// 		{
-	// 			"pagePath": "pages/index/index",
-	// 			"iconPath": "./static/tabbar/home.png",
-	// 			"selectedIconPath": "./static/tabbar/home1.png",
-	// 			"text": "首页"
-	// 		},
-	// 		{
-	// 			"pagePath": "pages/message/message",
-	// 			"iconPath": "./static/tabbar/message.png",
-	// 			"selectedIconPath": "./static/tabbar/message1.png",
-	// 			"text": "消息"
-	// 		},
-	// 		{
-	// 			"pagePath": "pages/mine/mine",
-	// 			"iconPath": "./static/tabbar/userCenter.png",
-	// 			"selectedIconPath": "./static/tabbar/userCenter1.png",
-	// 			"text": "我的"
-	// 		}
-	// 	]
-	// },
-	
+	"tabBar": {
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "./static/tabbar/home.png",
+				"selectedIconPath": "./static/tabbar/home1.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/message/message",
+				"iconPath": "./static/tabbar/message.png",
+				"selectedIconPath": "./static/tabbar/message1.png",
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"iconPath": "./static/tabbar/userCenter.png",
+				"selectedIconPath": "./static/tabbar/userCenter1.png",
+				"text": "我的"
+			}
+		]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "",
+		"navigationBarTitleText": "uniappX",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},

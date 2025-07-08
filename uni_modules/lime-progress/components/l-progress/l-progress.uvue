@@ -1,0 +1,203 @@
+<template>
+	<view class="l-progress" :class="classes" ref="progressRef">
+		<!-- #ifndef APP-ANDROID || APP-HARMONY -->
+		<text v-if="showInfo && infoAlign == 'start' && infoType == 'outer'" :style="[textStyle]" >{{percent + '%'}}</text>
+		<view class="l-progress__inner" ref="progressInnerRef" :style="[innerStyle]">
+			<view ref="progressBgRef" class="l-progress-bg" :style="[styles]">
+				<text class="l-progress__inner-text" ref="textRef" :style="[textStyle]" v-if="showInfo && infoType == 'inner'">{{percent + '%'}}</text>
+			</view>
+		</view>
+		<text :style="[textStyle]" v-if="showInfo && infoAlign == 'end' && infoType == 'outer'">{{percent + '%'}}</text>
+		<!-- #endif -->
+	</view>
+</template>
+<script lang="uts" setup>
+	/**
+	 * Progress 进度条组件
+	 * @description 用于展示操作或任务的进度，支持线性进度显示和多种样式配置
+	 * <br>插件类型：LProgressComponentPublicInstance 
+	 * @tutorial https://ext.dcloud.net.cn/plugin?name=lime-progress
+	 * 
+	 * @property {boolean} showInfo 是否显示进度文本（默认：false）
+	 * @property {string} infoType 进度信息显示方式
+	 * @value outer 在进度条外部显示
+	 * @property {string} infoAlign 文本对齐方式（默认：end）
+	 * @value start
+	 * @value end
+	 * @property {string | string[]} strokeColor 进度条颜色（支持渐变色数组）
+	 * @property {string} trailColor 轨道背景色（默认：rgba(0, 0, 0, 0.06)）
+	 * @property {string} linecap 进度条端点形状（'round' | 'square'）
+	 * @value round 
+	 * @value square 
+	 * @property {string} infoColor 进度文本颜色
+	 * @property {string | number} fontSize 文本字号（支持CSS单位）
+	 * @property {string | number} strokeWidth 进度条粗细（支持CSS单位，默认：4px）
+	 */
+	import { unitConvert } from '@/uni_modules/lime-shared/unitConvert'
+	import { ProgressProps } from './types';
+	// #ifndef APP-ANDROID || APP-HARMONY
+	import { addUnit } from '@/uni_modules/lime-shared/addUnit'
+	// #endif
+	// #ifdef APP-ANDROID || APP-HARMONY
+	import { useTransition, UseTransitionOptions } from '@/uni_modules/lime-shared/animation/useTransition'
+	import { LProgressOptions } from './types';
+	import { Progress } from './progress'
+	// #endif
+	
+	const props = withDefaults(defineProps<ProgressProps>(), {
+		// percent: 0,
+		showInfo: false,
+		infoAlign: 'end',
+		infoType: 'outer',
+		// #ifdef APP-ANDROID || APP-HARMONY
+		strokeColor: '#1677ff',
+		strokeWidth: 4,
+		trailColor: 'rgba(0, 0, 0, 0.06)',
+		linecap: 'round',
+		fontSize: 12,
+		infoColor: 'black',
+		// #endif
+	})
+	const percent = defineModel('percent', {type: Number, default: 0})
+	
+	const classes = computed(():Map<string, boolean> => {
+		const _class = new Map<string, boolean>()
+		// #ifndef APP-ANDROID || APP-HARMONY
+		if(props.infoType == 'outer') {
+			_class.set('l-progress--outer', true)
+		}
+		
+		if(props.infoType == 'inner') {
+			_class.set('l-progress--inner', true)
+		}
+		// #endif
+		return _class
+	})
+	
+	// #ifndef APP-ANDROID || APP-HARMONY
+	const textRef = ref<UniTextElement|null>(null)
+	const progressBgRef = ref<UniElement|null>(null)
+	
+	const styles = computed(():Map<string, any> => {
+		const _style = new Map<string, any>();
+		// #ifndef APP-IOS
+		_style.set('width', `${percent.value}%`)
+		// #endif
+		if(props.strokeColor != null) {
+			// #ifndef APP-IOS
+			_style.set('background', `var(--l-progress-stroke-color, ${props.strokeColor!})`)
+			// #endif
+			// #ifdef APP-IOS
+			_style.set('background', props.strokeColor!)
+			// #endif
+		}
+		if(props.strokeWidth != null) {
+			// #ifndef APP-IOS
+			_style.set('height', `var(--l-progress-stroke-width, ${addUnit(props.strokeWidth)})`)
+			// #endif
+			// #ifdef APP-IOS
+			_style.set('height', addUnit(props.strokeWidth))
+			// #endif
+		}
+		if(props.infoType == 'inner') {
+			if(props.infoAlign == 'end') {
+				_style.set('align-items', `flex-end`)
+			} else {
+				_style.set('align-items', `flex-start`)
+			}
+			// #ifdef APP-IOS
+			// const width = props.showInfo ? Math.max(percent.value, textRef.value?.offsetWidth ?? 10) : percent.value
+			// _style.set('width', `${ width }%`)
+			if(props.strokeWidth != null) {
+				_style.set('height', addUnit(props.strokeWidth ?? 20))
+			}
+			// #endif
+		}
+		return _style
+	})
+	const textStyle = computed(():Map<string, any> => {
+		const _style = new Map<string, any>();
+		
+		if(props.infoColor != null) {
+			_style.set('color', props.infoColor!)
+		}
+		// #ifdef APP
+		if(props.showInfo && props.infoType == 'outer') {
+			_style.set(props.infoAlign == 'end' ? 'margin-left' : 'margin-right',  '5px')
+		}
+		// #endif
+		return _style
+	})
+	
+	const innerStyle = computed(():Map<string, any> => {
+		const _style = new Map<string, any>();
+		
+		if(props.trailColor != null) {
+			_style.set('background', props.trailColor!)
+		}
+		
+		return _style
+	})
+	
+	// #endif
+	
+	
+	// #ifdef APP-IOS
+	const progressInnerRef = ref<UniElement|null>(null)
+	watchEffect(async()=>{
+		if(percent.value >= 0) {
+			if(props.infoType == 'inner') {
+				const rect = await progressInnerRef.value?.getBoundingClientRectAsync()
+				const textRect = await textRef.value?.getBoundingClientRectAsync()
+				const width = props.showInfo ? Math.max(percent.value,  Math.max(rect?.height / rect?.width, (textRect?.width / rect?.width))  * 100 ?? 10) : percent.value
+	
+				progressBgRef.value?.style.setProperty('width', `${ width }%`)
+			} else {
+				progressBgRef.value?.style.setProperty('width', `${percent.value}%`)
+			}
+		}
+	})
+	// #endif
+	// #ifdef APP-ANDROID || APP-HARMONY
+	const progressRef = ref<UniElement|null>(null);
+	let progress:Progress|null = null
+	const current = useTransition(():number=>percent.value, {
+		duration: 300,
+		immediate: true
+	} as UseTransitionOptions)
+	const stopWatch = watch(current, (v:number) => {
+		if(progress != null) {
+			progress!.render(v)
+		}
+	})
+	
+	onMounted(() => {
+		nextTick(()=>{
+			if(progressRef.value == null) return;
+			progress =  new Progress(progressRef.value!);
+			console.log('props.strokeColor', props.strokeColor)
+			const opt: LProgressOptions = {
+				showInfo: props.showInfo,
+				strokeColor: props.strokeColor,
+				strokeWidth: unitConvert(props.strokeWidth),
+				trailColor: props.trailColor,
+				linecap: props.linecap,
+				fontSize: unitConvert(props.fontSize),
+				infoAlign: props.infoAlign,
+				infoType: props.infoType,
+				infoColor: props.infoColor,
+			}
+			progress!.setOption(opt)
+			progress!.render(current.value)
+		})
+	})
+	
+	onUnmounted(() => {
+		stopWatch()
+		progress?.disconnect()
+	})
+	// #endif
+</script>
+<style lang="scss">
+	@import './index';
+</style>

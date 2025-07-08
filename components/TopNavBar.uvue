@@ -1,7 +1,6 @@
 <template>
 	<view class="custom-nav">
 		<view v-if="props.showBack" class="nav-back" @click="goBack">
-			<!-- <uv-icon name="arrow-left" color="#333" size="28"></uv-icon> -->
 			<image class="nav-icon" @click="goBack" src="/static/tabbar/back.png"/>
 		</view>
 		<view class="nav-item">
@@ -18,7 +17,6 @@
 <script setup lang="uts">
 	import { NavTitleItem } from '../types/NavTitleItem.uts'
 
-	// 接收父组件传递的参数
 	const props = defineProps({
 		title: {
 			type: Array as PropType<NavTitleItem[]>,

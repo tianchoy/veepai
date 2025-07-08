@@ -38,25 +38,25 @@ export class ArrowIcon {
     }
 }
 export class Day implements LDay {
-    day: number = 0;
-    month: number = 0;
-    year: number = 0;
+    override day: number = 0;
+    override month: number = 0;
+    override year: number = 0;
     fullDay: string = '00';
     fullMonth: string = '00';
-    fullDate: string = '';
-    isBeforeToday: boolean = false;
-    isToday: boolean = false;
+    override fullDate: string = '';
+    override isBeforeToday: boolean = false;
+    override isToday: boolean = false;
     // isCheckedIn: boolean = false;
-    isCurrentMonth: boolean = false;
+    override isCurrentMonth: boolean = false;
     private x: number = 0;
     private y: number = 0;
     private calendar: Calendar;
-    width: number = 0;
-    height: number = 0;
-    originalMonth: number = 0;
-    type: string = 'current';
-    fontSize: number = 20;
-    timestamp: number = 0;
+    override width: number = 0;
+    override height: number = 0;
+    override originalMonth: number = 0;
+    override type: string = 'current';
+    override fontSize: number = 20;
+    override timestamp: number = 0;
     constructor(day: number, month: number, year: number, isCurrentMonth: boolean, isToday: boolean, isBeforeToday: boolean, calendar: Calendar) {
         this.day = day;
         this.month = month;
@@ -77,14 +77,14 @@ export class Day implements LDay {
     private formatMonth(month: number): string {
         return `${month}`.padStart(2, '0');
     }
-    isCoordinateInside(x: number, y: number): boolean {
+    override isCoordinateInside(x: number, y: number): boolean {
         return x >= this.x && x <= this.x + this.width && y >= this.y && y <= this.y + this.height;
     }
-    setPosition(x: number, y: number): void {
+    override setPosition(x: number, y: number): void {
         this.x = x;
         this.y = y;
     }
-    setDimensions(width: number, height: number): void {
+    override setDimensions(width: number, height: number): void {
         this.width = width;
         this.height = height;
     }
@@ -126,7 +126,7 @@ export class Day implements LDay {
             ctx.stroke();
         }
     }
-    draw(ctx: CanvasRenderingContext2D) {
+    override draw(ctx: CanvasRenderingContext2D) {
         const size = Math.min(this.width, this.height) * 0.9;
         const centerX = this.x + this.width / 2;
         const centerY = this.y + this.height / 2;
@@ -202,7 +202,7 @@ export class Calendar {
         monthTitleFontSize: 20,
         color: '#3B87F6',
         unsignedColor: '#F1A33A',
-    };
+    } as LOptions;
     constructor() {
         const date = new Date();
         this.currentYear = date.getFullYear();

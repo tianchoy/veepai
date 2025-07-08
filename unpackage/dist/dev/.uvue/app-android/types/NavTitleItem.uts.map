@@ -1,1 +1,0 @@
-{"version":3,"file":"NavTitleItem.uts","sourceRoot":"","sources":["types/NavTitleItem.uts"],"names":[],"mappings":"AAAA,MAAM,MAAM,YAAY,GAAG;IACvB,IAAI,EAAE,MAAM,CAAA;IACZ,SAAS,EAAE,OAAO,CAAA;IAClB,GAAG,EAAE,MAAM,CAAA;CACd,CAAA","sourcesContent":["export type NavTitleItem = {\n    name: string\n    isCurrent: boolean\n    url: string\n}"]}

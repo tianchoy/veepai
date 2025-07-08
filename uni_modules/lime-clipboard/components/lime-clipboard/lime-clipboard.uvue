@@ -1,0 +1,32 @@
+<template>
+	<view>
+		<button @click="setClipboard">设置</button>
+		<button @click="getClipboard">获取</button>
+	</view>
+</template>
+
+<script setup>
+	import {setClipboardData, getClipboardData, SetClipboardDataOption, GetClipboardDataOption, GetClipboardDataSuccessCallbackOption} from '@/uni_modules/lime-clipboard'
+	
+	const setClipboard = ()=>{
+		setClipboardData({
+			data: '這里是內容',
+			showToast: true,
+			success(res){
+				console.log('res', res.errMsg)
+			}
+		} as SetClipboardDataOption)
+	}
+	
+	const getClipboard = () =>{
+		getClipboardData({
+			success(res: GetClipboardDataSuccessCallbackOption){
+				console.log('res', res)
+			}
+		} as GetClipboardDataOption)
+	}
+</script>
+
+<style>
+
+</style>

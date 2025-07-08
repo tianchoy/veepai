@@ -1,0 +1,1 @@
+{"version":3,"file":"questionDetail.js","sources":["pages/mine/helpCenter/questionDetail/questionDetail.uvue?type=page"],"sourcesContent":["import MiniProgramPage from '/Users/xyhc/Documents/veepai_uniappx/pages/mine/helpCenter/questionDetail/questionDetail.uvue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

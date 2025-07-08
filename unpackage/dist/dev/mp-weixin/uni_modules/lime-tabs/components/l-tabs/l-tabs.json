@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-badge": "../../../lime-badge/components/l-badge/l-badge"
+  }
+}

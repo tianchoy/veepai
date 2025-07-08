@@ -1,0 +1,55 @@
+/**
+ * 错误码
+ * 根据uni错误码规范要求，建议错误码以90开头，以下是错误码示例：
+ * - 9010001 错误信息1
+ * - 9010002 错误信息2
+ */
+export type LimeClipboardErrorCode = 9010001 | 9010002;
+/**
+ * myApi 的错误回调参数
+ */
+export interface GeneralCallbackResult extends IUniError {
+    errCode: LimeClipboardErrorCode;
+}
+;
+// export interface GeneralCallbackResult {
+// 	/** 错误信息 */
+// 	errMsg : string
+// }
+/** 接口调用结束的回调函数（调用成功、失败都会执行） */
+export type SetClipboardDataCompleteCallback = (res: UniError) => void;
+/** 接口调用失败的回调函数 */
+export type SetClipboardDataFailCallback = (res: UniError) => void;
+/** 接口调用成功的回调函数 */
+export type SetClipboardDataSuccessCallback = (res: UniError) => void;
+export type SetClipboardDataOption = {
+    showToast?: boolean;
+    /** 剪贴板的内容 */
+    data: string;
+    /** 接口调用结束的回调函数（调用成功、失败都会执行） */
+    complete?: SetClipboardDataCompleteCallback;
+    /** 接口调用失败的回调函数 */
+    fail?: SetClipboardDataFailCallback;
+    /** 接口调用成功的回调函数 */
+    success?: SetClipboardDataSuccessCallback;
+};
+export type GetClipboardDataSuccessCallbackOption = {
+    /** 剪贴板的内容 */
+    data: string;
+    errMsg: string;
+};
+/** 接口调用结束的回调函数（调用成功、失败都会执行） */
+export type GetClipboardDataCompleteCallback = (res: UniError) => void;
+/** 接口调用失败的回调函数 */
+export type GetClipboardDataFailCallback = (res: UniError) => void;
+/** 接口调用成功的回调函数 */
+export type GetClipboardDataSuccessCallback = (option: GetClipboardDataSuccessCallbackOption) => void;
+export type GetClipboardDataOption = {
+    /** 接口调用结束的回调函数（调用成功、失败都会执行） */
+    complete?: GetClipboardDataCompleteCallback;
+    /** 接口调用失败的回调函数 */
+    fail?: GetClipboardDataFailCallback;
+    /** 接口调用成功的回调函数 */
+    success?: GetClipboardDataSuccessCallback;
+};
+//# sourceMappingURL=interface.uts.map

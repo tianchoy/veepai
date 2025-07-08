@@ -1,0 +1,8 @@
+:host{display:flex;flex-direction:column}
+
+.fui-label__wrap.data-v-a75e5cf9 {
+		box-sizing: border-box;
+}
+.fui-label__full.data-v-a75e5cf9 {
+		width: 100%;
+}

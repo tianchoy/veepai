@@ -1,5 +1,7 @@
-import TopNavBar from '../../components/TopNavBar.uvue'
-	import { NavTitleItem } from '../../types/NavTitleItem'
+import _easycom_l_daily_punch from '@/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue'
+import { ref, onMounted, computed } from 'vue'
+	import { dayuts } from '@/uni_modules/lime-dayuts';
+	import { LDay, LYearMonth } from '@/uni_modules/lime-daily-punch'
 	
 const __sfc__ = defineComponent({
   __name: 'message',
@@ -8,35 +10,209 @@ const __ins = getCurrentInstance()!;
 const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
 
-	const title:NavTitleItem[] = [{
-		name: '首页',
-		isCurrent: false,
-		url: '/pages/index/index'
-	}, {
-		name: '消息',
-		isCurrent: true,
-		url: '/pages/message/message'
-	}, {
-		name: '我的',
-		isCurrent: false,
-		url: '/pages/mine/mine'
-	}]
+	const checkIns = ref(['2025-06-09', '2025-07-01', '2025-07-02'])
+	const today = ref(dayuts().format('MM-DD'))
+	const showCalendar = ref<boolean>(false)
+	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
+	const activeTab = ref(0)
+	const testTitle = ref('测试标题')
 
+	const videoRef = ref(null);
+
+	const playVideo = () => {
+
+
+
+		uni.createVideoContext('myVideo')!!.play();
+	};
+	
+	const pasueVideo = () =>{
+
+
+
+		uni.createVideoContext('myVideo')!!.pause();
+	}
+
+	//构造函数的方式来定义event时间类型
+	class SecurityEvent  implements IUTSSourceMap{
+// @ts-expect-error 
+override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMapPosition("SecurityEvent", "pages/message/message.uvue", 77, 8);}
+
+		id : number;
+		type : string;
+		time : string;
+		location : string;
+
+		constructor(id : number, type : string, time : string, location : string) {
+			this.id = id;
+			this.type = type;
+			this.time = time;
+			this.location = location;
+		}
+	}
+
+	//定义tab标签的类型
+	class Tab  implements IUTSSourceMap{
+// @ts-expect-error 
+override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMapPosition("Tab", "pages/message/message.uvue", 92, 8);}
+
+		label : string;
+		type : string;
+
+		constructor(label : string, type : string) {
+			this.label = label;
+			this.type = type;
+		}
+	}
+
+	const tabs = ref<Tab[]>([
+		{ label: '全部类型', type: 'all' },
+		{ label: '人形侦测', type: 'human' },
+		{ label: '移动侦测', type: 'motion' }
+	])
+
+	const events = ref<SecurityEvent[]>([
+		new SecurityEvent(1, 'human', '15:29', '前门走廊'),
+		new SecurityEvent(2, 'motion', '14:45', '车库入口'),
+		new SecurityEvent(3, 'human', '13:20', '后花园'),
+		new SecurityEvent(4, 'motion', '11:05', '侧门通道')
+	])
+
+	//执行筛选数据的方法
+	const getFilteredEvents = () : SecurityEvent[] => {
+		if (activeTab.value == 0) return [...events.value];
+		const selectedType = tabs.value[activeTab.value].type;
+		return events.value.filter(event => event.type === selectedType);
+	}
+
+	//切换tab
+	const changeTab = (index : number) => {
+		activeTab.value = index
+	}
+
+	//选择日期
+	const select = (day : LDay) => {
+		today.value = dayuts(day.fullDate).format('MM-DD')
+		console.log(today.value, " at pages/message/message.uvue:130")
+		if (day.isToday) {
+			console.log('今天', " at pages/message/message.uvue:132")
+		}
+		showCalendar.value = false
+	}
+	
+	const msgDetail = (e:SecurityEvent) => {
+		uni.navigateTo({
+			url: '/pages/message/messageDetail/messageDetail?id=' + e.id
+		})
+	}
+
+	const change = (res : LYearMonth) => {
+		console.log('res', res, " at pages/message/message.uvue:144")
+	}
+
+	const ShowCalendar = () => {
+		showCalendar.value = !showCalendar.value
+	}
+
+	const hideCalendar = () => {
+		showCalendar.value = false
+	}
 
 return (): any | null => {
 
+const _component_l_daily_punch = resolveEasyComponent("l-daily-punch",_easycom_l_daily_punch)
+
   return createElementVNode("view", utsMapOf({ class: "container" }), [
-    createElementVNode("view", utsMapOf({ class: "nav_bar" }), [
-      createVNode(unref(TopNavBar), utsMapOf({
-        showBack: false,
-        title: title
-      }))
+    createElementVNode("view", utsMapOf({ class: "vedio-box" }), [
+      createElementVNode("video", utsMapOf({
+        class: "video",
+        id: "myVideo",
+        src: videoSrc,
+        ref_key: "videoRef",
+        ref: videoRef,
+        controls: true,
+        "show-play-btn": true,
+        "show-center-play-btn": true,
+        "enable-progress-gesture": true,
+        "show-fullscreen-btn": true,
+        "show-mute-btn": true,
+        title: testTitle.value
+      }), null, 8 /* PROPS */, ["title"]),
+      createElementVNode("view")
     ]),
-    createElementVNode("view", utsMapOf({ class: "content" }), " Messages ")
+    createElementVNode("button", utsMapOf({ onClick: playVideo }), "播放视频"),
+    createElementVNode("button", utsMapOf({ onClick: pasueVideo }), "暂停视频"),
+    createElementVNode("view", utsMapOf({ class: "content-box" }), [
+      createElementVNode("view", utsMapOf({ class: "sub-nav" }), [
+        createElementVNode("view", utsMapOf({
+          class: "today",
+          onClick: ShowCalendar
+        }), [
+          createElementVNode("text", null, toDisplayString(today.value), 1 /* TEXT */),
+          createElementVNode("image", utsMapOf({
+            class: "down",
+            src: "/static/down.png"
+          })),
+          createElementVNode("text", null, " | ")
+        ]),
+        createElementVNode("view", utsMapOf({ class: "select" }), [
+          createElementVNode(Fragment, null, RenderHelpers.renderList(tabs.value, (tab, index, __index, _cached): any => {
+            return createElementVNode("text", utsMapOf({
+              key: index,
+              class: normalizeClass(["select-item", utsMapOf({ active: activeTab.value === index })]),
+              onClick: () => {changeTab(index)}
+            }), toDisplayString(tab.label), 11 /* TEXT, CLASS, PROPS */, ["onClick"])
+          }), 128 /* KEYED_FRAGMENT */)
+        ])
+      ]),
+      createElementVNode("view", utsMapOf({ class: "tab-content" }), [
+        createElementVNode(Fragment, null, RenderHelpers.renderList(getFilteredEvents(), (event, index, __index, _cached): any => {
+          return createElementVNode("view", utsMapOf({
+            key: index,
+            class: "tab-pane",
+            onClick: () => {msgDetail(event)}
+          }), [
+            createElementVNode("view", utsMapOf({ class: "item-content" }), [
+              createElementVNode("image", utsMapOf({
+                class: "item-icon",
+                mode: "aspectFit",
+                src: event.type === 'human' ? '/static/people.png' : '/static/mobile.png'
+              }), null, 8 /* PROPS */, ["src"]),
+              createElementVNode("view", utsMapOf({ class: "info" }), [
+                createElementVNode("text", null, toDisplayString(event.type === 'human' ? '人形侦测' : '移动侦测'), 1 /* TEXT */),
+                createElementVNode("text", null, toDisplayString(event.time), 1 /* TEXT */)
+              ])
+            ]),
+            createElementVNode("image", utsMapOf({
+              class: "item-img",
+              mode: "aspectFit",
+              src: "/static/vedio.png"
+            }))
+          ], 8 /* PROPS */, ["onClick"])
+        }), 128 /* KEYED_FRAGMENT */)
+      ])
+    ]),
+    isTrue(showCalendar.value)
+      ? createElementVNode("view", utsMapOf({
+          key: 0,
+          class: "calendar-box"
+        }), [
+          createVNode(_component_l_daily_punch, utsMapOf({
+            signedDates: checkIns.value,
+            onSelect: select,
+            onPanelChange: change,
+            dayHeight: 60
+          }), null, 8 /* PROPS */, ["signedDates"]),
+          createElementVNode("button", utsMapOf({
+            class: "btn-chanel-box",
+            onClick: hideCalendar
+          }), " 取消 ")
+        ])
+      : createCommentVNode("v-if", true)
   ])
 }
 }
 
 })
 export default __sfc__
-const GenPagesMessageMessageStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["width", "100%"], ["height", "100%"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"], ["display", "flex"], ["flexDirection", "column"]]))]])]
+const GenPagesMessageMessageStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["width", "100%"], ["height", "100%"], ["position", "relative"], ["backgroundColor", "#f3f3f3"]]))], ["vedio-box", utsMapOf([[".container ", utsMapOf([["width", "100%"]])]])], ["video", utsMapOf([[".container .vedio-box ", utsMapOf([["width", "100%"]])]])], ["content-box", utsMapOf([[".container ", utsMapOf([["paddingTop", "30rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "30rpx"], ["paddingLeft", "20rpx"]])]])], ["sub-nav", utsMapOf([[".container .content-box ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"]])]])], ["select", utsMapOf([[".container .content-box .sub-nav ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["marginLeft", "10rpx"]])]])], ["today", utsMapOf([[".container .content-box .sub-nav ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["width", "120rpx"]])]])], ["down", utsMapOf([[".container .content-box .sub-nav .today ", utsMapOf([["width", "25rpx"], ["height", "25rpx"]])]])], ["select-item", utsMapOf([[".container .content-box .sub-nav .select ", utsMapOf([["flex", 1], ["backgroundColor", "#ffffff"], ["color", "#333333"], ["paddingTop", "10rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "20rpx"], ["borderTopLeftRadius", "5rpx"], ["borderTopRightRadius", "5rpx"], ["borderBottomRightRadius", "5rpx"], ["borderBottomLeftRadius", "5rpx"], ["marginTop", 0], ["marginRight", "5rpx"], ["marginBottom", 0], ["marginLeft", "5rpx"]])]])], ["active", utsMapOf([[".container .content-box .sub-nav .select ", utsMapOf([["color", "#ffffff"], ["backgroundColor", "#1296db"]])]])], ["tab-content", utsMapOf([[".container .content-box ", utsMapOf([["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"], ["marginTop", "20rpx"]])]])], ["tab-pane", utsMapOf([[".container .content-box .tab-content ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "space-between"], ["backgroundColor", "#ffffff"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"], ["width", "100%"], ["marginBottom", "30rpx"]])]])], ["item-content", utsMapOf([[".container .content-box .tab-content .tab-pane ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"]])]])], ["item-icon", utsMapOf([[".container .content-box .tab-content .tab-pane .item-content ", utsMapOf([["width", "60rpx"], ["height", "60rpx"]])]])], ["info", utsMapOf([[".container .content-box .tab-content .tab-pane .item-content ", utsMapOf([["marginLeft", "20rpx"]])]])], ["item-img", utsMapOf([[".container .content-box .tab-content .tab-pane ", utsMapOf([["width", "100rpx"], ["height", "60rpx"]])]])], ["calendar-box", utsMapOf([[".container ", utsMapOf([["position", "absolute"], ["bottom", 0], ["left", 0], ["height", "60%"], ["width", "100%"], ["backgroundColor", "#ffffff"]])]])], ["btn-chanel-box", utsMapOf([[".container .calendar-box ", utsMapOf([["position", "absolute"], ["width", "85%"], ["bottom", "45rpx"], ["left", "60rpx"], ["borderTopLeftRadius", "50rpx"], ["borderTopRightRadius", "50rpx"], ["borderBottomRightRadius", "50rpx"], ["borderBottomLeftRadius", "50rpx"]])]])]])]

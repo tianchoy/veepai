@@ -1,0 +1,80 @@
+<template>
+	<view class="container">
+		<view class="content">
+			<fui-input placeholder="请输入手机号" placeholderStyle="font-size: 26rpx;">
+				<template v-slot:left>
+					<view>
+						<!-- <image class="icon" src="@/static/phone.png"></image> -->
+						<fui-icon name="mobile" color="#1296db" :size="48"></fui-icon>
+					</view>
+				</template>
+			</fui-input>
+			<fui-input padding="20rpx 32rpx" placeholder="请输入验证码" :bottomLeft="0" placeholderStyle="font-size: 26rpx;">
+				<template v-slot:left>
+					<view>
+						<fui-icon name="captcha" color="#1296db" :size="48"></fui-icon>
+						<!-- <image class="icon" src="@/static/captcha.png"></image> -->
+					</view>
+				</template>
+				<fui-button 
+					type="gray" 
+					width="200rpx" 
+					height="64rpx" 
+					:size="28" 
+					@click="getPsw" 
+					:text="btnWord"
+					:disabled="isCounting"
+				></fui-button>
+			</fui-input>
+		</view>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import { ref } from 'vue'
+	
+	const btnWord = ref('获取验证码')
+	const isCounting = ref(false)
+	
+	function countDown(seconds: number) {
+		if (seconds <= 0) {
+			btnWord.value = '获取验证码'
+			isCounting.value = false
+			return
+		}
+		
+		btnWord.value = `${seconds}秒后重发`
+
+		setTimeout(() => {
+			countDown(seconds - 1)
+		}, 1000)
+	}
+	
+	const getPsw = () => {
+		if (isCounting.value) return
+		
+		console.log('发送验证码请求...')
+		isCounting.value = true
+		
+		countDown(60)
+	}
+</script>
+
+<style lang="scss" scoped>
+	.container {
+		height: 100%;
+		background: #f3f3f3;
+		padding: 0 20rpx;
+
+		.content {
+			background-color: #fff;
+			padding: 30rpx;
+			border-radius: 10rpx;
+			.icon{
+				width:40rpx;
+				height:40rpx;
+				margin-right: 10rpx;
+			}
+		}
+	}
+</style>

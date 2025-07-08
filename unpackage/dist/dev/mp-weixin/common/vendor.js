@@ -85,8 +85,8 @@ const def = (obj, key, value) => {
   });
 };
 const looseToNumber = (val) => {
-  const n = parseFloat(val);
-  return isNaN(n) ? val : n;
+  const n2 = parseFloat(val);
+  return isNaN(n2) ? val : n2;
 };
 function normalizeStyle$1(value) {
   if (isArray(value)) {
@@ -117,6 +117,26 @@ function parseStringStyle(cssText) {
     }
   });
   return ret;
+}
+function normalizeClass$1(value) {
+  let res = "";
+  if (isString(value)) {
+    res = value;
+  } else if (isArray(value)) {
+    for (let i = 0; i < value.length; i++) {
+      const normalized = normalizeClass$1(value[i]);
+      if (normalized) {
+        res += normalized + " ";
+      }
+    }
+  } else if (isObject(value)) {
+    for (const name in value) {
+      if (value[name]) {
+        res += name + " ";
+      }
+    }
+  }
+  return res.trim();
 }
 const toDisplayString = (val) => {
   return isString(val) ? val : val == null ? "" : isArray(val) || isObject(val) && (val.toString === objectToString || !isFunction(val.toString)) ? JSON.stringify(val, replacer, 2) : String(val);
@@ -337,6 +357,33 @@ function normalizeStyle(value) {
   } else {
     return normalizeStyle$1(value);
   }
+}
+function normalizeClass(value) {
+  let res = "";
+  const g2 = getGlobal$1();
+  if (g2 && g2.UTSJSONObject && value instanceof g2.UTSJSONObject) {
+    g2.UTSJSONObject.keys(value).forEach((key) => {
+      if (value[key]) {
+        res += key + " ";
+      }
+    });
+  } else if (value instanceof Map) {
+    value.forEach((value2, key) => {
+      if (value2) {
+        res += key + " ";
+      }
+    });
+  } else if (isArray(value)) {
+    for (let i = 0; i < value.length; i++) {
+      const normalized = normalizeClass(value[i]);
+      if (normalized) {
+        res += normalized + " ";
+      }
+    }
+  } else {
+    res = normalizeClass$1(value);
+  }
+  return res.trim();
 }
 const encode = encodeURIComponent;
 function stringifyQuery(obj, encodeStr = encode) {
@@ -1541,6 +1588,27 @@ const shallowUnwrapHandlers = {
 function proxyRefs(objectWithRefs) {
   return isReactive(objectWithRefs) ? objectWithRefs : new Proxy(objectWithRefs, shallowUnwrapHandlers);
 }
+class CustomRefImpl {
+  constructor(factory) {
+    this.dep = void 0;
+    this.__v_isRef = true;
+    const { get: get2, set: set2 } = factory(
+      () => trackRefValue(this),
+      () => triggerRefValue(this)
+    );
+    this._get = get2;
+    this._set = set2;
+  }
+  get value() {
+    return this._get();
+  }
+  set value(newVal) {
+    this._set(newVal);
+  }
+}
+function customRef(factory) {
+  return new CustomRefImpl(factory);
+}
 const stack = [];
 function pushWarningContext(vnode) {
   stack.push(vnode);
@@ -2208,6 +2276,16 @@ If this is a native custom element, make sure to exclude it from component resol
 function resolve(registry, name) {
   return registry && (registry[name] || registry[camelize(name)] || registry[capitalize(camelize(name))]);
 }
+function watchEffect(effect2, options) {
+  return doWatch(effect2, null, options);
+}
+function watchSyncEffect(effect2, options) {
+  return doWatch(
+    effect2,
+    null,
+    extend({}, options, { flush: "sync" })
+  );
+}
 const INITIAL_WATCHER_VALUE = {};
 function watch(source, cb, options) {
   if (!isFunction(cb)) {
@@ -2693,21 +2771,21 @@ function injectHook(type, hook, target = currentInstance, prepend = false) {
     );
   }
 }
-const createHook = (lifecycle) => (hook, target = currentInstance) => (
+const createHook$1 = (lifecycle) => (hook, target = currentInstance) => (
   // post-create lifecycle registrations are noops during SSR (except for serverPrefetch)
   (!isInSSRComponentSetup || lifecycle === "sp") && injectHook(lifecycle, (...args) => hook(...args), target)
 );
-const onBeforeMount = createHook("bm");
-const onMounted = createHook("m");
-const onBeforeUpdate = createHook("bu");
-const onUpdated = createHook("u");
-const onBeforeUnmount = createHook("bum");
-const onUnmounted = createHook("um");
-const onServerPrefetch = createHook("sp");
-const onRenderTriggered = createHook(
+const onBeforeMount = createHook$1("bm");
+const onMounted = createHook$1("m");
+const onBeforeUpdate = createHook$1("bu");
+const onUpdated = createHook$1("u");
+const onBeforeUnmount = createHook$1("bum");
+const onUnmounted = createHook$1("um");
+const onServerPrefetch = createHook$1("sp");
+const onRenderTriggered = createHook$1(
   "rtg"
 );
-const onRenderTracked = createHook(
+const onRenderTracked = createHook$1(
   "rtc"
 );
 function onErrorCaptured(hook, target = currentInstance) {
@@ -2939,11 +3017,28 @@ function exposeSetupStateOnRenderContext(instance) {
     }
   });
 }
+function useSlots() {
+  return getContext().slots;
+}
+function getContext() {
+  const i = getCurrentInstance();
+  if (!i) {
+    warn$1(`useContext() called without active instance.`);
+  }
+  return i.setupContext || (i.setupContext = createSetupContext(i));
+}
 function normalizePropsOrEmits(props) {
   return isArray(props) ? props.reduce(
     (normalized, p2) => (normalized[p2] = null, normalized),
     {}
   ) : props;
+}
+function mergeModels(a, b) {
+  if (!a || !b)
+    return a || b;
+  if (isArray(a) && isArray(b))
+    return a.concat(b);
+  return extend({}, normalizePropsOrEmits(a), normalizePropsOrEmits(b));
 }
 function createDuplicateChecker() {
   const cache = /* @__PURE__ */ Object.create(null);
@@ -4208,6 +4303,58 @@ const computed = (getterOrOptions, debugOptions) => {
   }
   return c2;
 };
+function useModel(props, name, options = EMPTY_OBJ) {
+  const i = getCurrentInstance();
+  if (!i) {
+    warn$1(`useModel() called without active instance.`);
+    return ref();
+  }
+  if (!i.propsOptions[0][name]) {
+    warn$1(`useModel() called with prop "${name}" which is not declared.`);
+    return ref();
+  }
+  const camelizedName = camelize(name);
+  const hyphenatedName = hyphenate(name);
+  const res = customRef((track2, trigger2) => {
+    let localValue;
+    watchSyncEffect(() => {
+      const propValue = props[name];
+      if (hasChanged(localValue, propValue)) {
+        localValue = propValue;
+        trigger2();
+      }
+    });
+    return {
+      get() {
+        track2();
+        return options.get ? options.get(localValue) : localValue;
+      },
+      set(value) {
+        const rawProps = i.vnode.props;
+        if (!(rawProps && // check if parent has passed v-model
+        (name in rawProps || camelizedName in rawProps || hyphenatedName in rawProps) && (`onUpdate:${name}` in rawProps || `onUpdate:${camelizedName}` in rawProps || `onUpdate:${hyphenatedName}` in rawProps)) && hasChanged(value, localValue)) {
+          localValue = value;
+          trigger2();
+        }
+        i.emit(`update:${name}`, options.set ? options.set(value) : value);
+      }
+    };
+  });
+  const modifierKey = name === "modelValue" ? "modelModifiers" : `${name}Modifiers`;
+  res[Symbol.iterator] = () => {
+    let i2 = 0;
+    return {
+      next() {
+        if (i2 < 2) {
+          return { value: i2++ ? props[modifierKey] || {} : res, done: false };
+        } else {
+          return { done: true };
+        }
+      }
+    };
+  };
+  return res;
+}
 const version = "3.4.21";
 const warn = warn$1;
 function unwrapper(target) {
@@ -5752,6 +5899,34 @@ function vFor(source, renderItem) {
   }
   return ret;
 }
+function renderSlot(name, props = {}, key) {
+  const instance = getCurrentInstance();
+  const { parent, isMounted, ctx: { $scope } } = instance;
+  const vueIds = ($scope.properties || $scope.props).uI;
+  if (!vueIds) {
+    return;
+  }
+  if (!parent && !isMounted) {
+    onMounted(() => {
+      renderSlot(name, props, key);
+    }, instance);
+    return;
+  }
+  const invoker = findScopedSlotInvoker(vueIds, instance);
+  if (invoker) {
+    invoker(name, props, key);
+  }
+}
+function findScopedSlotInvoker(vueId, instance) {
+  let parent = instance.parent;
+  while (parent) {
+    const invokers = parent.$ssi;
+    if (invokers && invokers[vueId]) {
+      return invokers[vueId];
+    }
+    parent = parent.parent;
+  }
+}
 function setUniElementId(id, options, ref2, refOpts) {
   const ins = getCurrentInstance();
   if (ins) {
@@ -5847,8 +6022,10 @@ function genUniElementId(_ctx, idBinding, genId) {
 }
 const o = (value, key) => vOn(value, key);
 const f = (source, renderItem) => vFor(source, renderItem);
+const r = (name, props, key) => renderSlot(name, props, key);
 const s = (value) => stringifyStyle(value);
 const e = (target, ...sources) => extend(target, ...sources);
+const n = (value) => normalizeClass(value);
 const t = (val) => toDisplayString(val);
 const p = (props) => renderProps(props);
 const sei = setUniElementId;
@@ -6523,8 +6700,8 @@ const $once = defineSyncApi(API_ONCE, (name, callback) => {
 const $off = defineSyncApi(API_OFF, (name, callback) => {
   if (!isArray(name))
     name = name ? [name] : [];
-  name.forEach((n) => {
-    eventBus.off(n, callback);
+  name.forEach((n2) => {
+    eventBus.off(n2, callback);
   });
 }, OffProtocol);
 const $emit = defineSyncApi(API_EMIT, (name, ...args) => {
@@ -7836,9 +8013,9 @@ function isConsoleWritable() {
   return isWritable;
 }
 function initRuntimeSocketService() {
-  const hosts = "127.0.0.1,192.168.3.22";
+  const hosts = "127.0.0.1,192.168.3.34";
   const port = "8090";
-  const id = "mp-weixin_7qP5Yu";
+  const id = "mp-weixin_uQBAVx";
   const lazy = typeof swan !== "undefined";
   let restoreError = lazy ? () => {
   } : initOnError();
@@ -9449,19 +9626,66 @@ const createSubpackageApp = initCreateSubpackageApp();
   wx.createPluginApp = global.createPluginApp = createPluginApp;
   wx.createSubpackageApp = global.createSubpackageApp = createSubpackageApp;
 }
+const createHook = (lifecycle) => (hook, target = getCurrentInstance()) => {
+  !isInSSRComponentSetup && injectHook(lifecycle, hook, target);
+};
+const onLoad = /* @__PURE__ */ createHook(ON_LOAD);
+function __read(o2, n2) {
+  var m = typeof Symbol === "function" && o2[Symbol.iterator];
+  if (!m)
+    return o2;
+  var i = m.call(o2), r2, ar = [], e2;
+  try {
+    while ((n2 === void 0 || n2-- > 0) && !(r2 = i.next()).done)
+      ar.push(r2.value);
+  } catch (error) {
+    e2 = { error };
+  } finally {
+    try {
+      if (r2 && !r2.done && (m = i["return"]))
+        m.call(i);
+    } finally {
+      if (e2)
+        throw e2.error;
+    }
+  }
+  return ar;
+}
+typeof SuppressedError === "function" ? SuppressedError : function(error, suppressed, message) {
+  var e2 = new Error(message);
+  return e2.name = "SuppressedError", e2.error = error, e2.suppressed = suppressed, e2;
+};
+exports.__read = __read;
 exports._export_sfc = _export_sfc;
+exports.computed = computed;
 exports.createSSRApp = createSSRApp;
 exports.defineComponent = defineComponent;
 exports.e = e;
 exports.f = f;
 exports.gei = gei;
+exports.getCurrentInstance = getCurrentInstance;
 exports.index = index;
+exports.inject = inject;
+exports.isRef = isRef;
+exports.mergeModels = mergeModels;
+exports.n = n;
+exports.nextTick$1 = nextTick$1;
 exports.o = o;
+exports.onLoad = onLoad;
+exports.onMounted = onMounted;
+exports.onUnmounted = onUnmounted;
 exports.p = p;
+exports.provide = provide;
+exports.r = r;
+exports.reactive = reactive;
 exports.ref = ref;
 exports.resolveComponent = resolveComponent;
 exports.s = s;
 exports.sei = sei;
 exports.t = t;
 exports.unref = unref;
+exports.useModel = useModel;
+exports.useSlots = useSlots;
+exports.watch = watch;
+exports.watchEffect = watchEffect;
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map
