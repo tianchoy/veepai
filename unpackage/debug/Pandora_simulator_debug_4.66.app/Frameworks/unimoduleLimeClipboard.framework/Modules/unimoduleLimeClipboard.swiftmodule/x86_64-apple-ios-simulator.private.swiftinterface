@@ -1,0 +1,101 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target x86_64-apple-ios9-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name unimoduleLimeClipboard
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import DCloudUTSExtAPI
+import DCloudUTSFoundation
+import DCloudUniappRuntime
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import unimoduleLimeClipboard
+public typealias LimeClipboardErrorCode = Foundation.NSNumber
+public protocol GeneralCallbackResult : DCloudUTSFoundation.IUniError {
+  var errCode: unimoduleLimeClipboard.LimeClipboardErrorCode { get set }
+}
+public typealias SetClipboardDataCompleteCallback = (_ res: DCloudUTSFoundation.UniError) -> Swift.Void
+public typealias SetClipboardDataFailCallback = (_ res: DCloudUTSFoundation.UniError) -> Swift.Void
+public typealias SetClipboardDataSuccessCallback = (_ res: DCloudUTSFoundation.UniError) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesLimeClipboardSetClipboardDataOption) @objcMembers public class SetClipboardDataOption : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var showToast: Swift.Bool
+  @objc public var data: Swift.String!
+  @objc public var complete: unimoduleLimeClipboard.SetClipboardDataCompleteCallback?
+  @objc public var fail: unimoduleLimeClipboard.SetClipboardDataFailCallback?
+  @objc public var success: unimoduleLimeClipboard.SetClipboardDataSuccessCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesLimeClipboardGetClipboardDataSuccessCallbackOption) @objcMembers public class GetClipboardDataSuccessCallbackOption : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var data: Swift.String!
+  @objc public var errMsg: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias GetClipboardDataCompleteCallback = (_ res: DCloudUTSFoundation.UniError) -> Swift.Void
+public typealias GetClipboardDataFailCallback = (_ res: DCloudUTSFoundation.UniError) -> Swift.Void
+public typealias GetClipboardDataSuccessCallback = (_ option: unimoduleLimeClipboard.GetClipboardDataSuccessCallbackOption) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesLimeClipboardGetClipboardDataOption) @objcMembers public class GetClipboardDataOption : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var complete: unimoduleLimeClipboard.GetClipboardDataCompleteCallback?
+  @objc public var fail: unimoduleLimeClipboard.GetClipboardDataFailCallback?
+  @objc public var success: unimoduleLimeClipboard.GetClipboardDataSuccessCallback?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public var UniErrorSubject: Swift.String
+public var UniErrors: [unimoduleLimeClipboard.LimeClipboardErrorCode : Swift.String]
+@objc(UTSSDKModulesLimeClipboardGeneralCallbackResultImpl) @objcMembers @_objcRuntimeName(UTSSDKModulesLimeClipboardGeneralCallbackResultImpl) public class GeneralCallbackResultImpl : DCloudUTSFoundation.UniError, unimoduleLimeClipboard.GeneralCallbackResult {
+  @objc public init(_ errCode: unimoduleLimeClipboard.LimeClipboardErrorCode, _ type: Swift.String = "set")
+  @objc deinit
+}
+public func setClipboardData(_ options: unimoduleLimeClipboard.SetClipboardDataOption)
+public func getClipboardData(_ options: unimoduleLimeClipboard.GetClipboardDataOption)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesLimeClipboardSetClipboardDataOptionJSONObject) @objcMembers public class SetClipboardDataOptionJSONObject : ObjectiveC.NSObject {
+  @objc public var showToast: Swift.Bool
+  @objc public var data: Swift.String!
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesLimeClipboardGetClipboardDataOptionJSONObject) @objcMembers public class GetClipboardDataOptionJSONObject : ObjectiveC.NSObject {
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func setClipboardDataByJs(_ options: unimoduleLimeClipboard.SetClipboardDataOptionJSONObject)
+public func getClipboardDataByJs(_ options: unimoduleLimeClipboard.GetClipboardDataOptionJSONObject)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesLimeClipboardIndexSwift) @objcMembers public class UTSSDKModulesLimeClipboardIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_setClipboardDataByJs(_ options: unimoduleLimeClipboard.SetClipboardDataOptionJSONObject)
+  @objc public static func s_getClipboardDataByJs(_ options: unimoduleLimeClipboard.GetClipboardDataOptionJSONObject)
+  @objc override dynamic public init()
+  @objc deinit
+}

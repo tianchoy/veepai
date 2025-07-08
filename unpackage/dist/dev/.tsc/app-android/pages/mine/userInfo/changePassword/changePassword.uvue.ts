@@ -104,18 +104,21 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
       createVNode(_component_fui_input, utsMapOf({
         label: "旧密码",
         placeholder: "请输入原密码",
+        type: "password",
         modelValue: oldPassword.value,
         onInput: updateOldPassword
       }), null, 8 /* PROPS */, ["modelValue"]),
       createVNode(_component_fui_input, utsMapOf({
         label: "新密码",
         placeholder: "请输入新密码",
+        type: "password",
         modelValue: newPassword.value,
         onInput: updateNewPassword
       }), null, 8 /* PROPS */, ["modelValue"]),
       createVNode(_component_fui_input, utsMapOf({
         label: "确认新密码",
         placeholder: "再次输入新密码",
+        type: "password",
         modelValue: confirmPassword.value,
         onInput: updateConfirmPassword
       }), null, 8 /* PROPS */, ["modelValue"])

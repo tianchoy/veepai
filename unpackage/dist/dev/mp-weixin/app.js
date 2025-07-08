@@ -2,12 +2,18 @@
 Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
 if (!Math) {
+  "./pages/login/login.js";
   "./pages/index/index.js";
   "./pages/message/message.js";
   "./pages/mine/mine.js";
   "./pages/mine/userInfo/userInfo.js";
   "./pages/mine/userInfo/CancelAnAccount/CancelAnAccount.js";
   "./pages/mine/userInfo/changePhoneNumber/changePhoneNumber.js";
+  "./pages/mine/userInfo/changePassword/changePassword.js";
+  "./pages/mine/rechargeDataTraffic/rechargeDataTraffic.js";
+  "./pages/mine/helpCenter/helpCenter.js";
+  "./pages/mine/helpCenter/questionDetail/questionDetail.js";
+  "./pages/message/messageDetail/messageDetail.js";
 }
 const _sfc_main = common_vendor.defineComponent(new UTSJSONObject({
   onLaunch: function() {

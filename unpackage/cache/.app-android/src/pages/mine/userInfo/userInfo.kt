@@ -88,7 +88,7 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
                             createElementVNode("text", null, "手机号"),
                             createElementVNode("view", utsMapOf("class" to "phone"), utsArrayOf(
                                 createElementVNode("text", null, "18888888888"),
-                                createElementVNode("image", utsMapOf("class" to "icon", "src" to default1, "mode" to "aspectFit"))
+                                createElementVNode("image", utsMapOf("class" to "icon", "src" to default3, "mode" to "aspectFit"))
                             ))
                         ))
                     )),
@@ -98,11 +98,11 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
                     createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
                         createElementVNode("view", utsMapOf("class" to "info-item", "onClick" to editPassword), utsArrayOf(
                             createElementVNode("text", null, "修改密码"),
-                            createElementVNode("image", utsMapOf("class" to "icon", "src" to default1, "mode" to "aspectFit"))
+                            createElementVNode("image", utsMapOf("class" to "icon", "src" to default3, "mode" to "aspectFit"))
                         )),
                         createElementVNode("view", utsMapOf("class" to "info-item nobottom", "onClick" to cancelAnAccount), utsArrayOf(
                             createElementVNode("text", null, "注销账号"),
-                            createElementVNode("image", utsMapOf("class" to "icon", "src" to default1, "mode" to "aspectFit"))
+                            createElementVNode("image", utsMapOf("class" to "icon", "src" to default3, "mode" to "aspectFit"))
                         ))
                     )),
                     createElementVNode("view", utsMapOf("class" to "title"), utsArrayOf(

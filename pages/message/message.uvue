@@ -23,7 +23,7 @@
 				</view>
 			</view>
 			<view class="tab-content">
-				<view v-for="(event, index) in getFilteredEvents()" :key="index" class="tab-pane">
+				<view v-for="(event, index) in getFilteredEvents()" :key="index" class="tab-pane"  @click="msgDetail(event)">
 					<view class="item-content">
 						<image class="item-icon" mode="aspectFit"
 							:src="event.type === 'human' ? '/static/people.png' : '/static/mobile.png'" />
@@ -132,6 +132,12 @@
 			console.log('今天')
 		}
 		showCalendar.value = false
+	}
+	
+	const msgDetail = (e:SecurityEvent) => {
+		uni.navigateTo({
+			url: '/pages/message/messageDetail/messageDetail?id=' + e.id
+		})
 	}
 
 	const change = (res : LYearMonth) => {

@@ -16,6 +16,7 @@ import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.createVideoContext as uni_createVideoContext
+import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 open class GenPagesMessageMessage : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     companion object {
@@ -90,8 +91,11 @@ open class GenPagesMessageMessage : BasePage {
                 }
                 showCalendar.value = false
             }
+            val msgDetail = fun(e: SecurityEvent){
+                uni_navigateTo(NavigateToOptions(url = "/pages/message/messageDetail/messageDetail?id=" + e.id))
+            }
             val change = fun(res: LYearMonth){
-                console.log("res", res, " at pages/message/message.uvue:138")
+                console.log("res", res, " at pages/message/message.uvue:144")
             }
             val ShowCalendar = fun(){
                 showCalendar.value = !showCalendar.value
@@ -134,7 +138,10 @@ open class GenPagesMessageMessage : BasePage {
                         )),
                         createElementVNode("view", utsMapOf("class" to "tab-content"), utsArrayOf(
                             createElementVNode(Fragment, null, RenderHelpers.renderList(getFilteredEvents(), fun(event, index, __index, _cached): Any {
-                                return createElementVNode("view", utsMapOf("key" to index, "class" to "tab-pane"), utsArrayOf(
+                                return createElementVNode("view", utsMapOf("key" to index, "class" to "tab-pane", "onClick" to fun(){
+                                    msgDetail(event)
+                                }
+                                ), utsArrayOf(
                                     createElementVNode("view", utsMapOf("class" to "item-content"), utsArrayOf(
                                         createElementVNode("image", utsMapOf("class" to "item-icon", "mode" to "aspectFit", "src" to if (event.type === "human") {
                                             "/static/people.png"
@@ -155,6 +162,8 @@ open class GenPagesMessageMessage : BasePage {
                                         ))
                                     )),
                                     createElementVNode("image", utsMapOf("class" to "item-img", "mode" to "aspectFit", "src" to "/static/vedio.png"))
+                                ), 8, utsArrayOf(
+                                    "onClick"
                                 ))
                             }
                             ), 128)

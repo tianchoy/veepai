@@ -12,6 +12,18 @@ const _cache = __ins.renderCache;
 		})
 	}
 
+	const rechargeDataTraffic = () => {
+		uni.navigateTo({
+			url: '/pages/mine/rechargeDataTraffic/rechargeDataTraffic'
+		})
+	}
+	
+	const helpCenter = () => {
+		uni.navigateTo({
+			url: '/pages/mine/helpCenter/helpCenter'
+		})
+	}
+
 
 
 return (): any | null => {
@@ -64,7 +76,10 @@ return (): any | null => {
           }))
         ])
       ]),
-      createElementVNode("view", utsMapOf({ class: "item" }), [
+      createElementVNode("view", utsMapOf({
+        class: "item",
+        onClick: rechargeDataTraffic
+      }), [
         createElementVNode("view", utsMapOf({ class: "info" }), [
           createElementVNode("image", utsMapOf({
             class: "item-icon",
@@ -98,7 +113,10 @@ return (): any | null => {
           }))
         ])
       ]),
-      createElementVNode("view", utsMapOf({ class: "item" }), [
+      createElementVNode("view", utsMapOf({
+        class: "item",
+        onClick: helpCenter
+      }), [
         createElementVNode("view", utsMapOf({ class: "info" }), [
           createElementVNode("image", utsMapOf({
             class: "item-icon",

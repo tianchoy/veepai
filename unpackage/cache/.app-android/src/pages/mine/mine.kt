@@ -27,6 +27,12 @@ open class GenPagesMineMine : BasePage {
             val userInfo = fun(){
                 uni_navigateTo(NavigateToOptions(url = "/pages/mine/userInfo/userInfo"))
             }
+            val rechargeDataTraffic = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/rechargeDataTraffic/rechargeDataTraffic"))
+            }
+            val helpCenter = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/helpCenter/helpCenter"))
+            }
             return fun(): Any? {
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
                     createElementVNode("view", utsMapOf("class" to "files"), utsArrayOf(
@@ -53,7 +59,7 @@ open class GenPagesMineMine : BasePage {
                                 createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to rechargeDataTraffic), utsArrayOf(
                             createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
                                 createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/liuliang.png", "mode" to "aspectFit")),
                                 createElementVNode("text", utsMapOf("class" to "item-text"), "流量充值")
@@ -71,7 +77,7 @@ open class GenPagesMineMine : BasePage {
                                 createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to helpCenter), utsArrayOf(
                             createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
                                 createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/quetion.png", "mode" to "aspectFit")),
                                 createElementVNode("text", utsMapOf("class" to "item-text"), "常见问题")

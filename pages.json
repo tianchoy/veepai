@@ -7,6 +7,13 @@
 	},
 	"pages": [
 		{
+			"path" : "pages/login/login",
+			"style" : 
+			{
+				"navigationBarTitleText" : "登陆"
+			}
+		},
+		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "首页"
@@ -47,6 +54,34 @@
 			"style" : 
 			{
 				"navigationBarTitleText" : "修改密码"
+			}
+		},
+		{
+			"path" : "pages/mine/rechargeDataTraffic/rechargeDataTraffic",
+			"style" : 
+			{
+				"navigationBarTitleText" : "流量充值"
+			}
+		},
+		{
+			"path" : "pages/mine/helpCenter/helpCenter",
+			"style" : 
+			{
+				"navigationBarTitleText" : "帮助中心"
+			}
+		},
+		{
+			"path" : "pages/mine/helpCenter/questionDetail/questionDetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "问题详情"
+			}
+		},
+		{
+			"path" : "pages/message/messageDetail/messageDetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "消息详情"
 			}
 		}
 	],

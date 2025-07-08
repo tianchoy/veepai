@@ -1,0 +1,67 @@
+@import '@/uni_modules/lime-style/index.scss';
+
+$progress-stroke-color: create-var(progress-stroke-color, $primary-color);
+$progress-stroke-width: create-var(progress-stroke-width, 4px);
+$progress-trail-color: create-var(progress-trail-color, $fill-2);
+$progress-border-radius: create-var(progress-border-radius, 99px);
+$progress-duration: create-var(progress-duration, 300ms);
+$progress-anim-time-fn: create-var(progress-anim-time-fn, cubic-bezier(0, 0, 0.15, 1));
+$progress-text-color: create-var(progress-text-color, $text-color-2);
+$progress-font-size: create-var(progress-font-size, 10px);
+$progress-inner-text-color: create-var(progress-inner-text-color, white);
+
+
+
+// #ifndef APP-ANDROID
+.l-progress {
+	// #ifndef UNI-APP-X
+	display: flex;
+	// #endif
+	flex-direction: row;
+	// align-items: center;
+	
+	// #ifndef APP-IOS || APP-HARMONY
+	gap: 5px;
+	color: $progress-text-color;
+	font-size: $progress-font-size;
+	// #endif
+	&-bg {
+		// #ifndef UNI-APP-X
+		display: flex;
+		flex-direction: column;
+		// #endif
+		height: $progress-stroke-width;
+		position: relative;
+		background-color: $progress-stroke-color;
+		border-radius: $progress-border-radius;
+		// transition: width $progress-duration $progress-anim-time-fn;
+		transition-property: width;
+		transition-duration: $progress-duration;
+		transition-timing-function: $progress-anim-time-fn;
+		justify-content: center;
+		// #ifndef APP-IOS || APP-HARMONY
+		min-width: max-content;
+		// #endif
+		.l-progress__inner-text {
+			padding: 0 $spacer-tn;
+			color: $progress-inner-text-color;
+			font-size: $progress-font-size;
+			white-space: nowrap;
+		}
+	}
+	&__inner {
+		flex: 1;
+		align-self: center;
+		border-radius: $progress-border-radius;
+		background-color: $progress-trail-color;
+	}
+	&--inner {
+		.l-progress-bg {
+			height: create-var(progress-stroke-width, 20px);
+		}
+	}
+	&--outer {
+		
+	}
+}
+// #endif

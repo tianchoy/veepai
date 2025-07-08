@@ -35,3 +35,8 @@
   padding: 30rpx;
   border-radius: 10rpx;
 }
+.container .content .icon.data-v-2776b291 {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}

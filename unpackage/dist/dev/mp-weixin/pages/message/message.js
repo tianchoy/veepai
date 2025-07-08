@@ -66,8 +66,13 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       }
       showCalendar.value = false;
     };
+    const msgDetail = (e) => {
+      common_vendor.index.navigateTo({
+        url: "/pages/message/messageDetail/messageDetail?id=" + e.id
+      });
+    };
     const change = (res) => {
-      common_vendor.index.__f__("log", "at pages/message/message.uvue:138", "res", res);
+      common_vendor.index.__f__("log", "at pages/message/message.uvue:144", "res", res);
     };
     const ShowCalendar = () => {
       showCalendar.value = !showCalendar.value;
@@ -85,7 +90,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         d: common_vendor.o(playVideo),
         e: common_vendor.o(pasueVideo),
         f: common_vendor.t(today.value),
-        g: common_assets._imports_0,
+        g: common_assets._imports_0$1,
         h: common_vendor.o(ShowCalendar),
         i: common_vendor.f(tabs.value, (tab = null, index = null, i0 = null) => {
           return new UTSJSONObject({
@@ -102,7 +107,10 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
             a: event.type === "human" ? "/static/people.png" : "/static/mobile.png",
             b: common_vendor.t(event.type === "human" ? "人形侦测" : "移动侦测"),
             c: common_vendor.t(event.time),
-            d: index
+            d: index,
+            e: common_vendor.o(($event = null) => {
+              return msgDetail(event);
+            }, index)
           });
         }),
         k: common_assets._imports_1,

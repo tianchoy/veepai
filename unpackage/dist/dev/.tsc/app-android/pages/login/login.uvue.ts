@@ -1,0 +1,97 @@
+import _easycom_fui_icon from '@/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue'
+import _easycom_fui_input from '@/uni_modules/firstui-unix/components/fui-input/fui-input.uvue'
+import _easycom_fui_button from '@/uni_modules/firstui-unix/components/fui-button/fui-button.uvue'
+import _imports_0 from '@/static/login_banner.png'
+
+const __sfc__ = defineComponent({
+  __name: 'login',
+  setup(__props): any | null {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+const _cache = __ins.renderCache;
+
+	const login = () => {
+		uni.showToast({
+			title: '登录成功',
+			icon: 'success',
+			duration: 1000
+		})
+	}
+
+return (): any | null => {
+
+const _component_fui_icon = resolveEasyComponent("fui-icon",_easycom_fui_icon)
+const _component_fui_input = resolveEasyComponent("fui-input",_easycom_fui_input)
+const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_button)
+
+  return createElementVNode("view", utsMapOf({ class: "container" }), [
+    createElementVNode("image", utsMapOf({
+      src: _imports_0,
+      class: "longin_banner"
+    })),
+    createElementVNode("view", utsMapOf({ class: "content" }), [
+      createVNode(_component_fui_input, utsMapOf({
+        "placeholder-style": "color:#666",
+        backgroundColor: "#f9dbf5",
+        radius: 40,
+        borderBottom: false,
+        placeholder: "请输入账号"
+      }), utsMapOf({
+        left: withSlotCtx((): any[] => [
+          createElementVNode("view", utsMapOf({
+            style: normalizeStyle(utsMapOf({"margin-right":"20rpx"}))
+          }), [
+            createVNode(_component_fui_icon, utsMapOf({
+              name: "mobile",
+              color: "#1296db",
+              size: 48
+            }))
+          ], 4 /* STYLE */)
+        ]),
+        _: 1 /* STABLE */
+      })),
+      createVNode(_component_fui_input, utsMapOf({
+        "placeholder-style": "color:#666",
+        backgroundColor: "#f9dbf5",
+        marginTop: 40,
+        radius: 40,
+        borderBottom: false,
+        placeholder: "请输入密码",
+        type: "password"
+      }), utsMapOf({
+        left: withSlotCtx((): any[] => [
+          createElementVNode("view", utsMapOf({
+            style: normalizeStyle(utsMapOf({"margin-right":"20rpx"}))
+          }), [
+            createVNode(_component_fui_icon, utsMapOf({
+              name: "captcha",
+              color: "#1296db",
+              size: 48
+            }))
+          ], 4 /* STYLE */)
+        ]),
+        _: 1 /* STABLE */
+      })),
+      createElementVNode("view", utsMapOf({ class: "tips" }), [
+        createElementVNode("text", null, "短信登陆"),
+        createElementVNode("text", null, "忘记密码")
+      ]),
+      createVNode(_component_fui_button, utsMapOf({
+        margin: "20 0 0 0",
+        background: "#1296db",
+        color: "#fff",
+        size: 40,
+        height: "50",
+        onOnclick: login
+      }), utsMapOf({
+        default: withSlotCtx((): any[] => [" 登录 "]),
+        _: 1 /* STABLE */
+      }))
+    ])
+  ])
+}
+}
+
+})
+export default __sfc__
+const GenPagesLoginLoginStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundColor", "#ffffff"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"], ["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"]]))], ["longin_banner", utsMapOf([[".container ", utsMapOf([["width", "250rpx"], ["height", "400rpx"]])]])], ["content", utsMapOf([[".container ", utsMapOf([["marginTop", "50rpx"], ["marginRight", "20rpx"], ["marginBottom", "50rpx"], ["marginLeft", "20rpx"], ["paddingTop", 0], ["paddingRight", "50rpx"], ["paddingBottom", 0], ["paddingLeft", "50rpx"]])]])], ["tips", utsMapOf([[".container .content ", utsMapOf([["marginTop", "20rpx"], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "space-between"]])]])]])]

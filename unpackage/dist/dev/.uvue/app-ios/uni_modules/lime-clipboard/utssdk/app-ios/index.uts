@@ -1,0 +1,32 @@
+import { UIPasteboard } from "UIKit";
+import { SetClipboardDataOption, GetClipboardDataOption, GetClipboardDataSuccessCallbackOption } from '../interface.uts';
+import { GeneralCallbackResultImpl } from '../unierror.uts';
+export function setClipboardData(options: SetClipboardDataOption) {
+    let pasteboard = UIPasteboard.general;
+    pasteboard.string = options.data;
+    const res = new GeneralCallbackResultImpl(9010001);
+    if (options.showToast != false) {
+        uni.showToast({
+            icon: 'success',
+            title: '内容已复制'
+        });
+    }
+    options.success?.(res);
+    options.complete?.(res);
+}
+export function getClipboardData(options: GetClipboardDataOption) {
+    let pasteboard = UIPasteboard.general;
+    const res = new GeneralCallbackResultImpl(9010002, 'get');
+    if (pasteboard.string == null) {
+        options.fail?.(res);
+        options.complete?.(res);
+    }
+    else {
+        options.success?.({
+            errMsg: 'getClipboardData:ok',
+            data: `${pasteboard.string!}`
+        } as GetClipboardDataSuccessCallbackOption);
+        options.complete?.(res);
+    }
+}
+//# sourceMappingURL=index.uts.map

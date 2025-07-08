@@ -78,8 +78,13 @@ const __sfc__ = defineComponent({
             }
             showCalendar.value = false;
         };
+        const msgDetail = (e: SecurityEvent) => {
+            uni.navigateTo({
+                url: '/pages/message/messageDetail/messageDetail?id=' + e.id
+            });
+        };
         const change = (res: LYearMonth) => {
-            console.log('res', res, " at pages/message/message.uvue:138");
+            console.log('res', res, " at pages/message/message.uvue:144");
         };
         const ShowCalendar = () => {
             showCalendar.value = !showCalendar.value;
@@ -136,7 +141,8 @@ const __sfc__ = defineComponent({
                         createElementVNode(Fragment, null, RenderHelpers.renderList(getFilteredEvents(), (event, index, __index, _cached): any => {
                             return createElementVNode("view", utsMapOf({
                                 key: index,
-                                class: "tab-pane"
+                                class: "tab-pane",
+                                onClick: () => { msgDetail(event); }
                             }), [
                                 createElementVNode("view", utsMapOf({ class: "item-content" }), [
                                     createElementVNode("image", utsMapOf({
@@ -154,7 +160,7 @@ const __sfc__ = defineComponent({
                                     mode: "aspectFit",
                                     src: "/static/vedio.png"
                                 }))
-                            ]);
+                            ], 8 /* PROPS */, ["onClick"]);
                         }), 128 /* KEYED_FRAGMENT */)
                     ])
                 ]),

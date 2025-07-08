@@ -24,7 +24,7 @@
 					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
 				</view>
 			</view>
-			<view class="item">
+			<view class="item" @click="rechargeDataTraffic">
 				<view class="info">
 					<image class="item-icon" src="/static/mine/liuliang.png" mode="aspectFit"></image>
 					<text class="item-text">流量充值</text>
@@ -42,7 +42,7 @@
 					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
 				</view>
 			</view>
-			<view class="item">
+			<view class="item" @click="helpCenter">
 				<view class="info">
 					<image class="item-icon" src="/static/mine/quetion.png" mode="aspectFit"></image>
 					<text class="item-text">常见问题</text>
@@ -96,6 +96,18 @@
 	const userInfo = () => {
 		uni.navigateTo({
 			url: '/pages/mine/userInfo/userInfo'
+		})
+	}
+
+	const rechargeDataTraffic = () => {
+		uni.navigateTo({
+			url: '/pages/mine/rechargeDataTraffic/rechargeDataTraffic'
+		})
+	}
+	
+	const helpCenter = () => {
+		uni.navigateTo({
+			url: '/pages/mine/helpCenter/helpCenter'
 		})
 	}
 

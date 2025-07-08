@@ -1,0 +1,91 @@
+:host{display:flex;flex-direction:column}
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.fui-list__cell.data-v-9e6d76a8 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.fui-list__cell-inner.data-v-9e6d76a8 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.fui-cell__arrow.data-v-9e6d76a8 {
+  height: 40rpx;
+  width: 40rpx;
+  border-width: 3px 3px 0 0;
+  border-style: solid;
+  transform: rotate(45deg) scale(0.5);
+  border-radius: 4rpx;
+  flex-shrink: 0;
+  margin-left: auto;
+  box-sizing: border-box;
+  transform-origin: center center;
+  margin-right: -5.8579rpx;
+}
+.fui-cell__border-top.data-v-9e6d76a8 {
+  position: absolute;
+  top: 0;
+  height: 0.5px;
+  z-index: 1;
+  transform: scaleY(0.5);
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+.fui-cell__border-bottom.data-v-9e6d76a8 {
+  position: absolute;
+  bottom: 0;
+  height: 0.5px;
+  height: 1px;
+  transform: scaleY(0.5);
+  transform-origin: 0 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+.fui-cell__border-color.data-v-9e6d76a8 {
+  background-color: #EEEEEE !important;
+}
+.fui-list__cell-background.data-v-9e6d76a8 {
+  background-color: #FFFFFF !important;
+}
+.fui-list__cell-highlight.data-v-9e6d76a8 {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+}
+.fui-list__cell-padding.data-v-9e6d76a8 {
+  padding: 32rpx !important;
+}
+.fui-list__cell-arrowcolor.data-v-9e6d76a8 {
+  border-color: #B2B2B2 !important;
+}
+.fui-list__cell-bleft.data-v-9e6d76a8 {
+  left: 32rpx !important;
+}

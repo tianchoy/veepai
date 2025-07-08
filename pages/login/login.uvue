@@ -1,0 +1,68 @@
+<template>
+	<view class="container">
+		<image src="@/static/login_banner.png" class="longin_banner" />
+		<view class="content">
+			<fui-input placeholder-style="color:#666" backgroundColor="#f9dbf5" :radius="40" :borderBottom="false"
+				placeholder="请输入账号">
+				<template v-slot:left>
+					<view style="margin-right: 20rpx;">
+						<fui-icon name="mobile" color="#1296db" :size="48"></fui-icon>
+					</view>
+				</template>
+			</fui-input>
+			<fui-input placeholder-style="color:#666" backgroundColor="#f9dbf5" :marginTop="40" :radius="40" :borderBottom="false"
+				placeholder="请输入密码" type="password">
+				<template v-slot:left>
+					<view style="margin-right: 20rpx;">
+						<fui-icon name="captcha" color="#1296db" :size="48"></fui-icon>
+					</view>
+				</template>
+			</fui-input>
+			<view class="tips">
+				<text>短信登陆</text>
+				<text>忘记密码</text>
+			</view>
+			<fui-button margin="20 0 0 0" background="#1296db" color="#fff" :size="40" height="50" @onclick="login">
+				登录
+			</fui-button>
+		</view>
+	</view>
+</template>
+
+<script setup lang="uts">
+	const login = () => {
+		uni.showToast({
+			title: '登录成功',
+			icon: 'success',
+			duration: 1000
+		})
+	}
+</script>
+
+<style lang="scss" scoped>
+	.container {
+		height: 100%;
+		background-color: #fff;
+		padding: 20rpx;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.longin_banner {
+			width: 250rpx;
+			height: 400rpx;
+		}
+
+		.content {
+			margin: 50rpx 20rpx;
+			padding: 0 50rpx;
+			.tips{
+                margin-top: 20rpx;
+				display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+			}
+		}
+	}
+</style>

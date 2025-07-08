@@ -1,0 +1,1 @@
+<text wx:if="{{a}}" class="{{['l-icon', c, d]}}" style="{{e + ';' + f}}" bindtap="{{g}}">{{b}}</text><image wx:elif="{{h}}" class="{{['l-icon', i, j]}}" style="{{k + ';' + l}}" src="{{m}}" bindtap="{{n}}"></image>

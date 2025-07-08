@@ -1,0 +1,13 @@
+
+import { MeasureUtils, MeasureOptions } from '@kit.ArkUI'
+// import { UTSHarmony } from '@dcloudio/uni-runtime';
+// import {UTSHarmony} from '@dcloudio/uni-runtime';
+
+export function measureText(fontSize : number, textContent : string = '￥') : number[] {
+	const uiContextMeasure : MeasureUtils = new MeasureUtils()
+	const textWidth : SizeOptions = uiContextMeasure.measureTextSize({
+		textContent,
+		fontSize: `${fontSize}px`
+	} as MeasureOptions)
+	return [textWidth.width, textWidth.height] as number[] //uni.rpx2px(textWidth.width as number) //UTSHarmony.devicePX2px(textWidth.width) as number
+}

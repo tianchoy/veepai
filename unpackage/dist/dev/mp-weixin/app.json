@@ -1,11 +1,17 @@
 {
   "pages": [
+    "pages/login/login",
     "pages/index/index",
     "pages/message/message",
     "pages/mine/mine",
     "pages/mine/userInfo/userInfo",
     "pages/mine/userInfo/CancelAnAccount/CancelAnAccount",
-    "pages/mine/userInfo/changePhoneNumber/changePhoneNumber"
+    "pages/mine/userInfo/changePhoneNumber/changePhoneNumber",
+    "pages/mine/userInfo/changePassword/changePassword",
+    "pages/mine/rechargeDataTraffic/rechargeDataTraffic",
+    "pages/mine/helpCenter/helpCenter",
+    "pages/mine/helpCenter/questionDetail/questionDetail",
+    "pages/message/messageDetail/messageDetail"
   ],
   "window": {
     "navigationBarTextStyle": "black",

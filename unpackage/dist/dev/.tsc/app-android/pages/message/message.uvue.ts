@@ -99,9 +99,15 @@ override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMa
 		}
 		showCalendar.value = false
 	}
+	
+	const msgDetail = (e:SecurityEvent) => {
+		uni.navigateTo({
+			url: '/pages/message/messageDetail/messageDetail?id=' + e.id
+		})
+	}
 
 	const change = (res : LYearMonth) => {
-		console.log('res', res, " at pages/message/message.uvue:138")
+		console.log('res', res, " at pages/message/message.uvue:144")
 	}
 
 	const ShowCalendar = () => {
@@ -163,7 +169,8 @@ const _component_l_daily_punch = resolveEasyComponent("l-daily-punch",_easycom_l
         createElementVNode(Fragment, null, RenderHelpers.renderList(getFilteredEvents(), (event, index, __index, _cached): any => {
           return createElementVNode("view", utsMapOf({
             key: index,
-            class: "tab-pane"
+            class: "tab-pane",
+            onClick: () => {msgDetail(event)}
           }), [
             createElementVNode("view", utsMapOf({ class: "item-content" }), [
               createElementVNode("image", utsMapOf({
@@ -181,7 +188,7 @@ const _component_l_daily_punch = resolveEasyComponent("l-daily-punch",_easycom_l
               mode: "aspectFit",
               src: "/static/vedio.png"
             }))
-          ])
+          ], 8 /* PROPS */, ["onClick"])
         }), 128 /* KEYED_FRAGMENT */)
       ])
     ]),

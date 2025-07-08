@@ -82,13 +82,13 @@ open class GenPagesMineUserInfoChangePasswordChangePassword : BasePage {
                 val _component_fui_button = resolveEasyComponent("fui-button", GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass)
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
                     createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
-                        createVNode(_component_fui_input, utsMapOf("label" to "旧密码", "placeholder" to "请输入原密码", "modelValue" to oldPassword.value, "onInput" to updateOldPassword), null, 8, utsArrayOf(
+                        createVNode(_component_fui_input, utsMapOf("label" to "旧密码", "placeholder" to "请输入原密码", "type" to "password", "modelValue" to oldPassword.value, "onInput" to updateOldPassword), null, 8, utsArrayOf(
                             "modelValue"
                         )),
-                        createVNode(_component_fui_input, utsMapOf("label" to "新密码", "placeholder" to "请输入新密码", "modelValue" to newPassword.value, "onInput" to updateNewPassword), null, 8, utsArrayOf(
+                        createVNode(_component_fui_input, utsMapOf("label" to "新密码", "placeholder" to "请输入新密码", "type" to "password", "modelValue" to newPassword.value, "onInput" to updateNewPassword), null, 8, utsArrayOf(
                             "modelValue"
                         )),
-                        createVNode(_component_fui_input, utsMapOf("label" to "确认新密码", "placeholder" to "再次输入新密码", "modelValue" to confirmPassword.value, "onInput" to updateConfirmPassword), null, 8, utsArrayOf(
+                        createVNode(_component_fui_input, utsMapOf("label" to "确认新密码", "placeholder" to "再次输入新密码", "type" to "password", "modelValue" to confirmPassword.value, "onInput" to updateConfirmPassword), null, 8, utsArrayOf(
                             "modelValue"
                         ))
                     )),

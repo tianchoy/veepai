@@ -86,26 +86,34 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         url: "/pages/mine/userInfo/CancelAnAccount/CancelAnAccount"
       });
     };
+    const editPassword = () => {
+      {
+        common_vendor.index.navigateTo({
+          url: "/pages/mine/userInfo/changePassword/changePassword"
+        });
+      }
+    };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: common_assets._imports_0$2,
+        a: common_assets._imports_0$3,
         b: common_vendor.o(changePhoneNumber),
-        c: common_assets._imports_0$2,
-        d: common_assets._imports_0$2,
-        e: common_vendor.o(cancelAnAccount),
-        f: common_vendor.t(switchVal.value ? "已绑定" : "未绑定"),
-        g: common_vendor.o(change),
-        h: common_vendor.p({
+        c: common_assets._imports_0$3,
+        d: common_vendor.o(editPassword),
+        e: common_assets._imports_0$3,
+        f: common_vendor.o(cancelAnAccount),
+        g: common_vendor.t(switchVal.value ? "已绑定" : "未绑定"),
+        h: common_vendor.o(change),
+        i: common_vendor.p({
           checked: switchVal.value,
           color: "#1296db"
         }),
-        i: common_vendor.o(logout),
-        j: common_vendor.p({
+        j: common_vendor.o(logout),
+        k: common_vendor.p({
           color: "#fff",
           text: "退出登陆",
           background: "#1296db"
         }),
-        k: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        l: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

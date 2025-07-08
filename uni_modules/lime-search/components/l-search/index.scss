@@ -1,0 +1,115 @@
+@import '~@/uni_modules/lime-style/index.scss';
+$prefix: l !default;
+$search: #{$prefix}-search;
+
+
+$search-bg-color: create-var(search-bg-color, $fill-3);
+$search-text-color: create-var(search-text-color, $text-color-1);
+$search-label-color: create-var(search-label-color, $text-color-1);
+$search-font-size: create-var(search-font-size, $font-size-md);
+$search-height: create-var(search-height, 80rpx);
+$search-padding: create-var(search-padding, 16rpx 24rpx);
+$search-placeholder-color: create-var(search-placeholder-color, $text-color-3);
+$search-icon-color: create-var(search-icon-color, $text-color-4);
+$search-square-radius: create-var(search-radius, $border-radius);
+$search-round-radius: create-var(search-radius, 99px); //calc($search-height / 2);
+$search-action-color: create-var(search-action-color, $primary-color);
+$search-clear-icon-color: create-var(search-clear-icon-color, $text-color-4);
+
+/* #ifdef MP */
+:host {
+	display: block;
+}
+/* #endif */
+
+.#{$search} {
+	/* #ifndef UNI-APP-X */
+	display: flex;
+	/* #endif */
+	// flex: 1;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	// background-color: white;
+	// padding: 8px 16px;
+	&__content {
+		/* #ifndef UNI-APP-X */
+		display: flex;
+		/* #endif */
+		flex: 1;
+		align-items: center;
+		flex-direction: row;
+		box-sizing: border-box;
+		height: $search-height;
+		align-items: center;
+		border: 2rpx solid $search-bg-color;
+		background: $search-bg-color;
+		padding: $search-padding;
+		
+		&--focused {
+		    border-color: $search-bg-color;
+		}
+			
+		&--round {
+		    border-radius: $search-round-radius;
+		}
+		
+		&--square {
+		    border-radius: $search-square-radius;
+		}
+		
+		&--center {
+			/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY  */
+		    text-align: center;
+			/* #endif */
+		}
+	}
+	&__keyword {
+		/* #ifndef UNI-APP-X */
+		display: inline-flex;
+		/* #endif */
+		flex: 1;
+		color: $search-text-color;
+		font-size: $search-font-size;
+		padding-left: 10rpx;
+		// min-height: 48rpx;
+		// line-height: 48rpx;
+	}
+	&__placeholder {
+	    color: $search-placeholder-color;
+	    &--center {
+			text-align: center;
+	    }
+	}
+	&__icon {
+		// font-size: 42rpx !important;
+		color: $search-icon-color;
+		/* #ifndef UNI-APP-X */
+		display: inline-flex;
+		/* #endif */
+	}
+	&__clear {
+		/* #ifndef UNI-APP-X */
+		display: inline-flex;
+		/* #endif */
+	    position: relative;
+	    margin-left: 10px;
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+	    color: $search-clear-icon-color;
+		/* #endif */
+		&-icon {
+			color: $search-clear-icon-color;
+		}
+		&--right {
+			margin-right: 10px;
+		}
+	}
+	&__action {
+	    margin-left: 30rpx;
+	    font-size: $search-font-size;
+	    color: $search-action-color;
+		
+		
+	}
+}

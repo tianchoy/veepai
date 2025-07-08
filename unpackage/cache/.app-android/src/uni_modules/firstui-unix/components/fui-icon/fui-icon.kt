@@ -43,7 +43,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon : VueComponent {
     open var getIconStyl: Any by `$data`
     @Suppress("USELESS_CAST")
     override fun data(): Map<String, Any?> {
-        return utsMapOf("icons" to default3 as UTSJSONObject, "getSize" to computed<String>(fun(): String {
+        return utsMapOf("icons" to `default` as UTSJSONObject, "getSize" to computed<String>(fun(): String {
             var size: String
             if (UTSAndroid.`typeof`(this.size) == "number") {
                 size = (this.size as Number).toString(10) + this.unit

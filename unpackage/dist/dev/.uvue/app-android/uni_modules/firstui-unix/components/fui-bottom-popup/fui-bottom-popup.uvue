@@ -1,0 +1,149 @@
+/**
+ * BottomPopup 底部弹出层
+ * @description BottomPopup 底部弹出层，从底部弹出的浮层，引导用户进行相关操作。
+ * @tutorial https://unix.firstui.cn/
+ * @property {Boolean} visible {Boolean} 是否显示底部弹出层
+ * @property {String} background {String} 底部弹出层背景颜色
+ * @property {Number} radius {Number} 底部弹出层左上/右上圆角值，单位rpx
+ * @property {Number} zIndex {Number} 底部弹出层z-index值
+ * @property {Boolean} maskClosable {Boolean} 点击遮罩 是否可关闭
+ * @property {String} maskBackground {String} 遮罩背景色
+ * @property {Boolean} safeArea {Boolean} 是否适配底部安全区
+ * @event {Function} close 点击遮罩层（maskClosable=true）时触发，() => void
+ * @event {Function} update:visible 点击遮罩层（maskClosable=true）时触发，用于双向绑定	，(event: boolean) => void
+ */
+const __sfc__ = defineComponent({
+    name: 'fui-bottom-popup',
+    emits: ['close', 'update:visible'],
+    props: {
+        visible: {
+            type: Boolean,
+            default: false
+        },
+        background: {
+            type: String,
+            default: '#fff'
+        },
+        radius: {
+            type: Number,
+            default: 24
+        },
+        zIndex: {
+            type: Number,
+            default: 996
+        },
+        maskClosable: {
+            type: Boolean,
+            default: true
+        },
+        maskBackground: {
+            type: String,
+            default: 'rgba(0,0,0,.6)'
+        },
+        safeArea: {
+            type: Boolean,
+            default: true
+        }
+    },
+    data() {
+        const refId = `fui_bp_${parseInt(Math.ceil(Math.random() * 10e5).toString(10), 36)}`;
+        const refMkId = `fui_bpmk_${parseInt(Math.ceil(Math.random() * 10e5).toString(10), 36)}`;
+        return {
+            refId: refId,
+            refMkId: refMkId,
+            iphoneX: false,
+            isShow: false,
+            element: null as UniElement | null,
+            mkElement: null as UniElement | null
+        };
+    },
+    watch: {
+        visible: {
+            handler(newVal: boolean) {
+                if (newVal) {
+                    this.open();
+                }
+                else {
+                    if (this.isShow)
+                        this.close();
+                }
+            },
+            immediate: true
+        }
+    },
+    created() {
+    },
+    mounted() {
+        this.$nextTick(() => {
+            setTimeout(() => {
+                if (!this.visible)
+                    this.close();
+            }, 50);
+        });
+    },
+    methods: {
+        handleClose() {
+            if (!this.maskClosable)
+                return;
+            this.$emit('close');
+            this.$emit('update:visible', false);
+        },
+        open() {
+            this.isShow = true;
+            this.$nextTick(() => {
+                setTimeout(() => {
+                    this._animation(true);
+                }, 50);
+            });
+        },
+        close() {
+            this.isShow = false;
+            this._animation(false);
+        },
+        _animation(visible: boolean) {
+            if (this.element == null) {
+                this.element = this.$refs[this.refId] as UniElement;
+            }
+            if (this.mkElement == null) {
+                this.mkElement = this.$refs[this.refMkId] as UniElement;
+            }
+            this.element!.style.setProperty('transform', `translateY(${visible ? '0' : '100%'})`);
+            this.element!.style.setProperty('opacity', visible ? '1' : '0');
+            this.mkElement!.style.setProperty('opacity', visible ? '1' : '0');
+            if (visible) {
+                this.mkElement!.style.setProperty('visibility', 'visible');
+                this.element!.style.setProperty('visibility', 'visible');
+            }
+            else {
+                setTimeout(() => {
+                    this.mkElement!.style.setProperty('visibility', 'hidden');
+                    this.element!.style.setProperty('visibility', 'hidden');
+                }, 300);
+            }
+        },
+        stop() { }
+    }
+});
+export default __sfc__;
+function GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupRender(this: InstanceType<typeof __sfc__>): any | null {
+    const _ctx = this;
+    const _cache = this.$.renderCache;
+    return createElementVNode("view", utsMapOf({
+        class: "fui-bottom__popup-wrap",
+        style: normalizeStyle(utsMapOf({ zIndex: _ctx.zIndex, background: _ctx.maskBackground })),
+        onClick: withModifiers(_ctx.handleClose, ["stop"]),
+        ref: _ctx.refMkId
+    }), [
+        createElementVNode("view", utsMapOf({
+            onClick: withModifiers(_ctx.stop, ["stop"]),
+            ref: _ctx.refId,
+            class: normalizeClass(["fui-bottom__popup", utsMapOf({ 'fui-bp__safe-weex': _ctx.iphoneX && _ctx.safeArea })]),
+            style: normalizeStyle(utsMapOf({ borderTopLeftRadius: `${_ctx.radius}rpx`, borderTopRightRadius: `${_ctx.radius}rpx`, background: _ctx.background }))
+        }), [
+            renderSlot(_ctx.$slots, "default")
+        ], 14 /* CLASS, STYLE, PROPS */, ["onClick"])
+    ], 12 /* STYLE, PROPS */, ["onClick"]);
+}
+export type FuiBottomPopupComponentPublicInstance = InstanceType<typeof __sfc__>;
+const GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupStyles = [utsMapOf([["fui-bottom__popup-wrap", padStyleMapOf(utsMapOf([["position", "fixed"], ["left", 0], ["right", 0], ["top", 0], ["bottom", 0], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "flex-end"], ["justifyContent", "center"], ["transitionProperty", "opacity,visibility"], ["transitionTimingFunction", "ease-in-out"], ["transitionDuration", "0.3s"], ["visibility", "hidden"], ["borderBottomWidth", 0], ["overflow", "hidden"], ["opacity", 0]]))], ["fui-bottom__popup", padStyleMapOf(utsMapOf([["width", "100%"], ["transitionProperty", "transform,opacity,visibility"], ["transitionTimingFunction", "ease-in-out"], ["transitionDuration", "0.3s"], ["minHeight", "20rpx"], ["overflow", "hidden"], ["transform", "translateY(100%)"], ["display", "flex"], ["flexDirection", "row"], ["position", "relative"]]))], ["fui-bp__safe-weex", padStyleMapOf(utsMapOf([["paddingBottom", 34]]))], ["@TRANSITION", utsMapOf([["fui-bottom__popup-wrap", utsMapOf([["property", "opacity,visibility"], ["timingFunction", "ease-in-out"], ["duration", "0.3s"]])], ["fui-bottom__popup", utsMapOf([["property", "transform,opacity,visibility"], ["timingFunction", "ease-in-out"], ["duration", "0.3s"]])]])]])];
+//# sourceMappingURL=fui-bottom-popup.uvue.map
