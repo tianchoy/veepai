@@ -27,7 +27,7 @@
 .container.data-v-27a30816 {
   height: 100%;
   background-color: #fff;
-  padding: 20rpx;
+  padding: 20rpx 40rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,15 +35,39 @@
 .container .longin_banner.data-v-27a30816 {
   width: 250rpx;
   height: 400rpx;
+  margin-bottom: 20rpx;
 }
 .container .content.data-v-27a30816 {
-  margin: 50rpx 20rpx;
-  padding: 0 50rpx;
+  width: 100%;
+}
+.container .content .check-box.data-v-27a30816 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 20rpx;
+}
+.container .content .check-box .fui-text-box.data-v-27a30816 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 10rpx;
+}
+.container .content .check-box .fui-text-box .fui-text.data-v-27a30816 {
+  color: #1296db;
 }
 .container .content .tips.data-v-27a30816 {
   margin-top: 20rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+}
+.container .fui-scroll__wrap.data-v-27a30816 {
+  width: 100%;
+  padding: 40rpx;
+}
+.container .fui-scroll__wrap .fui-title__pb.data-v-27a30816 {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }

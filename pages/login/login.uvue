@@ -2,40 +2,162 @@
 	<view class="container">
 		<image src="@/static/login_banner.png" class="longin_banner" />
 		<view class="content">
-			<fui-input placeholder-style="color:#666" backgroundColor="#f9dbf5" :radius="40" :borderBottom="false"
-				placeholder="请输入账号">
-				<template v-slot:left>
-					<view style="margin-right: 20rpx;">
-						<fui-icon name="mobile" color="#1296db" :size="48"></fui-icon>
-					</view>
-				</template>
-			</fui-input>
-			<fui-input placeholder-style="color:#666" backgroundColor="#f9dbf5" :marginTop="40" :radius="40" :borderBottom="false"
-				placeholder="请输入密码" type="password">
-				<template v-slot:left>
-					<view style="margin-right: 20rpx;">
-						<fui-icon name="captcha" color="#1296db" :size="48"></fui-icon>
-					</view>
-				</template>
-			</fui-input>
-			<view class="tips">
-				<text>短信登陆</text>
-				<text>忘记密码</text>
+			<view v-if="loginType">
+				<fui-input placeholder-style="color:#000" backgroundColor="#d3a0fa" :radius="40" :borderBottom="false"
+					placeholder="请输入账号">
+					<template v-slot:left>
+						<view style="margin-right: 20rpx;">
+							<fui-icon name="mobile" color="#1296db" :size="48"></fui-icon>
+						</view>
+					</template>
+				</fui-input>
+				<fui-input placeholder-style="color:#000" backgroundColor="#d3a0fa" :marginTop="40" :radius="40"
+					:borderBottom="false" placeholder="请输入密码" type="password">
+					<template v-slot:left>
+						<view style="margin-right: 20rpx;">
+							<fui-icon name="captcha" color="#1296db" :size="48"></fui-icon>
+						</view>
+					</template>
+				</fui-input>
+				<view class="tips">
+					<text @click="changeType(false)">短信登陆</text>
+					<text>忘记密码</text>
+				</view>
 			</view>
-			<fui-button margin="20 0 0 0" background="#1296db" color="#fff" :size="40" height="50" @onclick="login">
-				登录
-			</fui-button>
+			<view v-else>
+				<fui-input placeholder-style="color:#000" backgroundColor="#d3a0fa" :radius="40" :borderBottom="false"
+					placeholder="请输入账号">
+					<template v-slot:left>
+						<view style="margin-right: 20rpx;">
+							<fui-icon name="mobile" color="#1296db" :size="48"></fui-icon>
+						</view>
+					</template>
+				</fui-input>
+				<fui-input padding="20rpx 32rpx" backgroundColor="#d3a0fa" placeholder="请输入验证码" :bottomLeft="0"  :marginTop="40" :radius="40"
+					placeholderStyle="font-size: 26rpx;" placeholder-style="color:#000" :borderBottom="false">
+					<template v-slot:left>
+						<view style="margin-right: 20rpx;">
+							<fui-icon name="captcha" color="#1296db" :size="48"></fui-icon>
+						</view>
+					</template>
+					<fui-button width="200rpx" height="64rpx" :size="28" @click="getPsw" :text="btnWord" background="none" color="#333"
+						:disabled="isCounting"></fui-button>
+				</fui-input>
+                <view class="tips">
+					<text @click="changeType(true)">密码登陆</text>
+					<text>忘记密码</text>
+				</view>
+			</view>
+            <fui-checkbox-group name="checkbox" class="check-box" @change="isChecked">
+                <fui-label>
+                    <fui-checkbox value="1"></fui-checkbox>
+                </fui-label>
+                <view class="fui-text-box">
+                    <text>已阅读并同意</text>
+                    <text class="fui-text" @click="showUserInfo">《用户协议》</text>
+                    <text>和</text>
+                    <text class="fui-text" @click="priviteInfo">《隐私政策》</text>
+                </view>
+            </fui-checkbox-group>
+
+			<fui-button text="登录" margin="20rpx 0 0 0" background="#1296db" color="#fff" :size="40"
+				@onclick="login"></fui-button>
 		</view>
+        <view>
+            <fui-bottom-popup :visible="user_info" @close="closeUserPopup">
+                <view class="fui-scroll__wrap">
+                    <view class="fui-title__pb">
+                        <text>{{user_text.title}}</text>
+                        <view @tap="closeUserPopup">
+                            <fui-icon name="close" :size="48"></fui-icon>
+                        </view>
+                    </view>
+                    <scroll-view :scroll-y="true" :show-scrollbar="false">
+                        <view>
+                            {{user_text.content}}
+                        </view>
+                    </scroll-view>
+                    
+                </view>
+            </fui-bottom-popup>
+        </view>
 	</view>
 </template>
 
 <script setup lang="uts">
+	import { ref } from 'vue'
+    const loginType = ref<boolean>(true)
+    const isCheck = ref<string>('')
+	const btnWord = ref<string>('获取验证码')
+	const isCounting = ref<boolean>(false)
+    const user_info = ref<boolean>(false)
+    const user_text = ref<UTSJSONObject>({
+        title:'',
+        content:''
+    })
+
+    const changeType = (bool:boolean) => {
+        loginType.value = bool
+    }
+
+    const closeUserPopup = () => {
+        user_info.value = false
+    }
+
+    const showUserInfo = () =>{
+        user_info.value = true
+        user_text.value = {
+            title:'用户协议',
+            content:'用户协议内容'
+        }
+    }
+
+    const priviteInfo = () =>{
+		user_info.value = true
+        user_text.value = {
+            title:'隐私政策',
+            content:'隐私政策内容'
+        }
+    }
+
+    const isChecked = (e: string[]) =>{
+        isCheck.value = e.join(',')
+    }
+
+	function countDown(seconds : number) {
+		if (seconds <= 0) {
+			btnWord.value = '获取验证码'
+			isCounting.value = false
+			return
+		}
+
+		btnWord.value = `${seconds}秒后重发`
+
+		setTimeout(() => {
+			countDown(seconds - 1)
+		}, 1000)
+	}
+
+	const getPsw = () => {
+		if (isCounting.value) return
+
+		console.log('发送验证码请求...')
+		isCounting.value = true
+
+		countDown(90)
+	}
 	const login = () => {
-		uni.showToast({
-			title: '登录成功',
-			icon: 'success',
-			duration: 1000
-		})
+		if(isCheck.value == ''){
+            uni.showToast({
+                title:'请先同意用户协议和隐私政策',
+                icon:'none'
+            })
+        }else{
+            uni.showToast({
+                title:'登录成功',
+                icon:'none'
+            })
+        }
 	}
 </script>
 
@@ -43,7 +165,7 @@
 	.container {
 		height: 100%;
 		background-color: #fff;
-		padding: 20rpx;
+		padding: 20rpx 40rpx;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -51,18 +173,42 @@
 		.longin_banner {
 			width: 250rpx;
 			height: 400rpx;
+			margin-bottom: 20rpx;
 		}
 
 		.content {
-			margin: 50rpx 20rpx;
-			padding: 0 50rpx;
-			.tips{
-                margin-top: 20rpx;
-				display: flex;
+			width: 100%;
+            .check-box{
+                display: flex;
                 flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
+                justify-content: flex-start;
+                margin-top: 20rpx;
+                .fui-text-box{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    margin-left: 10rpx;
+					.fui-text{
+						color: #1296db;
+					}
+                }
+            }
+			.tips {
+				margin-top: 20rpx;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
 			}
 		}
+        .fui-scroll__wrap{
+            width: 100%;
+            padding: 40rpx;
+            .fui-title__pb{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
 	}
 </style>

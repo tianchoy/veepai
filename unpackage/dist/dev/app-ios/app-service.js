@@ -42,7 +42,7 @@
     });
   }
   function initRuntimeSocketService() {
-    const hosts = "127.0.0.1,192.168.3.34,169.254.22.214";
+    const hosts = "127.0.0.1,192.168.3.34";
     const port = "8090";
     const id = "app-ios_IC3jDr";
     let socketTask = null;
@@ -231,7 +231,7 @@
     "goods": "",
     "goods-fill": ""
   });
-  const _sfc_main$u = vue.defineComponent({
+  const _sfc_main$w = vue.defineComponent({
     name: "fui-icon",
     emits: ["onclick"],
     props: {
@@ -316,7 +316,7 @@
       }
     }
   });
-  const _style_0$t = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
+  const _style_0$u = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
   const _export_sfc = (sfc, props) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
@@ -324,7 +324,7 @@
     }
     return target;
   };
-  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -337,7 +337,7 @@
       /* TEXT, CLASS, STYLE */
     );
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["styles", [_style_0$t]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["styles", [_style_0$u]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
   const ON_LOAD = "onLoad";
   function resolveEasycom(component, easycom) {
     return typeof component === "string" ? easycom : component;
@@ -346,7 +346,7 @@
     !vue.isInSSRComponentSetup && vue.injectHook(lifecycle, hook, target);
   };
   const onLoad = /* @__PURE__ */ createHook(ON_LOAD);
-  const _sfc_main$t = vue.defineComponent({
+  const _sfc_main$v = vue.defineComponent({
     name: "fui-input",
     emits: ["input", "update:modelValue", "focus", "blur", "confirm", "onclick", "keyboardheightchange"],
     props: {
@@ -731,8 +731,8 @@
       }
     }
   });
-  const _style_0$s = { "fui-input__wrap": { "": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "position": "relative", "boxSizing": "border-box", "overflow": "visible" } }, "fui-input__border-uvue": { "": { "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "fui-input__border-color": { "": { "!borderTopColor": "#EEEEEE", "!borderRightColor": "#EEEEEE", "!borderBottomColor": "#EEEEEE", "!borderLeftColor": "#EEEEEE" } }, "fui-input__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#EEEEEE" } }, "fui-input__border-top": { "": { "position": "absolute", "top": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__required": { "": { "position": "absolute", "left": "12rpx", "height": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "fui-input__asterisk-text": { "": { "fontSize": "32rpx", "height": "32rpx", "lineHeight": "32rpx" } }, "fui-input__asterisk-color": { "": { "!color": "#FF2B2B" } }, "fui-input__label": { "": { "paddingRight": "12rpx", "flexShrink": 0 } }, "fui-input__label-size": { "": { "!fontSize": "32rpx", "!lineHeight": "32rpx" } }, "fui-input__self": { "": { "flex": 1, "paddingRight": "12rpx", "overflow": "visible", "backgroundColor": "rgba(0,0,0,0)", "boxSizing": "border-box" } }, "fui-input__size": { "": { "!fontSize": "32rpx" } }, "fui-input__clear-wrap": { "": { "width": "32rpx", "height": "32rpx", "transform": "rotate(45deg) scale(1.1)", "position": "relative", "flexShrink": 0, "borderTopLeftRadius": "32rpx", "borderTopRightRadius": "32rpx", "borderBottomRightRadius": "32rpx", "borderBottomLeftRadius": "32rpx" } }, "fui-input__clear": { "": { "width": "32rpx", "height": "32rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "absolute", "left": 0, "top": 0, "transform": "scale(0.5)" } }, "fui-input__clear-a": { "": { "width": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__clear-b": { "": { "height": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__placeholder": { "": { "color": "#CCCCCC", "overflow": "visible" } }, "fui-input__disabled": { "": { "pointerEvents": "none" } }, "fui-input__disabled-styl": { "": { "opacity": 0.6 } } };
-  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$t = { "fui-input__wrap": { "": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "position": "relative", "boxSizing": "border-box", "overflow": "visible" } }, "fui-input__border-uvue": { "": { "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "fui-input__border-color": { "": { "!borderTopColor": "#EEEEEE", "!borderRightColor": "#EEEEEE", "!borderBottomColor": "#EEEEEE", "!borderLeftColor": "#EEEEEE" } }, "fui-input__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#EEEEEE" } }, "fui-input__border-top": { "": { "position": "absolute", "top": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__required": { "": { "position": "absolute", "left": "12rpx", "height": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "fui-input__asterisk-text": { "": { "fontSize": "32rpx", "height": "32rpx", "lineHeight": "32rpx" } }, "fui-input__asterisk-color": { "": { "!color": "#FF2B2B" } }, "fui-input__label": { "": { "paddingRight": "12rpx", "flexShrink": 0 } }, "fui-input__label-size": { "": { "!fontSize": "32rpx", "!lineHeight": "32rpx" } }, "fui-input__self": { "": { "flex": 1, "paddingRight": "12rpx", "overflow": "visible", "backgroundColor": "rgba(0,0,0,0)", "boxSizing": "border-box" } }, "fui-input__size": { "": { "!fontSize": "32rpx" } }, "fui-input__clear-wrap": { "": { "width": "32rpx", "height": "32rpx", "transform": "rotate(45deg) scale(1.1)", "position": "relative", "flexShrink": 0, "borderTopLeftRadius": "32rpx", "borderTopRightRadius": "32rpx", "borderBottomRightRadius": "32rpx", "borderBottomLeftRadius": "32rpx" } }, "fui-input__clear": { "": { "width": "32rpx", "height": "32rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "absolute", "left": 0, "top": 0, "transform": "scale(0.5)" } }, "fui-input__clear-a": { "": { "width": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__clear-b": { "": { "height": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__placeholder": { "": { "color": "#CCCCCC", "overflow": "visible" } }, "fui-input__disabled": { "": { "pointerEvents": "none" } }, "fui-input__disabled-styl": { "": { "opacity": 0.6 } } };
+  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -852,8 +852,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["styles", [_style_0$s]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
-  const _sfc_main$s = vue.defineComponent({
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["styles", [_style_0$t]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
+  const _sfc_main$u = vue.defineComponent({
     name: "fui-button",
     emits: ["onclick"],
     props: {
@@ -1121,8 +1121,8 @@
       }
     }
   });
-  const _style_0$r = { "fui-button__wrap": { "": { "position": "relative", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-button__flex-1": { "": { "width": "100%" } }, "fui-button__opacity": { "": { "opacity": 0.5 } }, "fui-button__hover": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "backgroundColor": "rgba(0,0,0,0.2)", "zIndex": 2, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "visibility": "hidden", "pointerEvents": "none" } }, "fui-button__spin": { "": { "width": "32rpx", "height": "32rpx", "borderTopWidth": 2, "borderRightWidth": 2, "borderBottomWidth": 2, "borderLeftWidth": 2, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "transitionDuration": "600ms", "transitionProperty": "transform", "transitionTimingFunction": "linear", "transform": "rotate(0deg)", "boxSizing": "border-box", "marginRight": "8rpx", "position": "relative" } }, "fui-button__spin-dot": { "": { "position": "absolute", "width": "12rpx", "height": "12rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx", "left": 0, "top": 0 } }, "fui-button__text": { "": { "textAlign": "center" } }, "fui-text__bold": { "": { "fontWeight": "bold" } }, "fui-button__link": { "": { "!borderTopColor": "rgba(0,0,0,0)", "!borderRightColor": "rgba(0,0,0,0)", "!borderBottomColor": "rgba(0,0,0,0)", "!borderLeftColor": "rgba(0,0,0,0)", "!backgroundColor": "rgba(0,0,0,0)" } }, "fui-button__primary": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF", "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-button__success": { "": { "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F", "!backgroundImage": "none", "!backgroundColor": "#09BE4F" } }, "fui-button__warning": { "": { "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703", "!backgroundImage": "none", "!backgroundColor": "#FFB703" } }, "fui-button__danger": { "": { "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B", "!backgroundImage": "none", "!backgroundColor": "#FF2B2B" } }, "fui-button__purple": { "": { "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF", "!backgroundImage": "none", "!backgroundColor": "#6831FF" } }, "fui-button__gray": { "": { "!borderTopColor": "#F8F8F8", "!borderRightColor": "#F8F8F8", "!borderBottomColor": "#F8F8F8", "!borderLeftColor": "#F8F8F8", "!backgroundImage": "none", "!backgroundColor": "#F8F8F8" } }, "fui-btn__gray-color": { "": { "!color": "#465CFF" } }, "fui-button__height": { "": { "!height": "96rpx" } }, "fui-button__height-text": { "": { "!height": "96rpx", "!lineHeight": "96rpx" } }, "fui-button__size": { "": { "!fontSize": "32rpx" } }, "fui-button__radius": { "": { "!borderTopLeftRadius": "16rpx", "!borderTopRightRadius": "16rpx", "!borderBottomRightRadius": "16rpx", "!borderBottomLeftRadius": "16rpx" } }, "@TRANSITION": { "fui-button__spin": { "duration": "600ms", "property": "transform", "timingFunction": "linear" } } };
-  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$s = { "fui-button__wrap": { "": { "position": "relative", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-button__flex-1": { "": { "width": "100%" } }, "fui-button__opacity": { "": { "opacity": 0.5 } }, "fui-button__hover": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "backgroundColor": "rgba(0,0,0,0.2)", "zIndex": 2, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "visibility": "hidden", "pointerEvents": "none" } }, "fui-button__spin": { "": { "width": "32rpx", "height": "32rpx", "borderTopWidth": 2, "borderRightWidth": 2, "borderBottomWidth": 2, "borderLeftWidth": 2, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "transitionDuration": "600ms", "transitionProperty": "transform", "transitionTimingFunction": "linear", "transform": "rotate(0deg)", "boxSizing": "border-box", "marginRight": "8rpx", "position": "relative" } }, "fui-button__spin-dot": { "": { "position": "absolute", "width": "12rpx", "height": "12rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx", "left": 0, "top": 0 } }, "fui-button__text": { "": { "textAlign": "center" } }, "fui-text__bold": { "": { "fontWeight": "bold" } }, "fui-button__link": { "": { "!borderTopColor": "rgba(0,0,0,0)", "!borderRightColor": "rgba(0,0,0,0)", "!borderBottomColor": "rgba(0,0,0,0)", "!borderLeftColor": "rgba(0,0,0,0)", "!backgroundColor": "rgba(0,0,0,0)" } }, "fui-button__primary": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF", "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-button__success": { "": { "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F", "!backgroundImage": "none", "!backgroundColor": "#09BE4F" } }, "fui-button__warning": { "": { "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703", "!backgroundImage": "none", "!backgroundColor": "#FFB703" } }, "fui-button__danger": { "": { "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B", "!backgroundImage": "none", "!backgroundColor": "#FF2B2B" } }, "fui-button__purple": { "": { "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF", "!backgroundImage": "none", "!backgroundColor": "#6831FF" } }, "fui-button__gray": { "": { "!borderTopColor": "#F8F8F8", "!borderRightColor": "#F8F8F8", "!borderBottomColor": "#F8F8F8", "!borderLeftColor": "#F8F8F8", "!backgroundImage": "none", "!backgroundColor": "#F8F8F8" } }, "fui-btn__gray-color": { "": { "!color": "#465CFF" } }, "fui-button__height": { "": { "!height": "96rpx" } }, "fui-button__height-text": { "": { "!height": "96rpx", "!lineHeight": "96rpx" } }, "fui-button__size": { "": { "!fontSize": "32rpx" } }, "fui-button__radius": { "": { "!borderTopLeftRadius": "16rpx", "!borderTopRightRadius": "16rpx", "!borderBottomRightRadius": "16rpx", "!borderBottomLeftRadius": "16rpx" } }, "@TRANSITION": { "fui-button__spin": { "duration": "600ms", "property": "transform", "timingFunction": "linear" } } };
+  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -1187,98 +1187,1232 @@
       /* CLASS, STYLE, NEED_HYDRATION */
     );
   }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["styles", [_style_0$r]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
-  const _sfc_main$r = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["styles", [_style_0$s]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
+  /*!
+  * type：组件内props属性参数、事件回调参数、方法参数类型
+  * fui-types - v1.0.0 (2023/11/11, 11:07:14 AM)
+  *
+  * 注意：当页面使用时，Object、Array等类型使用any接收，暂时需要转化为UTSJSONObject使用，不可直接使用“.”访问属性
+  * @example：const param  = JSON.parse(JSON.stringify(e)) as UTSJSONObject
+  * 在 uts 中，只适合转 type，不适合使用 interface。[interface 中使用? 编译报错，需要使用 type]
+  *
+  * 官网地址：https://firstui.cn/
+  * 文档地址：https://unix.firstui.cn/
+  */
+  class FuiTextClickParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            text: { type: String, optional: false },
+            param: { type: String, optional: false }
+          };
+        },
+        name: "FuiTextClickParam"
+      };
+    }
+    constructor(options, metadata = FuiTextClickParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.text = this.__props__.text;
+      this.param = this.__props__.param;
+      delete this.__props__;
+    }
+  }
+  class FuiNumberClickParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            text: { type: String, optional: false },
+            param: { type: String, optional: false }
+          };
+        },
+        name: "FuiNumberClickParam"
+      };
+    }
+    constructor(options, metadata = FuiNumberClickParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.text = this.__props__.text;
+      this.param = this.__props__.param;
+      delete this.__props__;
+    }
+  }
+  class FuiFooterNavigateParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            text: { type: String, optional: false },
+            url: { type: String, optional: true },
+            openType: { type: String, optional: true },
+            delta: { type: Number, optional: true },
+            color: { type: String, optional: true },
+            size: { type: Number, optional: true }
+          };
+        },
+        name: "FuiFooterNavigateParam"
+      };
+    }
+    constructor(options, metadata = FuiFooterNavigateParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.text = this.__props__.text;
+      this.url = this.__props__.url;
+      this.openType = this.__props__.openType;
+      this.delta = this.__props__.delta;
+      this.color = this.__props__.color;
+      this.size = this.__props__.size;
+      delete this.__props__;
+    }
+  }
+  class FuiInputNumberChangeParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            value: { type: Number, optional: false },
+            index: { type: Number, optional: false },
+            param: { type: String, optional: false }
+          };
+        },
+        name: "FuiInputNumberChangeParam"
+      };
+    }
+    constructor(options, metadata = FuiInputNumberChangeParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.value = this.__props__.value;
+      this.index = this.__props__.index;
+      this.param = this.__props__.param;
+      delete this.__props__;
+    }
+  }
+  class FuiCheckboxChangeParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            checked: { type: Boolean, optional: false },
+            value: { type: String, optional: false }
+          };
+        },
+        name: "FuiCheckboxChangeParam"
+      };
+    }
+    constructor(options, metadata = FuiCheckboxChangeParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.checked = this.__props__.checked;
+      this.value = this.__props__.value;
+      delete this.__props__;
+    }
+  }
+  class FuiActionSheetItemParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            text: { type: String, optional: false },
+            color: { type: String, optional: true },
+            darkColor: { type: String, optional: true },
+            param: { type: String, optional: true },
+            index: { type: Number, optional: true }
+          };
+        },
+        name: "FuiActionSheetItemParam"
+      };
+    }
+    constructor(options, metadata = FuiActionSheetItemParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.text = this.__props__.text;
+      this.color = this.__props__.color;
+      this.darkColor = this.__props__.darkColor;
+      this.param = this.__props__.param;
+      this.index = this.__props__.index;
+      delete this.__props__;
+    }
+  }
+  class FuiToastShowParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            duration: { type: Number, optional: true },
+            src: { type: String, optional: true },
+            text: { type: String, optional: true }
+          };
+        },
+        name: "FuiToastShowParam"
+      };
+    }
+    constructor(options, metadata = FuiToastShowParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.duration = this.__props__.duration;
+      this.src = this.__props__.src;
+      this.text = this.__props__.text;
+      delete this.__props__;
+    }
+  }
+  class FuiDialogButtonsParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            text: { type: String, optional: false },
+            color: { type: String, optional: true },
+            primary: { type: Boolean, optional: true },
+            param: { type: String, optional: true },
+            index: { type: Number, optional: true }
+          };
+        },
+        name: "FuiDialogButtonsParam"
+      };
+    }
+    constructor(options, metadata = FuiDialogButtonsParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.text = this.__props__.text;
+      this.color = this.__props__.color;
+      this.primary = this.__props__.primary;
+      this.param = this.__props__.param;
+      this.index = this.__props__.index;
+      delete this.__props__;
+    }
+  }
+  class FuiDropdownMenuOptionParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            text: { type: String, optional: false },
+            value: { type: String, optional: true },
+            src: { type: String, optional: true },
+            checked: { type: Boolean, optional: true },
+            disabled: { type: Boolean, optional: true },
+            param: { type: String, optional: true },
+            index: { type: Number, optional: true }
+          };
+        },
+        name: "FuiDropdownMenuOptionParam"
+      };
+    }
+    constructor(options, metadata = FuiDropdownMenuOptionParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.text = this.__props__.text;
+      this.value = this.__props__.value;
+      this.src = this.__props__.src;
+      this.checked = this.__props__.checked;
+      this.disabled = this.__props__.disabled;
+      this.param = this.__props__.param;
+      this.index = this.__props__.index;
+      delete this.__props__;
+    }
+  }
+  class FuiSwipeActionButtonParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            text: { type: String, optional: false },
+            background: { type: String, optional: true },
+            size: { type: Number, optional: true },
+            color: { type: String, optional: true },
+            param: { type: Number, optional: true },
+            index: { type: Number, optional: true }
+          };
+        },
+        name: "FuiSwipeActionButtonParam"
+      };
+    }
+    constructor(options, metadata = FuiSwipeActionButtonParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.text = this.__props__.text;
+      this.background = this.__props__.background;
+      this.size = this.__props__.size;
+      this.color = this.__props__.color;
+      this.param = this.__props__.param;
+      this.index = this.__props__.index;
+      delete this.__props__;
+    }
+  }
+  class FuiPaginationChangeParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            type: { type: String, optional: false },
+            current: { type: Number, optional: false }
+          };
+        },
+        name: "FuiPaginationChangeParam"
+      };
+    }
+    constructor(options, metadata = FuiPaginationChangeParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.type = this.__props__.type;
+      this.current = this.__props__.current;
+      delete this.__props__;
+    }
+  }
+  class FuiSegmentedControlValueParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            name: { type: String, optional: false },
+            disabled: { type: Boolean, optional: true },
+            value: { type: Number, optional: true },
+            param: { type: String, optional: true },
+            index: { type: Number, optional: true }
+          };
+        },
+        name: "FuiSegmentedControlValueParam"
+      };
+    }
+    constructor(options, metadata = FuiSegmentedControlValueParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.name = this.__props__.name;
+      this.disabled = this.__props__.disabled;
+      this.value = this.__props__.value;
+      this.param = this.__props__.param;
+      this.index = this.__props__.index;
+      delete this.__props__;
+    }
+  }
+  class FuiTabsItemParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            name: { type: String, optional: false },
+            icon: { type: String, optional: true },
+            selectedIcon: { type: String, optional: true },
+            badge: { type: Number, optional: true },
+            isDot: { type: Boolean, optional: true },
+            disabled: { type: Boolean, optional: true },
+            index: { type: Number, optional: true }
+          };
+        },
+        name: "FuiTabsItemParam"
+      };
+    }
+    constructor(options, metadata = FuiTabsItemParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.name = this.__props__.name;
+      this.icon = this.__props__.icon;
+      this.selectedIcon = this.__props__.selectedIcon;
+      this.badge = this.__props__.badge;
+      this.isDot = this.__props__.isDot;
+      this.disabled = this.__props__.disabled;
+      this.index = this.__props__.index;
+      delete this.__props__;
+    }
+  }
+  class FuiCollapseChangeParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            index: { type: Number, optional: false },
+            isOpen: { type: Boolean, optional: false }
+          };
+        },
+        name: "FuiCollapseChangeParam"
+      };
+    }
+    constructor(options, metadata = FuiCollapseChangeParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.index = this.__props__.index;
+      this.isOpen = this.__props__.isOpen;
+      delete this.__props__;
+    }
+  }
+  class FuiFormRulesValidatorParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            msg: { type: String, optional: false },
+            method: { type: "Unknown", optional: false }
+          };
+        },
+        name: "FuiFormRulesValidatorParam"
+      };
+    }
+    constructor(options, metadata = FuiFormRulesValidatorParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.msg = this.__props__.msg;
+      this.method = this.__props__.method;
+      delete this.__props__;
+    }
+  }
+  class FuiFormRulesParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            name: { type: String, optional: false },
+            rule: { type: UTS.UTSType.withGenerics(Array, [String]), optional: true },
+            msg: { type: UTS.UTSType.withGenerics(Array, [String]), optional: true },
+            validator: { type: UTS.UTSType.withGenerics(Array, [FuiFormRulesValidatorParam]), optional: true }
+          };
+        },
+        name: "FuiFormRulesParam"
+      };
+    }
+    constructor(options, metadata = FuiFormRulesParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.name = this.__props__.name;
+      this.rule = this.__props__.rule;
+      this.msg = this.__props__.msg;
+      this.validator = this.__props__.validator;
+      delete this.__props__;
+    }
+  }
+  class FuiFormErrorMsgParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            name: { type: String, optional: false },
+            msg: { type: String, optional: false }
+          };
+        },
+        name: "FuiFormErrorMsgParam"
+      };
+    }
+    constructor(options, metadata = FuiFormErrorMsgParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.name = this.__props__.name;
+      this.msg = this.__props__.msg;
+      delete this.__props__;
+    }
+  }
+  class FuiFormValidatorResParam extends UTS.UTSType {
+    static get$UTSMetadata$() {
+      return {
+        kind: 2,
+        get fields() {
+          return {
+            isPassed: { type: Boolean, optional: false },
+            errorMsg: { type: UTS.UTSType.withGenerics(Array, [FuiFormErrorMsgParam]), optional: false }
+          };
+        },
+        name: "FuiFormValidatorResParam"
+      };
+    }
+    constructor(options, metadata = FuiFormValidatorResParam.get$UTSMetadata$(), isJSONParse = false) {
+      super();
+      this.__props__ = UTS.UTSType.initProps(options, metadata, isJSONParse);
+      this.isPassed = this.__props__.isPassed;
+      this.errorMsg = this.__props__.errorMsg;
+      delete this.__props__;
+    }
+  }
+  const _sfc_main$t = vue.defineComponent({
+    name: "fui-checkbox",
+    emits: ["change"],
+    props: {
+      value: {
+        type: String,
+        default: ""
+      },
+      checked: {
+        type: Boolean,
+        default: false
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      color: {
+        type: String,
+        default: ""
+      },
+      normalColor: {
+        type: String,
+        default: ""
+      },
+      borderColor: {
+        type: String,
+        default: ""
+      },
+      borderRadius: {
+        type: String,
+        default: "100px"
+      },
+      isCheckMark: {
+        type: Boolean,
+        default: false
+      },
+      checkMarkColor: {
+        type: String,
+        default: ""
+      },
+      scaleRatio: {
+        type: Number,
+        default: 1
+      },
+      scaleAlign: {
+        type: String,
+        default: "center"
+      }
+    },
+    created() {
+      this.val = this.checked;
+      this.getParent("fui-checkbox-group");
+      if (this.fuiCkGroup != null) {
+        const group = this.fuiCkGroup;
+        group.$data["childrens"].push(this);
+        const modelValue = group.$props["modelValue"];
+        if (modelValue.length > 0) {
+          this.val = modelValue.includes(this.value);
+        }
+      }
+      const parent = this.getParent("fui-label");
+      if (parent) {
+        const label = this.fuiLabel;
+        label.$data["childrens"].push(this);
+      }
+    },
+    computed: {
+      getStyl() {
+        const mp = /* @__PURE__ */ new Map();
+        mp.set("transform", "scale(".concat(this.scaleRatio, ")"));
+        mp.set("border-radius", this.borderRadius);
+        let color = this.val ? this.color : this.borderColor == "" ? this.color : this.borderColor;
+        const bgColor = this.val ? this.color : this.normalColor;
+        if (this.isCheckMark) {
+          mp.set("border-color", "transparent");
+          mp.set("background", "transparent");
+        } else {
+          if (color != "")
+            mp.set("border-color", color);
+          if (bgColor != "")
+            mp.set("background", bgColor);
+        }
+        return mp;
+      },
+      getMarkStyl() {
+        const mp = /* @__PURE__ */ new Map();
+        if (this.checkMarkColor != "") {
+          mp.set("borderBottomColor", this.checkMarkColor);
+          mp.set("borderRightColor", this.checkMarkColor);
+        }
+        return mp;
+      }
+    },
+    watch: {
+      checked(newVal = null) {
+        this.val = newVal;
+      },
+      val() {
+        if (this.fuiCkGroup != null) {
+          const group = this.fuiCkGroup;
+          group.$callMethod("changeValue");
+        }
+        setTimeout(() => {
+          this.styleVal = this.val;
+        }, 0);
+      }
+    },
+    data() {
+      return {
+        val: false,
+        styleVal: false,
+        fuiLabel: null,
+        fuiCkGroup: null
+      };
+    },
+    methods: {
+      checkboxClick(e) {
+        e.stopPropagation();
+        this.checkboxChange();
+      },
+      checkboxChange() {
+        if (this.disabled)
+          return null;
+        this.val = !this.val;
+        this.$emit("change", new FuiCheckboxChangeParam({
+          checked: this.val,
+          value: this.value
+        }));
+      },
+      //测试支持，如果不支持则使用 provide/inject方式（可能有警告，设置default:null也无法去除，应该是底层有bug）
+      getParent(name2) {
+        if (this.$parent == null)
+          return false;
+        let parent = this.$parent;
+        let parentName = parent.$options["name"];
+        while (parentName != name2) {
+          if (parent.$parent == null)
+            return false;
+          parent = parent.$parent;
+          if (parent.$options["name"] == "")
+            return false;
+          parentName = parent.$options["name"];
+        }
+        if (name2 == "fui-checkbox-group") {
+          this.fuiCkGroup = parent;
+        } else {
+          this.fuiLabel = parent;
+        }
+        return true;
+      },
+      labelClick() {
+        this.checkboxChange();
+      }
+    }
+  });
+  const _style_0$r = { "fui-checkbox__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "boxSizing": "border-box", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "flexShrink": 0, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-checkbox__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-checkbox__scale-center": { "": { "transformOrigin": "center center" } }, "fui-checkbox__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-checkbox__color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-checkbox__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-checkbox__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-checkbox__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-checkbox__disabled": { "": { "opacity": 0.6 } } };
+  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass(["fui-checkbox__input", [$props.scaleRatio != 1 ? "fui-checkbox__scale-".concat($props.scaleAlign) : "", $props.disabled ? "fui-checkbox__disabled" : "", $props.color == "" && $data.styleVal && !$props.isCheckMark ? "fui-checkbox__color" : "", $props.normalColor == "" && !$data.styleVal && !$props.isCheckMark ? "fui-checkbox__background" : "", $props.borderColor == "" && !$data.styleVal && !$props.isCheckMark ? "fui-checkbox__normal-border" : ""]]),
+        style: vue.normalizeStyle($options.getStyl),
+        onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.checkboxClick && $options.checkboxClick(...args), ["stop"]))
+      },
+      [
+        $data.val ? (vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            key: 0,
+            class: vue.normalizeClass(["fui-check__mark", { "fui-checkbox__mark-color": $props.checkMarkColor == "" }]),
+            style: vue.normalizeStyle($options.getMarkStyl)
+          },
+          null,
+          6
+          /* CLASS, STYLE */
+        )) : vue.createCommentVNode("v-if", true)
+      ],
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["styles", [_style_0$r]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-checkbox/fui-checkbox.uvue"]]);
+  const _sfc_main$s = vue.defineComponent({
+    name: "fui-label",
+    props: {
+      //padding值：'20rpx 32rpx'
+      padding: {
+        type: String,
+        default: ""
+      },
+      //margin值：'20rpx 32rpx'
+      margin: {
+        type: String,
+        default: ""
+      },
+      full: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data() {
+      return {
+        childrens: []
+      };
+    },
+    methods: {
+      onclick() {
+        if (this.childrens.length > 0) {
+          this.childrens.forEach((item) => {
+            item.$callMethod("labelClick");
+          });
+        }
+      }
+    }
+  });
+  const _style_0$q = { "fui-label__wrap": { "": { "boxSizing": "border-box" } }, "fui-label__full": { "": { "width": "100%" } } };
+  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass(["fui-label__wrap", { "fui-label__full": $props.full }]),
+        style: vue.normalizeStyle({ padding: $props.padding, margin: $props.margin }),
+        onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.onclick && $options.onclick(...args), ["stop"]))
+      },
+      [
+        vue.renderSlot(_ctx.$slots, "default")
+      ],
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const __easycom_5$1 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["styles", [_style_0$q]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-label/fui-label.uvue"]]);
+  const _sfc_main$r = vue.defineComponent({
+    name: "fui-checkbox-group",
+    emits: ["change", "update:modelValue"],
+    props: {
+      name: {
+        type: String,
+        default: ""
+      },
+      modelValue: {
+        type: Array,
+        default: () => {
+          return [];
+        }
+      }
+    },
+    data() {
+      return {
+        vals: [],
+        childrens: [],
+        fuiForm: null
+      };
+    },
+    watch: {
+      modelValue(vals) {
+        this.modelChange(vals);
+      }
+    },
+    created() {
+      const isForm = this.getParent("fui-form");
+      if (isForm) {
+        const form = this.fuiForm;
+        form.$data["formChildren"].push(this);
+      }
+    },
+    methods: {
+      checkboxChange(e) {
+        this.$emit("change", e);
+        this.$emit("update:modelValue", e);
+      },
+      changeValue() {
+        const vals = [];
+        this.childrens.forEach((item) => {
+          const isChk = item.$data["val"];
+          if (isChk) {
+            vals.push(item.$props["value"]);
+          }
+        });
+        this.vals = vals;
+        this.checkboxChange(vals);
+      },
+      modelChange(vals) {
+        this.vals = vals;
+        this.childrens.forEach((item) => {
+          const value = item.$props["value"];
+          if (vals.includes(value)) {
+            item.$data["val"] = true;
+          } else {
+            item.$data["val"] = false;
+          }
+        });
+      },
+      getParent(name2) {
+        if (this.$parent == null)
+          return false;
+        let parent = this.$parent;
+        let parentName = parent.$options["name"];
+        while (parentName != name2) {
+          if (parent.$parent == null)
+            return false;
+          parent = parent.$parent;
+          if (parent.$options["name"] == "")
+            return false;
+          parentName = parent.$options["name"];
+        }
+        this.fuiForm = parent;
+        return true;
+      },
+      //暂时做重置处理（还原需记录初始值）
+      reset() {
+        this.childrens.forEach((item) => {
+          item.$data["val"] = false;
+        });
+        this.vals = [];
+        this.checkboxChange(this.vals);
+      },
+      getSubmitValue() {
+        return this.vals;
+      }
+    }
+  });
+  function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_checkbox_group = vue.resolveComponent("checkbox-group");
+    return vue.openBlock(), vue.createBlock(_component_checkbox_group, { name: $props.name }, {
+      default: vue.withCtx(() => [
+        vue.renderSlot(_ctx.$slots, "default")
+      ]),
+      _: 3
+      /* FORWARDED */
+    }, 8, ["name"]);
+  }
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-checkbox-group/fui-checkbox-group.uvue"]]);
+  const _sfc_main$q = vue.defineComponent({
+    name: "fui-bottom-popup",
+    emits: ["close", "update:visible"],
+    props: {
+      visible: {
+        type: Boolean,
+        default: false
+      },
+      background: {
+        type: String,
+        default: "#fff"
+      },
+      radius: {
+        type: Number,
+        default: 24
+      },
+      zIndex: {
+        type: Number,
+        default: 996
+      },
+      maskClosable: {
+        type: Boolean,
+        default: true
+      },
+      maskBackground: {
+        type: String,
+        default: "rgba(0,0,0,.6)"
+      },
+      safeArea: {
+        type: Boolean,
+        default: true
+      }
+    },
+    data() {
+      const refId = "fui_bp_".concat(parseInt(Math.ceil(Math.random() * 1e6).toString(), 36));
+      const refMkId = "fui_bpmk_".concat(parseInt(Math.ceil(Math.random() * 1e6).toString(), 36));
+      return {
+        refId,
+        refMkId,
+        iphoneX: false,
+        isShow: false,
+        element: null,
+        mkElement: null
+      };
+    },
+    watch: {
+      visible: {
+        handler(newVal) {
+          if (newVal) {
+            this.open();
+          } else {
+            if (this.isShow)
+              this.close();
+          }
+        },
+        immediate: true
+      }
+    },
+    created() {
+      this.iphoneX = this.isPhoneX();
+    },
+    mounted() {
+      this.$nextTick(() => {
+        setTimeout(() => {
+          if (!this.visible)
+            this.close();
+        }, 50);
+      });
+    },
+    methods: {
+      handleClose() {
+        if (!this.maskClosable)
+          return null;
+        this.$emit("close");
+        this.$emit("update:visible", false);
+      },
+      isPhoneX() {
+        if (!this.safeArea)
+          return false;
+        const res = uni.getSystemInfoSync();
+        let iphonex = false;
+        let models = ["iphonex", "iphonexr", "iphonexsmax"];
+        for (let i = 11; i < 20; i++) {
+          models.push("iphone".concat(i));
+          models.push("iphone".concat(i, "mini"));
+          models.push("iphone".concat(i, "pro"));
+          models.push("iphone".concat(i, "promax"));
+        }
+        const model = res.model.replace(/\s/g, "").toLowerCase();
+        const newModel = model.split("<")[0];
+        if (models.includes(model) || models.includes(newModel) || res.safeAreaInsets.bottom > 0) {
+          iphonex = true;
+        }
+        return iphonex;
+      },
+      open() {
+        this.isShow = true;
+        this.$nextTick(() => {
+          setTimeout(() => {
+            this._animation(true);
+          }, 50);
+        });
+      },
+      close() {
+        this.isShow = false;
+        this._animation(false);
+      },
+      _animation(visible) {
+        if (this.element == null) {
+          this.element = this.$refs[this.refId];
+        }
+        if (this.mkElement == null) {
+          this.mkElement = this.$refs[this.refMkId];
+        }
+        this.element.style.setProperty("transform", "translateY(".concat(visible ? "0" : "100%", ")"));
+        this.element.style.setProperty("opacity", visible ? "1" : "0");
+        this.mkElement.style.setProperty("opacity", visible ? "1" : "0");
+        if (visible) {
+          this.mkElement.style.setProperty("visibility", "visible");
+          this.element.style.setProperty("visibility", "visible");
+        } else {
+          setTimeout(() => {
+            this.mkElement.style.setProperty("visibility", "hidden");
+            this.element.style.setProperty("visibility", "hidden");
+          }, 300);
+        }
+      },
+      stop() {
+      }
+    }
+  });
+  const _style_0$p = { "fui-bottom__popup-wrap": { "": { "position": "fixed", "left": 0, "right": 0, "top": 0, "bottom": 0, "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "center", "transitionProperty": "opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "visibility": "hidden", "borderBottomWidth": 0, "overflow": "hidden", "opacity": 0 } }, "fui-bottom__popup": { "": { "width": "100%", "transitionProperty": "transform,opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "minHeight": "20rpx", "overflow": "hidden", "transform": "translateY(100%)", "display": "flex", "flexDirection": "row", "position": "relative" } }, "fui-bp__safe-weex": { "": { "paddingBottom": 34 } }, "@TRANSITION": { "fui-bottom__popup-wrap": { "property": "opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" }, "fui-bottom__popup": { "property": "transform,opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" } } };
+  function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: "fui-bottom__popup-wrap",
+        style: vue.normalizeStyle({ zIndex: $props.zIndex, background: $props.maskBackground }),
+        onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => $options.handleClose && $options.handleClose(...args), ["stop"])),
+        ref: $data.refMkId
+      },
+      [
+        vue.createElementVNode(
+          "view",
+          {
+            onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.stop && $options.stop(...args), ["stop"])),
+            ref: $data.refId,
+            class: vue.normalizeClass(["fui-bottom__popup", { "fui-bp__safe-weex": $data.iphoneX && $props.safeArea }]),
+            style: vue.normalizeStyle({ borderTopLeftRadius: "".concat($props.radius, "rpx"), borderTopRightRadius: "".concat($props.radius, "rpx"), background: $props.background })
+          },
+          [
+            vue.renderSlot(_ctx.$slots, "default")
+          ],
+          6
+          /* CLASS, STYLE */
+        )
+      ],
+      4
+      /* STYLE */
+    );
+  }
+  const __easycom_7 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["styles", [_style_0$p]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue"]]);
+  const _sfc_main$p = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "login",
     setup(__props, _a) {
       var __expose = _a.expose;
       __expose();
-      const login = () => {
-        uni.showToast({
-          title: "登录成功",
-          icon: "success",
-          duration: 1e3
+      const loginType = vue.ref(true);
+      const isCheck = vue.ref("");
+      const btnWord = vue.ref("获取验证码");
+      const isCounting = vue.ref(false);
+      const user_info = vue.ref(false);
+      const user_text = vue.ref(new UTSJSONObject({
+        title: "",
+        content: ""
+      }));
+      const changeType = (bool) => {
+        loginType.value = bool;
+      };
+      const closeUserPopup = () => {
+        user_info.value = false;
+      };
+      const showUserInfo = () => {
+        user_info.value = true;
+        user_text.value = new UTSJSONObject({
+          title: "用户协议",
+          content: "用户协议内容"
         });
       };
-      const __returned__ = { login };
+      const priviteInfo = () => {
+        user_info.value = true;
+        user_text.value = new UTSJSONObject({
+          title: "隐私政策",
+          content: "隐私政策内容"
+        });
+      };
+      const isChecked = (e) => {
+        isCheck.value = e.join(",");
+      };
+      function countDown(seconds) {
+        if (seconds <= 0) {
+          btnWord.value = "获取验证码";
+          isCounting.value = false;
+          return null;
+        }
+        btnWord.value = "".concat(seconds, "秒后重发");
+        setTimeout(() => {
+          countDown(seconds - 1);
+        }, 1e3);
+      }
+      const getPsw = () => {
+        if (isCounting.value)
+          return null;
+        uni.__log__("log", "at pages/login/login.uvue:144", "发送验证码请求...");
+        isCounting.value = true;
+        countDown(90);
+      };
+      const login = () => {
+        if (isCheck.value == "") {
+          uni.showToast({
+            title: "请先同意用户协议和隐私政策",
+            icon: "none"
+          });
+        } else {
+          uni.showToast({
+            title: "登录成功",
+            icon: "none"
+          });
+        }
+      };
+      const __returned__ = { loginType, isCheck, btnWord, isCounting, user_info, user_text, changeType, closeUserPopup, showUserInfo, priviteInfo, isChecked, countDown, getPsw, login };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   }));
   const _imports_0$4 = "/static/login_banner.png";
-  const _style_0$q = { "container": { "": { "height": "100%", "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "longin_banner": { ".container ": { "width": "250rpx", "height": "400rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": "20rpx", "marginBottom": "50rpx", "marginLeft": "20rpx", "paddingTop": 0, "paddingRight": "50rpx", "paddingBottom": 0, "paddingLeft": "50rpx" } }, "tips": { ".container .content ": { "marginTop": "20rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
-  function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$o = { "container": { "": { "height": "100%", "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "longin_banner": { ".container ": { "width": "250rpx", "height": "400rpx", "marginBottom": "20rpx" } }, "content": { ".container ": { "width": "100%" } }, "check-box": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginTop": "20rpx" } }, "fui-text-box": { ".container .content .check-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginLeft": "10rpx" } }, "fui-text": { ".container .content .check-box .fui-text-box ": { "color": "#1296db" } }, "tips": { ".container .content ": { "marginTop": "20rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "40rpx", "paddingRight": "40rpx", "paddingBottom": "40rpx", "paddingLeft": "40rpx" } }, "fui-title__pb": { ".container .fui-scroll__wrap ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } } };
+  function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_0$5);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$1);
+    const _component_fui_checkbox = resolveEasycom(vue.resolveDynamicComponent("fui-checkbox"), __easycom_3$2);
+    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_5$1);
+    const _component_fui_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("fui-checkbox-group"), __easycom_5);
+    const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_7);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("image", {
         src: _imports_0$4,
         class: "longin_banner"
       }),
       vue.createElementVNode("view", { class: "content" }, [
-        vue.createVNode(_component_fui_input, {
-          "placeholder-style": "color:#666",
-          backgroundColor: "#f9dbf5",
-          radius: 40,
-          borderBottom: false,
-          placeholder: "请输入账号"
+        $setup.loginType ? (vue.openBlock(), vue.createElementBlock("view", { key: 0 }, [
+          vue.createVNode(_component_fui_input, {
+            "placeholder-style": "color:#000",
+            backgroundColor: "#d3a0fa",
+            radius: 40,
+            borderBottom: false,
+            placeholder: "请输入账号"
+          }, {
+            left: vue.withCtx(() => [
+              vue.createElementVNode("view", { style: { "margin-right": "20rpx" } }, [
+                vue.createVNode(_component_fui_icon, {
+                  name: "mobile",
+                  color: "#1296db",
+                  size: 48
+                })
+              ])
+            ]),
+            _: 1
+            /* STABLE */
+          }),
+          vue.createVNode(_component_fui_input, {
+            "placeholder-style": "color:#000",
+            backgroundColor: "#d3a0fa",
+            marginTop: 40,
+            radius: 40,
+            borderBottom: false,
+            placeholder: "请输入密码",
+            type: "password"
+          }, {
+            left: vue.withCtx(() => [
+              vue.createElementVNode("view", { style: { "margin-right": "20rpx" } }, [
+                vue.createVNode(_component_fui_icon, {
+                  name: "captcha",
+                  color: "#1296db",
+                  size: 48
+                })
+              ])
+            ]),
+            _: 1
+            /* STABLE */
+          }),
+          vue.createElementVNode("view", { class: "tips" }, [
+            vue.createElementVNode("text", {
+              onClick: _cache[0] || (_cache[0] = ($event) => $setup.changeType(false))
+            }, "短信登陆"),
+            vue.createElementVNode("text", null, "忘记密码")
+          ])
+        ])) : (vue.openBlock(), vue.createElementBlock("view", { key: 1 }, [
+          vue.createVNode(_component_fui_input, {
+            "placeholder-style": "color:#000",
+            backgroundColor: "#d3a0fa",
+            radius: 40,
+            borderBottom: false,
+            placeholder: "请输入账号"
+          }, {
+            left: vue.withCtx(() => [
+              vue.createElementVNode("view", { style: { "margin-right": "20rpx" } }, [
+                vue.createVNode(_component_fui_icon, {
+                  name: "mobile",
+                  color: "#1296db",
+                  size: 48
+                })
+              ])
+            ]),
+            _: 1
+            /* STABLE */
+          }),
+          vue.createVNode(_component_fui_input, {
+            padding: "20rpx 32rpx",
+            backgroundColor: "#d3a0fa",
+            placeholder: "请输入验证码",
+            bottomLeft: 0,
+            marginTop: 40,
+            radius: 40,
+            placeholderStyle: "font-size: 26rpx;",
+            "placeholder-style": "color:#000",
+            borderBottom: false
+          }, {
+            left: vue.withCtx(() => [
+              vue.createElementVNode("view", { style: { "margin-right": "20rpx" } }, [
+                vue.createVNode(_component_fui_icon, {
+                  name: "captcha",
+                  color: "#1296db",
+                  size: 48
+                })
+              ])
+            ]),
+            default: vue.withCtx(() => [
+              vue.createVNode(_component_fui_button, {
+                width: "200rpx",
+                height: "64rpx",
+                size: 28,
+                onClick: $setup.getPsw,
+                text: $setup.btnWord,
+                background: "none",
+                color: "#333",
+                disabled: $setup.isCounting
+              }, null, 8, ["text", "disabled"])
+            ]),
+            _: 1
+            /* STABLE */
+          }),
+          vue.createElementVNode("view", { class: "tips" }, [
+            vue.createElementVNode("text", {
+              onClick: _cache[1] || (_cache[1] = ($event) => $setup.changeType(true))
+            }, "密码登陆"),
+            vue.createElementVNode("text", null, "忘记密码")
+          ])
+        ])),
+        vue.createVNode(_component_fui_checkbox_group, {
+          name: "checkbox",
+          class: "check-box",
+          onChange: $setup.isChecked
         }, {
-          left: vue.withCtx(() => [
-            vue.createElementVNode("view", { style: { "margin-right": "20rpx" } }, [
-              vue.createVNode(_component_fui_icon, {
-                name: "mobile",
-                color: "#1296db",
-                size: 48
-              })
+          default: vue.withCtx(() => [
+            vue.createVNode(_component_fui_label, null, {
+              default: vue.withCtx(() => [
+                vue.createVNode(_component_fui_checkbox, { value: "1" })
+              ]),
+              _: 1
+              /* STABLE */
+            }),
+            vue.createElementVNode("view", { class: "fui-text-box" }, [
+              vue.createElementVNode("text", null, "已阅读并同意"),
+              vue.createElementVNode("text", {
+                class: "fui-text",
+                onClick: $setup.showUserInfo
+              }, "《用户协议》"),
+              vue.createElementVNode("text", null, "和"),
+              vue.createElementVNode("text", {
+                class: "fui-text",
+                onClick: $setup.priviteInfo
+              }, "《隐私政策》")
             ])
           ]),
           _: 1
           /* STABLE */
         }),
-        vue.createVNode(_component_fui_input, {
-          "placeholder-style": "color:#666",
-          backgroundColor: "#f9dbf5",
-          marginTop: 40,
-          radius: 40,
-          borderBottom: false,
-          placeholder: "请输入密码",
-          type: "password"
-        }, {
-          left: vue.withCtx(() => [
-            vue.createElementVNode("view", { style: { "margin-right": "20rpx" } }, [
-              vue.createVNode(_component_fui_icon, {
-                name: "captcha",
-                color: "#1296db",
-                size: 48
-              })
-            ])
-          ]),
-          _: 1
-          /* STABLE */
-        }),
-        vue.createElementVNode("view", { class: "tips" }, [
-          vue.createElementVNode("text", null, "短信登陆"),
-          vue.createElementVNode("text", null, "忘记密码")
-        ]),
         vue.createVNode(_component_fui_button, {
-          margin: "20 0 0 0",
+          text: "登录",
+          margin: "20rpx 0 0 0",
           background: "#1296db",
           color: "#fff",
           size: 40,
-          height: "50",
           onOnclick: $setup.login
+        })
+      ]),
+      vue.createElementVNode("view", null, [
+        vue.createVNode(_component_fui_bottom_popup, {
+          visible: $setup.user_info,
+          onClose: $setup.closeUserPopup
         }, {
           default: vue.withCtx(() => [
-            vue.createTextVNode(" 登录 ")
+            vue.createElementVNode("view", { class: "fui-scroll__wrap" }, [
+              vue.createElementVNode("view", { class: "fui-title__pb" }, [
+                vue.createElementVNode(
+                  "text",
+                  null,
+                  vue.toDisplayString($setup.user_text.title),
+                  1
+                  /* TEXT */
+                ),
+                vue.createElementVNode("view", { onClick: $setup.closeUserPopup }, [
+                  vue.createVNode(_component_fui_icon, {
+                    name: "close",
+                    size: 48
+                  })
+                ])
+              ]),
+              vue.createElementVNode("scroll-view", {
+                "scroll-y": true,
+                "show-scrollbar": false
+              }, [
+                vue.createElementVNode(
+                  "view",
+                  null,
+                  vue.toDisplayString($setup.user_text.content),
+                  1
+                  /* TEXT */
+                )
+              ])
+            ])
           ]),
           _: 1
           /* STABLE */
-        })
+        }, 8, ["visible"])
       ])
     ]);
   }
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["styles", [_style_0$q]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/login/login.uvue"]]);
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["styles", [_style_0$o]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/login/login.uvue"]]);
   const forward = "/static/video/forward.png";
   const errIcon = "/static/video/error.png";
   const transfer = "/static/video/transfer.png";
@@ -1287,7 +2421,7 @@
   const pauseIcon = "/static/video/pause.png";
   const addIcon = "/static/tabbar/add.png";
   const videoSrc$1 = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$q = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$o = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "index",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -1351,8 +2485,8 @@
       return __returned__;
     }
   }));
-  const _style_0$p = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
-  function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$n = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
+  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", {
@@ -1423,7 +2557,7 @@
       ])
     ]);
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["styles", [_style_0$p]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["styles", [_style_0$n]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
   function __awaiter(thisArg, _arguments, P, generator) {
     function adopt(value) {
       return value instanceof P ? value : new P(function(resolve) {
@@ -2034,7 +3168,7 @@
     }
     return 0;
   }
-  const _sfc_main$p = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$n = /* @__PURE__ */ vue.defineComponent({
     __name: "l-daily-punch",
     props: {
       canSupplement: new UTSJSONObject({
@@ -2205,8 +3339,8 @@
       return __returned__;
     }
   });
-  const _style_0$o = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
-  function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$m = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
+  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "calender" }, [
       vue.createElementVNode(
         "canvas",
@@ -2223,7 +3357,7 @@
       )
     ]);
   }
-  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["styles", [_style_0$o]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
+  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["styles", [_style_0$m]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
   class DayutsConfig extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -3344,7 +4478,7 @@
     });
   }
   const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$o = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$m = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "message",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -3428,8 +4562,8 @@
   }));
   const _imports_0$3 = "/static/down.png";
   const _imports_1$1 = "/static/vedio.png";
-  const _style_0$n = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } } };
-  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$l = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "position": "absolute", "bottom": 0, "left": 0, "height": "60%", "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } } };
+  function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "vedio-box" }, [
@@ -3547,8 +4681,8 @@
       ])) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["styles", [_style_0$n]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
-  const _sfc_main$n = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["styles", [_style_0$l]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
+  const _sfc_main$l = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "mine",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -3585,8 +4719,8 @@
   const _imports_9 = "/static/mine/advice.png";
   const _imports_10 = "/static/mine/setting.png";
   const _imports_11 = "/static/mine/about.png";
-  const _style_0$m = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
-  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$k = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
+  function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "files" }, [
         vue.createElementVNode("view", { class: "file" }, [
@@ -3763,8 +4897,8 @@
       ])
     ]);
   }
-  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["styles", [_style_0$m]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
-  const _sfc_main$m = vue.defineComponent({
+  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["styles", [_style_0$k]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
+  const _sfc_main$k = vue.defineComponent({
     name: "fui-switch",
     emits: ["change", "update:checked"],
     props: {
@@ -3948,8 +5082,8 @@
       }
     }
   });
-  const _style_0$l = { "fui-switch__input": { "": { "flexShrink": 0 } }, "fui-switch__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-switch__scale-center": { "": { "transformOrigin": "center center" } }, "fui-switch__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-switch__size-switch": { "": { "width": 52, "height": 32 } }, "fui-switch__size-checkbox": { "": { "width": "40rpx", "height": "40rpx" } }, "fui-switch__checkbox-self": { "": { "width": "40rpx", "height": "40rpx", "borderTopLeftRadius": 40, "borderTopRightRadius": 40, "borderBottomRightRadius": 40, "borderBottomLeftRadius": 40, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-switch__input-def": { "": { "position": "relative", "width": 52, "height": 32, "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "boxSizing": "border-box" } }, "fui-switch__normal-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#dfdfdf" } }, "fui-switch__checked-color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-switch__normal-bcolor": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-switch__input-before": { "": { "position": "absolute", "top": 0, "left": 0, "width": 50, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "transitionProperty": "transform", "transitionDuration": "0.3s" } }, "fui-switch__before-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input-after": { "": { "position": "absolute", "top": 0, "left": 0, "width": 30, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "boxShadow": "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty": "transform", "transitionDuration": "0.3s", "display": "flex", "alignItems": "center", "justifyContent": "center", "transform": "translateX(0)" } }, "fui-switch__after-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input--before": { "": { "transform": "scale(0)" } }, "fui-switch__input--after": { "": { "transform": "translateX(20px)" } }, "fui-switch__check-mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%", "boxSizing": "border-box" } }, "fui-switch__circle-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__checkbox-disabled": { "": { "opacity": 0.6 } }, "@TRANSITION": { "fui-switch__input-before": { "property": "transform", "duration": "0.3s" }, "fui-switch__input-after": { "property": "transform", "duration": "0.3s" } } };
-  function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$j = { "fui-switch__input": { "": { "flexShrink": 0 } }, "fui-switch__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-switch__scale-center": { "": { "transformOrigin": "center center" } }, "fui-switch__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-switch__size-switch": { "": { "width": 52, "height": 32 } }, "fui-switch__size-checkbox": { "": { "width": "40rpx", "height": "40rpx" } }, "fui-switch__checkbox-self": { "": { "width": "40rpx", "height": "40rpx", "borderTopLeftRadius": 40, "borderTopRightRadius": 40, "borderBottomRightRadius": 40, "borderBottomLeftRadius": 40, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-switch__input-def": { "": { "position": "relative", "width": 52, "height": 32, "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "boxSizing": "border-box" } }, "fui-switch__normal-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#dfdfdf" } }, "fui-switch__checked-color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-switch__normal-bcolor": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-switch__input-before": { "": { "position": "absolute", "top": 0, "left": 0, "width": 50, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "transitionProperty": "transform", "transitionDuration": "0.3s" } }, "fui-switch__before-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input-after": { "": { "position": "absolute", "top": 0, "left": 0, "width": 30, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "boxShadow": "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty": "transform", "transitionDuration": "0.3s", "display": "flex", "alignItems": "center", "justifyContent": "center", "transform": "translateX(0)" } }, "fui-switch__after-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input--before": { "": { "transform": "scale(0)" } }, "fui-switch__input--after": { "": { "transform": "translateX(20px)" } }, "fui-switch__check-mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%", "boxSizing": "border-box" } }, "fui-switch__circle-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__checkbox-disabled": { "": { "opacity": 0.6 } }, "@TRANSITION": { "fui-switch__input-before": { "property": "transform", "duration": "0.3s" }, "fui-switch__input-after": { "property": "transform", "duration": "0.3s" } } };
+  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4020,8 +5154,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["styles", [_style_0$l]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
-  const _sfc_main$l = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["styles", [_style_0$j]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
+  const _sfc_main$j = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "userInfo",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -4110,8 +5244,8 @@
       return __returned__;
     }
   }));
-  const _style_0$k = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
-  function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$i = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
+  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_0$3);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -4197,8 +5331,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoUserInfo = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["styles", [_style_0$k]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/userInfo.uvue"]]);
-  const _sfc_main$k = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMineUserInfoUserInfo = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["styles", [_style_0$i]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/userInfo.uvue"]]);
+  const _sfc_main$i = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "CancelAnAccount",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -4216,8 +5350,8 @@
     }
   }));
   const _imports_0 = "/static/error_big.png";
-  const _style_0$j = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
-  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$h = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
+  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("image", {
@@ -4250,8 +5384,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoCancelAnAccountCancelAnAccount = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["styles", [_style_0$j]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue"]]);
-  const _sfc_main$j = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMineUserInfoCancelAnAccountCancelAnAccount = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["styles", [_style_0$h]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue"]]);
+  const _sfc_main$h = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "changePhoneNumber",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -4281,8 +5415,8 @@
       return __returned__;
     }
   }));
-  const _style_0$i = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "icon": { ".container .content ": { "width": "40rpx", "height": "40rpx", "marginRight": "10rpx" } } };
-  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$g = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "icon": { ".container .content ": { "width": "40rpx", "height": "40rpx", "marginRight": "10rpx" } } };
+  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_0$5);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$1);
@@ -4338,8 +5472,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoChangePhoneNumberChangePhoneNumber = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["styles", [_style_0$i]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue"]]);
-  const _sfc_main$i = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMineUserInfoChangePhoneNumberChangePhoneNumber = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["styles", [_style_0$g]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue"]]);
+  const _sfc_main$g = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
     __name: "changePassword",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -4410,8 +5544,8 @@
       return __returned__;
     }
   }));
-  const _style_0$h = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } }, "error-msg": { ".container ": { "marginTop": "10rpx", "color": "#e64340", "fontSize": "24rpx" } } };
-  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$f = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } }, "error-msg": { ".container ": { "marginTop": "10rpx", "color": "#e64340", "fontSize": "24rpx" } } };
+  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_0$5);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -4462,7 +5596,7 @@
       ])
     ]);
   }
-  const PagesMineUserInfoChangePasswordChangePassword = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["styles", [_style_0$h]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePassword/changePassword.uvue"]]);
+  const PagesMineUserInfoChangePasswordChangePassword = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["styles", [_style_0$f]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePassword/changePassword.uvue"]]);
   function isDef(value) {
     return value != null;
   }
@@ -4473,7 +5607,7 @@
     value = "".concat(value);
     return isNumeric$1(value) ? "".concat(value, "px") : value;
   }
-  const _sfc_main$h = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$f = /* @__PURE__ */ vue.defineComponent({
     __name: "l-progress",
     props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
       showInfo: { type: Boolean, required: true, default: false },
@@ -4566,8 +5700,8 @@
       return __returned__;
     }
   });
-  const _style_0$g = { "l-progress": { "": { "flexDirection": "row" } }, "l-progress-bg": { "": { "height": 4, "position": "relative", "backgroundColor": "#3283ff", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "transitionProperty": "width", "transitionDuration": "300ms", "transitionTimingFunction": "cubic-bezier(0,0,0.15,1)", "justifyContent": "center" }, ".l-progress--inner ": { "height": 20 } }, "l-progress__inner-text": { ".l-progress-bg ": { "paddingTop": 0, "paddingRight": "8rpx", "paddingBottom": 0, "paddingLeft": "8rpx", "color": "#FFFFFF", "fontSize": 10, "whiteSpace": "nowrap" } }, "l-progress__inner": { "": { "flex": 1, "alignSelf": "center", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "backgroundColor": "rgba(0,0,0,0.06)" } }, "@TRANSITION": { "l-progress-bg": { "property": "width", "duration": "300ms", "timingFunction": "cubic-bezier(0,0,0.15,1)" } } };
-  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$e = { "l-progress": { "": { "flexDirection": "row" } }, "l-progress-bg": { "": { "height": 4, "position": "relative", "backgroundColor": "#3283ff", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "transitionProperty": "width", "transitionDuration": "300ms", "transitionTimingFunction": "cubic-bezier(0,0,0.15,1)", "justifyContent": "center" }, ".l-progress--inner ": { "height": 20 } }, "l-progress__inner-text": { ".l-progress-bg ": { "paddingTop": 0, "paddingRight": "8rpx", "paddingBottom": 0, "paddingLeft": "8rpx", "color": "#FFFFFF", "fontSize": 10, "whiteSpace": "nowrap" } }, "l-progress__inner": { "": { "flex": 1, "alignSelf": "center", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "backgroundColor": "rgba(0,0,0,0.06)" } }, "@TRANSITION": { "l-progress-bg": { "property": "width", "duration": "300ms", "timingFunction": "cubic-bezier(0,0,0.15,1)" } } };
+  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4636,8 +5770,8 @@
       /* CLASS */
     );
   }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["styles", [_style_0$g]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-progress/components/l-progress/l-progress.uvue"]]);
-  const _sfc_main$g = vue.defineComponent({
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["styles", [_style_0$e]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-progress/components/l-progress/l-progress.uvue"]]);
+  const _sfc_main$e = vue.defineComponent({
     name: "fui-radio",
     props: {
       value: {
@@ -4802,8 +5936,8 @@
       }
     }
   });
-  const _style_0$f = { "fui-radio__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "display": "flex", "boxSizing": "border-box", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-radio__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-radio__scale-center": { "": { "transformOrigin": "center center" } }, "fui-radio__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-radio__active-bgcolor": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-radio__color": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-radio__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-radio__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-radio__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-check__mark-circle": { "": { "width": "16rpx", "height": "16rpx", "borderTopLeftRadius": "16rpx", "borderTopRightRadius": "16rpx", "borderBottomRightRadius": "16rpx", "borderBottomLeftRadius": "16rpx" } }, "fui-radio__disabled": { "": { "opacity": 0.6 } } };
-  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$d = { "fui-radio__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "display": "flex", "boxSizing": "border-box", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-radio__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-radio__scale-center": { "": { "transformOrigin": "center center" } }, "fui-radio__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-radio__active-bgcolor": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-radio__color": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-radio__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-radio__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-radio__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-check__mark-circle": { "": { "width": "16rpx", "height": "16rpx", "borderTopLeftRadius": "16rpx", "borderTopRightRadius": "16rpx", "borderBottomRightRadius": "16rpx", "borderBottomLeftRadius": "16rpx" } }, "fui-radio__disabled": { "": { "opacity": 0.6 } } };
+  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4839,8 +5973,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["styles", [_style_0$f]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio/fui-radio.uvue"]]);
-  const _sfc_main$f = vue.defineComponent({
+  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["styles", [_style_0$d]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio/fui-radio.uvue"]]);
+  const _sfc_main$d = vue.defineComponent({
     name: "fui-list-cell",
     emits: ["onclick"],
     props: {
@@ -4945,8 +6079,8 @@
       }
     }
   });
-  const _style_0$e = { "fui-list__cell": { "": { "position": "relative", "width": "100%", "display": "flex", "flexDirection": "row", "boxSizing": "border-box" } }, "fui-list__cell-inner": { "": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "boxSizing": "border-box" } }, "fui-cell__arrow": { "": { "height": "40rpx", "width": "40rpx", "borderTopWidth": 3, "borderRightWidth": 3, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "transform": "rotate(45deg) scale(0.5)", "borderTopLeftRadius": "4rpx", "borderTopRightRadius": "4rpx", "borderBottomRightRadius": "4rpx", "borderBottomLeftRadius": "4rpx", "flexShrink": 0, "marginLeft": "auto", "boxSizing": "border-box", "transformOrigin": "center center", "marginRight": "-5.8579rpx" } }, "fui-cell__border-top": { "": { "position": "absolute", "top": 0, "height": 0.5, "zIndex": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "pointerEvents": "none" } }, "fui-cell__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-cell__border-color": { "": { "!backgroundColor": "#EEEEEE" } }, "fui-list__cell-background": { "": { "!backgroundColor": "#FFFFFF" } }, "fui-list__cell-highlight": { "": { "!backgroundColor": "rgba(0,0,0,0.2)" } }, "fui-list__cell-padding": { "": { "!paddingTop": "32rpx", "!paddingRight": "32rpx", "!paddingBottom": "32rpx", "!paddingLeft": "32rpx" } }, "fui-list__cell-arrowcolor": { "": { "!borderTopColor": "#B2B2B2", "!borderRightColor": "#B2B2B2", "!borderBottomColor": "#B2B2B2", "!borderLeftColor": "#B2B2B2" } }, "fui-list__cell-bleft": { "": { "!left": "32rpx" } } };
-  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$c = { "fui-list__cell": { "": { "position": "relative", "width": "100%", "display": "flex", "flexDirection": "row", "boxSizing": "border-box" } }, "fui-list__cell-inner": { "": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "boxSizing": "border-box" } }, "fui-cell__arrow": { "": { "height": "40rpx", "width": "40rpx", "borderTopWidth": 3, "borderRightWidth": 3, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "transform": "rotate(45deg) scale(0.5)", "borderTopLeftRadius": "4rpx", "borderTopRightRadius": "4rpx", "borderBottomRightRadius": "4rpx", "borderBottomLeftRadius": "4rpx", "flexShrink": 0, "marginLeft": "auto", "boxSizing": "border-box", "transformOrigin": "center center", "marginRight": "-5.8579rpx" } }, "fui-cell__border-top": { "": { "position": "absolute", "top": 0, "height": 0.5, "zIndex": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "pointerEvents": "none" } }, "fui-cell__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-cell__border-color": { "": { "!backgroundColor": "#EEEEEE" } }, "fui-list__cell-background": { "": { "!backgroundColor": "#FFFFFF" } }, "fui-list__cell-highlight": { "": { "!backgroundColor": "rgba(0,0,0,0.2)" } }, "fui-list__cell-padding": { "": { "!paddingTop": "32rpx", "!paddingRight": "32rpx", "!paddingBottom": "32rpx", "!paddingLeft": "32rpx" } }, "fui-list__cell-arrowcolor": { "": { "!borderTopColor": "#B2B2B2", "!borderRightColor": "#B2B2B2", "!borderBottomColor": "#B2B2B2", "!borderLeftColor": "#B2B2B2" } }, "fui-list__cell-bleft": { "": { "!left": "32rpx" } } };
+  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["fui-list__cell", { "fui-list__cell-background": $props.background == "" }]),
       "hover-class": $props.highlight ? "fui-list__cell-highlight" : "",
@@ -5002,58 +6136,8 @@
       )) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class"]);
   }
-  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["styles", [_style_0$e]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell.uvue"]]);
-  const _sfc_main$e = vue.defineComponent({
-    name: "fui-label",
-    props: {
-      //padding值：'20rpx 32rpx'
-      padding: {
-        type: String,
-        default: ""
-      },
-      //margin值：'20rpx 32rpx'
-      margin: {
-        type: String,
-        default: ""
-      },
-      full: {
-        type: Boolean,
-        default: false
-      }
-    },
-    data() {
-      return {
-        childrens: []
-      };
-    },
-    methods: {
-      onclick() {
-        if (this.childrens.length > 0) {
-          this.childrens.forEach((item) => {
-            item.$callMethod("labelClick");
-          });
-        }
-      }
-    }
-  });
-  const _style_0$d = { "fui-label__wrap": { "": { "boxSizing": "border-box" } }, "fui-label__full": { "": { "width": "100%" } } };
-  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        class: vue.normalizeClass(["fui-label__wrap", { "fui-label__full": $props.full }]),
-        style: vue.normalizeStyle({ padding: $props.padding, margin: $props.margin }),
-        onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.onclick && $options.onclick(...args), ["stop"]))
-      },
-      [
-        vue.renderSlot(_ctx.$slots, "default")
-      ],
-      6
-      /* CLASS, STYLE */
-    );
-  }
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["styles", [_style_0$d]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-label/fui-label.uvue"]]);
-  const _sfc_main$d = vue.defineComponent({
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["styles", [_style_0$c]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell.uvue"]]);
+  const _sfc_main$c = vue.defineComponent({
     name: "fui-radio-group",
     emits: ["change", "update:modelValue"],
     props: {
@@ -5137,7 +6221,7 @@
       }
     }
   });
-  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_radio_group = vue.resolveComponent("radio-group");
     return vue.openBlock(), vue.createBlock(_component_radio_group, { name: $props.name }, {
       default: vue.withCtx(() => [
@@ -5147,169 +6231,7 @@
       /* FORWARDED */
     }, 8, ["name"]);
   }
-  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.uvue"]]);
-  const _sfc_main$c = vue.defineComponent({
-    name: "fui-bottom-popup",
-    emits: ["close", "update:visible"],
-    props: {
-      visible: {
-        type: Boolean,
-        default: false
-      },
-      background: {
-        type: String,
-        default: "#fff"
-      },
-      radius: {
-        type: Number,
-        default: 24
-      },
-      zIndex: {
-        type: Number,
-        default: 996
-      },
-      maskClosable: {
-        type: Boolean,
-        default: true
-      },
-      maskBackground: {
-        type: String,
-        default: "rgba(0,0,0,.6)"
-      },
-      safeArea: {
-        type: Boolean,
-        default: true
-      }
-    },
-    data() {
-      const refId = "fui_bp_".concat(parseInt(Math.ceil(Math.random() * 1e6).toString(), 36));
-      const refMkId = "fui_bpmk_".concat(parseInt(Math.ceil(Math.random() * 1e6).toString(), 36));
-      return {
-        refId,
-        refMkId,
-        iphoneX: false,
-        isShow: false,
-        element: null,
-        mkElement: null
-      };
-    },
-    watch: {
-      visible: {
-        handler(newVal) {
-          if (newVal) {
-            this.open();
-          } else {
-            if (this.isShow)
-              this.close();
-          }
-        },
-        immediate: true
-      }
-    },
-    created() {
-      this.iphoneX = this.isPhoneX();
-    },
-    mounted() {
-      this.$nextTick(() => {
-        setTimeout(() => {
-          if (!this.visible)
-            this.close();
-        }, 50);
-      });
-    },
-    methods: {
-      handleClose() {
-        if (!this.maskClosable)
-          return null;
-        this.$emit("close");
-        this.$emit("update:visible", false);
-      },
-      isPhoneX() {
-        if (!this.safeArea)
-          return false;
-        const res = uni.getSystemInfoSync();
-        let iphonex = false;
-        let models = ["iphonex", "iphonexr", "iphonexsmax"];
-        for (let i = 11; i < 20; i++) {
-          models.push("iphone".concat(i));
-          models.push("iphone".concat(i, "mini"));
-          models.push("iphone".concat(i, "pro"));
-          models.push("iphone".concat(i, "promax"));
-        }
-        const model = res.model.replace(/\s/g, "").toLowerCase();
-        const newModel = model.split("<")[0];
-        if (models.includes(model) || models.includes(newModel) || res.safeAreaInsets.bottom > 0) {
-          iphonex = true;
-        }
-        return iphonex;
-      },
-      open() {
-        this.isShow = true;
-        this.$nextTick(() => {
-          setTimeout(() => {
-            this._animation(true);
-          }, 50);
-        });
-      },
-      close() {
-        this.isShow = false;
-        this._animation(false);
-      },
-      _animation(visible) {
-        if (this.element == null) {
-          this.element = this.$refs[this.refId];
-        }
-        if (this.mkElement == null) {
-          this.mkElement = this.$refs[this.refMkId];
-        }
-        this.element.style.setProperty("transform", "translateY(".concat(visible ? "0" : "100%", ")"));
-        this.element.style.setProperty("opacity", visible ? "1" : "0");
-        this.mkElement.style.setProperty("opacity", visible ? "1" : "0");
-        if (visible) {
-          this.mkElement.style.setProperty("visibility", "visible");
-          this.element.style.setProperty("visibility", "visible");
-        } else {
-          setTimeout(() => {
-            this.mkElement.style.setProperty("visibility", "hidden");
-            this.element.style.setProperty("visibility", "hidden");
-          }, 300);
-        }
-      },
-      stop() {
-      }
-    }
-  });
-  const _style_0$c = { "fui-bottom__popup-wrap": { "": { "position": "fixed", "left": 0, "right": 0, "top": 0, "bottom": 0, "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "center", "transitionProperty": "opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "visibility": "hidden", "borderBottomWidth": 0, "overflow": "hidden", "opacity": 0 } }, "fui-bottom__popup": { "": { "width": "100%", "transitionProperty": "transform,opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "minHeight": "20rpx", "overflow": "hidden", "transform": "translateY(100%)", "display": "flex", "flexDirection": "row", "position": "relative" } }, "fui-bp__safe-weex": { "": { "paddingBottom": 34 } }, "@TRANSITION": { "fui-bottom__popup-wrap": { "property": "opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" }, "fui-bottom__popup": { "property": "transform,opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" } } };
-  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        class: "fui-bottom__popup-wrap",
-        style: vue.normalizeStyle({ zIndex: $props.zIndex, background: $props.maskBackground }),
-        onClick: _cache[1] || (_cache[1] = vue.withModifiers((...args) => $options.handleClose && $options.handleClose(...args), ["stop"])),
-        ref: $data.refMkId
-      },
-      [
-        vue.createElementVNode(
-          "view",
-          {
-            onClick: _cache[0] || (_cache[0] = vue.withModifiers((...args) => $options.stop && $options.stop(...args), ["stop"])),
-            ref: $data.refId,
-            class: vue.normalizeClass(["fui-bottom__popup", { "fui-bp__safe-weex": $data.iphoneX && $props.safeArea }]),
-            style: vue.normalizeStyle({ borderTopLeftRadius: "".concat($props.radius, "rpx"), borderTopRightRadius: "".concat($props.radius, "rpx"), background: $props.background })
-          },
-          [
-            vue.renderSlot(_ctx.$slots, "default")
-          ],
-          6
-          /* CLASS, STYLE */
-        )
-      ],
-      4
-      /* STYLE */
-    );
-  }
-  const __easycom_7 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["styles", [_style_0$c]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue"]]);
+  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.uvue"]]);
   const { registerUTSInterface, initUTSProxyClass, initUTSProxyFunction, initUTSPackageName, initUTSIndexClassName, initUTSClassName } = uni;
   const name$3 = "limeClipboard";
   const moduleName = "lime-clipboard 剪贴板";
@@ -5460,7 +6382,7 @@
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$1);
     const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_3$1);
     const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_4$1);
-    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_5);
+    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_5$1);
     const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_6);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_7);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [

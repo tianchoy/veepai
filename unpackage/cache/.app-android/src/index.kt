@@ -74,7 +74,7 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
     )
 }
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
-    val hosts: String = "127.0.0.1,192.168.3.34,169.254.22.214"
+    val hosts: String = "127.0.0.1,192.168.3.34"
     val port: String = "8090"
     val id: String = "app-android_ZdNxqW"
     if (hosts == "" || port == "" || id == "") {
@@ -343,6 +343,44 @@ val GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass = CreateVueCompone
 }
 , fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton {
     return GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton(instance)
+}
+)
+open class FuiCheckboxChangeParam (
+    @JsonNotNull
+    open var checked: Boolean = false,
+    @JsonNotNull
+    open var value: String,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("FuiCheckboxChangeParam", "uni_modules/firstui-unix/components/fui-types/index.uts", 68, 13)
+    }
+}
+val GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckboxClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.inject, props = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.emits, components = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.components, styles = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox {
+    return GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox(instance)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabelClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.inject, props = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.emits, components = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.components, styles = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel {
+    return GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel(instance)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroupClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.inject, props = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.emits, components = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.components, styles = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup {
+    return GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup(instance)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.inject, props = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.emits, components = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.components, styles = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup {
+    return GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup(instance)
 }
 )
 val default1 = "/static/login_banner.png"
@@ -3646,25 +3684,11 @@ val GenUniModulesFirstuiUnixComponentsFuiListCellFuiListCellClass = CreateVueCom
     return GenUniModulesFirstuiUnixComponentsFuiListCellFuiListCell(instance)
 }
 )
-val GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabelClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.inject, props = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.emits, components = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.components, styles = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel {
-    return GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel(instance)
-}
-)
 val GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroupClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup::class.java, fun(): VueComponentOptions {
     return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup.inject, props = GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup.emits, components = GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup.components, styles = GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup.styles)
 }
 , fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup {
     return GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup(instance)
-}
-)
-val GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.inject, props = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.emits, components = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.components, styles = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup {
-    return GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup(instance)
 }
 )
 open class RadioItem (
