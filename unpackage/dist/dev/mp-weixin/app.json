@@ -12,7 +12,8 @@
     "pages/mine/helpCenter/questionDetail/questionDetail",
     "pages/message/messageDetail/messageDetail",
     "pages/login/login",
-    "pages/message/messageDeviceDetail/messageDeviceDetail"
+    "pages/message/messageDeviceDetail/messageDeviceDetail",
+    "pages/message/messageSystem/messageSystem"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -92,6 +92,13 @@
 			{
 				"navigationBarTitleText" : "设备信息"
 			}
+		},
+		{
+			"path" : "pages/message/messageSystem/messageSystem",
+			"style" : 
+			{
+				"navigationBarTitleText" : "系统消息"
+			}
 		}
 	],
 	"tabBar": {

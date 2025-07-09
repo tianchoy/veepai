@@ -15,6 +15,7 @@ if (!Math) {
   "./pages/message/messageDetail/messageDetail.js";
   "./pages/login/login.js";
   "./pages/message/messageDeviceDetail/messageDeviceDetail.js";
+  "./pages/message/messageSystem/messageSystem.js";
 }
 const _sfc_main = common_vendor.defineComponent(new UTSJSONObject({
   onLaunch: function() {

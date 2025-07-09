@@ -7131,6 +7131,117 @@ val GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass = CreateVueCompon
     return GenPagesMessageMessageDeviceDetailMessageDeviceDetail(instance, renderer)
 }
 )
+val GenUniModulesFirstuiUnixComponentsFuiTagFuiTagClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiTagFuiTag::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiTagFuiTag.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiTagFuiTag.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiTagFuiTag.inject, props = GenUniModulesFirstuiUnixComponentsFuiTagFuiTag.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiTagFuiTag.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiTagFuiTag.emits, components = GenUniModulesFirstuiUnixComponentsFuiTagFuiTag.components, styles = GenUniModulesFirstuiUnixComponentsFuiTagFuiTag.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiTagFuiTag {
+    return GenUniModulesFirstuiUnixComponentsFuiTagFuiTag(instance)
+}
+)
+open class msgType (
+    @JsonNotNull
+    open var id: Number,
+    @JsonNotNull
+    open var desc: String,
+    @JsonNotNull
+    open var time: String,
+    @JsonNotNull
+    open var type: String,
+    @JsonNotNull
+    open var flag: String,
+) : UTSReactiveObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("msgType", "pages/message/messageSystem/messageSystem.uvue", 26, 7)
+    }
+    override fun __v_create(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): UTSReactiveObject {
+        return msgTypeReactiveObject(this, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+}
+open class msgTypeReactiveObject : msgType, IUTSReactive<msgType> {
+    override var __v_raw: msgType
+    override var __v_isReadonly: Boolean
+    override var __v_isShallow: Boolean
+    override var __v_skip: Boolean
+    constructor(__v_raw: msgType, __v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean) : super(id = __v_raw.id, desc = __v_raw.desc, time = __v_raw.time, type = __v_raw.type, flag = __v_raw.flag) {
+        this.__v_raw = __v_raw
+        this.__v_isReadonly = __v_isReadonly
+        this.__v_isShallow = __v_isShallow
+        this.__v_skip = __v_skip
+    }
+    override fun __v_clone(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): msgTypeReactiveObject {
+        return msgTypeReactiveObject(this.__v_raw, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+    override var id: Number
+        get() {
+            return trackReactiveGet(__v_raw, "id", __v_raw.id, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("id")) {
+                return
+            }
+            val oldValue = __v_raw.id
+            __v_raw.id = value
+            triggerReactiveSet(__v_raw, "id", oldValue, value)
+        }
+    override var desc: String
+        get() {
+            return trackReactiveGet(__v_raw, "desc", __v_raw.desc, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("desc")) {
+                return
+            }
+            val oldValue = __v_raw.desc
+            __v_raw.desc = value
+            triggerReactiveSet(__v_raw, "desc", oldValue, value)
+        }
+    override var time: String
+        get() {
+            return trackReactiveGet(__v_raw, "time", __v_raw.time, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("time")) {
+                return
+            }
+            val oldValue = __v_raw.time
+            __v_raw.time = value
+            triggerReactiveSet(__v_raw, "time", oldValue, value)
+        }
+    override var type: String
+        get() {
+            return trackReactiveGet(__v_raw, "type", __v_raw.type, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("type")) {
+                return
+            }
+            val oldValue = __v_raw.type
+            __v_raw.type = value
+            triggerReactiveSet(__v_raw, "type", oldValue, value)
+        }
+    override var flag: String
+        get() {
+            return trackReactiveGet(__v_raw, "flag", __v_raw.flag, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("flag")) {
+                return
+            }
+            val oldValue = __v_raw.flag
+            __v_raw.flag = value
+            triggerReactiveSet(__v_raw, "flag", oldValue, value)
+        }
+}
+val GenPagesMessageMessageSystemMessageSystemClass = CreateVueComponent(GenPagesMessageMessageSystemMessageSystem::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMessageMessageSystemMessageSystem.inheritAttrs, inject = GenPagesMessageMessageSystemMessageSystem.inject, props = GenPagesMessageMessageSystemMessageSystem.props, propsNeedCastKeys = GenPagesMessageMessageSystemMessageSystem.propsNeedCastKeys, emits = GenPagesMessageMessageSystemMessageSystem.emits, components = GenPagesMessageMessageSystemMessageSystem.components, styles = GenPagesMessageMessageSystemMessageSystem.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesMessageMessageSystemMessageSystem.setup(props as GenPagesMessageMessageSystemMessageSystem)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesMessageMessageSystemMessageSystem {
+    return GenPagesMessageMessageSystemMessageSystem(instance, renderer)
+}
+)
 fun createApp(): UTSJSONObject {
     val app = createSSRApp(GenAppClass)
     return UTSJSONObject(Map<String, Any?>(utsArrayOf(
@@ -7167,6 +7278,7 @@ fun definePageRoutes() {
     __uniRoutes.push(UniPageRoute(path = "pages/message/messageDetail/messageDetail", component = GenPagesMessageMessageDetailMessageDetailClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "消息详情")))
     __uniRoutes.push(UniPageRoute(path = "pages/login/login", component = GenPagesLoginLoginClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationStyle" to "custom", "navigationBarTitleText" to "登陆")))
     __uniRoutes.push(UniPageRoute(path = "pages/message/messageDeviceDetail/messageDeviceDetail", component = GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "设备信息")))
+    __uniRoutes.push(UniPageRoute(path = "pages/message/messageSystem/messageSystem", component = GenPagesMessageMessageSystemMessageSystemClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "系统消息")))
 }
 val __uniTabBar: Map<String, Any?>? = utsMapOf("list" to utsArrayOf(
     utsMapOf("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),

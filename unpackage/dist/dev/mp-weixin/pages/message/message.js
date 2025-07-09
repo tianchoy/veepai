@@ -167,6 +167,11 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       radioItems.value[0].checked = true;
       currentDeviceInfo.value = radioItems.value[0];
     };
+    const msgSystem = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/message/messageSystem/messageSystem"
+      });
+    };
     common_vendor.onMounted(() => {
       currentInfo();
     });
@@ -186,35 +191,36 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         e: common_assets._imports_0,
         f: common_vendor.o(showMoreDevice),
         g: common_assets._imports_1,
-        h: common_vendor.p({
+        h: common_vendor.o(msgSystem),
+        i: common_vendor.p({
           name: "chevron-right",
           size: "20"
         }),
-        i: common_assets._imports_1$1,
-        j: common_assets._imports_3,
-        k: common_vendor.p({
+        j: common_assets._imports_1$1,
+        k: common_assets._imports_3,
+        l: common_vendor.p({
           name: "chevron-right",
           size: "20"
         }),
-        l: common_assets._imports_1$1,
-        m: common_assets._imports_4,
-        n: common_vendor.o(select),
-        o: common_vendor.o(change),
-        p: common_vendor.p({
+        m: common_assets._imports_1$1,
+        n: common_assets._imports_4,
+        o: common_vendor.o(select),
+        p: common_vendor.o(change),
+        q: common_vendor.p({
           signedDates: checkIns.value,
           dayHeight: 60
         }),
-        q: common_vendor.o(hideCalendar),
         r: common_vendor.o(hideCalendar),
-        s: common_vendor.p({
+        s: common_vendor.o(hideCalendar),
+        t: common_vendor.p({
           visible: showCalendar.value
         }),
-        t: common_vendor.p({
+        v: common_vendor.p({
           name: "close",
           size: 40
         }),
-        v: common_vendor.o(closePopup),
-        w: common_vendor.f(radioItems.value, (item = null, index = null, i0 = null) => {
+        w: common_vendor.o(closePopup),
+        x: common_vendor.f(radioItems.value, (item = null, index = null, i0 = null) => {
           return {
             a: common_vendor.t(item.deviceTitle),
             b: "0e403ad2-10-" + i0 + "," + ("0e403ad2-9-" + i0),
@@ -227,12 +233,12 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
             f: "0e403ad2-8-" + i0 + ",0e403ad2-7"
           };
         }),
-        x: common_vendor.o(getValue),
-        y: common_vendor.o(closePopup),
-        z: common_vendor.p({
+        y: common_vendor.o(getValue),
+        z: common_vendor.o(closePopup),
+        A: common_vendor.p({
           visible: isShowMoreDevice.value
         }),
-        A: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        B: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

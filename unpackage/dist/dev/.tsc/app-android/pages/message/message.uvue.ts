@@ -156,6 +156,12 @@ const _cache = __ins.renderCache;
 		radioItems.value[0].checked = true
 		currentDeviceInfo.value = radioItems.value[0]
 	}
+	
+	const msgSystem = () => {
+		uni.navigateTo({
+			url: '/pages/message/messageSystem/messageSystem'
+		})
+	}
 
 	onMounted(() => {
 		currentInfo()
@@ -208,7 +214,8 @@ const _component_fui_radio_group = resolveEasyComponent("fui-radio-group",_easyc
         createElementVNode("view", utsMapOf({ class: "select" }), [
           createElementVNode("image", utsMapOf({
             class: "notice",
-            src: _imports_0
+            src: _imports_0,
+            onClick: msgSystem
           }))
         ])
       ]),

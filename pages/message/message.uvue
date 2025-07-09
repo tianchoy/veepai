@@ -15,7 +15,7 @@
 					<image class="down" src="/static/down.png" />
 				</view>
 				<view class="select">
-					<image class="notice" src="@/static/notice.png" />
+					<image class="notice" src="@/static/notice.png" @click="msgSystem" />
 				</view>
 			</view>
 			<view class="tab-content">
@@ -231,6 +231,12 @@
 		})
 		radioItems.value[0].checked = true
 		currentDeviceInfo.value = radioItems.value[0]
+	}
+	
+	const msgSystem = () => {
+		uni.navigateTo({
+			url: '/pages/message/messageSystem/messageSystem'
+		})
 	}
 
 	onMounted(() => {

@@ -15,6 +15,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
+import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 open class GenPagesMessageMessage : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     companion object {
@@ -97,6 +98,9 @@ open class GenPagesMessageMessage : BasePage {
                 radioItems.value[0].checked = true
                 currentDeviceInfo.value = radioItems.value[0]
             }
+            val msgSystem = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/message/messageSystem/messageSystem"))
+            }
             onMounted(fun(){
                 currentInfo()
             }
@@ -128,7 +132,7 @@ open class GenPagesMessageMessage : BasePage {
                                 createElementVNode("image", utsMapOf("class" to "down", "src" to "/static/down.png"))
                             )),
                             createElementVNode("view", utsMapOf("class" to "select"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "notice", "src" to default2))
+                                createElementVNode("image", utsMapOf("class" to "notice", "src" to default2, "onClick" to msgSystem))
                             ))
                         )),
                         createElementVNode("view", utsMapOf("class" to "tab-content"), utsArrayOf(
