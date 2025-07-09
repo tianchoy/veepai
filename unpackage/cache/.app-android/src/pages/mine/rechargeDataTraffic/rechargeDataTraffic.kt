@@ -33,15 +33,15 @@ open class GenPagesMineRechargeDataTrafficRechargeDataTraffic : BasePage {
             val totalDevice = ref<Number>(4)
             val percent = ref<Number>(50)
             val isShow = ref<Boolean>(false)
-            val currentDeviceInfo = ref<RadioItem>(RadioItem(deviceTitle = "", iccid = "", cardid = "", cardState = "", currentPackage = "", useDate = "", percent = 0, total = "", checked = true))
-            val radioItems = ref(utsArrayOf<RadioItem>(RadioItem(deviceTitle = "设备信息", iccid = "1123456667777887", cardid = "13000001111", cardState = "在用", currentPackage = "店长推荐【终身流量】", useDate = "2025-07-07", percent = 50, total = "100"), RadioItem(deviceTitle = "设备信息1", iccid = "1123456667777888", cardid = "13000001111", cardState = "停机", currentPackage = "店长推荐【100G流量】", useDate = "2025-07-08", percent = 70, total = "200"), RadioItem(deviceTitle = "设备信息2", cardid = "13000001111", iccid = "310203030443", cardState = "注销", currentPackage = "加油包", useDate = "2025-07-09", percent = 100, total = "300")))
+            val currentDeviceInfo = ref<RadioItem1>(RadioItem1(deviceTitle = "", iccid = "", cardid = "", cardState = "", currentPackage = "", useDate = "", percent = 0, total = "", checked = true))
+            val radioItems = ref(utsArrayOf<RadioItem1>(RadioItem1(deviceTitle = "设备信息", iccid = "1123456667777887", cardid = "13000001111", cardState = "在用", currentPackage = "店长推荐【终身流量】", useDate = "2025-07-07", percent = 50, total = "100"), RadioItem1(deviceTitle = "设备信息1", iccid = "1123456667777888", cardid = "13000001111", cardState = "停机", currentPackage = "店长推荐【100G流量】", useDate = "2025-07-08", percent = 70, total = "200"), RadioItem1(deviceTitle = "设备信息2", cardid = "13000001111", iccid = "310203030443", cardState = "注销", currentPackage = "加油包", useDate = "2025-07-09", percent = 100, total = "300")))
             val getValue = fun(e: String){
                 val selectedItem = radioItems.value.find(fun(item): Boolean {
                     return item.iccid == e
                 }
                 )
                 if (selectedItem != null) {
-                    console.log(selectedItem, " at pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue:141")
+                    console.log(selectedItem, " at pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue:143")
                     selectedItem.checked = true
                     currentDeviceInfo.value = selectedItem
                 }

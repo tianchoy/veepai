@@ -67,7 +67,6 @@
 						</fui-list-cell>
 					</fui-label>
 				</fui-radio-group>
-
 			</view>
 		</fui-bottom-popup>
 	</view>
@@ -77,20 +76,6 @@
 	import { ref, onMounted } from 'vue'
 	import { setClipboardData, getClipboardData, SetClipboardDataOption, GetClipboardDataOption, GetClipboardDataSuccessCallbackOption } from '@/uni_modules/lime-clipboard'
 
-	const totalDevice = ref<number>(4)
-	const percent = ref<number>(50)
-	const isShow = ref<boolean>(false)
-	const currentDeviceInfo = ref<RadioItem>({
-		deviceTitle: '',
-		iccid: '',
-		cardid: '',
-		cardState: '',
-		currentPackage: '',
-		useDate: '',
-		percent: 0,
-		total: '',
-		checked: true,
-	})
 	type RadioItem = {
 		deviceTitle : string;
 		iccid : string;
@@ -102,6 +87,23 @@
 		total : string;
 		checked ?: boolean;
 	}
+
+	const totalDevice = ref<number>(4)
+	const percent = ref<number>(50)
+	const isShow = ref<boolean>(false)
+		
+	const currentDeviceInfo = ref<RadioItem>({
+		deviceTitle: '',
+		iccid: '',
+		cardid: '',
+		cardState: '',
+		currentPackage: '',
+		useDate: '',
+		percent: 0,
+		total: '',
+		checked: true,
+	})
+
 	const radioItems = ref<RadioItem[]>([{
 		deviceTitle: '设备信息',
 		iccid: '1123456667777887',

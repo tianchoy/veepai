@@ -125,7 +125,7 @@ open class GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem : Vu
                                         ))
                                     } else {
                                         createElementVNode("view", utsMapOf("key" to 1), utsArrayOf(
-                                            createElementVNode("image", utsMapOf("style" to normalizeStyle(utsMapOf("width" to "16rpx", "height" to "16rpx")), "src" to default1), null, 4)
+                                            createElementVNode("text", utsMapOf("style" to normalizeStyle(utsMapOf("width" to "16rpx", "height" to "16rpx"))), null, 4)
                                         ))
                                     }
                                 ))

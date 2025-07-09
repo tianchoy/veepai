@@ -9,7 +9,7 @@ import _easycom_fui_bottom_popup from '@/uni_modules/firstui-unix/components/fui
 import { ref, onMounted } from 'vue'
 	import { setClipboardData, getClipboardData, SetClipboardDataOption, GetClipboardDataOption, GetClipboardDataSuccessCallbackOption } from '@/uni_modules/lime-clipboard'
 
-	type RadioItem = { __$originalPosition?: UTSSourceMapPosition<"RadioItem", "pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue", 94, 7>;
+	type RadioItem = { __$originalPosition?: UTSSourceMapPosition<"RadioItem", "pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue", 79, 7>;
 		deviceTitle : string;
 		iccid : string;
 		cardid : string;
@@ -20,6 +20,7 @@ import { ref, onMounted } from 'vue'
 		total : string;
 		checked ?: boolean;
 	}
+
 	
 const __sfc__ = defineComponent({
   __name: 'rechargeDataTraffic',
@@ -31,6 +32,7 @@ const _cache = __ins.renderCache;
 	const totalDevice = ref<number>(4)
 	const percent = ref<number>(50)
 	const isShow = ref<boolean>(false)
+		
 	const currentDeviceInfo = ref<RadioItem>({
 		deviceTitle: '',
 		iccid: '',
@@ -42,6 +44,7 @@ const _cache = __ins.renderCache;
 		total: '',
 		checked: true,
 	})
+
 	const radioItems = ref<RadioItem[]>([{
 		deviceTitle: '设备信息',
 		iccid: '1123456667777887',
@@ -78,7 +81,7 @@ const _cache = __ins.renderCache;
 	const getValue = (e : string) => {
 		const selectedItem = radioItems.value.find(item => item.iccid == e)
 		if (selectedItem != null) {
-			console.log(selectedItem, " at pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue:141")
+			console.log(selectedItem, " at pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue:143")
 			selectedItem.checked = true
 			currentDeviceInfo.value = selectedItem
 		}

@@ -1,5 +1,4 @@
 import _imports_0 from '@/static/dot1.png';
-import _imports_1 from '@/static/dot.png';
 import { DateStripItemProps } from './type';
 import { DateStriPDay } from '../l-date-strip/type';
 const __sfc__ = defineComponent({
@@ -97,9 +96,8 @@ const __sfc__ = defineComponent({
                                         }), null, 4 /* STYLE */)
                                     ])
                                     : createElementVNode("view", utsMapOf({ key: 1 }), [
-                                        createElementVNode("image", utsMapOf({
-                                            style: normalizeStyle(utsMapOf({ "width": "16rpx", "height": "16rpx" })),
-                                            src: _imports_1
+                                        createElementVNode("text", utsMapOf({
+                                            style: normalizeStyle(utsMapOf({ "width": "16rpx", "height": "16rpx" }))
                                         }), null, 4 /* STYLE */)
                                     ])
                             ])

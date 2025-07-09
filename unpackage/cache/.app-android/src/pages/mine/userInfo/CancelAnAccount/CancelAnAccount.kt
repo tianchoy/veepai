@@ -30,7 +30,7 @@ open class GenPagesMineUserInfoCancelAnAccountCancelAnAccount : BasePage {
             return fun(): Any? {
                 val _component_fui_button = resolveEasyComponent("fui-button", GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass)
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("image", utsMapOf("src" to default4, "class" to "close")),
+                    createElementVNode("image", utsMapOf("src" to default8, "class" to "close")),
                     createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
                         createElementVNode("text", utsMapOf("class" to "content-word"), "账号注销后将会删除个人数据且无法恢复，请谨慎操作。"),
                         createElementVNode("text", utsMapOf("class" to "content-word"), "注销前，请您自行备份重要数据及信息。")

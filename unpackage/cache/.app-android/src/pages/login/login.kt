@@ -94,7 +94,7 @@ open class GenPagesLoginLogin : BasePage {
                 val _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup", GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass)
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
                     createVNode(unref(GenComponentsTopNavBarClass), utsMapOf("title" to "登陆", "rightText" to "注册")),
-                    createElementVNode("image", utsMapOf("src" to default6, "class" to "longin_banner")),
+                    createElementVNode("image", utsMapOf("src" to default9, "class" to "longin_banner")),
                     createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
                         if (isTrue(loginType.value)) {
                             createElementVNode("view", utsMapOf("key" to 0), utsArrayOf(

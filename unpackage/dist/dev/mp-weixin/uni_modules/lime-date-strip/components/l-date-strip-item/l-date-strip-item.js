@@ -52,25 +52,23 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
             j: item.suffix == "true"
           }, item.suffix == "true" ? {
             k: common_assets._imports_0$6
-          } : {
-            l: common_assets._imports_1$2
-          }, {
-            m: _ctx.shape == "circle" && item.type == "selected" ? 1 : "",
-            n: common_vendor.s(item.type == "selected" && _ctx.shape == "circle" && _ctx.activeBgColor != null ? {
+          } : {}, {
+            l: _ctx.shape == "circle" && item.type == "selected" ? 1 : "",
+            m: common_vendor.s(item.type == "selected" && _ctx.shape == "circle" && _ctx.activeBgColor != null ? {
               background: _ctx.activeBgColor
             } : {}),
-            o: common_vendor.s(item.type == "selected" && _ctx.shape == "square" && _ctx.activeBgColor != null ? {
+            n: common_vendor.s(item.type == "selected" && _ctx.shape == "square" && _ctx.activeBgColor != null ? {
               background: _ctx.activeBgColor
             } : {}),
-            p: common_vendor.n({
+            o: common_vendor.n({
               "l-date-strip__grid--active-bg": _ctx.shape == "square" && item.type == "selected",
               // 'l-date-strip__grid--disabled': item.type == 'disabled',
               "l-date-strip__grid--selected": item.type == "selected"
             }),
-            q: common_vendor.o(($event = null) => {
+            p: common_vendor.o(($event = null) => {
               return onClick(item);
             }, item.key),
-            r: item.key
+            q: item.key
           });
         }),
         b: common_vendor.s(_ctx.shape == "square" && _ctx.radius != null ? {

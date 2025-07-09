@@ -1,36 +1,63 @@
 <template>
 	<view class="container">
 		<view class="data-strip">
-			<view class="rili"><l-date-strip :format="customFormat" :minDate="minDate" :maxDate="maxDate" height="70"
-					shape="circle"></l-date-strip></view>
+			<view class="rili">
+				<l-date-strip :format="customFormat" switchMode="week" :value="currentDay" :minDate="minDate" height="95rpx" shape="square"
+					@change="onChange">
+				</l-date-strip>
+			</view>
 			<image class="down" @click="ShowCalendar" src="/static/down.png" />
 		</view>
 		<view class="content-box">
 			<view class="sub-nav">
-				<view class="today">
-					<text>{{today}}</text>
+				<view class="today" @click="showMoreDevice">
+					<text>设备编号</text>
 					<image class="down" src="/static/down.png" />
-					<text> | </text>
 				</view>
 				<view class="select">
-					<text v-for="(tab, index) in tabs" :key="index" class="select-item"
-						:class="{ active: activeTab === index }" @click="changeTab(index)">
-						{{ tab.label }}
-					</text>
+					<image class="notice" src="@/static/notice.png" />
 				</view>
 			</view>
 			<view class="tab-content">
-				<view v-for="(event, index) in getFilteredEvents()" :key="index" class="tab-pane"
-					@click="msgDetail(event)">
-					<view class="item-content">
-						<image class="item-icon" mode="aspectFit"
-							:src="event.type === 'human' ? '/static/people.png' : '/static/mobile.png'" />
-						<view class="info">
-							<text>{{ event.type === 'human' ? '人形侦测' : '移动侦测' }}</text>
-							<text>{{ event.time }}</text>
+				<view class="item-content">
+					<view class="title-box">
+						<text class="title">设备名称</text>
+						<view class="more">
+							<text>更多</text>
+							<l-icon name="chevron-right" size="20"></l-icon>
 						</view>
 					</view>
-					<image class="item-img" mode="aspectFit" src="/static/vedio.png" />
+					<view class="item-detail">
+						<view class="item-left">
+							<image class="device-img" src="@/static/vedio.png" />
+							<view class="item-info">
+								<text>人形侦测</text>
+								<text>15:29</text>	
+							</view>
+						</view>
+						<image class="item-icon" mode="aspectFit"
+							src="@/static/people.png" />
+					</view>
+				</view>
+				<view class="item-content">
+					<view class="title-box">
+						<text class="title">设备名称1</text>
+						<view class="more">
+							<text>更多</text>
+							<l-icon name="chevron-right" size="20"></l-icon>
+						</view>
+					</view>
+					<view class="item-detail">
+						<view class="item-left">
+							<image class="device-img" src="@/static/vedio.png" />
+							<view class="item-info">
+								<text>移动侦测</text>
+								<text>15:29</text>	
+							</view>
+						</view>
+						<image class="item-icon" mode="aspectFit"
+							src="@/static/mobile.png" />
+					</view>
 				</view>
 			</view>
 		</view>
@@ -43,18 +70,53 @@
 				</button>
 			</view>
 		</fui-bottom-popup>
-
+				<fui-bottom-popup :visible="isShowMoreDevice" @close="closePopup">
+			<view class="fui-scroll__wrap">
+				<view class="popup-title">
+					<text>设备列表</text>
+					<view @click="closePopup">
+						<fui-icon name="close" :size="40"></fui-icon>
+					</view>
+				</view>
+				<fui-radio-group @change="getValue">
+					<fui-label v-for="(item,index) in radioItems" :key="index">
+						<fui-list-cell>
+							<view class="fui-list__cell">
+								<text>{{item.deviceTitle}}</text>
+								<fui-radio :checked="item.checked" :value="item.iccid">
+								</fui-radio>
+							</view>
+						</fui-list-cell>
+					</fui-label>
+				</fui-radio-group>
+			</view>
+		</fui-bottom-popup>
 	</view>
 </template>
 
 <script lang="ts" setup>
-	import { ref, onMounted, computed } from 'vue'
+	import { ref,onMounted } from 'vue'
 	import { dayuts } from '@/uni_modules/lime-dayuts';
 	import { LDay, LYearMonth } from '@/uni_modules/lime-daily-punch'
 	import { DateStriPDay } from '@/uni_modules/lime-date-strip';
+
+	type RadioItem = {
+		deviceTitle : string;
+		iccid : string;
+		cardid : string;
+		cardState : string;
+		currentPackage : string;
+		useDate : string;
+		percent : number;
+		total : string;
+		checked ?: boolean;
+	}
+
 	const checkIns = ref(['2025-07-07', '2025-07-08', '2025-07-09'])
 	const today = ref(dayuts().format('MM-DD'))
 	const showCalendar = ref<boolean>(false)
+	const isShowMoreDevice = ref<boolean>(false)
+	const currentDay = ref<number>(new Date().getTime())
 
 	const activeTab = ref(0)
 	const minDate : number = new Date(2022, 0, 10).getTime()
@@ -65,90 +127,31 @@
 		const year = date.getFullYear();
 		const month = date.getMonth() + 1;
 		const curDate = date.getDate();
+		console.log(day.key)
 
 		day.prefix = '' //不显示星期
 
-		const map = new Map<number, string>([
-			[1, '初一'],
-			[2, '初二'],
-			[3, '初三'],
-			[14, '情人节'],
-			[15, '元宵节'],
-		])
-		if (map.has(curDate)) {
+		const specialDates = new Set<number>([7, 8, 10]);
+		if (specialDates.has(curDate)) {
 			day.suffix = 'true';
 		}
 
 		return day;
 	};
 
-	//构造函数的方式来定义event时间类型
-	class SecurityEvent {
-		id : number;
-		type : string;
-		time : string;
-		location : string;
 
-		constructor(id : number, type : string, time : string, location : string) {
-			this.id = id;
-			this.type = type;
-			this.time = time;
-			this.location = location;
-		}
+	const onChange = (time : number) => {
+		console.log(time)
 	}
 
-	//定义tab标签的类型
-	class Tab {
-		label : string;
-		type : string;
-
-		constructor(label : string, type : string) {
-			this.label = label;
-			this.type = type;
-		}
-	}
-
-	const tabs = ref<Tab[]>([
-		{ label: '全部类型', type: 'all' },
-		{ label: '人形侦测', type: 'human' },
-		{ label: '移动侦测', type: 'motion' }
-	])
-
-	const events = ref<SecurityEvent[]>([
-		new SecurityEvent(1, 'human', '15:29', '前门走廊'),
-		new SecurityEvent(2, 'motion', '14:45', '车库入口'),
-		new SecurityEvent(3, 'human', '13:20', '后花园'),
-		new SecurityEvent(4, 'motion', '11:05', '侧门通道')
-	])
-
-	//执行筛选数据的方法
-	const getFilteredEvents = () : SecurityEvent[] => {
-		if (activeTab.value == 0) return [...events.value];
-		const selectedType = tabs.value[activeTab.value].type;
-		return events.value.filter(event => event.type === selectedType);
-	}
-
-	//切换tab
-	const changeTab = (index : number) => {
-		activeTab.value = index
-	}
 
 	//选择日期
 	const select = (day : LDay) => {
-		today.value = dayuts(day.fullDate).format('MM-DD')
+		today.value = dayuts(day.fullDate).format('YYYY-MM-DD')
 		console.log(today.value)
-		if (day.isToday) {
-			console.log('今天')
-		}
+		currentDay.value = new Date(today.value).getTime()
 		showCalendar.value = false
 	}
-
-	const msgDetail = (e : SecurityEvent) => {
-		uni.navigateTo({
-			url: '/pages/message/messageDetail/messageDetail?id=' + e.id
-		})
-	}
-
 	const change = (res : LYearMonth) => {
 		console.log('res', res)
 	}
@@ -160,6 +163,80 @@
 	const hideCalendar = () => {
 		showCalendar.value = false
 	}
+
+	const showMoreDevice = () => {
+		isShowMoreDevice.value = true
+	}
+	const closePopup = () => {
+		isShowMoreDevice.value = false
+	}
+
+	const currentDeviceInfo = ref<RadioItem>({
+		deviceTitle: '',
+		iccid: '',
+		cardid: '',
+		cardState: '',
+		currentPackage: '',
+		useDate: '',
+		percent: 0,
+		total: '',
+		checked: true,
+	})
+
+	const radioItems = ref<RadioItem[]>([{
+		deviceTitle: '设备信息',
+		iccid: '1123456667777887',
+		cardid: '13000001111',
+		cardState: '在用',
+		currentPackage: '店长推荐【终身流量】',
+		useDate: '2025-07-07',
+		percent: 50,
+		total: '100',
+	},
+	{
+		deviceTitle: '设备信息1',
+		iccid: '1123456667777888',
+		cardid: '13000001111',
+		cardState: '停机',
+		currentPackage: '店长推荐【100G流量】',
+		useDate: '2025-07-08',
+		percent: 70,
+		total: '200',
+	},
+	{
+		deviceTitle: '设备信息2',
+		cardid: '13000001111',
+		iccid: '310203030443',
+		cardState: '注销',
+		currentPackage: '加油包',
+		useDate: '2025-07-09',
+		percent: 100,
+		total: '300',
+	}])
+
+
+
+	const getValue = (e : string) => {
+		const selectedItem = radioItems.value.find(item => item.iccid == e)
+		if (selectedItem != null) {
+			console.log(selectedItem)
+			selectedItem.checked = true
+			currentDeviceInfo.value = selectedItem
+		}
+	}
+
+	const currentInfo = () => {
+		radioItems.value.forEach(item => {
+			item.checked = false
+		})
+		radioItems.value[0].checked = true
+		currentDeviceInfo.value = radioItems.value[0]
+	}
+
+	onMounted(() => {
+		currentInfo()
+	})
+
 </script>
 
 
@@ -180,7 +257,8 @@
 			padding-right: 20rpx;
 
 			.rili {
-				flex: 4;
+				flex: 3;
+				height: 95rpx;
 			}
 
 			.down {
@@ -197,9 +275,10 @@
 				display: flex;
 				flex-direction: row;
 				align-items: center;
+				justify-content: space-between;
 
 				.today {
-					width: 120rpx;
+					width: 140rpx;
 					@extend .sub-nav;
 					align-items: center;
 
@@ -210,60 +289,71 @@
 				}
 
 				.select {
-					@extend .sub-nav;
-					margin-left: 10rpx;
-
-					.select-item {
-						flex: 1;
-						background-color: #fff;
-						color: #333;
-						padding: 10rpx 20rpx;
-						border-radius: 5rpx;
-						margin: 0 5rpx;
-					}
-
-					.active {
-						color: #fff;
-						background-color: #1296db;
+					.notice {
+						width: 48rpx;
+						height: 48rpx;
 					}
 				}
 			}
 
 			.tab-content {
+				width: 100%;
 				display: flex;
 				flex-direction: column;
 				align-items: center;
-				margin-top: 20rpx;
 
-				.tab-pane {
-					display: flex;
-					flex-direction: row;
-					align-items: center;
-					justify-content: space-between;
-					background-color: #fff;
-					border-radius: 20rpx;
-					padding: 20rpx;
+				.item-content {
 					width: 100%;
-					margin-bottom: 30rpx;
-
-					.item-content {
+					background-color: #fff;
+					padding: 30rpx;
+					border-radius: 20rpx;
+					margin-top: 30rpx;
+					.title-box {
 						display: flex;
 						flex-direction: row;
 						align-items: center;
+						justify-content: space-between;
+						margin-bottom: 30rpx;
 
-						.item-icon {
-							width: 60rpx;
-							height: 60rpx;
+						.title {
+							font-size: 30rpx;
+							color: #333;
+							font-weight: bold;
 						}
 
-						.info {
-							margin-left: 20rpx;
+						.more {
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							justify-content: space-between;
 						}
 					}
-
-					.item-img {
-						width: 100rpx;
-						height: 60rpx
+					.item-detail{
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: space-between;
+						.item-left{
+							display: flex;
+							flex-direction: row;
+							.device-img{
+								width: 200rpx;
+								height: 100rpx;
+								margin-right: 20rpx;
+							}
+							.item-info{
+								display: flex;
+								flex-direction: column;
+								align-items: flex-start;
+								justify-content: space-between;
+							
+							}
+						}
+						
+						.item-icon{
+							width: 50rpx;
+							height: 50rpx;
+						}
 					}
 				}
 			}
@@ -282,6 +372,39 @@
 				left: 60rpx;
 				border-radius: 50rpx;
 			}
+		}
+
+		.popup-title {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			padding: 0 40rpx;
+		}
+
+		.fui-scroll__wrap {
+			width: 100%;
+			padding: 30rpx 0;
+			position: relative;
+		}
+
+		.fui-sub__title {
+			text-align: center;
+			font-size: 24rpx;
+			color: #7F7F7F;
+			transform: scale(.9);
+		}
+
+		.fui-scroll__view {
+			width: 100%;
+			height: 50%;
+		}
+
+		.fui-list__cell {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
 		}
 	}
 </style>

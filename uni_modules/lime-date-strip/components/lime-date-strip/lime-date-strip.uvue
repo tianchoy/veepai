@@ -3,7 +3,7 @@
 		<text class="demo-block__title-text ultra">DateStrip 日期横条</text>
 		<text class="demo-block__desc-text">用于展示周日历或一组日历信息。</text>	
 		<view class="demo-block__body">
-			<view class="demo-block">
+			<!-- <view class="demo-block">
 				<text class="demo-block__title-text">基础用法</text>
 				<view class="demo-block__body">
 					<l-date-strip @change="onChange"></l-date-strip>
@@ -14,13 +14,13 @@
 				<view class="demo-block__body">
 					<l-date-strip switchMode="none"></l-date-strip>
 				</view>	
-			</view>
-			<view class="demo-block">
+			</view> -->
+			<!-- <view class="demo-block">
 				<text class="demo-block__title-text">选择样式</text>
 				<view class="demo-block__body">
 					<l-date-strip shape="circle"></l-date-strip>
 				</view>	
-			</view>	
+			</view>	 -->
 			<view class="demo-block">
 				<text class="demo-block__title-text">shape none</text>
 				<view class="demo-block__body">

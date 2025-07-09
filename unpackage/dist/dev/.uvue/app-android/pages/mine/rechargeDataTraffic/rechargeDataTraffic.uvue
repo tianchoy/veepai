@@ -10,7 +10,7 @@ import _easycom_fui_bottom_popup from '@/uni_modules/firstui-unix/components/fui
 import { ref, onMounted } from 'vue';
 import { setClipboardData, getClipboardData, SetClipboardDataOption, GetClipboardDataOption, GetClipboardDataSuccessCallbackOption } from '@/uni_modules/lime-clipboard';
 type RadioItem = {
-    __$originalPosition?: UTSSourceMapPosition<"RadioItem", "pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue", 94, 7>;
+    __$originalPosition?: UTSSourceMapPosition<"RadioItem", "pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue", 79, 7>;
     deviceTitle: string;
     iccid: string;
     cardid: string;
@@ -72,7 +72,7 @@ const __sfc__ = defineComponent({
         const getValue = (e: string) => {
             const selectedItem = radioItems.value.find((item): boolean => item.iccid == e);
             if (selectedItem != null) {
-                console.log(selectedItem, " at pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue:141");
+                console.log(selectedItem, " at pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue:143");
                 selectedItem.checked = true;
                 currentDeviceInfo.value = selectedItem;
             }

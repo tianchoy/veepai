@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-date-strip": "../l-date-strip/l-date-strip"
+  }
+}

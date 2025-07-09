@@ -109,7 +109,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         return item.iccid == e;
       });
       if (selectedItem != null) {
-        common_vendor.index.__f__("log", "at pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue:141", selectedItem);
+        common_vendor.index.__f__("log", "at pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue:143", selectedItem);
         selectedItem.checked = true;
         currentDeviceInfo.value = selectedItem;
       }

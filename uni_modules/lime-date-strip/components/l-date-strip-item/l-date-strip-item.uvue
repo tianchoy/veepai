@@ -59,7 +59,7 @@
 					]" v-if="item.suffix != null">{{item.suffix}}</text> -->
 					<view>
 						<view v-if="item.suffix == 'true'"><image style="width: 16rpx;height: 16rpx;" src="@/static/dot1.png"></image></view>
-						<view v-else><image style="width: 16rpx;height: 16rpx;" src="@/static/dot.png"></image></view>
+						<view v-else><text style="width: 16rpx;height: 16rpx;"></text></view>
 					</view>
 			</view>
 		</view>
