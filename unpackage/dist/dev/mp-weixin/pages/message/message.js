@@ -5,28 +5,43 @@ const uni_modules_limeDayuts_common_index = require("../../uni_modules/lime-dayu
 require("../../uni_modules/lime-dayuts/common/use.js");
 require("../../uni_modules/lime-dayuts/utssdk/interface.js");
 if (!Array) {
+  const _easycom_l_date_strip_1 = common_vendor.resolveComponent("l-date-strip");
   const _easycom_l_daily_punch_1 = common_vendor.resolveComponent("l-daily-punch");
-  _easycom_l_daily_punch_1();
+  const _easycom_fui_bottom_popup_1 = common_vendor.resolveComponent("fui-bottom-popup");
+  (_easycom_l_date_strip_1 + _easycom_l_daily_punch_1 + _easycom_fui_bottom_popup_1)();
 }
+const _easycom_l_date_strip = () => "../../uni_modules/lime-date-strip/components/l-date-strip/l-date-strip.js";
 const _easycom_l_daily_punch = () => "../../uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.js";
+const _easycom_fui_bottom_popup = () => "../../uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.js";
 if (!Math) {
-  _easycom_l_daily_punch();
+  (_easycom_l_date_strip + _easycom_l_daily_punch + _easycom_fui_bottom_popup)();
 }
-const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
   __name: "message",
   setup(__props) {
-    const checkIns = common_vendor.ref(["2025-06-09", "2025-07-01", "2025-07-02"]);
+    const checkIns = common_vendor.ref(["2025-07-07", "2025-07-08", "2025-07-09"]);
     const today = common_vendor.ref(uni_modules_limeDayuts_common_index.dayuts().format("MM-DD"));
     const showCalendar = common_vendor.ref(false);
     const activeTab = common_vendor.ref(0);
-    const testTitle = common_vendor.ref("测试标题");
-    const videoRef = common_vendor.ref(null);
-    const playVideo = () => {
-      common_vendor.index.createVideoContext("myVideo").play();
-    };
-    const pasueVideo = () => {
-      common_vendor.index.createVideoContext("myVideo").pause();
+    const minDate = new Date(2022, 0, 10).getTime();
+    const maxDate = new Date(2025, 7, 12).getTime();
+    const customFormat = (day) => {
+      const date = day.date;
+      date.getFullYear();
+      date.getMonth() + 1;
+      const curDate = date.getDate();
+      day.prefix = "";
+      const map = /* @__PURE__ */ new Map([
+        [1, "初一"],
+        [2, "初二"],
+        [3, "初三"],
+        [14, "情人节"],
+        [15, "元宵节"]
+      ]);
+      if (map.has(curDate)) {
+        day.suffix = "true";
+      }
+      return day;
     };
     class SecurityEvent {
       constructor(id, type, time, location) {
@@ -60,9 +75,9 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
     };
     const select = (day) => {
       today.value = uni_modules_limeDayuts_common_index.dayuts(day.fullDate).format("MM-DD");
-      common_vendor.index.__f__("log", "at pages/message/message.uvue:130", today.value);
+      common_vendor.index.__f__("log", "at pages/message/message.uvue:139", today.value);
       if (day.isToday) {
-        common_vendor.index.__f__("log", "at pages/message/message.uvue:132", "今天");
+        common_vendor.index.__f__("log", "at pages/message/message.uvue:141", "今天");
       }
       showCalendar.value = false;
     };
@@ -72,7 +87,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       });
     };
     const change = (res) => {
-      common_vendor.index.__f__("log", "at pages/message/message.uvue:144", "res", res);
+      common_vendor.index.__f__("log", "at pages/message/message.uvue:153", "res", res);
     };
     const ShowCalendar = () => {
       showCalendar.value = !showCalendar.value;
@@ -81,29 +96,30 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       showCalendar.value = false;
     };
     return (_ctx = null, _cache = null) => {
-      const __returned__ = common_vendor.e(new UTSJSONObject({
-        a: common_vendor.sei("myVideo", "video", videoRef, new UTSJSONObject({
-          "k": "videoRef"
-        })),
-        b: videoSrc,
-        c: testTitle.value,
-        d: common_vendor.o(playVideo),
-        e: common_vendor.o(pasueVideo),
-        f: common_vendor.t(today.value),
-        g: common_assets._imports_0$1,
-        h: common_vendor.o(ShowCalendar),
-        i: common_vendor.f(tabs.value, (tab = null, index = null, i0 = null) => {
-          return new UTSJSONObject({
+      const __returned__ = {
+        a: common_vendor.p({
+          format: customFormat,
+          minDate: common_vendor.unref(minDate),
+          maxDate: common_vendor.unref(maxDate),
+          height: "70",
+          shape: "circle"
+        }),
+        b: common_vendor.o(ShowCalendar),
+        c: common_assets._imports_0,
+        d: common_vendor.t(today.value),
+        e: common_assets._imports_0,
+        f: common_vendor.f(tabs.value, (tab = null, index = null, i0 = null) => {
+          return {
             a: common_vendor.t(tab.label),
             b: index,
             c: activeTab.value === index ? 1 : "",
             d: common_vendor.o(($event = null) => {
               return changeTab(index);
             }, index)
-          });
+          };
         }),
-        j: common_vendor.f(getFilteredEvents(), (event = null, index = null, i0 = null) => {
-          return new UTSJSONObject({
+        g: common_vendor.f(getFilteredEvents(), (event = null, index = null, i0 = null) => {
+          return {
             a: event.type === "human" ? "/static/people.png" : "/static/mobile.png",
             b: common_vendor.t(event.type === "human" ? "人形侦测" : "移动侦测"),
             c: common_vendor.t(event.time),
@@ -111,21 +127,22 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
             e: common_vendor.o(($event = null) => {
               return msgDetail(event);
             }, index)
-          });
+          };
         }),
-        k: common_assets._imports_1,
-        l: showCalendar.value
-      }), showCalendar.value ? new UTSJSONObject({
-        m: common_vendor.o(select),
-        n: common_vendor.o(change),
-        o: common_vendor.p(new UTSJSONObject({
+        h: common_assets._imports_1,
+        i: common_vendor.o(select),
+        j: common_vendor.o(change),
+        k: common_vendor.p({
           signedDates: checkIns.value,
           dayHeight: 60
-        })),
-        p: common_vendor.o(hideCalendar)
-      }) : new UTSJSONObject({}), new UTSJSONObject({
-        q: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
-      }));
+        }),
+        l: common_vendor.o(hideCalendar),
+        m: common_vendor.o(hideCalendar),
+        n: common_vendor.p({
+          visible: showCalendar.value
+        }),
+        o: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+      };
       return __returned__;
     };
   }

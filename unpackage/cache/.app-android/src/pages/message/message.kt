@@ -15,7 +15,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import io.dcloud.uniapp.extapi.createVideoContext as uni_createVideoContext
 import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 open class GenPagesMessageMessage : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
@@ -26,25 +25,51 @@ open class GenPagesMessageMessage : BasePage {
             val _ctx = __ins.proxy as GenPagesMessageMessage
             val _cache = __ins.renderCache
             val checkIns = ref(utsArrayOf(
-                "2025-06-09",
-                "2025-07-01",
-                "2025-07-02"
+                "2025-07-07",
+                "2025-07-08",
+                "2025-07-09"
             ))
             val today = ref(dayuts().format("MM-DD"))
             val showCalendar = ref<Boolean>(false)
-            val videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
             val activeTab = ref(0)
-            val testTitle = ref("测试标题")
-            val videoRef = ref(null)
-            val playVideo = fun(){
-                uni_createVideoContext("myVideo", null)!!!!.play()
-            }
-            val pasueVideo = fun(){
-                uni_createVideoContext("myVideo", null)!!!!.pause()
+            val minDate: Number = Date(2022, 0, 10).getTime()
+            val maxDate: Number = Date(2025, 7, 12).getTime()
+            val customFormat = fun(day: DateStriPDay): DateStriPDay {
+                val date = day.date
+                val year = date.getFullYear()
+                val month = date.getMonth() + 1
+                val curDate = date.getDate()
+                day.prefix = ""
+                val map = Map<Number, String>(utsArrayOf(
+                    utsArrayOf(
+                        1,
+                        "初一"
+                    ),
+                    utsArrayOf(
+                        2,
+                        "初二"
+                    ),
+                    utsArrayOf(
+                        3,
+                        "初三"
+                    ),
+                    utsArrayOf(
+                        14,
+                        "情人节"
+                    ),
+                    utsArrayOf(
+                        15,
+                        "元宵节"
+                    )
+                ))
+                if (map.has(curDate)) {
+                    day.suffix = "true"
+                }
+                return day
             }
             class SecurityEvent : IUTSSourceMap {
                 override fun `__$getOriginalPosition`(): UTSSourceMapPosition {
-                    return UTSSourceMapPosition("SecurityEvent", "pages/message/message.uvue", 77, 8)
+                    return UTSSourceMapPosition("SecurityEvent", "pages/message/message.uvue", 86, 8)
                 }
                 var id: Number
                 var type: String
@@ -59,7 +84,7 @@ open class GenPagesMessageMessage : BasePage {
             }
             class Tab : IUTSSourceMap {
                 override fun `__$getOriginalPosition`(): UTSSourceMapPosition {
-                    return UTSSourceMapPosition("Tab", "pages/message/message.uvue", 92, 8)
+                    return UTSSourceMapPosition("Tab", "pages/message/message.uvue", 101, 8)
                 }
                 var label: String
                 var type: String
@@ -85,9 +110,9 @@ open class GenPagesMessageMessage : BasePage {
             }
             val select = fun(day: LDay){
                 today.value = dayuts(day.fullDate).format("MM-DD")
-                console.log(today.value, " at pages/message/message.uvue:130")
+                console.log(today.value, " at pages/message/message.uvue:139")
                 if (day.isToday) {
-                    console.log("今天", " at pages/message/message.uvue:132")
+                    console.log("今天", " at pages/message/message.uvue:141")
                 }
                 showCalendar.value = false
             }
@@ -95,7 +120,7 @@ open class GenPagesMessageMessage : BasePage {
                 uni_navigateTo(NavigateToOptions(url = "/pages/message/messageDetail/messageDetail?id=" + e.id))
             }
             val change = fun(res: LYearMonth){
-                console.log("res", res, " at pages/message/message.uvue:144")
+                console.log("res", res, " at pages/message/message.uvue:153")
             }
             val ShowCalendar = fun(){
                 showCalendar.value = !showCalendar.value
@@ -104,19 +129,22 @@ open class GenPagesMessageMessage : BasePage {
                 showCalendar.value = false
             }
             return fun(): Any? {
+                val _component_l_date_strip = resolveEasyComponent("l-date-strip", GenUniModulesLimeDateStripComponentsLDateStripLDateStripClass)
                 val _component_l_daily_punch = resolveEasyComponent("l-daily-punch", GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunchClass)
+                val _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup", GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass)
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "vedio-box"), utsArrayOf(
-                        createElementVNode("video", utsMapOf("class" to "video", "id" to "myVideo", "src" to videoSrc, "ref_key" to "videoRef", "ref" to videoRef, "controls" to true, "show-play-btn" to true, "show-center-play-btn" to true, "enable-progress-gesture" to true, "show-fullscreen-btn" to true, "show-mute-btn" to true, "title" to testTitle.value), null, 8, utsArrayOf(
-                            "title"
+                    createElementVNode("view", utsMapOf("class" to "data-strip"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "rili"), utsArrayOf(
+                            createVNode(_component_l_date_strip, utsMapOf("format" to customFormat, "minDate" to unref(minDate), "maxDate" to unref(maxDate), "height" to "70", "shape" to "circle"), null, 8, utsArrayOf(
+                                "minDate",
+                                "maxDate"
+                            ))
                         )),
-                        createElementVNode("view")
+                        createElementVNode("image", utsMapOf("class" to "down", "onClick" to ShowCalendar, "src" to "/static/down.png"))
                     )),
-                    createElementVNode("button", utsMapOf("onClick" to playVideo), "播放视频"),
-                    createElementVNode("button", utsMapOf("onClick" to pasueVideo), "暂停视频"),
                     createElementVNode("view", utsMapOf("class" to "content-box"), utsArrayOf(
                         createElementVNode("view", utsMapOf("class" to "sub-nav"), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "today", "onClick" to ShowCalendar), utsArrayOf(
+                            createElementVNode("view", utsMapOf("class" to "today"), utsArrayOf(
                                 createElementVNode("text", null, toDisplayString(today.value), 1),
                                 createElementVNode("image", utsMapOf("class" to "down", "src" to "/static/down.png")),
                                 createElementVNode("text", null, " | ")
@@ -169,16 +197,19 @@ open class GenPagesMessageMessage : BasePage {
                             ), 128)
                         ))
                     )),
-                    if (isTrue(showCalendar.value)) {
-                        createElementVNode("view", utsMapOf("key" to 0, "class" to "calendar-box"), utsArrayOf(
-                            createVNode(_component_l_daily_punch, utsMapOf("signedDates" to checkIns.value, "onSelect" to select, "onPanelChange" to change, "dayHeight" to 60), null, 8, utsArrayOf(
-                                "signedDates"
-                            )),
-                            createElementVNode("button", utsMapOf("class" to "btn-chanel-box", "onClick" to hideCalendar), " 取消 ")
-                        ))
-                    } else {
-                        createCommentVNode("v-if", true)
+                    createVNode(_component_fui_bottom_popup, utsMapOf("visible" to showCalendar.value, "onClose" to hideCalendar), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
+                        return utsArrayOf(
+                            createElementVNode("view", utsMapOf("class" to "calendar-box"), utsArrayOf(
+                                createVNode(_component_l_daily_punch, utsMapOf("signedDates" to checkIns.value, "onSelect" to select, "onPanelChange" to change, "dayHeight" to 60), null, 8, utsArrayOf(
+                                    "signedDates"
+                                )),
+                                createElementVNode("button", utsMapOf("class" to "btn-chanel-box", "onClick" to hideCalendar), " 取消 ")
+                            ))
+                        )
                     }
+                    ), "_" to 1), 8, utsArrayOf(
+                        "visible"
+                    ))
                 ))
             }
         }
@@ -191,7 +222,7 @@ open class GenPagesMessageMessage : BasePage {
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("width" to "100%", "height" to "100%", "position" to "relative", "backgroundColor" to "#f3f3f3")), "vedio-box" to utsMapOf(".container " to utsMapOf("width" to "100%")), "video" to utsMapOf(".container .vedio-box " to utsMapOf("width" to "100%")), "content-box" to utsMapOf(".container " to utsMapOf("paddingTop" to "30rpx", "paddingRight" to "20rpx", "paddingBottom" to "30rpx", "paddingLeft" to "20rpx")), "sub-nav" to utsMapOf(".container .content-box " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center")), "select" to utsMapOf(".container .content-box .sub-nav " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "marginLeft" to "10rpx")), "today" to utsMapOf(".container .content-box .sub-nav " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "width" to "120rpx")), "down" to utsMapOf(".container .content-box .sub-nav .today " to utsMapOf("width" to "25rpx", "height" to "25rpx")), "select-item" to utsMapOf(".container .content-box .sub-nav .select " to utsMapOf("flex" to 1, "backgroundColor" to "#ffffff", "color" to "#333333", "paddingTop" to "10rpx", "paddingRight" to "20rpx", "paddingBottom" to "10rpx", "paddingLeft" to "20rpx", "borderTopLeftRadius" to "5rpx", "borderTopRightRadius" to "5rpx", "borderBottomRightRadius" to "5rpx", "borderBottomLeftRadius" to "5rpx", "marginTop" to 0, "marginRight" to "5rpx", "marginBottom" to 0, "marginLeft" to "5rpx")), "active" to utsMapOf(".container .content-box .sub-nav .select " to utsMapOf("color" to "#ffffff", "backgroundColor" to "#1296db")), "tab-content" to utsMapOf(".container .content-box " to utsMapOf("display" to "flex", "flexDirection" to "column", "alignItems" to "center", "marginTop" to "20rpx")), "tab-pane" to utsMapOf(".container .content-box .tab-content " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "space-between", "backgroundColor" to "#ffffff", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx", "width" to "100%", "marginBottom" to "30rpx")), "item-content" to utsMapOf(".container .content-box .tab-content .tab-pane " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center")), "item-icon" to utsMapOf(".container .content-box .tab-content .tab-pane .item-content " to utsMapOf("width" to "60rpx", "height" to "60rpx")), "info" to utsMapOf(".container .content-box .tab-content .tab-pane .item-content " to utsMapOf("marginLeft" to "20rpx")), "item-img" to utsMapOf(".container .content-box .tab-content .tab-pane " to utsMapOf("width" to "100rpx", "height" to "60rpx")), "calendar-box" to utsMapOf(".container " to utsMapOf("position" to "absolute", "bottom" to 0, "left" to 0, "height" to "60%", "width" to "100%", "backgroundColor" to "#ffffff")), "btn-chanel-box" to utsMapOf(".container .calendar-box " to utsMapOf("position" to "absolute", "width" to "85%", "bottom" to "45rpx", "left" to "60rpx", "borderTopLeftRadius" to "50rpx", "borderTopRightRadius" to "50rpx", "borderBottomRightRadius" to "50rpx", "borderBottomLeftRadius" to "50rpx")))
+                return utsMapOf("container" to padStyleMapOf(utsMapOf("width" to "100%", "height" to "100%", "position" to "relative", "backgroundColor" to "#f3f3f3")), "data-strip" to utsMapOf(".container " to utsMapOf("width" to "100%", "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "backgroundColor" to "#ffffff", "paddingRight" to "20rpx")), "rili" to utsMapOf(".container .data-strip " to utsMapOf("flex" to 4)), "down" to utsMapOf(".container .data-strip " to utsMapOf("width" to "32rpx", "height" to "32rpx"), ".container .content-box .sub-nav .today " to utsMapOf("width" to "25rpx", "height" to "25rpx")), "content-box" to utsMapOf(".container " to utsMapOf("paddingTop" to "30rpx", "paddingRight" to "20rpx", "paddingBottom" to "30rpx", "paddingLeft" to "20rpx")), "sub-nav" to utsMapOf(".container .content-box " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center")), "select" to utsMapOf(".container .content-box .sub-nav " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "marginLeft" to "10rpx")), "today" to utsMapOf(".container .content-box .sub-nav " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "width" to "120rpx")), "select-item" to utsMapOf(".container .content-box .sub-nav .select " to utsMapOf("flex" to 1, "backgroundColor" to "#ffffff", "color" to "#333333", "paddingTop" to "10rpx", "paddingRight" to "20rpx", "paddingBottom" to "10rpx", "paddingLeft" to "20rpx", "borderTopLeftRadius" to "5rpx", "borderTopRightRadius" to "5rpx", "borderBottomRightRadius" to "5rpx", "borderBottomLeftRadius" to "5rpx", "marginTop" to 0, "marginRight" to "5rpx", "marginBottom" to 0, "marginLeft" to "5rpx")), "active" to utsMapOf(".container .content-box .sub-nav .select " to utsMapOf("color" to "#ffffff", "backgroundColor" to "#1296db")), "tab-content" to utsMapOf(".container .content-box " to utsMapOf("display" to "flex", "flexDirection" to "column", "alignItems" to "center", "marginTop" to "20rpx")), "tab-pane" to utsMapOf(".container .content-box .tab-content " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "space-between", "backgroundColor" to "#ffffff", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx", "width" to "100%", "marginBottom" to "30rpx")), "item-content" to utsMapOf(".container .content-box .tab-content .tab-pane " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center")), "item-icon" to utsMapOf(".container .content-box .tab-content .tab-pane .item-content " to utsMapOf("width" to "60rpx", "height" to "60rpx")), "info" to utsMapOf(".container .content-box .tab-content .tab-pane .item-content " to utsMapOf("marginLeft" to "20rpx")), "item-img" to utsMapOf(".container .content-box .tab-content .tab-pane " to utsMapOf("width" to "100rpx", "height" to "60rpx")), "calendar-box" to utsMapOf(".container " to utsMapOf("width" to "100%", "backgroundColor" to "#ffffff")), "btn-chanel-box" to utsMapOf(".container .calendar-box " to utsMapOf("position" to "absolute", "width" to "85%", "bottom" to "45rpx", "left" to "60rpx", "borderTopLeftRadius" to "50rpx", "borderTopRightRadius" to "50rpx", "borderBottomRightRadius" to "50rpx", "borderBottomLeftRadius" to "50rpx")))
             }
         var inheritAttrs = true
         var inject: Map<String, Map<String, Any?>> = utsMapOf()

@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/index/index",
     "pages/message/message",
     "pages/mine/mine",
@@ -11,7 +10,9 @@
     "pages/mine/rechargeDataTraffic/rechargeDataTraffic",
     "pages/mine/helpCenter/helpCenter",
     "pages/mine/helpCenter/questionDetail/questionDetail",
-    "pages/message/messageDetail/messageDetail"
+    "pages/message/messageDetail/messageDetail",
+    "pages/login/login",
+    "pages/message/messageDeviceDetail/messageDeviceDetail"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -1,7 +1,10 @@
+import _easycom_l_date_strip from '@/uni_modules/lime-date-strip/components/l-date-strip/l-date-strip.uvue'
 import _easycom_l_daily_punch from '@/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue'
+import _easycom_fui_bottom_popup from '@/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue'
 import { ref, onMounted, computed } from 'vue'
 	import { dayuts } from '@/uni_modules/lime-dayuts';
 	import { LDay, LYearMonth } from '@/uni_modules/lime-daily-punch'
+	import { DateStriPDay } from '@/uni_modules/lime-date-strip';
 	
 const __sfc__ = defineComponent({
   __name: 'message',
@@ -10,33 +13,40 @@ const __ins = getCurrentInstance()!;
 const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
 
-	const checkIns = ref(['2025-06-09', '2025-07-01', '2025-07-02'])
+	const checkIns = ref(['2025-07-07', '2025-07-08', '2025-07-09'])
 	const today = ref(dayuts().format('MM-DD'))
 	const showCalendar = ref<boolean>(false)
-	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
+
 	const activeTab = ref(0)
-	const testTitle = ref('测试标题')
+	const minDate : number = new Date(2022, 0, 10).getTime()
+	const maxDate : number = new Date(2025, 7, 12).getTime()
 
-	const videoRef = ref(null);
+	const customFormat = (day : DateStriPDay) : DateStriPDay => {
+		const { date } = day;
+		const year = date.getFullYear();
+		const month = date.getMonth() + 1;
+		const curDate = date.getDate();
 
-	const playVideo = () => {
+		day.prefix = '' //不显示星期
 
+		const map = new Map<number, string>([
+			[1, '初一'],
+			[2, '初二'],
+			[3, '初三'],
+			[14, '情人节'],
+			[15, '元宵节'],
+		])
+		if (map.has(curDate)) {
+			day.suffix = 'true';
+		}
 
-
-		uni.createVideoContext('myVideo')!!.play();
+		return day;
 	};
-	
-	const pasueVideo = () =>{
-
-
-
-		uni.createVideoContext('myVideo')!!.pause();
-	}
 
 	//构造函数的方式来定义event时间类型
 	class SecurityEvent  implements IUTSSourceMap{
 // @ts-expect-error 
-override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMapPosition("SecurityEvent", "pages/message/message.uvue", 77, 8);}
+override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMapPosition("SecurityEvent", "pages/message/message.uvue", 86, 8);}
 
 		id : number;
 		type : string;
@@ -54,7 +64,7 @@ override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMa
 	//定义tab标签的类型
 	class Tab  implements IUTSSourceMap{
 // @ts-expect-error 
-override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMapPosition("Tab", "pages/message/message.uvue", 92, 8);}
+override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMapPosition("Tab", "pages/message/message.uvue", 101, 8);}
 
 		label : string;
 		type : string;
@@ -93,21 +103,21 @@ override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMa
 	//选择日期
 	const select = (day : LDay) => {
 		today.value = dayuts(day.fullDate).format('MM-DD')
-		console.log(today.value, " at pages/message/message.uvue:130")
+		console.log(today.value, " at pages/message/message.uvue:139")
 		if (day.isToday) {
-			console.log('今天', " at pages/message/message.uvue:132")
+			console.log('今天', " at pages/message/message.uvue:141")
 		}
 		showCalendar.value = false
 	}
-	
-	const msgDetail = (e:SecurityEvent) => {
+
+	const msgDetail = (e : SecurityEvent) => {
 		uni.navigateTo({
 			url: '/pages/message/messageDetail/messageDetail?id=' + e.id
 		})
 	}
 
 	const change = (res : LYearMonth) => {
-		console.log('res', res, " at pages/message/message.uvue:144")
+		console.log('res', res, " at pages/message/message.uvue:153")
 	}
 
 	const ShowCalendar = () => {
@@ -120,34 +130,30 @@ override __$getOriginalPosition(): UTSSourceMapPosition { return new UTSSourceMa
 
 return (): any | null => {
 
+const _component_l_date_strip = resolveEasyComponent("l-date-strip",_easycom_l_date_strip)
 const _component_l_daily_punch = resolveEasyComponent("l-daily-punch",_easycom_l_daily_punch)
+const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_easycom_fui_bottom_popup)
 
   return createElementVNode("view", utsMapOf({ class: "container" }), [
-    createElementVNode("view", utsMapOf({ class: "vedio-box" }), [
-      createElementVNode("video", utsMapOf({
-        class: "video",
-        id: "myVideo",
-        src: videoSrc,
-        ref_key: "videoRef",
-        ref: videoRef,
-        controls: true,
-        "show-play-btn": true,
-        "show-center-play-btn": true,
-        "enable-progress-gesture": true,
-        "show-fullscreen-btn": true,
-        "show-mute-btn": true,
-        title: testTitle.value
-      }), null, 8 /* PROPS */, ["title"]),
-      createElementVNode("view")
+    createElementVNode("view", utsMapOf({ class: "data-strip" }), [
+      createElementVNode("view", utsMapOf({ class: "rili" }), [
+        createVNode(_component_l_date_strip, utsMapOf({
+          format: customFormat,
+          minDate: unref(minDate),
+          maxDate: unref(maxDate),
+          height: "70",
+          shape: "circle"
+        }), null, 8 /* PROPS */, ["minDate", "maxDate"])
+      ]),
+      createElementVNode("image", utsMapOf({
+        class: "down",
+        onClick: ShowCalendar,
+        src: "/static/down.png"
+      }))
     ]),
-    createElementVNode("button", utsMapOf({ onClick: playVideo }), "播放视频"),
-    createElementVNode("button", utsMapOf({ onClick: pasueVideo }), "暂停视频"),
     createElementVNode("view", utsMapOf({ class: "content-box" }), [
       createElementVNode("view", utsMapOf({ class: "sub-nav" }), [
-        createElementVNode("view", utsMapOf({
-          class: "today",
-          onClick: ShowCalendar
-        }), [
+        createElementVNode("view", utsMapOf({ class: "today" }), [
           createElementVNode("text", null, toDisplayString(today.value), 1 /* TEXT */),
           createElementVNode("image", utsMapOf({
             class: "down",
@@ -192,11 +198,12 @@ const _component_l_daily_punch = resolveEasyComponent("l-daily-punch",_easycom_l
         }), 128 /* KEYED_FRAGMENT */)
       ])
     ]),
-    isTrue(showCalendar.value)
-      ? createElementVNode("view", utsMapOf({
-          key: 0,
-          class: "calendar-box"
-        }), [
+    createVNode(_component_fui_bottom_popup, utsMapOf({
+      visible: showCalendar.value,
+      onClose: hideCalendar
+    }), utsMapOf({
+      default: withSlotCtx((): any[] => [
+        createElementVNode("view", utsMapOf({ class: "calendar-box" }), [
           createVNode(_component_l_daily_punch, utsMapOf({
             signedDates: checkIns.value,
             onSelect: select,
@@ -208,11 +215,13 @@ const _component_l_daily_punch = resolveEasyComponent("l-daily-punch",_easycom_l
             onClick: hideCalendar
           }), " 取消 ")
         ])
-      : createCommentVNode("v-if", true)
+      ]),
+      _: 1 /* STABLE */
+    }), 8 /* PROPS */, ["visible"])
   ])
 }
 }
 
 })
 export default __sfc__
-const GenPagesMessageMessageStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["width", "100%"], ["height", "100%"], ["position", "relative"], ["backgroundColor", "#f3f3f3"]]))], ["vedio-box", utsMapOf([[".container ", utsMapOf([["width", "100%"]])]])], ["video", utsMapOf([[".container .vedio-box ", utsMapOf([["width", "100%"]])]])], ["content-box", utsMapOf([[".container ", utsMapOf([["paddingTop", "30rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "30rpx"], ["paddingLeft", "20rpx"]])]])], ["sub-nav", utsMapOf([[".container .content-box ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"]])]])], ["select", utsMapOf([[".container .content-box .sub-nav ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["marginLeft", "10rpx"]])]])], ["today", utsMapOf([[".container .content-box .sub-nav ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["width", "120rpx"]])]])], ["down", utsMapOf([[".container .content-box .sub-nav .today ", utsMapOf([["width", "25rpx"], ["height", "25rpx"]])]])], ["select-item", utsMapOf([[".container .content-box .sub-nav .select ", utsMapOf([["flex", 1], ["backgroundColor", "#ffffff"], ["color", "#333333"], ["paddingTop", "10rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "20rpx"], ["borderTopLeftRadius", "5rpx"], ["borderTopRightRadius", "5rpx"], ["borderBottomRightRadius", "5rpx"], ["borderBottomLeftRadius", "5rpx"], ["marginTop", 0], ["marginRight", "5rpx"], ["marginBottom", 0], ["marginLeft", "5rpx"]])]])], ["active", utsMapOf([[".container .content-box .sub-nav .select ", utsMapOf([["color", "#ffffff"], ["backgroundColor", "#1296db"]])]])], ["tab-content", utsMapOf([[".container .content-box ", utsMapOf([["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"], ["marginTop", "20rpx"]])]])], ["tab-pane", utsMapOf([[".container .content-box .tab-content ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "space-between"], ["backgroundColor", "#ffffff"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"], ["width", "100%"], ["marginBottom", "30rpx"]])]])], ["item-content", utsMapOf([[".container .content-box .tab-content .tab-pane ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"]])]])], ["item-icon", utsMapOf([[".container .content-box .tab-content .tab-pane .item-content ", utsMapOf([["width", "60rpx"], ["height", "60rpx"]])]])], ["info", utsMapOf([[".container .content-box .tab-content .tab-pane .item-content ", utsMapOf([["marginLeft", "20rpx"]])]])], ["item-img", utsMapOf([[".container .content-box .tab-content .tab-pane ", utsMapOf([["width", "100rpx"], ["height", "60rpx"]])]])], ["calendar-box", utsMapOf([[".container ", utsMapOf([["position", "absolute"], ["bottom", 0], ["left", 0], ["height", "60%"], ["width", "100%"], ["backgroundColor", "#ffffff"]])]])], ["btn-chanel-box", utsMapOf([[".container .calendar-box ", utsMapOf([["position", "absolute"], ["width", "85%"], ["bottom", "45rpx"], ["left", "60rpx"], ["borderTopLeftRadius", "50rpx"], ["borderTopRightRadius", "50rpx"], ["borderBottomRightRadius", "50rpx"], ["borderBottomLeftRadius", "50rpx"]])]])]])]
+const GenPagesMessageMessageStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["width", "100%"], ["height", "100%"], ["position", "relative"], ["backgroundColor", "#f3f3f3"]]))], ["data-strip", utsMapOf([[".container ", utsMapOf([["width", "100%"], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["backgroundColor", "#ffffff"], ["paddingRight", "20rpx"]])]])], ["rili", utsMapOf([[".container .data-strip ", utsMapOf([["flex", 4]])]])], ["down", utsMapOf([[".container .data-strip ", utsMapOf([["width", "32rpx"], ["height", "32rpx"]])], [".container .content-box .sub-nav .today ", utsMapOf([["width", "25rpx"], ["height", "25rpx"]])]])], ["content-box", utsMapOf([[".container ", utsMapOf([["paddingTop", "30rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "30rpx"], ["paddingLeft", "20rpx"]])]])], ["sub-nav", utsMapOf([[".container .content-box ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"]])]])], ["select", utsMapOf([[".container .content-box .sub-nav ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["marginLeft", "10rpx"]])]])], ["today", utsMapOf([[".container .content-box .sub-nav ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["width", "120rpx"]])]])], ["select-item", utsMapOf([[".container .content-box .sub-nav .select ", utsMapOf([["flex", 1], ["backgroundColor", "#ffffff"], ["color", "#333333"], ["paddingTop", "10rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "20rpx"], ["borderTopLeftRadius", "5rpx"], ["borderTopRightRadius", "5rpx"], ["borderBottomRightRadius", "5rpx"], ["borderBottomLeftRadius", "5rpx"], ["marginTop", 0], ["marginRight", "5rpx"], ["marginBottom", 0], ["marginLeft", "5rpx"]])]])], ["active", utsMapOf([[".container .content-box .sub-nav .select ", utsMapOf([["color", "#ffffff"], ["backgroundColor", "#1296db"]])]])], ["tab-content", utsMapOf([[".container .content-box ", utsMapOf([["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"], ["marginTop", "20rpx"]])]])], ["tab-pane", utsMapOf([[".container .content-box .tab-content ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "space-between"], ["backgroundColor", "#ffffff"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"], ["width", "100%"], ["marginBottom", "30rpx"]])]])], ["item-content", utsMapOf([[".container .content-box .tab-content .tab-pane ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"]])]])], ["item-icon", utsMapOf([[".container .content-box .tab-content .tab-pane .item-content ", utsMapOf([["width", "60rpx"], ["height", "60rpx"]])]])], ["info", utsMapOf([[".container .content-box .tab-content .tab-pane .item-content ", utsMapOf([["marginLeft", "20rpx"]])]])], ["item-img", utsMapOf([[".container .content-box .tab-content .tab-pane ", utsMapOf([["width", "100rpx"], ["height", "60rpx"]])]])], ["calendar-box", utsMapOf([[".container ", utsMapOf([["width", "100%"], ["backgroundColor", "#ffffff"]])]])], ["btn-chanel-box", utsMapOf([[".container .calendar-box ", utsMapOf([["position", "absolute"], ["width", "85%"], ["bottom", "45rpx"], ["left", "60rpx"], ["borderTopLeftRadius", "50rpx"], ["borderTopRightRadius", "50rpx"], ["borderBottomRightRadius", "50rpx"], ["borderBottomLeftRadius", "50rpx"]])]])]])]

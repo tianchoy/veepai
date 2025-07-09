@@ -1,16 +1,13 @@
 <template>
 	<view class="container">
-		<view class="vedio-box">
-			<video class="video" id="myVideo" :src="videoSrc" ref="videoRef" :controls="true" :show-play-btn="true"
-				:show-center-play-btn="true" :enable-progress-gesture="true" :show-fullscreen-btn="true"
-				:show-mute-btn="true" :title="testTitle"></video>
-				<view></view>
+		<view class="data-strip">
+			<view class="rili"><l-date-strip :format="customFormat" :minDate="minDate" :maxDate="maxDate" height="70"
+					shape="circle"></l-date-strip></view>
+			<image class="down" @click="ShowCalendar" src="/static/down.png" />
 		</view>
-		<button @click="playVideo">播放视频</button>
-		<button @click="pasueVideo">暂停视频</button>
 		<view class="content-box">
 			<view class="sub-nav">
-				<view class="today" @click="ShowCalendar">
+				<view class="today">
 					<text>{{today}}</text>
 					<image class="down" src="/static/down.png" />
 					<text> | </text>
@@ -23,7 +20,8 @@
 				</view>
 			</view>
 			<view class="tab-content">
-				<view v-for="(event, index) in getFilteredEvents()" :key="index" class="tab-pane"  @click="msgDetail(event)">
+				<view v-for="(event, index) in getFilteredEvents()" :key="index" class="tab-pane"
+					@click="msgDetail(event)">
 					<view class="item-content">
 						<image class="item-icon" mode="aspectFit"
 							:src="event.type === 'human' ? '/static/people.png' : '/static/mobile.png'" />
@@ -36,13 +34,16 @@
 				</view>
 			</view>
 		</view>
-		<view class="calendar-box" v-if="showCalendar">
-			<l-daily-punch :signedDates="checkIns" @select="select" @panelChange="change"
-				:dayHeight="60"></l-daily-punch>
-			<button class="btn-chanel-box" @click="hideCalendar">
-				取消
-			</button>
-		</view>
+		<fui-bottom-popup :visible="showCalendar" @close="hideCalendar">
+			<view class="calendar-box">
+				<l-daily-punch :signedDates="checkIns" @select="select" @panelChange="change"
+					:dayHeight="60"></l-daily-punch>
+				<button class="btn-chanel-box" @click="hideCalendar">
+					取消
+				</button>
+			</view>
+		</fui-bottom-popup>
+
 	</view>
 </template>
 
@@ -50,28 +51,36 @@
 	import { ref, onMounted, computed } from 'vue'
 	import { dayuts } from '@/uni_modules/lime-dayuts';
 	import { LDay, LYearMonth } from '@/uni_modules/lime-daily-punch'
-	const checkIns = ref(['2025-06-09', '2025-07-01', '2025-07-02'])
+	import { DateStriPDay } from '@/uni_modules/lime-date-strip';
+	const checkIns = ref(['2025-07-07', '2025-07-08', '2025-07-09'])
 	const today = ref(dayuts().format('MM-DD'))
 	const showCalendar = ref<boolean>(false)
-	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
+
 	const activeTab = ref(0)
-	const testTitle = ref('测试标题')
+	const minDate : number = new Date(2022, 0, 10).getTime()
+	const maxDate : number = new Date(2025, 7, 12).getTime()
 
-	const videoRef = ref(null);
+	const customFormat = (day : DateStriPDay) : DateStriPDay => {
+		const { date } = day;
+		const year = date.getFullYear();
+		const month = date.getMonth() + 1;
+		const curDate = date.getDate();
 
-	const playVideo = () => {
-		// #ifdef APP-IOS
-		videoRef.value.play()
-		// #endif
-		uni.createVideoContext('myVideo')!!.play();
+		day.prefix = '' //不显示星期
+
+		const map = new Map<number, string>([
+			[1, '初一'],
+			[2, '初二'],
+			[3, '初三'],
+			[14, '情人节'],
+			[15, '元宵节'],
+		])
+		if (map.has(curDate)) {
+			day.suffix = 'true';
+		}
+
+		return day;
 	};
-	
-	const pasueVideo = () =>{
-		// #ifdef APP-IOS
-		videoRef.value.pause()
-		// #endif
-		uni.createVideoContext('myVideo')!!.pause();
-	}
 
 	//构造函数的方式来定义event时间类型
 	class SecurityEvent {
@@ -133,8 +142,8 @@
 		}
 		showCalendar.value = false
 	}
-	
-	const msgDetail = (e:SecurityEvent) => {
+
+	const msgDetail = (e : SecurityEvent) => {
 		uni.navigateTo({
 			url: '/pages/message/messageDetail/messageDetail?id=' + e.id
 		})
@@ -162,13 +171,24 @@
 		position: relative;
 		background-color: #f3f3f3;
 
-		.vedio-box {
+		.data-strip {
 			width: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			background-color: #fff;
+			padding-right: 20rpx;
 
-			.video {
-				@extend .vedio-box
+			.rili {
+				flex: 4;
+			}
+
+			.down {
+				width: 32rpx;
+				height: 32rpx;
 			}
 		}
+
 
 		.content-box {
 			padding: 30rpx 20rpx;
@@ -252,15 +272,6 @@
 		}
 
 		.calendar-box {
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			// #ifdef APP-ANDROID
-			height: 60%;
-			// #endif
-			// #ifdef APP-IOS
-			height: 60%;
-			// #endif
 			width: 100%;
 			background-color: #fff;
 

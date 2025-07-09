@@ -21,28 +21,28 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
     };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: common_assets._imports_0$2,
+        a: common_assets._imports_0$1,
         b: common_assets._imports_1$1,
         c: common_assets._imports_2,
         d: common_assets._imports_3,
-        e: common_assets._imports_0$3,
+        e: common_assets._imports_0$2,
         f: common_vendor.o(userInfo),
         g: common_assets._imports_5,
-        h: common_assets._imports_0$3,
+        h: common_assets._imports_0$2,
         i: common_vendor.o(rechargeDataTraffic),
         j: common_assets._imports_6,
-        k: common_assets._imports_0$3,
+        k: common_assets._imports_0$2,
         l: common_assets._imports_7,
-        m: common_assets._imports_0$3,
+        m: common_assets._imports_0$2,
         n: common_vendor.o(helpCenter),
         o: common_assets._imports_8,
-        p: common_assets._imports_0$3,
+        p: common_assets._imports_0$2,
         q: common_assets._imports_9,
-        r: common_assets._imports_0$3,
+        r: common_assets._imports_0$2,
         s: common_assets._imports_10,
-        t: common_assets._imports_0$3,
+        t: common_assets._imports_0$2,
         v: common_assets._imports_11,
-        w: common_assets._imports_0$3,
+        w: common_assets._imports_0$2,
         x: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;

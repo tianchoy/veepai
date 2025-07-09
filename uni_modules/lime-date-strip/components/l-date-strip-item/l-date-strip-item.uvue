@@ -1,0 +1,95 @@
+<template>
+	<view 
+		class="l-date-strip__item"
+		:class="'l-date-strip__item--' + switchMode"
+		>
+		<view 
+			class="l-date-strip__grid" 
+			:style="[
+				styles,
+				item.type == 'selected' && shape == 'square' && activeBgColor != null ? {background: activeBgColor}: {},
+				shape == 'square' && radius != null ? {'border-radius': radius} : {}
+			]"
+			:class="[
+				'l-date-strip__grid--' + shape,
+				{
+					'l-date-strip__grid--active-bg' : shape == 'square' && item.type == 'selected',
+					// 'l-date-strip__grid--disabled': item.type == 'disabled',
+					'l-date-strip__grid--selected': item.type == 'selected'
+				}
+			]"
+			v-for="item in dates" 
+			@click="onClick(item)"
+			:key="item.key">
+			<text v-if="item.prefix != null"
+				class="l-date-strip__grid-prefix" 
+				:class="{
+					'l-date-strip__grid--active-text' : item.type == 'selected' && shape == 'square',
+					'l-date-strip__grid--active-text-none' : item.type == 'selected' && shape == 'none',
+				}"
+				:style="[
+					item.type == 'selected' && activeColor != null ? { color: activeColor} : {},
+				]">{{item.prefix}}</text>
+			<view 
+				class="l-date-strip__grid-info"
+				:class="{
+					'l-date-strip__grid--active-bg' : shape == 'circle' &&  item.type == 'selected',
+				}"
+				:style="[
+					item.type == 'selected' && shape == 'circle' && activeBgColor != null ? {background: activeBgColor}: {},
+					shape == 'square' && radius != null ? {'border-radius': radius}: {}
+				]">
+				<text 
+					class="l-date-strip__grid-day" 
+					:class="{
+						'l-date-strip__grid--active-text' : item.type == 'selected' && shape != 'none',
+						'l-date-strip__grid--active-text-none' : item.type == 'selected' && shape == 'none',
+					}"
+					:style="[
+						item.type == 'selected' && activeColor != null ? { color: activeColor} : {},
+					]">{{item.text}}</text>
+				<!-- <text 
+					class="l-date-strip__grid-suffix" 
+					:class="{
+						'l-date-strip__grid--active-text' : item.type == 'selected' && shape != 'none',
+						'l-date-strip__grid--active-text-none' : item.type == 'selected' && shape == 'none',
+					}"
+					:style="[
+						item.type == 'selected' && activeColor != null  ? { color: activeColor} : {},
+					]" v-if="item.suffix != null">{{item.suffix}}</text> -->
+					<view>
+						<view v-if="item.suffix == 'true'"><image style="width: 16rpx;height: 16rpx;" src="@/static/dot1.png"></image></view>
+						<view v-else><image style="width: 16rpx;height: 16rpx;" src="@/static/dot.png"></image></view>
+					</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script lang="uts" setup>
+	import { DateStripItemProps } from './type';
+	import { DateStriPDay } from '../l-date-strip/type';
+	const emit = defineEmits(['click'])
+	const props = withDefaults(defineProps<DateStripItemProps>(), {
+		dates: [] as DateStriPDay[],
+		shape: 'square',
+		switchMode: 'week',
+	})
+	
+	const styles = computed(():Map<string, any>=>{
+		const style = new Map<string, any>()
+		
+		if(props.gridWidth != null && props.switchMode == 'none') {
+			style.set('width', props.gridWidth!)
+		}
+		return style
+	})
+	const onClick = (day: DateStriPDay) => {
+		console.log(day)
+		emit('click', day)
+	}
+</script>
+
+<style lang="scss">
+	@import '../l-date-strip';
+</style>

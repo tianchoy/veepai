@@ -1,5 +1,6 @@
 <template>
 	<view class="container">
+		<TopNavBar title="登陆" rightText="注册" />
 		<image src="@/static/login_banner.png" class="longin_banner" />
 		<view class="content">
 			<view v-if="loginType">
@@ -86,6 +87,7 @@
 
 <script setup lang="uts">
 	import { ref } from 'vue'
+	import TopNavBar from '../../components/TopNavBar.uvue'
     const loginType = ref<boolean>(true)
     const isCheck = ref<string>('')
 	const btnWord = ref<string>('获取验证码')

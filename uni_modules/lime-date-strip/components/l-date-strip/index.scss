@@ -1,0 +1,153 @@
+@import '~@/uni_modules/lime-style/index.scss';
+// $prefix: l !default;
+$date-strip: #{$prefix}-date-strip;
+
+$date-strip-bg-color: create-var(date-strip-bg-color, $bg-color-container);
+$date-strip-height: create-var(date-strip-height, 86px);
+$date-strip-padding: create-var(date-strip-padding, 8px 0);
+$date-strip-font-size: create-var(date-strip-font-size, 16px);
+$date-strip-color: create-var(date-strip-color, $text-color-1);
+$date-strip-prefix-color: create-var(date-strip-prefix-color, $text-color-3);
+$date-strip-prefix-font-size: create-var(date-strip-prefix-font-size, 14px);
+$date-strip-suffix-color: create-var(date-strip-color, $text-color-2);
+$date-strip-suffix-font-size: create-var(date-strip-font-size, 12px);
+$date-strip-active-color: create-var(date-strip-active-color, $primary-color);
+$date-strip-square-radius: create-var(date-strip-square-radius, 5px);
+
+$date-strip-grid-width: create-var(date-strip-grid-width, 50px);
+// $date-strip-grid-prefix-padding: create-var(date-strip-grid-prefix-padding, 4px);
+$date-strip-grid-square-padding: create-var(date-strip-grid-square-padding, 6px 0);
+$date-strip-grid-circle-radius: create-var(date-strip-grid-circle-radius, 99px);
+// $date-strip-grid-suffix-translate: create-var(date-strip-grid-suffix-translate, 60%);
+
+.#{$date-strip} {
+	height: $date-strip-height;
+	background-color: $date-strip-bg-color;
+	&__scroll {
+		flex-direction: row;
+	}
+	&__item {
+		display: flex;
+		flex-direction: row;
+		padding: $date-strip-padding;
+		box-sizing: border-box;
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY  */
+		height: 100%;
+		/* #endif */
+		&--week {
+			flex: 1;
+			.#{$date-strip}__grid {
+				flex: 1;
+			}
+		}
+		&--none {
+			.#{$date-strip}__grid {
+				width: $date-strip-grid-width;
+			}
+		}
+	}
+	
+	&__grid {
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+		flex-shrink: 0;
+		/* #endif */
+		display: flex;
+		flex-direction: column;
+		margin: 0 4rpx;
+		transition-duration: 300ms;
+		transition-property: background-color, color;
+		transition-timing-function: linear;
+		
+		&-prefix,&-day,&-suffix {
+			text-align: center;
+			transition-duration: 200ms;
+			transition-property: color;
+			transition-timing-function: linear;
+		}
+		&-prefix {
+			font-size: $date-strip-prefix-font-size;
+			// font-weight: bold;
+			color: $date-strip-prefix-color;
+		}
+		&--none {
+			.l-date-strip__grid-prefix {
+				padding-bottom: 4px;
+				padding-top: 4px;
+			}
+		}
+		&--circle {
+			.l-date-strip__grid-prefix {
+				padding-bottom: 4px;
+			}
+			.l-date-strip__grid-info {
+				border-radius: $date-strip-grid-circle-radius;
+			}
+		}
+		&--square {
+			border-radius: $date-strip-square-radius;
+			padding: $date-strip-grid-square-padding;
+		}
+		&-suffix {
+			position: absolute;
+			top: 50%;
+			transform: translateY(60%);
+			font-size: $date-strip-suffix-font-size;
+			color: $date-strip-suffix-color;
+		}
+		&-day {
+			font-size: $date-strip-font-size;
+			color: $date-strip-color;
+			font-weight: bold;
+		}
+		&-info {
+			display: flex;
+			flex: 1;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+		&--active-bg {
+			background-color: $date-strip-active-color;
+		}
+		&--active-text {
+			color: white;
+			&-none {
+				color:  $date-strip-active-color;
+			}
+		}
+		// &--selected {
+		// 	&.l-date-strip__grid--circle {
+		// 		.l-date-strip__grid {
+		// 			&-info {
+		// 				// border-radius: 99px;
+		// 				background-color: $date-strip-active-color;
+		// 			}
+		// 			&-day,&-suffix {
+		// 				color: white;
+		// 			}
+		// 		}
+		// 	}
+		// 	&.l-date-strip__grid--square {
+		// 		background-color: $date-strip-active-color;
+		// 		border-radius: $date-strip-square-radius;
+				
+		// 		.l-date-strip__grid {
+		// 			&-prefix,&-day,&-suffix {
+		// 				color: white;
+		// 			}
+		// 		}
+		// 	}
+		// 	&.l-date-strip__grid--none {
+		// 		.l-date-strip__grid {
+		// 			&-prefix,&-day,&-suffix {
+		// 				color: $date-strip-active-color;
+		// 				// font-weight: bold;
+		// 			}
+		// 		}
+		// 	}
+		// }
+		&--disabled {
+			opacity: 0.4;
+		}
+	}
+}

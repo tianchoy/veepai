@@ -31,8 +31,20 @@
   position: relative;
   background-color: #f3f3f3;
 }
-.container .vedio-box.data-v-0e403ad2, .container .vedio-box .video.data-v-0e403ad2 {
+.container .data-strip.data-v-0e403ad2 {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  padding-right: 20rpx;
+}
+.container .data-strip .rili.data-v-0e403ad2 {
+  flex: 4;
+}
+.container .data-strip .down.data-v-0e403ad2 {
+  width: 32rpx;
+  height: 32rpx;
 }
 .container .content-box.data-v-0e403ad2 {
   padding: 30rpx 20rpx;
@@ -99,9 +111,6 @@
   height: 60rpx;
 }
 .container .calendar-box.data-v-0e403ad2 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   background-color: #fff;
 }

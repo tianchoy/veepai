@@ -6,13 +6,7 @@
 		}
 	},
 	"pages": [
-		{
-			"path" : "pages/login/login",
-			"style" : 
-			{
-				"navigationBarTitleText" : "登陆"
-			}
-		},
+		
 		{
 			"path": "pages/index/index",
 			"style": {
@@ -82,6 +76,21 @@
 			"style" : 
 			{
 				"navigationBarTitleText" : "消息详情"
+			}
+		},
+		{
+			"path" : "pages/login/login",
+			"style" : 
+			{
+				"navigationStyle": "custom",
+				"navigationBarTitleText" : "登陆"
+			}
+		},
+		{
+			"path" : "pages/message/messageDeviceDetail/messageDeviceDetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "设备信息"
 			}
 		}
 	],

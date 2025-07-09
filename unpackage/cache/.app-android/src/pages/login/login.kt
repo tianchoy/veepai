@@ -73,7 +73,7 @@ open class GenPagesLoginLogin : BasePage {
                 if (isCounting.value) {
                     return
                 }
-                console.log("发送验证码请求...", " at pages/login/login.uvue:144")
+                console.log("发送验证码请求...", " at pages/login/login.uvue:146")
                 isCounting.value = true
                 countDown(90)
             }
@@ -93,7 +93,8 @@ open class GenPagesLoginLogin : BasePage {
                 val _component_fui_checkbox_group = resolveEasyComponent("fui-checkbox-group", GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroupClass)
                 val _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup", GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass)
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("image", utsMapOf("src" to default1, "class" to "longin_banner")),
+                    createVNode(unref(GenComponentsTopNavBarClass), utsMapOf("title" to "登陆", "rightText" to "注册")),
+                    createElementVNode("image", utsMapOf("src" to default6, "class" to "longin_banner")),
                     createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
                         if (isTrue(loginType.value)) {
                             createElementVNode("view", utsMapOf("key" to 0), utsArrayOf(

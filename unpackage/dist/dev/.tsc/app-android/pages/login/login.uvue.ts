@@ -7,6 +7,7 @@ import _easycom_fui_checkbox_group from '@/uni_modules/firstui-unix/components/f
 import _easycom_fui_bottom_popup from '@/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue'
 import _imports_0 from '@/static/login_banner.png'
 import { ref } from 'vue'
+	import TopNavBar from '../../components/TopNavBar.uvue'
     
 const __sfc__ = defineComponent({
   __name: 'login',
@@ -70,7 +71,7 @@ const _cache = __ins.renderCache;
 	const getPsw = () => {
 		if (isCounting.value) return
 
-		console.log('发送验证码请求...', " at pages/login/login.uvue:144")
+		console.log('发送验证码请求...', " at pages/login/login.uvue:146")
 		isCounting.value = true
 
 		countDown(90)
@@ -100,6 +101,10 @@ const _component_fui_checkbox_group = resolveEasyComponent("fui-checkbox-group",
 const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_easycom_fui_bottom_popup)
 
   return createElementVNode("view", utsMapOf({ class: "container" }), [
+    createVNode(unref(TopNavBar), utsMapOf({
+      title: "登陆",
+      rightText: "注册"
+    })),
     createElementVNode("image", utsMapOf({
       src: _imports_0,
       class: "longin_banner"

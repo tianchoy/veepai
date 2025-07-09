@@ -1,0 +1,1 @@
+export default "/static/dot1.png"

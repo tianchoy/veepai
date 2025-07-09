@@ -76,7 +76,7 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
     val hosts: String = "127.0.0.1,192.168.3.34"
     val port: String = "8090"
-    val id: String = "app-android_ZdNxqW"
+    val id: String = "app-android_fDFzhr"
     if (hosts == "" || port == "" || id == "") {
         return UTSPromise.resolve(false)
     }
@@ -159,241 +159,6 @@ val GenAppClass = CreateVueAppComponent(GenApp::class.java, fun(): VueComponentO
     return GenApp(instance)
 }
 )
-val `default`: UTSJSONObject = object : UTSJSONObject() {
-    var addressbook = "\ue80c"
-    var `addfriends-fill` = "\ue80a"
-    var addfriends = "\ue80b"
-    var `backspace-fill` = "\ue808"
-    var backspace = "\ue809"
-    var `bankcard-fill` = "\ue806"
-    var bankcard = "\ue807"
-    var `camera-fill` = "\ue804"
-    var camera = "\ue805"
-    var `captcha-fill` = "\ue802"
-    var captcha = "\ue803"
-    var `cart-fill` = "\ue800"
-    var cart = "\ue801"
-    var classify = "\ue7fe"
-    var `classify-fill` = "\ue7ff"
-    var `comment-fill` = "\ue7fc"
-    var comment = "\ue7fd"
-    var `community-fill` = "\ue7fa"
-    var community = "\ue7fb"
-    var `coupon-fill` = "\ue7f8"
-    var coupon = "\ue7f9"
-    var `delete` = "\ue7f6"
-    var `delete-fill` = "\ue7f7"
-    var edit = "\ue7f4"
-    var `edit-fill` = "\ue7f5"
-    var `fabulous-fill` = "\ue7f2"
-    var fabulous = "\ue7f3"
-    var find = "\ue7f0"
-    var `find-fill` = "\ue7f1"
-    var `help-fill` = "\ue7ee"
-    var help = "\ue7ef"
-    var `home-fill` = "\ue7ec"
-    var home = "\ue7ed"
-    var `idcard-fill` = "\ue7ea"
-    var idcard = "\ue7eb"
-    var info = "\ue7e8"
-    var `info-fill` = "\ue7e9"
-    var `invite-fill` = "\ue7e6"
-    var invite = "\ue7e7"
-    var `kefu-fill` = "\ue7e4"
-    var kefu = "\ue7e5"
-    var `like-fill` = "\ue7e2"
-    var like = "\ue7e3"
-    var location = "\ue7e0"
-    var `location-fill` = "\ue7e1"
-    var lock = "\ue7de"
-    var `lock-fill` = "\ue7df"
-    var `mail-fill` = "\ue7dc"
-    var mail = "\ue7dd"
-    var message = "\ue7da"
-    var `message-fill` = "\ue7db"
-    var `mobile-fill` = "\ue7d8"
-    var mobile = "\ue7d9"
-    var more = "\ue7d6"
-    var `more-fill` = "\ue7d7"
-    var `my-fill` = "\ue7d4"
-    var my = "\ue7d5"
-    var principal = "\ue80d"
-    var `notice-fill` = "\ue7d2"
-    var notice = "\ue7d3"
-    var order = "\ue7d0"
-    var `order-fill` = "\ue7d1"
-    var picture = "\ue7ce"
-    var `picture-fill` = "\ue7cf"
-    var `setup-fill` = "\ue7cc"
-    var setup = "\ue7cd"
-    var share = "\ue7ca"
-    var `share-fill` = "\ue7cb"
-    var shop = "\ue7c8"
-    var `shop-fill` = "\ue7c9"
-    var `star-fill` = "\ue7c5"
-    var star = "\ue7c6"
-    var starhalf = "\ue7c7"
-    var `stepon-fill` = "\ue7c3"
-    var stepon = "\ue7c4"
-    var `wait-fill` = "\ue7c1"
-    var wait = "\ue7c2"
-    var warning = "\ue7bf"
-    var `warning-fill` = "\ue7c0"
-    var plus = "\ue7bc"
-    var `plussign-fill` = "\ue7bd"
-    var plussign = "\ue7be"
-    var minus = "\ue7b9"
-    var minussign = "\ue7ba"
-    var `minussign-fill` = "\ue7bb"
-    var close = "\ue7b8"
-    var clear = "\ue7b6"
-    var `clear-fill` = "\ue7b7"
-    var `checkbox-fill` = "\ue7b5"
-    var checkround = "\ue7b4"
-    var checkbox = "\ue7b3"
-    var check = "\ue7b2"
-    var `pulldown-fill` = "\ue7ae"
-    var pullup = "\ue7af"
-    var `pullup-fill` = "\ue7b0"
-    var pulldown = "\ue7b1"
-    var `roundright-fill` = "\ue7ac"
-    var roundright = "\ue7ad"
-    var arrowright = "\ue7a9"
-    var arrowleft = "\ue7aa"
-    var arrowdown = "\ue7ab"
-    var left = "\ue7a6"
-    var up = "\ue7a7"
-    var right = "\ue7a8"
-    var back = "\ue7a3"
-    var top = "\ue7a4"
-    var dropdown = "\ue7a5"
-    var turningleft = "\ue79f"
-    var turningup = "\ue7a0"
-    var turningright = "\ue7a1"
-    var turningdown = "\ue7a2"
-    var refresh = "\ue79c"
-    var loading = "\ue79d"
-    var search = "\ue79e"
-    var rotate = "\ue79b"
-    var screen = "\ue79a"
-    var signin = "\ue799"
-    var calendar = "\ue798"
-    var scan = "\ue797"
-    var qrcode = "\ue796"
-    var wallet = "\ue795"
-    var telephone = "\ue794"
-    var visible = "\ue793"
-    var invisible = "\ue792"
-    var menu = "\ue78e"
-    var operate = "\ue78f"
-    var slide = "\ue790"
-    var list = "\ue791"
-    var nonetwork = "\ue78d"
-    var partake = "\ue78c"
-    var qa = "\ue78b"
-    var barchart = "\ue788"
-    var piechart = "\ue789"
-    var linechart = "\ue78a"
-    var at = "\ue787"
-    var face = "\ue77f"
-    var redpacket = "\ue780"
-    var suspend = "\ue781"
-    var link = "\ue782"
-    var keyboard = "\ue783"
-    var play = "\ue784"
-    var video = "\ue785"
-    var voice = "\ue786"
-    var sina = "\ue77a"
-    var browser = "\ue77b"
-    var moments = "\ue77c"
-    var qq = "\ue77d"
-    var wechat = "\ue77e"
-    var balance = "\ue779"
-    var bankcardpay = "\ue778"
-    var wxpay = "\ue777"
-    var alipay = "\ue776"
-    var payment = "\ue818"
-    var receive = "\ue817"
-    var sendout = "\ue816"
-    var evaluate = "\ue815"
-    var aftersale = "\ue814"
-    var warehouse = "\ue813"
-    var transport = "\ue812"
-    var delivery = "\ue811"
-    var `switch` = "\ue810"
-    var goods = "\ue80f"
-    var `goods-fill` = "\ue80e"
-}
-val GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.inject, props = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.emits, components = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.components, styles = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon {
-    return GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon(instance)
-}
-)
-val GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiInputFuiInput::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.inject, props = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.emits, components = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.components, styles = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiInputFuiInput {
-    return GenUniModulesFirstuiUnixComponentsFuiInputFuiInput(instance)
-}
-)
-val GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.inject, props = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.emits, components = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.components, styles = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton {
-    return GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton(instance)
-}
-)
-open class FuiCheckboxChangeParam (
-    @JsonNotNull
-    open var checked: Boolean = false,
-    @JsonNotNull
-    open var value: String,
-) : UTSObject(), IUTSSourceMap {
-    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("FuiCheckboxChangeParam", "uni_modules/firstui-unix/components/fui-types/index.uts", 68, 13)
-    }
-}
-val GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckboxClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.inject, props = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.emits, components = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.components, styles = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox {
-    return GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox(instance)
-}
-)
-val GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabelClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.inject, props = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.emits, components = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.components, styles = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel {
-    return GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel(instance)
-}
-)
-val GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroupClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.inject, props = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.emits, components = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.components, styles = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup {
-    return GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup(instance)
-}
-)
-val GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.inject, props = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.emits, components = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.components, styles = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup {
-    return GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup(instance)
-}
-)
-val default1 = "/static/login_banner.png"
-val GenPagesLoginLoginClass = CreateVueComponent(GenPagesLoginLogin::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesLoginLogin.inheritAttrs, inject = GenPagesLoginLogin.inject, props = GenPagesLoginLogin.props, propsNeedCastKeys = GenPagesLoginLogin.propsNeedCastKeys, emits = GenPagesLoginLogin.emits, components = GenPagesLoginLogin.components, styles = GenPagesLoginLogin.styles, setup = fun(props: ComponentPublicInstance): Any? {
-        return GenPagesLoginLogin.setup(props as GenPagesLoginLogin)
-    }
-    )
-}
-, fun(instance, renderer): GenPagesLoginLogin {
-    return GenPagesLoginLogin(instance, renderer)
-}
-)
 val GenPagesIndexIndexClass = CreateVueComponent(GenPagesIndexIndex::class.java, fun(): VueComponentOptions {
     return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexIndex.inheritAttrs, inject = GenPagesIndexIndex.inject, props = GenPagesIndexIndex.props, propsNeedCastKeys = GenPagesIndexIndex.propsNeedCastKeys, emits = GenPagesIndexIndex.emits, components = GenPagesIndexIndex.components, styles = GenPagesIndexIndex.styles, setup = fun(props: ComponentPublicInstance): Any? {
         return GenPagesIndexIndex.setup(props as GenPagesIndexIndex)
@@ -402,6 +167,362 @@ val GenPagesIndexIndexClass = CreateVueComponent(GenPagesIndexIndex::class.java,
 }
 , fun(instance, renderer): GenPagesIndexIndex {
     return GenPagesIndexIndex(instance, renderer)
+}
+)
+val `default` = "/static/dot1.png"
+val default1 = "/static/dot.png"
+typealias DateType = String
+open class WeekRange (
+    @JsonNotNull
+    open var start: Date,
+    @JsonNotNull
+    open var end: Date,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("WeekRange", "uni_modules/lime-date-strip/components/l-date-strip/type.uts", 6, 13)
+    }
+}
+open class DateStriPDay (
+    @JsonNotNull
+    open var date: Date,
+    @JsonNotNull
+    open var key: String,
+    @JsonNotNull
+    open var day: Number,
+    @JsonNotNull
+    open var year: Number,
+    @JsonNotNull
+    open var month: Number,
+    @JsonNotNull
+    open var text: String,
+    @JsonNotNull
+    open var type: DateType,
+    @JsonNotNull
+    open var prefix: String,
+    open var prefixStyle: UTSJSONObject? = null,
+    open var textStyle: UTSJSONObject? = null,
+    open var suffix: String? = null,
+    open var suffixStyle: UTSJSONObject? = null,
+) : UTSReactiveObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("DateStriPDay", "uni_modules/lime-date-strip/components/l-date-strip/type.uts", 10, 13)
+    }
+    override fun __v_create(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): UTSReactiveObject {
+        return DateStriPDayReactiveObject(this, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+}
+open class DateStriPDayReactiveObject : DateStriPDay, IUTSReactive<DateStriPDay> {
+    override var __v_raw: DateStriPDay
+    override var __v_isReadonly: Boolean
+    override var __v_isShallow: Boolean
+    override var __v_skip: Boolean
+    constructor(__v_raw: DateStriPDay, __v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean) : super(date = __v_raw.date, key = __v_raw.key, day = __v_raw.day, year = __v_raw.year, month = __v_raw.month, text = __v_raw.text, type = __v_raw.type, prefix = __v_raw.prefix, prefixStyle = __v_raw.prefixStyle, textStyle = __v_raw.textStyle, suffix = __v_raw.suffix, suffixStyle = __v_raw.suffixStyle) {
+        this.__v_raw = __v_raw
+        this.__v_isReadonly = __v_isReadonly
+        this.__v_isShallow = __v_isShallow
+        this.__v_skip = __v_skip
+    }
+    override fun __v_clone(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): DateStriPDayReactiveObject {
+        return DateStriPDayReactiveObject(this.__v_raw, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+    override var date: Date
+        get() {
+            return trackReactiveGet(__v_raw, "date", __v_raw.date, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("date")) {
+                return
+            }
+            val oldValue = __v_raw.date
+            __v_raw.date = value
+            triggerReactiveSet(__v_raw, "date", oldValue, value)
+        }
+    override var key: String
+        get() {
+            return trackReactiveGet(__v_raw, "key", __v_raw.key, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("key")) {
+                return
+            }
+            val oldValue = __v_raw.key
+            __v_raw.key = value
+            triggerReactiveSet(__v_raw, "key", oldValue, value)
+        }
+    override var day: Number
+        get() {
+            return trackReactiveGet(__v_raw, "day", __v_raw.day, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("day")) {
+                return
+            }
+            val oldValue = __v_raw.day
+            __v_raw.day = value
+            triggerReactiveSet(__v_raw, "day", oldValue, value)
+        }
+    override var year: Number
+        get() {
+            return trackReactiveGet(__v_raw, "year", __v_raw.year, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("year")) {
+                return
+            }
+            val oldValue = __v_raw.year
+            __v_raw.year = value
+            triggerReactiveSet(__v_raw, "year", oldValue, value)
+        }
+    override var month: Number
+        get() {
+            return trackReactiveGet(__v_raw, "month", __v_raw.month, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("month")) {
+                return
+            }
+            val oldValue = __v_raw.month
+            __v_raw.month = value
+            triggerReactiveSet(__v_raw, "month", oldValue, value)
+        }
+    override var text: String
+        get() {
+            return trackReactiveGet(__v_raw, "text", __v_raw.text, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("text")) {
+                return
+            }
+            val oldValue = __v_raw.text
+            __v_raw.text = value
+            triggerReactiveSet(__v_raw, "text", oldValue, value)
+        }
+    override var type: DateType
+        get() {
+            return trackReactiveGet(__v_raw, "type", __v_raw.type, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("type")) {
+                return
+            }
+            val oldValue = __v_raw.type
+            __v_raw.type = value
+            triggerReactiveSet(__v_raw, "type", oldValue, value)
+        }
+    override var prefix: String
+        get() {
+            return trackReactiveGet(__v_raw, "prefix", __v_raw.prefix, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("prefix")) {
+                return
+            }
+            val oldValue = __v_raw.prefix
+            __v_raw.prefix = value
+            triggerReactiveSet(__v_raw, "prefix", oldValue, value)
+        }
+    override var prefixStyle: UTSJSONObject?
+        get() {
+            return trackReactiveGet(__v_raw, "prefixStyle", __v_raw.prefixStyle, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("prefixStyle")) {
+                return
+            }
+            val oldValue = __v_raw.prefixStyle
+            __v_raw.prefixStyle = value
+            triggerReactiveSet(__v_raw, "prefixStyle", oldValue, value)
+        }
+    override var textStyle: UTSJSONObject?
+        get() {
+            return trackReactiveGet(__v_raw, "textStyle", __v_raw.textStyle, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("textStyle")) {
+                return
+            }
+            val oldValue = __v_raw.textStyle
+            __v_raw.textStyle = value
+            triggerReactiveSet(__v_raw, "textStyle", oldValue, value)
+        }
+    override var suffix: String?
+        get() {
+            return trackReactiveGet(__v_raw, "suffix", __v_raw.suffix, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("suffix")) {
+                return
+            }
+            val oldValue = __v_raw.suffix
+            __v_raw.suffix = value
+            triggerReactiveSet(__v_raw, "suffix", oldValue, value)
+        }
+    override var suffixStyle: UTSJSONObject?
+        get() {
+            return trackReactiveGet(__v_raw, "suffixStyle", __v_raw.suffixStyle, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("suffixStyle")) {
+                return
+            }
+            val oldValue = __v_raw.suffixStyle
+            __v_raw.suffixStyle = value
+            triggerReactiveSet(__v_raw, "suffixStyle", oldValue, value)
+        }
+}
+open class WeekDateCollection (
+    @JsonNotNull
+    open var start: Number,
+    @JsonNotNull
+    open var end: Number,
+    @JsonNotNull
+    open var dates: UTSArray<DateStriPDay>,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("WeekDateCollection", "uni_modules/lime-date-strip/components/l-date-strip/type.uts", 24, 13)
+    }
+}
+typealias DateFormatType = (day: DateStriPDay) -> DateStriPDay
+interface DateStripProps {
+    var firstDayOfWeek: Number
+    var format: DateFormatType?
+    var maxDate: Number?
+    var minDate: Number?
+    var value: Number?
+    var defaultValue: Number?
+    var modelValue: Number?
+    var height: String?
+    var gridWidth: String?
+    var color: String?
+    var activeBgColor: String?
+    var activeColor: String?
+    var bgColor: String?
+    var radius: String?
+    var switchMode: String
+    var shape: String
+    var showNavigation: Boolean?
+    var weekdays: UTSArray<String>
+}
+interface DateStripItemProps {
+    var dates: UTSArray<DateStriPDay>
+    var color: String?
+    var activeBgColor: String?
+    var activeColor: String?
+    var bgColor: String?
+    var radius: String?
+    var gridWidth: String?
+    var switchMode: String
+    var shape: String
+}
+val GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItemClass = CreateVueComponent(GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem.inheritAttrs, inject = GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem.inject, props = GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem.props, propsNeedCastKeys = GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem.propsNeedCastKeys, emits = GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem.emits, components = GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem.components, styles = GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem.setup(props as GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem {
+    return GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem(instance)
+}
+)
+fun getWeekRange(date: Date, firstDayOfWeek: Number): WeekRange {
+    val start = Date(date.getTime())
+    val dayOffset = (date.getDay() - firstDayOfWeek + 7) % 7
+    start.setDate(start.getDate() - dayOffset)
+    val end = Date(start.getTime())
+    end.setDate(end.getDate() + 6)
+    return WeekRange(start = start, end = end)
+}
+fun addDays(date: Date, days: Number): Date {
+    val result = Date(date.getTime())
+    result.setDate(result.getDate() + days)
+    return result
+}
+fun addWeeks(date: Date, weeks: Number): Date {
+    val result = Date(date.getTime())
+    result.setDate(result.getDate() + weeks * 7)
+    return result
+}
+fun isSameDay(date1: Date, date2: Date): Boolean {
+    return (date1.getFullYear() == date2.getFullYear() && date1.getMonth() == date2.getMonth() && date1.getDate() == date2.getDate())
+}
+fun calcType(date: Date, minDate: Date, maxDate: Date, selectedDate: Date?): DateType {
+    if (date.getTime() < minDate.getTime() || date.getTime() > maxDate.getTime()) {
+        return "disabled"
+    }
+    if (selectedDate != null && isSameDay(date, selectedDate)) {
+        return "selected"
+    }
+    return ""
+}
+fun daysBetween(date1: Date, date2: Date): Number {
+    val diffInMilliseconds = Math.abs(date2.getTime() - date1.getTime())
+    return Math.floor(diffInMilliseconds / 86400000)
+}
+fun isString(str: Any?): Boolean {
+    return UTSAndroid.`typeof`(str) == "string"
+}
+fun isNumber(value: Any?): Boolean {
+    return utsArrayOf(
+        "Byte",
+        "UByte",
+        "Short",
+        "UShort",
+        "Int",
+        "UInt",
+        "Long",
+        "ULong",
+        "Float",
+        "Double",
+        "number"
+    ).includes(UTSAndroid.`typeof`(value))
+}
+fun isNumeric(value: Any?): Boolean {
+    if (value == null) {
+        return false
+    }
+    if (isNumber(value)) {
+        return true
+    } else if (isString(value)) {
+        val regex = UTSRegExp("^(-)?\\d+(\\.\\d+)?\$")
+        return regex.test(value as String)
+    }
+    return false
+}
+fun unitConvert(value: Any?, base: Number = 0): Number {
+    if (isNumber(value)) {
+        return value as Number
+    }
+    if (isNumeric(value)) {
+        return parseFloat(value as String)
+    }
+    if (isString(value)) {
+        val reg = UTSRegExp("^-?([0-9]+)?([.]{1}[0-9]+){0,1}(em|rpx|px|%)\$", "g")
+        val results = reg.exec(value as String)
+        if (results == null) {
+            return 0
+        }
+        val unit = results[3]
+        val _value = parseFloat(value)
+        if (unit == "rpx") {
+            return uni_rpx2px(_value)
+        }
+        if (unit == "px") {
+            return _value
+        }
+        if (unit == "%") {
+            return _value / 100 * base
+        }
+    }
+    return 0
+}
+val GenUniModulesLimeDateStripComponentsLDateStripLDateStripClass = CreateVueComponent(GenUniModulesLimeDateStripComponentsLDateStripLDateStrip::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeDateStripComponentsLDateStripLDateStrip.inheritAttrs, inject = GenUniModulesLimeDateStripComponentsLDateStripLDateStrip.inject, props = GenUniModulesLimeDateStripComponentsLDateStripLDateStrip.props, propsNeedCastKeys = GenUniModulesLimeDateStripComponentsLDateStripLDateStrip.propsNeedCastKeys, emits = GenUniModulesLimeDateStripComponentsLDateStripLDateStrip.emits, components = GenUniModulesLimeDateStripComponentsLDateStripLDateStrip.components, styles = GenUniModulesLimeDateStripComponentsLDateStripLDateStrip.styles, setup = fun(props: ComponentPublicInstance, ctx: SetupContext): Any? {
+        return GenUniModulesLimeDateStripComponentsLDateStripLDateStrip.setup(props as GenUniModulesLimeDateStripComponentsLDateStripLDateStrip, ctx)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimeDateStripComponentsLDateStripLDateStrip {
+    return GenUniModulesLimeDateStripComponentsLDateStripLDateStrip(instance)
 }
 )
 interface LDay {
@@ -1073,63 +1194,6 @@ open class Calendar : IUTSSourceMap {
         }
     }
 }
-fun isString(str: Any?): Boolean {
-    return UTSAndroid.`typeof`(str) == "string"
-}
-fun isNumber(value: Any?): Boolean {
-    return utsArrayOf(
-        "Byte",
-        "UByte",
-        "Short",
-        "UShort",
-        "Int",
-        "UInt",
-        "Long",
-        "ULong",
-        "Float",
-        "Double",
-        "number"
-    ).includes(UTSAndroid.`typeof`(value))
-}
-fun isNumeric(value: Any?): Boolean {
-    if (value == null) {
-        return false
-    }
-    if (isNumber(value)) {
-        return true
-    } else if (isString(value)) {
-        val regex = UTSRegExp("^(-)?\\d+(\\.\\d+)?\$")
-        return regex.test(value as String)
-    }
-    return false
-}
-fun unitConvert(value: Any?, base: Number = 0): Number {
-    if (isNumber(value)) {
-        return value as Number
-    }
-    if (isNumeric(value)) {
-        return parseFloat(value as String)
-    }
-    if (isString(value)) {
-        val reg = UTSRegExp("^-?([0-9]+)?([.]{1}[0-9]+){0,1}(em|rpx|px|%)\$", "g")
-        val results = reg.exec(value as String)
-        if (results == null) {
-            return 0
-        }
-        val unit = results[3]
-        val _value = parseFloat(value)
-        if (unit == "rpx") {
-            return uni_rpx2px(_value)
-        }
-        if (unit == "px") {
-            return _value
-        }
-        if (unit == "%") {
-            return _value / 100 * base
-        }
-    }
-    return 0
-}
 val GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunchClass = CreateVueComponent(GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch::class.java, fun(): VueComponentOptions {
     return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch.inheritAttrs, inject = GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch.inject, props = GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch.props, propsNeedCastKeys = GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch.propsNeedCastKeys, emits = GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch.emits, components = GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch.components, styles = GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch.styles, setup = fun(props: ComponentPublicInstance): Any? {
         return GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch.setup(props as GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch)
@@ -1138,6 +1202,13 @@ val GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunchClass = CreateVue
 }
 , fun(instance, renderer): GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch {
     return GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch(instance)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.inject, props = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.emits, components = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.components, styles = GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup {
+    return GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup(instance)
 }
 )
 val SECONDS_A_MINUTE: Number = 60
@@ -3133,6 +3204,13 @@ val GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitchClass = CreateVueCompone
     return GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch(instance)
 }
 )
+val GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.inject, props = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.emits, components = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.components, styles = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton {
+    return GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton(instance)
+}
+)
 val default3 = "/static/mine/right.png"
 val GenPagesMineUserInfoUserInfoClass = CreateVueComponent(GenPagesMineUserInfoUserInfo::class.java, fun(): VueComponentOptions {
     return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineUserInfoUserInfo.inheritAttrs, inject = GenPagesMineUserInfoUserInfo.inject, props = GenPagesMineUserInfoUserInfo.props, propsNeedCastKeys = GenPagesMineUserInfoUserInfo.propsNeedCastKeys, emits = GenPagesMineUserInfoUserInfo.emits, components = GenPagesMineUserInfoUserInfo.components, styles = GenPagesMineUserInfoUserInfo.styles, setup = fun(props: ComponentPublicInstance): Any? {
@@ -3153,6 +3231,185 @@ val GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass = CreateVueComponent
 }
 , fun(instance, renderer): GenPagesMineUserInfoCancelAnAccountCancelAnAccount {
     return GenPagesMineUserInfoCancelAnAccountCancelAnAccount(instance, renderer)
+}
+)
+val default5: UTSJSONObject = object : UTSJSONObject() {
+    var addressbook = "\ue80c"
+    var `addfriends-fill` = "\ue80a"
+    var addfriends = "\ue80b"
+    var `backspace-fill` = "\ue808"
+    var backspace = "\ue809"
+    var `bankcard-fill` = "\ue806"
+    var bankcard = "\ue807"
+    var `camera-fill` = "\ue804"
+    var camera = "\ue805"
+    var `captcha-fill` = "\ue802"
+    var captcha = "\ue803"
+    var `cart-fill` = "\ue800"
+    var cart = "\ue801"
+    var classify = "\ue7fe"
+    var `classify-fill` = "\ue7ff"
+    var `comment-fill` = "\ue7fc"
+    var comment = "\ue7fd"
+    var `community-fill` = "\ue7fa"
+    var community = "\ue7fb"
+    var `coupon-fill` = "\ue7f8"
+    var coupon = "\ue7f9"
+    var `delete` = "\ue7f6"
+    var `delete-fill` = "\ue7f7"
+    var edit = "\ue7f4"
+    var `edit-fill` = "\ue7f5"
+    var `fabulous-fill` = "\ue7f2"
+    var fabulous = "\ue7f3"
+    var find = "\ue7f0"
+    var `find-fill` = "\ue7f1"
+    var `help-fill` = "\ue7ee"
+    var help = "\ue7ef"
+    var `home-fill` = "\ue7ec"
+    var home = "\ue7ed"
+    var `idcard-fill` = "\ue7ea"
+    var idcard = "\ue7eb"
+    var info = "\ue7e8"
+    var `info-fill` = "\ue7e9"
+    var `invite-fill` = "\ue7e6"
+    var invite = "\ue7e7"
+    var `kefu-fill` = "\ue7e4"
+    var kefu = "\ue7e5"
+    var `like-fill` = "\ue7e2"
+    var like = "\ue7e3"
+    var location = "\ue7e0"
+    var `location-fill` = "\ue7e1"
+    var lock = "\ue7de"
+    var `lock-fill` = "\ue7df"
+    var `mail-fill` = "\ue7dc"
+    var mail = "\ue7dd"
+    var message = "\ue7da"
+    var `message-fill` = "\ue7db"
+    var `mobile-fill` = "\ue7d8"
+    var mobile = "\ue7d9"
+    var more = "\ue7d6"
+    var `more-fill` = "\ue7d7"
+    var `my-fill` = "\ue7d4"
+    var my = "\ue7d5"
+    var principal = "\ue80d"
+    var `notice-fill` = "\ue7d2"
+    var notice = "\ue7d3"
+    var order = "\ue7d0"
+    var `order-fill` = "\ue7d1"
+    var picture = "\ue7ce"
+    var `picture-fill` = "\ue7cf"
+    var `setup-fill` = "\ue7cc"
+    var setup = "\ue7cd"
+    var share = "\ue7ca"
+    var `share-fill` = "\ue7cb"
+    var shop = "\ue7c8"
+    var `shop-fill` = "\ue7c9"
+    var `star-fill` = "\ue7c5"
+    var star = "\ue7c6"
+    var starhalf = "\ue7c7"
+    var `stepon-fill` = "\ue7c3"
+    var stepon = "\ue7c4"
+    var `wait-fill` = "\ue7c1"
+    var wait = "\ue7c2"
+    var warning = "\ue7bf"
+    var `warning-fill` = "\ue7c0"
+    var plus = "\ue7bc"
+    var `plussign-fill` = "\ue7bd"
+    var plussign = "\ue7be"
+    var minus = "\ue7b9"
+    var minussign = "\ue7ba"
+    var `minussign-fill` = "\ue7bb"
+    var close = "\ue7b8"
+    var clear = "\ue7b6"
+    var `clear-fill` = "\ue7b7"
+    var `checkbox-fill` = "\ue7b5"
+    var checkround = "\ue7b4"
+    var checkbox = "\ue7b3"
+    var check = "\ue7b2"
+    var `pulldown-fill` = "\ue7ae"
+    var pullup = "\ue7af"
+    var `pullup-fill` = "\ue7b0"
+    var pulldown = "\ue7b1"
+    var `roundright-fill` = "\ue7ac"
+    var roundright = "\ue7ad"
+    var arrowright = "\ue7a9"
+    var arrowleft = "\ue7aa"
+    var arrowdown = "\ue7ab"
+    var left = "\ue7a6"
+    var up = "\ue7a7"
+    var right = "\ue7a8"
+    var back = "\ue7a3"
+    var top = "\ue7a4"
+    var dropdown = "\ue7a5"
+    var turningleft = "\ue79f"
+    var turningup = "\ue7a0"
+    var turningright = "\ue7a1"
+    var turningdown = "\ue7a2"
+    var refresh = "\ue79c"
+    var loading = "\ue79d"
+    var search = "\ue79e"
+    var rotate = "\ue79b"
+    var screen = "\ue79a"
+    var signin = "\ue799"
+    var calendar = "\ue798"
+    var scan = "\ue797"
+    var qrcode = "\ue796"
+    var wallet = "\ue795"
+    var telephone = "\ue794"
+    var visible = "\ue793"
+    var invisible = "\ue792"
+    var menu = "\ue78e"
+    var operate = "\ue78f"
+    var slide = "\ue790"
+    var list = "\ue791"
+    var nonetwork = "\ue78d"
+    var partake = "\ue78c"
+    var qa = "\ue78b"
+    var barchart = "\ue788"
+    var piechart = "\ue789"
+    var linechart = "\ue78a"
+    var at = "\ue787"
+    var face = "\ue77f"
+    var redpacket = "\ue780"
+    var suspend = "\ue781"
+    var link = "\ue782"
+    var keyboard = "\ue783"
+    var play = "\ue784"
+    var video = "\ue785"
+    var voice = "\ue786"
+    var sina = "\ue77a"
+    var browser = "\ue77b"
+    var moments = "\ue77c"
+    var qq = "\ue77d"
+    var wechat = "\ue77e"
+    var balance = "\ue779"
+    var bankcardpay = "\ue778"
+    var wxpay = "\ue777"
+    var alipay = "\ue776"
+    var payment = "\ue818"
+    var receive = "\ue817"
+    var sendout = "\ue816"
+    var evaluate = "\ue815"
+    var aftersale = "\ue814"
+    var warehouse = "\ue813"
+    var transport = "\ue812"
+    var delivery = "\ue811"
+    var `switch` = "\ue810"
+    var goods = "\ue80f"
+    var `goods-fill` = "\ue80e"
+}
+val GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.inject, props = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.emits, components = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.components, styles = GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon {
+    return GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon(instance)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiInputFuiInput::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.inject, props = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.emits, components = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.components, styles = GenUniModulesFirstuiUnixComponentsFuiInputFuiInput.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiInputFuiInput {
+    return GenUniModulesFirstuiUnixComponentsFuiInputFuiInput(instance)
 }
 )
 val GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass = CreateVueComponent(GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber::class.java, fun(): VueComponentOptions {
@@ -3682,6 +3939,13 @@ val GenUniModulesFirstuiUnixComponentsFuiListCellFuiListCellClass = CreateVueCom
 }
 , fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiListCellFuiListCell {
     return GenUniModulesFirstuiUnixComponentsFuiListCellFuiListCell(instance)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabelClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.inject, props = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.emits, components = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.components, styles = GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel {
+    return GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel(instance)
 }
 )
 val GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroupClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup::class.java, fun(): VueComponentOptions {
@@ -6660,6 +6924,61 @@ val GenPagesMessageMessageDetailMessageDetailClass = CreateVueComponent(GenPages
     return GenPagesMessageMessageDetailMessageDetail(instance, renderer)
 }
 )
+open class FuiCheckboxChangeParam (
+    @JsonNotNull
+    open var checked: Boolean = false,
+    @JsonNotNull
+    open var value: String,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("FuiCheckboxChangeParam", "uni_modules/firstui-unix/components/fui-types/index.uts", 68, 13)
+    }
+}
+val GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckboxClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.inject, props = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.emits, components = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.components, styles = GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox {
+    return GenUniModulesFirstuiUnixComponentsFuiCheckboxFuiCheckbox(instance)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroupClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.inject, props = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.emits, components = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.components, styles = GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup {
+    return GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup(instance)
+}
+)
+val default6 = "/static/login_banner.png"
+val GenComponentsTopNavBarClass = CreateVueComponent(GenComponentsTopNavBar::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenComponentsTopNavBar.inheritAttrs, inject = GenComponentsTopNavBar.inject, props = GenComponentsTopNavBar.props, propsNeedCastKeys = GenComponentsTopNavBar.propsNeedCastKeys, emits = GenComponentsTopNavBar.emits, components = GenComponentsTopNavBar.components, styles = GenComponentsTopNavBar.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenComponentsTopNavBar.setup(props as GenComponentsTopNavBar)
+    }
+    )
+}
+, fun(instance, renderer): GenComponentsTopNavBar {
+    return GenComponentsTopNavBar(instance)
+}
+)
+val GenPagesLoginLoginClass = CreateVueComponent(GenPagesLoginLogin::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesLoginLogin.inheritAttrs, inject = GenPagesLoginLogin.inject, props = GenPagesLoginLogin.props, propsNeedCastKeys = GenPagesLoginLogin.propsNeedCastKeys, emits = GenPagesLoginLogin.emits, components = GenPagesLoginLogin.components, styles = GenPagesLoginLogin.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesLoginLogin.setup(props as GenPagesLoginLogin)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesLoginLogin {
+    return GenPagesLoginLogin(instance, renderer)
+}
+)
+val GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass = CreateVueComponent(GenPagesMessageMessageDeviceDetailMessageDeviceDetail::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMessageMessageDeviceDetailMessageDeviceDetail.inheritAttrs, inject = GenPagesMessageMessageDeviceDetailMessageDeviceDetail.inject, props = GenPagesMessageMessageDeviceDetailMessageDeviceDetail.props, propsNeedCastKeys = GenPagesMessageMessageDeviceDetailMessageDeviceDetail.propsNeedCastKeys, emits = GenPagesMessageMessageDeviceDetailMessageDeviceDetail.emits, components = GenPagesMessageMessageDeviceDetailMessageDeviceDetail.components, styles = GenPagesMessageMessageDeviceDetailMessageDeviceDetail.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesMessageMessageDeviceDetailMessageDeviceDetail.setup(props as GenPagesMessageMessageDeviceDetailMessageDeviceDetail)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesMessageMessageDeviceDetailMessageDeviceDetail {
+    return GenPagesMessageMessageDeviceDetailMessageDeviceDetail(instance, renderer)
+}
+)
 fun createApp(): UTSJSONObject {
     val app = createSSRApp(GenAppClass)
     return UTSJSONObject(Map<String, Any?>(utsArrayOf(
@@ -6683,8 +7002,7 @@ open class UniAppConfig : io.dcloud.uniapp.appframe.AppConfig {
     constructor() : super() {}
 }
 fun definePageRoutes() {
-    __uniRoutes.push(UniPageRoute(path = "pages/login/login", component = GenPagesLoginLoginClass, meta = UniPageMeta(isQuit = true), style = utsMapOf("navigationBarTitleText" to "登陆")))
-    __uniRoutes.push(UniPageRoute(path = "pages/index/index", component = GenPagesIndexIndexClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "首页")))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/index", component = GenPagesIndexIndexClass, meta = UniPageMeta(isQuit = true), style = utsMapOf("navigationBarTitleText" to "首页")))
     __uniRoutes.push(UniPageRoute(path = "pages/message/message", component = GenPagesMessageMessageClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "消息")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/mine", component = GenPagesMineMineClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "我的")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/userInfo", component = GenPagesMineUserInfoUserInfoClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "个人信息")))
@@ -6695,15 +7013,17 @@ fun definePageRoutes() {
     __uniRoutes.push(UniPageRoute(path = "pages/mine/helpCenter/helpCenter", component = GenPagesMineHelpCenterHelpCenterClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "帮助中心")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/helpCenter/questionDetail/questionDetail", component = GenPagesMineHelpCenterQuestionDetailQuestionDetailClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "问题详情")))
     __uniRoutes.push(UniPageRoute(path = "pages/message/messageDetail/messageDetail", component = GenPagesMessageMessageDetailMessageDetailClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "消息详情")))
+    __uniRoutes.push(UniPageRoute(path = "pages/login/login", component = GenPagesLoginLoginClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationStyle" to "custom", "navigationBarTitleText" to "登陆")))
+    __uniRoutes.push(UniPageRoute(path = "pages/message/messageDeviceDetail/messageDeviceDetail", component = GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "设备信息")))
 }
 val __uniTabBar: Map<String, Any?>? = utsMapOf("list" to utsArrayOf(
     utsMapOf("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),
     utsMapOf("pagePath" to "pages/message/message", "iconPath" to "./static/tabbar/message.png", "selectedIconPath" to "./static/tabbar/message1.png", "text" to "消息"),
     utsMapOf("pagePath" to "pages/mine/mine", "iconPath" to "./static/tabbar/userCenter.png", "selectedIconPath" to "./static/tabbar/userCenter1.png", "text" to "我的")
 ))
-val __uniLaunchPage: Map<String, Any?> = utsMapOf("url" to "pages/login/login", "style" to utsMapOf("navigationBarTitleText" to "登陆"))
+val __uniLaunchPage: Map<String, Any?> = utsMapOf("url" to "pages/index/index", "style" to utsMapOf("navigationBarTitleText" to "首页"))
 fun defineAppConfig() {
-    __uniConfig.entryPagePath = "/pages/login/login"
+    __uniConfig.entryPagePath = "/pages/index/index"
     __uniConfig.globalStyle = utsMapOf("navigationBarTextStyle" to "black", "navigationBarTitleText" to "uniappX", "navigationBarBackgroundColor" to "#F8F8F8", "backgroundColor" to "#F8F8F8")
     __uniConfig.getTabBarConfig = fun(): Map<String, Any>? {
         return utsMapOf("list" to utsArrayOf(

@@ -22,7 +22,6 @@ export class UniAppConfig extends io.dcloud.uniapp.appframe.AppConfig {
     constructor() { super() }
 }
 
-import GenPagesLoginLoginClass from './pages/login/login.uvue?type=page'
 import GenPagesIndexIndexClass from './pages/index/index.uvue?type=page'
 import GenPagesMessageMessageClass from './pages/message/message.uvue?type=page'
 import GenPagesMineMineClass from './pages/mine/mine.uvue?type=page'
@@ -34,9 +33,10 @@ import GenPagesMineRechargeDataTrafficRechargeDataTrafficClass from './pages/min
 import GenPagesMineHelpCenterHelpCenterClass from './pages/mine/helpCenter/helpCenter.uvue?type=page'
 import GenPagesMineHelpCenterQuestionDetailQuestionDetailClass from './pages/mine/helpCenter/questionDetail/questionDetail.uvue?type=page'
 import GenPagesMessageMessageDetailMessageDetailClass from './pages/message/messageDetail/messageDetail.uvue?type=page'
+import GenPagesLoginLoginClass from './pages/login/login.uvue?type=page'
+import GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass from './pages/message/messageDeviceDetail/messageDeviceDetail.uvue?type=page'
 function definePageRoutes() {
-__uniRoutes.push({ path: "pages/login/login", component: GenPagesLoginLoginClass, meta: { isQuit: true } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","登陆"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/index/index", component: GenPagesIndexIndexClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","首页"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/index", component: GenPagesIndexIndexClass, meta: { isQuit: true } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","首页"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/message/message", component: GenPagesMessageMessageClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","消息"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/mine/mine", component: GenPagesMineMineClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","我的"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/mine/userInfo/userInfo", component: GenPagesMineUserInfoUserInfoClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","个人信息"]]) } as UniPageRoute)
@@ -47,11 +47,13 @@ __uniRoutes.push({ path: "pages/mine/rechargeDataTraffic/rechargeDataTraffic", c
 __uniRoutes.push({ path: "pages/mine/helpCenter/helpCenter", component: GenPagesMineHelpCenterHelpCenterClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","帮助中心"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/mine/helpCenter/questionDetail/questionDetail", component: GenPagesMineHelpCenterQuestionDetailQuestionDetailClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","问题详情"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/message/messageDetail/messageDetail", component: GenPagesMessageMessageDetailMessageDetailClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","消息详情"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/login/login", component: GenPagesLoginLoginClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationStyle","custom"],["navigationBarTitleText","登陆"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/message/messageDeviceDetail/messageDeviceDetail", component: GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","设备信息"]]) } as UniPageRoute)
 }
 const __uniTabBar: Map<string, any | null> | null = utsMapOf([["list",[utsMapOf([["pagePath","pages/index/index"],["iconPath","./static/tabbar/home.png"],["selectedIconPath","./static/tabbar/home1.png"],["text","首页"]]),utsMapOf([["pagePath","pages/message/message"],["iconPath","./static/tabbar/message.png"],["selectedIconPath","./static/tabbar/message1.png"],["text","消息"]]),utsMapOf([["pagePath","pages/mine/mine"],["iconPath","./static/tabbar/userCenter.png"],["selectedIconPath","./static/tabbar/userCenter1.png"],["text","我的"]])]]])
-const __uniLaunchPage: Map<string, any | null> = utsMapOf([["url","pages/login/login"],["style",utsMapOf([["navigationBarTitleText","登陆"]])]])
+const __uniLaunchPage: Map<string, any | null> = utsMapOf([["url","pages/index/index"],["style",utsMapOf([["navigationBarTitleText","首页"]])]])
 function defineAppConfig(){
-  __uniConfig.entryPagePath = '/pages/login/login'
+  __uniConfig.entryPagePath = '/pages/index/index'
   __uniConfig.globalStyle = utsMapOf([["navigationBarTextStyle","black"],["navigationBarTitleText","uniappX"],["navigationBarBackgroundColor","#F8F8F8"],["backgroundColor","#F8F8F8"]])
   __uniConfig.getTabBarConfig = ():Map<string, any> | null =>  utsMapOf([["list",[utsMapOf([["pagePath","pages/index/index"],["iconPath","./static/tabbar/home.png"],["selectedIconPath","./static/tabbar/home1.png"],["text","首页"]]),utsMapOf([["pagePath","pages/message/message"],["iconPath","./static/tabbar/message.png"],["selectedIconPath","./static/tabbar/message1.png"],["text","消息"]]),utsMapOf([["pagePath","pages/mine/mine"],["iconPath","./static/tabbar/userCenter.png"],["selectedIconPath","./static/tabbar/userCenter1.png"],["text","我的"]])]]])
   __uniConfig.tabBar = __uniConfig.getTabBarConfig()

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "设备信息",
+  "usingComponents": {
+    "l-daily-punch": "../../../uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch"
+  }
+}

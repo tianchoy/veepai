@@ -1,26 +1,26 @@
 <template>
 	<view class="custom-nav">
-		<view v-if="props.showBack" class="nav-back" @click="goBack">
-			<image class="nav-icon" @click="goBack" src="/static/tabbar/back.png"/>
+		<view class="nav-back" @click="goBack">
+			<image v-if="props.showBack" class="nav-icon" @click="goBack" src="/static/tabbar/back.png"/>
 		</view>
 		<view class="nav-item">
-			<text class="nav-title" :style="item.isCurrent ? 'font-size:40rpx; font-weight:900' : ''" v-for="(item,index) in props.title" :key="index" @click="changeNav(item)">
-				{{ item.name }}
+			<text class="nav-title" >
+				{{ props.title }}
 			</text>
 		</view>
-		<view class="nav-actions">
-			<image class="nav-icon" @click="onAdd" src="/static/tabbar/add.png"/>
+		<view class="nav-actions"  @click="onAdd">
+			{{props.rightText}}
+			<!-- <image class="nav-icon" @click="onAdd" src="/static/tabbar/add.png"/> -->
 		</view>
 	</view>
 </template>
 
 <script setup lang="uts">
-	import { NavTitleItem } from '../types/NavTitleItem.uts'
 
 	const props = defineProps({
 		title: {
-			type: Array as PropType<NavTitleItem[]>,
-			default: () => []
+			type: String,
+			default:'首页'
 		},
 		showBack: {
 			type: Boolean,
@@ -29,6 +29,10 @@
 		messageCount: {
 			type: Number,
 			default: 0
+		},
+		rightText:{
+			type:String,
+			default:''
 		}
 	})
 
@@ -40,13 +44,6 @@
 	const onMessage = () => emits('message')
 	const onAdd = () => emits('add')
 	
-	// 使用类型别名
-	const changeNav = (item: NavTitleItem) => {
-		console.log(item.isCurrent)
-		uni.redirectTo({
-			url: item.url
-		})
-	}
 </script>
 
 <style scoped lang="scss">
@@ -57,7 +54,12 @@
 		justify-content: space-between;
 		padding: 30rpx 25rpx;
 		background-color: #fff;
+		margin-top: 50rpx;
+		width:100%;
+		// #ifdef MP-WEIXIN
+		width: 70%;
 		margin-top: 60rpx;
+		// #endif
 	}
 
 	.nav-back {

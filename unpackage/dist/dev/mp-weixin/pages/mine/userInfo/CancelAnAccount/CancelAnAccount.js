@@ -21,7 +21,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
     };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: common_assets._imports_0$4,
+        a: common_assets._imports_0$3,
         b: common_vendor.p({
           text: "取消",
           background: "#fff",

@@ -1,0 +1,215 @@
+<template>
+	<scroll-view 
+		class="l-date-strip l-date-strip__scroll"
+		:scroll-x="true"
+		:scroll-left="scrollLeft"
+		:show-scrollbar="false"
+		direction="horizontal"
+		:style="[styles]"
+		v-if="switchMode == 'none'">
+			<l-date-strip-item 
+				:dates="displayWeeks[0].dates" 
+				:color="color"
+				:activeBgColor="activeBgColor"
+				:activeColor="activeColor"
+				:bgColor="bgColor"
+				:radius="radius"
+				:switchMode="switchMode"
+				:shape="shape"
+				@click="onClick">
+			</l-date-strip-item>
+	</scroll-view>
+	<swiper 
+		v-else
+		class="l-date-strip" 
+		:style="[styles]"
+		:current="currentWeekIndex" 
+		:circular="swiperCircular" 
+		@animationfinish="swiperFinish" 
+		@change="swiperChange">
+		<swiper-item v-for="(week, g) in displayWeeks" :key="g">
+			<l-date-strip-item 
+				:dates="week.dates" 
+				:color="color"
+				:activeBgColor="activeBgColor"
+				:activeColor="activeColor"
+				:bgColor="bgColor"
+				:radius="radius"
+				:switchMode="switchMode"
+				:shape="shape"
+				@click="onClick">
+			</l-date-strip-item>
+		</swiper-item>
+	</swiper>
+</template>
+<script lang="ts">
+	// @ts-nocheck
+	import { defineComponent, ref, computed, watchEffect, onMounted, nextTick  } from '@/uni_modules/lime-shared/vue';
+	import dateStripProps from './props';
+	import { WeekDateCollection, DateStriPDay, DateType } from './type';
+	import { unitConvert } from '@/uni_modules/lime-shared/unitConvert'
+	import { getWeekRange, addDays, addWeeks, calcType, daysBetween } from './utils';
+	
+	export default defineComponent({
+		props: dateStripProps,
+		emits: ['change', 'select', 'scroll', 'panelChange', 'update:modelValue', 'input'],
+		setup(props, {emit, expose}) {
+			// 当前选中的周索引
+			const currentWeekIndex = ref(0)
+			const scrollLeft = ref(0)
+			// 是否循环滚动
+			const swiperCircular = ref(true);
+			const selectedDate = ref<Date|null>(null);
+			// 计算一周的星期顺序
+			const firstDayOfWeek = computed(() : number => Math.min(Math.max(props.firstDayOfWeek, 0), 6));
+			
+			// 计算最小和最大日期
+			const today = new Date();
+			const minDate = computed(() : Date => (props.minDate != null ? new Date(props.minDate!) : today));
+			const maxDate = computed(() : Date => (props.maxDate != null
+				? new Date(props.maxDate!)
+				: addDays(today, 31))
+			);
+			
+			const days = computed(():number => {
+				return daysBetween(maxDate.value, minDate.value)
+			})
+			
+			const styles = computed(()=>{
+				const style:Record<string, any> = {}
+				
+				if(props.height) {
+					style['height'] = props.height
+				}
+				if(props.bgColor) {
+					style['background'] = props.bgColor
+				}
+				return style
+			})
+			
+			const cache = new Map<number, WeekDateCollection>();
+			const createWeek = (currentStartDate: Date, length: number):WeekDateCollection => {
+				const dates : DateStriPDay[] = [];
+				const time = currentStartDate.getTime()
+				if(cache.has(time)) {
+					return cache.get(time)!
+				}
+				for (let i = 0; i < length; i++) {
+					const date = new Date(time);
+					date.setDate(currentStartDate.getDate() + i);
+					const week = date.getDay();
+					const year = date.getFullYear();
+					const month = date.getMonth() + 1; 
+					const day =  date.getDate()
+					const dateObj:DateStriPDay = {
+						key: `${year}-${month}-${day}`,
+						date,
+						year,
+						month,
+						day,
+						text: `${day}`.padStart(2, '0'),
+						type: calcType(date, minDate.value, maxDate.value, selectedDate.value),
+						prefix: props.weekdays[week],
+					}
+					dates.push(props.format != null ? props.format!(dateObj) : dateObj);
+				}
+				const obj:WeekDateCollection = {
+					start: new Date(dates[0].year, dates[0].month - 1, dates[0].day).getTime(),
+					end: new Date(dates[length - 1].year, dates[length - 1].month - 1, dates[length - 1].day).getTime(),
+					dates
+				} as WeekDateCollection
+				
+				// cache.set(time, obj)
+				
+				return obj
+			}
+			
+			const currentDate = ref<Date>(today)
+			
+			// 计算要显示的三周数据
+			const displayWeeks = computed(() : WeekDateCollection[] => {
+				const weeks: WeekDateCollection[] = [];
+				if(props.switchMode == 'week') {
+					const currentRange = getWeekRange(currentDate.value, firstDayOfWeek.value);
+					const offsetMap = new Map<number, number[]>([
+						[0, [0, 1, -1]],
+						[1, [-1, 0, 1]],
+						[2, [1, -1, 0]],
+					])
+					let indices = offsetMap.get(currentWeekIndex.value)!
+					indices.forEach(i => {
+						 const weekDate = addWeeks(currentRange.start, i);
+						 weeks.push(createWeek(weekDate, 7)) 
+					})
+				} else {
+					 weeks.push(createWeek(minDate.value, days.value)) 
+				}
+				
+				return weeks
+			})
+			
+			const swiperChange = (event : UniSwiperChangeEvent) => {
+				const delta = event.detail.current - currentWeekIndex.value;
+				const newDate = addWeeks(currentDate.value, delta == 1 || delta == -2 ? 1 : -1);
+				currentDate.value = newDate;
+				currentWeekIndex.value = event.detail.current;
+			}
+			const swiperFinish = (_event : UniSwiperAnimationFinishEvent) => {
+				
+			}
+			
+			const onClick = (day: DateStriPDay) => {
+				if(day.type == 'disabled') return
+				selectedDate.value = day.date
+				const v = day.date.getTime()
+				emit('change', v)
+				emit('select', v)
+				emit('update:modelValue', v)
+				// #ifdef VUE2
+				emit('input', v)
+				// #endif
+			}
+			
+			
+			const scrollToDate = (date: Date) => {
+				currentDate.value = date
+				if(props.switchMode != 'none') return
+				scrollLeft.value = unitConvert(props.gridWidth || 50)  *  daysBetween(date, minDate.value)
+			}
+			
+			watchEffect(()=>{
+				const value = props.value || props.modelValue
+				if(!value) return
+				selectedDate.value = new Date(value)
+			})
+			
+			onMounted(()=>{
+				nextTick(()=>{
+					scrollToDate(currentDate.value)
+				})
+			})
+			
+			// #ifdef VUE3
+			expose({
+				scrollToDate
+			})
+			// #endif
+			return {
+				styles,
+				scrollLeft,
+				currentWeekIndex,
+				swiperCircular,
+				swiperFinish,
+				swiperChange,
+				displayWeeks,
+				onClick,
+				// #ifdef VUE2
+				scrollToDate
+				// #endif
+			}
+		}
+	})
+</script>
+<style lang="scss">
+	@import './index';
+</style>

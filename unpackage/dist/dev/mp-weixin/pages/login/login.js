@@ -19,8 +19,9 @@ const _easycom_fui_label = () => "../../uni_modules/firstui-unix/components/fui-
 const _easycom_fui_checkbox_group = () => "../../uni_modules/firstui-unix/components/fui-checkbox-group/fui-checkbox-group.js";
 const _easycom_fui_bottom_popup = () => "../../uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.js";
 if (!Math) {
-  (_easycom_fui_icon + _easycom_fui_input + _easycom_fui_button + _easycom_fui_checkbox + _easycom_fui_label + _easycom_fui_checkbox_group + _easycom_fui_bottom_popup)();
+  (common_vendor.unref(TopNavBar) + _easycom_fui_icon + _easycom_fui_input + _easycom_fui_button + _easycom_fui_checkbox + _easycom_fui_label + _easycom_fui_checkbox_group + _easycom_fui_bottom_popup)();
 }
+const TopNavBar = () => "../../components/TopNavBar.js";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
   __name: "login",
   setup(__props) {
@@ -70,7 +71,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
     const getPsw = () => {
       if (isCounting.value)
         return null;
-      common_vendor.index.__f__("log", "at pages/login/login.uvue:144", "发送验证码请求...");
+      common_vendor.index.__f__("log", "at pages/login/login.uvue:146", "发送验证码请求...");
       isCounting.value = true;
       countDown(90);
     };
@@ -89,27 +90,31 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
     };
     return (_ctx = null, _cache = null) => {
       const __returned__ = common_vendor.e(new UTSJSONObject({
-        a: common_assets._imports_0,
-        b: loginType.value
+        a: common_vendor.p(new UTSJSONObject({
+          title: "登陆",
+          rightText: "注册"
+        })),
+        b: common_assets._imports_0$4,
+        c: loginType.value
       }), loginType.value ? new UTSJSONObject({
-        c: common_vendor.p(new UTSJSONObject({
+        d: common_vendor.p(new UTSJSONObject({
           name: "mobile",
           color: "#1296db",
           size: 48
         })),
-        d: common_vendor.p(new UTSJSONObject({
+        e: common_vendor.p(new UTSJSONObject({
           ["placeholder-style"]: "color:#000",
           backgroundColor: "#d3a0fa",
           radius: 40,
           borderBottom: false,
           placeholder: "请输入账号"
         })),
-        e: common_vendor.p(new UTSJSONObject({
+        f: common_vendor.p(new UTSJSONObject({
           name: "captcha",
           color: "#1296db",
           size: 48
         })),
-        f: common_vendor.p(new UTSJSONObject({
+        g: common_vendor.p(new UTSJSONObject({
           ["placeholder-style"]: "color:#000",
           backgroundColor: "#d3a0fa",
           marginTop: 40,
@@ -118,29 +123,29 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
           placeholder: "请输入密码",
           type: "password"
         })),
-        g: common_vendor.o(($event = null) => {
+        h: common_vendor.o(($event = null) => {
           return changeType(false);
         })
       }) : new UTSJSONObject({
-        h: common_vendor.p(new UTSJSONObject({
+        i: common_vendor.p(new UTSJSONObject({
           name: "mobile",
           color: "#1296db",
           size: 48
         })),
-        i: common_vendor.p(new UTSJSONObject({
+        j: common_vendor.p(new UTSJSONObject({
           ["placeholder-style"]: "color:#000",
           backgroundColor: "#d3a0fa",
           radius: 40,
           borderBottom: false,
           placeholder: "请输入账号"
         })),
-        j: common_vendor.p(new UTSJSONObject({
+        k: common_vendor.p(new UTSJSONObject({
           name: "captcha",
           color: "#1296db",
           size: 48
         })),
-        k: common_vendor.o(getPsw),
-        l: common_vendor.p(new UTSJSONObject({
+        l: common_vendor.o(getPsw),
+        m: common_vendor.p(new UTSJSONObject({
           width: "200rpx",
           height: "64rpx",
           size: 28,
@@ -149,7 +154,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
           color: "#333",
           disabled: isCounting.value
         })),
-        m: common_vendor.p(new UTSJSONObject({
+        n: common_vendor.p(new UTSJSONObject({
           padding: "20rpx 32rpx",
           backgroundColor: "#d3a0fa",
           placeholder: "请输入验证码",
@@ -160,39 +165,39 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
           ["placeholder-style"]: "color:#000",
           borderBottom: false
         })),
-        n: common_vendor.o(($event = null) => {
+        o: common_vendor.o(($event = null) => {
           return changeType(true);
         })
       }), new UTSJSONObject({
-        o: common_vendor.p(new UTSJSONObject({
+        p: common_vendor.p(new UTSJSONObject({
           value: "1"
         })),
-        p: common_vendor.o(showUserInfo),
-        q: common_vendor.o(priviteInfo),
-        r: common_vendor.o(isChecked),
-        s: common_vendor.p(new UTSJSONObject({
+        q: common_vendor.o(showUserInfo),
+        r: common_vendor.o(priviteInfo),
+        s: common_vendor.o(isChecked),
+        t: common_vendor.p(new UTSJSONObject({
           name: "checkbox"
         })),
-        t: common_vendor.o(login),
-        v: common_vendor.p(new UTSJSONObject({
+        v: common_vendor.o(login),
+        w: common_vendor.p(new UTSJSONObject({
           text: "登录",
           margin: "20rpx 0 0 0",
           background: "#1296db",
           color: "#fff",
           size: 40
         })),
-        w: common_vendor.t(user_text.value.title),
-        x: common_vendor.p(new UTSJSONObject({
+        x: common_vendor.t(user_text.value.title),
+        y: common_vendor.p(new UTSJSONObject({
           name: "close",
           size: 48
         })),
-        y: common_vendor.o(closeUserPopup),
-        z: common_vendor.t(user_text.value.content),
-        A: common_vendor.o(closeUserPopup),
-        B: common_vendor.p(new UTSJSONObject({
+        z: common_vendor.o(closeUserPopup),
+        A: common_vendor.t(user_text.value.content),
+        B: common_vendor.o(closeUserPopup),
+        C: common_vendor.p(new UTSJSONObject({
           visible: user_info.value
         })),
-        C: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        D: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       }));
       return __returned__;
     };
