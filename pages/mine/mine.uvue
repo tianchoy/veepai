@@ -9,7 +9,7 @@
 				<image class="fileIcon" src="/static/mine/cloud.png" mode="aspectFit"></image>
 				<text class="file-text">永久备份</text>
 			</view>
-			<view class="file">
+			<view class="file" @click="msgCenter">
 				<image class="fileIcon" src="/static/mine/msgList.png" mode="aspectFit"></image>
 				<text class="file-text">消息列表</text>
 			</view>
@@ -33,7 +33,7 @@
 					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
 				</view>
 			</view>
-			<view class="item">
+			<view class="item" @click="myorders">
 				<view class="info">
 					<image class="item-icon" src="/static/mine/order.png" mode="aspectFit"></image>
 					<text class="item-text">我的订单</text>
@@ -60,7 +60,7 @@
 					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
 				</view>
 			</view>
-			<view class="item">
+			<view class="item" @click="feedback">
 				<view class="info">
 					<image class="item-icon" src="/static/mine/advice.png" mode="aspectFit"></image>
 					<text class="item-text">意见反馈</text>
@@ -105,9 +105,28 @@
 		})
 	}
 	
+	const myorders = () => {
+		uni.navigateTo({
+			url: '/pages/mine/myOrders/myOrders'
+		})
+
+	}
+	
 	const helpCenter = () => {
 		uni.navigateTo({
 			url: '/pages/mine/helpCenter/helpCenter'
+		})
+	}
+
+	const msgCenter = () => {
+		uni.switchTab({
+			url: '/pages/message/message'
+		})
+	}
+
+	const feedback = () => {
+		uni.navigateTo({
+			url: '/pages/mine/feeback/feeback'
 		})
 	}
 

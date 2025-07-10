@@ -1,0 +1,319 @@
+<template>
+	<view 
+		class="l-textarea" 
+		ref="textareaRef"
+		:style="[styles, lStyle]"
+		:class="[
+			'l-textarea--' + layout,
+			// classic ? 'l-textarea--classic-' + status : '',
+			{
+				'l-textarea--classic': classic,
+				'l-textarea--classic-disabled':  classic && isDisabled,
+				'l-textarea--classic-focused':  classic && !isDisabled && innerFocused,
+				'l-textarea--border': bordered && !classic
+			}]">
+		<text 
+			class="l-textarea__label" 
+			:style="[labelStyle]"
+			:class="[
+				'l-textarea__label--' + layout,
+			]"
+			v-if="label != null || $slots['label'] != null">
+			<slot>{{label}}</slot>
+		</text>
+		<view class="l-textarea__wrapper">
+			<!-- #ifdef  APP-IOS || APP-ANDROID || WEB || APP-HARMONY -->
+			<textarea 
+				class="l-textarea__wrapper-inner"
+				:style="[innerStyle]"
+				:class="{'is-disabled': isDisabled}"
+				:maxlength="maxlength"
+				:disabled="isDisabled || isReadonly"
+				:placeholder="placeholder"
+				placeholder-class="l-textarea__placeholder"
+				:placeholder-style="placeholderStyle"
+				:value="innerValue"
+				:auto-height="autosize"
+				:auto-focus="autofocus"
+				:fixed="fixed"
+				:focus="focus"
+				:cursor="cursor"
+				:cursor-spacing="cursorSpacing"
+				:adjust-position="adjustPosition"
+				:confirm-type="confirmType"
+				:confirm-hold="confirmHold"
+				:disable-default-padding="disableDefaultPadding"
+				:show-confirm-bar="showConfirmBar"
+				:selection-start="selectionStart"
+				:selection-end="selectionEnd"
+				:hold-keyboard="holdKeyboard"
+				@input="onInput"
+				@focus="onFocus"
+				@blur="onBlur"
+				@confirm="onConfirm"
+				@linechange="onLineChange"
+				@keyboardheightchange="onKeyboardHeightChange">
+			</textarea>
+			<!--  #endif -->
+			<!-- #ifndef  APP-IOS || APP-ANDROID || WEB || APP-HARMONY -->
+			<textarea 
+				class="l-textarea__wrapper-inner"
+				:style="[innerStyle]"
+				:class="{'is-disabled': isDisabled}"
+				:maxlength="maxlength"
+				:disabled="isDisabled || isReadonly"
+				:value="innerValue"
+				:auto-height="autosize"
+				:auto-focus="autofocus"
+				:fixed="fixed"
+				:focus="focus"
+				:cursor="cursor"
+				:cursor-spacing="cursorSpacing"
+				:adjust-position="adjustPosition"
+				:confirm-type="confirmType"
+				:confirm-hold="confirmHold"
+				:disable-default-padding="disableDefaultPadding"
+				:show-confirm-bar="showConfirmBar"
+				:selection-start="selectionStart"
+				:selection-end="selectionEnd"
+				:hold-keyboard="holdKeyboard"
+				@input="onInput"
+				@focus="onFocus"
+				@blur="onBlur"
+				@confirm="onConfirm"
+				@linechange="onLineChange"
+				@keyboardheightchange="onKeyboardHeightChange">
+			</textarea>
+			<!-- 微信小程序 placeholder 不支持line-height 导致无法对齐，使用text模拟 -->
+			<text class="l-textarea__placeholder" :style="placeholderStyle" v-if="innerValue.length == 0">{{placeholder}}</text>
+			<!--  #endif -->
+			
+			<text class="l-textarea__indicator" :style="[indicatorStyle]" v-if="indicator && ((maxcharacter ?? maxlength) > 0 )">{{count}} / {{maxcharacter ?? maxlength}}</text>
+		</view>
+	</view>
+</template>
+<script lang="uts" setup>
+	/**
+	 * Textarea 多行输入框组件
+	 * @description 用于多行文本输入场景，支持自适应高度和多种键盘控制选项
+	 * <br>插件类型：LTextareaComponentPublicInstance 
+	 * @tutorial https://ext.dcloud.net.cn/plugin?name=lime-textarea
+	 * 
+	 * @property {boolean} adjustPosition 键盘弹起自动上推页面（默认：true）
+	 * @property {boolean} autofocus 自动聚焦（默认：false）
+	 * @property {boolean} autosize 自动调整高度（默认：false）
+	 * @property {boolean} bordered 显示外边框（默认：true）
+	 * @property {boolean} confirmHold 点击确认保持键盘不收起（默认：false）
+	 * @property {'return' | 'send' | 'search' | 'next' | 'go' | 'done'} confirmType 键盘确认按钮类型（默认："done"）
+	 * @value return
+	 * @value send
+	 * @value search
+	 * @value next
+	 * @value go
+	 * @value done
+	 * @property {number} cursor 聚焦时初始光标位置
+	 * @property {number} cursorSpacing 键盘与输入框间距（单位px，默认：0）
+	 * @property {boolean} disableDefaultPadding 禁用iOS默认内边距（默认：false）
+	 * @property {boolean} disabled 禁用状态（默认：false）
+	 * @property {boolean} readonly 只读（默认：false）
+	 * @property {boolean} classic 经典边框（默认：false）
+	 * @property {boolean} fixed 在fixed定位区域使用（默认：false）
+	 * @property {boolean} defaultFixed 默认fixed模式（兼容旧版）
+	 * @property {boolean} focus 自动聚焦（默认：false）
+	 * @property {boolean} focused 是否显示获焦样式，用于结合自定义键盘使用时显示高亮效果
+	 * @property {boolean} holdKeyboard 点击页面不收起键盘（默认：false）
+	 * @property {boolean} indicator 显示字数统计（默认：false）
+	 * @property {string} label 左侧标签文本
+	 * @property {number} maxcharacter 最大字符长度（中文算2个）
+	 * @property {number} maxlength 最大输入长度（默认：-1不限制）
+	 * @property {string} placeholder 占位文字
+	 * @property {number} selectionEnd 光标结束位置（需搭配selectionStart）
+	 * @property {number} selectionStart 光标起始位置（需搭配selectionEnd）
+	 * @property {boolean} showConfirmBar 显示键盘完成栏（默认：true）
+	 * @property {string} value 输入值（支持v-model）
+	 * @property {'vertical' | 'horizontal'} layout 标签布局方式（默认："horizontal"）
+	 * @value vertical
+	 * @value horizontal
+	 * @property {string} placeholderStyle 占位文字样式（仅支持color/font-size/font-weight）
+	 * @property {string} lStyle 自定义组件样式（CSS字符串）
+	 * @property {string} labelStyle 标签样式（CSS字符串）
+	 * @property {string} indicatorStyle 字数统计样式（CSS字符串）
+	 * @property {string} innerStyle 输入区域样式（CSS字符串）
+	 * @property {string} borderColor 边框颜色
+	 * @property {string} focusedBorderColor 聚焦时边框颜色
+	 * @event {Function} focus 聚焦时触发
+	 * @event {Function} blur 失焦时触发
+	 * @event {Function} confirm 点击完成按钮触发
+	 * @event {Function} linechange 行数变化时触发
+	 * @event {Function} change 
+	 * @event {Function} keyboardheightchange 
+	 */
+
+
+	import { TextareaProps } from './type';
+	import { characterLimit, type CharacterLengthResult } from '@/uni_modules/lime-shared/characterLimit';
+	
+	// #ifdef APP
+	import { useDrawBorder, DrawBorderOptions } from '@/uni_modules/lime-style/hairline'
+	// #endif
+	
+	const emit = defineEmits(['change', 'focus', 'blur', 'confirm', 'linechange', 'keyboardheightchange'])
+	const props = withDefaults(defineProps<TextareaProps>(), {
+		adjustPosition: true,
+		autofocus: false,
+		autosize: false,
+		bordered: true,
+		confirmHold: false,
+		confirmType: 'return',
+		cursor: -1,
+		cursorSpacing: 0,
+		disableDefaultPadding: false,
+		disabled: false,
+		fixed: false,
+		defaultFixed: false,
+		focus: false,
+		holdKeyboard: false,
+		indicator: false,
+		maxlength: -1,
+		placeholder: '',
+		placeholderStyle: '',
+		selectionEnd:-1,
+		selectionStart:-1,
+		showConfirmBar: true,
+		layout: 'horizontal',
+		classic: false,
+		readonly: false,
+		focused: false
+	})
+	
+	const formItemBlur = inject<(() => void)|null>('formItemBlur', null);
+	const formDisabled = inject<Ref<boolean|null>|null>('formDisabled', null)
+	const formReadonly = inject<Ref<boolean|null>|null>('formReadonly', null)
+	
+	const count = ref(0);
+	const innerFocused = ref(props.focus || props.focused);
+	
+	const calculateValue = (value: string):CharacterLengthResult => {
+		const { maxlength, maxcharacter } = props;
+		if(maxcharacter != null && maxcharacter > 0) {
+			return characterLimit('maxcharacter', value, maxcharacter)
+		} else if(maxlength > 0) {
+			return characterLimit('maxlength', value, maxlength)
+		}
+		return {
+			characters: value,
+			length: value.length
+		} as CharacterLengthResult
+	}
+	let _innerValue = ''
+	const modelValue = defineModel({type: String, default: ''})
+	const innerValue = computed({
+		set(v: string) {
+			_innerValue = v;
+			modelValue.value = v;
+			emit('change', v)
+		},
+		get():string {
+			const _value = props.value ?? modelValue.value
+			if(_innerValue != _value) {
+				const {characters, length} = calculateValue(props.value ?? modelValue.value);
+				count.value = length;
+				return characters
+			}
+			return _value
+		},
+	} as WritableComputedOptions<string>)
+	
+	const isReadonly= computed(():boolean=>{
+		if (props.readonly) return props.readonly;
+		return formReadonly?.value ?? false;
+	})
+	const isDisabled= computed(():boolean=>{
+		if (props.disabled) return props.disabled;
+		return formDisabled?.value ?? false;
+	})
+	
+	
+	const styles = computed(():Map<string, string>=> {
+		const style = new Map<string, string>()
+		// #ifndef APP
+		if(props.borderColor) {
+			style.set('--l-textarea-border-color', props.borderColor)
+		}
+		if(props.focusedBorderColor) {
+			style.set('--l-textarea-focused-border-color', props.focusedBorderColor)
+		}
+		// #endif
+		return style
+	})
+	
+	const onInput = (event: UniInputEvent) => {
+		let { value, cursor } = event.detail;
+		const {characters, length} = calculateValue(value);
+		count.value = length;
+		innerValue.value = characters;
+	}
+	const onFocus = (event: UniTextareaFocusEvent) => {
+		innerFocused.value = true;
+		emit('focus', event)
+	}
+	const onBlur = (event: UniTextareaBlurEvent) => {
+		innerFocused.value = false;
+		emit('blur', event)
+		formItemBlur?.()
+	}
+	const onConfirm = (event: UniInputConfirmEvent) => {
+		emit('confirm', event)
+	}
+	const onLineChange = (event: UniTextareaLineChangeEvent) => {
+		emit('linechange', event)
+	}
+	const onKeyboardHeightChange = (event: UniInputKeyboardHeightChangeEvent) => {
+		emit('keyboardheightchange', event)
+	}
+	
+	watchEffect(()=> {
+		innerFocused.value = props.focus || props.focused;
+	})
+	
+	
+	// #ifdef APP-ANDROID || APP-IOS
+	const textareaRef = ref<UniElement|null>(null);
+	const { clearBorder, color, renderBorder } = useDrawBorder(textareaRef, 
+		{  
+			direction: 'bottom',
+			watchSize: true,
+			startOffset: 16,
+			immediate: false,
+			color: props.borderColor 
+		} as DrawBorderOptions)
+		
+	onMounted(()=>{
+		watchEffect(()=>{
+			
+			if(!props.classic) {
+				if(props.borderColor != null && !innerFocused.value) {
+					textareaRef.value?.style.setProperty('border-color', props.borderColor)
+				}
+				if(props.focusedBorderColor != null && innerFocused.value) {
+					textareaRef.value?.style.setProperty('border-color', props.focusedBorderColor)
+				}
+			}
+			
+			
+			if(!props.bordered || props.classic) {
+				clearBorder()
+				return
+			}
+			if(props.borderColor != null && !innerFocused.value) {
+				color.value = props.borderColor!
+			}
+			renderBorder()
+		})
+	})
+	// #endif
+	
+</script>
+<style lang="scss">
+	@import './index';
+</style>

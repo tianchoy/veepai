@@ -5,7 +5,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
   setup(__props) {
     common_vendor.ref("消息详情");
     common_vendor.onLoad((options) => {
-      common_vendor.index.__f__("log", "at pages/message/messageDetail/messageDetail.uvue:18", options.id);
+      common_vendor.index.__f__("log", "at pages/message/messageDetail/messageDetail.uvue:17", options.id);
     });
     return (_ctx = null, _cache = null) => {
       const __returned__ = {

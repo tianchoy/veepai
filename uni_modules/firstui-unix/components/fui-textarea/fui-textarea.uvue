@@ -456,7 +456,7 @@
 	}
 
 	.fui-textarea__border-top {
-		border-top-width: $fui-input-border-width;
+		// border-top-width: $fui-input-border-width;
 		border-top-style: solid;
 	}
 
@@ -465,7 +465,7 @@
 	}
 
 	.fui-textarea__border-bottom {
-		border-bottom-width: $fui-input-border-width;
+		// border-bottom-width: $fui-input-border-width;
 		border-bottom-style: solid;
 	}
 

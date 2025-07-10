@@ -1,0 +1,418 @@
+<template>
+	<view class="l-upload" ref="uploadRef" :style="styles">
+		<view class="l-upload__item" v-for="(file, index) in customFiles" :style="[itemStyle]" :key="file.url">
+			<!-- #ifndef APP || WEB -->
+			<view class="l-upload__item-inner" :style="[innerStyle]">
+			<!-- #endif -->
+				<slot name="file" :file="file" :index="index">
+					<image class="l-upload__image" v-if="file.type == 'image'" :src="file.url" :data-file="file"
+						:mode="imageFit" @click="onProofTap(index)" />
+					<video class="l-upload__image" v-if="file.type == 'video'" :src="file.url" :data-file="file"
+						:autoplay="false" objectFit="contain" @click="onFileClick(index)" />
+					<view class="l-upload__progress-mask" v-if="file.status != null && file.status != 'done'"
+						:data-file="file" @click="onFileClick(index)">
+						<template v-if="file.status == 'loading'">
+							<l-loading class="l-upload__progress-loading" size="24px" color="white" />
+							<text class="l-upload__progress-text" v-if="file.percent != null">{{file.percent}}%</text>
+							<text class="l-upload__progress-text" v-else>{{loadingText}}</text>
+						</template>
+						<l-icon v-else class="l-upload__progress-icon"
+							:name="file.status == 'reload' ? 'refresh' : 'close-circle'" size="48rpx" aria-hidden />
+						<text v-if="file.status == 'reload' || file.status == 'failed'" class="l-upload__progress-text">
+							{{file.status == 'reload' ? reloadText : failedText}}
+						</text>
+					</view>
+					<view v-if="!isReadonly" class="l-upload__delete-btn" aria-role="button" aria-label="删除" :data-index="index"
+						@click="onDelete(index)">
+						<l-icon name="close" size="16px" color="#fff" />
+					</view>
+				</slot>
+			<!-- #ifndef APP || WEB -->
+			</view>
+			<!-- #endif -->
+		</view>
+		<!-- #ifdef APP || WEB -->
+		<view class="l-upload__item l-upload__item--add" :class="{'l-upload__item--disabled':isDisabled}"
+			v-if="!isReadonly"
+			v-show="!multiple ? customFiles.length == 0 : max == 0 || customFiles.length != max"
+			:style="[itemStyle,  addBgColor!=null ? {background: addBgColor}: '']" aria-label="上传" @click="onAddTap">
+			<slot>
+				<l-icon class="l-upload__add-icon" :size="uploadIconSize" :name="uploadIcon" />
+			</slot>
+		</view>
+		<!-- #endif -->
+		<!-- #ifndef APP || WEB -->
+
+		<view class="l-upload__item l-upload__item--add" :class="{'l-upload__item--disabled':isDisabled}"
+			v-if="!isReadonly"
+			v-show="!multiple ? customFiles.length == 0 : max == 0 || customFiles.length != max" :style="[itemStyle]"
+			aria-label="上传" @click="onAddTap">
+			<view class="l-upload__item-inner" :style="[innerStyle,  addBgColor!=null ? {background: addBgColor}: '']">
+				<slot>
+					<l-icon class="l-upload__add-icon" :size="uploadIconSize" :name="uploadIcon" />
+				</slot>
+			</view>
+		</view>
+		<!-- #endif -->
+	</view>
+</template>
+<script lang="uts" setup>
+	/**
+	 * Upload 文件上传组件
+	 * @description 用于图片、视频等文件的上传，支持预览、删除、重传等功能
+	 * <br>插件类型：LUploadComponentPublicInstance 
+	 * @tutorial https://ext.dcloud.net.cn/plugin?name=lime-upload
+	 * 
+	 * @property {string} name 表单字段名
+	 * @property {UTSJSONObject[]} modelValue 已上传文件列表（支持v-model）
+	 * @property {boolean} disabled 是否禁用（默认：false）
+	 * @property {boolean} readonly 只读（默认：false）
+	 * @property {boolean} multiple 是否支持多选（默认：false）
+	 * @property {'scaleToFill'|'aspectFit'|'aspectFill'|'widthFix'|'heightFix'|'top'|'bottom'|'center'|'left'|'right'|'top left'|'top right'|'bottom left'|'bottom right'} imageFit 图片裁剪模式（默认："aspectFill"）
+	 * @value scaleToFill
+	 * @value aspectFit
+	 * @value aspectFill
+	 * @value widthFix
+	 * @value heightFix
+	 * @value top
+	 * @value bottom
+	 * @value 'top left'
+	 * @value 'top right'
+	 * @value 'bottom left'
+	 * @value "bottom right"
+	 * @property {string} gutter 项目间距（支持CSS单位）
+	 * @property {number} column 每行显示数量（默认：4）
+	 * @property {number} max 最大上传数量（默认：9）
+	 * @property {number} sizeLimit 文件大小限制（单位KB）
+	 * @property {string} uploadIcon 上传按钮图标
+	 * @property {string} uploadIconSize 上传按钮图标尺寸
+	 * @property {string} gridWidth 项目宽度（支持CSS单位）
+	 * @property {string} gridHeight 项目高度（支持CSS单位）
+	 * @property {string} gridBgColor 项目背景色
+	 * @property {string} addBgColor 添加按钮背景色
+	 * @property {string} gridBorderRadius 项目圆角
+	 * @property {UTSJSONObject[]} defaultFiles 默认文件列表
+	 * @property {string} loadingText 上传中提示文字
+	 * @property {string} reloadText 重传提示文字
+	 * @property {string} failedText 失败提示文字
+	 * @property {boolean} disablePreview 禁用预览（默认：false）
+	 * @property {boolean} autoUpload 自动上传（默认：true）
+	 * @property {'image' | 'video' | 'all' | 'media'} mediaType 上传文件类型（默认："image"）
+	 * @value image
+	 * @value video
+	 * @value media
+	 * @value all
+	 * @property {number} maxDuration 视频最大时长（秒）
+	 * @property {string[]} sizeType 文件尺寸类型（默认：["original", "compressed"]）
+	 * @property {string[]} sourceType 文件来源（默认：["album", "camera"]）
+	 * @property {string} action 上传地址（uniCloud服务请设置为"uniCloud"）
+	 * @property {UTSJSONObject} headers 请求头部
+	 * @property {UTSJSONObject} formData 额外表单数据
+	 * @property {string} mode 显示模式（默认："grid"）
+	 * @event {Function} add 点击增加时触发
+	 * @event {Function} success 上传成功时触发
+	 * @event {Function} fail 上传失败时触发
+	 * @event {Function} remove 点击删除时触发
+	 * @event {Function} click 点击时触发
+	 */
+
+	import { unitConvert } from '@/uni_modules/lime-shared/unitConvert'
+	import { chooseFiles } from './utils'
+	import { UploadProps, UploadFile, ChooseFileOptions } from './type';
+
+	defineSlots<{
+		file(props : { file : UploadFile, index : number }) : any,
+	}>()
+
+	const formDisabled = inject<Ref<boolean | null> | null>('formDisabled', null)
+	const formReadonly = inject<Ref<boolean | null> | null>('formReadonly', null)
+
+	const emits = defineEmits(['fail', 'remove', 'success', 'click', 'add', 'update:modelValue'])
+	const props = withDefaults(defineProps<UploadProps>(), {
+		imageFit: 'aspectFill',
+		disablePreview: false,
+		autoUpload: false,
+		multiple: true,
+		max: 0,
+		disabled: false,
+		readonly: false,
+		mediaType: 'image',
+		sizeType: ['original', 'compressed'],
+		sourceType: ['album', 'camera'],
+		uploadIcon: 'camera',
+		loadingText: '上传中...',
+		reloadText: '重新上传',
+		failedText: '上传失败',
+		mode: 'grid'
+	})
+
+	const isReadonly = computed(() : boolean => {
+		console.log('isReadonly', props.readonly)
+		if (props.readonly) return props.readonly;
+		return formReadonly?.value ?? false;
+	})
+	const isDisabled = computed(() : boolean => {
+		if (props.disabled) return props.disabled;
+		return formDisabled?.value ?? false;
+	})
+
+	const transformFiles = (it : any) : UploadFile => {
+		// #ifdef APP-ANDROID
+		if (it instanceof UploadFile) {
+			return it
+		}
+		// #endif
+
+		// #ifndef APP-ANDROID || APP-IOS || APP-HARMONY
+		const file : UTSJSONObject = { ...it }
+		// #endif
+		// #ifdef APP-ANDROID || APP-IOS || APP-HARMONY
+		const file = UTSJSONObject.assign({}, it as UTSJSONObject) //it as UTSJSONObject
+		// #endif
+		return {
+			url: file.getString('url') ?? '',
+			path: file.getString('path'),
+			name: file.getString('name'),
+			thumb: file.getString('thumb'),
+			size: file.getNumber('size'),
+			type: file.getString('type'),
+			percent: file.getNumber('percent'),
+			status: file.getString('status') ?? 'done',
+		} as UploadFile
+	}
+	const customFiles = ref<UploadFile[]>((props.modelValue ?? props.defaultFiles)?.map(transformFiles) ?? []);
+
+	const listWidth = ref(0);
+	const uploadRef = ref<UniElement | null>(null);
+	const styles = computed(() : Map<string, any> => {
+		const style = new Map<string, any>();
+		const gutter = unitConvert(props.gutter ?? 8) / 2 * -1
+		style.set('margin-left', `${gutter}px`)
+		style.set('margin-right', `${gutter}px`)
+		style.set('margin-top', `${gutter}px`)
+		return style
+	})
+	const itemStyle = computed(() : Map<string, any> => {
+		const style = new Map<string, any>();
+
+		// const gridWidth = unitConvert(props.gridWidth ?? 80)
+		const gutter = unitConvert(props.gutter ?? 8) / 2
+		let column = props.column ?? 4;
+
+		if (props.gridWidth != null || props.column != null) {
+			// #ifdef APP || WEB
+			const width = listWidth.value / column - gutter * 2.0275;// ios 计算精度导致不均分
+			style.set('width', props.gridWidth ?? `${width}px`)
+			// #endif
+			// #ifndef APP || WEB
+			if (props.gridWidth) {
+				style.set('--l-upload-width', props.gridWidth)
+			} else {
+				style.set('width', `${100 / column}%`)
+			}
+			// #endif
+		}
+
+		// #ifdef APP || WEB
+		if (props.gridHeight != null) {
+			style.set('height', props.gridHeight!)
+		}
+		style.set('margin', `${gutter}px`)
+		if (props.gridBgColor != null) {
+			style.set('background', props.gridBgColor!)
+		}
+		// #endif
+		return style
+	})
+	// #ifndef APP || WEB
+	const innerStyle = computed(() : Map<string, any> => {
+		const style = new Map<string, any>();
+
+		const gutter = unitConvert(props.gutter ?? 8) / 2
+		style.set('margin', `${gutter}px`)
+		if (props.gridBgColor != null) {
+			style.set('background', props.gridBgColor!)
+		}
+		if (props.gridHeight != null) {
+			style.set('height', props.gridHeight!)
+		}
+		return style
+	})
+	// #endif
+
+	const onFileClick = (index : number) => {
+		const file = customFiles.value[index]
+		emits('click', { file })
+	}
+	const onProofTap = (index : number) => {
+		onFileClick(index);
+		if (props.disablePreview) return
+		uni.previewImage({
+			urls: customFiles.value.filter((file) : boolean => file.percent != -1).map((file) : string => file.url),
+			current: index
+		});
+	}
+	const onDelete = (index : number) => {
+		if (isDisabled.value || isReadonly.value) return;
+		const delFile = customFiles.value[index]
+		customFiles.value = customFiles.value.filter((file, i) : boolean => index != i)
+		emits('remove', { index, file: delFile })
+	}
+
+	let last : number// = 0
+	const upload = (files : UploadFile[]) => {
+		if (!props.autoUpload || props.action == null || props.action!.length < 5) return
+		if (props.action == 'uniCloud') {
+			let uploadImgs : Promise<UniCloudUploadFileResult>[] = [];
+			files.forEach((file, index) => {
+				// props.beforeRead(file).then((res)=>{})
+
+				const promise = new Promise<UniCloudUploadFileResult>((resolve, reject) => {
+					const dotIndex = file.name!.lastIndexOf('.'); // 找到最后一个点的位置
+					const baseName = file.name!.substring(0, dotIndex);
+					const extension = file.name!.substring(dotIndex);
+					const timestamp = Date.now();
+								
+					uniCloud.uploadFile({
+						filePath: file.url,
+						cloudPath: `${baseName}_${timestamp}${extension}`,
+						// cloudPath: file.name!.substring(file.name!.lastIndexOf('.')),
+						onUploadProgress: (res) => {
+							file.status = 'loading'
+							file.percent = Math.floor(res.loaded / res.total * 100)
+						},
+					}).then(res => {
+						file.path = res.fileID;
+						file.status = 'done'
+						// 获取临时URL
+						uniCloud.getTempFileURL({
+							fileList: [res.fileID]
+						}).then(result => {
+							if (result.fileList.length > 0) {
+								file.url = result.fileList[0].tempFileURL;
+							}
+							resolve(res)
+						}).catch(error => {
+							console.error('获取临时URL失败', error);
+							resolve(res)
+						})
+						// resolve(res)
+					}).catch(err => {
+						file.status = 'failed'
+						reject(err)
+					})
+				})
+				uploadImgs.push(promise as Promise<UniCloudUploadFileResult>)
+			})
+
+			Promise.all(uploadImgs).then(res => {
+				emits('success', res)
+			}).catch(err => {
+				emits('fail', err)
+			})
+		} else {
+			let uploadImgs : Promise<UploadFileSuccess>[] = [];
+			files.forEach((file, index) => {
+				const promise = new Promise<UploadFileSuccess>((resolve, reject) => {
+					const task = uni.uploadFile({
+						url: props.action!,
+						filePath: file.url,
+						name: file.name,
+						formData: props.formData,
+						header: props.headers,
+						success: (res) => {
+							file.status = 'done'
+							if (res.statusCode == 200) {
+								if (typeof res.data == 'string') {
+									try {
+										const data = JSON.parse<UTSJSONObject>(res.data);
+										const url = data?.getString('url');
+										if (url != null) {
+											file.path = url
+										}
+									} catch (e) {
+										//TODO handle the exception
+									}
+								}
+							}
+							resolve(res)
+						},
+						fail(err) {
+							file.status = 'failed'
+							reject(err)
+						}
+					});
+					task.onProgressUpdate((res) => {
+						file.status = 'loading'
+						file.percent = res.progress
+					});
+				})
+				uploadImgs.push(promise as Promise<UploadFileSuccess>)
+			})
+			Promise.all(uploadImgs).then(res => {
+				emits('success', res)
+			}).catch(err => {
+				emits('fail', err)
+			})
+		}
+	}
+
+	const customLimit = computed(() : number => props.max == 0 ? 20 : props.max - customFiles.value.length)
+	const onAddTap = () => {
+		if (isDisabled.value || isReadonly.value) return;
+		chooseFiles({
+			mediaType: props.mediaType,
+			count: customLimit.value,
+			sourceType: props.sourceType,
+			sizeType: props.sizeType,
+			sizeLimit: props.sizeLimit
+		} as ChooseFileOptions).then((files) => {
+			last = customFiles.value.length
+			customFiles.value = customFiles.value.concat(files)
+			// @ts-ignore
+			const _files = customFiles.value.filter((it, i) : boolean => i > last - 1)
+			upload(_files)
+			emits('add', _files)
+		})
+	}
+
+
+
+
+	const stop = watch(customFiles, (v : UploadFile[]) => {
+		emits('update:modelValue', v)
+	})
+
+	const stopValue = watch(() : (UTSJSONObject[] | null) => props.modelValue, (v : UTSJSONObject[] | null) => {
+		if (v != null && v.length != customFiles.value.length) {
+			customFiles.value = v.map(transformFiles)
+		}
+	})
+
+	defineExpose({
+		remove: onDelete
+	})
+
+	// #ifdef APP || WEB
+	const resizeObserver = new UniResizeObserver((entries : Array<UniResizeObserverEntry>) => {
+		listWidth.value = entries[0].target.getBoundingClientRect().width
+	})
+
+	onMounted(() => {
+		nextTick(() => {
+			listWidth.value = uploadRef.value?.getBoundingClientRect().width ?? 0;
+			resizeObserver.observe(uploadRef.value!)
+		})
+	})
+	// #endif
+
+	onUnmounted(() => {
+		stop()
+		// #ifdef APP
+		resizeObserver.disconnect()
+		// #endif
+	})
+</script>
+<style lang="scss">
+	@import './index';
+</style>

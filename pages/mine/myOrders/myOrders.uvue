@@ -1,0 +1,187 @@
+<template>
+	<view class="container">
+		<l-tabs :value="tabVal" @click="changeTab" bgColor="transparent" color="#000000" activeColor="#FF5722">
+			<l-tab-panel v-for="(item,index) in tabsVal" :key="index" :value="index" :label="item.title">
+				<view class="list-item" v-for="(item,index) in getFilteredEvents()" :key="index">
+					<view @click="goDetail(item.id)">
+						<view class="title-state">
+							<text class="title-style">{{item.title}}</text>
+							<text class="state-style">{{item.state}}</text>
+						</view>
+						<view class="device-type">
+							<text>办公室设备</text>
+							<text>ICCID {{item.iccid}}</text>
+						</view>
+						<view class="date-price">
+							<text>{{item.date}}</text>
+							<text class="price">{{item.price}}</text>
+						</view>
+					</view>
+					<view class="btn" v-if="item.isPay == '1'">
+						<fui-button text="去付款" type="primary" width="120rpx" height="50rpx" :size="24" @click="goPay"></fui-button>
+					</view>
+				</view>
+			</l-tab-panel>
+		</l-tabs>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import { ref } from 'vue'
+	const tabVal = ref(0)
+
+	type tabItem = {
+		id : string;
+		title : string;
+		content : Array<Object>
+	}
+
+	type ContentType = {
+		id : string;
+		title : string;
+		date : string;
+		price : string;
+		state : string;
+		iccid : string;
+		isPay : string;
+	}
+
+	const tabsVal = ref<tabItem[]>([
+		{
+			id:'0',
+			title:'全部',
+			content:[]
+		},
+		{
+			id:'1',
+			title:'待付款',
+			content:[]
+		},
+		{
+			id:'2',
+			title:'已完成',
+			content:[]
+		},
+		{
+			id:'3',
+			title:'已取消',
+			content:[]
+		},
+		{
+			id:'4',
+			title:'退款',
+			content:[]
+		}
+	])
+
+	const content  = ref<ContentType[]>([
+		{
+			id:'1111',
+			title:'五年畅想套餐',
+			date:'2025-07-09 15:00:00',
+			price:'¥300',
+			state:'已完成',
+			iccid:'89862235957372384387456',
+			isPay:'2',
+		},
+		{
+			id:'1112',
+			title:'五年畅想套餐',
+			date:'2025-07-09 15:00:00',
+			price:'¥300',
+			state:'已取消',
+			iccid:'89862235957372384387454',
+			isPay:'3',
+		},
+		{
+			id:'1113',
+			title:'五年畅想套餐',
+			date:'2025-07-09 15:00:00',
+			price:'¥300',
+			state:'待付款',
+			iccid:'89862235957372384387467',
+			isPay:'1',
+		},
+		{
+			id:'1114',
+			title:'五年畅想套餐',
+			date:'2025-07-09 15:00:00',
+			price:'¥300',
+			state:'已退款',
+			iccid:'89862235957372384387465',
+			isPay:'4',
+		},
+	])
+
+	const getFilteredEvents = (): ContentType[] => {
+		if (tabVal.value == 0) return [...content.value];
+		const selectedType = tabsVal.value[tabVal.value].id;
+		return content.value.filter(event => event.isPay == selectedType);
+	}
+
+	const changeTab = (val: number) => {
+		tabVal.value = val
+	}
+
+	const goDetail = (id:string) => {
+		uni.navigateTo({
+			url: '/pages/mine/myOrders/orderDetail/orderDetail?id=' + id
+		})
+	}
+
+	const goPay = () => {
+		uni.showToast({
+			title: '去付款',
+			icon: 'none'
+		})
+	}
+</script>
+
+<style lang="scss" scoped>
+	.container {
+		width: 100%;
+		height: 100%;
+		background-color: #F5F5F5;
+		padding: 20rpx;
+		.l-tabs{
+			background-color: transparent !important;
+		}
+		.list-item{
+			background-color:#fff;
+			padding:20rpx 30rpx;
+			margin-top: 20rpx;
+			border-radius: 20rpx;
+			.title-state{
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				padding:10rpx 0;
+				.title-style{
+					font-size: 30rpx;
+					color: #000000;
+					font-weight: bold;
+				}
+				.state-style{
+					font-size: 24rpx;
+					color: #FF5722;
+				}
+			}
+			.device-type{
+				@extend .title-state;
+			}
+			.date-price{
+				@extend .title-state;
+				.price{
+					font-size:38rpx;
+				}
+			}
+			.btn{
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-end;
+				padding:10rpx 0;
+			}
+		}
+	}
+</style>

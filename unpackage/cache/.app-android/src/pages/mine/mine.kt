@@ -16,6 +16,7 @@ import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
+import io.dcloud.uniapp.extapi.switchTab as uni_switchTab
 open class GenPagesMineMine : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     companion object {
@@ -30,8 +31,17 @@ open class GenPagesMineMine : BasePage {
             val rechargeDataTraffic = fun(){
                 uni_navigateTo(NavigateToOptions(url = "/pages/mine/rechargeDataTraffic/rechargeDataTraffic"))
             }
+            val myorders = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/myOrders/myOrders"))
+            }
             val helpCenter = fun(){
                 uni_navigateTo(NavigateToOptions(url = "/pages/mine/helpCenter/helpCenter"))
+            }
+            val msgCenter = fun(){
+                uni_switchTab(SwitchTabOptions(url = "/pages/message/message"))
+            }
+            val feedback = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/feeback/feeback"))
             }
             return fun(): Any? {
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
@@ -44,7 +54,7 @@ open class GenPagesMineMine : BasePage {
                             createElementVNode("image", utsMapOf("class" to "fileIcon", "src" to "/static/mine/cloud.png", "mode" to "aspectFit")),
                             createElementVNode("text", utsMapOf("class" to "file-text"), "永久备份")
                         )),
-                        createElementVNode("view", utsMapOf("class" to "file"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "file", "onClick" to msgCenter), utsArrayOf(
                             createElementVNode("image", utsMapOf("class" to "fileIcon", "src" to "/static/mine/msgList.png", "mode" to "aspectFit")),
                             createElementVNode("text", utsMapOf("class" to "file-text"), "消息列表")
                         ))
@@ -68,7 +78,7 @@ open class GenPagesMineMine : BasePage {
                                 createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to myorders), utsArrayOf(
                             createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
                                 createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/order.png", "mode" to "aspectFit")),
                                 createElementVNode("text", utsMapOf("class" to "item-text"), "我的订单")
@@ -95,7 +105,7 @@ open class GenPagesMineMine : BasePage {
                                 createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to feedback), utsArrayOf(
                             createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
                                 createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/advice.png", "mode" to "aspectFit")),
                                 createElementVNode("text", utsMapOf("class" to "item-text"), "意见反馈")

@@ -22,7 +22,7 @@
 				<view class="item-content">
 					<view class="title-box">
 						<text class="title">设备名称</text>
-						<view class="more">
+						<view class="more" @click="deviceDetail">
 							<text>更多</text>
 							<l-icon name="chevron-right" size="20"></l-icon>
 						</view>
@@ -231,6 +231,13 @@
 		})
 		radioItems.value[0].checked = true
 		currentDeviceInfo.value = radioItems.value[0]
+	}
+
+	const deviceDetail = () => {
+		uni.navigateTo({
+			url: '/pages/message/messageDeviceDetail/messageDeviceDetail'
+		})
+
 	}
 	
 	const msgSystem = () => {

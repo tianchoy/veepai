@@ -15,7 +15,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import io.dcloud.uniapp.framework.onLoad
 open class GenPagesMessageMessageDetailMessageDetail : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     companion object {
@@ -26,7 +25,7 @@ open class GenPagesMessageMessageDetailMessageDetail : BasePage {
             val _cache = __ins.renderCache
             val title = ref("消息详情")
             onLoad(fun(options: UTSJSONObject){
-                console.log(options["id"], " at pages/message/messageDetail/messageDetail.uvue:18")
+                console.log(options["id"], " at pages/message/messageDetail/messageDetail.uvue:17")
             }
             )
             return fun(): Any? {

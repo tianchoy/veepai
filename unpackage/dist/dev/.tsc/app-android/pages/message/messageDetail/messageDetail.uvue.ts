@@ -1,5 +1,4 @@
 import { ref } from 'vue'
-    import { onLoad } from '@dcloudio/uni-app';
     
 const __sfc__ = defineComponent({
   __name: 'messageDetail',
@@ -11,7 +10,7 @@ const _cache = __ins.renderCache;
     const title = ref('消息详情')
 
     onLoad((options:UTSJSONObject) => {
-        console.log(options.id, " at pages/message/messageDetail/messageDetail.uvue:18")
+        console.log(options.id, " at pages/message/messageDetail/messageDetail.uvue:17")
     })
 
 return (): any | null => {

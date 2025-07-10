@@ -1,0 +1,187 @@
+@import '@/uni_modules/lime-style/index.scss';
+@import '@/uni_modules/lime-style/mixins/utilities.scss';
+@import '@/uni_modules/lime-style/mixins/hairline.scss';
+// $prefix: l !default;
+$textarea: #{$prefix}-textarea;
+
+$textarea-vertical-padding: create-var(textarea-vertical-padding, 32rpx); // 文本框垂直方向间距
+$textarea-horizontal-padding: create-var(textarea-horizontal-padding, 32rpx); // 文本框水平方向间距
+/* #ifdef APP-IOS */ 
+$textarea-text-line-height: create-var(textarea-text-line-height, 48rpx);//48rpx); // 输入框文本行高
+$textarea-label-line-height: create-var(textarea-label-line-height, 36px);// 44rpx); // 标签文本行高
+/* #endif */
+/* #ifdef APP-HARMONY */ 
+$textarea-text-line-height: create-var(textarea-text-line-height, 48rpx);//48rpx); // 输入框文本行高
+$textarea-label-line-height: create-var(textarea-label-line-height, 29px);// 44rpx); // 标签文本行高
+/* #endif */
+/* #ifndef APP-IOS || APP-HARMONY */ 
+$textarea-text-line-height: create-var(textarea-text-line-height, 48rpx);//48rpx); // 输入框文本行高
+$textarea-label-line-height: create-var(textarea-label-line-height, 44rpx);// 44rpx); // 标签文本行高
+/* #endif */
+$textarea-label-width: create-var(textarea-label-width, 128rpx); // 标签文本行高
+$textarea-label-padding-right: create-var(textarea-label-padding-right, $spacer);
+$textarea-label-padding-bottom: create-var(textarea-label-padding-bottom, $spacer-xs);
+$textarea-indicator-text-line-height: create-var(textarea-indicator-text-line-height, 40rpx); // 计数器文本行高
+$textarea-indicator-text-padding-top: create-var(textarea-indicator-text-padding-top, $spacer-xs); // 计数器文本顶部间距
+$textarea-indicator-text-align: create-var(textarea-indicator-text-align, right); // 计数器文本对齐方式
+$textarea-border-width: create-var(textarea-border-width, 2rpx); // 文本框边框大小
+$textarea-indicator-text-font-size: create-var(textarea-indicator-text-font-size, $spacer-sm); // 计数器文本大小
+$textarea-label-font-size: create-var(textarea-label-font-size, 14px); // 标签文本大小
+$textarea-label-large-font-size: create-var(textarea-label-large-font-size, 16px); // 标签文本大小
+$textarea-text-font-size: create-var(textarea-text-font-size, 16px); ; // 输入框文本大小
+$textarea-placeholder-font-size: create-var(textarea-placeholder-font-size, 16px); ; // 占位符文本大小
+
+// 文本框背景颜色
+$textarea-bg-color: create-var(textarea-bg-color, $bg-color-container);
+// 占位符文本颜色
+$textarea-placeholder-color: create-var(textarea-placeholder-color, $text-color-3);
+// 输入框文本颜色
+$textarea-text-color: create-var(textarea-text-color, $text-color-1);
+// 标签文本颜色
+$textarea-label-color: create-var(textarea-label-color, $text-color-1);
+// 计数器文本颜色
+$textarea-indicator-text-color: create-var(textarea-indicator-text-color, $text-color-3);
+// 文本框圆角大小
+$textarea-border-radius: create-var(textarea-border-radius, $border-radius);
+// 文本框边框颜色
+$textarea-border-color: create-var(textarea-border-color, $border-color-1);
+$textarea-focused-border-color: create-var(textarea-focused-border-color, $primary-color);
+
+// 文本框禁用状态时的输入文本颜色
+$textarea-disabled-text-color: create-var(textarea-disabled-text-color, $text-color-4);
+
+
+$textarea-border-left-space: create-var(textarea-border-left-space, 32rpx);
+$textarea-border-right-space: create-var(textarea-border-right-space, 0);
+
+$textarea-classic-padding: create-var(textarea-classic-padding, 12px 16px);
+$textarea-classic-padding: create-var(input-classic-padding, 12px 16px);
+
+.#{$textarea} {
+	@include flex;
+	
+	box-sizing: border-box;
+	padding: $textarea-vertical-padding $textarea-horizontal-padding;
+	background-color: $textarea-bg-color;
+	&--horizontal {
+		flex-direction: row;
+	}
+	&--vertical {
+		@include flex-column;
+	}
+	//:not(:empty) 
+	&__label{
+	   
+	    color: $textarea-label-color;
+	    flex-shrink: 0;
+	    line-height: $textarea-label-line-height;
+		// background-color: azure;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+		&--vertical {
+			font-size: $textarea-label-font-size;
+			padding-bottom: $textarea-label-padding-bottom;
+		}
+		&--horizontal {
+			font-size: $textarea-label-large-font-size;
+			margin-right: $textarea-label-padding-right;
+			 // padding-bottom: $textarea-label-padding-bottom;
+		}
+	}
+	 &__wrapper {
+	   @include flex;
+	   @include flex-column;
+	   flex: 1;
+	    // width: 100%;
+	    // flex: 1 1 auto;
+		// background-color: antiquewhite;
+	    overflow: hidden;
+	
+	    &-inner {
+			// flex: 1;
+			flex: 1 1 auto;
+			width: 100%;
+			box-sizing: border-box;
+			// width: inherit;
+			min-width: 0;
+			min-height: 20px;
+			margin: 0;
+			padding: 0;
+			text-align: left;
+			background-color: transparent;
+			border: 0;
+			@include resize-none;
+			font-size: $textarea-text-font-size;
+			color: $textarea-text-color;
+			line-height: $textarea-text-line-height;
+	    }
+	}
+	 &__placeholder {
+	    color: $textarea-placeholder-color;
+	    font-size: $textarea-placeholder-font-size;
+		line-height: $textarea-text-line-height;
+		/* #ifndef APP || WEB */
+		position: absolute;
+		left: 0;
+		top: 0;
+		/* #endif */
+	}
+	
+	  &__indicator {
+	    flex-shrink: 0;
+	    color: $textarea-indicator-text-color;
+	    font-size: $textarea-indicator-text-font-size;
+	    text-align: $textarea-indicator-text-align;
+	    line-height: $textarea-indicator-text-line-height;
+	    padding-top: $textarea-indicator-text-padding-top;
+	  }
+	
+	&--border {
+	    position: relative;
+	    /* #ifdef APP-HARMONY */
+	    border-bottom: 0.5px solid $textarea-border-color;
+	    /* #endif */
+	    /* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+	    &::after {
+	    	@include hairline-bottom($textarea-border-color, $textarea-border-left-space, $textarea-border-right-space)
+	    }
+	    /* #endif */
+		
+		&-focused {
+			border-bottom-color: $textarea-focused-border-color;
+		}
+		// border-radius: $textarea-border-radius;
+	    // border: $textarea-border-width solid $textarea-border-color;
+	}
+	
+	.is-disabled {
+	    color: $textarea-disabled-text-color;
+	}
+	
+	&--classic {
+		padding: $textarea-classic-padding;
+		border-radius: $textarea-border-radius;
+		border: 0.5px solid $textarea-border-color;
+		
+		&-focused {
+			border-color: $textarea-focused-border-color;
+		}
+		// align-items: center;
+		// &-default {
+		// 	border-color: $textarea-border-color
+		// }
+		// &-error {
+		// 	border-color: $textarea-error-tips-color
+		// }
+		// &-success {
+		// 	border-color: $textarea-success-tips-color
+		// }
+		// &-warning {
+		// 	border-color: $textarea-warning-tips-color
+		// }
+		&-disabled {
+			// background: $textarea-disabled-bg-color
+		}
+	}
+}

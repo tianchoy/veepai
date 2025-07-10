@@ -13,7 +13,10 @@
     "pages/message/messageDetail/messageDetail",
     "pages/login/login",
     "pages/message/messageDeviceDetail/messageDeviceDetail",
-    "pages/message/messageSystem/messageSystem"
+    "pages/message/messageSystem/messageSystem",
+    "pages/mine/myOrders/myOrders",
+    "pages/mine/myOrders/orderDetail/orderDetail",
+    "pages/mine/feeback/feeback"
   ],
   "window": {
     "navigationBarTextStyle": "black",

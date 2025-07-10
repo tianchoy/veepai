@@ -6,11 +6,13 @@ require("../../../uni_modules/lime-dayuts/common/use.js");
 require("../../../uni_modules/lime-dayuts/utssdk/interface.js");
 if (!Array) {
   const _easycom_l_daily_punch_1 = common_vendor.resolveComponent("l-daily-punch");
-  _easycom_l_daily_punch_1();
+  const _easycom_fui_bottom_popup_1 = common_vendor.resolveComponent("fui-bottom-popup");
+  (_easycom_l_daily_punch_1 + _easycom_fui_bottom_popup_1)();
 }
 const _easycom_l_daily_punch = () => "../../../uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.js";
+const _easycom_fui_bottom_popup = () => "../../../uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.js";
 if (!Math) {
-  _easycom_l_daily_punch();
+  (_easycom_l_daily_punch + _easycom_fui_bottom_popup)();
 }
 const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
@@ -60,9 +62,9 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
     };
     const select = (day) => {
       today.value = uni_modules_limeDayuts_common_index.dayuts(day.fullDate).format("MM-DD");
-      common_vendor.index.__f__("log", "at pages/message/messageDeviceDetail/messageDeviceDetail.uvue:130", today.value);
+      common_vendor.index.__f__("log", "at pages/message/messageDeviceDetail/messageDeviceDetail.uvue:132", today.value);
       if (day.isToday) {
-        common_vendor.index.__f__("log", "at pages/message/messageDeviceDetail/messageDeviceDetail.uvue:132", "今天");
+        common_vendor.index.__f__("log", "at pages/message/messageDeviceDetail/messageDeviceDetail.uvue:134", "今天");
       }
       showCalendar.value = false;
     };
@@ -72,7 +74,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       });
     };
     const change = (res) => {
-      common_vendor.index.__f__("log", "at pages/message/messageDeviceDetail/messageDeviceDetail.uvue:144", "res", res);
+      common_vendor.index.__f__("log", "at pages/message/messageDeviceDetail/messageDeviceDetail.uvue:146", "res", res);
     };
     const ShowCalendar = () => {
       showCalendar.value = !showCalendar.value;
@@ -81,10 +83,10 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       showCalendar.value = false;
     };
     return (_ctx = null, _cache = null) => {
-      const __returned__ = common_vendor.e(new UTSJSONObject({
-        a: common_vendor.sei("myVideo", "video", videoRef, new UTSJSONObject({
+      const __returned__ = {
+        a: common_vendor.sei("myVideo", "video", videoRef, {
           "k": "videoRef"
-        })),
+        }),
         b: videoSrc,
         c: testTitle.value,
         d: common_vendor.o(playVideo),
@@ -93,17 +95,17 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         g: common_assets._imports_0,
         h: common_vendor.o(ShowCalendar),
         i: common_vendor.f(tabs.value, (tab = null, index = null, i0 = null) => {
-          return new UTSJSONObject({
+          return {
             a: common_vendor.t(tab.label),
             b: index,
             c: activeTab.value === index ? 1 : "",
             d: common_vendor.o(($event = null) => {
               return changeTab(index);
             }, index)
-          });
+          };
         }),
         j: common_vendor.f(getFilteredEvents(), (event = null, index = null, i0 = null) => {
-          return new UTSJSONObject({
+          return {
             a: event.type === "human" ? "/static/people.png" : "/static/mobile.png",
             b: common_vendor.t(event.type === "human" ? "人形侦测" : "移动侦测"),
             c: common_vendor.t(event.time),
@@ -111,21 +113,22 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
             e: common_vendor.o(($event = null) => {
               return msgDetail(event);
             }, index)
-          });
+          };
         }),
         k: common_assets._imports_1$1,
-        l: showCalendar.value
-      }), showCalendar.value ? new UTSJSONObject({
-        m: common_vendor.o(select),
-        n: common_vendor.o(change),
-        o: common_vendor.p(new UTSJSONObject({
+        l: common_vendor.o(select),
+        m: common_vendor.o(change),
+        n: common_vendor.p({
           signedDates: checkIns.value,
           dayHeight: 60
-        })),
-        p: common_vendor.o(hideCalendar)
-      }) : new UTSJSONObject({}), new UTSJSONObject({
-        q: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
-      }));
+        }),
+        o: common_vendor.o(hideCalendar),
+        p: common_vendor.o(hideCalendar),
+        q: common_vendor.p({
+          visible: showCalendar.value
+        }),
+        r: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+      };
       return __returned__;
     };
   }

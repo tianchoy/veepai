@@ -98,6 +98,9 @@ open class GenPagesMessageMessage : BasePage {
                 radioItems.value[0].checked = true
                 currentDeviceInfo.value = radioItems.value[0]
             }
+            val deviceDetail = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/message/messageDeviceDetail/messageDeviceDetail"))
+            }
             val msgSystem = fun(){
                 uni_navigateTo(NavigateToOptions(url = "/pages/message/messageSystem/messageSystem"))
             }
@@ -139,7 +142,7 @@ open class GenPagesMessageMessage : BasePage {
                             createElementVNode("view", utsMapOf("class" to "item-content"), utsArrayOf(
                                 createElementVNode("view", utsMapOf("class" to "title-box"), utsArrayOf(
                                     createElementVNode("text", utsMapOf("class" to "title"), "设备名称"),
-                                    createElementVNode("view", utsMapOf("class" to "more"), utsArrayOf(
+                                    createElementVNode("view", utsMapOf("class" to "more", "onClick" to deviceDetail), utsArrayOf(
                                         createElementVNode("text", null, "更多"),
                                         createVNode(_component_l_icon, utsMapOf("name" to "chevron-right", "size" to "20"))
                                     ))

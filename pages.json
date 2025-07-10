@@ -99,6 +99,27 @@
 			{
 				"navigationBarTitleText" : "系统消息"
 			}
+		},
+		{
+			"path" : "pages/mine/myOrders/myOrders",
+			"style" : 
+			{
+				"navigationBarTitleText" : "订单列表"
+			}
+		},
+		{
+			"path" : "pages/mine/myOrders/orderDetail/orderDetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "订单详情"
+			}
+		},
+		{
+			"path" : "pages/mine/feeback/feeback",
+			"style" : 
+			{
+				"navigationBarTitleText" : "意见反馈"
+			}
 		}
 	],
 	"tabBar": {

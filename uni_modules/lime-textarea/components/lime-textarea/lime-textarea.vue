@@ -1,0 +1,143 @@
+<template>
+	<view class="demo-block">
+		<text class="demo-block__title-text ultra">Textarea 多行文本框</text>
+		<text class="demo-block__desc-text">用于多行文本信息输入。</text>	
+		<view class="demo-block__body">
+			<view class="demo-block">
+				<text class="demo-block__title-text">基础使用</text>
+				<view class="demo-block__body">
+					<l-textarea placeholder="请输入文字"></l-textarea>
+				</view>	
+			</view>	
+			<view class="demo-block">
+				<text class="demo-block__title-text">带标题</text>
+				<view class="demo-block__body">
+					<l-textarea label="标签文字" placeholder="请输入文字"></l-textarea>
+				</view>	
+			</view>	
+			<view class="demo-block">
+				<text class="demo-block__title-text">自动增高</text>
+				<view class="demo-block__body">
+					<l-textarea label="标签文字" placeholder="请输入文字" autosize ></l-textarea>
+				</view>	
+			</view>	
+			<view class="demo-block">
+				<text class="demo-block__title-text">字符限制</text>
+				<view class="demo-block__body">
+					<l-textarea label="标签文字" placeholder="请输入文字"  :maxlength="500" indicator></l-textarea>
+				</view>	
+			</view>
+			<view class="demo-block">
+				<text class="demo-block__title-text">禁用</text>
+				<view class="demo-block__body">
+					<l-textarea label="标签文字" value="不可编辑文字" placeholder="请输入文字"  disabled></l-textarea>
+				</view>	
+			</view>
+			<view class="demo-block">
+				<text class="demo-block__title-text">竖排布局</text>
+				<view class="demo-block__body">
+					<l-textarea label="标签文字" placeholder="请输入文字" layout="vertical"></l-textarea>
+				</view>	
+			</view>
+			<view class="demo-block">
+				<text class="demo-block__title-text">描边</text>
+				<view class="demo-block__body" style="padding: 0 10px;">
+					<l-textarea label="标签文字" placeholder="请输入文字" classic :maxlength="100"></l-textarea>
+				</view>	
+			</view>
+			<view class="demo-block">
+				<text class="demo-block__title-text">自定义</text>
+				<view class="demo-block__body">
+					<view style="padding: 16px 16px 24px; background-color: #fff;">
+						<text style="color: rgba(0, 0, 0, .9); font-size: 12px; line-height: 20px; padding-bottom: 8px;">标签文字</text>
+						<l-textarea placeholder="请输入文字" classic :maxlength="100" indicator l-style="height: 100px;"></l-textarea>
+					</view>
+				</view>	
+			</view>
+		</view>	
+	</view>
+</template>
+
+<script lang="uts">
+	export default {
+		data() {
+			return {
+				value: '999999999999999999'
+			}
+		},
+		methods: {
+			
+		},
+		mounted() {
+			setTimeout(()=>{
+				this.value = '999999999999999999998'
+			},1000)
+		}
+	}
+</script>
+
+<style lang="scss">
+	.row{
+		display: flex;
+		// #ifndef APP-IOS || APP-ANDROID
+		gap: 20rpx;
+		// #endif
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.tag{
+		// #ifdef APP-IOS || APP-ANDROID
+		margin-right: 20rpx;
+		// #endif
+	}
+	.demo-block {
+		margin: 32px 0 0;
+		// overflow: visible;
+		&.card{
+			background-color: white;
+			padding: 30rpx;
+			margin-bottom: 20rpx !important;
+		}
+		&__title {
+			margin: 0;
+			margin-top: 8px;
+			
+			&-text {
+				color: rgba(0, 0, 0, 0.6);
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 16px;
+				margin-left: 16px;
+				&.large {
+					color: rgba(0, 0, 0, 0.9);
+					font-size: 18px;
+					font-weight: 700;
+					line-height: 26px;
+					display: flex;
+				}
+				&.ultra {
+					color: rgba(0, 0, 0, 0.9);
+					font-size: 24px;
+					font-weight: 700;
+					line-height: 32px;
+					display: flex;
+				}
+			}
+		}
+		&__desc-text {
+			color: rgba(0, 0, 0, 0.6);
+			margin: 8px 16px 0 0;
+			font-size: 14px;
+			line-height: 22px;
+			margin-left: 16px;
+		}
+		&__body {
+			margin: 16px 0;
+			overflow: visible;
+			.demo-block {
+				// margin-top: 0px;
+				margin: 0;
+			}
+		}
+	}
+</style>

@@ -18,9 +18,28 @@ const _cache = __ins.renderCache;
 		})
 	}
 	
+	const myorders = () => {
+		uni.navigateTo({
+			url: '/pages/mine/myOrders/myOrders'
+		})
+
+	}
+	
 	const helpCenter = () => {
 		uni.navigateTo({
 			url: '/pages/mine/helpCenter/helpCenter'
+		})
+	}
+
+	const msgCenter = () => {
+		uni.switchTab({
+			url: '/pages/message/message'
+		})
+	}
+
+	const feedback = () => {
+		uni.navigateTo({
+			url: '/pages/mine/feeback/feeback'
 		})
 	}
 
@@ -46,7 +65,10 @@ return (): any | null => {
         })),
         createElementVNode("text", utsMapOf({ class: "file-text" }), "永久备份")
       ]),
-      createElementVNode("view", utsMapOf({ class: "file" }), [
+      createElementVNode("view", utsMapOf({
+        class: "file",
+        onClick: msgCenter
+      }), [
         createElementVNode("image", utsMapOf({
           class: "fileIcon",
           src: "/static/mine/msgList.png",
@@ -96,7 +118,10 @@ return (): any | null => {
           }))
         ])
       ]),
-      createElementVNode("view", utsMapOf({ class: "item" }), [
+      createElementVNode("view", utsMapOf({
+        class: "item",
+        onClick: myorders
+      }), [
         createElementVNode("view", utsMapOf({ class: "info" }), [
           createElementVNode("image", utsMapOf({
             class: "item-icon",
@@ -150,7 +175,10 @@ return (): any | null => {
           }))
         ])
       ]),
-      createElementVNode("view", utsMapOf({ class: "item" }), [
+      createElementVNode("view", utsMapOf({
+        class: "item",
+        onClick: feedback
+      }), [
         createElementVNode("view", utsMapOf({ class: "info" }), [
           createElementVNode("image", utsMapOf({
             class: "item-icon",

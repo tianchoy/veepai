@@ -1,0 +1,75 @@
+<template>
+	<view class="container">
+		<view class="content">
+			<view class="item">
+				<text>包年120G套餐</text>
+				<text class="price">¥128</text>
+			</view>
+			<view class="item underline">
+				<text>有效期</text>
+				<text>60个月</text>
+			</view>
+			<view class="item">
+				<text>设备名称</text>
+				<text>办公室设备</text>
+			</view>
+			<view class="item underline">
+				<text>ICCID </text>
+				<text>8986042400000000000</text>
+			</view>
+			<view class="item">
+				<text>实付款</text>
+				<text>¥128</text>
+			</view>
+			<view class="item">
+				<text>订单编号</text>
+				<text>ASW22333332222</text>
+			</view>
+			<view class="item">
+				<text>下单时间</text>
+				<text>2024-10-23 17:21:11</text>
+			</view>
+			<view class="item">
+				<text>支付时间</text>
+				<text>2024-10-23 17:21:22</text>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import { ref } from 'vue'
+	const id = ref<string>('')
+
+	onLoad((options:UTSJSONObject)=>{
+		id.value =  options.id!.toString()
+	})
+</script>
+
+<style lang="scss" scoped>
+	.container{
+		height: 100%;
+		padding:20rpx;
+		background-color:#F5F5F5;
+		.content{
+			background-color: #fff;
+			padding: 20rpx 40rpx;
+			border-radius: 20rpx;
+			.item{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				padding: 20rpx 0;
+				.price{
+					font-size: 38rpx;
+					color:#555;
+					font-weight:bold;
+				}
+			}
+			.underline{
+				border-bottom: 2rpx solid #F1f1f1;
+			}
+		}
+	}
+</style>

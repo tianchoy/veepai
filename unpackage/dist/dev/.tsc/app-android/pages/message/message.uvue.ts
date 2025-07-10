@@ -156,6 +156,13 @@ const _cache = __ins.renderCache;
 		radioItems.value[0].checked = true
 		currentDeviceInfo.value = radioItems.value[0]
 	}
+
+	const deviceDetail = () => {
+		uni.navigateTo({
+			url: '/pages/message/messageDeviceDetail/messageDeviceDetail'
+		})
+
+	}
 	
 	const msgSystem = () => {
 		uni.navigateTo({
@@ -223,7 +230,10 @@ const _component_fui_radio_group = resolveEasyComponent("fui-radio-group",_easyc
         createElementVNode("view", utsMapOf({ class: "item-content" }), [
           createElementVNode("view", utsMapOf({ class: "title-box" }), [
             createElementVNode("text", utsMapOf({ class: "title" }), "设备名称"),
-            createElementVNode("view", utsMapOf({ class: "more" }), [
+            createElementVNode("view", utsMapOf({
+              class: "more",
+              onClick: deviceDetail
+            }), [
               createElementVNode("text", null, "更多"),
               createVNode(_component_l_icon, utsMapOf({
                 name: "chevron-right",
