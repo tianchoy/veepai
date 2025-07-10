@@ -8015,7 +8015,7 @@ function isConsoleWritable() {
 function initRuntimeSocketService() {
   const hosts = "127.0.0.1,192.168.3.34";
   const port = "8090";
-  const id = "mp-weixin_e4FA8y";
+  const id = "mp-weixin_i_tum9";
   const lazy = typeof swan !== "undefined";
   let restoreError = lazy ? () => {
   } : initOnError();
@@ -12656,6 +12656,7 @@ exports.mergeModels = mergeModels;
 exports.n = n$1;
 exports.nextTick$1 = nextTick$1;
 exports.o = o$1;
+exports.onBeforeUnmount = onBeforeUnmount;
 exports.onLoad = onLoad;
 exports.onMounted = onMounted;
 exports.onUnmounted = onUnmounted;
@@ -12668,6 +12669,7 @@ exports.resolveComponent = resolveComponent;
 exports.s = s$1;
 exports.sei = sei;
 exports.t = t$1;
+exports.toRaw = toRaw;
 exports.unref = unref;
 exports.useModel = useModel;
 exports.useSlots = useSlots;

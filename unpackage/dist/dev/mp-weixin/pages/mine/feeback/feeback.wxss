@@ -39,11 +39,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 30rpx 0;
-}
-.container .content .item-label .required.data-v-9d38f2ce {
-  width: 40rpx;
-  height: 40rpx;
+  margin-top: 30rpx;
 }
 .container .content .item-label .little-title.data-v-9d38f2ce {
   color: #999;
@@ -52,4 +48,7 @@
 }
 .container .btn-box.data-v-9d38f2ce {
   margin-top: 50rpx;
+}
+.container .l-picker.data-v-9d38f2ce {
+  width: 100%;
 }

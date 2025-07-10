@@ -3176,7 +3176,7 @@
 		</data>
 		<key>Frameworks/unimoduleLimeClipboard.framework.dSYM/Contents/Resources/DWARF/unimoduleLimeClipboard</key>
 		<data>
-		4SUtACtlDMEOkY3C+Qq+xNiIhAg=
+		jfua6jEN+lsaI6fN4Lw2iHYwQbU=
 		</data>
 		<key>Frameworks/unimoduleLimeClipboard.framework.dSYM/Contents/Resources/Relocations/x86_64/unimoduleLimeClipboard.yml</key>
 		<data>
@@ -3212,7 +3212,7 @@
 		</data>
 		<key>Frameworks/unimoduleLimeClipboard.framework/Modules/unimoduleLimeClipboard.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		/LJSqOrMRZqY6uaceEQGhBeW9pI=
+		yA5kRzEs6aCBSjuUSG3IZaln9TY=
 		</data>
 		<key>Frameworks/unimoduleLimeClipboard.framework/Modules/unimoduleLimeClipboard.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -3236,7 +3236,7 @@
 		</data>
 		<key>Frameworks/unimoduleLimeClipboard.framework/_CodeSignature/CodeResources</key>
 		<data>
-		irH26Fs+d9zGlo/l3ND5+SajZgY=
+		YmeerszcNjhATlhEjidy8Aa9Ykg=
 		</data>
 		<key>Frameworks/unimoduleLimeClipboard.framework/config.json</key>
 		<data>
@@ -3244,7 +3244,7 @@
 		</data>
 		<key>Frameworks/unimoduleLimeClipboard.framework/unimoduleLimeClipboard</key>
 		<data>
-		7Rm3vIOnlpZoCWR21wePmWh5V04=
+		GS0qgFZ3E09hp0vudGyBDWKD4H4=
 		</data>
 		<key>HXDependencies/app-ios-debug.json</key>
 		<data>
@@ -8841,7 +8841,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HYKmHxtKyNCWWAlZnNJjUfFJHUOwJCSlQm9ZOa+Spao=
+			oHuhj5Pv4AODozzBODKPe4WVshBk1QnvHKHl7O++3ks=
 			</data>
 		</dict>
 		<key>Frameworks/unimoduleLimeClipboard.framework.dSYM/Contents/Resources/Relocations/x86_64/unimoduleLimeClipboard.yml</key>
@@ -8904,7 +8904,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LVswARo5qRVJj1o/jQ9CtmO/Ua/dNaQYHookAV6Yp/A=
+			AnXtfbcbXE9vLmQXGv24Bhp0YPDnWCzpEN2jF8XPjo8=
 			</data>
 		</dict>
 		<key>Frameworks/unimoduleLimeClipboard.framework/Modules/unimoduleLimeClipboard.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -8946,7 +8946,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5a2CYAxvSI6qZLRNWW0Ja4luU3t3txgZQvrxuudPnQU=
+			YnvzuNu/6Vi0bXw3ukndZo6jKwGH12Km7CLLFGvfyA0=
 			</data>
 		</dict>
 		<key>Frameworks/unimoduleLimeClipboard.framework/config.json</key>
@@ -8960,7 +8960,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YOswjdJEzRpomxK3PAGNJESiMvbnj+WAbgzL/b/kztw=
+			r5cO7FsCSFeBUUDDMzdXg/Q3CE30mmukRcH9PpzvbYQ=
 			</data>
 		</dict>
 		<key>HXDependencies/app-ios-debug.json</key>

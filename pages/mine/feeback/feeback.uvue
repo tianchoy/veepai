@@ -2,21 +2,25 @@
 	<view class="container">
 		<view class="content">
 			<view class="item" @click="showQuestionsPicker">
-				<fui-input text-align="right" label="问题类型" :labelSize="28" textAlign="left" placeholderStyle="font-size: 28rpx;" :disabled="true" :required="true" placeholder="请选择问题类型">
+				<fui-input text-align="right" label="问题类型" :labelSize="28" textAlign="left"
+					placeholderStyle="font-size: 28rpx;" :disabled="true" :required="true" placeholder="请选择问题类型">
 					<text>
 						<fui-icon name="arrowright" :size="45"></fui-icon>
 					</text>
 				</fui-input>
 			</view>
 			<view class="item">
-				<fui-input text-align="right" label="设备型号" :labelSize="28" textAlign="left" placeholderStyle="font-size: 28rpx;" :disabled="true"   placeholder="请选择设备型号(选填)">
+				<fui-input text-align="right" label="设备型号" :labelSize="28" textAlign="left"
+					placeholderStyle="font-size: 28rpx;" :disabled="true" placeholder="请选择设备型号(选填)">
 					<text>
 						<fui-icon name="arrowright" :size="45"></fui-icon>
 					</text>
 				</fui-input>
 			</view>
 			<view class="item">
-				<fui-input text-align="right" label="联系方式" :labelSize="28" textAlign="left" placeholderStyle="font-size: 28rpx;" :disabled="false" :required="true" placeholder="请输入联系方式"></fui-input>
+				<fui-input text-align="right" label="联系方式" :labelSize="28" textAlign="left"
+					placeholderStyle="font-size: 28rpx;" :disabled="false" :required="true"
+					placeholder="请输入联系方式"></fui-input>
 			</view>
 			<view class="item">
 				<view class="item-label">
@@ -26,29 +30,25 @@
 					// #ifdef APP-ANDROID
 					<image style="width:40rpx;height:40rpx;margin-right:10rpx" src="/static/required.png" />
 					// #endif
-					
+
 					<text>问题描述</text>
 				</view>
-				<l-textarea placeholder="请输入内容"  :maxlength="200" :indicator="true" :autosize="true" :autofocus="true" :clearable="true" layout="vertical"></l-textarea>
+				<l-textarea placeholder="请输入内容" :maxlength="200" :indicator="true" :autosize="true" :autofocus="true"
+					:clearable="true" layout="vertical"></l-textarea>
 			</view>
 			<view class="item">
 				<view class="item-label">
 					<text>图片</text>
 					<text class="little-title">(问题截图,最多三张)</text>
 				</view>
-				<!-- <l-upload :max="3" :multiple="true" v-model="files as UploadFile[]" /> -->
+				<l-upload :max="3" :multiple="true" v-model="files as UploadFile[]" />
 			</view>
 		</view>
 		<view class="btn-box">
 			<fui-button color="#fff" text="去充值" background="#1296db" height="80rpx" @onclick="submit"></fui-button>
 		</view>
 		<fui-bottom-popup :visible="showPicker">
-			<l-picker 
-				cancel-btn="取消" 
-				confirm-btn="确定" 
-				:columns="pickerOptions" 
-				@cancel="showPicker = false" 
-				@confirm="showPicker = false">
+			<l-picker cancel-btn="取消" confirm-btn="确定" :columns="pickerOptions" @confirm="onConfirm">
 			</l-picker>
 		</fui-bottom-popup>
 	</view>
@@ -56,8 +56,8 @@
 
 <script setup lang="uts">
 	import { ref } from 'vue'
-	import {UploadFile} from '@/uni_modules/lime-upload';
-	import { PickerColumn } from '@/uni_modules/lime-picker';
+	import { UploadFile } from '@/uni_modules/lime-upload';
+	import { PickerColumn ,PickerConfirmEvent} from '@/uni_modules/lime-picker';
 	const files = ref<UploadFile[]>([{
 		url: 'https://img-cdn-tx.dcloud.net.cn/stream/plugin_screens/lime-barcode_0.png',
 		name: 'uploaded4.png',
@@ -69,15 +69,27 @@
 
 	const showQuestionsPicker = () => {
 		pickerOptions.value = [
-			{
-				label: '问题1',
-				value: '问题1',
-			},
-			{
-				label: '问题2',
-				value: '问题2',
-			}
-		]
+			[
+				{
+					label: '产品',
+					value: '产品',
+				},
+				{
+					label: '服务',
+					value: '服务',
+				},
+				{
+					label: '其他',
+					value: '其他',
+				}
+			]
+		]  as PickerColumn[]
+		showPicker.value = true
+	}
+
+	const onConfirm = (context : PickerConfirmEvent) => {
+		showPicker.value = false
+		console.log('context', context.values[0])
 	}
 
 	const submit = () => {
@@ -88,29 +100,35 @@
 </script>
 
 <style lang="scss" scoped>
-	.container{
+	.container {
 		height: 100%;
 		background-color: #F5f5f5;
-		padding:20rpx;
-		.content{
+		padding: 20rpx;
+
+		.content {
 			background-color: #fff;
 			border-radius: 20rpx;
-			padding:20rpx;
-			.item-label{
-				display:flex;
+			padding: 20rpx;
+
+			.item-label {
+				display: flex;
 				flex-direction: row;
 				align-items: center;
-				margin:30rpx 0;
-				.little-title{
-					color:#999;
-					font-size:20rpx;
-					margin-left:10rpx;
+				margin-top: 30rpx;
+
+				.little-title {
+					color: #999;
+					font-size: 20rpx;
+					margin-left: 10rpx;
 				}
 			}
 		}
-		.btn-box{
+
+		.btn-box {
 			margin-top: 50rpx
 		}
+		.l-picker{
+			width:100%
+		}
 	}
-		
 </style>

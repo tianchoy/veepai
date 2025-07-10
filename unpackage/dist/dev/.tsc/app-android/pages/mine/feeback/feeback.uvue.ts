@@ -1,12 +1,13 @@
 import _easycom_fui_icon from '@/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue'
 import _easycom_fui_input from '@/uni_modules/firstui-unix/components/fui-input/fui-input.uvue'
 import _easycom_l_textarea from '@/uni_modules/lime-textarea/components/l-textarea/l-textarea.uvue'
+import _easycom_l_upload from '@/uni_modules/lime-upload/components/l-upload/l-upload.uvue'
 import _easycom_fui_button from '@/uni_modules/firstui-unix/components/fui-button/fui-button.uvue'
 import _easycom_l_picker from '@/uni_modules/lime-picker/components/l-picker/l-picker.uvue'
 import _easycom_fui_bottom_popup from '@/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue'
 import { ref } from 'vue'
-	import {UploadFile} from '@/uni_modules/lime-upload';
-	import { PickerColumn } from '@/uni_modules/lime-picker';
+	import { UploadFile } from '@/uni_modules/lime-upload';
+	import { PickerColumn ,PickerConfirmEvent} from '@/uni_modules/lime-picker';
 	
 const __sfc__ = defineComponent({
   __name: 'feeback',
@@ -26,15 +27,27 @@ const _cache = __ins.renderCache;
 
 	const showQuestionsPicker = () => {
 		pickerOptions.value = [
-			{
-				label: '问题1',
-				value: '问题1',
-			},
-			{
-				label: '问题2',
-				value: '问题2',
-			}
-		]
+			[
+				{
+					label: '产品',
+					value: '产品',
+				},
+				{
+					label: '服务',
+					value: '服务',
+				},
+				{
+					label: '其他',
+					value: '其他',
+				}
+			]
+		]  as PickerColumn[]
+		showPicker.value = true
+	}
+
+	const onConfirm = (context : PickerConfirmEvent) => {
+		showPicker.value = false
+		console.log('context', context.values[0], " at pages/mine/feeback/feeback.uvue:92")
 	}
 
 	const submit = () => {
@@ -48,6 +61,7 @@ return (): any | null => {
 const _component_fui_icon = resolveEasyComponent("fui-icon",_easycom_fui_icon)
 const _component_fui_input = resolveEasyComponent("fui-input",_easycom_fui_input)
 const _component_l_textarea = resolveEasyComponent("l-textarea",_easycom_l_textarea)
+const _component_l_upload = resolveEasyComponent("l-upload",_easycom_l_upload)
 const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_button)
 const _component_l_picker = resolveEasyComponent("l-picker",_easycom_l_picker)
 const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_easycom_fui_bottom_popup)
@@ -134,7 +148,13 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
         createElementVNode("view", utsMapOf({ class: "item-label" }), [
           createElementVNode("text", null, "图片"),
           createElementVNode("text", utsMapOf({ class: "little-title" }), "(问题截图,最多三张)")
-        ])
+        ]),
+        createVNode(_component_l_upload, utsMapOf({
+          max: 3,
+          multiple: true,
+          modelValue: files.value,
+          "onUpdate:modelValue": ($event: UploadFile[]) => {(files).value = $event}
+        }), null, 8 /* PROPS */, ["modelValue", "onUpdate:modelValue"])
       ])
     ]),
     createElementVNode("view", utsMapOf({ class: "btn-box" }), [
@@ -152,9 +172,8 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
           "cancel-btn": "取消",
           "confirm-btn": "确定",
           columns: pickerOptions.value,
-          onCancel: () => {showPicker.value = false},
-          onConfirm: () => {showPicker.value = false}
-        }), null, 8 /* PROPS */, ["columns", "onCancel", "onConfirm"])
+          onConfirm: onConfirm
+        }), null, 8 /* PROPS */, ["columns"])
       ]),
       _: 1 /* STABLE */
     }), 8 /* PROPS */, ["visible"])
@@ -164,4 +183,4 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
 
 })
 export default __sfc__
-const GenPagesMineFeebackFeebackStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundColor", "#F5f5f5"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]]))], ["content", utsMapOf([[".container ", utsMapOf([["backgroundColor", "#ffffff"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]])]])], ["item-label", utsMapOf([[".container .content ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["marginTop", "30rpx"], ["marginRight", 0], ["marginBottom", "30rpx"], ["marginLeft", 0]])]])], ["little-title", utsMapOf([[".container .content .item-label ", utsMapOf([["color", "#999999"], ["fontSize", "20rpx"], ["marginLeft", "10rpx"]])]])], ["btn-box", utsMapOf([[".container ", utsMapOf([["marginTop", "50rpx"]])]])]])]
+const GenPagesMineFeebackFeebackStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundColor", "#F5f5f5"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]]))], ["content", utsMapOf([[".container ", utsMapOf([["backgroundColor", "#ffffff"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]])]])], ["item-label", utsMapOf([[".container .content ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["marginTop", "30rpx"]])]])], ["little-title", utsMapOf([[".container .content .item-label ", utsMapOf([["color", "#999999"], ["fontSize", "20rpx"], ["marginLeft", "10rpx"]])]])], ["btn-box", utsMapOf([[".container ", utsMapOf([["marginTop", "50rpx"]])]])], ["l-picker", utsMapOf([[".container ", utsMapOf([["width", "100%"]])]])]])]

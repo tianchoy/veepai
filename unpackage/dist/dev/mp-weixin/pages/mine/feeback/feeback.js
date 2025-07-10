@@ -6,15 +6,19 @@ if (!Array) {
   const _easycom_l_textarea_1 = common_vendor.resolveComponent("l-textarea");
   const _easycom_l_upload_1 = common_vendor.resolveComponent("l-upload");
   const _easycom_fui_button_1 = common_vendor.resolveComponent("fui-button");
-  (_easycom_fui_icon_1 + _easycom_fui_input_1 + _easycom_l_textarea_1 + _easycom_l_upload_1 + _easycom_fui_button_1)();
+  const _easycom_l_picker_1 = common_vendor.resolveComponent("l-picker");
+  const _easycom_fui_bottom_popup_1 = common_vendor.resolveComponent("fui-bottom-popup");
+  (_easycom_fui_icon_1 + _easycom_fui_input_1 + _easycom_l_textarea_1 + _easycom_l_upload_1 + _easycom_fui_button_1 + _easycom_l_picker_1 + _easycom_fui_bottom_popup_1)();
 }
 const _easycom_fui_icon = () => "../../../uni_modules/firstui-unix/components/fui-icon/fui-icon.js";
 const _easycom_fui_input = () => "../../../uni_modules/firstui-unix/components/fui-input/fui-input.js";
 const _easycom_l_textarea = () => "../../../uni_modules/lime-textarea/components/l-textarea/l-textarea.js";
 const _easycom_l_upload = () => "../../../uni_modules/lime-upload/components/l-upload/l-upload.js";
 const _easycom_fui_button = () => "../../../uni_modules/firstui-unix/components/fui-button/fui-button.js";
+const _easycom_l_picker = () => "../../../uni_modules/lime-picker/components/l-picker/l-picker.js";
+const _easycom_fui_bottom_popup = () => "../../../uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.js";
 if (!Math) {
-  (_easycom_fui_icon + _easycom_fui_input + _easycom_l_textarea + _easycom_l_upload + _easycom_fui_button)();
+  (_easycom_fui_icon + _easycom_fui_input + _easycom_l_textarea + _easycom_l_upload + _easycom_fui_button + _easycom_l_picker + _easycom_fui_bottom_popup)();
 }
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
   __name: "feeback",
@@ -24,6 +28,31 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       name: "uploaded4.png",
       type: "image"
     }]);
+    const pickerOptions = common_vendor.ref([]);
+    const showPicker = common_vendor.ref(false);
+    const showQuestionsPicker = () => {
+      pickerOptions.value = [
+        [
+          {
+            label: "产品",
+            value: "产品"
+          },
+          {
+            label: "服务",
+            value: "服务"
+          },
+          {
+            label: "其他",
+            value: "其他"
+          }
+        ]
+      ];
+      showPicker.value = true;
+    };
+    const onConfirm = (context) => {
+      showPicker.value = false;
+      common_vendor.index.__f__("log", "at pages/mine/feeback/feeback.uvue:92", "context", context.values[0]);
+    };
     const submit = () => {
       common_vendor.index.showToast({
         title: "提交成功"
@@ -45,11 +74,12 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
           required: true,
           placeholder: "请选择问题类型"
         }),
-        c: common_vendor.p({
+        c: common_vendor.o(showQuestionsPicker),
+        d: common_vendor.p({
           name: "arrowright",
           size: 45
         }),
-        d: common_vendor.p({
+        e: common_vendor.p({
           ["text-align"]: "right",
           label: "设备型号",
           labelSize: 28,
@@ -58,7 +88,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
           disabled: true,
           placeholder: "请选择设备型号(选填)"
         }),
-        e: common_vendor.p({
+        f: common_vendor.p({
           ["text-align"]: "right",
           label: "联系方式",
           labelSize: 28,
@@ -68,7 +98,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
           required: true,
           placeholder: "请输入联系方式"
         }),
-        f: common_vendor.p({
+        g: common_vendor.p({
           placeholder: "请输入内容",
           maxlength: 200,
           indicator: true,
@@ -77,22 +107,31 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
           clearable: true,
           layout: "vertical"
         }),
-        g: common_vendor.o(($event = null) => {
+        h: common_vendor.o(($event = null) => {
           return files.value = $event;
         }),
-        h: common_vendor.p({
+        i: common_vendor.p({
           max: 3,
           multiple: true,
           modelValue: files.value
         }),
-        i: common_vendor.o(submit),
-        j: common_vendor.p({
+        j: common_vendor.o(submit),
+        k: common_vendor.p({
           color: "#fff",
           text: "去充值",
           background: "#1296db",
           height: "80rpx"
         }),
-        k: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        l: common_vendor.o(onConfirm),
+        m: common_vendor.p({
+          ["cancel-btn"]: "取消",
+          ["confirm-btn"]: "确定",
+          columns: pickerOptions.value
+        }),
+        n: common_vendor.p({
+          visible: showPicker.value
+        }),
+        o: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

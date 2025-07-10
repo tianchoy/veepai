@@ -28,16 +28,16 @@ open class GenPagesMineFeebackFeeback : BasePage {
             val pickerOptions = ref(utsArrayOf<PickerColumn>())
             val showPicker = ref<Boolean>(false)
             val showQuestionsPicker = fun(){
-                pickerOptions.value = utsArrayOf(
-                    object : UTSJSONObject() {
-                        var label = "问题1"
-                        var value = "问题1"
-                    },
-                    object : UTSJSONObject() {
-                        var label = "问题2"
-                        var value = "问题2"
-                    }
-                )
+                pickerOptions.value = utsArrayOf<PickerColumn>(utsArrayOf(
+                    PickerColumnItem(label = "产品", value = "产品"),
+                    PickerColumnItem(label = "服务", value = "服务"),
+                    PickerColumnItem(label = "其他", value = "其他")
+                ))
+                showPicker.value = true
+            }
+            val onConfirm = fun(context: PickerConfirmEvent){
+                showPicker.value = false
+                console.log("context", context.values[0], " at pages/mine/feeback/feeback.uvue:92")
             }
             val submit = fun(){
                 uni_showToast(ShowToastOptions(title = "提交成功"))
@@ -46,6 +46,7 @@ open class GenPagesMineFeebackFeeback : BasePage {
                 val _component_fui_icon = resolveEasyComponent("fui-icon", GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass)
                 val _component_fui_input = resolveEasyComponent("fui-input", GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass)
                 val _component_l_textarea = resolveEasyComponent("l-textarea", GenUniModulesLimeTextareaComponentsLTextareaLTextareaClass)
+                val _component_l_upload = resolveEasyComponent("l-upload", GenUniModulesLimeUploadComponentsLUploadLUploadClass)
                 val _component_fui_button = resolveEasyComponent("fui-button", GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass)
                 val _component_l_picker = resolveEasyComponent("l-picker", GenUniModulesLimePickerComponentsLPickerLPickerClass)
                 val _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup", GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass)
@@ -85,6 +86,13 @@ open class GenPagesMineFeebackFeeback : BasePage {
                             createElementVNode("view", utsMapOf("class" to "item-label"), utsArrayOf(
                                 createElementVNode("text", null, "图片"),
                                 createElementVNode("text", utsMapOf("class" to "little-title"), "(问题截图,最多三张)")
+                            )),
+                            createVNode(_component_l_upload, utsMapOf("max" to 3, "multiple" to true, "modelValue" to files.value, "onUpdate:modelValue" to fun(`$event`: UTSArray<UploadFile>){
+                                files.value = `$event`
+                            }
+                            ), null, 8, utsArrayOf(
+                                "modelValue",
+                                "onUpdate:modelValue"
                             ))
                         ))
                     )),
@@ -93,16 +101,8 @@ open class GenPagesMineFeebackFeeback : BasePage {
                     )),
                     createVNode(_component_fui_bottom_popup, utsMapOf("visible" to showPicker.value), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
                         return utsArrayOf(
-                            createVNode(_component_l_picker, utsMapOf("cancel-btn" to "取消", "confirm-btn" to "确定", "columns" to pickerOptions.value, "onCancel" to fun(){
-                                showPicker.value = false
-                            }
-                            , "onConfirm" to fun(){
-                                showPicker.value = false
-                            }
-                            ), null, 8, utsArrayOf(
-                                "columns",
-                                "onCancel",
-                                "onConfirm"
+                            createVNode(_component_l_picker, utsMapOf("cancel-btn" to "取消", "confirm-btn" to "确定", "columns" to pickerOptions.value, "onConfirm" to onConfirm), null, 8, utsArrayOf(
+                                "columns"
                             ))
                         )
                     }
@@ -121,7 +121,7 @@ open class GenPagesMineFeebackFeeback : BasePage {
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundColor" to "#F5f5f5", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "content" to utsMapOf(".container " to utsMapOf("backgroundColor" to "#ffffff", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "item-label" to utsMapOf(".container .content " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "marginTop" to "30rpx", "marginRight" to 0, "marginBottom" to "30rpx", "marginLeft" to 0)), "little-title" to utsMapOf(".container .content .item-label " to utsMapOf("color" to "#999999", "fontSize" to "20rpx", "marginLeft" to "10rpx")), "btn-box" to utsMapOf(".container " to utsMapOf("marginTop" to "50rpx")))
+                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundColor" to "#F5f5f5", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "content" to utsMapOf(".container " to utsMapOf("backgroundColor" to "#ffffff", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "item-label" to utsMapOf(".container .content " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "marginTop" to "30rpx")), "little-title" to utsMapOf(".container .content .item-label " to utsMapOf("color" to "#999999", "fontSize" to "20rpx", "marginLeft" to "10rpx")), "btn-box" to utsMapOf(".container " to utsMapOf("marginTop" to "50rpx")), "l-picker" to utsMapOf(".container " to utsMapOf("width" to "100%")))
             }
         var inheritAttrs = true
         var inject: Map<String, Map<String, Any?>> = utsMapOf()
