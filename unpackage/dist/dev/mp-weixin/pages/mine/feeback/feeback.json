@@ -4,7 +4,6 @@
     "fui-icon": "../../../uni_modules/firstui-unix/components/fui-icon/fui-icon",
     "fui-input": "../../../uni_modules/firstui-unix/components/fui-input/fui-input",
     "l-textarea": "../../../uni_modules/lime-textarea/components/l-textarea/l-textarea",
-    "l-upload": "../../../uni_modules/lime-upload/components/l-upload/l-upload",
     "fui-button": "../../../uni_modules/firstui-unix/components/fui-button/fui-button",
     "l-picker": "../../../uni_modules/lime-picker/components/l-picker/l-picker",
     "fui-bottom-popup": "../../../uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup"

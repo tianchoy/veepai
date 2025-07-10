@@ -16,10 +16,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
-import io.dcloud.uniapp.extapi.chooseFile as uni_chooseFile
-import io.dcloud.uniapp.extapi.chooseImage as uni_chooseImage
-import io.dcloud.uniapp.extapi.chooseMedia as uni_chooseMedia
-import io.dcloud.uniapp.extapi.chooseVideo as uni_chooseVideo
 import io.dcloud.uniapp.extapi.connectSocket as uni_connectSocket
 import io.dcloud.uniapp.extapi.exit as uni_exit
 import io.dcloud.uniapp.extapi.getDeviceInfo as uni_getDeviceInfo
@@ -7806,6 +7802,44 @@ val GenUniModulesLimeTextareaComponentsLTextareaLTextareaClass = CreateVueCompon
     return GenUniModulesLimeTextareaComponentsLTextareaLTextarea(instance)
 }
 )
+fun <T> pushAt(arr: UTSArray<T>, index: Number, value: T) {
+    if (index < arr.length) {
+        arr[index] = value
+    } else {
+        arr.push(value)
+    }
+}
+val GenUniModulesLimePickerComponentsLPickerItemLPickerItemClass = CreateVueComponent(GenUniModulesLimePickerComponentsLPickerItemLPickerItem::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.inheritAttrs, inject = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.inject, props = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.props, propsNeedCastKeys = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.propsNeedCastKeys, emits = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.emits, components = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.components, styles = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.styles, setup = fun(props: ComponentPublicInstance, ctx: SetupContext): Any? {
+        return GenUniModulesLimePickerComponentsLPickerItemLPickerItem.setup(props as GenUniModulesLimePickerComponentsLPickerItemLPickerItem, ctx)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimePickerComponentsLPickerItemLPickerItem {
+    return GenUniModulesLimePickerComponentsLPickerItemLPickerItem(instance)
+}
+)
+typealias ManageChildInList = (child: LPickerItemComponentPublicInstance, shouldAdd: Boolean) -> Unit
+val GenUniModulesLimePickerComponentsLPickerLPickerClass = CreateVueComponent(GenUniModulesLimePickerComponentsLPickerLPicker::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimePickerComponentsLPickerLPicker.inheritAttrs, inject = GenUniModulesLimePickerComponentsLPickerLPicker.inject, props = GenUniModulesLimePickerComponentsLPickerLPicker.props, propsNeedCastKeys = GenUniModulesLimePickerComponentsLPickerLPicker.propsNeedCastKeys, emits = GenUniModulesLimePickerComponentsLPickerLPicker.emits, components = GenUniModulesLimePickerComponentsLPickerLPicker.components, styles = GenUniModulesLimePickerComponentsLPickerLPicker.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenUniModulesLimePickerComponentsLPickerLPicker.setup(props as GenUniModulesLimePickerComponentsLPickerLPicker)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimePickerComponentsLPickerLPicker {
+    return GenUniModulesLimePickerComponentsLPickerLPicker(instance)
+}
+)
+typealias LPickerComponentPublicInstance = GenUniModulesLimePickerComponentsLPickerLPicker
+typealias LPickerItemComponentPublicInstance = GenUniModulesLimePickerComponentsLPickerItemLPickerItem
+typealias OnPick = (value: PickerValue, index: Number, column: Number) -> Unit
+typealias UpdateItems = (value: PickerValue, index: Number, column: Number) -> Unit
+interface PickerItemProps {
+    var options: UTSArray<PickerColumnItem>
+    var value: PickerValue?
+    var column: Number
+    var name: Any?
+}
 open class UploadFile (
     @JsonNotNull
     open var url: String,
@@ -7973,306 +8007,6 @@ open class UploadFileReactiveObject : UploadFile, IUTSReactive<UploadFile> {
             __v_raw.status = value
             triggerReactiveSet(__v_raw, "status", oldValue, value)
         }
-}
-typealias Oversize = (file: Any) -> Unit
-open class ChooseFileOptions1 (
-    @JsonNotNull
-    open var count: Number,
-    @JsonNotNull
-    open var mediaType: String,
-    @JsonNotNull
-    open var sizeType: UTSArray<String>,
-    @JsonNotNull
-    open var sourceType: UTSArray<String>,
-    open var sizeLimit: Number? = null,
-    open var maxDuration: Number? = null,
-    open var camera: String? = null,
-    open var extension: UTSArray<String>? = null,
-    open var success: ((res: Any) -> Unit)? = null,
-    open var fail: ((res: Any) -> Unit)? = null,
-    open var oversize: ((file: Any) -> Unit)? = null,
-) : UTSObject(), IUTSSourceMap {
-    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("ChooseFileOptions", "uni_modules/lime-upload/components/l-upload/type.uts", 7, 13)
-    }
-}
-interface UploadProps {
-    var name: String?
-    var modelValue: UTSArray<UTSJSONObject>?
-    var disabled: Boolean
-    var readonly: Boolean
-    var multiple: Boolean
-    var imageFit: String
-    var gutter: String?
-    var column: Number?
-    var max: Number
-    var sizeLimit: Number?
-    var uploadIcon: String
-    var uploadIconSize: String?
-    var gridWidth: String?
-    var gridHeight: String?
-    var gridBgColor: String?
-    var addBgColor: String?
-    var gridBorderRadius: String?
-    var defaultFiles: UTSArray<UTSJSONObject>?
-    var loadingText: String
-    var reloadText: String
-    var failedText: String
-    var disablePreview: Boolean
-    var autoUpload: Boolean
-    var mediaType: String
-    var maxDuration: Number?
-    var sizeType: UTSArray<String>
-    var sourceType: UTSArray<String>
-    var action: String?
-    var headers: UTSJSONObject?
-    var formData: UTSJSONObject?
-    var mode: String
-}
-fun getFileType(tempFilePath: String, fileType: String?): String {
-    if (fileType != null) {
-        return fileType.replace(UTSRegExp("\\/.+", ""), "")
-    }
-    val videoType = utsArrayOf(
-        "avi",
-        "wmv",
-        "mkv",
-        "mp4",
-        "mov",
-        "rm",
-        "3gp",
-        "flv",
-        "mpg",
-        "rmvb"
-    )
-    val temp = tempFilePath.split(".")
-    val postfix = temp[temp.length - 1]
-    if (videoType.includes(postfix.toLocaleLowerCase())) {
-        return "video"
-    }
-    return "image"
-}
-fun getFileName(filePath: String): String {
-    return filePath.substring(filePath.lastIndexOf("/") + 1)
-}
-val isOverSize = fun(size: Number, sizeLimit: Number?): Boolean {
-    if (sizeLimit == null) {
-        return false
-    }
-    val base: Number = 1000
-    val computedSize = sizeLimit * base
-    return size > computedSize
-}
-fun chooseImage(opts: ChooseFileOptions1) {
-    uni_chooseImage(ChooseImageOptions(count = opts.count, sizeType = opts.sizeType, sourceType = opts.sourceType, extension = opts.extension, success = fun(res) {
-        opts.success?.invoke(res)
-    }
-    , fail = fun(err) {
-        opts.fail?.invoke(err)
-    }
-    ))
-}
-fun chooseVideo(opts: ChooseFileOptions1) {
-    uni_chooseVideo(ChooseVideoOptions(sourceType = opts.sourceType, success = fun(res) {
-        opts.success?.invoke(res)
-    }
-    , fail = fun(err) {
-        opts.fail?.invoke(err)
-    }
-    ))
-}
-fun chooseMedia(opts: ChooseFileOptions1) {
-    uni_chooseMedia(ChooseMediaOptions(count = opts.count, mediaType = utsArrayOf(
-        "image",
-        "video"
-    ), sourceType = opts.sourceType, maxDuration = opts.maxDuration ?: 10, camera = opts.camera ?: "back", success = fun(res) {
-        opts.success?.invoke(res)
-    }
-    , fail = fun(err) {
-        opts.fail?.invoke(err)
-    }
-    ))
-}
-fun chooseAll(opts: ChooseFileOptions1) {
-    uni_chooseFile(ChooseFileOptions(count = opts.count, type = "all", success = fun(res) {
-        opts.success?.invoke(res)
-    }
-    , fail = fun(err) {
-        opts.fail?.invoke(err)
-    }
-    ))
-}
-fun normalizeChooseFiles(type: String, tempFiles: UTSArray<UTSJSONObject>, tempFilePaths: UTSArray<String>, sizeLimit: Number?, oversize: Oversize?): UTSArray<UploadFile> {
-    val files: UTSArray<UploadFile> = utsArrayOf()
-    tempFiles.forEach(fun(temp, index){
-        val tempFilePath = (temp["tempFilePath"] as String?) ?: tempFilePaths[index]
-        val name = (temp["name"] as String?) ?: getFileName(tempFilePath)
-        val size = (temp["size"] as Number?) ?: 0
-        val width = (temp["width"] as Number?)
-        val height = (temp["height"] as Number?)
-        val duration = (temp["duration"] as Number?)
-        val path = (temp["path"] as String?) ?: tempFilePath
-        val thumb = (temp["thumbTempFilePath"] as String?)
-        val _type = if (type == "all") {
-            getFileType(tempFilePath, temp["type"] as String?)
-        } else {
-            type
-        }
-         as String
-        if (isOverSize(size, sizeLimit)) {
-            oversize?.invoke(temp)
-            return
-        }
-        files.push(UploadFile(name = name, type = _type, url = path, path = path, size = size, width = width, height = height, duration = duration, thumb = thumb, percent = 0))
-    }
-    )
-    return files
-}
-fun chooseFiles(opts: ChooseFileOptions1): UTSPromise<UTSArray<UploadFile>> {
-    return UTSPromise(fun(resolve, reject){
-        if (opts.mediaType == "image") {
-            chooseImage(ChooseFileOptions1(count = opts.count, mediaType = opts.mediaType, sizeType = opts.sizeType, sourceType = opts.sourceType, success = fun(result: Any) {
-                val res = result as ChooseImageSuccess
-                val tempFilePaths = res.tempFilePaths
-                val tempFiles = res.tempFiles.map(fun(item): UTSJSONObject {
-                    return object : UTSJSONObject() {
-                        var name = item.name
-                        var path = item.path
-                        var size = item.size
-                        var type = item.type
-                    }
-                })
-                val files = normalizeChooseFiles("image", tempFiles, tempFilePaths, opts.sizeLimit, opts.oversize)
-                resolve(files)
-            }))
-        } else if (opts.mediaType == "video") {
-            chooseVideo(ChooseFileOptions1(count = opts.count, mediaType = opts.mediaType, sourceType = opts.sourceType, sizeType = opts.sizeType, maxDuration = opts.maxDuration, success = fun(result) {
-                val res = result as ChooseVideoSuccess
-                val tempFilePaths = utsArrayOf<String>(res.tempFilePath)
-                val tempFilePath = res.tempFilePath
-                val duration = res.duration
-                val size = res.size
-                val height = res.height
-                val width = res.width
-                val tempFiles = utsArrayOf<UTSJSONObject>(UTSJSONObject(Map<String, Any?>(utsArrayOf(
-                    utsArrayOf(
-                        "path",
-                        tempFilePath
-                    ),
-                    utsArrayOf(
-                        "duration",
-                        duration
-                    ),
-                    utsArrayOf(
-                        "duration",
-                        duration
-                    ),
-                    utsArrayOf(
-                        "size",
-                        size
-                    ),
-                    utsArrayOf(
-                        "height",
-                        height
-                    ),
-                    utsArrayOf(
-                        "width",
-                        width
-                    )
-                ))))
-                val files = normalizeChooseFiles("video", tempFiles, tempFilePaths, opts.sizeLimit, opts.oversize)
-                resolve(files)
-            }))
-        } else if (opts.mediaType == "media") {
-            chooseMedia(ChooseFileOptions1(count = opts.count, mediaType = "media", sourceType = opts.sourceType, maxDuration = opts.maxDuration ?: 10, camera = opts.camera ?: "back", sizeType = opts.sizeType, success = fun(result: Any) {
-                val res = result as ChooseMediaSuccess
-                val tempFilePaths = res.tempFiles.map(fun(it): String {
-                    return it.tempFilePath
-                })
-                val tempFiles = res.tempFiles.map(fun(it): UTSJSONObject {
-                    return (object : UTSJSONObject() {
-                        var path = it.tempFilePath
-                        var size = it.size
-                        var type = it.fileType
-                    })
-                })
-                val files = normalizeChooseFiles("all", tempFiles, tempFilePaths, opts.sizeLimit, opts.oversize)
-                resolve(files)
-            }))
-        } else {
-            chooseAll(ChooseFileOptions1(count = opts.count, mediaType = opts.mediaType, sourceType = opts.sourceType, sizeType = opts.sizeType, success = fun(result: Any) {
-                val res = result as ChooseFileSuccess
-                val tempFilePaths = res.tempFilePaths
-                val tempFiles = res.tempFiles.map(fun(it): UTSJSONObject {
-                    return (object : UTSJSONObject() {
-                        var path = it.path
-                        var size = it.size
-                        var type = it.type
-                        var name = it.name
-                    })
-                }
-                )
-                val files = normalizeChooseFiles("all", tempFiles, tempFilePaths, opts.sizeLimit, opts.oversize)
-                resolve(files)
-            }
-            ))
-        }
-    }
-    )
-}
-open class GenUniModulesLimeUploadComponentsLUploadLUploadSlotDataFile (
-    @JsonNotNull
-    open var file: UploadFile,
-    @JsonNotNull
-    open var index: Number,
-) : SlotData()
-val GenUniModulesLimeUploadComponentsLUploadLUploadClass = CreateVueComponent(GenUniModulesLimeUploadComponentsLUploadLUpload::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeUploadComponentsLUploadLUpload.inheritAttrs, inject = GenUniModulesLimeUploadComponentsLUploadLUpload.inject, props = GenUniModulesLimeUploadComponentsLUploadLUpload.props, propsNeedCastKeys = GenUniModulesLimeUploadComponentsLUploadLUpload.propsNeedCastKeys, emits = GenUniModulesLimeUploadComponentsLUploadLUpload.emits, components = GenUniModulesLimeUploadComponentsLUploadLUpload.components, styles = GenUniModulesLimeUploadComponentsLUploadLUpload.styles, setup = fun(props: ComponentPublicInstance, ctx: SetupContext): Any? {
-        return GenUniModulesLimeUploadComponentsLUploadLUpload.setup(props as GenUniModulesLimeUploadComponentsLUploadLUpload, ctx)
-    }
-    )
-}
-, fun(instance, renderer): GenUniModulesLimeUploadComponentsLUploadLUpload {
-    return GenUniModulesLimeUploadComponentsLUploadLUpload(instance)
-}
-)
-fun <T> pushAt(arr: UTSArray<T>, index: Number, value: T) {
-    if (index < arr.length) {
-        arr[index] = value
-    } else {
-        arr.push(value)
-    }
-}
-val GenUniModulesLimePickerComponentsLPickerItemLPickerItemClass = CreateVueComponent(GenUniModulesLimePickerComponentsLPickerItemLPickerItem::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.inheritAttrs, inject = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.inject, props = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.props, propsNeedCastKeys = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.propsNeedCastKeys, emits = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.emits, components = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.components, styles = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.styles, setup = fun(props: ComponentPublicInstance, ctx: SetupContext): Any? {
-        return GenUniModulesLimePickerComponentsLPickerItemLPickerItem.setup(props as GenUniModulesLimePickerComponentsLPickerItemLPickerItem, ctx)
-    }
-    )
-}
-, fun(instance, renderer): GenUniModulesLimePickerComponentsLPickerItemLPickerItem {
-    return GenUniModulesLimePickerComponentsLPickerItemLPickerItem(instance)
-}
-)
-typealias ManageChildInList = (child: LPickerItemComponentPublicInstance, shouldAdd: Boolean) -> Unit
-val GenUniModulesLimePickerComponentsLPickerLPickerClass = CreateVueComponent(GenUniModulesLimePickerComponentsLPickerLPicker::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimePickerComponentsLPickerLPicker.inheritAttrs, inject = GenUniModulesLimePickerComponentsLPickerLPicker.inject, props = GenUniModulesLimePickerComponentsLPickerLPicker.props, propsNeedCastKeys = GenUniModulesLimePickerComponentsLPickerLPicker.propsNeedCastKeys, emits = GenUniModulesLimePickerComponentsLPickerLPicker.emits, components = GenUniModulesLimePickerComponentsLPickerLPicker.components, styles = GenUniModulesLimePickerComponentsLPickerLPicker.styles, setup = fun(props: ComponentPublicInstance): Any? {
-        return GenUniModulesLimePickerComponentsLPickerLPicker.setup(props as GenUniModulesLimePickerComponentsLPickerLPicker)
-    }
-    )
-}
-, fun(instance, renderer): GenUniModulesLimePickerComponentsLPickerLPicker {
-    return GenUniModulesLimePickerComponentsLPickerLPicker(instance)
-}
-)
-typealias LPickerComponentPublicInstance = GenUniModulesLimePickerComponentsLPickerLPicker
-typealias LPickerItemComponentPublicInstance = GenUniModulesLimePickerComponentsLPickerItemLPickerItem
-typealias OnPick = (value: PickerValue, index: Number, column: Number) -> Unit
-typealias UpdateItems = (value: PickerValue, index: Number, column: Number) -> Unit
-interface PickerItemProps {
-    var options: UTSArray<PickerColumnItem>
-    var value: PickerValue?
-    var column: Number
-    var name: Any?
 }
 val GenPagesMineFeebackFeebackClass = CreateVueComponent(GenPagesMineFeebackFeeback::class.java, fun(): VueComponentOptions {
     return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineFeebackFeeback.inheritAttrs, inject = GenPagesMineFeebackFeeback.inject, props = GenPagesMineFeebackFeeback.props, propsNeedCastKeys = GenPagesMineFeebackFeeback.propsNeedCastKeys, emits = GenPagesMineFeebackFeeback.emits, components = GenPagesMineFeebackFeeback.components, styles = GenPagesMineFeebackFeeback.styles, setup = fun(props: ComponentPublicInstance): Any? {

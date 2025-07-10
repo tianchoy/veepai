@@ -3,13 +3,13 @@
 		<view class="content">
 			<view class="item" @click="showQuestionsPicker">
 				<fui-input text-align="right" label="问题类型" :labelSize="28" textAlign="left"
-					placeholderStyle="font-size: 28rpx;" :disabled="true" :required="true" placeholder="请选择问题类型">
+					placeholderStyle="font-size: 28rpx;" :disabled="true" :required="true" :placeholder = "questionType">
 					<text>
 						<fui-icon name="arrowright" :size="45"></fui-icon>
 					</text>
 				</fui-input>
 			</view>
-			<view class="item">
+			<view class="item underline">
 				<fui-input text-align="right" label="设备型号" :labelSize="28" textAlign="left"
 					placeholderStyle="font-size: 28rpx;" :disabled="true" placeholder="请选择设备型号(选填)">
 					<text>
@@ -41,14 +41,14 @@
 					<text>图片</text>
 					<text class="little-title">(问题截图,最多三张)</text>
 				</view>
-				<l-upload :max="3" :multiple="true" v-model="files as UploadFile[]" />
+				<!-- <l-upload :max="3" :multiple="true" v-model="files as UploadFile[]" /> -->
 			</view>
 		</view>
 		<view class="btn-box">
 			<fui-button color="#fff" text="去充值" background="#1296db" height="80rpx" @onclick="submit"></fui-button>
 		</view>
 		<fui-bottom-popup :visible="showPicker">
-			<l-picker cancel-btn="取消" confirm-btn="确定" :columns="pickerOptions" @confirm="onConfirm">
+			<l-picker cancel-btn="取消" confirm-btn="确定" :columns="pickerOptions" @cancel="oncancel" @confirm="onConfirm">
 			</l-picker>
 		</fui-bottom-popup>
 	</view>
@@ -58,6 +58,7 @@
 	import { ref } from 'vue'
 	import { UploadFile } from '@/uni_modules/lime-upload';
 	import { PickerColumn ,PickerConfirmEvent} from '@/uni_modules/lime-picker';
+	const questionType = ref<string>('请选择问题类型')
 	const files = ref<UploadFile[]>([{
 		url: 'https://img-cdn-tx.dcloud.net.cn/stream/plugin_screens/lime-barcode_0.png',
 		name: 'uploaded4.png',
@@ -89,7 +90,11 @@
 
 	const onConfirm = (context : PickerConfirmEvent) => {
 		showPicker.value = false
-		console.log('context', context.values[0])
+		questionType.value = context.values[0].toString()
+	}
+
+	const oncancel = () => {
+		showPicker.value = false
 	}
 
 	const submit = () => {
@@ -109,6 +114,12 @@
 			background-color: #fff;
 			border-radius: 20rpx;
 			padding: 20rpx;
+
+			// #ifdef APP-IOS || APP-ANDROID
+			.underline{
+				border-bottom: 1rpx solid #f1f1f1;
+			}
+			// #endif
 
 			.item-label {
 				display: flex;
