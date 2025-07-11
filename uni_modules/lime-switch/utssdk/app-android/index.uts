@@ -1,0 +1,9 @@
+import Paint from 'android.graphics.Paint'
+
+export function measureTextSize(textContent : string, fontSize : number) : number {
+	// 创建一个Paint对象
+	const paint = new Paint();
+	paint.setTextSize(fontSize.toFloat());
+	// 测量文本宽度
+	return paint.measureText(textContent);
+}

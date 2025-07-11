@@ -16,6 +16,10 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
+import io.dcloud.uniapp.extapi.chooseFile as uni_chooseFile
+import io.dcloud.uniapp.extapi.chooseImage as uni_chooseImage
+import io.dcloud.uniapp.extapi.chooseMedia as uni_chooseMedia
+import io.dcloud.uniapp.extapi.chooseVideo as uni_chooseVideo
 import io.dcloud.uniapp.extapi.connectSocket as uni_connectSocket
 import io.dcloud.uniapp.extapi.exit as uni_exit
 import io.dcloud.uniapp.extapi.getDeviceInfo as uni_getDeviceInfo
@@ -76,7 +80,7 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
     val hosts: String = "127.0.0.1,192.168.3.34"
     val port: String = "8090"
-    val id: String = "app-android_XHcGyO"
+    val id: String = "app-android_Z86HMS"
     if (hosts == "" || port == "" || id == "") {
         return UTSPromise.resolve(false)
     }
@@ -7802,44 +7806,6 @@ val GenUniModulesLimeTextareaComponentsLTextareaLTextareaClass = CreateVueCompon
     return GenUniModulesLimeTextareaComponentsLTextareaLTextarea(instance)
 }
 )
-fun <T> pushAt(arr: UTSArray<T>, index: Number, value: T) {
-    if (index < arr.length) {
-        arr[index] = value
-    } else {
-        arr.push(value)
-    }
-}
-val GenUniModulesLimePickerComponentsLPickerItemLPickerItemClass = CreateVueComponent(GenUniModulesLimePickerComponentsLPickerItemLPickerItem::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.inheritAttrs, inject = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.inject, props = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.props, propsNeedCastKeys = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.propsNeedCastKeys, emits = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.emits, components = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.components, styles = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.styles, setup = fun(props: ComponentPublicInstance, ctx: SetupContext): Any? {
-        return GenUniModulesLimePickerComponentsLPickerItemLPickerItem.setup(props as GenUniModulesLimePickerComponentsLPickerItemLPickerItem, ctx)
-    }
-    )
-}
-, fun(instance, renderer): GenUniModulesLimePickerComponentsLPickerItemLPickerItem {
-    return GenUniModulesLimePickerComponentsLPickerItemLPickerItem(instance)
-}
-)
-typealias ManageChildInList = (child: LPickerItemComponentPublicInstance, shouldAdd: Boolean) -> Unit
-val GenUniModulesLimePickerComponentsLPickerLPickerClass = CreateVueComponent(GenUniModulesLimePickerComponentsLPickerLPicker::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimePickerComponentsLPickerLPicker.inheritAttrs, inject = GenUniModulesLimePickerComponentsLPickerLPicker.inject, props = GenUniModulesLimePickerComponentsLPickerLPicker.props, propsNeedCastKeys = GenUniModulesLimePickerComponentsLPickerLPicker.propsNeedCastKeys, emits = GenUniModulesLimePickerComponentsLPickerLPicker.emits, components = GenUniModulesLimePickerComponentsLPickerLPicker.components, styles = GenUniModulesLimePickerComponentsLPickerLPicker.styles, setup = fun(props: ComponentPublicInstance): Any? {
-        return GenUniModulesLimePickerComponentsLPickerLPicker.setup(props as GenUniModulesLimePickerComponentsLPickerLPicker)
-    }
-    )
-}
-, fun(instance, renderer): GenUniModulesLimePickerComponentsLPickerLPicker {
-    return GenUniModulesLimePickerComponentsLPickerLPicker(instance)
-}
-)
-typealias LPickerComponentPublicInstance = GenUniModulesLimePickerComponentsLPickerLPicker
-typealias LPickerItemComponentPublicInstance = GenUniModulesLimePickerComponentsLPickerItemLPickerItem
-typealias OnPick = (value: PickerValue, index: Number, column: Number) -> Unit
-typealias UpdateItems = (value: PickerValue, index: Number, column: Number) -> Unit
-interface PickerItemProps {
-    var options: UTSArray<PickerColumnItem>
-    var value: PickerValue?
-    var column: Number
-    var name: Any?
-}
 open class UploadFile (
     @JsonNotNull
     open var url: String,
@@ -8008,6 +7974,306 @@ open class UploadFileReactiveObject : UploadFile, IUTSReactive<UploadFile> {
             triggerReactiveSet(__v_raw, "status", oldValue, value)
         }
 }
+typealias Oversize = (file: Any) -> Unit
+open class ChooseFileOptions1 (
+    @JsonNotNull
+    open var count: Number,
+    @JsonNotNull
+    open var mediaType: String,
+    @JsonNotNull
+    open var sizeType: UTSArray<String>,
+    @JsonNotNull
+    open var sourceType: UTSArray<String>,
+    open var sizeLimit: Number? = null,
+    open var maxDuration: Number? = null,
+    open var camera: String? = null,
+    open var extension: UTSArray<String>? = null,
+    open var success: ((res: Any) -> Unit)? = null,
+    open var fail: ((res: Any) -> Unit)? = null,
+    open var oversize: ((file: Any) -> Unit)? = null,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("ChooseFileOptions", "uni_modules/lime-upload/components/l-upload/type.uts", 7, 13)
+    }
+}
+interface UploadProps {
+    var name: String?
+    var modelValue: UTSArray<UTSJSONObject>?
+    var disabled: Boolean
+    var readonly: Boolean
+    var multiple: Boolean
+    var imageFit: String
+    var gutter: String?
+    var column: Number?
+    var max: Number
+    var sizeLimit: Number?
+    var uploadIcon: String
+    var uploadIconSize: String?
+    var gridWidth: String?
+    var gridHeight: String?
+    var gridBgColor: String?
+    var addBgColor: String?
+    var gridBorderRadius: String?
+    var defaultFiles: UTSArray<UTSJSONObject>?
+    var loadingText: String
+    var reloadText: String
+    var failedText: String
+    var disablePreview: Boolean
+    var autoUpload: Boolean
+    var mediaType: String
+    var maxDuration: Number?
+    var sizeType: UTSArray<String>
+    var sourceType: UTSArray<String>
+    var action: String?
+    var headers: UTSJSONObject?
+    var formData: UTSJSONObject?
+    var mode: String
+}
+fun getFileType(tempFilePath: String, fileType: String?): String {
+    if (fileType != null) {
+        return fileType.replace(UTSRegExp("\\/.+", ""), "")
+    }
+    val videoType = utsArrayOf(
+        "avi",
+        "wmv",
+        "mkv",
+        "mp4",
+        "mov",
+        "rm",
+        "3gp",
+        "flv",
+        "mpg",
+        "rmvb"
+    )
+    val temp = tempFilePath.split(".")
+    val postfix = temp[temp.length - 1]
+    if (videoType.includes(postfix.toLocaleLowerCase())) {
+        return "video"
+    }
+    return "image"
+}
+fun getFileName(filePath: String): String {
+    return filePath.substring(filePath.lastIndexOf("/") + 1)
+}
+val isOverSize = fun(size: Number, sizeLimit: Number?): Boolean {
+    if (sizeLimit == null) {
+        return false
+    }
+    val base: Number = 1000
+    val computedSize = sizeLimit * base
+    return size > computedSize
+}
+fun chooseImage(opts: ChooseFileOptions1) {
+    uni_chooseImage(ChooseImageOptions(count = opts.count, sizeType = opts.sizeType, sourceType = opts.sourceType, extension = opts.extension, success = fun(res) {
+        opts.success?.invoke(res)
+    }
+    , fail = fun(err) {
+        opts.fail?.invoke(err)
+    }
+    ))
+}
+fun chooseVideo(opts: ChooseFileOptions1) {
+    uni_chooseVideo(ChooseVideoOptions(sourceType = opts.sourceType, success = fun(res) {
+        opts.success?.invoke(res)
+    }
+    , fail = fun(err) {
+        opts.fail?.invoke(err)
+    }
+    ))
+}
+fun chooseMedia(opts: ChooseFileOptions1) {
+    uni_chooseMedia(ChooseMediaOptions(count = opts.count, mediaType = utsArrayOf(
+        "image",
+        "video"
+    ), sourceType = opts.sourceType, maxDuration = opts.maxDuration ?: 10, camera = opts.camera ?: "back", success = fun(res) {
+        opts.success?.invoke(res)
+    }
+    , fail = fun(err) {
+        opts.fail?.invoke(err)
+    }
+    ))
+}
+fun chooseAll(opts: ChooseFileOptions1) {
+    uni_chooseFile(ChooseFileOptions(count = opts.count, type = "all", success = fun(res) {
+        opts.success?.invoke(res)
+    }
+    , fail = fun(err) {
+        opts.fail?.invoke(err)
+    }
+    ))
+}
+fun normalizeChooseFiles(type: String, tempFiles: UTSArray<UTSJSONObject>, tempFilePaths: UTSArray<String>, sizeLimit: Number?, oversize: Oversize?): UTSArray<UploadFile> {
+    val files: UTSArray<UploadFile> = utsArrayOf()
+    tempFiles.forEach(fun(temp, index){
+        val tempFilePath = (temp["tempFilePath"] as String?) ?: tempFilePaths[index]
+        val name = (temp["name"] as String?) ?: getFileName(tempFilePath)
+        val size = (temp["size"] as Number?) ?: 0
+        val width = (temp["width"] as Number?)
+        val height = (temp["height"] as Number?)
+        val duration = (temp["duration"] as Number?)
+        val path = (temp["path"] as String?) ?: tempFilePath
+        val thumb = (temp["thumbTempFilePath"] as String?)
+        val _type = if (type == "all") {
+            getFileType(tempFilePath, temp["type"] as String?)
+        } else {
+            type
+        }
+         as String
+        if (isOverSize(size, sizeLimit)) {
+            oversize?.invoke(temp)
+            return
+        }
+        files.push(UploadFile(name = name, type = _type, url = path, path = path, size = size, width = width, height = height, duration = duration, thumb = thumb, percent = 0))
+    }
+    )
+    return files
+}
+fun chooseFiles(opts: ChooseFileOptions1): UTSPromise<UTSArray<UploadFile>> {
+    return UTSPromise(fun(resolve, reject){
+        if (opts.mediaType == "image") {
+            chooseImage(ChooseFileOptions1(count = opts.count, mediaType = opts.mediaType, sizeType = opts.sizeType, sourceType = opts.sourceType, success = fun(result: Any) {
+                val res = result as ChooseImageSuccess
+                val tempFilePaths = res.tempFilePaths
+                val tempFiles = res.tempFiles.map(fun(item): UTSJSONObject {
+                    return object : UTSJSONObject() {
+                        var name = item.name
+                        var path = item.path
+                        var size = item.size
+                        var type = item.type
+                    }
+                })
+                val files = normalizeChooseFiles("image", tempFiles, tempFilePaths, opts.sizeLimit, opts.oversize)
+                resolve(files)
+            }))
+        } else if (opts.mediaType == "video") {
+            chooseVideo(ChooseFileOptions1(count = opts.count, mediaType = opts.mediaType, sourceType = opts.sourceType, sizeType = opts.sizeType, maxDuration = opts.maxDuration, success = fun(result) {
+                val res = result as ChooseVideoSuccess
+                val tempFilePaths = utsArrayOf<String>(res.tempFilePath)
+                val tempFilePath = res.tempFilePath
+                val duration = res.duration
+                val size = res.size
+                val height = res.height
+                val width = res.width
+                val tempFiles = utsArrayOf<UTSJSONObject>(UTSJSONObject(Map<String, Any?>(utsArrayOf(
+                    utsArrayOf(
+                        "path",
+                        tempFilePath
+                    ),
+                    utsArrayOf(
+                        "duration",
+                        duration
+                    ),
+                    utsArrayOf(
+                        "duration",
+                        duration
+                    ),
+                    utsArrayOf(
+                        "size",
+                        size
+                    ),
+                    utsArrayOf(
+                        "height",
+                        height
+                    ),
+                    utsArrayOf(
+                        "width",
+                        width
+                    )
+                ))))
+                val files = normalizeChooseFiles("video", tempFiles, tempFilePaths, opts.sizeLimit, opts.oversize)
+                resolve(files)
+            }))
+        } else if (opts.mediaType == "media") {
+            chooseMedia(ChooseFileOptions1(count = opts.count, mediaType = "media", sourceType = opts.sourceType, maxDuration = opts.maxDuration ?: 10, camera = opts.camera ?: "back", sizeType = opts.sizeType, success = fun(result: Any) {
+                val res = result as ChooseMediaSuccess
+                val tempFilePaths = res.tempFiles.map(fun(it): String {
+                    return it.tempFilePath
+                })
+                val tempFiles = res.tempFiles.map(fun(it): UTSJSONObject {
+                    return (object : UTSJSONObject() {
+                        var path = it.tempFilePath
+                        var size = it.size
+                        var type = it.fileType
+                    })
+                })
+                val files = normalizeChooseFiles("all", tempFiles, tempFilePaths, opts.sizeLimit, opts.oversize)
+                resolve(files)
+            }))
+        } else {
+            chooseAll(ChooseFileOptions1(count = opts.count, mediaType = opts.mediaType, sourceType = opts.sourceType, sizeType = opts.sizeType, success = fun(result: Any) {
+                val res = result as ChooseFileSuccess
+                val tempFilePaths = res.tempFilePaths
+                val tempFiles = res.tempFiles.map(fun(it): UTSJSONObject {
+                    return (object : UTSJSONObject() {
+                        var path = it.path
+                        var size = it.size
+                        var type = it.type
+                        var name = it.name
+                    })
+                }
+                )
+                val files = normalizeChooseFiles("all", tempFiles, tempFilePaths, opts.sizeLimit, opts.oversize)
+                resolve(files)
+            }
+            ))
+        }
+    }
+    )
+}
+open class GenUniModulesLimeUploadComponentsLUploadLUploadSlotDataFile (
+    @JsonNotNull
+    open var file: UploadFile,
+    @JsonNotNull
+    open var index: Number,
+) : SlotData()
+val GenUniModulesLimeUploadComponentsLUploadLUploadClass = CreateVueComponent(GenUniModulesLimeUploadComponentsLUploadLUpload::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeUploadComponentsLUploadLUpload.inheritAttrs, inject = GenUniModulesLimeUploadComponentsLUploadLUpload.inject, props = GenUniModulesLimeUploadComponentsLUploadLUpload.props, propsNeedCastKeys = GenUniModulesLimeUploadComponentsLUploadLUpload.propsNeedCastKeys, emits = GenUniModulesLimeUploadComponentsLUploadLUpload.emits, components = GenUniModulesLimeUploadComponentsLUploadLUpload.components, styles = GenUniModulesLimeUploadComponentsLUploadLUpload.styles, setup = fun(props: ComponentPublicInstance, ctx: SetupContext): Any? {
+        return GenUniModulesLimeUploadComponentsLUploadLUpload.setup(props as GenUniModulesLimeUploadComponentsLUploadLUpload, ctx)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimeUploadComponentsLUploadLUpload {
+    return GenUniModulesLimeUploadComponentsLUploadLUpload(instance)
+}
+)
+fun <T> pushAt(arr: UTSArray<T>, index: Number, value: T) {
+    if (index < arr.length) {
+        arr[index] = value
+    } else {
+        arr.push(value)
+    }
+}
+val GenUniModulesLimePickerComponentsLPickerItemLPickerItemClass = CreateVueComponent(GenUniModulesLimePickerComponentsLPickerItemLPickerItem::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.inheritAttrs, inject = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.inject, props = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.props, propsNeedCastKeys = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.propsNeedCastKeys, emits = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.emits, components = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.components, styles = GenUniModulesLimePickerComponentsLPickerItemLPickerItem.styles, setup = fun(props: ComponentPublicInstance, ctx: SetupContext): Any? {
+        return GenUniModulesLimePickerComponentsLPickerItemLPickerItem.setup(props as GenUniModulesLimePickerComponentsLPickerItemLPickerItem, ctx)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimePickerComponentsLPickerItemLPickerItem {
+    return GenUniModulesLimePickerComponentsLPickerItemLPickerItem(instance)
+}
+)
+typealias ManageChildInList = (child: LPickerItemComponentPublicInstance, shouldAdd: Boolean) -> Unit
+val GenUniModulesLimePickerComponentsLPickerLPickerClass = CreateVueComponent(GenUniModulesLimePickerComponentsLPickerLPicker::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimePickerComponentsLPickerLPicker.inheritAttrs, inject = GenUniModulesLimePickerComponentsLPickerLPicker.inject, props = GenUniModulesLimePickerComponentsLPickerLPicker.props, propsNeedCastKeys = GenUniModulesLimePickerComponentsLPickerLPicker.propsNeedCastKeys, emits = GenUniModulesLimePickerComponentsLPickerLPicker.emits, components = GenUniModulesLimePickerComponentsLPickerLPicker.components, styles = GenUniModulesLimePickerComponentsLPickerLPicker.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenUniModulesLimePickerComponentsLPickerLPicker.setup(props as GenUniModulesLimePickerComponentsLPickerLPicker)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimePickerComponentsLPickerLPicker {
+    return GenUniModulesLimePickerComponentsLPickerLPicker(instance)
+}
+)
+typealias LPickerComponentPublicInstance = GenUniModulesLimePickerComponentsLPickerLPicker
+typealias LPickerItemComponentPublicInstance = GenUniModulesLimePickerComponentsLPickerItemLPickerItem
+typealias OnPick = (value: PickerValue, index: Number, column: Number) -> Unit
+typealias UpdateItems = (value: PickerValue, index: Number, column: Number) -> Unit
+interface PickerItemProps {
+    var options: UTSArray<PickerColumnItem>
+    var value: PickerValue?
+    var column: Number
+    var name: Any?
+}
 val GenPagesMineFeebackFeebackClass = CreateVueComponent(GenPagesMineFeebackFeeback::class.java, fun(): VueComponentOptions {
     return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineFeebackFeeback.inheritAttrs, inject = GenPagesMineFeebackFeeback.inject, props = GenPagesMineFeebackFeeback.props, propsNeedCastKeys = GenPagesMineFeebackFeeback.propsNeedCastKeys, emits = GenPagesMineFeebackFeeback.emits, components = GenPagesMineFeebackFeeback.components, styles = GenPagesMineFeebackFeeback.styles, setup = fun(props: ComponentPublicInstance): Any? {
         return GenPagesMineFeebackFeeback.setup(props as GenPagesMineFeebackFeeback)
@@ -8016,6 +8282,222 @@ val GenPagesMineFeebackFeebackClass = CreateVueComponent(GenPagesMineFeebackFeeb
 }
 , fun(instance, renderer): GenPagesMineFeebackFeeback {
     return GenPagesMineFeebackFeeback(instance, renderer)
+}
+)
+open class AuthType (
+    @JsonNotNull
+    open var code: String,
+    @JsonNotNull
+    open var state: String,
+) : UTSReactiveObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("AuthType", "pages/mine/systemSetting/systemSetting.uvue", 49, 7)
+    }
+    override fun __v_create(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): UTSReactiveObject {
+        return AuthTypeReactiveObject(this, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+}
+open class AuthTypeReactiveObject : AuthType, IUTSReactive<AuthType> {
+    override var __v_raw: AuthType
+    override var __v_isReadonly: Boolean
+    override var __v_isShallow: Boolean
+    override var __v_skip: Boolean
+    constructor(__v_raw: AuthType, __v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean) : super(code = __v_raw.code, state = __v_raw.state) {
+        this.__v_raw = __v_raw
+        this.__v_isReadonly = __v_isReadonly
+        this.__v_isShallow = __v_isShallow
+        this.__v_skip = __v_skip
+    }
+    override fun __v_clone(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): AuthTypeReactiveObject {
+        return AuthTypeReactiveObject(this.__v_raw, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+    override var code: String
+        get() {
+            return trackReactiveGet(__v_raw, "code", __v_raw.code, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("code")) {
+                return
+            }
+            val oldValue = __v_raw.code
+            __v_raw.code = value
+            triggerReactiveSet(__v_raw, "code", oldValue, value)
+        }
+    override var state: String
+        get() {
+            return trackReactiveGet(__v_raw, "state", __v_raw.state, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("state")) {
+                return
+            }
+            val oldValue = __v_raw.state
+            __v_raw.state = value
+            triggerReactiveSet(__v_raw, "state", oldValue, value)
+        }
+}
+open class PermissionItem (
+    @JsonNotNull
+    open var name: String,
+    @JsonNotNull
+    open var code: String,
+    @JsonNotNull
+    open var status: String,
+) : UTSReactiveObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("PermissionItem", "pages/mine/systemSetting/systemSetting.uvue", 70, 7)
+    }
+    override fun __v_create(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): UTSReactiveObject {
+        return PermissionItemReactiveObject(this, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+}
+open class PermissionItemReactiveObject : PermissionItem, IUTSReactive<PermissionItem> {
+    override var __v_raw: PermissionItem
+    override var __v_isReadonly: Boolean
+    override var __v_isShallow: Boolean
+    override var __v_skip: Boolean
+    constructor(__v_raw: PermissionItem, __v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean) : super(name = __v_raw.name, code = __v_raw.code, status = __v_raw.status) {
+        this.__v_raw = __v_raw
+        this.__v_isReadonly = __v_isReadonly
+        this.__v_isShallow = __v_isShallow
+        this.__v_skip = __v_skip
+    }
+    override fun __v_clone(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): PermissionItemReactiveObject {
+        return PermissionItemReactiveObject(this.__v_raw, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+    override var name: String
+        get() {
+            return trackReactiveGet(__v_raw, "name", __v_raw.name, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("name")) {
+                return
+            }
+            val oldValue = __v_raw.name
+            __v_raw.name = value
+            triggerReactiveSet(__v_raw, "name", oldValue, value)
+        }
+    override var code: String
+        get() {
+            return trackReactiveGet(__v_raw, "code", __v_raw.code, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("code")) {
+                return
+            }
+            val oldValue = __v_raw.code
+            __v_raw.code = value
+            triggerReactiveSet(__v_raw, "code", oldValue, value)
+        }
+    override var status: String
+        get() {
+            return trackReactiveGet(__v_raw, "status", __v_raw.status, this.__v_isReadonly, this.__v_isShallow)
+        }
+        set(value) {
+            if (!this.__v_canSet("status")) {
+                return
+            }
+            val oldValue = __v_raw.status
+            __v_raw.status = value
+            triggerReactiveSet(__v_raw, "status", oldValue, value)
+        }
+}
+val GenPagesMineSystemSettingSystemSettingClass = CreateVueComponent(GenPagesMineSystemSettingSystemSetting::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineSystemSettingSystemSetting.inheritAttrs, inject = GenPagesMineSystemSettingSystemSetting.inject, props = GenPagesMineSystemSettingSystemSetting.props, propsNeedCastKeys = GenPagesMineSystemSettingSystemSetting.propsNeedCastKeys, emits = GenPagesMineSystemSettingSystemSetting.emits, components = GenPagesMineSystemSettingSystemSetting.components, styles = GenPagesMineSystemSettingSystemSetting.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesMineSystemSettingSystemSetting.setup(props as GenPagesMineSystemSettingSystemSetting)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesMineSystemSettingSystemSetting {
+    return GenPagesMineSystemSettingSystemSetting(instance, renderer)
+}
+)
+val default10 = "/static/logo.png"
+val GenPagesMineAboutAboutClass = CreateVueComponent(GenPagesMineAboutAbout::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineAboutAbout.inheritAttrs, inject = GenPagesMineAboutAbout.inject, props = GenPagesMineAboutAbout.props, propsNeedCastKeys = GenPagesMineAboutAbout.propsNeedCastKeys, emits = GenPagesMineAboutAbout.emits, components = GenPagesMineAboutAbout.components, styles = GenPagesMineAboutAbout.styles)
+}
+, fun(instance, renderer): GenPagesMineAboutAbout {
+    return GenPagesMineAboutAbout(instance, renderer)
+}
+)
+interface GridItemProps {
+    var text: String?
+    var description: String?
+    var url: String?
+    var openType: String
+    var icon: String?
+    var prefix: String?
+    var image: String?
+    var imageWidth: String?
+    var imageHeight: String?
+    var bgColor: String?
+    var padding: String?
+    var layout: String
+    var dot: Boolean
+    var iconSize: String
+    var iconColor: String
+    var badge: Any?
+    var borderColor: String?
+    var lStyle: Any?
+    var lImageStyle: Any?
+    var lTitleStyle: Any?
+    var lDescriptionStyle: Any?
+    var lClass: String?
+    var lClassIcon: String?
+}
+interface GridProps {
+    var align: String
+    var border: Boolean
+    var column: Number
+    var gutter: Number
+    var hover: Boolean
+    var inset: Boolean
+    var gridWidth: String?
+    var padding: String?
+    var bgColor: String?
+    var wrap: Boolean
+}
+open class GridProvide (
+    @JsonNotNull
+    open var children: Ref<UTSArray<Number>>,
+    @JsonNotNull
+    open var width: Ref<Number>,
+    @JsonNotNull
+    open var props: LGridComponentPublicInstance,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("GridProvide", "uni_modules/lime-grid/components/l-grid/type.uts", 20, 13)
+    }
+}
+val GenUniModulesLimeGridComponentsLGridLGridClass = CreateVueComponent(GenUniModulesLimeGridComponentsLGridLGrid::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeGridComponentsLGridLGrid.inheritAttrs, inject = GenUniModulesLimeGridComponentsLGridLGrid.inject, props = GenUniModulesLimeGridComponentsLGridLGrid.props, propsNeedCastKeys = GenUniModulesLimeGridComponentsLGridLGrid.propsNeedCastKeys, emits = GenUniModulesLimeGridComponentsLGridLGrid.emits, components = GenUniModulesLimeGridComponentsLGridLGrid.components, styles = GenUniModulesLimeGridComponentsLGridLGrid.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenUniModulesLimeGridComponentsLGridLGrid.setup(props as GenUniModulesLimeGridComponentsLGridLGrid)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimeGridComponentsLGridLGrid {
+    return GenUniModulesLimeGridComponentsLGridLGrid(instance)
+}
+)
+typealias LGridComponentPublicInstance = GenUniModulesLimeGridComponentsLGridLGrid
+val GenUniModulesLimeGridComponentsLGridItemLGridItemClass = CreateVueComponent(GenUniModulesLimeGridComponentsLGridItemLGridItem::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeGridComponentsLGridItemLGridItem.inheritAttrs, inject = GenUniModulesLimeGridComponentsLGridItemLGridItem.inject, props = GenUniModulesLimeGridComponentsLGridItemLGridItem.props, propsNeedCastKeys = GenUniModulesLimeGridComponentsLGridItemLGridItem.propsNeedCastKeys, emits = GenUniModulesLimeGridComponentsLGridItemLGridItem.emits, components = GenUniModulesLimeGridComponentsLGridItemLGridItem.components, styles = GenUniModulesLimeGridComponentsLGridItemLGridItem.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenUniModulesLimeGridComponentsLGridItemLGridItem.setup(props as GenUniModulesLimeGridComponentsLGridItemLGridItem)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimeGridComponentsLGridItemLGridItem {
+    return GenUniModulesLimeGridComponentsLGridItemLGridItem(instance)
+}
+)
+val GenPagesMineLocalFilesLocalFilesClass = CreateVueComponent(GenPagesMineLocalFilesLocalFiles::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineLocalFilesLocalFiles.inheritAttrs, inject = GenPagesMineLocalFilesLocalFiles.inject, props = GenPagesMineLocalFilesLocalFiles.props, propsNeedCastKeys = GenPagesMineLocalFilesLocalFiles.propsNeedCastKeys, emits = GenPagesMineLocalFilesLocalFiles.emits, components = GenPagesMineLocalFilesLocalFiles.components, styles = GenPagesMineLocalFilesLocalFiles.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesMineLocalFilesLocalFiles.setup(props as GenPagesMineLocalFilesLocalFiles)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesMineLocalFilesLocalFiles {
+    return GenPagesMineLocalFilesLocalFiles(instance, renderer)
 }
 )
 fun createApp(): UTSJSONObject {
@@ -8058,6 +8540,9 @@ fun definePageRoutes() {
     __uniRoutes.push(UniPageRoute(path = "pages/mine/myOrders/myOrders", component = GenPagesMineMyOrdersMyOrdersClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "订单列表")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/myOrders/orderDetail/orderDetail", component = GenPagesMineMyOrdersOrderDetailOrderDetailClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "订单详情")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/feeback/feeback", component = GenPagesMineFeebackFeebackClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "意见反馈")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/systemSetting/systemSetting", component = GenPagesMineSystemSettingSystemSettingClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "设置")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/about/about", component = GenPagesMineAboutAboutClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "关于")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/localFiles/localFiles", component = GenPagesMineLocalFilesLocalFilesClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "本地文件")))
 }
 val __uniTabBar: Map<String, Any?>? = utsMapOf("list" to utsArrayOf(
     utsMapOf("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),

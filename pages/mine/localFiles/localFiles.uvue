@@ -1,0 +1,26 @@
+<template>
+	<view class="container">
+		<l-grid :column="3" :border="true" :gutter="20">
+			<l-grid-item text="标题文字" image="https://tdesign.gtimg.com/mobile/demos/avatar1.png" />
+			<l-grid-item text="标题文字" image="https://tdesign.gtimg.com/mobile/demos/avatar2.png" />
+			<l-grid-item text="标题文字" image="https://tdesign.gtimg.com/mobile/demos/avatar3.png" />
+			<l-grid-item text="标题文字" image="https://tdesign.gtimg.com/mobile/demos/avatar4.png" />
+			<l-grid-item text="最多四字" image="https://tdesign.gtimg.com/mobile/demos/avatar5.png" />
+			<l-grid-item text="标题文字" image="https://tdesign.gtimg.com/mobile/demos/avatar1.png" />
+			<l-grid-item text="标题文字" image="https://tdesign.gtimg.com/mobile/demos/avatar2.png" />
+			<l-grid-item text="标题文字" image="https://tdesign.gtimg.com/mobile/demos/avatar3.png" />
+			<l-grid-item text="标题文字" image="https://tdesign.gtimg.com/mobile/demos/avatar4.png" />
+		</l-grid>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import { ref } from 'vue'
+</script>
+
+<style lang="scss" scoped>
+	.container {
+		height: 100%;
+		background-color: #f5f5f5;
+	}
+</style>

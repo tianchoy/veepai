@@ -1,0 +1,508 @@
+<template>
+	<view class="l-switch">
+		<view class="l-switch__rail" ref="switchContainerRef" :hover-start-time="20" :hover-stay-time="70"
+			@longpress="handleLongPress " :hover-class="hoverClass" :class="classes" :style="[styles]"
+			aria-role="switch" @touchend="handleTouchEnd" @touchcancel="handleTouchEnd" @click="handleClick">
+			<!-- #ifndef APP-ANDROID || APP-IOS || APP-HARMONY -->
+			<view class="l-switch__children-placeholder" v-if="placeholder.length > 0">
+				<text class="l-switch__rail-placeholder" v-for="item in placeholder" :key="item">
+					{{item}}
+				</text>
+			</view>
+			<!-- #endif -->
+
+			<view class="l-switch__dot" :class="dotClass" :style="[dotStyle]" ref="dotRef">
+				<text class="l-switch__placeholder l-switch__placeholder--checked" ref="checkedStateRef"
+					v-if="placeholder.length > 0">
+					<!-- <slot name="checked"></slot> -->
+					{{placeholder[0]}}
+				</text>
+				<text class="l-switch__placeholder l-switch__placeholder--unchecked" ref="uncheckedStateRef"
+					v-if="placeholder.length > 1">
+					<!-- <slot name="unchecked"></slot> -->
+					{{placeholder[1]}}
+				</text>
+				<!-- #ifndef APP-ANDROID || APP-IOS  || APP-HARMONY -->
+				<l-loading :size="dotSize" class="l-switch__loading" v-if="loading && $slots['icon'] == null"></l-loading>
+				<!-- #endif -->
+				<slot name="icon" :checked="innerValue"></slot>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script lang="uts" setup>
+	/**
+	 * Switch 开关组件
+	 * @description 用于表示两种相互对立的状态切换，支持多种自定义样式和交互效果
+	 * <br>插件类型：LSwitchComponentPublicInstance 
+	 * @tutorial https://ext.dcloud.net.cn/plugin?name=lime-switch
+	 * 
+	 * @property {boolean} modelValue 绑定值（推荐使用v-model）
+	 * @property {boolean} value 绑定值（兼容旧版）
+	 * @property {boolean} defaultValue 默认值（非受控属性）
+	 * @property {boolean} disabled 禁用状态（默认：false）
+	 * @property {boolean} readonly 只读状态（默认：false）
+	 * @property {boolean} loading 加载状态（默认：false）
+	 * @property {boolean} round 圆形外观（默认：true）
+	 * @property {boolean} rubberBand 弹性动画效果（默认：false）
+	 * @property {string} name 表单字段名
+	 * @property {string[]} placeholder 状态提示文本（格式：[关闭状态文本, 开启状态文本]）
+	 * @property {string} fontSize 文本字号（支持CSS单位）
+	 * @property {string} width 开关宽度（支持CSS单位）
+	 * @property {string} height 开关高度（支持CSS单位）
+	 * @property {string} dotSize 圆形滑块尺寸（支持CSS单位）
+	 * @property {string} dotPressedSize 按下时滑块缩放比例
+	 * @property {string} checkedColor 开启状态颜色
+	 * @property {string} disabledColor 禁用状态背景色
+	 * @property {string} checkedDisabledColor 禁用时开启状态颜色
+	 * @property {string} uncheckedColor 关闭状态颜色
+	 * @event {Function} change 状态变化时触发（返回当前状态）
+	 */
+	import { SwitchProps } from './type';
+	import { unitConvert } from '@/uni_modules/lime-shared/unitConvert';
+	// #ifdef APP
+	import { useLoading } from '@/uni_modules/lime-loading'
+	// #endif
+	// #ifdef APP-HARMONY || APP-ANDROID
+	// import { MeasureText, MeasureUtils } from '@kit.ArkUI'
+	import { measureTextSize } from '@/uni_modules/lime-switch'
+	// #endif
+
+	const name = 'l-switch'
+	const slots = defineSlots<{
+		icon(props : { checked : boolean }) : any,
+	}>();
+	const emit = defineEmits(['change', 'update:modelValue'])
+	const props = withDefaults(defineProps<SwitchProps>(), {
+		disabled: false,
+		readonly: false,
+		loading: false,
+		rubberBand: true,
+		round: true,
+		modelValue: null,
+		value: null,
+		placeholder: [] as string[]
+	})
+	const formDisabled = inject<Ref<boolean | null> | null>('formDisabled', null)
+	const formReadonly = inject<Ref<boolean | null> | null>('formReadonly', null)
+	const isReadonly = computed(() : boolean => {
+		if (props.readonly) return props.readonly;
+		return formReadonly?.value ?? false;
+	})
+	const isDisabled = computed(() : boolean => {
+		if (props.disabled) return props.disabled;
+		return formDisabled?.value ?? false;
+	})
+
+	// 设置默认值
+	const modelValue = ref(props.modelValue ?? (props.defaultValue ?? false))
+	const innerValue = computed({
+		set(value : boolean) {
+			// 表单中重置可能会存在BUG
+			// if (value == modelValue.value) return
+			modelValue.value = value;
+			emit('change', value)
+			emit('update:modelValue', value)
+		},
+		get() : boolean {
+			return props.value ?? props.modelValue ?? modelValue.value
+		},
+	} as WritableComputedOptions<boolean>)
+
+	const classes = computed(() : Map<string, boolean> => {
+		const cls = new Map<string, boolean>();
+		cls.set(`${name}--checked`, innerValue.value)
+		cls.set(`${name}--unchecked`, !innerValue.value)
+		cls.set(`${name}--disabled`, isDisabled.value)
+		cls.set(`${name}--round`, props.round)
+		cls.set(`${name}--square`, !props.round)
+		return cls
+	})
+
+	const dotClass = computed(() : Map<string, boolean> => {
+		const cls = new Map<string, boolean>();
+		// cls.set(`${name}__dot--checked`, innerValue.value)
+		// cls.set(`${name}__dot--unchecked`, !innerValue.value)
+		cls.set(`${name}__dot--disabled`, isDisabled.value)
+		cls.set(`${name}__dot--round`, props.round)
+		cls.set(`${name}__dot--square`, !props.round)
+		return cls
+	})
+	const hoverClass = computed(() : string => {
+		return props.rubberBand && !props.disabled && !props.loading ? 'l-switch--hover' : ''
+	})
+	const styles = computed(() : Map<string, any> => {
+		const style = new Map<string, any>();
+		// #ifndef APP-ANDROID || APP-IOS
+		if (props.width != null) {
+			style.set('--l-switch-width', props.width!)
+		}
+		if (props.height != null) {
+			style.set('--l-switch-height', props.height!)
+		}
+		if (props.fontSize != null) {
+			style.set('--l-swtich-font-size', props.fontSize!)
+		}
+		if (props.dotSize != null) {
+			style.set('--l-switch-dot-size', props.dotSize!)
+		}
+		if (props.dotPressedSize != null) {
+			style.set('--l-switch-dot-size-pressed', props.dotPressedSize!)
+		}
+		if (props.checkedColor != null) {
+			style.set('--l-switch-checked-color', props.checkedColor!)
+		}
+		if (props.checkedDisabledColor != null) {
+			style.set('--l-switch-checked-disabled-color', props.checkedDisabledColor!)
+		}
+		if (props.disabledColor != null) {
+			style.set('--l-switch-unchecked-disabled-color', props.disabledColor!)
+		}
+		if (props.uncheckedColor != null) {
+			style.set('--l-switch-unchecked-color', props.uncheckedColor!)
+		}
+
+		if (isDisabled.value && props.checkedColor != null && props.checkedDisabledColor == null) {
+			style.set('--l-switch-checked-disabled-color', props.checkedColor!)
+			style.set('--l-switch-disabled-opacity', 0.5)
+		}
+
+		// #endif
+		// #ifdef APP-ANDROID || APP-IOS || APP-HARMONY
+		if (props.width != null) {
+			style.set('min-width', props.width!)
+		}
+		if (props.height != null) {
+			style.set('height', props.height!)
+		}
+		// #endif
+		return style
+	})
+
+	const dotStyle = computed(() : Map<string, any> => {
+		const style = new Map<string, any>();
+		// #ifdef APP
+		if (props.dotSize != null) {
+			style.set('width', props.dotSize!)
+			style.set('height', props.dotSize!)
+		}
+		// #endif
+		return style
+	})
+
+
+	const handleClick = (e : UniPointerEvent) => {
+		if (isDisabled.value || props.loading || isReadonly.value) return
+		innerValue.value = !innerValue.value;
+	}
+	// #ifndef APP
+	const touchstart = () => { }
+	const handleLongPress = () => { }
+	const handleTouchEnd = () => { }
+	// #endif
+	// #ifdef APP
+
+
+
+	// 常量定义
+	const PLACEHOLDER_SCALE_FACTOR = 1.2; // 占位符缩放因子，用于计算位置偏移
+	const TEXT_WIDTH_OFFSET = 20;        // 文本测量宽度补偿值（安卓平台专用）
+	const DOT_PRESSED_SCALE = 1.25;      // 按下状态时圆点的缩放比例
+	const HOVER_PADDING_SCALE = 1.15;    // 悬停时内边距缩放系数
+	const INITIAL_OPACITY = 0.5;         // 禁用状态初始透明度
+	
+	// #ifdef APP-IOS
+	const CONTAINER_WIDTH_EXPAND_FACTOR = 1.55; // 容器宽度扩展系数，基于高度计算容器总宽
+	const PLACEHOLDER_POSITION_ADJUSTMENT = 5; // 占位符位置补偿值（用于微调布局）IOS文本左对齐开头有点占位
+	// #endif
+	// #ifndef APP-IOS
+	const CONTAINER_WIDTH_EXPAND_FACTOR = 1.75; // 容器宽度扩展系数，基于高度计算容器总宽
+	const PLACEHOLDER_POSITION_ADJUSTMENT = 0; // 占位符位置补偿值（用于微调布局）IOS文本左对齐开头有点占位
+	// #endif
+	
+	// 响应式数据
+	let rootRect = ref<DOMRect | null>(null);  // 开关容器尺寸信息
+	let dotRect = ref<DOMRect | null>(null);   // 开关圆点尺寸信息
+
+	// DOM 引用
+	const switchContainerRef = ref<UniElement | null>(null); // 开关容器元素引用
+	const dotRef = ref<UniElement | null>(null);      // 可拖动圆点元素引用
+	const checkedStateRef = ref<UniElement | null>(null);    // 开启状态文本容器引用
+	const uncheckedStateRef = ref<UniElement | null>(null);  // 关闭状态文本容器引用
+
+	// 状态数据
+	const placeholderMaxWidth = ref(0);    // 文本占位符最大宽度
+	const baseContainerWidth = ref(0);     // 开关容器基础宽度
+	const isHovered = ref(false);          // 悬停/按压状态标识
+
+	// 加载状态控制器配置
+	const loadingIndicator = useLoading(dotRef);
+	loadingIndicator.type = 'circular';
+	loadingIndicator.color = props.checkedColor ?? '#3283ff';
+	loadingIndicator.ratio = 0.8;
+
+	/**
+	 * 计算属性：按下状态的圆点尺寸
+	 */
+	const dotPressedDimension = computed(() : number => unitConvert(props.dotPressedSize ?? 0));
+
+	/**
+	 * 计算属性：开关容器高度
+	 */
+	const switchContainerHeight = computed(() : number => unitConvert(props.height ?? rootRect.value?.height ?? 0));
+
+	/**
+	 * 计算属性：圆点元素高度
+	 */
+	const dotElementHeight = computed(() : number => unitConvert(props.dotSize ?? dotRect.value?.height ?? 0));
+
+	/**
+	 * 计算属性：圆点垂直居中偏移量
+	 * @description 通过容器高度与圆点高度的差值计算垂直居中位置
+	 */
+	const dotPositionOffset = computed(() : number => (switchContainerHeight.value - dotElementHeight.value) / 2);
+
+	/**
+	 * 计算属性：文本占位符位置偏移
+	 * @description 结合缩放因子计算的文本位置补偿值
+	 */
+	const placeholderPositionOffset = computed(() : number =>
+		PLACEHOLDER_SCALE_FACTOR * switchContainerHeight.value - dotPositionOffset.value
+	);
+
+	/**
+	 * 处理长按事件
+	 * @description 触发悬停效果，在启用橡皮筋效果且非禁用/加载状态时生效
+	 */
+	const handleLongPress = (event : UniTouchEvent) => {
+		event.stopPropagation();
+		if (dotRef.value == null || !props.rubberBand || props.disabled || props.loading) return;
+		isHovered.value = true;
+	};
+
+	/**
+	 * 处理触摸结束事件
+	 * @description 结束悬停效果，在启用橡皮筋效果且非禁用/加载状态时生效
+	 */
+	const handleTouchEnd = () => {
+		if (dotRef.value == null || !props.rubberBand || props.disabled || props.loading) return;
+		isHovered.value = false;
+	};
+
+	/**
+	 * 更新占位符宽度
+	 * @description 根据测量结果动态设置文本容器的最大宽度
+	 */
+	const updatePlaceholderDimensions = (rect : DOMRect) => {
+		const calculatedWidth = rect.width - placeholderPositionOffset.value;
+		if (calculatedWidth > placeholderMaxWidth.value || props.placeholder.length == 1) {
+			placeholderMaxWidth.value = calculatedWidth;
+		}
+	};
+
+	/**
+	 * 文本测量副作用监听
+	 * @description 根据不同平台特性测量文本宽度：
+	 * - iOS使用异步获取元素尺寸
+	 * - Android/Harmony使用文本测量方法
+	 */
+	watch(() : string[] => props.placeholder, () => {
+		if (props.placeholder.length == 0) {
+			placeholderMaxWidth.value = 0;
+			return;
+		}
+
+		// iOS平台使用异步测量
+		// #ifdef APP-IOS
+		nextTick(() => {
+			checkedStateRef.value?.getBoundingClientRectAsync()?.then(updatePlaceholderDimensions);
+			uncheckedStateRef.value?.getBoundingClientRectAsync()?.then(updatePlaceholderDimensions);
+		});
+		// #endif
+
+		// Android/Harmony平台使用文本测量
+		// #ifdef APP-ANDROID || APP-HARMONY
+		props.placeholder.forEach(text => {
+			const fontSize = unitConvert(props.fontSize ?? uni.rpx2px(28));
+			const textWidth = measureTextSize(text, fontSize);
+
+			if (textWidth > placeholderMaxWidth.value || props.placeholder.length == 1) {
+				nextTick(() => {
+					placeholderMaxWidth.value = textWidth;
+					const adjustedWidth = textWidth + TEXT_WIDTH_OFFSET;
+					checkedStateRef.value?.style.setProperty('width', `${adjustedWidth}px`);
+					uncheckedStateRef.value?.style.setProperty('width', `${adjustedWidth}px`);
+				});
+			}
+		});
+		// #endif
+
+	}, { immediate: true })
+
+
+
+	/**
+	 * 计算属性：当前圆点尺寸
+	 * @description 根据悬停状态返回圆点尺寸，悬停时取按压尺寸和默认尺寸的较大值
+	 */
+	const currentDotSize = computed(() : number => {
+		if (dotRect.value == null) return 0;
+		return isHovered.value
+			? Math.max(dotPressedDimension.value, dotRect.value!.height * DOT_PRESSED_SCALE)
+			: dotRect.value!.height;
+	});
+
+
+	/**
+	 * 计算属性：容器背景色
+	 * @description 根据开关状态和禁用状态返回对应的背景颜色
+	 */
+	const containerBackground = computed(() : string | null => {
+		return innerValue.value
+			? props.disabled
+				? props.checkedDisabledColor
+				: props.checkedColor
+			: props.disabled
+				? props.disabledColor
+				: props.uncheckedColor;
+	});
+
+
+	/**
+	 * 更新加载状态
+	 * @description 控制加载动画的启动/停止，当使用自定义图标时禁用加载动画
+	 */
+	const updateLoadingState = () => {
+		if (props.loading && slots['icon'] == null) {
+			loadingIndicator.play();
+		} else {
+			loadingIndicator.clear();
+		}
+	};
+
+	/**
+	 * 更新容器布局
+	 * @description 根据文本占位符宽度动态调整开关容器的总宽度
+	 */
+	const updateContainerLayout = () => {
+		if (rootRect.value == null || dotRect.value == null) return;
+
+		const containerWidth = placeholderMaxWidth.value > 0 && baseContainerWidth.value !== placeholderMaxWidth.value
+			? placeholderMaxWidth.value + rootRect.value!.height * CONTAINER_WIDTH_EXPAND_FACTOR
+			: baseContainerWidth.value;
+
+		if (containerWidth !== baseContainerWidth.value) {
+			baseContainerWidth.value = containerWidth;
+			switchContainerRef.value?.style.setProperty('width', `${containerWidth}px`);
+		}
+	};
+
+
+	/**
+	 * 更新视觉状态
+	 * @description 处理禁用状态的透明度变化和背景色更新
+	 */
+	const updateVisualState = () => {
+		nextTick(() => {
+			// 处理未设置禁用颜色的回退逻辑
+			if (props.disabled && props.checkedColor != null && props.checkedDisabledColor == null) {
+				switchContainerRef.value?.style.setProperty('background-color', props.checkedColor);
+				switchContainerRef.value?.style.setProperty('opacity', INITIAL_OPACITY);
+				return;
+			}
+			if (containerBackground.value != null) {
+				
+				switchContainerRef.value?.style.setProperty('opacity', '1');
+				switchContainerRef.value?.style.setProperty('background-color', containerBackground.value);
+			}
+		});
+	};
+
+	/**
+	 * 更新圆点位置
+	 * @description 根据开关状态计算圆点的水平位移，使用transform实现平滑动画
+	 */
+	const updateDotPosition = () => {
+		if (rootRect.value == null || dotRect.value == null) return;
+
+		const translateX = innerValue.value
+			? baseContainerWidth.value - currentDotSize.value - dotPositionOffset.value
+			: dotPositionOffset.value;
+
+		dotRef.value?.style.setProperty('transform', `translateX(${translateX}px)`);
+	};
+
+	// 监听悬停状态变化
+	watch(isHovered, (hoverState : boolean) => {
+		/**
+		 * 计算动态内边距
+		 * @param condition 判断条件，用于区分开启/关闭状态的补偿值计算
+		 */
+		const calculatePadding = (condition : boolean) : number =>
+			condition ? currentDotSize.value * DOT_PRESSED_SCALE : HOVER_PADDING_SCALE * switchContainerHeight.value - dotPositionOffset.value;
+
+		// 更新两侧文本容器的内边距
+		checkedStateRef.value?.style.setProperty('padding-right', `${calculatePadding(hoverState && !innerValue.value)}`);
+		uncheckedStateRef.value?.style.setProperty('padding-left', `${calculatePadding(hoverState && innerValue.value)}`);
+
+		// 同步更新圆点尺寸
+		dotRef.value?.style.setProperty('width', `${currentDotSize.value}px`);
+
+		updateDotPosition();
+	});
+
+	watch(innerValue, () => {
+		updateContainerLayout()
+		updateDotPosition()
+		updateVisualState()
+	})
+
+
+	watch([placeholderMaxWidth, baseContainerWidth], () => {
+		updateContainerLayout()
+		updateDotPosition()
+	})
+
+
+	watch(() : boolean => props.loading, () => {
+		updateLoadingState()
+	})
+
+	watch(placeholderPositionOffset, (v : number) => {
+		checkedStateRef.value?.style.setProperty('padding-right', `${v}px`)
+		uncheckedStateRef.value?.style.setProperty('padding-left', `${v - PLACEHOLDER_POSITION_ADJUSTMENT}px`) // 居左有些小空隙，故减一些尺寸
+	})
+	
+	watchEffect(()=> {
+		// 设置圆点垂直位置
+		dotRef.value?.style.setProperty('top', `${dotPositionOffset.value}px`);
+	})
+	
+	
+	
+	// 组件挂载后的初始化逻辑
+	onMounted(() => {
+		nextTick(() => {
+			if (switchContainerRef.value == null) return;
+
+			// 获取初始尺寸并设置布局
+			switchContainerRef.value?.getBoundingClientRectAsync()?.then(() => {
+				rootRect.value = switchContainerRef.value?.getBoundingClientRect();
+				dotRect.value = dotRef.value?.getBoundingClientRect();
+				baseContainerWidth.value = rootRect.value?.width ?? 0;
+
+
+				// 执行初始布局更新
+				updateContainerLayout();
+				updateDotPosition();
+				updateLoadingState();
+				updateVisualState();
+			});
+		});
+	});
+	// #endif
+</script>
+<style lang="scss">
+	@import './index-u';
+</style>

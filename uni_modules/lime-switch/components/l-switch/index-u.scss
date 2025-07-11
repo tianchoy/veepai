@@ -1,0 +1,195 @@
+@import '@/uni_modules/lime-style/index.scss';
+@import '@/uni_modules/lime-style/functions.scss';
+
+// $prefix: l !default;
+$switch: #{$prefix}-switch;
+
+
+
+$switch-checked-color: create-var(switch-checked-color, $primary-color);
+$switch-disabled-opacity: create-var(switch-disabled-opacity, 1);
+$switch-checked-disabled-color: create-var(switch-checked-disabled-color, $primary-color-3);
+$switch-unchecked-color: create-var(switch-unchecked-color, $gray-4);
+$switch-unchecked-disabled-color: create-var(switch-unchecked-disabled-color, $gray-2);
+
+
+$switch-width: create-var(switch-width, 90rpx);
+$switch-height: create-var(switch-height, 56rpx);
+$switch-square-radius: create-var(switch-radius, 8rpx);
+$switch-round-radius: create-var(switch-radius, 99px);
+
+$switch-dot-bg-color: create-var(switch-dot-bg-color, white);
+$switch-dot-size: create-var(switch-dot-size, 44rpx);
+// $switch-dot-size-pressed: create-var(switch-dot-size-pressed, 56rpx);
+// $switch-dot-size-pressed: create-var(switch-dot-size-pressed, calc($switch-dot-size * 1.25));
+$switch-dot-shadow: create-var(switch-dot-shadow, $shadow-1);
+$switch-dot-round-radius: create-var(switch-dot-radius, 99px);
+$switch-dot-square-radius: create-var(switch-dot-radius, 5rpx);
+
+$swtich-font-size: create-var(swtich-font-size, 28rpx);
+$swtich-text-color: create-var(swtich-text-color, white);
+
+/* #ifdef APP-ANDROID || APP-IOS || APP-HARMONY */
+$switch-dot-size-pressed: create-var(switch-dot-size-pressed, 56rpx);
+$switch-dot-offset: create-var(switch-dot-offset, divide($switch-height - $switch-dot-size, 2));
+$placeholder-offset: 1.20 * $switch-height - $switch-dot-offset;
+// #endif
+/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+$switch-dot-size-pressed: create-var(switch-dot-size-pressed, calc(#{$switch-dot-size} * 1.25));
+
+$switch-dot-offset: create-var(switch-dot-offset, calc((#{$switch-height} - #{$switch-dot-size}) / 2));
+$placeholder-offset: calc(1.20 * #{$switch-height} - #{$switch-dot-offset});
+// #endif
+
+.#{$switch} {
+	// font-size: $swtich-font-size;
+	/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+	display: inline-flex;
+	/* #endif */
+	flex-direction: row;
+	align-items: center;
+	&__rail {
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+		position: relative;
+		/* #endif */
+		height: $switch-height;
+		min-width: $switch-width;
+		transition-duration: 300ms;
+		transition-property: background-color;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	&--hover {
+		.#{$switch}__dot {
+			max-width: $switch-dot-size-pressed;
+		}
+	}
+	&--hover#{&}--checked{
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+		.#{$switch}__dot {
+			left: calc(100% - #{$switch-dot-size-pressed} - #{$switch-dot-offset});
+		}
+		.#{$switch}__placeholder--unchecked {
+			padding-left: calc(1.25 * #{$switch-dot-size-pressed});
+		}
+		// #endif
+	}
+	&--hover#{&}--unchecked{
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+		.#{$switch}__placeholder--checked {
+			padding-right: calc(1.25 * #{$switch-dot-size-pressed});
+		}
+		// #endif
+	}
+	&--checked {
+		background-color: $switch-checked-color;
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+		.#{$switch}__dot {
+			left: calc(100% - #{$switch-dot-size} - #{$switch-dot-offset});
+		}
+		// #endif
+	}
+	&--disabled {
+		opacity: $switch-disabled-opacity
+	}
+	&--checked#{&}--disabled {
+		background-color: $switch-checked-disabled-color;
+	}
+	&--unchecked {
+		background-color: $switch-unchecked-color;
+	}
+	&--unchecked#{&}--disabled {
+		background-color: $switch-unchecked-disabled-color;
+	}
+	&--round {
+		border-radius: $switch-round-radius;
+	}
+	&--square {
+		border-radius: $switch-square-radius;
+	}
+	&__dot {
+		position: absolute;
+		background-color: $switch-dot-bg-color;
+		height: $switch-dot-size;
+		pointer-events: none;
+		
+		justify-content: center;
+		align-items: center;
+		
+		overflow: visible;
+		transition-duration: 300ms;
+		transition-property: background-color, opacity, left, max-width, width, box-shadow, transform;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		// transition: all cubic-bezier(0.4, 0, 0.2, 1);
+		// transition: background-color .3s var(--n-bezier), left .3s var(--n-bezier), opacity .3s var(--n-bezier), max-width .3s var(--n-bezier), box-shadow .3s var(--n-bezier);
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+		display: flex;
+		width: $switch-dot-size-pressed;//$switch-dot-size;
+		max-width: $switch-dot-size;
+		left: $switch-dot-offset;
+		top: $switch-dot-offset;
+		
+		--l-loading-size: calc(#{$switch-dot-size} * 0.7);
+		--l-loading-color: #{$switch-checked-color};
+		/* #endif */
+		/* #ifdef APP-ANDROID || APP-IOS || APP-HARMONY */
+		width: $switch-dot-size;
+		/* #endif */
+		&--round {
+			border-radius: $switch-dot-round-radius;
+		}
+		&--square {
+			border-radius: $switch-dot-square-radius;
+		}
+	}
+	
+	&__placeholder {
+		overflow: visible;
+		position: absolute;
+		white-space: nowrap;
+		pointer-events: none;
+		// top: 0;
+		// bottom: 0;
+		top: 50%;
+		/* #ifdef APP-ANDROID || APP-IOS || APP-HARMONY */
+		transform: translateY(-50%);
+		/* #endif */
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+		
+		transform: translateY(-53%);
+		line-height: 1;
+		/* #endif */
+		font-size: $swtich-font-size;
+		color: $swtich-text-color;
+		
+		// background-color: aqua;
+		// line-height: $switch-dot-size;
+		// height: $switch-dot-size;
+		box-sizing: content-box;
+		&--checked {
+			right: 0;
+			text-align: right;
+			padding-right: $placeholder-offset;
+		}
+		&--unchecked {
+			left: 0;
+			padding-left: $placeholder-offset;
+		}
+	}
+	&__loading {
+		// width: 100%;
+		// height: 100%;
+		flex: 1;
+	}
+	/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+	&__children-placeholder {
+		height: $switch-height;
+	}
+	&__rail {
+		&-placeholder {
+			opacity: 0;
+			padding-left: calc(1.75 * #{$switch-height});
+			font-size: $swtich-font-size;
+		}
+	}
+	/* #endif */
+}

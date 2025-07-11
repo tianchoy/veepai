@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-icon": "../../../lime-icon/components/l-icon/l-icon",
+    "l-badge": "../../../lime-badge/components/l-badge/l-badge"
+  }
+}

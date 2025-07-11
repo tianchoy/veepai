@@ -37,7 +37,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         a: props.showBack
       }), props.showBack ? new UTSJSONObject({
         b: common_vendor.o(goBack),
-        c: common_assets._imports_0$5
+        c: common_assets._imports_0$6
       }) : new UTSJSONObject({}), new UTSJSONObject({
         d: common_vendor.o(goBack),
         e: common_vendor.t(props.title),

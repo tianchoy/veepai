@@ -1,0 +1,276 @@
+import _easycom_l_icon from '@/uni_modules/lime-icon/components/l-icon/l-icon.uvue';
+import _easycom_l_badge from '@/uni_modules/lime-badge/components/l-badge/l-badge.uvue';
+import { GridItemProps } from './type';
+import { GridProvide } from '../l-grid/type';
+const __sfc__ = defineComponent({
+    __name: 'l-grid-item',
+    __props: GridItemProps,
+    props: {
+        text: { type: String, required: false },
+        description: { type: String, required: false },
+        url: { type: String, required: false },
+        openType: { type: String, required: true, default: 'navigateTo' },
+        icon: { type: String, required: false },
+        prefix: { type: String, required: false },
+        image: { type: String, required: false },
+        imageWidth: { type: String, required: false },
+        imageHeight: { type: String, required: false },
+        bgColor: { type: String, required: false },
+        padding: { type: String, required: false },
+        layout: { type: String, required: true, default: 'vertical' },
+        dot: { type: Boolean, required: true, default: false },
+        iconSize: { type: String, required: true, default: '48rpx' },
+        iconColor: { type: String, required: true, default: 'rgba(0,0,0,0.88)' },
+        badge: { type: Object, required: false },
+        borderColor: { type: String, required: false },
+        lStyle: { type: [String, UTSJSONObject], required: false },
+        lImageStyle: { type: [String, UTSJSONObject], required: false },
+        lTitleStyle: { type: [String, UTSJSONObject], required: false },
+        lDescriptionStyle: { type: [String, UTSJSONObject], required: false },
+        lClass: { type: String, required: false },
+        lClassIcon: { type: String, required: false }
+    },
+    emits: ['click'],
+    setup(__props): any | null {
+        const __ins = getCurrentInstance()!;
+        const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+        const _cache = __ins.renderCache;
+        /**
+         * GridItem 网格项组件
+         * @description 用于构建功能入口或导航项的布局元素
+         * <br> 插件类型：LGridItemComponentPublicInstance
+         * @tutorial https://ext.dcloud.net.cn/plugin?name=lime-grid
+         *
+         * @property {string} text 主文本内容（支持插槽自定义）
+         * @property {string} description 辅助描述文本（支持插槽自定义）
+         * @property {string} url 点击跳转链接
+         * @property {'switchTab'|'reLaunch'|'redirectTo'|'navigateTo'} openType 跳转方式
+         * @value navigateTo
+         * @value switchTab 切换Tab页
+         * @value reLaunch 重新加载页面
+         * @value redirectTo 页面重定向
+         * @value navigateTo 保留当前页跳转
+         * @property {string} icon 图标名称/图片地址（支持base64）
+         * @property {string} prefix 图标类名前缀（默认'lime-icon'）
+         * @property {string} image 图片地址（优先级高于icon）
+         * @property {string} imageWidth 图片宽度（支持CSS单位）
+         * @property {string} imageHeight 图片高度（支持CSS单位）
+         * @property {string} bgColor 背景颜色（支持十六进制/rgba）
+         * @property {string} padding 内边距（CSS简写格式）
+         * @property {'vertical'|'horizontal'} layout 内容排列方向
+         * @value vertical
+         * @value horizontal
+         * @property {boolean} dot 是否显示右上角小红点
+         * @property {string} borderColor 边框颜色（需设置父级border）
+         * @property {string|object} lStyle 自定义根节点样式
+         * @property {string|object} lImageStyle 自定义图片节点样式
+         * @property {string|object} lTitleStyle 自定义标题节点样式
+         * @property {string|object} lDescriptionStyle 自定义简介节点样式
+         * @property {string} lClass 自定义根节点类名
+         *
+         * @event {Function} click 点击事件
+         */
+        function emits(event: string, ...do_not_transform_spread: Array<any | null>) {
+            __ins.emit(event, ...do_not_transform_spread);
+        }
+        const props = __props;
+        const name = 'l-grid-item';
+        const parent = inject<GridProvide | null>('limeGrid', null);
+        const instance = getCurrentInstance();
+        const index = computed((): number => parent?.children.value.indexOf(instance!.uid) ?? -1);
+        const column = computed((): number => parent?.props.column ?? 0);
+        const gutter = computed((): number => parent?.props.gutter ?? 0);
+        const width = computed((): number => parent?.width.value ?? 0);
+        // const gridWidth = computed(():string|null => parent?.props.gridWidth)
+        const hover = computed((): boolean => parent?.props.hover ?? false);
+        const classes = computed((): Map<string, any> => {
+            const cls = new Map<string, any>();
+            cls.set(`${name}--${props.layout}`, true);
+            cls.set(`${name}--${parent?.props.align ?? 'center'}`, true);
+            cls.set(`${name}--bordered`, parent?.props.border ?? false);
+            return cls;
+        });
+        const size = computed((): string => {
+            if (column.value > 4 || column.value == 0)
+                return 'small';
+            return column.value < 4 ? 'large' : 'middle';
+        });
+        const imageClasses = computed((): Map<string, any> => {
+            const cls = new Map<string, any>();
+            cls.set(`${name}__image--${size.value}`, true);
+            return cls;
+        });
+        const titleClasses = computed((): Map<string, any> => {
+            const cls = new Map<string, any>();
+            cls.set(`${name}__title--${size.value}`, true);
+            return cls;
+        });
+        const innerImageStyle = ref<string | UTSJSONObject>('');
+        const styles = computed((): Map<string, any> => {
+            const style = new Map<string, any>();
+            const gridWidth = parent?.props.gridWidth;
+            if (gridWidth != null || width.value > 0 && column.value > 0) {
+                const _width = (width.value - (column.value - 1) * gutter.value) / column.value;
+                style.set(`width`, gridWidth ?? `${_width}px`);
+                // style.set(`width`, `auto`);
+            }
+            if (index.value % (column.value) != column.value - 1) {
+                style.set('margin-right', `${gutter.value}px`);
+            }
+            if (index.value >= column.value) {
+                style.set(`margin-top`, `${gutter.value}px`);
+            }
+            if (props.borderColor != null) {
+                style.set('border-color', props.borderColor!);
+            }
+            const bgColor = props.bgColor ?? parent?.props.bgColor;
+            if (bgColor != null) {
+                style.set('background', bgColor);
+            }
+            const padding = props.padding ?? parent?.props.padding;
+            if (padding != null) {
+                style.set('padding', padding);
+            }
+            return style;
+        });
+        const imageStyle = computed((): Map<string, any> => {
+            const style = new Map<string, any>();
+            if (props.imageWidth != null) {
+                style.set(`width`, props.imageWidth!);
+            }
+            if (props.imageHeight != null) {
+                style.set(`height`, props.imageHeight!);
+            }
+            return style;
+        });
+        const onClick = (e: UniPointerEvent) => {
+            emits('click', e);
+            if (props.url == null)
+                return;
+            switch (props.openType) {
+                case 'switchTab':
+                    uni.switchTab({ url: props.url! });
+                    break;
+                case 'reLaunch':
+                    uni.reLaunch({ url: props.url! });
+                    break;
+                case 'redirectTo':
+                    uni.redirectTo({ url: props.url! });
+                    break;
+                default:
+                    uni.navigateTo({ url: props.url! });
+                    break;
+            }
+        };
+        // 安卓如果默认设置了圆角，再设置不会被覆盖，要延时一下
+        watchEffect(() => {
+            nextTick(() => {
+                innerImageStyle.value = props.lImageStyle ?? '';
+            });
+        });
+        onBeforeMount(() => {
+            if (instance != null && parent != null) {
+                parent.children.value.push(instance.uid);
+            }
+        });
+        onUnmounted(() => {
+            if (instance != null && parent != null) {
+                parent.children.value = parent.children.value.filter((it): boolean => it != instance.uid);
+            }
+        });
+        return (): any | null => {
+            const _component_l_icon = resolveEasyComponent("l-icon", _easycom_l_icon);
+            const _component_l_badge = resolveEasyComponent("l-badge", _easycom_l_badge);
+            return createElementVNode("view", utsMapOf({
+                ref: "gridRef",
+                class: normalizeClass(["l-grid-item", [unref(classes), _ctx.lClass]]),
+                onClick: onClick,
+                "hover-stay-time": 200,
+                "hover-class": unref(hover) ? 'l-grid-item--hover' : '',
+                style: normalizeStyle([unref(styles), _ctx.lStyle])
+            }), [
+                renderSlot(_ctx.$slots, "default", {}, (): any[] => [
+                    isTrue((_ctx.dot || _ctx.badge != null) && (_ctx.icon != null || _ctx.image != null || _ctx.$slots['icon'] != null))
+                        ? createVNode(_component_l_badge, utsMapOf({
+                            key: 0,
+                            content: _ctx.badge,
+                            dot: _ctx.dot
+                        }), utsMapOf({
+                            default: withSlotCtx((): any[] => [
+                                renderSlot(_ctx.$slots, "icon", {}, (): any[] => [
+                                    _ctx.icon != null
+                                        ? createElementVNode("view", utsMapOf({
+                                            key: 0,
+                                            class: normalizeClass(["l-grid-item__icon", unref(imageClasses)])
+                                        }), [
+                                            createVNode(_component_l_icon, utsMapOf({
+                                                "l-class": _ctx.lClassIcon,
+                                                prefix: _ctx.prefix,
+                                                name: _ctx.icon,
+                                                color: _ctx.iconColor,
+                                                size: _ctx.iconSize
+                                            }), null, 8 /* PROPS */, ["l-class", "prefix", "name", "color", "size"])
+                                        ], 2 /* CLASS */)
+                                        : _ctx.image != null
+                                            ? createElementVNode("image", utsMapOf({
+                                                key: 1,
+                                                class: normalizeClass(["l-grid-item__image", unref(imageClasses)]),
+                                                style: normalizeStyle([unref(imageStyle), unref(innerImageStyle)]),
+                                                src: _ctx.image,
+                                                mode: "aspectFill"
+                                            }), null, 14 /* CLASS, STYLE, PROPS */, ["src"])
+                                            : createCommentVNode("v-if", true)
+                                ])
+                            ]),
+                            _: 3 /* FORWARDED */
+                        }), 8 /* PROPS */, ["content", "dot"])
+                        : isTrue(_ctx.icon != null || _ctx.image != null || _ctx.$slots['icon'] != null)
+                            ? renderSlot(_ctx.$slots, "icon", utsMapOf({ key: 1 }), (): any[] => [
+                                _ctx.icon != null
+                                    ? createElementVNode("view", utsMapOf({
+                                        key: 0,
+                                        class: normalizeClass(["l-grid-item__icon", unref(imageClasses)])
+                                    }), [
+                                        createVNode(_component_l_icon, utsMapOf({
+                                            "l-class": _ctx.lClassIcon,
+                                            prefix: _ctx.prefix,
+                                            name: _ctx.icon,
+                                            color: _ctx.iconColor,
+                                            size: _ctx.iconSize
+                                        }), null, 8 /* PROPS */, ["l-class", "prefix", "name", "color", "size"])
+                                    ], 2 /* CLASS */)
+                                    : _ctx.image != null
+                                        ? createElementVNode("image", utsMapOf({
+                                            key: 1,
+                                            class: normalizeClass(["l-grid-item__image", unref(imageClasses)]),
+                                            style: normalizeStyle([unref(imageStyle), unref(innerImageStyle)]),
+                                            src: _ctx.image,
+                                            mode: "aspectFill"
+                                        }), null, 14 /* CLASS, STYLE, PROPS */, ["src"])
+                                        : createCommentVNode("v-if", true)
+                            ])
+                            : createCommentVNode("v-if", true),
+                    createElementVNode("view", utsMapOf({ class: "l-grid-item__content" }), [
+                        renderSlot(_ctx.$slots, "text", {}, (): any[] => [
+                            createElementVNode("text", utsMapOf({
+                                class: normalizeClass(["l-grid-item__title", unref(titleClasses)]),
+                                style: normalizeStyle([_ctx.lTitleStyle])
+                            }), toDisplayString(_ctx.text), 7 /* TEXT, CLASS, STYLE */)
+                        ]),
+                        renderSlot(_ctx.$slots, "description", {}, (): any[] => [
+                            createElementVNode("text", utsMapOf({
+                                class: "l-grid-item__description",
+                                style: normalizeStyle([_ctx.lDescriptionStyle])
+                            }), toDisplayString(_ctx.description), 5 /* TEXT, STYLE */)
+                        ])
+                    ])
+                ]),
+                renderSlot(_ctx.$slots, "extra")
+            ], 14 /* CLASS, STYLE, PROPS */, ["hover-class"]);
+        };
+    }
+});
+export default __sfc__;
+export type LGridItemComponentPublicInstance = InstanceType<typeof __sfc__>;
+const GenUniModulesLimeGridComponentsLGridItemLGridItemStyles = [utsMapOf([["l-grid-item", padStyleMapOf(utsMapOf([["alignItems", "center"], ["paddingTop", "32rpx"], ["paddingRight", 0], ["paddingBottom", "24rpx"], ["paddingLeft", 0], ["flexDirection", "column"], ["backgroundImage", "none"], ["backgroundColor", "#ffffff"], ["width", "25%"], ["overflow", "visible"]]))], ["l-grid-item--bordered", padStyleMapOf(utsMapOf([["borderTopWidth", "0.5rpx"], ["borderRightWidth", "0.5rpx"], ["borderBottomWidth", "0.5rpx"], ["borderLeftWidth", "0.5rpx"], ["borderTopStyle", "solid"], ["borderRightStyle", "solid"], ["borderBottomStyle", "solid"], ["borderLeftStyle", "solid"], ["borderTopColor", "#eeeeee"], ["borderRightColor", "#eeeeee"], ["borderBottomColor", "#eeeeee"], ["borderLeftColor", "#eeeeee"]]))], ["l-grid-item--horizontal", padStyleMapOf(utsMapOf([["paddingTop", "32rpx"], ["paddingRight", 0], ["paddingBottom", "32rpx"], ["paddingLeft", 0], ["flexDirection", "row"], ["justifyContent", "center"]]))], ["l-grid-item__content", utsMapOf([[".l-grid-item--horizontal ", utsMapOf([["marginTop", 0], ["marginLeft", "24rpx"]])], ["", utsMapOf([["position", "relative"], ["marginTop", "16rpx"]])]])], ["l-grid-item--hover", padStyleMapOf(utsMapOf([["backgroundColor", "rgba(0,0,0,0.02)"]]))], ["l-grid-item__title", utsMapOf([[".l-grid-item--center ", utsMapOf([["textAlign", "center"]])], ["", utsMapOf([["color", "rgba(0,0,0,0.88)"], ["fontSize", 14], ["lineHeight", "44rpx"]])]])], ["l-grid-item__description", utsMapOf([[".l-grid-item--center ", utsMapOf([["textAlign", "center"]])], ["", utsMapOf([["color", "rgba(0,0,0,0.45)"], ["fontSize", 12], ["lineHeight", "40rpx"]])]])], ["l-grid-item__icon", padStyleMapOf(utsMapOf([["alignItems", "center"], ["justifyContent", "center"], ["backgroundImage", "none"], ["backgroundColor", "rgba(0,0,0,0.02)"], ["borderTopLeftRadius", "12rpx"], ["borderTopRightRadius", "12rpx"], ["borderBottomRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["width", "96rpx"], ["height", "96rpx"]]))], ["l-grid-item__image", padStyleMapOf(utsMapOf([["backgroundImage", "none"], ["backgroundColor", "rgba(0,0,0,0.02)"], ["borderTopLeftRadius", "12rpx"], ["borderTopRightRadius", "12rpx"], ["borderBottomRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["width", "96rpx"], ["height", "96rpx"]]))], ["l-grid-item__image--small", padStyleMapOf(utsMapOf([["width", 32], ["height", 32]]))], ["l-grid-item__icon--small", padStyleMapOf(utsMapOf([["width", 32], ["height", 32]]))], ["l-grid-item__image--middle", padStyleMapOf(utsMapOf([["width", "80rpx"], ["height", "80rpx"]]))], ["l-grid-item__icon--middle", padStyleMapOf(utsMapOf([["width", "80rpx"], ["height", "80rpx"]]))], ["l-grid-item__title--small", padStyleMapOf(utsMapOf([["fontSize", 12]]))], ["l-grid-item__title--middle", padStyleMapOf(utsMapOf([["fontSize", 12]]))]])];
+//# sourceMappingURL=l-grid-item.uvue.map

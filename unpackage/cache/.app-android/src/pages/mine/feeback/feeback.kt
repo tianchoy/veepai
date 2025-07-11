@@ -50,6 +50,7 @@ open class GenPagesMineFeebackFeeback : BasePage {
                 val _component_fui_icon = resolveEasyComponent("fui-icon", GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass)
                 val _component_fui_input = resolveEasyComponent("fui-input", GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass)
                 val _component_l_textarea = resolveEasyComponent("l-textarea", GenUniModulesLimeTextareaComponentsLTextareaLTextareaClass)
+                val _component_l_upload = resolveEasyComponent("l-upload", GenUniModulesLimeUploadComponentsLUploadLUploadClass)
                 val _component_fui_button = resolveEasyComponent("fui-button", GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass)
                 val _component_l_picker = resolveEasyComponent("l-picker", GenUniModulesLimePickerComponentsLPickerLPickerClass)
                 val _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup", GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass)
@@ -91,6 +92,13 @@ open class GenPagesMineFeebackFeeback : BasePage {
                             createElementVNode("view", utsMapOf("class" to "item-label"), utsArrayOf(
                                 createElementVNode("text", null, "图片"),
                                 createElementVNode("text", utsMapOf("class" to "little-title"), "(问题截图,最多三张)")
+                            )),
+                            createVNode(_component_l_upload, utsMapOf("max" to 3, "multiple" to true, "modelValue" to files.value, "onUpdate:modelValue" to fun(`$event`: UTSArray<UploadFile>){
+                                files.value = `$event`
+                            }
+                            ), null, 8, utsArrayOf(
+                                "modelValue",
+                                "onUpdate:modelValue"
                             ))
                         ))
                     )),

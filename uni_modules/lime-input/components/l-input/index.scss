@@ -1,0 +1,284 @@
+@import '@/uni_modules/lime-style/index.scss';
+@import '@/uni_modules/lime-style/mixins/utilities.scss';
+@import '@/uni_modules/lime-style/mixins/hairline.scss';
+
+// $prefix: l !default;
+$input: #{$prefix}-input;
+$use-css-var: true;
+
+$input-padding-y: create-var(input-padding-y, 16px); //输入框垂直方向内间距
+$input-padding-x: create-var(input-padding-x, 16px); //输入框垂直方向内间距
+
+$input-text-color: create-var(input-text-color, $text-color-1); // 'default' 状态输入框文本颜色
+$input-success-text-color: create-var(input-success-text-color, $success-color); // 'success' 状态输入框文本颜色
+$input-warning-text-color: create-var(input-warning-text-color, $warning-color); // 'warning' 状态输入框文本颜色
+$input-error-text-color: create-var(input-error-text-color, $error-color); // 'error' 状态输入框文本颜色
+
+$input-tips-color: create-var(input-tips-color, $text-color-3); // 'default' 状态辅助文本颜色
+$input-success-tips-color: create-var(input-success-tips-color, $success-color); // 'success' 状态辅助文本颜色
+$input-warning-tips-color: create-var(input-warning-tips-color, $warning-color); // 'warning' 状态辅助文本颜色
+$input-error-tips-color: create-var(input-error-tips-color, $error-color); // 'error' 状态辅助文本颜色
+
+$input-bg-color: create-var(input-bg-color, $bg-color-container); // 输入框背景颜色
+$input-border-color: create-var(input-border-color, $border-color-2); // 输入框分割线颜色
+$input-border-left-space: create-var(input-border-left-space, 16px);
+$input-border-right-space: create-var(input-border-right-space, 0);
+$input-placeholder-text-color: create-var(input-placeholder-text-color, $text-color-3); // 输入框占位符文本颜色
+$input-placeholder-text-font-size: create-var(input-placeholder-text-font-size, $font-size-md); // 输入框占位符文本字体大小
+$input-prefix-icon-color: create-var(input-prefix-icon-color, $text-color-1); // // 输入框前缀图标颜色
+$input-suffix-icon-color: create-var(input-suffix-icon-color, $text-color-3); // 输入框后缀图标颜色
+$input-suffix-icon-size: create-var(input-suffix-icon-size, 22px); // 输入框后缀图标颜色
+$input-label-text-color: create-var(input-label-text-color, $text-color-1); // 左侧文本颜色
+
+$input-suffix-text-color: create-var(input-suffix-text-color, $text-color-1); // 后置图标前的后置内容文本颜色
+$input-disabled-text-color: create-var(input-disabled-text-color, $text-color-4); // 输入框禁用态文本颜色
+$input-disabled-bg-color: create-var(input-disabled-bg-color, $fill-3); // 输入框禁用态文本颜色
+$input-border-radius: create-var(input-border-radius, $border-radius); // 边框圆角大小
+
+$input-label-font-size: create-var(input-label-min-width, $font-size-md);
+
+$input-classic-padding-x: create-var(input-classic-padding-x, 16px);
+$input-classic-padding-y: create-var(input-classic-padding-y, 12px);
+
+/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+$input-label-min-width: create-var(input-label-min-width, 2em);
+$input-label-max-width: create-var(input-label-max-width, 5em);
+/* #endif */
+/* #ifdef APP-ANDROID || APP-IOS || APP-HARMONY */
+$input-label-min-width: create-var(input-label-min-width, 64rpx);
+$input-label-max-width: create-var(input-label-max-width, 160rpx);
+/* #endif */
+
+
+.#{$input} {
+	@include flex;
+	background-color: $input-bg-color;
+	align-items: center;
+	// flex: 1;
+	width: 100%;
+	// padding: $input-padding-y $input-padding-x;
+	 @include padding($input-padding-y $input-padding-x);
+	 
+	&--horizontal {
+		@include flex-row;
+	}
+	&--vertical {
+		@include flex-column;
+		align-items: stretch;//flex-start;
+	}
+	&--border {
+		position: relative;
+		/* #ifdef APP-HARMONY */
+		border-bottom: 0.5px solid $input-border-color;
+		/* #endif */
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+		&::after {
+			@include hairline-bottom($input-border-color, $input-border-left-space, $input-border-right-space)
+		}
+		/* #endif */
+	}
+	&--classic {
+		// padding: $input-classic-padding;
+		@include padding($input-classic-padding-y $input-classic-padding-x);
+		// border-radius: $input-border-radius;
+		@include border-radius($input-border-radius);
+		// border: 0.5px solid $input-border-color;
+		border-width: 0.5px;
+		border-style: solid;
+		// align-items: center;
+		&-default {
+			border-color: $input-border-color
+		}
+		&-error {
+			border-color: $input-error-tips-color
+		}
+		&-success {
+			border-color: $input-success-tips-color
+		}
+		&-warning {
+			border-color: $input-warning-tips-color
+		}
+		&-disabled {
+			background-color: $input-disabled-bg-color
+		}
+	}
+	
+	&__wrap--prefix {
+		@include flex;
+		@include flex-row;
+		align-items: center;
+	}
+	&__icon--prefix {
+	    font-size: 44rpx;
+	    color: $input-prefix-icon-color;
+		
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+		display: inline-flex;
+		/* #endif */
+		
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY*/
+		text {
+			font-size: inherit;
+			color: inherit
+		}
+		/* #endif */
+	}
+	
+	&__label {
+		min-width: $input-label-min-width;
+		
+		font-size: $font-size-md;
+		line-height: 48rpx;
+		color: $input-label-text-color;
+		margin-right: $spacer;
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY*/
+		word-wrap: break-word;
+		/* #endif */
+		.#{$input}--horizontal & {
+		   max-width: $input-label-max-width;
+		}
+		.#{$input}--vertical & {
+		    font-size: $font-size;
+		    padding-bottom: 8rpx;
+		}
+		&--gap {
+			margin-left: 8rpx;
+		}
+	}
+
+	&__wrap {
+	    // width: 100%;
+	    @include flex;
+	    @include flex-column;
+	    // flex-wrap: wrap; // 鸿蒙加上这句会导致提示文本不显示
+	    justify-content: center;
+	    // flex-shrink: 1;
+	    flex: 1;
+	
+	    .#{$input}__content {
+			@include flex;
+			@include flex-row;
+			width: 100%;
+			align-items: center;
+			// line-height: 48rpx;
+			// font-size: $font-size-md;
+	    }
+		
+	    &--clearable-icon,
+	    &--suffix-icon,
+	    &--suffix {
+			flex: 0 0 auto;
+			padding-left: $spacer-sm;
+			box-sizing: content-box;
+	    }
+	
+	    &--clearable-icon,
+	    &--suffix-icon {
+			font-size: $input-suffix-icon-size !important;
+			color: $input-suffix-icon-color !important;
+			/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY*/
+			display: inline-flex;
+			text {
+				font-size: inherit;
+				color: inherit
+			}
+			/* #endif */
+	    }
+	
+	    &--suffix {
+			// font-size: $font-size-md;
+			// color: $input-suffix-text-color;
+			&-text{
+				font-size: $font-size-md;
+				color: $input-suffix-text-color;
+			}
+			/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY*/
+			text {
+				font-size: inherit;
+				color: inherit
+			}
+			/* #endif */
+	    }
+	}
+	
+	&__control {
+		flex: 1;
+		/* #ifdef WEB */ 
+	    display: flex;
+		align-items: center;
+		/* #endif */
+	    box-sizing: border-box;
+	    // width: 100%;
+	    min-width: 0; // for flex-shrink in field__button
+	    min-height: 48rpx;
+	    margin: 0;
+	    padding: 0;
+	    color: $input-text-color;
+	    // line-height: inherit;
+	    background-color: transparent;
+	    border: 0;
+	    // resize: none;
+	    // font-size: inherit;
+		/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+		line-height: 48rpx;
+		/* #endif */
+		font-size: $font-size-md;
+		
+	    &--disabled {
+			color: $input-disabled-text-color;
+			
+			opacity: 1;
+			/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+			cursor: not-allowed;
+			-webkit-text-fill-color: currentColor; // fix disabled color in iOS
+			/* #endif */
+	    }
+	
+	    &--read-only {
+			/* #ifndef APP-ANDROID || APP-IOS || APP-HARMONY */
+			cursor: default;
+			/* #endif */
+	    }
+	}
+	&--left {
+	    text-align: left;
+	}
+	
+	&--right {
+	    text-align: right;
+	}
+	
+	&--center {
+	    text-align: center;
+	}
+	
+	&__placeholder {
+	    color: $input-placeholder-text-color;
+	    font-size: $input-placeholder-text-font-size;
+	
+	    &--disabled {
+			font-size: $input-placeholder-text-font-size;
+			color: $input-disabled-text-color;
+	    }
+	}
+	&__tips {
+	    font-size: $font-size-sm;
+	    line-height: 40rpx;
+	    padding-top: 8rpx;
+		
+		&--default {
+			color: $input-tips-color;
+		}
+		&--success {
+			color: $input-success-tips-color;
+		}
+		&--warning {
+			color: $input-warning-tips-color;
+		}
+		&--error {
+			color: $input-error-tips-color;
+		}
+		
+	}
+}
+

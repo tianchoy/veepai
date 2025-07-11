@@ -51,7 +51,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
             } : {}),
             j: item.suffix == "true"
           }, item.suffix == "true" ? {
-            k: common_assets._imports_0$6
+            k: common_assets._imports_0$7
           } : {}, {
             l: _ctx.shape == "circle" && item.type == "selected" ? 1 : "",
             m: common_vendor.s(item.type == "selected" && _ctx.shape == "circle" && _ctx.activeBgColor != null ? {

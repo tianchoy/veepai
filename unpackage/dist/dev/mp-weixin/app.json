@@ -16,7 +16,10 @@
     "pages/message/messageSystem/messageSystem",
     "pages/mine/myOrders/myOrders",
     "pages/mine/myOrders/orderDetail/orderDetail",
-    "pages/mine/feeback/feeback"
+    "pages/mine/feeback/feeback",
+    "pages/mine/systemSetting/systemSetting",
+    "pages/mine/about/about",
+    "pages/mine/localFiles/localFiles"
   ],
   "window": {
     "navigationBarTextStyle": "black",

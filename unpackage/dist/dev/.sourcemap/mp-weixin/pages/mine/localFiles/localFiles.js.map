@@ -1,0 +1,1 @@
+{"version":3,"file":"localFiles.js","sources":["pages/mine/localFiles/localFiles.uvue?type=page"],"sourcesContent":["import MiniProgramPage from '/Users/xyhc/Documents/veepai_uniappx/pages/mine/localFiles/localFiles.uvue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AACA,GAAG,WAAW,eAAe;"}

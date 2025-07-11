@@ -1,0 +1,70 @@
+import _easycom_l_grid_item from '@/uni_modules/lime-grid/components/l-grid-item/l-grid-item.uvue'
+import _easycom_l_grid from '@/uni_modules/lime-grid/components/l-grid/l-grid.uvue'
+import { ref } from 'vue'
+
+const __sfc__ = defineComponent({
+  __name: 'localFiles',
+  setup(__props): any | null {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+const _cache = __ins.renderCache;
+
+	
+return (): any | null => {
+
+const _component_l_grid_item = resolveEasyComponent("l-grid-item",_easycom_l_grid_item)
+const _component_l_grid = resolveEasyComponent("l-grid",_easycom_l_grid)
+
+  return createElementVNode("view", utsMapOf({ class: "container" }), [
+    createVNode(_component_l_grid, utsMapOf({
+      column: 3,
+      border: true,
+      gutter: 20
+    }), utsMapOf({
+      default: withSlotCtx((): any[] => [
+        createVNode(_component_l_grid_item, utsMapOf({
+          text: "标题文字",
+          image: "https://tdesign.gtimg.com/mobile/demos/avatar1.png"
+        })),
+        createVNode(_component_l_grid_item, utsMapOf({
+          text: "标题文字",
+          image: "https://tdesign.gtimg.com/mobile/demos/avatar2.png"
+        })),
+        createVNode(_component_l_grid_item, utsMapOf({
+          text: "标题文字",
+          image: "https://tdesign.gtimg.com/mobile/demos/avatar3.png"
+        })),
+        createVNode(_component_l_grid_item, utsMapOf({
+          text: "标题文字",
+          image: "https://tdesign.gtimg.com/mobile/demos/avatar4.png"
+        })),
+        createVNode(_component_l_grid_item, utsMapOf({
+          text: "最多四字",
+          image: "https://tdesign.gtimg.com/mobile/demos/avatar5.png"
+        })),
+        createVNode(_component_l_grid_item, utsMapOf({
+          text: "标题文字",
+          image: "https://tdesign.gtimg.com/mobile/demos/avatar1.png"
+        })),
+        createVNode(_component_l_grid_item, utsMapOf({
+          text: "标题文字",
+          image: "https://tdesign.gtimg.com/mobile/demos/avatar2.png"
+        })),
+        createVNode(_component_l_grid_item, utsMapOf({
+          text: "标题文字",
+          image: "https://tdesign.gtimg.com/mobile/demos/avatar3.png"
+        })),
+        createVNode(_component_l_grid_item, utsMapOf({
+          text: "标题文字",
+          image: "https://tdesign.gtimg.com/mobile/demos/avatar4.png"
+        }))
+      ]),
+      _: 1 /* STABLE */
+    }))
+  ])
+}
+}
+
+})
+export default __sfc__
+const GenPagesMineLocalFilesLocalFilesStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundColor", "#f5f5f5"]]))]])]

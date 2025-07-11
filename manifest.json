@@ -5,9 +5,7 @@
 	"versionName": "1.0.0",
 	"versionCode": "100",
 	"uni-app-x": {},
-	/* 快应用特有相关 */
 	"quickapp": {},
-	/* 小程序特有相关 */
 	"mp-weixin": {
 		"appid": "",
 		"setting": {
@@ -46,6 +44,26 @@
 		}
 	},
 	"app-plus": {
-	  "permissions": ["clipboard"]
+		"permissions": [
+			"clipboard"
+		],
+		"android": {
+			"permissions": [
+				"android.permission.CAMERA",
+				"android.permission.ACCESS_FINE_LOCATION",
+				"android.permission.READ_EXTERNAL_STORAGE",
+				"android.permission.RECORD_AUDIO",
+				"android.permission.READ_CONTACTS"
+			]
+		},
+		"ios": {
+			"info": {
+				"NSCameraUsageDescription": "需要相机权限来拍摄照片",
+				"NSLocationWhenInUseUsageDescription": "需要位置权限来提供附近服务",
+				"NSMicrophoneUsageDescription": "需要麦克风权限来录制音频",
+				"NSContactsUsageDescription": "需要通讯录权限来查找朋友",
+				"NSPhotoLibraryUsageDescription": "需要相册权限来保存图片"
+			}
+		}
 	}
 }

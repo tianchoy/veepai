@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<view class="files">
-			<view class="file">
+			<view class="file" @click="localFiles">
 				<image class="fileIcon" src="/static/mine/local.png" mode="aspectFit"></image>
 				<text class="file-text">本地文件</text>
 			</view>
@@ -69,7 +69,7 @@
 					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
 				</view>
 			</view>
-			<view class="item">
+			<view class="item" @click="systemSetting">
 				<view class="info">
 					<image class="item-icon" src="/static/mine/setting.png" mode="aspectFit"></image>
 					<text class="item-text">设置</text>
@@ -78,7 +78,7 @@
 					<image class="right-icon" src="/static/mine/right.png" mode="aspectFit"></image>
 				</view>
 			</view>
-			<view class="item no-bottom">
+			<view class="item no-bottom" @click="aboutPage">
 				<view class="info">
 					<image class="item-icon" src="/static/mine/about.png" mode="aspectFit"></image>
 					<text class="item-text">关于</text>
@@ -93,6 +93,12 @@
 
 <script setup>
 	
+	const localFiles = () => {
+		uni.navigateTo({
+			url: '/pages/mine/localFiles/localFiles'
+		})
+	}
+
 	const userInfo = () => {
 		uni.navigateTo({
 			url: '/pages/mine/userInfo/userInfo'
@@ -127,6 +133,18 @@
 	const feedback = () => {
 		uni.navigateTo({
 			url: '/pages/mine/feeback/feeback'
+		})
+	}
+
+	const systemSetting = () => {
+		uni.navigateTo({
+			url: '/pages/mine/systemSetting/systemSetting'
+		})
+	}
+
+	const aboutPage = () => {
+		uni.navigateTo({
+			url: '/pages/mine/about/about'
 		})
 	}
 

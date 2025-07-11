@@ -1,0 +1,165 @@
+@import '@/uni_modules/lime-ui/style/index.scss';
+
+// $primary-color: #0052d9;
+$name: l-switch;
+$switch-checked-color: var(--l-switch-checked-color, $brand-color);
+$switch-checked-disabled-color: var(--l-switch-checked-disabled-color, $brand-color-disabled);
+
+$switch-unchecked-color: var(--l-switch-unchecked-color, $gray-4);
+$switch-unchecked-disabled-color: var(--l-switch-unchecked-disabled-color, $gray-2);
+
+$switch-width: var(--l-switch-width, 90rpx);
+$switch-height: var(--l-switch-height, 56rpx);
+// $switch-radius: var(--l-switch-radius, calc($switch-height / 2));
+$switch-radius: var(--l-switch-radius, 8rpx);
+$switch-dot-margin: var(--l-switch-dot-margin, 6rpx);
+$switch-dot-bg-color: var(--l-switch-dot-bg-color, white);
+$switch-dot-size: var(--l-switch-dot-size, 44rpx);
+// $switch-dot-radius: var(--l-switch-dot-radius, 99rpx);
+$switch-dot-radius: var(--l-switch-dot-radius, 5rpx);
+$switch-dot-shadow: var(--l-switch-dot-shadow, $shadow);
+
+// large
+$switch-large-width: var(--l-switch-large-width, 104rpx);
+$switch-large-height: var(--l-switch-large-height, 64rpx);
+// $switch-large-radius: var(--l-switch-large-radius, calc($switch-large-height / 2));
+$switch-large-radius: var(--l-switch-large-radius, $switch-radius);
+
+$switch-dot-large-size: var(--l-switch-dot-large-size, 52rpx);
+$switch-dot-plain-large-size: var(--l-switch-dot-plain-large-size, 44rpx);
+
+// small
+$switch-small-width: var(--l-switch-small-width, 78rpx);
+$switch-small-height: var(--l-switch-small-height, 48rpx);
+$switch-small-radius: var(--l-switch-small-radius, $switch-radius);
+// $switch-small-radius: var(--l-switch-small-radius, calc($switch-small-height / 2));
+
+$switch-dot-small-size: var(--l-switch-dot-small-size, 36rpx);
+
+
+$swtich-label-font-size: var(--l-swtich-label-font-size, $font-size);
+$swtich-label-large-font-size: var(--l-swtich-label-font-size, 32rpx);
+$swtich-label-small-font-size: var(--l-swtich-label-font-size, 24rpx);
+
+// icon
+// $switch-icon-size: var(--l-switch-icon-size, 40rpx);
+// $switch-icon-large-size: var(--l-switch-icon-large-size, 48rpx);
+// $switch-icon-small-size: var(--l-switch-icon-small-size, 32rpx);
+
+:host {
+	display: inline-flex;
+}
+.l-wave {
+	position: absolute;
+	background: transparent;
+	pointer-events: none;
+	box-sizing: border-box;
+	color: var(--l-wave-color, currentcolor);
+	border-radius: $switch-radius;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	box-shadow: 0 0 0 0 currentcolor;
+	opacity: 0.3;
+	z-index: 0;
+	transition: box-shadow 0.4s cubic-bezier(0.08, 0.82, 0.17, 1), opacity 2s cubic-bezier(0.08, 0.82, 0.17, 1);
+	&-active {
+		box-shadow: 0 0 0 16rpx currentcolor;
+		opacity: 0;
+	}
+}
+
+.#{$name} {
+	display: inline-flex;
+	position: relative;
+	color: $switch-unchecked-color;
+	width: $switch-width;
+	height: $switch-height;
+	background-color: $switch-unchecked-color;
+	border-radius: $switch-radius;
+	border-width: $switch-dot-margin;
+	border-style: solid;
+	border-color: rgba(0, 0, 0, 0);
+	box-sizing: border-box;
+	transition: all 0.3s ease;
+	overflow: hidden;
+	font-size: $swtich-label-font-size;
+	&-inner {
+		// background-color: $switch-unchecked-color;
+		// color: $switch-unchecked-color;
+		flex: 1;
+		height: 100%;
+		// overflow: hidden;
+		&-checked {
+			position: absolute;
+			color: white;
+			left: 0;
+			transform: translateX(-110%);
+		}
+		&-unchecked {
+			position: absolute;
+			color: white;
+			right: 0;
+			transform: translateX(110%);
+		}
+	}
+	&--checked {
+		background-color: $switch-checked-color;
+		color: $switch-checked-color;
+		&.#{$name}--disabled {
+			background-color: $switch-checked-disabled-color;
+			color: $switch-checked-disabled-color;
+		}
+	}
+	&--disabled {
+	  background-color: $switch-unchecked-disabled-color;
+	  // color: $switch-unchecked-disabled-color;
+	}
+	// &--checked&--disabled {
+	// 	background-color: $switch-checked-disabled-color;
+	// }
+	 &--large {
+		font-size: $swtich-label-large-font-size;
+		width: $switch-large-width;
+		height: $switch-large-height;
+		border-radius: $switch-large-radius;
+	}
+	
+	&--small {
+		font-size: $swtich-label-small-font-size;
+		width: $switch-small-width;
+		height: $switch-small-height;
+		border-radius: $switch-small-radius;
+	}
+	&__dot {
+		width: $switch-dot-size;
+		height: $switch-dot-size;
+		background-color: $switch-dot-bg-color;
+		border-radius: $switch-dot-radius;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		box-shadow: $switch-dot-shadow;
+		transition: padding 0.2s ease-in-out;
+		
+		&--large {
+		  width: $switch-dot-large-size;
+		  height: $switch-dot-large-size;
+		}
+	
+		&--small {
+		  width: $switch-dot-small-size;
+		  height: $switch-dot-small-size;
+		}
+	}
+	&--round{
+		border-radius: calc($switch-large-height / 2);
+		.#{$name}__dot{
+			border-radius: calc($switch-large-height / 2);
+		}
+		.l-wave{
+			border-radius: calc($switch-large-height / 2);
+		}
+	}
+}

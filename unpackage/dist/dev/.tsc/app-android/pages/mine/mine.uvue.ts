@@ -6,6 +6,12 @@ const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
 
 	
+	const localFiles = () => {
+		uni.navigateTo({
+			url: '/pages/mine/localFiles/localFiles'
+		})
+	}
+
 	const userInfo = () => {
 		uni.navigateTo({
 			url: '/pages/mine/userInfo/userInfo'
@@ -43,13 +49,28 @@ const _cache = __ins.renderCache;
 		})
 	}
 
+	const systemSetting = () => {
+		uni.navigateTo({
+			url: '/pages/mine/systemSetting/systemSetting'
+		})
+	}
+
+	const aboutPage = () => {
+		uni.navigateTo({
+			url: '/pages/mine/about/about'
+		})
+	}
+
 
 
 return (): any | null => {
 
   return createElementVNode("view", utsMapOf({ class: "container" }), [
     createElementVNode("view", utsMapOf({ class: "files" }), [
-      createElementVNode("view", utsMapOf({ class: "file" }), [
+      createElementVNode("view", utsMapOf({
+        class: "file",
+        onClick: localFiles
+      }), [
         createElementVNode("image", utsMapOf({
           class: "fileIcon",
           src: "/static/mine/local.png",
@@ -195,7 +216,10 @@ return (): any | null => {
           }))
         ])
       ]),
-      createElementVNode("view", utsMapOf({ class: "item" }), [
+      createElementVNode("view", utsMapOf({
+        class: "item",
+        onClick: systemSetting
+      }), [
         createElementVNode("view", utsMapOf({ class: "info" }), [
           createElementVNode("image", utsMapOf({
             class: "item-icon",
@@ -212,7 +236,10 @@ return (): any | null => {
           }))
         ])
       ]),
-      createElementVNode("view", utsMapOf({ class: "item no-bottom" }), [
+      createElementVNode("view", utsMapOf({
+        class: "item no-bottom",
+        onClick: aboutPage
+      }), [
         createElementVNode("view", utsMapOf({ class: "info" }), [
           createElementVNode("image", utsMapOf({
             class: "item-icon",

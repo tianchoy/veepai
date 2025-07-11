@@ -25,6 +25,9 @@ open class GenPagesMineMine : BasePage {
             val __ins = getCurrentInstance()!!
             val _ctx = __ins.proxy as GenPagesMineMine
             val _cache = __ins.renderCache
+            val localFiles = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/localFiles/localFiles"))
+            }
             val userInfo = fun(){
                 uni_navigateTo(NavigateToOptions(url = "/pages/mine/userInfo/userInfo"))
             }
@@ -43,10 +46,16 @@ open class GenPagesMineMine : BasePage {
             val feedback = fun(){
                 uni_navigateTo(NavigateToOptions(url = "/pages/mine/feeback/feeback"))
             }
+            val systemSetting = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/systemSetting/systemSetting"))
+            }
+            val aboutPage = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/about/about"))
+            }
             return fun(): Any? {
                 return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
                     createElementVNode("view", utsMapOf("class" to "files"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "file"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "file", "onClick" to localFiles), utsArrayOf(
                             createElementVNode("image", utsMapOf("class" to "fileIcon", "src" to "/static/mine/local.png", "mode" to "aspectFit")),
                             createElementVNode("text", utsMapOf("class" to "file-text"), "本地文件")
                         )),
@@ -114,7 +123,7 @@ open class GenPagesMineMine : BasePage {
                                 createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to systemSetting), utsArrayOf(
                             createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
                                 createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/setting.png", "mode" to "aspectFit")),
                                 createElementVNode("text", utsMapOf("class" to "item-text"), "设置")
@@ -123,7 +132,7 @@ open class GenPagesMineMine : BasePage {
                                 createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item no-bottom"), utsArrayOf(
+                        createElementVNode("view", utsMapOf("class" to "item no-bottom", "onClick" to aboutPage), utsArrayOf(
                             createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
                                 createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/about.png", "mode" to "aspectFit")),
                                 createElementVNode("text", utsMapOf("class" to "item-text"), "关于")

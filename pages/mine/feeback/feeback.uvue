@@ -41,7 +41,7 @@
 					<text>图片</text>
 					<text class="little-title">(问题截图,最多三张)</text>
 				</view>
-				<!-- <l-upload :max="3" :multiple="true" v-model="files as UploadFile[]" /> -->
+				<l-upload :max="3" :multiple="true" v-model="files as UploadFile[]" />
 			</view>
 		</view>
 		<view class="btn-box">

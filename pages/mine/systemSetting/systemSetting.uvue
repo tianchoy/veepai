@@ -1,0 +1,235 @@
+<template>
+	<view class="container">
+		<view class="content">
+			<view class="items underline">
+				<view class="offline">
+					<text>离线提醒</text>
+					<fui-switch :checked= "checked" @change="changeChecked" @update:checked="isChecked"></fui-switch>
+				</view>
+				<text class="tips">设备离线8小时后,推送消息到APP</text>
+			</view>
+			<view class="items">
+				<fui-input label="自动播放" :labelSize="28" textAlign="right" :borderBottom="false"
+					placeholderStyle="font-size: 28rpx;" :disabled="true" :placeholder = "playTypeItem" @click="playType">
+					<text>
+						<fui-icon name="arrowright" :size="48"></fui-icon>
+					</text>
+				</fui-input>
+				<text class="tips">摄像机视频是否自动播放</text>
+			</view>
+		</view>
+		<view class="content">
+			<view v-for="(item,index) in permissionList" :key="index">
+				<fui-input :label="item.name" :labelSize="28" textAlign="right" :borderBottom="true"
+					:placeholderStyle="item.status == '未授权' ? 'font-size: 28rpx;color:red;' : 'font-size: 28rpx;color:green;'" :disabled="true" :placeholder = "item.status" @click="getSystemAuth(item)">
+					<text>
+						<fui-icon name="arrowright" :size="48"></fui-icon>
+					</text>
+				</fui-input>
+			</view>
+		</view>
+
+		<fui-bottom-popup :visible="showPicker">
+			<l-picker cancel-btn="取消" confirm-btn="确定" :columns="pickerOptions" @cancel="oncancel" @confirm="onConfirm">
+			</l-picker>
+		</fui-bottom-popup>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import { ref } from 'vue'
+	import { PickerColumn ,PickerConfirmEvent} from '@/uni_modules/lime-picker';
+	const checked = ref<boolean>(true)
+	const showPicker = ref<boolean>(false)
+	const pickerOptions = ref<PickerColumn[]>([])
+	const playTypeItem = ref<string>('WIFI下自动播放')
+	const systemNotifyState = ref<string>('')
+
+	//授权类型
+	type AuthType = {
+		code:string
+		state: string
+	}
+
+	const AuthState = ref<AuthType[]>([
+		{
+			code:'authorized',
+			state: '已授权',
+		},
+		{
+			code:'not determined',
+			state: '未授权',
+		},
+		{
+			code:'denied',
+			state: '未授权',
+		},
+	])
+
+	// 权限项类型
+	type PermissionItem = {
+		name: string
+		code: string
+		status: string
+	}
+
+	// 权限列表数据
+	const permissionList = ref<PermissionItem[]>([
+		{ name: '位置信息', code: 'locationAuthorized', status: 'notDetermined' },
+		{ name: '相册', code: 'albumAuthorized', status: 'notDetermined' },
+		{ name: '麦克风', code: 'microphoneAuthorized', status: 'notDetermined' },
+		{ name: '蓝牙', code: 'bluetoothAuthorized', status: 'notDetermined' },
+		{ name: '系统通知', code: 'notificationAuthorized', status: 'notDetermined' },
+		{ name: '相机', code: 'cameraAuthorized', status: 'notDetermined' },
+	])
+
+	const getSystemAuth = (item:PermissionItem) => {
+		const res = uni.getAppAuthorizeSetting();
+		const code = item.code
+		if(code == 'bluetoothAuthorized'){
+			const resu = uni.getSystemSetting();
+			console.log(resu)
+			if(resu.bluetoothEnabled == false){
+				uni.showToast({
+					title: '请先手动打开蓝牙',
+				})
+			}else{
+				permissionList.value.map(item => {
+					if(item.code == 'bluetoothAuthorized'){
+						item.status = '已授权'
+					}
+				})
+			}
+		}else{
+			const status = res[code]
+			if(status == 'denied' || status == "not determined"){
+				uni.openAppAuthorizeSetting({
+					success: (res) => {
+						console.log(res)
+						// item.status = '已授权' 
+					}
+				})
+			}
+		}
+		
+	}
+
+
+	const changeChecked = () => {
+		console.log(checked.value)
+	}
+
+	const isChecked = () => {
+		checked.value = !checked.value
+	}
+
+	const getSystemNotify = () => {
+		const res = uni.getAppAuthorizeSetting();
+		console.log(res.notificationAuthorized)
+		if(res.notificationAuthorized == 'denied' || res.notificationAuthorized == "not determined"){
+			uni.showToast({
+				title: '请先授权通知权限',
+			})
+			uni.openAppAuthorizeSetting({
+				success: (res) => {
+					console.log(res)
+					systemNotifyState.value = '已授权'
+				}
+			})
+		}
+	}
+
+	const playType = () => {
+		pickerOptions.value = [
+			[
+				{
+					label: 'WIFI下自动播放',
+					value: 'WIFI下自动播放',
+				},
+				{
+					label: '总是播放',
+					value: '总是播放',
+				},
+				{
+					label: '不播放',
+					value: '不播放',
+				}
+			]
+		]  as PickerColumn[]
+		showPicker.value = true
+	}
+
+	const onConfirm = (context : PickerConfirmEvent) => {
+		showPicker.value = false
+		playTypeItem.value = context.values[0].toString()
+	}
+
+	const oncancel = () => {
+		showPicker.value = false
+	}
+
+	onPageShow(() => {
+    const res = uni.getAppAuthorizeSetting();
+    const resu = uni.getSystemSetting();
+    
+    permissionList.value = permissionList.value.map(item => {
+        const newItem = {...item} as PermissionItem;
+        if (item.code == 'bluetoothAuthorized' && resu.bluetoothEnabled == true) {
+            newItem.status = '已授权';
+        } else {
+            AuthState.value.forEach((auth) => {
+                if (auth.code === res[item.code]) {
+                    newItem.status = auth.state;
+                }
+            });
+        }
+        
+        return newItem;
+    });
+})
+
+	// onLoad(()=>{
+	// 	const res = uni.getAppAuthorizeSetting();
+	// 	console.log(res)
+	// })
+</script>
+
+<style lang="scss" scoped>
+	.container{
+		height: 100%;
+		background-color: #f5f5f5;
+		padding: 20rpx;
+		.content{
+			background-color: #fff;
+			padding: 20rpx;
+			border-radius: 20rpx;
+			margin-bottom: 20rpx;
+			.items{
+				display: flex;
+				flex-direction: column;
+				padding: 20rpx;
+				.fui-input__wrap{
+					padding: 20rpx 0 !important;
+				}
+				.offline{
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;
+					padding-bottom: 10rpx;
+				}
+				.tips{
+						color:#999;
+						font-size: 24rpx;
+					}
+			}
+			.underline{
+				border-bottom: 1rpx solid #f5f5f5;
+			}
+		}
+		
+		.l-picker{
+			width:100%
+		}
+	}	
+</style>

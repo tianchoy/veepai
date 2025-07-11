@@ -1,0 +1,16 @@
+
+import { MeasureText, MeasureUtils } from '@kit.ArkUI'
+// import { getAbilityContext } from '@dcloudio/uni-runtime';
+// import { UTSHarmony } from '@dcloudio/uni-runtime'
+import { measureText2 } from '@/uni_modules/lime-switch'
+
+export function measureText():number {
+	const uiContextMeasure: MeasureUtils = new MeasureUtils()//.getMeasureUtils();
+	const textWidth : SizeOptions = uiContextMeasure.measureTextSize({
+	    textContent: "Hello World",
+	    fontSize: '50px'
+	  } as MeasureOptions)
+	  console.log('textWidt2', textWidth)
+	  
+	return 0
+}

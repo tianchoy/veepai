@@ -1,0 +1,76 @@
+const __sfc__ = defineComponent({})
+export default __sfc__
+function GenPagesMineAboutAboutRender(this: InstanceType<typeof __sfc__>): any | null {
+const _ctx = this
+const _cache = this.$.renderCache
+const _component_fui_icon = resolveEasyComponent("fui-icon",_easycom_fui_icon)
+
+  return createElementVNode("view", utsMapOf({ class: "container" }), [
+    createElementVNode("view", utsMapOf({ class: "appinfo" }), [
+      createElementVNode("image", utsMapOf({
+        class: "logo",
+        src: _imports_0
+      })),
+      createElementVNode("text", utsMapOf({ class: "title" }), "夜鹰智联"),
+      createElementVNode("text", utsMapOf({ class: "version" }), "V1.0.1.250512")
+    ]),
+    createElementVNode("view", utsMapOf({ class: "content" }), [
+      createElementVNode("view", utsMapOf({ class: "item" }), [
+        createElementVNode("text", null, "用户协议"),
+        createVNode(_component_fui_icon, utsMapOf({
+          name: "arrowright",
+          color: "#333",
+          size: 55
+        }))
+      ]),
+      createElementVNode("view", utsMapOf({ class: "item" }), [
+        createElementVNode("text", null, "隐私政策"),
+        createVNode(_component_fui_icon, utsMapOf({
+          name: "arrowright",
+          color: "#333",
+          size: 55
+        }))
+      ]),
+      createElementVNode("view", utsMapOf({ class: "item" }), [
+        createElementVNode("text", null, "个人信息收集"),
+        createVNode(_component_fui_icon, utsMapOf({
+          name: "arrowright",
+          color: "#333",
+          size: 55
+        }))
+      ]),
+      createElementVNode("view", utsMapOf({ class: "item" }), [
+        createElementVNode("text", null, "第三方共享"),
+        createVNode(_component_fui_icon, utsMapOf({
+          name: "arrowright",
+          color: "#333",
+          size: 55
+        }))
+      ]),
+      createElementVNode("view", utsMapOf({ class: "item" }), [
+        createElementVNode("text", null, "检查更新"),
+        createVNode(_component_fui_icon, utsMapOf({
+          name: "arrowright",
+          color: "#333",
+          size: 55
+        }))
+      ]),
+      createElementVNode("view", utsMapOf({ class: "item" }), [
+        createElementVNode("text", null, "分享APP"),
+        createVNode(_component_fui_icon, utsMapOf({
+          name: "arrowright",
+          color: "#333",
+          size: 55
+        }))
+      ])
+    ]),
+    createElementVNode("view", utsMapOf({ class: "copyright" }), [
+      createElementVNode("text", utsMapOf({ class: "txt" }), "版权所有：夜鹰智联"),
+      createElementVNode("text", utsMapOf({ class: "txt" }), "粤ICP备18088888号")
+    ])
+  ])
+}
+const GenPagesMineAboutAboutStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundColor", "#f5f5f5"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]]))], ["appinfo", utsMapOf([[".container ", utsMapOf([["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"]])]])], ["logo", utsMapOf([[".container ", utsMapOf([["width", "150rpx"], ["height", "150rpx"], ["marginTop", "100rpx"], ["marginRight", 0], ["marginBottom", "50rpx"], ["marginLeft", 0]])]])], ["title", utsMapOf([[".container ", utsMapOf([["fontSize", "30rpx"], ["fontWeight", "bold"], ["marginBottom", "50rpx"]])]])], ["version", utsMapOf([[".container ", utsMapOf([["fontSize", "20rpx"], ["color", "#999999"], ["marginBottom", "50rpx"]])]])], ["content", utsMapOf([[".container ", utsMapOf([["backgroundColor", "#ffffff"], ["paddingTop", "20rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "30rpx"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"]])]])], ["item", utsMapOf([[".container .content ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"], ["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#f5f5f5"], ["paddingTop", "10rpx"], ["paddingRight", 0], ["paddingBottom", "10rpx"], ["paddingLeft", 0]])]])], ["copyright", utsMapOf([[".container ", utsMapOf([["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"], ["marginTop", "200rpx"]])]])], ["txt", utsMapOf([[".container .copyright ", utsMapOf([["fontSize", "15rpx"], ["color", "#999999"]])]])]])]
+
+import _easycom_fui_icon from '@/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue'
+import _imports_0 from '@/static/logo.png'

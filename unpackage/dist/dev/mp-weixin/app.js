@@ -19,6 +19,9 @@ if (!Math) {
   "./pages/mine/myOrders/myOrders.js";
   "./pages/mine/myOrders/orderDetail/orderDetail.js";
   "./pages/mine/feeback/feeback.js";
+  "./pages/mine/systemSetting/systemSetting.js";
+  "./pages/mine/about/about.js";
+  "./pages/mine/localFiles/localFiles.js";
 }
 const _sfc_main = common_vendor.defineComponent(new UTSJSONObject({
   onLaunch: function() {

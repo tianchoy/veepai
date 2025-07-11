@@ -120,6 +120,27 @@
 			{
 				"navigationBarTitleText" : "意见反馈"
 			}
+		},
+		{
+			"path" : "pages/mine/systemSetting/systemSetting",
+			"style" : 
+			{
+				"navigationBarTitleText" : "设置"
+			}
+		},
+		{
+			"path" : "pages/mine/about/about",
+			"style" : 
+			{
+				"navigationBarTitleText" : "关于"
+			}
+		},
+		{
+			"path" : "pages/mine/localFiles/localFiles",
+			"style" : 
+			{
+				"navigationBarTitleText" : "本地文件"
+			}
 		}
 	],
 	"tabBar": {
