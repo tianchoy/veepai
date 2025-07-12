@@ -3,16 +3,16 @@ const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "l-grid",
   props: {
-    align: new UTSJSONObject({ default: "center" }),
-    border: new UTSJSONObject({ type: Boolean, default: false }),
-    column: new UTSJSONObject({ default: 4 }),
-    gutter: new UTSJSONObject({ default: 0 }),
-    hover: new UTSJSONObject({ type: Boolean, default: false }),
-    inset: new UTSJSONObject({ type: Boolean, default: false }),
-    gridWidth: new UTSJSONObject({}),
-    padding: new UTSJSONObject({}),
-    bgColor: new UTSJSONObject({}),
-    wrap: new UTSJSONObject({ type: Boolean, default: true })
+    align: { default: "center" },
+    border: { type: Boolean, default: false },
+    column: { default: 4 },
+    gutter: { default: 0 },
+    hover: { type: Boolean, default: false },
+    inset: { type: Boolean, default: false },
+    gridWidth: {},
+    padding: {},
+    bgColor: {},
+    wrap: { type: Boolean, default: true }
   },
   setup(__props) {
     const props = __props;

@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenPagesMessageMessageDetailMessageDetail : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     companion object {
@@ -29,32 +25,32 @@ open class GenPagesMessageMessageDetailMessageDetail : BasePage {
             }
             )
             return fun(): Any? {
-                return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "title"), "标题"),
-                        createElementVNode("view", utsMapOf("class" to "desc"), utsArrayOf(
-                            createElementVNode("text", null, "描述")
+                return _cE("view", _uM("class" to "container"), _uA(
+                    _cE("view", _uM("class" to "content"), _uA(
+                        _cE("view", _uM("class" to "title"), "标题"),
+                        _cE("view", _uM("class" to "desc"), _uA(
+                            _cE("text", null, "描述")
                         ))
                     ))
                 ))
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundColor" to "#f5f5f5", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "content" to utsMapOf(".container " to utsMapOf("backgroundColor" to "#ffffff", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "title" to utsMapOf(".container .content " to utsMapOf("fontSize" to "36rpx", "fontWeight" to "bold", "paddingTop" to "20rpx", "paddingRight" to 0, "paddingBottom" to "20rpx", "paddingLeft" to 0, "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f1f1f1")), "desc" to utsMapOf(".container .content " to utsMapOf("marginTop" to "40rpx", "marginRight" to 0, "marginBottom" to "40rpx", "marginLeft" to 0)))
+                return _uM("container" to _pS(_uM("height" to "100%", "backgroundColor" to "#f5f5f5", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "content" to _uM(".container " to _uM("backgroundColor" to "#ffffff", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "title" to _uM(".container .content " to _uM("fontSize" to "36rpx", "fontWeight" to "bold", "paddingTop" to "20rpx", "paddingRight" to 0, "paddingBottom" to "20rpx", "paddingLeft" to 0, "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f1f1f1")), "desc" to _uM(".container .content " to _uM("marginTop" to "40rpx", "marginRight" to 0, "marginBottom" to "40rpx", "marginLeft" to 0)))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

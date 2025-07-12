@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {
         onCreated(fun() {
@@ -59,9 +55,9 @@ open class GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton : VueComponent {
     override fun `$render`(): Any? {
         val _ctx = this
         val _cache = this.`$`.renderCache
-        return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+        return _cE("view", _uM("class" to _nC(_uA(
             "fui-button__wrap",
-            utsArrayOf(
+            _uA(
                 if (_ctx.getWidth == "" || _ctx.getWidth == "100%") {
                     "fui-button__flex-1"
                 } else {
@@ -98,39 +94,39 @@ open class GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton : VueComponent {
                     ""
                 }
             )
-        )), "style" to normalizeStyle(utsMapOf("width" to _ctx.getWidth, "height" to _ctx.getHeight, "margin" to _ctx.margin, "borderRadius" to _ctx.radius, "background" to _ctx.getBackground, "border" to ("" + (if (_ctx.borderColor == "") {
+        )), "style" to _nS(_uM("width" to _ctx.getWidth, "height" to _ctx.getHeight, "margin" to _ctx.margin, "borderRadius" to _ctx.radius, "background" to _ctx.getBackground, "border" to ("" + (if (_ctx.borderColor == "") {
             "0px"
         } else {
             _ctx.borderWidth
         }
-        ) + " solid"), "borderColor" to _ctx.getBorderColor)), "onTouchstart" to _ctx.handleStart, "onTouchend" to _ctx.handleEnd, "onTouchcancel" to _ctx.handleEnd, "onClick" to _ctx.handleTap), utsArrayOf(
+        ) + " solid"), "borderColor" to _ctx.getBorderColor)), "onTouchstart" to _ctx.handleStart, "onTouchend" to _ctx.handleEnd, "onTouchcancel" to _ctx.handleEnd, "onClick" to _ctx.handleTap), _uA(
             if (isTrue(_ctx.loading)) {
-                createElementVNode("view", utsMapOf("key" to 0, "ref" to "fui_button_loading", "onTransitionend" to _ctx.onEnd, "class" to "fui-button__spin", "style" to normalizeStyle(_ctx.getStyl)), null, 44, utsArrayOf(
+                _cE("view", _uM("key" to 0, "ref" to "fui_button_loading", "onTransitionend" to _ctx.onEnd, "class" to "fui-button__spin", "style" to _nS(_ctx.getStyl)), null, 44, _uA(
                     "onTransitionend"
                 ))
             } else {
-                createCommentVNode("v-if", true)
+                _cC("v-if", true)
             }
             ,
             if (isTrue(_ctx.text)) {
-                createElementVNode("text", utsMapOf("key" to 1, "class" to normalizeClass(utsArrayOf(
+                _cE("text", _uM("key" to 1, "class" to _nC(_uA(
                     "fui-button__text",
-                    utsMapOf("fui-btn__gray-color" to (_ctx.background == "" && _ctx.disabledBackground == "" && !_ctx.plain && _ctx.type == "gray" && _ctx.color == "#fff"), "fui-text__bold" to _ctx.bold, "fui-button__size" to (_ctx.size == 0 && _ctx.btnSize == ""), "fui-button__height-text" to (_ctx.height == "" && _ctx.btnSize == ""))
-                )), "style" to normalizeStyle(utsMapOf("fontSize" to _ctx.getSize, "color" to _ctx.getColor, "height" to _ctx.getHeight, "lineHeight" to _ctx.getHeight))), toDisplayString(_ctx.text), 7)
+                    _uM("fui-btn__gray-color" to (_ctx.background == "" && _ctx.disabledBackground == "" && !_ctx.plain && _ctx.type == "gray" && _ctx.color == "#fff"), "fui-text__bold" to _ctx.bold, "fui-button__size" to (_ctx.size == 0 && _ctx.btnSize == ""), "fui-button__height-text" to (_ctx.height == "" && _ctx.btnSize == ""))
+                )), "style" to _nS(_uM("fontSize" to _ctx.getSize, "color" to _ctx.getColor, "height" to _ctx.getHeight, "lineHeight" to _ctx.getHeight))), _tD(_ctx.text), 7)
             } else {
-                createCommentVNode("v-if", true)
+                _cC("v-if", true)
             }
             ,
             renderSlot(_ctx.`$slots`, "default"),
             if (isTrue(_ctx.highlight)) {
-                createElementVNode("view", utsMapOf("key" to 2, "ref" to "fui_button_hover", "class" to normalizeClass(utsArrayOf(
+                _cE("view", _uM("key" to 2, "ref" to "fui_button_hover", "class" to _nC(_uA(
                     "fui-button__hover",
-                    utsMapOf("fui-button__radius" to (_ctx.radius == ""))
-                )), "style" to normalizeStyle(utsMapOf("borderRadius" to _ctx.radius))), null, 6)
+                    _uM("fui-button__radius" to (_ctx.radius == ""))
+                )), "style" to _nS(_uM("borderRadius" to _ctx.radius))), null, 6)
             } else {
-                createCommentVNode("v-if", true)
+                _cC("v-if", true)
             }
-        ), 46, utsArrayOf(
+        ), 46, _uA(
             "onTouchstart",
             "onTouchend",
             "onTouchcancel",
@@ -173,7 +169,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton : VueComponent {
     open var getHeight: String by `$data`
     @Suppress("USELESS_CAST")
     override fun data(): Map<String, Any?> {
-        return utsMapOf("times" to 0, "isSpin" to false, "element" to null as UniElement?, "hoverEle" to null as UniElement?, "fuiForm" to null as ComponentPublicInstance?, "getStyl" to computed<Any>(fun(): Any {
+        return _uM("times" to 0, "isSpin" to false, "element" to null as UniElement?, "hoverEle" to null as UniElement?, "fuiForm" to null as ComponentPublicInstance?, "getStyl" to computed<Any>(fun(): Any {
             val mp: Map<String, String> = Map()
             mp.set("border-left-color", this.activeColor)
             mp.set("border-right-color", this.iconColor)
@@ -367,19 +363,19 @@ open class GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton : VueComponent {
     companion object {
         var name = "fui-button"
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("fui-button__wrap" to padStyleMapOf(utsMapOf("position" to "relative", "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "center", "boxSizing" to "border-box", "overflow" to "hidden")), "fui-button__flex-1" to padStyleMapOf(utsMapOf("width" to "100%")), "fui-button__opacity" to padStyleMapOf(utsMapOf("opacity" to 0.5)), "fui-button__hover" to padStyleMapOf(utsMapOf("position" to "absolute", "left" to 0, "right" to 0, "top" to 0, "bottom" to 0, "backgroundColor" to "rgba(0,0,0,0.2)", "zIndex" to 2, "borderTopLeftRadius" to 0, "borderTopRightRadius" to 0, "borderBottomRightRadius" to 0, "borderBottomLeftRadius" to 0, "visibility" to "hidden", "pointerEvents" to "none")), "fui-button__spin" to padStyleMapOf(utsMapOf("width" to "32rpx", "height" to "32rpx", "borderTopWidth" to 2, "borderRightWidth" to 2, "borderBottomWidth" to 2, "borderLeftWidth" to 2, "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopLeftRadius" to 100, "borderTopRightRadius" to 100, "borderBottomRightRadius" to 100, "borderBottomLeftRadius" to 100, "transitionDuration" to "600ms", "transitionProperty" to "transform", "transitionTimingFunction" to "linear", "transform" to "rotate(0deg)", "boxSizing" to "border-box", "marginRight" to "8rpx", "position" to "relative")), "fui-button__text" to padStyleMapOf(utsMapOf("textAlign" to "center")), "fui-text__bold" to padStyleMapOf(utsMapOf("fontWeight" to "bold")), "fui-button__link" to padStyleMapOf(utsMapOf("!borderTopColor" to "rgba(0,0,0,0)", "!borderRightColor" to "rgba(0,0,0,0)", "!borderBottomColor" to "rgba(0,0,0,0)", "!borderLeftColor" to "rgba(0,0,0,0)", "!backgroundColor" to "rgba(0,0,0,0)")), "fui-button__primary" to padStyleMapOf(utsMapOf("!borderTopColor" to "#465CFF", "!borderRightColor" to "#465CFF", "!borderBottomColor" to "#465CFF", "!borderLeftColor" to "#465CFF", "!backgroundImage" to "none", "!backgroundColor" to "#465CFF")), "fui-button__success" to padStyleMapOf(utsMapOf("!borderTopColor" to "#09BE4F", "!borderRightColor" to "#09BE4F", "!borderBottomColor" to "#09BE4F", "!borderLeftColor" to "#09BE4F", "!backgroundImage" to "none", "!backgroundColor" to "#09BE4F")), "fui-button__warning" to padStyleMapOf(utsMapOf("!borderTopColor" to "#FFB703", "!borderRightColor" to "#FFB703", "!borderBottomColor" to "#FFB703", "!borderLeftColor" to "#FFB703", "!backgroundImage" to "none", "!backgroundColor" to "#FFB703")), "fui-button__danger" to padStyleMapOf(utsMapOf("!borderTopColor" to "#FF2B2B", "!borderRightColor" to "#FF2B2B", "!borderBottomColor" to "#FF2B2B", "!borderLeftColor" to "#FF2B2B", "!backgroundImage" to "none", "!backgroundColor" to "#FF2B2B")), "fui-button__purple" to padStyleMapOf(utsMapOf("!borderTopColor" to "#6831FF", "!borderRightColor" to "#6831FF", "!borderBottomColor" to "#6831FF", "!borderLeftColor" to "#6831FF", "!backgroundImage" to "none", "!backgroundColor" to "#6831FF")), "fui-button__gray" to padStyleMapOf(utsMapOf("!borderTopColor" to "#F8F8F8", "!borderRightColor" to "#F8F8F8", "!borderBottomColor" to "#F8F8F8", "!borderLeftColor" to "#F8F8F8", "!backgroundImage" to "none", "!backgroundColor" to "#F8F8F8")), "fui-btn__gray-color" to padStyleMapOf(utsMapOf("!color" to "#465CFF")), "fui-button__height" to padStyleMapOf(utsMapOf("!height" to "96rpx")), "fui-button__height-text" to padStyleMapOf(utsMapOf("!height" to "96rpx", "!lineHeight" to "96rpx")), "fui-button__size" to padStyleMapOf(utsMapOf("!fontSize" to "32rpx")), "fui-button__radius" to padStyleMapOf(utsMapOf("!borderTopLeftRadius" to "16rpx", "!borderTopRightRadius" to "16rpx", "!borderBottomRightRadius" to "16rpx", "!borderBottomLeftRadius" to "16rpx")), "@TRANSITION" to utsMapOf("fui-button__spin" to utsMapOf("duration" to "600ms", "property" to "transform", "timingFunction" to "linear")))
+                return _uM("fui-button__wrap" to _pS(_uM("position" to "relative", "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "center", "boxSizing" to "border-box", "overflow" to "hidden")), "fui-button__flex-1" to _pS(_uM("width" to "100%")), "fui-button__opacity" to _pS(_uM("opacity" to 0.5)), "fui-button__hover" to _pS(_uM("position" to "absolute", "left" to 0, "right" to 0, "top" to 0, "bottom" to 0, "backgroundColor" to "rgba(0,0,0,0.2)", "zIndex" to 2, "borderTopLeftRadius" to 0, "borderTopRightRadius" to 0, "borderBottomRightRadius" to 0, "borderBottomLeftRadius" to 0, "visibility" to "hidden", "pointerEvents" to "none")), "fui-button__spin" to _pS(_uM("width" to "32rpx", "height" to "32rpx", "borderTopWidth" to 2, "borderRightWidth" to 2, "borderBottomWidth" to 2, "borderLeftWidth" to 2, "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopLeftRadius" to 100, "borderTopRightRadius" to 100, "borderBottomRightRadius" to 100, "borderBottomLeftRadius" to 100, "transitionDuration" to "600ms", "transitionProperty" to "transform", "transitionTimingFunction" to "linear", "transform" to "rotate(0deg)", "boxSizing" to "border-box", "marginRight" to "8rpx", "position" to "relative")), "fui-button__text" to _pS(_uM("textAlign" to "center")), "fui-text__bold" to _pS(_uM("fontWeight" to "bold")), "fui-button__link" to _pS(_uM("!borderTopColor" to "rgba(0,0,0,0)", "!borderRightColor" to "rgba(0,0,0,0)", "!borderBottomColor" to "rgba(0,0,0,0)", "!borderLeftColor" to "rgba(0,0,0,0)", "!backgroundColor" to "rgba(0,0,0,0)")), "fui-button__primary" to _pS(_uM("!borderTopColor" to "#465CFF", "!borderRightColor" to "#465CFF", "!borderBottomColor" to "#465CFF", "!borderLeftColor" to "#465CFF", "!backgroundImage" to "none", "!backgroundColor" to "#465CFF")), "fui-button__success" to _pS(_uM("!borderTopColor" to "#09BE4F", "!borderRightColor" to "#09BE4F", "!borderBottomColor" to "#09BE4F", "!borderLeftColor" to "#09BE4F", "!backgroundImage" to "none", "!backgroundColor" to "#09BE4F")), "fui-button__warning" to _pS(_uM("!borderTopColor" to "#FFB703", "!borderRightColor" to "#FFB703", "!borderBottomColor" to "#FFB703", "!borderLeftColor" to "#FFB703", "!backgroundImage" to "none", "!backgroundColor" to "#FFB703")), "fui-button__danger" to _pS(_uM("!borderTopColor" to "#FF2B2B", "!borderRightColor" to "#FF2B2B", "!borderBottomColor" to "#FF2B2B", "!borderLeftColor" to "#FF2B2B", "!backgroundImage" to "none", "!backgroundColor" to "#FF2B2B")), "fui-button__purple" to _pS(_uM("!borderTopColor" to "#6831FF", "!borderRightColor" to "#6831FF", "!borderBottomColor" to "#6831FF", "!borderLeftColor" to "#6831FF", "!backgroundImage" to "none", "!backgroundColor" to "#6831FF")), "fui-button__gray" to _pS(_uM("!borderTopColor" to "#F8F8F8", "!borderRightColor" to "#F8F8F8", "!borderBottomColor" to "#F8F8F8", "!borderLeftColor" to "#F8F8F8", "!backgroundImage" to "none", "!backgroundColor" to "#F8F8F8")), "fui-btn__gray-color" to _pS(_uM("!color" to "#465CFF")), "fui-button__height" to _pS(_uM("!height" to "96rpx")), "fui-button__height-text" to _pS(_uM("!height" to "96rpx", "!lineHeight" to "96rpx")), "fui-button__size" to _pS(_uM("!fontSize" to "32rpx")), "fui-button__radius" to _pS(_uM("!borderTopLeftRadius" to "16rpx", "!borderTopRightRadius" to "16rpx", "!borderBottomRightRadius" to "16rpx", "!borderBottomLeftRadius" to "16rpx")), "@TRANSITION" to _uM("fui-button__spin" to _uM("duration" to "600ms", "property" to "transform", "timingFunction" to "linear")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("onclick" to null)
-        var props = normalizePropsOptions(utsMapOf("type" to utsMapOf("type" to "String", "default" to "primary"), "background" to utsMapOf("type" to "String", "default" to ""), "text" to utsMapOf("type" to "String", "default" to ""), "color" to utsMapOf("type" to "String", "default" to ""), "disabledBackground" to utsMapOf("type" to "String", "default" to ""), "disabledColor" to utsMapOf("type" to "String", "default" to ""), "borderWidth" to utsMapOf("type" to "String", "default" to "0.5px"), "borderColor" to utsMapOf("type" to "String", "default" to ""), "btnSize" to utsMapOf("type" to "String", "default" to ""), "width" to utsMapOf("type" to "String", "default" to "100%"), "height" to utsMapOf("type" to "String", "default" to ""), "size" to utsMapOf("type" to "Number", "default" to 0), "bold" to utsMapOf("type" to "Boolean", "default" to false), "margin" to utsMapOf("type" to "String", "default" to ""), "radius" to utsMapOf("type" to "String", "default" to ""), "plain" to utsMapOf("type" to "Boolean", "default" to false), "highlight" to utsMapOf("type" to "Boolean", "default" to true), "disabled" to utsMapOf("type" to "Boolean", "default" to false), "loading" to utsMapOf("type" to "Boolean", "default" to false), "iconColor" to utsMapOf("type" to "String", "default" to "#B2B2B2"), "activeColor" to utsMapOf("type" to "String", "default" to "#FFFFFF"), "formType" to utsMapOf("type" to "String", "default" to "")))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("onclick" to null)
+        var props = _nP(_uM("type" to _uM("type" to "String", "default" to "primary"), "background" to _uM("type" to "String", "default" to ""), "text" to _uM("type" to "String", "default" to ""), "color" to _uM("type" to "String", "default" to ""), "disabledBackground" to _uM("type" to "String", "default" to ""), "disabledColor" to _uM("type" to "String", "default" to ""), "borderWidth" to _uM("type" to "String", "default" to "0.5px"), "borderColor" to _uM("type" to "String", "default" to ""), "btnSize" to _uM("type" to "String", "default" to ""), "width" to _uM("type" to "String", "default" to "100%"), "height" to _uM("type" to "String", "default" to ""), "size" to _uM("type" to "Number", "default" to 0), "bold" to _uM("type" to "Boolean", "default" to false), "margin" to _uM("type" to "String", "default" to ""), "radius" to _uM("type" to "String", "default" to ""), "plain" to _uM("type" to "Boolean", "default" to false), "highlight" to _uM("type" to "Boolean", "default" to true), "disabled" to _uM("type" to "Boolean", "default" to false), "loading" to _uM("type" to "Boolean", "default" to false), "iconColor" to _uM("type" to "String", "default" to "#B2B2B2"), "activeColor" to _uM("type" to "String", "default" to "#FFFFFF"), "formType" to _uM("type" to "String", "default" to "")))
+        var propsNeedCastKeys = _uA(
             "type",
             "background",
             "text",
@@ -403,6 +399,6 @@ open class GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton : VueComponent {
             "activeColor",
             "formType"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

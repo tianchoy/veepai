@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesLimeGridComponentsLGridLGrid : VueComponent, GridProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     override var align: String by `$props`
@@ -44,7 +40,7 @@ open class GenUniModulesLimeGridComponentsLGridLGrid : VueComponent, GridProps {
             )
             val resizeRef = ref<UniElement?>(null)
             val width = ref<Number>(0)
-            val children = ref(utsArrayOf<Number>())
+            val children = ref(_uA<Number>())
             val resizeObserver = UniResizeObserver(fun(entries: UTSArray<UniResizeObserverEntry>){
                 val rect = entries[0].target.getBoundingClientRect()
                 width.value = rect.width
@@ -67,28 +63,28 @@ open class GenUniModulesLimeGridComponentsLGridLGrid : VueComponent, GridProps {
             )
             provide("limeGrid", GridProvide(children = children, props = props, width = width))
             return fun(): Any? {
-                return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                return _cE("view", _uM("class" to _nC(_uA(
                     "l-grid",
                     unref(clsses)
-                )), "ref_key" to "resizeRef", "ref" to resizeRef), utsArrayOf(
+                )), "ref_key" to "resizeRef", "ref" to resizeRef), _uA(
                     renderSlot(_ctx.`$slots`, "default")
                 ), 2)
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-grid" to padStyleMapOf(utsMapOf("position" to "relative", "overflow" to "visible", "flexDirection" to "row")), "l-grid--wrap" to padStyleMapOf(utsMapOf("flexWrap" to "wrap")), "l-grid--inset" to padStyleMapOf(utsMapOf("marginTop" to 0, "marginRight" to "32rpx", "marginBottom" to 0, "marginLeft" to "32rpx", "borderTopLeftRadius" to "18rpx", "borderTopRightRadius" to "18rpx", "borderBottomRightRadius" to "18rpx", "borderBottomLeftRadius" to "18rpx", "overflow" to "hidden")))
+                return _uM("l-grid" to _pS(_uM("position" to "relative", "overflow" to "visible", "flexDirection" to "row")), "l-grid--wrap" to _pS(_uM("flexWrap" to "wrap")), "l-grid--inset" to _pS(_uM("marginTop" to 0, "marginRight" to "32rpx", "marginBottom" to 0, "marginLeft" to "32rpx", "borderTopLeftRadius" to "18rpx", "borderTopRightRadius" to "18rpx", "borderBottomRightRadius" to "18rpx", "borderBottomLeftRadius" to "18rpx", "overflow" to "hidden")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf("align" to utsMapOf("type" to "String", "required" to true, "default" to "center"), "border" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "column" to utsMapOf("type" to "Number", "required" to true, "default" to 4), "gutter" to utsMapOf("type" to "Number", "required" to true, "default" to 0), "hover" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "inset" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "gridWidth" to utsMapOf("type" to "String", "required" to false), "padding" to utsMapOf("type" to "String", "required" to false), "bgColor" to utsMapOf("type" to "String", "required" to false), "wrap" to utsMapOf("type" to "Boolean", "required" to true, "default" to true)))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM("align" to _uM("type" to "String", "required" to true, "default" to "center"), "border" to _uM("type" to "Boolean", "required" to true, "default" to false), "column" to _uM("type" to "Number", "required" to true, "default" to 4), "gutter" to _uM("type" to "Number", "required" to true, "default" to 0), "hover" to _uM("type" to "Boolean", "required" to true, "default" to false), "inset" to _uM("type" to "Boolean", "required" to true, "default" to false), "gridWidth" to _uM("type" to "String", "required" to false), "padding" to _uM("type" to "String", "required" to false), "bgColor" to _uM("type" to "String", "required" to false), "wrap" to _uM("type" to "Boolean", "required" to true, "default" to true)))
+        var propsNeedCastKeys = _uA(
             "align",
             "border",
             "column",
@@ -97,6 +93,6 @@ open class GenUniModulesLimeGridComponentsLGridLGrid : VueComponent, GridProps {
             "inset",
             "wrap"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

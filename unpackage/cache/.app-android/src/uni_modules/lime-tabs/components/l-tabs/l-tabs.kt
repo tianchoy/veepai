@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     override var list: UTSArray<UTSJSONObject>? by `$props`
@@ -51,7 +47,7 @@ open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
             }
             val slots = useSlots()
             val props = __props
-            val children = ref(utsArrayOf<LTabPanelComponentPublicInstance>())
+            val children = ref(_uA<LTabPanelComponentPublicInstance>())
             val scrollLeft = ref(0)
             val lastLeft = ref(0)
             val innerStyle: UTSJSONObject = object : UTSJSONObject(UTSSourceMapPosition("innerStyle", "uni_modules/lime-tabs/components/l-tabs/l-tabs.uvue", 159, 8)) {
@@ -74,7 +70,7 @@ open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
             }
             )
             val trackStyle = computed(fun(): Map<String, Any> {
-                val style = Map<String, Any>(utsArrayOf())
+                val style = Map<String, Any>(_uA())
                 if (props.lineColor != null) {
                     style.set("background", props.lineColor!!)
                 }
@@ -89,7 +85,7 @@ open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
             )
             val itemStyle = computed(fun(): Map<String, Any> {
                 val style = Map<String, Any>()
-                if (!utsArrayOf(
+                if (!_uA(
                     "medium",
                     "large"
                 ).includes(props.size)) {
@@ -118,32 +114,7 @@ open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
                 }
                 return children.value.map(fun(item): TabPanel {
                     val offset = item.innderOffset
-                    return TabPanel(badge = item.badge, dot = item.dot ?: false, disabled = item.disabled ?: false, label = item.label, offset = offset, value = item.value, node = UTSJSONObject(Map<String, Any?>(utsArrayOf(
-                        utsArrayOf(
-                            "badge",
-                            item.badge
-                        ),
-                        utsArrayOf(
-                            "dot",
-                            (item.dot ?: false)
-                        ),
-                        utsArrayOf(
-                            "disabled",
-                            (item.disabled ?: false)
-                        ),
-                        utsArrayOf(
-                            "label",
-                            item.label
-                        ),
-                        utsArrayOf(
-                            "offset",
-                            offset
-                        ),
-                        utsArrayOf(
-                            "value",
-                            item.value
-                        )
-                    ))))
+                    return TabPanel(badge = item.badge, dot = item.dot ?: false, disabled = item.disabled ?: false, label = item.label, offset = offset, value = item.value, node = _uO("badge" to item.badge, "dot" to (item.dot ?: false), "disabled" to (item.disabled ?: false), "label" to item.label, "offset" to offset, "value" to item.value))
                 }
                 )
             }
@@ -164,7 +135,7 @@ open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
             val trackRef = ref<UniElement?>(null)
             val navRef = ref<UniElement?>(null)
             val innerRef = ref<UniElement?>(null)
-            val tabRects = ref(utsArrayOf<DOMRect>())
+            val tabRects = ref(_uA<DOMRect>())
             val containerWidth = ref(0)
             val trackLineWidth = ref(0)
             val isInteracting = ref(false)
@@ -179,7 +150,7 @@ open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
                         return
                     }
                     val elements = scrollRef.value!!.children
-                    val tabsRects: UTSArray<DOMRect> = utsArrayOf()
+                    val tabsRects: UTSArray<DOMRect> = _uA()
                     elements.forEach(fun(el){
                         if (el.tagName == "VIEW") {
                             tabsRects.push(el.getBoundingClientRect())
@@ -448,32 +419,32 @@ open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
             provide("LimeTabs", children)
             return fun(): Any? {
                 val _component_l_badge = resolveEasyComponent("l-badge", GenUniModulesLimeBadgeComponentsLBadgeLBadgeClass)
-                return createElementVNode("view", utsMapOf("class" to "l-tabs"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "l-tabs__wrap", "style" to normalizeStyle(utsArrayOf(
+                return _cE("view", _uM("class" to "l-tabs"), _uA(
+                    _cE("view", _uM("class" to "l-tabs__wrap", "style" to _nS(_uA(
                         unref(styles),
                         _ctx.lStyle
-                    ))), utsArrayOf(
+                    ))), _uA(
                         renderSlot(_ctx.`$slots`, "left"),
-                        createElementVNode("scroll-view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                        _cE("scroll-view", _uM("class" to _nC(_uA(
                             "l-tabs__scroll",
-                            utsMapOf("l-tabs__scroll--split" to _ctx.split)
-                        )), "ref_key" to "scrollRef", "ref" to scrollRef, "scroll-left" to unref(scrollLeft), "direction" to "horizontal", "scroll-x" to true, "scroll-with-animation" to true, "show-scrollbar" to false, "enhanced" to true, "onScroll" to onScroll), utsArrayOf(
-                            createElementVNode(Fragment, null, RenderHelpers.renderList(unref(tabs), fun(item, index, __index, _cached): Any {
-                                return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                            _uM("l-tabs__scroll--split" to _ctx.split)
+                        )), "ref_key" to "scrollRef", "ref" to scrollRef, "scroll-left" to unref(scrollLeft), "direction" to "horizontal", "scroll-x" to true, "scroll-with-animation" to true, "show-scrollbar" to false, "enhanced" to true, "onScroll" to onScroll), _uA(
+                            _cE(Fragment, null, RenderHelpers.renderList(unref(tabs), fun(item, index, __index, _cached): Any {
+                                return _cE("view", _uM("class" to _nC(_uA(
                                     "l-tabs__item",
-                                    utsMapOf("l-tabs__item--active" to (index == unref(currentIndex)), "l-tabs__item--evenly" to _ctx.spaceEvenly, "l-tabs__item--disabled" to item.disabled)
-                                )), "key" to index, "style" to normalizeStyle(utsArrayOf(
+                                    _uM("l-tabs__item--active" to (index == unref(currentIndex)), "l-tabs__item--evenly" to _ctx.spaceEvenly, "l-tabs__item--disabled" to item.disabled)
+                                )), "key" to index, "style" to _nS(_uA(
                                     unref(itemStyle)
                                 )), "onClick" to fun(){
                                     onClick(index, item)
                                 }
-                                ), utsArrayOf(
+                                ), _uA(
                                     renderSlot(_ctx.`$slots`, "label", GenUniModulesLimeTabsComponentsLTabsLTabsSlotDataLabel(item = item, active = (index == unref(currentIndex)), disabled = item.disabled), fun(): UTSArray<Any> {
-                                        return utsArrayOf(
+                                        return _uA(
                                             if (isTrue(item.dot == true || item.badge != null)) {
-                                                createVNode(_component_l_badge, utsMapOf("key" to 0, "dot" to item.dot, "offset" to item.offset, "content" to item.badge), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                                                    return utsArrayOf(
-                                                        createElementVNode("text", utsMapOf("style" to normalizeStyle(utsArrayOf(
+                                                _cV(_component_l_badge, _uM("key" to 0, "dot" to item.dot, "offset" to item.offset, "content" to item.badge), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                                                    return _uA(
+                                                        _cE("text", _uM("style" to _nS(_uA(
                                                             unref(textStyles),
                                                             if (!item.disabled && _ctx.color != null && index != unref(currentIndex)) {
                                                                 ("color:" + _ctx.color)
@@ -485,21 +456,21 @@ open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
                                                             } else {
                                                                 ""
                                                             }
-                                                        )), "class" to normalizeClass(utsArrayOf(
+                                                        )), "class" to _nC(_uA(
                                                             "l-tabs__item-text",
-                                                            utsArrayOf(
+                                                            _uA(
                                                                 "l-tabs__item-text--" + _ctx.size,
-                                                                utsMapOf("l-tabs__item-text--disabled" to item.disabled, "l-tabs__item-text--active" to (index == unref(currentIndex)))
+                                                                _uM("l-tabs__item-text--disabled" to item.disabled, "l-tabs__item-text--active" to (index == unref(currentIndex)))
                                                             )
-                                                        ))), toDisplayString(item.label), 7)
+                                                        ))), _tD(item.label), 7)
                                                     )
-                                                }), "_" to 2), 1032, utsArrayOf(
+                                                }), "_" to 2), 1032, _uA(
                                                     "dot",
                                                     "offset",
                                                     "content"
                                                 ))
                                             } else {
-                                                createElementVNode("text", utsMapOf("key" to 1, "style" to normalizeStyle(utsArrayOf(
+                                                _cE("text", _uM("key" to 1, "style" to _nS(_uA(
                                                     unref(textStyles),
                                                     if (!item.disabled && _ctx.color != null && index != unref(currentIndex)) {
                                                         ("color:" + _ctx.color)
@@ -512,64 +483,64 @@ open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
                                                     } else {
                                                         ""
                                                     }
-                                                )), "class" to normalizeClass(utsArrayOf(
+                                                )), "class" to _nC(_uA(
                                                     "l-tabs__item-text",
-                                                    utsArrayOf(
+                                                    _uA(
                                                         "l-tabs__item-text--" + _ctx.size,
-                                                        utsMapOf("l-tabs__item-text--disabled" to item.disabled, "l-tabs__item-text--active" to (index == unref(currentIndex)))
+                                                        _uM("l-tabs__item-text--disabled" to item.disabled, "l-tabs__item-text--active" to (index == unref(currentIndex)))
                                                     )
-                                                ))), toDisplayString(item.label), 7)
+                                                ))), _tD(item.label), 7)
                                             }
                                         )
                                     }
                                     )
-                                ), 14, utsArrayOf(
+                                ), 14, _uA(
                                     "onClick"
                                 ))
                             }
                             ), 128),
-                            createElementVNode("view", utsMapOf("ref_key" to "trackRef", "ref" to trackRef, "style" to normalizeStyle(utsArrayOf(
+                            _cE("view", _uM("ref_key" to "trackRef", "ref" to trackRef, "style" to _nS(_uA(
                                 unref(trackStyle)
                             )), "class" to "l-tabs__track"), null, 4)
-                        ), 42, utsArrayOf(
+                        ), 42, _uA(
                             "scroll-left"
                         )),
                         renderSlot(_ctx.`$slots`, "right")
                     ), 4),
                     if (_ctx.`$slots`["default"] != null) {
-                        createElementVNode("view", utsMapOf("key" to 0, "class" to normalizeClass(utsArrayOf(
+                        _cE("view", _uM("key" to 0, "class" to _nC(_uA(
                             "l-tabs__content",
-                            utsMapOf("l-tabs__content--animated" to _ctx.animated)
-                        )), "onTouchstart" to onTouchStart, "onTouchmove" to onTouchMove, "onTouchend" to onTouchEnd, "onTouchcancel" to onTouchEnd), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "l-tabs__content-inner", "style" to normalizeStyle(utsArrayOf(
+                            _uM("l-tabs__content--animated" to _ctx.animated)
+                        )), "onTouchstart" to onTouchStart, "onTouchmove" to onTouchMove, "onTouchend" to onTouchEnd, "onTouchcancel" to onTouchEnd), _uA(
+                            _cE("view", _uM("class" to "l-tabs__content-inner", "style" to _nS(_uA(
                                 innerStyle
-                            )), "ref_key" to "innerRef", "ref" to innerRef), utsArrayOf(
+                            )), "ref_key" to "innerRef", "ref" to innerRef), _uA(
                                 renderSlot(_ctx.`$slots`, "default")
                             ), 4)
                         ), 34)
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
                 ))
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-tabs" to padStyleMapOf(utsMapOf("position" to "relative", "backgroundImage" to "none", "backgroundColor" to "#FFFFFF")), "l-tabs__wrap" to padStyleMapOf(utsMapOf("flex" to 1, "backgroundImage" to "none", "backgroundColor" to "#FFFFFF", "flexDirection" to "row")), "l-tabs__scroll" to padStyleMapOf(utsMapOf("position" to "relative", "flex" to 1, "flexDirection" to "row")), "l-tabs__scroll--split" to padStyleMapOf(utsMapOf("borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#eeeeee")), "l-tabs__nav" to padStyleMapOf(utsMapOf("flexDirection" to "row", "position" to "relative", "flexWrap" to "nowrap", "alignItems" to "center")), "l-tabs__track" to padStyleMapOf(utsMapOf("position" to "absolute", "zIndex" to 1, "transitionDuration" to "0.3s", "backgroundColor" to "#3283ff", "left" to 0, "bottom" to "1rpx", "width" to "32rpx", "height" to "6rpx", "borderTopLeftRadius" to "8rpx", "borderTopRightRadius" to "8rpx", "borderBottomRightRadius" to "8rpx", "borderBottomLeftRadius" to "8rpx")), "l-tabs__content" to padStyleMapOf(utsMapOf("width" to "100%", "overflow" to "hidden")), "l-tabs__content-inner" to utsMapOf("" to utsMapOf("display" to "flex", "flexDirection" to "row", "flex" to 1, "overflow" to "visible", "opacity" to 0), ".l-tabs__content--animated " to utsMapOf("position" to "relative", "width" to "100%", "height" to "100%", "transitionProperty" to "transform")), "l-tabs__item" to padStyleMapOf(utsMapOf("position" to "relative", "flex" to "none", "alignItems" to "center", "justifyContent" to "center", "paddingTop" to 0, "paddingRight" to "32rpx", "paddingBottom" to 0, "paddingLeft" to "32rpx", "boxSizing" to "border-box", "overflow" to "hidden", "height" to "96rpx")), "l-tabs__item-text" to padStyleMapOf(utsMapOf("fontWeight" to "400", "fontSize" to 14, "whiteSpace" to "nowrap", "transitionProperty" to "color", "transitionDuration" to "300ms", "color" to "rgba(0,0,0,0.88)")), "l-tabs__item-text--large" to padStyleMapOf(utsMapOf("fontSize" to 16)), "l-tabs__item-text--active" to padStyleMapOf(utsMapOf("fontWeight" to "700", "color" to "#3283ff")), "l-tabs__item-text--disabled" to padStyleMapOf(utsMapOf("color" to "rgba(0,0,0,0.25)")), "l-tabs__item--evenly" to padStyleMapOf(utsMapOf("flex" to 1)), "@TRANSITION" to utsMapOf("l-tabs__track" to utsMapOf("duration" to "0.3s"), "l-tabs__content-inner" to utsMapOf("property" to "transform"), "l-tabs__item-text" to utsMapOf("property" to "color", "duration" to "300ms")))
+                return _uM("l-tabs" to _pS(_uM("position" to "relative", "backgroundImage" to "none", "backgroundColor" to "#FFFFFF")), "l-tabs__wrap" to _pS(_uM("flex" to 1, "backgroundImage" to "none", "backgroundColor" to "#FFFFFF", "flexDirection" to "row")), "l-tabs__scroll" to _pS(_uM("position" to "relative", "flex" to 1, "flexDirection" to "row")), "l-tabs__scroll--split" to _pS(_uM("borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#eeeeee")), "l-tabs__nav" to _pS(_uM("flexDirection" to "row", "position" to "relative", "flexWrap" to "nowrap", "alignItems" to "center")), "l-tabs__track" to _pS(_uM("position" to "absolute", "zIndex" to 1, "transitionDuration" to "0.3s", "backgroundColor" to "#3283ff", "left" to 0, "bottom" to "1rpx", "width" to "32rpx", "height" to "6rpx", "borderTopLeftRadius" to "8rpx", "borderTopRightRadius" to "8rpx", "borderBottomRightRadius" to "8rpx", "borderBottomLeftRadius" to "8rpx")), "l-tabs__content" to _pS(_uM("width" to "100%", "overflow" to "hidden")), "l-tabs__content-inner" to _uM("" to _uM("display" to "flex", "flexDirection" to "row", "flex" to 1, "overflow" to "visible", "opacity" to 0), ".l-tabs__content--animated " to _uM("position" to "relative", "width" to "100%", "height" to "100%", "transitionProperty" to "transform")), "l-tabs__item" to _pS(_uM("position" to "relative", "flex" to "none", "alignItems" to "center", "justifyContent" to "center", "paddingTop" to 0, "paddingRight" to "32rpx", "paddingBottom" to 0, "paddingLeft" to "32rpx", "boxSizing" to "border-box", "overflow" to "hidden", "height" to "96rpx")), "l-tabs__item-text" to _pS(_uM("fontWeight" to "400", "fontSize" to 14, "whiteSpace" to "nowrap", "transitionProperty" to "color", "transitionDuration" to "300ms", "color" to "rgba(0,0,0,0.88)")), "l-tabs__item-text--large" to _pS(_uM("fontSize" to 16)), "l-tabs__item-text--active" to _pS(_uM("fontWeight" to "700", "color" to "#3283ff")), "l-tabs__item-text--disabled" to _pS(_uM("color" to "rgba(0,0,0,0.25)")), "l-tabs__item--evenly" to _pS(_uM("flex" to 1)), "@TRANSITION" to _uM("l-tabs__track" to _uM("duration" to "0.3s"), "l-tabs__content-inner" to _uM("property" to "transform"), "l-tabs__item-text" to _uM("property" to "color", "duration" to "300ms")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("change" to null, "click" to null, "update:modelValue" to null)
-        var props = normalizePropsOptions(utsMapOf("list" to utsMapOf("type" to "Array", "required" to false), "ellipsis" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "animated" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "duration" to utsMapOf("type" to "Number", "required" to true, "default" to 0.3), "showLine" to utsMapOf("type" to "Boolean", "required" to true, "default" to true), "size" to utsMapOf("type" to "String", "required" to true, "default" to "medium"), "spaceEvenly" to utsMapOf("type" to "Boolean", "required" to true, "default" to true), "swipeable" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "value" to utsMapOf("type" to "Number", "required" to false), "color" to utsMapOf("type" to "String", "required" to false), "activeColor" to utsMapOf("type" to "String", "required" to false), "lineColor" to utsMapOf("type" to "String", "required" to false), "lineWidth" to utsMapOf("type" to "String", "required" to false), "lineHeight" to utsMapOf("type" to "String", "required" to false), "bgColor" to utsMapOf("type" to "String", "required" to false), "fontSize" to utsMapOf("type" to "String", "required" to false), "padding" to utsMapOf("type" to "String", "required" to false), "split" to utsMapOf("type" to "Boolean", "required" to true, "default" to true), "visible" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "swiperProgress" to utsMapOf("type" to "Number", "required" to true, "default" to 0), "syncSwiper" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "lStyle" to utsMapOf("type" to utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("change" to null, "click" to null, "update:modelValue" to null)
+        var props = _nP(_uM("list" to _uM("type" to "Array", "required" to false), "ellipsis" to _uM("type" to "Boolean", "required" to true, "default" to false), "animated" to _uM("type" to "Boolean", "required" to true, "default" to false), "duration" to _uM("type" to "Number", "required" to true, "default" to 0.3), "showLine" to _uM("type" to "Boolean", "required" to true, "default" to true), "size" to _uM("type" to "String", "required" to true, "default" to "medium"), "spaceEvenly" to _uM("type" to "Boolean", "required" to true, "default" to true), "swipeable" to _uM("type" to "Boolean", "required" to true, "default" to false), "value" to _uM("type" to "Number", "required" to false), "color" to _uM("type" to "String", "required" to false), "activeColor" to _uM("type" to "String", "required" to false), "lineColor" to _uM("type" to "String", "required" to false), "lineWidth" to _uM("type" to "String", "required" to false), "lineHeight" to _uM("type" to "String", "required" to false), "bgColor" to _uM("type" to "String", "required" to false), "fontSize" to _uM("type" to "String", "required" to false), "padding" to _uM("type" to "String", "required" to false), "split" to _uM("type" to "Boolean", "required" to true, "default" to true), "visible" to _uM("type" to "Boolean", "required" to true, "default" to false), "swiperProgress" to _uM("type" to "Number", "required" to true, "default" to 0), "syncSwiper" to _uM("type" to "Boolean", "required" to true, "default" to false), "lStyle" to _uM("type" to _uA(
             "String",
             "UTSJSONObject"
-        ), "required" to false), "modelValue" to utsMapOf("type" to "Number")))
-        var propsNeedCastKeys = utsArrayOf(
+        ), "required" to false), "modelValue" to _uM("type" to "Number")))
+        var propsNeedCastKeys = _uA(
             "ellipsis",
             "animated",
             "duration",
@@ -582,6 +553,6 @@ open class GenUniModulesLimeTabsComponentsLTabsLTabs : VueComponent, TabsProps {
             "swiperProgress",
             "syncSwiper"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

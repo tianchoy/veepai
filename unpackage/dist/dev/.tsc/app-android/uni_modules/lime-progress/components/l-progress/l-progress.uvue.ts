@@ -27,7 +27,7 @@ const __sfc__ = defineComponent({
     "percent": {type: Number, default: 0},
   }),
   emits: ["update:percent"],
-  setup(__props): any | null {
+  setup(__props) {
 const __ins = getCurrentInstance()!;
 const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
@@ -196,8 +196,8 @@ const _cache = __ins.renderCache;
 
 return (): any | null => {
 
-  return createElementVNode("view", utsMapOf({
-    class: normalizeClass(["l-progress", unref(classes)]),
+  return _cE("view", _uM({
+    class: _nC(["l-progress", unref(classes)]),
     ref_key: "progressRef",
     ref: progressRef
   }), null, 2 /* CLASS */)

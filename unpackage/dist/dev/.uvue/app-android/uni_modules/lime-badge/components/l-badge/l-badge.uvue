@@ -18,7 +18,7 @@ const __sfc__ = defineComponent({
         showZero: { type: Boolean, required: true, default: false },
         size: { type: String, required: false }
     },
-    setup(__props): any | null {
+    setup(__props) {
         const __ins = getCurrentInstance()!;
         const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
         const _cache = __ins.renderCache;
@@ -126,47 +126,47 @@ const __sfc__ = defineComponent({
         });
         return (): any | null => {
             return _ctx.$slots['default'] != null
-                ? createElementVNode("view", utsMapOf({
+                ? _cE("view", _uM({
                     key: 0,
                     class: "l-badge__wrapper"
                 }), [
                     renderSlot(_ctx.$slots, "default"),
                     isTrue(unref(hasContent) || _ctx.dot)
-                        ? createElementVNode("text", utsMapOf({
+                        ? _cE("text", _uM({
                             key: 0,
-                            class: normalizeClass(["l-badge", unref(classes)]),
+                            class: _nC(["l-badge", unref(classes)]),
                             ref_key: "textRef",
                             ref: textRef,
-                            style: normalizeStyle([unref(styles)])
+                            style: _nS([unref(styles)])
                         }), [
-                            renderSlot(_ctx.$slots, "content", {}, (): any[] => [toDisplayString(unref(renderContent))])
+                            renderSlot(_ctx.$slots, "content", {}, (): any[] => [_tD(unref(renderContent))])
                         ], 6 /* CLASS, STYLE */)
-                        : createCommentVNode("v-if", true),
+                        : _cC("v-if", true),
                     isTrue(unref(hasContent) || _ctx.dot)
-                        ? createElementVNode("text", utsMapOf({
+                        ? _cE("text", _uM({
                             key: 1,
-                            class: normalizeClass(["l-badge l-badge--offscreen", unref(classes)]),
+                            class: _nC(["l-badge l-badge--offscreen", unref(classes)]),
                             ref_key: "offscreenRef",
                             ref: offscreenRef,
-                            style: normalizeStyle([unref(styles)])
+                            style: _nS([unref(styles)])
                         }), [
-                            renderSlot(_ctx.$slots, "content", {}, (): any[] => [toDisplayString(unref(renderContent))])
+                            renderSlot(_ctx.$slots, "content", {}, (): any[] => [_tD(unref(renderContent))])
                         ], 6 /* CLASS, STYLE */)
-                        : createCommentVNode("v-if", true)
+                        : _cC("v-if", true)
                 ])
                 : isTrue(unref(hasContent) || _ctx.dot)
-                    ? createElementVNode("text", utsMapOf({
+                    ? _cE("text", _uM({
                         key: 1,
-                        class: normalizeClass(["l-badge", unref(classes)]),
-                        style: normalizeStyle([unref(styles)])
+                        class: _nC(["l-badge", unref(classes)]),
+                        style: _nS([unref(styles)])
                     }), [
-                        renderSlot(_ctx.$slots, "content", {}, (): any[] => [toDisplayString(unref(renderContent))])
+                        renderSlot(_ctx.$slots, "content", {}, (): any[] => [_tD(unref(renderContent))])
                     ], 6 /* CLASS, STYLE */)
-                    : createCommentVNode("v-if", true);
+                    : _cC("v-if", true);
         };
     }
 });
 export default __sfc__;
 export type LBadgeComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesLimeBadgeComponentsLBadgeLBadgeStyles = [utsMapOf([["l-badge", padStyleMapOf(utsMapOf([["boxSizing", "border-box"], ["paddingTop", 0], ["paddingRight", "8rpx"], ["paddingBottom", 0], ["paddingLeft", "8rpx"], ["color", "#FFFFFF"], ["fontWeight", "bold"], ["fontSize", 12], ["fontFamily", "-apple-system-font, helvetica neue, arial, sans-serif"], ["lineHeight", 1.2], ["textAlign", "center"], ["backgroundColor", "#FF4D4F"], ["borderTopWidth", "1rpx"], ["borderRightWidth", "1rpx"], ["borderBottomWidth", "1rpx"], ["borderLeftWidth", "1rpx"], ["borderTopStyle", "solid"], ["borderRightStyle", "solid"], ["borderBottomStyle", "solid"], ["borderLeftStyle", "solid"], ["borderTopColor", "#FFFFFF"], ["borderRightColor", "#FFFFFF"], ["borderBottomColor", "#FFFFFF"], ["borderLeftColor", "#FFFFFF"], ["borderTopLeftRadius", 999], ["borderTopRightRadius", 999], ["borderBottomRightRadius", 999], ["borderBottomLeftRadius", 999], ["overflow", "visible"]]))], ["l-badge--fixed", utsMapOf([["", utsMapOf([["position", "absolute"], ["transformOrigin", "100%"]])], [".l-badge--offscreen", utsMapOf([["position", "fixed"], ["opacity", 0], ["top", -10000000000]])]])], ["l-badge--top-left", padStyleMapOf(utsMapOf([["top", 0], ["left", 0], ["transform", "translate(-50%, -50%)"]]))], ["l-badge--top-right", padStyleMapOf(utsMapOf([["top", 0], ["right", 0], ["transform", "translate(50%, -50%)"]]))], ["l-badge--bottom-left", padStyleMapOf(utsMapOf([["bottom", 0], ["left", 0], ["transform", "translate(-50%, 50%)"]]))], ["l-badge--bottom-right", padStyleMapOf(utsMapOf([["bottom", 0], ["right", 0], ["transform", "translate(50%, 50%)"]]))], ["l-badge--dot", padStyleMapOf(utsMapOf([["width", "16rpx"], ["minWidth", 0], ["height", "16rpx"], ["backgroundImage", "none"], ["backgroundColor", "#FF4D4F"], ["borderTopLeftRadius", 99], ["borderTopRightRadius", 99], ["borderBottomRightRadius", 99], ["borderBottomLeftRadius", 99], ["borderTopWidth", 0], ["borderRightWidth", 0], ["borderBottomWidth", 0], ["borderLeftWidth", 0], ["paddingTop", 0], ["paddingRight", 0], ["paddingBottom", 0], ["paddingLeft", 0], ["overflow", "visible"]]))], ["l-badge__wrapper", padStyleMapOf(utsMapOf([["position", "relative"], ["overflow", "visible"]]))]])];
+const GenUniModulesLimeBadgeComponentsLBadgeLBadgeStyles = [_uM([["l-badge", _pS(_uM([["boxSizing", "border-box"], ["paddingTop", 0], ["paddingRight", "8rpx"], ["paddingBottom", 0], ["paddingLeft", "8rpx"], ["color", "#FFFFFF"], ["fontWeight", "bold"], ["fontSize", 12], ["fontFamily", "-apple-system-font, helvetica neue, arial, sans-serif"], ["lineHeight", 1.2], ["textAlign", "center"], ["backgroundColor", "#FF4D4F"], ["borderTopWidth", "1rpx"], ["borderRightWidth", "1rpx"], ["borderBottomWidth", "1rpx"], ["borderLeftWidth", "1rpx"], ["borderTopStyle", "solid"], ["borderRightStyle", "solid"], ["borderBottomStyle", "solid"], ["borderLeftStyle", "solid"], ["borderTopColor", "#FFFFFF"], ["borderRightColor", "#FFFFFF"], ["borderBottomColor", "#FFFFFF"], ["borderLeftColor", "#FFFFFF"], ["borderTopLeftRadius", 999], ["borderTopRightRadius", 999], ["borderBottomRightRadius", 999], ["borderBottomLeftRadius", 999], ["overflow", "visible"]]))], ["l-badge--fixed", _uM([["", _uM([["position", "absolute"], ["transformOrigin", "100%"]])], [".l-badge--offscreen", _uM([["position", "fixed"], ["opacity", 0], ["top", -10000000000]])]])], ["l-badge--top-left", _pS(_uM([["top", 0], ["left", 0], ["transform", "translate(-50%, -50%)"]]))], ["l-badge--top-right", _pS(_uM([["top", 0], ["right", 0], ["transform", "translate(50%, -50%)"]]))], ["l-badge--bottom-left", _pS(_uM([["bottom", 0], ["left", 0], ["transform", "translate(-50%, 50%)"]]))], ["l-badge--bottom-right", _pS(_uM([["bottom", 0], ["right", 0], ["transform", "translate(50%, 50%)"]]))], ["l-badge--dot", _pS(_uM([["width", "16rpx"], ["minWidth", 0], ["height", "16rpx"], ["backgroundImage", "none"], ["backgroundColor", "#FF4D4F"], ["borderTopLeftRadius", 99], ["borderTopRightRadius", 99], ["borderBottomRightRadius", 99], ["borderBottomLeftRadius", 99], ["borderTopWidth", 0], ["borderRightWidth", 0], ["borderBottomWidth", 0], ["borderLeftWidth", 0], ["paddingTop", 0], ["paddingRight", 0], ["paddingBottom", 0], ["paddingLeft", 0], ["overflow", "visible"]]))], ["l-badge__wrapper", _pS(_uM([["position", "relative"], ["overflow", "visible"]]))]])];
 //# sourceMappingURL=l-badge.uvue.map

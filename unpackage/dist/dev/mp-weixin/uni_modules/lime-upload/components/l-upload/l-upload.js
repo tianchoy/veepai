@@ -15,37 +15,37 @@ if (!Math) {
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "l-upload",
   props: {
-    name: new UTSJSONObject({}),
-    modelValue: new UTSJSONObject({}),
-    disabled: new UTSJSONObject({ type: Boolean, default: false }),
-    readonly: new UTSJSONObject({ type: Boolean, default: false }),
-    multiple: new UTSJSONObject({ type: Boolean, default: true }),
-    imageFit: new UTSJSONObject({ default: "aspectFill" }),
-    gutter: new UTSJSONObject({}),
-    column: new UTSJSONObject({}),
-    max: new UTSJSONObject({ default: 0 }),
-    sizeLimit: new UTSJSONObject({}),
-    uploadIcon: new UTSJSONObject({ default: "camera" }),
-    uploadIconSize: new UTSJSONObject({}),
-    gridWidth: new UTSJSONObject({}),
-    gridHeight: new UTSJSONObject({}),
-    gridBgColor: new UTSJSONObject({}),
-    addBgColor: new UTSJSONObject({}),
-    gridBorderRadius: new UTSJSONObject({}),
-    defaultFiles: new UTSJSONObject({}),
-    loadingText: new UTSJSONObject({ default: "上传中..." }),
-    reloadText: new UTSJSONObject({ default: "重新上传" }),
-    failedText: new UTSJSONObject({ default: "上传失败" }),
-    disablePreview: new UTSJSONObject({ type: Boolean, default: false }),
-    autoUpload: new UTSJSONObject({ type: Boolean, default: false }),
-    mediaType: new UTSJSONObject({ default: "image" }),
-    maxDuration: new UTSJSONObject({}),
-    sizeType: new UTSJSONObject({ default: ["original", "compressed"] }),
-    sourceType: new UTSJSONObject({ default: ["album", "camera"] }),
-    action: new UTSJSONObject({}),
-    headers: new UTSJSONObject({}),
-    formData: new UTSJSONObject({}),
-    mode: new UTSJSONObject({ default: "grid" })
+    name: {},
+    modelValue: {},
+    disabled: { type: Boolean, default: false },
+    readonly: { type: Boolean, default: false },
+    multiple: { type: Boolean, default: true },
+    imageFit: { default: "aspectFill" },
+    gutter: {},
+    column: {},
+    max: { default: 0 },
+    sizeLimit: {},
+    uploadIcon: { default: "camera" },
+    uploadIconSize: {},
+    gridWidth: {},
+    gridHeight: {},
+    gridBgColor: {},
+    addBgColor: {},
+    gridBorderRadius: {},
+    defaultFiles: {},
+    loadingText: { default: "上传中..." },
+    reloadText: { default: "重新上传" },
+    failedText: { default: "上传失败" },
+    disablePreview: { type: Boolean, default: false },
+    autoUpload: { type: Boolean, default: false },
+    mediaType: { default: "image" },
+    maxDuration: {},
+    sizeType: { default: ["original", "compressed"] },
+    sourceType: { default: ["album", "camera"] },
+    action: {},
+    headers: {},
+    formData: {},
+    mode: { default: "grid" }
   },
   emits: ["fail", "remove", "success", "click", "add", "update:modelValue"],
   setup(__props, _a) {
@@ -159,7 +159,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
             const baseName = file.name.substring(0, dotIndex);
             const extension = file.name.substring(dotIndex);
             const timestamp = Date.now();
-            common_vendor.tr.uploadFile({
+            common_vendor.er.uploadFile({
               filePath: file.url,
               cloudPath: `${baseName}_${timestamp}${extension}`,
               // cloudPath: file.name!.substring(file.name!.lastIndexOf('.')),
@@ -170,7 +170,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
             }).then((res) => {
               file.path = res.fileID;
               file.status = "done";
-              common_vendor.tr.getTempFileURL({
+              common_vendor.er.getTempFileURL({
                 fileList: [res.fileID]
               }).then((result) => {
                 if (result.fileList.length > 0) {

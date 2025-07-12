@@ -6,7 +6,7 @@ const transfer = "/static/video/transfer.png";
 const replayIcon = "/static/video/replay.png";
 const pauseIcon = "/static/video/pause.png";
 const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "index",
   setup(__props) {
     const deviceTitle = common_vendor.ref("设备名称");
@@ -34,6 +34,9 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       common_vendor.index.showToast({
         title: "设备详情",
         icon: "none"
+      });
+      common_vendor.index.navigateTo({
+        url: "/pages/index/deviceDetail"
       });
     };
     const pauseClick = () => {
@@ -73,7 +76,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-00a60067"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/index/index.js.map

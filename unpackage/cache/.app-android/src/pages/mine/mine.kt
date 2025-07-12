@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 import io.dcloud.uniapp.extapi.switchTab as uni_switchTab
 open class GenPagesMineMine : BasePage {
@@ -53,92 +49,92 @@ open class GenPagesMineMine : BasePage {
                 uni_navigateTo(NavigateToOptions(url = "/pages/mine/about/about"))
             }
             return fun(): Any? {
-                return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "files"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "file", "onClick" to localFiles), utsArrayOf(
-                            createElementVNode("image", utsMapOf("class" to "fileIcon", "src" to "/static/mine/local.png", "mode" to "aspectFit")),
-                            createElementVNode("text", utsMapOf("class" to "file-text"), "本地文件")
+                return _cE("view", _uM("class" to "container"), _uA(
+                    _cE("view", _uM("class" to "files"), _uA(
+                        _cE("view", _uM("class" to "file", "onClick" to localFiles), _uA(
+                            _cE("image", _uM("class" to "fileIcon", "src" to "/static/mine/local.png", "mode" to "aspectFit")),
+                            _cE("text", _uM("class" to "file-text"), "本地文件")
                         )),
-                        createElementVNode("view", utsMapOf("class" to "file"), utsArrayOf(
-                            createElementVNode("image", utsMapOf("class" to "fileIcon", "src" to "/static/mine/cloud.png", "mode" to "aspectFit")),
-                            createElementVNode("text", utsMapOf("class" to "file-text"), "永久备份")
+                        _cE("view", _uM("class" to "file"), _uA(
+                            _cE("image", _uM("class" to "fileIcon", "src" to "/static/mine/cloud.png", "mode" to "aspectFit")),
+                            _cE("text", _uM("class" to "file-text"), "永久备份")
                         )),
-                        createElementVNode("view", utsMapOf("class" to "file", "onClick" to msgCenter), utsArrayOf(
-                            createElementVNode("image", utsMapOf("class" to "fileIcon", "src" to "/static/mine/msgList.png", "mode" to "aspectFit")),
-                            createElementVNode("text", utsMapOf("class" to "file-text"), "消息列表")
+                        _cE("view", _uM("class" to "file", "onClick" to msgCenter), _uA(
+                            _cE("image", _uM("class" to "fileIcon", "src" to "/static/mine/msgList.png", "mode" to "aspectFit")),
+                            _cE("text", _uM("class" to "file-text"), "消息列表")
                         ))
                     )),
-                    createElementVNode("view", utsMapOf("class" to "tools-list"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to userInfo), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/user.png", "mode" to "aspectFit")),
-                                createElementVNode("text", utsMapOf("class" to "item-text"), "个人信息")
+                    _cE("view", _uM("class" to "tools-list"), _uA(
+                        _cE("view", _uM("class" to "item", "onClick" to userInfo), _uA(
+                            _cE("view", _uM("class" to "info"), _uA(
+                                _cE("image", _uM("class" to "item-icon", "src" to "/static/mine/user.png", "mode" to "aspectFit")),
+                                _cE("text", _uM("class" to "item-text"), "个人信息")
                             )),
-                            createElementVNode("view", null, utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
+                            _cE("view", null, _uA(
+                                _cE("image", _uM("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to rechargeDataTraffic), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/liuliang.png", "mode" to "aspectFit")),
-                                createElementVNode("text", utsMapOf("class" to "item-text"), "流量充值")
+                        _cE("view", _uM("class" to "item", "onClick" to rechargeDataTraffic), _uA(
+                            _cE("view", _uM("class" to "info"), _uA(
+                                _cE("image", _uM("class" to "item-icon", "src" to "/static/mine/liuliang.png", "mode" to "aspectFit")),
+                                _cE("text", _uM("class" to "item-text"), "流量充值")
                             )),
-                            createElementVNode("view", null, utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
+                            _cE("view", null, _uA(
+                                _cE("image", _uM("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to myorders), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/order.png", "mode" to "aspectFit")),
-                                createElementVNode("text", utsMapOf("class" to "item-text"), "我的订单")
+                        _cE("view", _uM("class" to "item", "onClick" to myorders), _uA(
+                            _cE("view", _uM("class" to "info"), _uA(
+                                _cE("image", _uM("class" to "item-icon", "src" to "/static/mine/order.png", "mode" to "aspectFit")),
+                                _cE("text", _uM("class" to "item-text"), "我的订单")
                             )),
-                            createElementVNode("view", null, utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
+                            _cE("view", null, _uA(
+                                _cE("image", _uM("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to helpCenter), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/quetion.png", "mode" to "aspectFit")),
-                                createElementVNode("text", utsMapOf("class" to "item-text"), "常见问题")
+                        _cE("view", _uM("class" to "item", "onClick" to helpCenter), _uA(
+                            _cE("view", _uM("class" to "info"), _uA(
+                                _cE("image", _uM("class" to "item-icon", "src" to "/static/mine/quetion.png", "mode" to "aspectFit")),
+                                _cE("text", _uM("class" to "item-text"), "常见问题")
                             )),
-                            createElementVNode("view", null, utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
+                            _cE("view", null, _uA(
+                                _cE("image", _uM("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/online.png", "mode" to "aspectFit")),
-                                createElementVNode("text", utsMapOf("class" to "item-text"), "在线客服")
+                        _cE("view", _uM("class" to "item"), _uA(
+                            _cE("view", _uM("class" to "info"), _uA(
+                                _cE("image", _uM("class" to "item-icon", "src" to "/static/mine/online.png", "mode" to "aspectFit")),
+                                _cE("text", _uM("class" to "item-text"), "在线客服")
                             )),
-                            createElementVNode("view", null, utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
+                            _cE("view", null, _uA(
+                                _cE("image", _uM("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to feedback), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/advice.png", "mode" to "aspectFit")),
-                                createElementVNode("text", utsMapOf("class" to "item-text"), "意见反馈")
+                        _cE("view", _uM("class" to "item", "onClick" to feedback), _uA(
+                            _cE("view", _uM("class" to "info"), _uA(
+                                _cE("image", _uM("class" to "item-icon", "src" to "/static/mine/advice.png", "mode" to "aspectFit")),
+                                _cE("text", _uM("class" to "item-text"), "意见反馈")
                             )),
-                            createElementVNode("view", null, utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
+                            _cE("view", null, _uA(
+                                _cE("image", _uM("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item", "onClick" to systemSetting), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/setting.png", "mode" to "aspectFit")),
-                                createElementVNode("text", utsMapOf("class" to "item-text"), "设置")
+                        _cE("view", _uM("class" to "item", "onClick" to systemSetting), _uA(
+                            _cE("view", _uM("class" to "info"), _uA(
+                                _cE("image", _uM("class" to "item-icon", "src" to "/static/mine/setting.png", "mode" to "aspectFit")),
+                                _cE("text", _uM("class" to "item-text"), "设置")
                             )),
-                            createElementVNode("view", null, utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
+                            _cE("view", null, _uA(
+                                _cE("image", _uM("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "item no-bottom", "onClick" to aboutPage), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "item-icon", "src" to "/static/mine/about.png", "mode" to "aspectFit")),
-                                createElementVNode("text", utsMapOf("class" to "item-text"), "关于")
+                        _cE("view", _uM("class" to "item no-bottom", "onClick" to aboutPage), _uA(
+                            _cE("view", _uM("class" to "info"), _uA(
+                                _cE("image", _uM("class" to "item-icon", "src" to "/static/mine/about.png", "mode" to "aspectFit")),
+                                _cE("text", _uM("class" to "item-text"), "关于")
                             )),
-                            createElementVNode("view", null, utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
+                            _cE("view", null, _uA(
+                                _cE("image", _uM("class" to "right-icon", "src" to "/static/mine/right.png", "mode" to "aspectFit"))
                             ))
                         ))
                     ))
@@ -146,21 +142,21 @@ open class GenPagesMineMine : BasePage {
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("width" to "100%", "height" to "100%", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx", "display" to "flex", "flexDirection" to "column", "backgroundColor" to "#f1f1f1")), "files" to utsMapOf(".container " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between", "alignItems" to "center", "width" to "100%", "height" to "100rpx", "backgroundColor" to "#ffffff", "borderTopLeftRadius" to "15rpx", "borderTopRightRadius" to "15rpx", "borderBottomRightRadius" to "15rpx", "borderBottomLeftRadius" to "15rpx", "paddingTop" to "70rpx", "paddingRight" to "80rpx", "paddingBottom" to "70rpx", "paddingLeft" to "80rpx", "marginTop" to "20rpx", "marginRight" to 0, "marginBottom" to "20rpx", "marginLeft" to 0)), "file" to utsMapOf(".container .files " to utsMapOf("display" to "flex", "flexDirection" to "column", "alignItems" to "center")), "fileIcon" to utsMapOf(".container .files .file " to utsMapOf("width" to "48rpx", "height" to "48rpx", "marginBottom" to "15rpx")), "file-text" to utsMapOf(".container .files .file " to utsMapOf("fontSize" to "20rpx", "color" to "#333333", "fontWeight" to "bold")), "tools-list" to utsMapOf(".container " to utsMapOf("backgroundColor" to "#ffffff", "borderTopLeftRadius" to "15rpx", "borderTopRightRadius" to "15rpx", "borderBottomRightRadius" to "15rpx", "borderBottomLeftRadius" to "15rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "item" to utsMapOf(".container .tools-list " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "space-between", "height" to "100rpx", "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f1f1f1")), "info" to utsMapOf(".container .tools-list .item " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "marginLeft" to "40rpx")), "item-icon" to utsMapOf(".container .tools-list .item .info " to utsMapOf("width" to "48rpx", "height" to "48rpx")), "item-text" to utsMapOf(".container .tools-list .item .info " to utsMapOf("fontSize" to "25rpx", "color" to "#333333", "marginLeft" to "20rpx")), "right-icon" to utsMapOf(".container .tools-list .item " to utsMapOf("width" to "35rpx", "height" to "35rpx")), "no-bottom" to utsMapOf(".container .tools-list " to utsMapOf("borderBottomWidth" to "medium", "borderBottomStyle" to "none", "borderBottomColor" to "#000000")))
+                return _uM("container" to _pS(_uM("width" to "100%", "height" to "100%", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx", "display" to "flex", "flexDirection" to "column", "backgroundColor" to "#f1f1f1")), "files" to _uM(".container " to _uM("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between", "alignItems" to "center", "width" to "100%", "height" to "100rpx", "backgroundColor" to "#ffffff", "borderTopLeftRadius" to "15rpx", "borderTopRightRadius" to "15rpx", "borderBottomRightRadius" to "15rpx", "borderBottomLeftRadius" to "15rpx", "paddingTop" to "70rpx", "paddingRight" to "80rpx", "paddingBottom" to "70rpx", "paddingLeft" to "80rpx", "marginTop" to "20rpx", "marginRight" to 0, "marginBottom" to "20rpx", "marginLeft" to 0)), "file" to _uM(".container .files " to _uM("display" to "flex", "flexDirection" to "column", "alignItems" to "center")), "fileIcon" to _uM(".container .files .file " to _uM("width" to "48rpx", "height" to "48rpx", "marginBottom" to "15rpx")), "file-text" to _uM(".container .files .file " to _uM("fontSize" to "20rpx", "color" to "#333333", "fontWeight" to "bold")), "tools-list" to _uM(".container " to _uM("backgroundColor" to "#ffffff", "borderTopLeftRadius" to "15rpx", "borderTopRightRadius" to "15rpx", "borderBottomRightRadius" to "15rpx", "borderBottomLeftRadius" to "15rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "item" to _uM(".container .tools-list " to _uM("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "space-between", "height" to "100rpx", "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f1f1f1")), "info" to _uM(".container .tools-list .item " to _uM("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "marginLeft" to "40rpx")), "item-icon" to _uM(".container .tools-list .item .info " to _uM("width" to "48rpx", "height" to "48rpx")), "item-text" to _uM(".container .tools-list .item .info " to _uM("fontSize" to "25rpx", "color" to "#333333", "marginLeft" to "20rpx")), "right-icon" to _uM(".container .tools-list .item " to _uM("width" to "35rpx", "height" to "35rpx")), "no-bottom" to _uM(".container .tools-list " to _uM("borderBottomWidth" to "medium", "borderBottomStyle" to "none", "borderBottomColor" to "#000000")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

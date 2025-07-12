@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 import io.dcloud.uniapp.extapi.showModal as uni_showModal
 import io.dcloud.uniapp.extapi.showToast as uni_showToast
@@ -75,77 +71,77 @@ open class GenPagesMineUserInfoUserInfo : BasePage {
             return fun(): Any? {
                 val _component_fui_switch = resolveEasyComponent("fui-switch", GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitchClass)
                 val _component_fui_button = resolveEasyComponent("fui-button", GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass)
-                return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "title"), utsArrayOf(
-                        createElementVNode("text", null, "个人信息")
+                return _cE("view", _uM("class" to "container"), _uA(
+                    _cE("view", _uM("class" to "title"), _uA(
+                        _cE("text", null, "个人信息")
                     )),
-                    createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "info-item"), utsArrayOf(
-                            createElementVNode("text", null, "账号"),
-                            createElementVNode("text", null, "18888888888")
+                    _cE("view", _uM("class" to "info"), _uA(
+                        _cE("view", _uM("class" to "info-item"), _uA(
+                            _cE("text", null, "账号"),
+                            _cE("text", null, "18888888888")
                         )),
-                        createElementVNode("view", utsMapOf("class" to "info-item nobottom", "onClick" to changePhoneNumber), utsArrayOf(
-                            createElementVNode("text", null, "手机号"),
-                            createElementVNode("view", utsMapOf("class" to "phone"), utsArrayOf(
-                                createElementVNode("text", null, "18888888888"),
-                                createElementVNode("image", utsMapOf("class" to "icon", "src" to default7, "mode" to "aspectFit"))
+                        _cE("view", _uM("class" to "info-item nobottom", "onClick" to changePhoneNumber), _uA(
+                            _cE("text", null, "手机号"),
+                            _cE("view", _uM("class" to "phone"), _uA(
+                                _cE("text", null, "18888888888"),
+                                _cE("image", _uM("class" to "icon", "src" to default7, "mode" to "aspectFit"))
                             ))
                         ))
                     )),
-                    createElementVNode("view", utsMapOf("class" to "title"), utsArrayOf(
-                        createElementVNode("text", null, "安全信息")
+                    _cE("view", _uM("class" to "title"), _uA(
+                        _cE("text", null, "安全信息")
                     )),
-                    createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "info-item", "onClick" to editPassword), utsArrayOf(
-                            createElementVNode("text", null, "修改密码"),
-                            createElementVNode("image", utsMapOf("class" to "icon", "src" to default7, "mode" to "aspectFit"))
+                    _cE("view", _uM("class" to "info"), _uA(
+                        _cE("view", _uM("class" to "info-item", "onClick" to editPassword), _uA(
+                            _cE("text", null, "修改密码"),
+                            _cE("image", _uM("class" to "icon", "src" to default7, "mode" to "aspectFit"))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "info-item nobottom", "onClick" to cancelAnAccount), utsArrayOf(
-                            createElementVNode("text", null, "注销账号"),
-                            createElementVNode("image", utsMapOf("class" to "icon", "src" to default7, "mode" to "aspectFit"))
+                        _cE("view", _uM("class" to "info-item nobottom", "onClick" to cancelAnAccount), _uA(
+                            _cE("text", null, "注销账号"),
+                            _cE("image", _uM("class" to "icon", "src" to default7, "mode" to "aspectFit"))
                         ))
                     )),
-                    createElementVNode("view", utsMapOf("class" to "title"), utsArrayOf(
-                        createElementVNode("text", null, "第三方账号")
+                    _cE("view", _uM("class" to "title"), _uA(
+                        _cE("text", null, "第三方账号")
                     )),
-                    createElementVNode("view", utsMapOf("class" to "info"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "info-item nobottom"), utsArrayOf(
-                            createElementVNode("text", null, "微信"),
-                            createElementVNode("view", utsMapOf("class" to "switch-state"), utsArrayOf(
-                                createElementVNode("text", utsMapOf("style" to normalizeStyle(utsMapOf("margin-right" to "10rpx"))), toDisplayString(if (switchVal.value) {
+                    _cE("view", _uM("class" to "info"), _uA(
+                        _cE("view", _uM("class" to "info-item nobottom"), _uA(
+                            _cE("text", null, "微信"),
+                            _cE("view", _uM("class" to "switch-state"), _uA(
+                                _cE("text", _uM("style" to _nS(_uM("margin-right" to "10rpx"))), _tD(if (switchVal.value) {
                                     "已绑定"
                                 } else {
                                     "未绑定"
                                 }
                                 ), 5),
-                                createVNode(_component_fui_switch, utsMapOf("checked" to switchVal.value, "color" to "#1296db", "onChange" to change), null, 8, utsArrayOf(
+                                _cV(_component_fui_switch, _uM("checked" to switchVal.value, "color" to "#1296db", "onChange" to change), null, 8, _uA(
                                     "checked"
                                 ))
                             ))
                         ))
                     )),
-                    createElementVNode("view", utsMapOf("class" to "btn-box"), utsArrayOf(
-                        createVNode(_component_fui_button, utsMapOf("color" to "#fff", "text" to "退出登陆", "background" to "#1296db", "onOnclick" to logout))
+                    _cE("view", _uM("class" to "btn-box"), _uA(
+                        _cV(_component_fui_button, _uM("color" to "#fff", "text" to "退出登陆", "background" to "#1296db", "onOnclick" to logout))
                     ))
                 ))
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundImage" to "none", "backgroundColor" to "#f3f3f3", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx")), "title" to utsMapOf(".container " to utsMapOf("fontSize" to "30rpx", "color" to "#333333", "paddingTop" to "50rpx", "paddingRight" to 0, "paddingBottom" to "10rpx", "paddingLeft" to "20rpx")), "info" to utsMapOf(".container " to utsMapOf("backgroundImage" to "none", "backgroundColor" to "#ffffff", "paddingTop" to "10rpx", "paddingRight" to "30rpx", "paddingBottom" to "10rpx", "paddingLeft" to "30rpx", "borderTopLeftRadius" to "10rpx", "borderTopRightRadius" to "10rpx", "borderBottomRightRadius" to "10rpx", "borderBottomLeftRadius" to "10rpx")), "info-item" to utsMapOf(".container .info " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between", "alignItems" to "center", "paddingTop" to "20rpx", "paddingRight" to 0, "paddingBottom" to "20rpx", "paddingLeft" to 0, "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f1f1f1")), "icon" to utsMapOf(".container .info .info-item " to utsMapOf("width" to "30rpx", "height" to "30rpx")), "switch-state" to utsMapOf(".container .info .info-item " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-end", "alignItems" to "center")), "phone" to utsMapOf(".container .info .info-item " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-end", "alignItems" to "center")), "nobottom" to utsMapOf(".container .info " to utsMapOf("borderBottomWidth" to "medium", "borderBottomStyle" to "none", "borderBottomColor" to "#000000")), "btn-box" to utsMapOf(".container " to utsMapOf("marginTop" to "200rpx")))
+                return _uM("container" to _pS(_uM("height" to "100%", "backgroundImage" to "none", "backgroundColor" to "#f3f3f3", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx")), "title" to _uM(".container " to _uM("fontSize" to "30rpx", "color" to "#333333", "paddingTop" to "50rpx", "paddingRight" to 0, "paddingBottom" to "10rpx", "paddingLeft" to "20rpx")), "info" to _uM(".container " to _uM("backgroundImage" to "none", "backgroundColor" to "#ffffff", "paddingTop" to "10rpx", "paddingRight" to "30rpx", "paddingBottom" to "10rpx", "paddingLeft" to "30rpx", "borderTopLeftRadius" to "10rpx", "borderTopRightRadius" to "10rpx", "borderBottomRightRadius" to "10rpx", "borderBottomLeftRadius" to "10rpx")), "info-item" to _uM(".container .info " to _uM("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between", "alignItems" to "center", "paddingTop" to "20rpx", "paddingRight" to 0, "paddingBottom" to "20rpx", "paddingLeft" to 0, "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f1f1f1")), "icon" to _uM(".container .info .info-item " to _uM("width" to "30rpx", "height" to "30rpx")), "switch-state" to _uM(".container .info .info-item " to _uM("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-end", "alignItems" to "center")), "phone" to _uM(".container .info .info-item " to _uM("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-end", "alignItems" to "center")), "nobottom" to _uM(".container .info " to _uM("borderBottomWidth" to "medium", "borderBottomStyle" to "none", "borderBottomColor" to "#000000")), "btn-box" to _uM(".container " to _uM("marginTop" to "200rpx")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

@@ -15,7 +15,7 @@ const __sfc__ = defineComponent({
         vertical: { type: Boolean, required: true, default: false },
         animated: { type: Boolean, required: true, default: true }
     },
-    setup(__props): any | null {
+    setup(__props) {
         const __ins = getCurrentInstance()!;
         const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
         const _cache = __ins.renderCache;
@@ -91,29 +91,29 @@ const __sfc__ = defineComponent({
             }
         });
         return (): any | null => {
-            return createElementVNode("view", utsMapOf({
-                class: normalizeClass(["l-loading", unref(classes)])
+            return _cE("view", _uM({
+                class: _nC(["l-loading", unref(classes)])
             }), [
-                createElementVNode("view", utsMapOf({
+                _cE("view", _uM({
                     class: "l-loading__view",
                     ref_key: "loadingRef",
                     ref: loadingRef,
-                    style: normalizeStyle(unref(spinnerStyle))
+                    style: _nS(unref(spinnerStyle))
                 }), null, 4 /* STYLE */),
                 isTrue(_ctx.$slots['default'] != null || _ctx.text != null)
-                    ? createElementVNode("text", utsMapOf({
+                    ? _cE("text", _uM({
                         key: 0,
                         class: "l-loading__text",
-                        style: normalizeStyle(unref(textStyle))
+                        style: _nS(unref(textStyle))
                     }), [
-                        renderSlot(_ctx.$slots, "default", {}, (): any[] => [toDisplayString(_ctx.text)])
+                        renderSlot(_ctx.$slots, "default", {}, (): any[] => [_tD(_ctx.text)])
                     ], 4 /* STYLE */)
-                    : createCommentVNode("v-if", true)
+                    : _cC("v-if", true)
             ], 2 /* CLASS */);
         };
     }
 });
 export default __sfc__;
 export type LLoadingComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesLimeLoadingComponentsLLoadingLLoadingStyles = [utsMapOf([["l-loading", utsMapOf([["", utsMapOf([["display", "flex"], ["position", "relative"], ["flexDirection", "row"], ["alignItems", "center"], ["borderLeftColor", "#3283ff"], ["borderLeftWidth", 0]])], [".is-vertical", utsMapOf([["flexDirection", "column"]])]])], ["l-loading__text", utsMapOf([["", utsMapOf([["marginLeft", "16rpx"], ["color", "rgba(0,0,0,0.45)"], ["fontSize", 14]])], [".l-loading.is-vertical ", utsMapOf([["marginTop", "8rpx"], ["marginRight", 0], ["marginBottom", 0], ["marginLeft", 0]])]])], ["l-loading__ball", padStyleMapOf(utsMapOf([["width", "40rpx"], ["height", "40rpx"]]))], ["l-loading__circular", padStyleMapOf(utsMapOf([["width", "40rpx"], ["height", "40rpx"]]))], ["l-loading__spinner", padStyleMapOf(utsMapOf([["width", "40rpx"], ["height", "40rpx"]]))]])];
+const GenUniModulesLimeLoadingComponentsLLoadingLLoadingStyles = [_uM([["l-loading", _uM([["", _uM([["display", "flex"], ["position", "relative"], ["flexDirection", "row"], ["alignItems", "center"], ["borderLeftColor", "#3283ff"], ["borderLeftWidth", 0]])], [".is-vertical", _uM([["flexDirection", "column"]])]])], ["l-loading__text", _uM([["", _uM([["marginLeft", "16rpx"], ["color", "rgba(0,0,0,0.45)"], ["fontSize", 14]])], [".l-loading.is-vertical ", _uM([["marginTop", "8rpx"], ["marginRight", 0], ["marginBottom", 0], ["marginLeft", 0]])]])], ["l-loading__ball", _pS(_uM([["width", "40rpx"], ["height", "40rpx"]]))], ["l-loading__circular", _pS(_uM([["width", "40rpx"], ["height", "40rpx"]]))], ["l-loading__spinner", _pS(_uM([["width", "40rpx"], ["height", "40rpx"]]))]])];
 //# sourceMappingURL=l-loading.uvue.map

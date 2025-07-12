@@ -60,7 +60,7 @@ class PermissionItem extends UTS.UTSType {
     delete this.__props__;
   }
 }
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "systemSetting",
   setup(__props) {
     const checked = common_vendor.ref(true);
@@ -226,7 +226,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-bb36821f"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/mine/systemSetting/systemSetting.js.map

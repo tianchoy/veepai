@@ -14,7 +14,7 @@ const __sfc__ = defineComponent({
     lazy: { type: Boolean, required: false },
     value: { type: Number, required: false }
   },
-  setup(__props, { expose: __expose }: SetupContext): any | null {
+  setup(__props, { expose: __expose }: SetupContext) {
 const __ins = getCurrentInstance()!;
 const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
@@ -65,7 +65,7 @@ const _cache = __ins.renderCache;
 
 return (): any | null => {
 
-  return createElementVNode("view", utsMapOf({
+  return _cE("view", _uM({
     class: "l-tab__panel",
     "aria-role": "tabpanel"
   }), [
@@ -77,4 +77,4 @@ return (): any | null => {
 })
 export default __sfc__
 export type LTabPanelComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesLimeTabsComponentsLTabPanelLTabPanelStyles = [utsMapOf([["l-tab__panel", padStyleMapOf(utsMapOf([["width", "100%"], ["flex", 1], ["flexShrink", 0], ["boxSizing", "border-box"]]))]])]
+const GenUniModulesLimeTabsComponentsLTabPanelLTabPanelStyles = [_uM([["l-tab__panel", _pS(_uM([["width", "100%"], ["flex", 1], ["flexShrink", 0], ["boxSizing", "border-box"]]))]])]

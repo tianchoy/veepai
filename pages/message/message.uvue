@@ -127,7 +127,6 @@
 		const year = date.getFullYear();
 		const month = date.getMonth() + 1;
 		const curDate = date.getDate();
-		console.log(day.key)
 
 		day.prefix = '' //不显示星期
 
@@ -219,7 +218,6 @@
 	const getValue = (e : string) => {
 		const selectedItem = radioItems.value.find(item => item.iccid == e)
 		if (selectedItem != null) {
-			console.log(selectedItem)
 			selectedItem.checked = true
 			currentDeviceInfo.value = selectedItem
 		}

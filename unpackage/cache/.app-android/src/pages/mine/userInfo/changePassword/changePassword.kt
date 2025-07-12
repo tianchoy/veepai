@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.showToast as uni_showToast
 open class GenPagesMineUserInfoChangePasswordChangePassword : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
@@ -80,31 +76,31 @@ open class GenPagesMineUserInfoChangePasswordChangePassword : BasePage {
             return fun(): Any? {
                 val _component_fui_input = resolveEasyComponent("fui-input", GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass)
                 val _component_fui_button = resolveEasyComponent("fui-button", GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass)
-                return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
-                        createVNode(_component_fui_input, utsMapOf("label" to "旧密码", "placeholder" to "请输入原密码", "type" to "password", "modelValue" to oldPassword.value, "onInput" to updateOldPassword), null, 8, utsArrayOf(
+                return _cE("view", _uM("class" to "container"), _uA(
+                    _cE("view", _uM("class" to "content"), _uA(
+                        _cV(_component_fui_input, _uM("label" to "旧密码", "placeholder" to "请输入原密码", "type" to "password", "modelValue" to oldPassword.value, "onInput" to updateOldPassword), null, 8, _uA(
                             "modelValue"
                         )),
-                        createVNode(_component_fui_input, utsMapOf("label" to "新密码", "placeholder" to "请输入新密码", "type" to "password", "modelValue" to newPassword.value, "onInput" to updateNewPassword), null, 8, utsArrayOf(
+                        _cV(_component_fui_input, _uM("label" to "新密码", "placeholder" to "请输入新密码", "type" to "password", "modelValue" to newPassword.value, "onInput" to updateNewPassword), null, 8, _uA(
                             "modelValue"
                         )),
-                        createVNode(_component_fui_input, utsMapOf("label" to "确认新密码", "placeholder" to "再次输入新密码", "type" to "password", "modelValue" to confirmPassword.value, "onInput" to updateConfirmPassword), null, 8, utsArrayOf(
+                        _cV(_component_fui_input, _uM("label" to "确认新密码", "placeholder" to "再次输入新密码", "type" to "password", "modelValue" to confirmPassword.value, "onInput" to updateConfirmPassword), null, 8, _uA(
                             "modelValue"
                         ))
                     )),
                     if (isTrue(errorMsg.value)) {
-                        createElementVNode("view", utsMapOf("key" to 0), utsArrayOf(
-                            createElementVNode("text", utsMapOf("class" to "error-msg"), toDisplayString(errorMsg.value), 1)
+                        _cE("view", _uM("key" to 0), _uA(
+                            _cE("text", _uM("class" to "error-msg"), _tD(errorMsg.value), 1)
                         ))
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
                     ,
-                    createElementVNode("view", utsMapOf("class" to "tips"), utsArrayOf(
-                        createElementVNode("text", utsMapOf("class" to "tips-word"), "密码8-16位,需包含英文字母、数字、特殊字符中两类及以上")
+                    _cE("view", _uM("class" to "tips"), _uA(
+                        _cE("text", _uM("class" to "tips-word"), "密码8-16位,需包含英文字母、数字、特殊字符中两类及以上")
                     )),
-                    createElementVNode("view", null, utsArrayOf(
-                        createVNode(_component_fui_button, utsMapOf("color" to "#fff", "disabled" to btnDisabled.value, "text" to "提交", "background" to "#1296db", "height" to "80rpx", "onOnclick" to submit), null, 8, utsArrayOf(
+                    _cE("view", null, _uA(
+                        _cV(_component_fui_button, _uM("color" to "#fff", "disabled" to btnDisabled.value, "text" to "提交", "background" to "#1296db", "height" to "80rpx", "onOnclick" to submit), null, 8, _uA(
                             "disabled"
                         ))
                     ))
@@ -112,21 +108,21 @@ open class GenPagesMineUserInfoChangePasswordChangePassword : BasePage {
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundColor" to "#f5f5f5", "paddingTop" to "50rpx", "paddingRight" to "20rpx", "paddingBottom" to "50rpx", "paddingLeft" to "20rpx")), "fui-input__label-size" to utsMapOf(".container " to utsMapOf("!fontSize" to "26rpx")), "content" to utsMapOf(".container " to utsMapOf("backgroundColor" to "#ffffff", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "tips" to utsMapOf(".container " to utsMapOf("marginTop" to "40rpx", "marginRight" to 0, "marginBottom" to "40rpx", "marginLeft" to 0)), "tips-word" to utsMapOf(".container .tips " to utsMapOf("fontSize" to "30rpx", "color" to "#999999")), "error-msg" to utsMapOf(".container " to utsMapOf("marginTop" to "10rpx", "color" to "#e64340", "fontSize" to "24rpx")))
+                return _uM("container" to _pS(_uM("height" to "100%", "backgroundColor" to "#f5f5f5", "paddingTop" to "50rpx", "paddingRight" to "20rpx", "paddingBottom" to "50rpx", "paddingLeft" to "20rpx")), "fui-input__label-size" to _uM(".container " to _uM("!fontSize" to "26rpx")), "content" to _uM(".container " to _uM("backgroundColor" to "#ffffff", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "tips" to _uM(".container " to _uM("marginTop" to "40rpx", "marginRight" to 0, "marginBottom" to "40rpx", "marginLeft" to 0)), "tips-word" to _uM(".container .tips " to _uM("fontSize" to "30rpx", "color" to "#999999")), "error-msg" to _uM(".container " to _uM("marginTop" to "10rpx", "color" to "#e64340", "fontSize" to "24rpx")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

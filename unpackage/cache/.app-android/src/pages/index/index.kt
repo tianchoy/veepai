@@ -11,11 +11,8 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.createVideoContext as uni_createVideoContext
+import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 import io.dcloud.uniapp.extapi.showToast as uni_showToast
 open class GenPagesIndexIndex : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
@@ -45,6 +42,7 @@ open class GenPagesIndexIndex : BasePage {
             }
             val toDeviceDetail = fun(){
                 uni_showToast(ShowToastOptions(title = "设备详情", icon = "none"))
+                uni_navigateTo(NavigateToOptions(url = "/pages/index/deviceDetail"))
             }
             val pauseClick = fun(){
                 uni_createVideoContext("myVideo", null)!!!!.pause()
@@ -54,31 +52,31 @@ open class GenPagesIndexIndex : BasePage {
                 uni_showToast(ShowToastOptions(title = "sss", icon = "none"))
             }
             return fun(): Any? {
-                return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "video-container", "style" to normalizeStyle(utsMapOf("border-radius" to "15rpx", "overflow" to "hidden"))), utsArrayOf(
-                            createElementVNode("video", utsMapOf("class" to "video", "id" to "myVideo", "title" to deviceTitle.value, "src" to videoSrc, "ref_key" to "videoRef", "ref" to videoRef, "controls" to true, "show-play-btn" to true, "show-center-play-btn" to true, "enable-progress-gesture" to true, "show-fullscreen-btn" to true, "show-mute-btn" to true, "onClick" to clickVdedio), null, 8, utsArrayOf(
+                return _cE("view", _uM("class" to "container"), _uA(
+                    _cE("view", _uM("class" to "content"), _uA(
+                        _cE("view", _uM("class" to "video-container", "style" to _nS(_uM("border-radius" to "15rpx", "overflow" to "hidden"))), _uA(
+                            _cE("video", _uM("class" to "video", "id" to "myVideo", "title" to deviceTitle.value, "src" to videoSrc, "ref_key" to "videoRef", "ref" to videoRef, "controls" to true, "show-play-btn" to true, "show-center-play-btn" to true, "enable-progress-gesture" to true, "show-fullscreen-btn" to true, "show-mute-btn" to true, "onClick" to clickVdedio), null, 8, _uA(
                                 "title"
                             ))
                         ), 4),
-                        createElementVNode("view", null, toDisplayString(deviceTitle.value), 1),
-                        createElementVNode("view", utsMapOf("class" to "video-right-control"), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "vedio-control"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "vedio-control-icon", "src" to forward, "onClick" to toDeviceDetail))
+                        _cE("view", null, _tD(deviceTitle.value), 1),
+                        _cE("view", _uM("class" to "video-right-control"), _uA(
+                            _cE("view", _uM("class" to "vedio-control"), _uA(
+                                _cE("image", _uM("class" to "vedio-control-icon", "src" to forward, "onClick" to toDeviceDetail))
                             )),
-                            createElementVNode("view", utsMapOf("class" to "vedio-control"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "vedio-control-icon", "src" to errIcon, "onClick" to errClick))
+                            _cE("view", _uM("class" to "vedio-control"), _uA(
+                                _cE("image", _uM("class" to "vedio-control-icon", "src" to errIcon, "onClick" to errClick))
                             )),
-                            createElementVNode("view", utsMapOf("class" to "vedio-control"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "vedio-control-icon", "src" to transfer, "onClick" to transferClick))
+                            _cE("view", _uM("class" to "vedio-control"), _uA(
+                                _cE("image", _uM("class" to "vedio-control-icon", "src" to transfer, "onClick" to transferClick))
                             )),
-                            createElementVNode("view", utsMapOf("class" to "vedio-control"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "vedio-control-icon", "src" to replayIcon, "onClick" to replay))
+                            _cE("view", _uM("class" to "vedio-control"), _uA(
+                                _cE("image", _uM("class" to "vedio-control-icon", "src" to replayIcon, "onClick" to replay))
                             ))
                         )),
-                        createElementVNode("view", utsMapOf("class" to "video-bottom-control"), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "vedio-control"), utsArrayOf(
-                                createElementVNode("image", utsMapOf("class" to "vedio-control-icon", "onClick" to pauseClick, "src" to pauseIcon))
+                        _cE("view", _uM("class" to "video-bottom-control"), _uA(
+                            _cE("view", _uM("class" to "vedio-control"), _uA(
+                                _cE("image", _uM("class" to "vedio-control-icon", "onClick" to pauseClick, "src" to pauseIcon))
                             ))
                         ))
                     ))
@@ -86,21 +84,21 @@ open class GenPagesIndexIndex : BasePage {
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("width" to "100%", "height" to "100%", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx", "display" to "flex", "flexDirection" to "column")), "content" to utsMapOf(".container " to utsMapOf("position" to "relative", "borderTopLeftRadius" to "15rpx", "borderTopRightRadius" to "15rpx", "borderBottomRightRadius" to "15rpx", "borderBottomLeftRadius" to "15rpx", "width" to "100%", "height" to "400rpx", "overflow" to "hidden")), "video-container" to utsMapOf(".container .content " to utsMapOf("width" to "100%", "height" to "100%")), "video" to utsMapOf(".container .content " to utsMapOf("width" to "100%", "height" to "100%", "objectFit" to "cover", "marginBottom" to 0)), "video-top-title" to utsMapOf(".container .content " to utsMapOf("position" to "absolute", "top" to 0, "height" to "60rpx", "width" to "80%", "paddingTop" to "15rpx", "paddingRight" to 0, "paddingBottom" to 0, "paddingLeft" to "20rpx", "backgroundImage" to "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor" to "rgba(0,0,0,0)", "zIndex" to 3)), "video-right-control" to utsMapOf(".container .content " to utsMapOf("position" to "absolute", "top" to 0, "right" to "10rpx", "display" to "flex", "flexDirection" to "column", "justifyContent" to "space-around", "height" to "100%", "alignItems" to "center", "zIndex" to 2)), "vedio-control" to utsMapOf(".container .content .video-right-control " to utsMapOf("width" to "50rpx", "height" to "50rpx", "paddingTop" to "10rpx", "paddingRight" to "10rpx", "paddingBottom" to "10rpx", "paddingLeft" to "10rpx", "borderTopLeftRadius" to "25rpx", "borderTopRightRadius" to "25rpx", "borderBottomRightRadius" to "25rpx", "borderBottomLeftRadius" to "25rpx", "backgroundImage" to "none", "backgroundColor" to "rgba(255,255,255,0.7)"), ".container .content .video-bottom-control " to utsMapOf("marginTop" to 0, "marginRight" to "auto", "marginBottom" to 0, "marginLeft" to "auto", "width" to "50rpx", "height" to "50rpx", "paddingTop" to "10rpx", "paddingRight" to "10rpx", "paddingBottom" to "10rpx", "paddingLeft" to "10rpx", "borderTopLeftRadius" to "25rpx", "borderTopRightRadius" to "25rpx", "borderBottomRightRadius" to "25rpx", "borderBottomLeftRadius" to "25rpx", "backgroundImage" to "none", "backgroundColor" to "rgba(255,255,255,0.7)")), "vedio-control-icon" to utsMapOf(".container .content .video-right-control .vedio-control " to utsMapOf("width" to "100%", "height" to "100%"), ".container .content .video-bottom-control .vedio-control " to utsMapOf("width" to "100%", "height" to "100%")), "video-bottom-control" to utsMapOf(".container .content " to utsMapOf("position" to "absolute", "bottom" to "10rpx", "left" to 0, "width" to "100%", "height" to "50rpx", "zIndex" to 1)))
+                return _uM("container" to _pS(_uM("width" to "100%", "height" to "100%", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx", "display" to "flex", "flexDirection" to "column")), "content" to _uM(".container " to _uM("position" to "relative", "borderTopLeftRadius" to "15rpx", "borderTopRightRadius" to "15rpx", "borderBottomRightRadius" to "15rpx", "borderBottomLeftRadius" to "15rpx", "width" to "100%", "height" to "400rpx", "overflow" to "hidden")), "video-container" to _uM(".container .content " to _uM("width" to "100%", "height" to "100%")), "video" to _uM(".container .content " to _uM("width" to "100%", "height" to "100%", "objectFit" to "cover", "marginBottom" to 0)), "video-top-title" to _uM(".container .content " to _uM("position" to "absolute", "top" to 0, "height" to "60rpx", "width" to "80%", "paddingTop" to "15rpx", "paddingRight" to 0, "paddingBottom" to 0, "paddingLeft" to "20rpx", "backgroundImage" to "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor" to "rgba(0,0,0,0)", "zIndex" to 3)), "video-right-control" to _uM(".container .content " to _uM("position" to "absolute", "top" to 0, "right" to "10rpx", "display" to "flex", "flexDirection" to "column", "justifyContent" to "space-around", "height" to "100%", "alignItems" to "center", "zIndex" to 2)), "vedio-control" to _uM(".container .content .video-right-control " to _uM("width" to "50rpx", "height" to "50rpx", "paddingTop" to "10rpx", "paddingRight" to "10rpx", "paddingBottom" to "10rpx", "paddingLeft" to "10rpx", "borderTopLeftRadius" to "25rpx", "borderTopRightRadius" to "25rpx", "borderBottomRightRadius" to "25rpx", "borderBottomLeftRadius" to "25rpx", "backgroundImage" to "none", "backgroundColor" to "rgba(255,255,255,0.7)"), ".container .content .video-bottom-control " to _uM("marginTop" to 0, "marginRight" to "auto", "marginBottom" to 0, "marginLeft" to "auto", "width" to "50rpx", "height" to "50rpx", "paddingTop" to "10rpx", "paddingRight" to "10rpx", "paddingBottom" to "10rpx", "paddingLeft" to "10rpx", "borderTopLeftRadius" to "25rpx", "borderTopRightRadius" to "25rpx", "borderBottomRightRadius" to "25rpx", "borderBottomLeftRadius" to "25rpx", "backgroundImage" to "none", "backgroundColor" to "rgba(255,255,255,0.7)")), "vedio-control-icon" to _uM(".container .content .video-right-control .vedio-control " to _uM("width" to "100%", "height" to "100%"), ".container .content .video-bottom-control .vedio-control " to _uM("width" to "100%", "height" to "100%")), "video-bottom-control" to _uM(".container .content " to _uM("position" to "absolute", "bottom" to "10rpx", "left" to 0, "width" to "100%", "height" to "50rpx", "zIndex" to 1)))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

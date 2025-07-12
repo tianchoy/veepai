@@ -43,7 +43,7 @@ const __sfc__ = defineComponent({
         "modelValue": { type: String, default: '' },
     }),
     emits: /*#__PURE__*/ mergeModels(['change', 'focus', 'blur', 'confirm', 'linechange', 'keyboardheightchange'], ["update:modelValue"]),
-    setup(__props): any | null {
+    setup(__props) {
         const __ins = getCurrentInstance()!;
         const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
         const _cache = __ins.renderCache;
@@ -212,11 +212,11 @@ const __sfc__ = defineComponent({
             });
         });
         return (): any | null => {
-            return createElementVNode("view", utsMapOf({
-                class: normalizeClass(["l-textarea", [
+            return _cE("view", _uM({
+                class: _nC(["l-textarea", [
                         'l-textarea--' + _ctx.layout,
                         // classic ? 'l-textarea--classic-' + status : '',
-                        utsMapOf({
+                        _uM({
                             'l-textarea--classic': _ctx.classic,
                             'l-textarea--classic-disabled': _ctx.classic && unref(isDisabled),
                             'l-textarea--classic-focused': _ctx.classic && !unref(isDisabled) && unref(innerFocused),
@@ -225,23 +225,23 @@ const __sfc__ = defineComponent({
                     ]]),
                 ref_key: "textareaRef",
                 ref: textareaRef,
-                style: normalizeStyle([unref(styles), _ctx.lStyle])
+                style: _nS([unref(styles), _ctx.lStyle])
             }), [
                 isTrue(_ctx.label != null || _ctx.$slots['label'] != null)
-                    ? createElementVNode("text", utsMapOf({
+                    ? _cE("text", _uM({
                         key: 0,
-                        class: normalizeClass(["l-textarea__label", [
+                        class: _nC(["l-textarea__label", [
                                 'l-textarea__label--' + _ctx.layout,
                             ]]),
-                        style: normalizeStyle([_ctx.labelStyle])
+                        style: _nS([_ctx.labelStyle])
                     }), [
-                        renderSlot(_ctx.$slots, "default", {}, (): any[] => [toDisplayString(_ctx.label)])
+                        renderSlot(_ctx.$slots, "default", {}, (): any[] => [_tD(_ctx.label)])
                     ], 6 /* CLASS, STYLE */)
-                    : createCommentVNode("v-if", true),
-                createElementVNode("view", utsMapOf({ class: "l-textarea__wrapper" }), [
-                    createElementVNode("textarea", utsMapOf({
-                        class: normalizeClass(["l-textarea__wrapper-inner", utsMapOf({ 'is-disabled': unref(isDisabled) })]),
-                        style: normalizeStyle([_ctx.innerStyle]),
+                    : _cC("v-if", true),
+                _cE("view", _uM({ class: "l-textarea__wrapper" }), [
+                    _cE("textarea", _uM({
+                        class: _nC(["l-textarea__wrapper-inner", _uM({ 'is-disabled': unref(isDisabled) })]),
+                        style: _nS([_ctx.innerStyle]),
                         maxlength: _ctx.maxlength,
                         disabled: unref(isDisabled) || unref(isReadonly),
                         placeholder: _ctx.placeholder,
@@ -270,12 +270,12 @@ const __sfc__ = defineComponent({
                         onKeyboardheightchange: onKeyboardHeightChange
                     }), null, 46 /* CLASS, STYLE, PROPS, NEED_HYDRATION */, ["maxlength", "disabled", "placeholder", "placeholder-style", "value", "auto-height", "auto-focus", "fixed", "focus", "cursor", "cursor-spacing", "adjust-position", "confirm-type", "confirm-hold", "disable-default-padding", "show-confirm-bar", "selection-start", "selection-end", "hold-keyboard"]),
                     isTrue(_ctx.indicator && ((_ctx.maxcharacter ?? _ctx.maxlength) > 0))
-                        ? createElementVNode("text", utsMapOf({
+                        ? _cE("text", _uM({
                             key: 0,
                             class: "l-textarea__indicator",
-                            style: normalizeStyle([_ctx.indicatorStyle])
-                        }), toDisplayString(unref(count)) + " / " + toDisplayString(_ctx.maxcharacter ?? _ctx.maxlength), 5 /* TEXT, STYLE */)
-                        : createCommentVNode("v-if", true)
+                            style: _nS([_ctx.indicatorStyle])
+                        }), _tD(unref(count)) + " / " + _tD(_ctx.maxcharacter ?? _ctx.maxlength), 5 /* TEXT, STYLE */)
+                        : _cC("v-if", true)
                 ])
             ], 6 /* CLASS, STYLE */);
         };
@@ -283,5 +283,5 @@ const __sfc__ = defineComponent({
 });
 export default __sfc__;
 export type LTextareaComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesLimeTextareaComponentsLTextareaLTextareaStyles = [utsMapOf([["l-textarea", padStyleMapOf(utsMapOf([["boxSizing", "border-box"], ["paddingTop", "32rpx"], ["paddingRight", "32rpx"], ["paddingBottom", "32rpx"], ["paddingLeft", "32rpx"], ["backgroundColor", "#ffffff"]]))], ["l-textarea--horizontal", padStyleMapOf(utsMapOf([["flexDirection", "row"]]))], ["l-textarea__label", padStyleMapOf(utsMapOf([["color", "rgba(0,0,0,0.88)"], ["flexShrink", 0], ["lineHeight", "44rpx"], ["overflow", "hidden"], ["whiteSpace", "nowrap"], ["textOverflow", "ellipsis"]]))], ["l-textarea__label--vertical", padStyleMapOf(utsMapOf([["fontSize", 14], ["paddingBottom", "16rpx"]]))], ["l-textarea__label--horizontal", padStyleMapOf(utsMapOf([["fontSize", 16], ["marginRight", "32rpx"]]))], ["l-textarea__wrapper", padStyleMapOf(utsMapOf([["flex", 1], ["overflow", "hidden"]]))], ["l-textarea__wrapper-inner", padStyleMapOf(utsMapOf([["flex", "1 1 auto"], ["width", "100%"], ["boxSizing", "border-box"], ["minWidth", 0], ["minHeight", 20], ["marginTop", 0], ["marginRight", 0], ["marginBottom", 0], ["marginLeft", 0], ["paddingTop", 0], ["paddingRight", 0], ["paddingBottom", 0], ["paddingLeft", 0], ["textAlign", "left"], ["backgroundColor", "rgba(0,0,0,0)"], ["borderTopWidth", 0], ["borderRightWidth", 0], ["borderBottomWidth", 0], ["borderLeftWidth", 0], ["borderTopStyle", "none"], ["borderRightStyle", "none"], ["borderBottomStyle", "none"], ["borderLeftStyle", "none"], ["borderTopColor", "#000000"], ["borderRightColor", "#000000"], ["borderBottomColor", "#000000"], ["borderLeftColor", "#000000"], ["fontSize", 16], ["color", "rgba(0,0,0,0.88)"], ["lineHeight", "48rpx"]]))], ["l-textarea__placeholder", padStyleMapOf(utsMapOf([["color", "rgba(0,0,0,0.45)"], ["fontSize", 16], ["lineHeight", "48rpx"]]))], ["l-textarea__indicator", padStyleMapOf(utsMapOf([["flexShrink", 0], ["color", "rgba(0,0,0,0.45)"], ["fontSize", "24rpx"], ["textAlign", "right"], ["lineHeight", "40rpx"], ["paddingTop", "16rpx"]]))], ["l-textarea--border", padStyleMapOf(utsMapOf([["position", "relative"]]))], ["l-textarea--border-focused", padStyleMapOf(utsMapOf([["borderBottomColor", "#3283ff"]]))], ["is-disabled", utsMapOf([[".l-textarea ", utsMapOf([["color", "rgba(0,0,0,0.25)"]])]])], ["l-textarea--classic", padStyleMapOf(utsMapOf([["paddingTop", 12], ["paddingRight", 16], ["paddingBottom", 12], ["paddingLeft", 16], ["borderTopLeftRadius", "12rpx"], ["borderTopRightRadius", "12rpx"], ["borderBottomRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["borderTopWidth", 0.5], ["borderRightWidth", 0.5], ["borderBottomWidth", 0.5], ["borderLeftWidth", 0.5], ["borderTopStyle", "solid"], ["borderRightStyle", "solid"], ["borderBottomStyle", "solid"], ["borderLeftStyle", "solid"], ["borderTopColor", "#eeeeee"], ["borderRightColor", "#eeeeee"], ["borderBottomColor", "#eeeeee"], ["borderLeftColor", "#eeeeee"]]))], ["l-textarea--classic-focused", padStyleMapOf(utsMapOf([["borderTopColor", "#3283ff"], ["borderRightColor", "#3283ff"], ["borderBottomColor", "#3283ff"], ["borderLeftColor", "#3283ff"]]))]])];
+const GenUniModulesLimeTextareaComponentsLTextareaLTextareaStyles = [_uM([["l-textarea", _pS(_uM([["boxSizing", "border-box"], ["paddingTop", "32rpx"], ["paddingRight", "32rpx"], ["paddingBottom", "32rpx"], ["paddingLeft", "32rpx"], ["backgroundColor", "#ffffff"]]))], ["l-textarea--horizontal", _pS(_uM([["flexDirection", "row"]]))], ["l-textarea__label", _pS(_uM([["color", "rgba(0,0,0,0.88)"], ["flexShrink", 0], ["lineHeight", "44rpx"], ["overflow", "hidden"], ["whiteSpace", "nowrap"], ["textOverflow", "ellipsis"]]))], ["l-textarea__label--vertical", _pS(_uM([["fontSize", 14], ["paddingBottom", "16rpx"]]))], ["l-textarea__label--horizontal", _pS(_uM([["fontSize", 16], ["marginRight", "32rpx"]]))], ["l-textarea__wrapper", _pS(_uM([["flex", 1], ["overflow", "hidden"]]))], ["l-textarea__wrapper-inner", _pS(_uM([["flex", "1 1 auto"], ["width", "100%"], ["boxSizing", "border-box"], ["minWidth", 0], ["minHeight", 20], ["marginTop", 0], ["marginRight", 0], ["marginBottom", 0], ["marginLeft", 0], ["paddingTop", 0], ["paddingRight", 0], ["paddingBottom", 0], ["paddingLeft", 0], ["textAlign", "left"], ["backgroundColor", "rgba(0,0,0,0)"], ["borderTopWidth", 0], ["borderRightWidth", 0], ["borderBottomWidth", 0], ["borderLeftWidth", 0], ["borderTopStyle", "none"], ["borderRightStyle", "none"], ["borderBottomStyle", "none"], ["borderLeftStyle", "none"], ["borderTopColor", "#000000"], ["borderRightColor", "#000000"], ["borderBottomColor", "#000000"], ["borderLeftColor", "#000000"], ["fontSize", 16], ["color", "rgba(0,0,0,0.88)"], ["lineHeight", "48rpx"]]))], ["l-textarea__placeholder", _pS(_uM([["color", "rgba(0,0,0,0.45)"], ["fontSize", 16], ["lineHeight", "48rpx"]]))], ["l-textarea__indicator", _pS(_uM([["flexShrink", 0], ["color", "rgba(0,0,0,0.45)"], ["fontSize", "24rpx"], ["textAlign", "right"], ["lineHeight", "40rpx"], ["paddingTop", "16rpx"]]))], ["l-textarea--border", _pS(_uM([["position", "relative"]]))], ["l-textarea--border-focused", _pS(_uM([["borderBottomColor", "#3283ff"]]))], ["is-disabled", _uM([[".l-textarea ", _uM([["color", "rgba(0,0,0,0.25)"]])]])], ["l-textarea--classic", _pS(_uM([["paddingTop", 12], ["paddingRight", 16], ["paddingBottom", 12], ["paddingLeft", 16], ["borderTopLeftRadius", "12rpx"], ["borderTopRightRadius", "12rpx"], ["borderBottomRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["borderTopWidth", 0.5], ["borderRightWidth", 0.5], ["borderBottomWidth", 0.5], ["borderLeftWidth", 0.5], ["borderTopStyle", "solid"], ["borderRightStyle", "solid"], ["borderBottomStyle", "solid"], ["borderLeftStyle", "solid"], ["borderTopColor", "#eeeeee"], ["borderRightColor", "#eeeeee"], ["borderBottomColor", "#eeeeee"], ["borderLeftColor", "#eeeeee"]]))], ["l-textarea--classic-focused", _pS(_uM([["borderTopColor", "#3283ff"], ["borderRightColor", "#3283ff"], ["borderBottomColor", "#3283ff"], ["borderLeftColor", "#3283ff"]]))]])];
 //# sourceMappingURL=l-textarea.uvue.map

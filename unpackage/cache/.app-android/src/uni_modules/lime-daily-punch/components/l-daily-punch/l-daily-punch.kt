@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.createCanvasContextAsync as uni_createCanvasContextAsync
 open class GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
@@ -91,33 +87,33 @@ open class GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch : VueComp
             }
             ))
             return fun(): Any? {
-                return createElementVNode("view", utsMapOf("class" to "calender"), utsArrayOf(
-                    createElementVNode("canvas", utsMapOf("ref" to "dailyRef", "id" to "l-daily-punch", "class" to "l-daily-punch", "style" to normalizeStyle(utsArrayOf(
+                return _cE("view", _uM("class" to "calender"), _uA(
+                    _cE("canvas", _uM("ref" to "dailyRef", "id" to "l-daily-punch", "class" to "l-daily-punch", "style" to _nS(_uA(
                         unref(styles)
                     )), "onClick" to onClick), null, 4)
                 ))
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-daily-punch" to padStyleMapOf(utsMapOf("width" to "100%")), "calender" to padStyleMapOf(utsMapOf("marginTop" to 0, "marginRight" to "30rpx", "marginBottom" to 0, "marginLeft" to "30rpx")))
+                return _uM("l-daily-punch" to _pS(_uM("width" to "100%")), "calender" to _pS(_uM("marginTop" to 0, "marginRight" to "30rpx", "marginBottom" to 0, "marginLeft" to "30rpx")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("select" to null, "panelChange" to null, "streak" to null)
-        var props = normalizePropsOptions(utsMapOf("canSupplement" to utsMapOf("type" to "Boolean", "default" to true), "isFullCalendar" to utsMapOf("type" to "Boolean", "default" to true), "yearMonth" to utsMapOf("type" to "String", "default" to fun(): String {
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("select" to null, "panelChange" to null, "streak" to null)
+        var props = _nP(_uM("canSupplement" to _uM("type" to "Boolean", "default" to true), "isFullCalendar" to _uM("type" to "Boolean", "default" to true), "yearMonth" to _uM("type" to "String", "default" to fun(): String {
             val date = Date()
             val year = date.getFullYear()
             val month = (date.getMonth() + 1).toString(10).padStart(2, "0")
             return "" + year + "-" + month
         }
-        ), "signedDates" to utsMapOf("type" to "Array", "default" to fun(): UTSArray<String> {
-            return utsArrayOf<String>()
+        ), "signedDates" to _uM("type" to "Array", "default" to fun(): UTSArray<String> {
+            return _uA<String>()
         }
         , "validator" to fun(value: UTSArray<String>): Boolean {
             return value.every(fun(date: String): Boolean {
@@ -125,8 +121,8 @@ open class GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch : VueComp
             }
             )
         }
-        ), "dayHeight" to utsMapOf("default" to 76), "week" to utsMapOf("type" to "Array", "default" to fun(): UTSArray<String> {
-            return utsArrayOf(
+        ), "dayHeight" to _uM("default" to 76), "week" to _uM("type" to "Array", "default" to fun(): UTSArray<String> {
+            return _uA(
                 "周日",
                 "周一",
                 "周二",
@@ -136,11 +132,11 @@ open class GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch : VueComp
                 "周六"
             )
         }
-        ), "weekStartsOn" to utsMapOf("type" to "Number", "default" to 6, "validator" to fun(value: Number): Boolean {
+        ), "weekStartsOn" to _uM("type" to "Number", "default" to 6, "validator" to fun(value: Number): Boolean {
             return value <= 6
         }
-        ), "weekColor" to utsMapOf("type" to "String", "default" to "#BDC0C3"), "weekFontSize" to utsMapOf("type" to "Number", "default" to 14), "weekHeight" to utsMapOf("type" to "Number", "default" to 30), "selectedDayBgColor" to utsMapOf("type" to "String", "default" to "rgba(0,0,0,0.06)"), "dayFontSize" to utsMapOf("type" to "Number", "default" to 16), "textColor" to utsMapOf("type" to "String", "default" to "#1A1F24"), "disabledColor" to utsMapOf("type" to "String", "default" to "#BDC0C3"), "monthTitleHeight" to utsMapOf("type" to "Number", "default" to 50), "monthTitleFontSize" to utsMapOf("type" to "Number", "default" to 20), "color" to utsMapOf("type" to "String", "default" to "#3B87F6"), "unsignedColor" to utsMapOf("type" to "String", "default" to "#F1A33A")))
-        var propsNeedCastKeys = utsArrayOf(
+        ), "weekColor" to _uM("type" to "String", "default" to "#BDC0C3"), "weekFontSize" to _uM("type" to "Number", "default" to 14), "weekHeight" to _uM("type" to "Number", "default" to 30), "selectedDayBgColor" to _uM("type" to "String", "default" to "rgba(0,0,0,0.06)"), "dayFontSize" to _uM("type" to "Number", "default" to 16), "textColor" to _uM("type" to "String", "default" to "#1A1F24"), "disabledColor" to _uM("type" to "String", "default" to "#BDC0C3"), "monthTitleHeight" to _uM("type" to "Number", "default" to 50), "monthTitleFontSize" to _uM("type" to "Number", "default" to 20), "color" to _uM("type" to "String", "default" to "#3B87F6"), "unsignedColor" to _uM("type" to "String", "default" to "#F1A33A")))
+        var propsNeedCastKeys = _uA(
             "canSupplement",
             "isFullCalendar",
             "yearMonth",
@@ -160,6 +156,6 @@ open class GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunch : VueComp
             "color",
             "unsignedColor"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

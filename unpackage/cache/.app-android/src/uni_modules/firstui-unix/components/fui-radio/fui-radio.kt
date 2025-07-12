@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesFirstuiUnixComponentsFuiRadioFuiRadio : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {
         onCreated(fun() {
@@ -60,9 +56,9 @@ open class GenUniModulesFirstuiUnixComponentsFuiRadioFuiRadio : VueComponent {
     override fun `$render`(): Any? {
         val _ctx = this
         val _cache = this.`$`.renderCache
-        return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+        return _cE("view", _uM("class" to _nC(_uA(
             "fui-radio__input",
-            utsArrayOf(
+            _uA(
                 if (_ctx.scaleRatio != 1) {
                     "fui-radio__scale-" + _ctx.scaleAlign
                 } else {
@@ -105,27 +101,27 @@ open class GenUniModulesFirstuiUnixComponentsFuiRadioFuiRadio : VueComponent {
                     ""
                 }
             )
-        )), "style" to normalizeStyle(_ctx.getStyl), "onClick" to withModifiers(_ctx.radioClick, utsArrayOf(
+        )), "style" to _nS(_ctx.getStyl), "onClick" to withModifiers(_ctx.radioClick, _uA(
             "stop"
-        ))), utsArrayOf(
+        ))), _uA(
             if (isTrue(_ctx.`val` && _ctx.styleType == 1)) {
-                createElementVNode("view", utsMapOf("key" to 0, "class" to normalizeClass(utsArrayOf(
+                _cE("view", _uM("key" to 0, "class" to _nC(_uA(
                     "fui-check__mark",
-                    utsMapOf("fui-radio__mark-color" to (_ctx.checkMarkColor == ""))
-                )), "style" to normalizeStyle(_ctx.getMarkStyl)), null, 6)
+                    _uM("fui-radio__mark-color" to (_ctx.checkMarkColor == ""))
+                )), "style" to _nS(_ctx.getMarkStyl)), null, 6)
             } else {
-                createCommentVNode("v-if", true)
+                _cC("v-if", true)
             }
             ,
             if (isTrue(_ctx.`val` && _ctx.styleType == 2)) {
-                createElementVNode("view", utsMapOf("key" to 1, "class" to normalizeClass(utsArrayOf(
+                _cE("view", _uM("key" to 1, "class" to _nC(_uA(
                     "fui-check__mark-circle",
-                    utsMapOf("fui-radio__active-bgcolor" to (_ctx.checkMarkColor == ""))
-                )), "style" to normalizeStyle(_ctx.getCheckMarkStyl)), null, 6)
+                    _uM("fui-radio__active-bgcolor" to (_ctx.checkMarkColor == ""))
+                )), "style" to _nS(_ctx.getCheckMarkStyl)), null, 6)
             } else {
-                createCommentVNode("v-if", true)
+                _cC("v-if", true)
             }
-        ), 14, utsArrayOf(
+        ), 14, _uA(
             "onClick"
         ))
     }
@@ -150,7 +146,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiRadioFuiRadio : VueComponent {
     open var getMarkStyl: Any by `$data`
     @Suppress("USELESS_CAST")
     override fun data(): Map<String, Any?> {
-        return utsMapOf("val" to false, "styleVal" to false, "fuiLabel" to null as ComponentPublicInstance?, "fuiRadioGroup" to null as ComponentPublicInstance?, "getStyl" to computed<Any>(fun(): Any {
+        return _uM("val" to false, "styleVal" to false, "fuiLabel" to null as ComponentPublicInstance?, "fuiRadioGroup" to null as ComponentPublicInstance?, "getStyl" to computed<Any>(fun(): Any {
             val mp: Map<String, String> = Map()
             mp.set("transform", "scale(" + this.scaleRatio + ")")
             mp.set("border-radius", this.borderRadius)
@@ -250,19 +246,19 @@ open class GenUniModulesFirstuiUnixComponentsFuiRadioFuiRadio : VueComponent {
     companion object {
         var name = "fui-radio"
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("fui-radio__input" to padStyleMapOf(utsMapOf("width" to "40rpx", "height" to "40rpx", "borderTopWidth" to 1, "borderRightWidth" to 1, "borderBottomWidth" to 1, "borderLeftWidth" to 1, "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopLeftRadius" to 100, "borderTopRightRadius" to 100, "borderBottomRightRadius" to 100, "borderBottomLeftRadius" to 100, "display" to "flex", "boxSizing" to "border-box", "flexShrink" to 0, "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "center", "overflow" to "hidden", "position" to "relative")), "fui-radio__scale-left" to padStyleMapOf(utsMapOf("transformOrigin" to "0 center")), "fui-radio__scale-center" to padStyleMapOf(utsMapOf("transformOrigin" to "center center")), "fui-radio__scale-right" to padStyleMapOf(utsMapOf("transformOrigin" to "100% center")), "fui-radio__active-bgcolor" to padStyleMapOf(utsMapOf("!backgroundImage" to "none", "!backgroundColor" to "#465CFF")), "fui-radio__color" to padStyleMapOf(utsMapOf("!borderTopColor" to "#465CFF", "!borderRightColor" to "#465CFF", "!borderBottomColor" to "#465CFF", "!borderLeftColor" to "#465CFF")), "fui-radio__normal-border" to padStyleMapOf(utsMapOf("!borderTopColor" to "#CCCCCC", "!borderRightColor" to "#CCCCCC", "!borderBottomColor" to "#CCCCCC", "!borderLeftColor" to "#CCCCCC")), "fui-radio__background" to padStyleMapOf(utsMapOf("!backgroundImage" to "none", "!backgroundColor" to "#ffffff")), "fui-radio__mark-color" to padStyleMapOf(utsMapOf("!borderBottomColor" to "#ffffff", "!borderRightColor" to "#ffffff")), "fui-check__mark" to padStyleMapOf(utsMapOf("width" to "20rpx", "height" to "40rpx", "borderBottomStyle" to "solid", "borderBottomWidth" to 3, "borderBottomColor" to "#FFFFFF", "borderRightStyle" to "solid", "borderRightWidth" to 3, "borderRightColor" to "#FFFFFF", "boxSizing" to "border-box", "transform" to "rotate(45deg) scale(0.5)", "transformOrigin" to "54% 48%")), "fui-check__mark-circle" to padStyleMapOf(utsMapOf("width" to "16rpx", "height" to "16rpx", "borderTopLeftRadius" to "16rpx", "borderTopRightRadius" to "16rpx", "borderBottomRightRadius" to "16rpx", "borderBottomLeftRadius" to "16rpx")), "fui-radio__disabled" to padStyleMapOf(utsMapOf("opacity" to 0.6)))
+                return _uM("fui-radio__input" to _pS(_uM("width" to "40rpx", "height" to "40rpx", "borderTopWidth" to 1, "borderRightWidth" to 1, "borderBottomWidth" to 1, "borderLeftWidth" to 1, "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopLeftRadius" to 100, "borderTopRightRadius" to 100, "borderBottomRightRadius" to 100, "borderBottomLeftRadius" to 100, "display" to "flex", "boxSizing" to "border-box", "flexShrink" to 0, "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "center", "overflow" to "hidden", "position" to "relative")), "fui-radio__scale-left" to _pS(_uM("transformOrigin" to "0 center")), "fui-radio__scale-center" to _pS(_uM("transformOrigin" to "center center")), "fui-radio__scale-right" to _pS(_uM("transformOrigin" to "100% center")), "fui-radio__active-bgcolor" to _pS(_uM("!backgroundImage" to "none", "!backgroundColor" to "#465CFF")), "fui-radio__color" to _pS(_uM("!borderTopColor" to "#465CFF", "!borderRightColor" to "#465CFF", "!borderBottomColor" to "#465CFF", "!borderLeftColor" to "#465CFF")), "fui-radio__normal-border" to _pS(_uM("!borderTopColor" to "#CCCCCC", "!borderRightColor" to "#CCCCCC", "!borderBottomColor" to "#CCCCCC", "!borderLeftColor" to "#CCCCCC")), "fui-radio__background" to _pS(_uM("!backgroundImage" to "none", "!backgroundColor" to "#ffffff")), "fui-radio__mark-color" to _pS(_uM("!borderBottomColor" to "#ffffff", "!borderRightColor" to "#ffffff")), "fui-check__mark" to _pS(_uM("width" to "20rpx", "height" to "40rpx", "borderBottomStyle" to "solid", "borderBottomWidth" to 3, "borderBottomColor" to "#FFFFFF", "borderRightStyle" to "solid", "borderRightWidth" to 3, "borderRightColor" to "#FFFFFF", "boxSizing" to "border-box", "transform" to "rotate(45deg) scale(0.5)", "transformOrigin" to "54% 48%")), "fui-check__mark-circle" to _pS(_uM("width" to "16rpx", "height" to "16rpx", "borderTopLeftRadius" to "16rpx", "borderTopRightRadius" to "16rpx", "borderBottomRightRadius" to "16rpx", "borderBottomLeftRadius" to "16rpx")), "fui-radio__disabled" to _pS(_uM("opacity" to 0.6)))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf("value" to utsMapOf("type" to "String", "default" to ""), "checked" to utsMapOf("type" to "Boolean", "default" to false), "disabled" to utsMapOf("type" to "Boolean", "default" to false), "color" to utsMapOf("type" to "String", "default" to ""), "normalColor" to utsMapOf("type" to "String", "default" to ""), "borderColor" to utsMapOf("type" to "String", "default" to ""), "borderRadius" to utsMapOf("type" to "String", "default" to "100px"), "isCheckMark" to utsMapOf("type" to "Boolean", "default" to false), "checkMarkColor" to utsMapOf("type" to "String", "default" to ""), "scaleRatio" to utsMapOf("type" to "Number", "default" to 1), "scaleAlign" to utsMapOf("type" to "String", "default" to "center"), "styleType" to utsMapOf("type" to "Number", "default" to 1)))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM("value" to _uM("type" to "String", "default" to ""), "checked" to _uM("type" to "Boolean", "default" to false), "disabled" to _uM("type" to "Boolean", "default" to false), "color" to _uM("type" to "String", "default" to ""), "normalColor" to _uM("type" to "String", "default" to ""), "borderColor" to _uM("type" to "String", "default" to ""), "borderRadius" to _uM("type" to "String", "default" to "100px"), "isCheckMark" to _uM("type" to "Boolean", "default" to false), "checkMarkColor" to _uM("type" to "String", "default" to ""), "scaleRatio" to _uM("type" to "Number", "default" to 1), "scaleAlign" to _uM("type" to "String", "default" to "center"), "styleType" to _uM("type" to "Number", "default" to 1)))
+        var propsNeedCastKeys = _uA(
             "value",
             "checked",
             "disabled",
@@ -276,6 +272,6 @@ open class GenUniModulesFirstuiUnixComponentsFuiRadioFuiRadio : VueComponent {
             "scaleAlign",
             "styleType"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

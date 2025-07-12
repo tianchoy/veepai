@@ -102,11 +102,11 @@ export default __sfc__
 function GenUniModulesFirstuiUnixComponentsFuiIconFuiIconRender(this: InstanceType<typeof __sfc__>): any | null {
 const _ctx = this
 const _cache = this.$.renderCache
-  return createElementVNode("text", utsMapOf({
-    style: normalizeStyle(_ctx.getIconStyl),
-    class: normalizeClass(["fui-icon", utsMapOf({'fui-icon__fontsize':_ctx.isBind,'fui-icon__active-color':_ctx.primary && _ctx.color=='','fui-icon__color': _ctx.color=='' && !_ctx.primary })]),
+  return _cE("text", _uM({
+    style: _nS(_ctx.getIconStyl),
+    class: _nC(["fui-icon", _uM({'fui-icon__fontsize':_ctx.isBind,'fui-icon__active-color':_ctx.primary && _ctx.color=='','fui-icon__color': _ctx.color=='' && !_ctx.primary })]),
     onClick: _ctx.handleClick
-  }), toDisplayString(_ctx.getIcon), 15 /* TEXT, CLASS, STYLE, PROPS */, ["onClick"])
+  }), _tD(_ctx.getIcon), 15 /* TEXT, CLASS, STYLE, PROPS */, ["onClick"])
 }
 export type FuiIconComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesFirstuiUnixComponentsFuiIconFuiIconStyles = [utsMapOf([["fui-icon", padStyleMapOf(utsMapOf([["fontFamily", "fuiFont"]]))], ["fui-icon__color", padStyleMapOf(utsMapOf([["!color", "#333333"]]))], ["fui-icon__active-color", padStyleMapOf(utsMapOf([["!color", "#465CFF"]]))], ["fui-icon__fontsize", padStyleMapOf(utsMapOf([["!fontSize", "64rpx"], ["!lineHeight", "64rpx"]]))], ["@FONT-FACE", utsMapOf([["0", utsMapOf([["fontFamily", "fuiFont"], ["src", "url(\"/assets/fui-icon.9165208c.ttf\")"]])]])]])]
+const GenUniModulesFirstuiUnixComponentsFuiIconFuiIconStyles = [_uM([["fui-icon", _pS(_uM([["fontFamily", "fuiFont"]]))], ["fui-icon__color", _pS(_uM([["!color", "#333333"]]))], ["fui-icon__active-color", _pS(_uM([["!color", "#465CFF"]]))], ["fui-icon__fontsize", _pS(_uM([["!fontSize", "64rpx"], ["!lineHeight", "64rpx"]]))], ["@FONT-FACE", _uM([["0", _uM([["fontFamily", "fuiFont"], ["src", "url(\"/assets/fui-icon.9165208c.ttf\")"]])]])]])]

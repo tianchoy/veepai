@@ -12,10 +12,6 @@ import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
 import java.math.BigDecimal
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.chooseFile as uni_chooseFile
 import io.dcloud.uniapp.extapi.chooseImage as uni_chooseImage
 import io.dcloud.uniapp.extapi.chooseMedia as uni_chooseMedia
@@ -80,7 +76,7 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
     val hosts: String = "127.0.0.1,192.168.3.34"
     val port: String = "8090"
-    val id: String = "app-android_Z86HMS"
+    val id: String = "app-android_fCzUmf"
     if (hosts == "" || port == "" || id == "") {
         return UTSPromise.resolve(false)
     }
@@ -146,18 +142,18 @@ open class GenApp : BaseApp {
     }
     companion object {
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("uni-row" to padStyleMapOf(utsMapOf("flexDirection" to "row")), "uni-column" to padStyleMapOf(utsMapOf("flexDirection" to "column")))
+                return _uM("uni-row" to _pS(_uM("flexDirection" to "row")), "uni-column" to _pS(_uM("flexDirection" to "column")))
             }
     }
 }
 val GenAppClass = CreateVueAppComponent(GenApp::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "app", name = "", inheritAttrs = true, inject = Map(), props = Map(), propsNeedCastKeys = utsArrayOf(), emits = Map(), components = Map(), styles = GenApp.styles)
+    return VueComponentOptions(type = "app", name = "", inheritAttrs = true, inject = Map(), props = Map(), propsNeedCastKeys = _uA(), emits = Map(), components = Map(), styles = GenApp.styles)
 }
 , fun(instance): GenApp {
     return GenApp(instance)
@@ -230,147 +226,147 @@ open class DateStriPDayReactiveObject : DateStriPDay, IUTSReactive<DateStriPDay>
     }
     override var date: Date
         get() {
-            return trackReactiveGet(__v_raw, "date", __v_raw.date, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "date", __v_raw.date, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("date")) {
+            if (!__v_canSet("date")) {
                 return
             }
             val oldValue = __v_raw.date
             __v_raw.date = value
-            triggerReactiveSet(__v_raw, "date", oldValue, value)
+            _tRS(__v_raw, "date", oldValue, value)
         }
     override var key: String
         get() {
-            return trackReactiveGet(__v_raw, "key", __v_raw.key, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "key", __v_raw.key, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("key")) {
+            if (!__v_canSet("key")) {
                 return
             }
             val oldValue = __v_raw.key
             __v_raw.key = value
-            triggerReactiveSet(__v_raw, "key", oldValue, value)
+            _tRS(__v_raw, "key", oldValue, value)
         }
     override var day: Number
         get() {
-            return trackReactiveGet(__v_raw, "day", __v_raw.day, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "day", __v_raw.day, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("day")) {
+            if (!__v_canSet("day")) {
                 return
             }
             val oldValue = __v_raw.day
             __v_raw.day = value
-            triggerReactiveSet(__v_raw, "day", oldValue, value)
+            _tRS(__v_raw, "day", oldValue, value)
         }
     override var year: Number
         get() {
-            return trackReactiveGet(__v_raw, "year", __v_raw.year, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "year", __v_raw.year, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("year")) {
+            if (!__v_canSet("year")) {
                 return
             }
             val oldValue = __v_raw.year
             __v_raw.year = value
-            triggerReactiveSet(__v_raw, "year", oldValue, value)
+            _tRS(__v_raw, "year", oldValue, value)
         }
     override var month: Number
         get() {
-            return trackReactiveGet(__v_raw, "month", __v_raw.month, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "month", __v_raw.month, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("month")) {
+            if (!__v_canSet("month")) {
                 return
             }
             val oldValue = __v_raw.month
             __v_raw.month = value
-            triggerReactiveSet(__v_raw, "month", oldValue, value)
+            _tRS(__v_raw, "month", oldValue, value)
         }
     override var text: String
         get() {
-            return trackReactiveGet(__v_raw, "text", __v_raw.text, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "text", __v_raw.text, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("text")) {
+            if (!__v_canSet("text")) {
                 return
             }
             val oldValue = __v_raw.text
             __v_raw.text = value
-            triggerReactiveSet(__v_raw, "text", oldValue, value)
+            _tRS(__v_raw, "text", oldValue, value)
         }
     override var type: DateType
         get() {
-            return trackReactiveGet(__v_raw, "type", __v_raw.type, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "type", __v_raw.type, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("type")) {
+            if (!__v_canSet("type")) {
                 return
             }
             val oldValue = __v_raw.type
             __v_raw.type = value
-            triggerReactiveSet(__v_raw, "type", oldValue, value)
+            _tRS(__v_raw, "type", oldValue, value)
         }
     override var prefix: String
         get() {
-            return trackReactiveGet(__v_raw, "prefix", __v_raw.prefix, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "prefix", __v_raw.prefix, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("prefix")) {
+            if (!__v_canSet("prefix")) {
                 return
             }
             val oldValue = __v_raw.prefix
             __v_raw.prefix = value
-            triggerReactiveSet(__v_raw, "prefix", oldValue, value)
+            _tRS(__v_raw, "prefix", oldValue, value)
         }
     override var prefixStyle: UTSJSONObject?
         get() {
-            return trackReactiveGet(__v_raw, "prefixStyle", __v_raw.prefixStyle, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "prefixStyle", __v_raw.prefixStyle, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("prefixStyle")) {
+            if (!__v_canSet("prefixStyle")) {
                 return
             }
             val oldValue = __v_raw.prefixStyle
             __v_raw.prefixStyle = value
-            triggerReactiveSet(__v_raw, "prefixStyle", oldValue, value)
+            _tRS(__v_raw, "prefixStyle", oldValue, value)
         }
     override var textStyle: UTSJSONObject?
         get() {
-            return trackReactiveGet(__v_raw, "textStyle", __v_raw.textStyle, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "textStyle", __v_raw.textStyle, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("textStyle")) {
+            if (!__v_canSet("textStyle")) {
                 return
             }
             val oldValue = __v_raw.textStyle
             __v_raw.textStyle = value
-            triggerReactiveSet(__v_raw, "textStyle", oldValue, value)
+            _tRS(__v_raw, "textStyle", oldValue, value)
         }
     override var suffix: String?
         get() {
-            return trackReactiveGet(__v_raw, "suffix", __v_raw.suffix, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "suffix", __v_raw.suffix, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("suffix")) {
+            if (!__v_canSet("suffix")) {
                 return
             }
             val oldValue = __v_raw.suffix
             __v_raw.suffix = value
-            triggerReactiveSet(__v_raw, "suffix", oldValue, value)
+            _tRS(__v_raw, "suffix", oldValue, value)
         }
     override var suffixStyle: UTSJSONObject?
         get() {
-            return trackReactiveGet(__v_raw, "suffixStyle", __v_raw.suffixStyle, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "suffixStyle", __v_raw.suffixStyle, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("suffixStyle")) {
+            if (!__v_canSet("suffixStyle")) {
                 return
             }
             val oldValue = __v_raw.suffixStyle
             __v_raw.suffixStyle = value
-            triggerReactiveSet(__v_raw, "suffixStyle", oldValue, value)
+            _tRS(__v_raw, "suffixStyle", oldValue, value)
         }
 }
 open class WeekDateCollection (
@@ -465,7 +461,7 @@ fun isString(str: Any?): Boolean {
     return UTSAndroid.`typeof`(str) == "string"
 }
 fun isNumber(value: Any?): Boolean {
-    return utsArrayOf(
+    return _uA(
         "Byte",
         "UByte",
         "Short",
@@ -866,12 +862,12 @@ open class Calendar : IUTSSourceMap {
     private var currentMonth: Number = 0
     private var currentYear: Number = 0
     private var monthDateCache: Map<String, LMonthData>
-    private var week: UTSArray<String> = utsArrayOf()
+    private var week: UTSArray<String> = _uA()
     open var selectDate: LDay? = null
     private var containerHeight: Number = 0
     private var containerWidth: Number = 0
-    private var arrowIcons: UTSArray<ArrowIcon> = utsArrayOf()
-    open var opt: LOptions = LOptions(canSupplement = false, isFullCalendar = true, yearMonth = "", signedDates = utsArrayOf(), week = utsArrayOf(
+    private var arrowIcons: UTSArray<ArrowIcon> = _uA()
+    open var opt: LOptions = LOptions(canSupplement = false, isFullCalendar = true, yearMonth = "", signedDates = _uA(), week = _uA(
         "周日",
         "周一",
         "周二",
@@ -886,14 +882,14 @@ open class Calendar : IUTSSourceMap {
         this.currentMonth = date.getMonth() + 1
         this.today = date.getDate()
         this.monthDateCache = Map<String, LMonthData>()
-        this.week = this.opt.week ?: utsArrayOf()
+        this.week = this.opt.week ?: _uA()
     }
     open val signedDates: UTSArray<Number>
         get(): UTSArray<Number> {
             if (this.opt.signedDates == null) {
-                return utsArrayOf()
+                return _uA()
             }
-            val values: UTSArray<Number> = utsArrayOf()
+            val values: UTSArray<Number> = _uA()
             this.opt.signedDates!!.forEach(fun(item){
                 val _item_split_map = item.split("-").map(fun(v: String): Number {
                     return parseInt(v)
@@ -1024,7 +1020,7 @@ open class Calendar : IUTSSourceMap {
         if (this.monthDateCache.has(key)) {
             return this.monthDateCache.get(key)!!
         }
-        val arr: UTSArray<LDay> = utsArrayOf()
+        val arr: UTSArray<LDay> = _uA()
         val days = this.getMonthDayLength(year, month)
         val firstday = this.getFirstDayOfWeek(year, month)
         val beforeEmptyLength = (firstday + this.opt.weekStartsOn!!) % 7
@@ -1556,127 +1552,127 @@ open class DayutsFormatsReactiveObject : DayutsFormats, IUTSReactive<DayutsForma
     }
     override var LT: String
         get() {
-            return trackReactiveGet(__v_raw, "LT", __v_raw.LT, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "LT", __v_raw.LT, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("LT")) {
+            if (!__v_canSet("LT")) {
                 return
             }
             val oldValue = __v_raw.LT
             __v_raw.LT = value
-            triggerReactiveSet(__v_raw, "LT", oldValue, value)
+            _tRS(__v_raw, "LT", oldValue, value)
         }
     override var LTS: String
         get() {
-            return trackReactiveGet(__v_raw, "LTS", __v_raw.LTS, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "LTS", __v_raw.LTS, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("LTS")) {
+            if (!__v_canSet("LTS")) {
                 return
             }
             val oldValue = __v_raw.LTS
             __v_raw.LTS = value
-            triggerReactiveSet(__v_raw, "LTS", oldValue, value)
+            _tRS(__v_raw, "LTS", oldValue, value)
         }
     override var L: String
         @JvmName("getL0")
         get() {
-            return trackReactiveGet(__v_raw, "L", __v_raw.L, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "L", __v_raw.L, __v_isReadonly, __v_isShallow)
         }
         @JvmName("setL0")
         set(value) {
-            if (!this.__v_canSet("L")) {
+            if (!__v_canSet("L")) {
                 return
             }
             val oldValue = __v_raw.L
             __v_raw.L = value
-            triggerReactiveSet(__v_raw, "L", oldValue, value)
+            _tRS(__v_raw, "L", oldValue, value)
         }
     override var LL: String
         get() {
-            return trackReactiveGet(__v_raw, "LL", __v_raw.LL, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "LL", __v_raw.LL, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("LL")) {
+            if (!__v_canSet("LL")) {
                 return
             }
             val oldValue = __v_raw.LL
             __v_raw.LL = value
-            triggerReactiveSet(__v_raw, "LL", oldValue, value)
+            _tRS(__v_raw, "LL", oldValue, value)
         }
     override var LLL: String
         get() {
-            return trackReactiveGet(__v_raw, "LLL", __v_raw.LLL, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "LLL", __v_raw.LLL, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("LLL")) {
+            if (!__v_canSet("LLL")) {
                 return
             }
             val oldValue = __v_raw.LLL
             __v_raw.LLL = value
-            triggerReactiveSet(__v_raw, "LLL", oldValue, value)
+            _tRS(__v_raw, "LLL", oldValue, value)
         }
     override var LLLL: String
         get() {
-            return trackReactiveGet(__v_raw, "LLLL", __v_raw.LLLL, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "LLLL", __v_raw.LLLL, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("LLLL")) {
+            if (!__v_canSet("LLLL")) {
                 return
             }
             val oldValue = __v_raw.LLLL
             __v_raw.LLLL = value
-            triggerReactiveSet(__v_raw, "LLLL", oldValue, value)
+            _tRS(__v_raw, "LLLL", oldValue, value)
         }
     override var l: String
         @JvmName("getL1")
         get() {
-            return trackReactiveGet(__v_raw, "l", __v_raw.l, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "l", __v_raw.l, __v_isReadonly, __v_isShallow)
         }
         @JvmName("setL1")
         set(value) {
-            if (!this.__v_canSet("l")) {
+            if (!__v_canSet("l")) {
                 return
             }
             val oldValue = __v_raw.l
             __v_raw.l = value
-            triggerReactiveSet(__v_raw, "l", oldValue, value)
+            _tRS(__v_raw, "l", oldValue, value)
         }
     override var ll: String
         get() {
-            return trackReactiveGet(__v_raw, "ll", __v_raw.ll, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "ll", __v_raw.ll, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("ll")) {
+            if (!__v_canSet("ll")) {
                 return
             }
             val oldValue = __v_raw.ll
             __v_raw.ll = value
-            triggerReactiveSet(__v_raw, "ll", oldValue, value)
+            _tRS(__v_raw, "ll", oldValue, value)
         }
     override var lll: String
         get() {
-            return trackReactiveGet(__v_raw, "lll", __v_raw.lll, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "lll", __v_raw.lll, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("lll")) {
+            if (!__v_canSet("lll")) {
                 return
             }
             val oldValue = __v_raw.lll
             __v_raw.lll = value
-            triggerReactiveSet(__v_raw, "lll", oldValue, value)
+            _tRS(__v_raw, "lll", oldValue, value)
         }
     override var llll: String
         get() {
-            return trackReactiveGet(__v_raw, "llll", __v_raw.llll, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "llll", __v_raw.llll, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("llll")) {
+            if (!__v_canSet("llll")) {
                 return
             }
             val oldValue = __v_raw.llll
             __v_raw.llll = value
-            triggerReactiveSet(__v_raw, "llll", oldValue, value)
+            _tRS(__v_raw, "llll", oldValue, value)
         }
 }
 open class DayutsRelativeTime (
@@ -1734,163 +1730,163 @@ open class DayutsRelativeTimeReactiveObject : DayutsRelativeTime, IUTSReactive<D
     }
     override var future: String
         get() {
-            return trackReactiveGet(__v_raw, "future", __v_raw.future, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "future", __v_raw.future, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("future")) {
+            if (!__v_canSet("future")) {
                 return
             }
             val oldValue = __v_raw.future
             __v_raw.future = value
-            triggerReactiveSet(__v_raw, "future", oldValue, value)
+            _tRS(__v_raw, "future", oldValue, value)
         }
     override var past: String
         get() {
-            return trackReactiveGet(__v_raw, "past", __v_raw.past, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "past", __v_raw.past, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("past")) {
+            if (!__v_canSet("past")) {
                 return
             }
             val oldValue = __v_raw.past
             __v_raw.past = value
-            triggerReactiveSet(__v_raw, "past", oldValue, value)
+            _tRS(__v_raw, "past", oldValue, value)
         }
     override var s: String
         get() {
-            return trackReactiveGet(__v_raw, "s", __v_raw.s, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "s", __v_raw.s, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("s")) {
+            if (!__v_canSet("s")) {
                 return
             }
             val oldValue = __v_raw.s
             __v_raw.s = value
-            triggerReactiveSet(__v_raw, "s", oldValue, value)
+            _tRS(__v_raw, "s", oldValue, value)
         }
     override var m: String
         @JvmName("getM0")
         get() {
-            return trackReactiveGet(__v_raw, "m", __v_raw.m, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "m", __v_raw.m, __v_isReadonly, __v_isShallow)
         }
         @JvmName("setM0")
         set(value) {
-            if (!this.__v_canSet("m")) {
+            if (!__v_canSet("m")) {
                 return
             }
             val oldValue = __v_raw.m
             __v_raw.m = value
-            triggerReactiveSet(__v_raw, "m", oldValue, value)
+            _tRS(__v_raw, "m", oldValue, value)
         }
     override var mm: String
         get() {
-            return trackReactiveGet(__v_raw, "mm", __v_raw.mm, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "mm", __v_raw.mm, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("mm")) {
+            if (!__v_canSet("mm")) {
                 return
             }
             val oldValue = __v_raw.mm
             __v_raw.mm = value
-            triggerReactiveSet(__v_raw, "mm", oldValue, value)
+            _tRS(__v_raw, "mm", oldValue, value)
         }
     override var h: String
         get() {
-            return trackReactiveGet(__v_raw, "h", __v_raw.h, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "h", __v_raw.h, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("h")) {
+            if (!__v_canSet("h")) {
                 return
             }
             val oldValue = __v_raw.h
             __v_raw.h = value
-            triggerReactiveSet(__v_raw, "h", oldValue, value)
+            _tRS(__v_raw, "h", oldValue, value)
         }
     override var hh: String
         get() {
-            return trackReactiveGet(__v_raw, "hh", __v_raw.hh, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "hh", __v_raw.hh, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("hh")) {
+            if (!__v_canSet("hh")) {
                 return
             }
             val oldValue = __v_raw.hh
             __v_raw.hh = value
-            triggerReactiveSet(__v_raw, "hh", oldValue, value)
+            _tRS(__v_raw, "hh", oldValue, value)
         }
     override var d: String
         get() {
-            return trackReactiveGet(__v_raw, "d", __v_raw.d, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "d", __v_raw.d, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("d")) {
+            if (!__v_canSet("d")) {
                 return
             }
             val oldValue = __v_raw.d
             __v_raw.d = value
-            triggerReactiveSet(__v_raw, "d", oldValue, value)
+            _tRS(__v_raw, "d", oldValue, value)
         }
     override var dd: String
         get() {
-            return trackReactiveGet(__v_raw, "dd", __v_raw.dd, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "dd", __v_raw.dd, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("dd")) {
+            if (!__v_canSet("dd")) {
                 return
             }
             val oldValue = __v_raw.dd
             __v_raw.dd = value
-            triggerReactiveSet(__v_raw, "dd", oldValue, value)
+            _tRS(__v_raw, "dd", oldValue, value)
         }
     override var M: String
         @JvmName("getM1")
         get() {
-            return trackReactiveGet(__v_raw, "M", __v_raw.M, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "M", __v_raw.M, __v_isReadonly, __v_isShallow)
         }
         @JvmName("setM1")
         set(value) {
-            if (!this.__v_canSet("M")) {
+            if (!__v_canSet("M")) {
                 return
             }
             val oldValue = __v_raw.M
             __v_raw.M = value
-            triggerReactiveSet(__v_raw, "M", oldValue, value)
+            _tRS(__v_raw, "M", oldValue, value)
         }
     override var MM: String
         get() {
-            return trackReactiveGet(__v_raw, "MM", __v_raw.MM, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "MM", __v_raw.MM, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("MM")) {
+            if (!__v_canSet("MM")) {
                 return
             }
             val oldValue = __v_raw.MM
             __v_raw.MM = value
-            triggerReactiveSet(__v_raw, "MM", oldValue, value)
+            _tRS(__v_raw, "MM", oldValue, value)
         }
     override var y: String
         get() {
-            return trackReactiveGet(__v_raw, "y", __v_raw.y, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "y", __v_raw.y, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("y")) {
+            if (!__v_canSet("y")) {
                 return
             }
             val oldValue = __v_raw.y
             __v_raw.y = value
-            triggerReactiveSet(__v_raw, "y", oldValue, value)
+            _tRS(__v_raw, "y", oldValue, value)
         }
     override var yy: String
         get() {
-            return trackReactiveGet(__v_raw, "yy", __v_raw.yy, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "yy", __v_raw.yy, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("yy")) {
+            if (!__v_canSet("yy")) {
                 return
             }
             val oldValue = __v_raw.yy
             __v_raw.yy = value
-            triggerReactiveSet(__v_raw, "yy", oldValue, value)
+            _tRS(__v_raw, "yy", oldValue, value)
         }
 }
 open class DayutsLocale (
@@ -1933,123 +1929,123 @@ open class DayutsLocaleReactiveObject : DayutsLocale, IUTSReactive<DayutsLocale>
     }
     override var name: String
         get() {
-            return trackReactiveGet(__v_raw, "name", __v_raw.name, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "name", __v_raw.name, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("name")) {
+            if (!__v_canSet("name")) {
                 return
             }
             val oldValue = __v_raw.name
             __v_raw.name = value
-            triggerReactiveSet(__v_raw, "name", oldValue, value)
+            _tRS(__v_raw, "name", oldValue, value)
         }
     override var weekdays: UTSArray<String>
         get() {
-            return trackReactiveGet(__v_raw, "weekdays", __v_raw.weekdays, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "weekdays", __v_raw.weekdays, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("weekdays")) {
+            if (!__v_canSet("weekdays")) {
                 return
             }
             val oldValue = __v_raw.weekdays
             __v_raw.weekdays = value
-            triggerReactiveSet(__v_raw, "weekdays", oldValue, value)
+            _tRS(__v_raw, "weekdays", oldValue, value)
         }
     override var weekdaysShort: UTSArray<String>?
         get() {
-            return trackReactiveGet(__v_raw, "weekdaysShort", __v_raw.weekdaysShort, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "weekdaysShort", __v_raw.weekdaysShort, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("weekdaysShort")) {
+            if (!__v_canSet("weekdaysShort")) {
                 return
             }
             val oldValue = __v_raw.weekdaysShort
             __v_raw.weekdaysShort = value
-            triggerReactiveSet(__v_raw, "weekdaysShort", oldValue, value)
+            _tRS(__v_raw, "weekdaysShort", oldValue, value)
         }
     override var weekdaysMin: UTSArray<String>?
         get() {
-            return trackReactiveGet(__v_raw, "weekdaysMin", __v_raw.weekdaysMin, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "weekdaysMin", __v_raw.weekdaysMin, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("weekdaysMin")) {
+            if (!__v_canSet("weekdaysMin")) {
                 return
             }
             val oldValue = __v_raw.weekdaysMin
             __v_raw.weekdaysMin = value
-            triggerReactiveSet(__v_raw, "weekdaysMin", oldValue, value)
+            _tRS(__v_raw, "weekdaysMin", oldValue, value)
         }
     override var months: UTSArray<String>
         get() {
-            return trackReactiveGet(__v_raw, "months", __v_raw.months, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "months", __v_raw.months, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("months")) {
+            if (!__v_canSet("months")) {
                 return
             }
             val oldValue = __v_raw.months
             __v_raw.months = value
-            triggerReactiveSet(__v_raw, "months", oldValue, value)
+            _tRS(__v_raw, "months", oldValue, value)
         }
     override var monthsShort: UTSArray<String>?
         get() {
-            return trackReactiveGet(__v_raw, "monthsShort", __v_raw.monthsShort, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "monthsShort", __v_raw.monthsShort, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("monthsShort")) {
+            if (!__v_canSet("monthsShort")) {
                 return
             }
             val oldValue = __v_raw.monthsShort
             __v_raw.monthsShort = value
-            triggerReactiveSet(__v_raw, "monthsShort", oldValue, value)
+            _tRS(__v_raw, "monthsShort", oldValue, value)
         }
     override var weekStart: Number?
         get() {
-            return trackReactiveGet(__v_raw, "weekStart", __v_raw.weekStart, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "weekStart", __v_raw.weekStart, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("weekStart")) {
+            if (!__v_canSet("weekStart")) {
                 return
             }
             val oldValue = __v_raw.weekStart
             __v_raw.weekStart = value
-            triggerReactiveSet(__v_raw, "weekStart", oldValue, value)
+            _tRS(__v_raw, "weekStart", oldValue, value)
         }
     override var yearStart: Number?
         get() {
-            return trackReactiveGet(__v_raw, "yearStart", __v_raw.yearStart, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "yearStart", __v_raw.yearStart, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("yearStart")) {
+            if (!__v_canSet("yearStart")) {
                 return
             }
             val oldValue = __v_raw.yearStart
             __v_raw.yearStart = value
-            triggerReactiveSet(__v_raw, "yearStart", oldValue, value)
+            _tRS(__v_raw, "yearStart", oldValue, value)
         }
     override var formats: DayutsFormats?
         get() {
-            return trackReactiveGet(__v_raw, "formats", __v_raw.formats, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "formats", __v_raw.formats, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("formats")) {
+            if (!__v_canSet("formats")) {
                 return
             }
             val oldValue = __v_raw.formats
             __v_raw.formats = value
-            triggerReactiveSet(__v_raw, "formats", oldValue, value)
+            _tRS(__v_raw, "formats", oldValue, value)
         }
     override var relativeTime: DayutsRelativeTime?
         get() {
-            return trackReactiveGet(__v_raw, "relativeTime", __v_raw.relativeTime, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "relativeTime", __v_raw.relativeTime, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("relativeTime")) {
+            if (!__v_canSet("relativeTime")) {
                 return
             }
             val oldValue = __v_raw.relativeTime
             __v_raw.relativeTime = value
-            triggerReactiveSet(__v_raw, "relativeTime", oldValue, value)
+            _tRS(__v_raw, "relativeTime", oldValue, value)
         }
 }
 open class DayutsObject (
@@ -2072,7 +2068,7 @@ open class DayutsObject (
         return UTSSourceMapPosition("DayutsObject", "uni_modules/lime-dayuts/utssdk/interface.uts", 166, 13)
     }
 }
-val default6 = DayutsLocale(name = "en", weekdays = utsArrayOf(
+val default6 = DayutsLocale(name = "en", weekdays = _uA(
     "Sunday",
     "Monday",
     "Tuesday",
@@ -2080,7 +2076,7 @@ val default6 = DayutsLocale(name = "en", weekdays = utsArrayOf(
     "Thursday",
     "Friday",
     "Saturday"
-), months = utsArrayOf(
+), months = _uA(
     "January",
     "February",
     "March",
@@ -2094,7 +2090,7 @@ val default6 = DayutsLocale(name = "en", weekdays = utsArrayOf(
     "November",
     "December"
 ), relativeTime = DayutsRelativeTime(future = "in %s", past = "%s ago", s = "a few seconds", m = "a minute", mm = "%d minutes", h = "an hour", hh = "%d hours", d = "a day", dd = "%d days", M = "a month", MM = "%d months", y = "a year", yy = "%d years"), ordinal = fun(n: Number, _: String): String {
-    val s = utsArrayOf(
+    val s = _uA(
         "th",
         "st",
         "nd",
@@ -2114,7 +2110,7 @@ val default6 = DayutsLocale(name = "en", weekdays = utsArrayOf(
     return "[" + n + s[k] + "]"
 }
 )
-val locale = DayutsLocale(name = "zh-cn", weekdays = utsArrayOf(
+val locale = DayutsLocale(name = "zh-cn", weekdays = _uA(
     "星期日",
     "星期一",
     "星期二",
@@ -2122,7 +2118,7 @@ val locale = DayutsLocale(name = "zh-cn", weekdays = utsArrayOf(
     "星期四",
     "星期五",
     "星期六"
-), weekdaysShort = utsArrayOf(
+), weekdaysShort = _uA(
     "周日",
     "周一",
     "周二",
@@ -2130,7 +2126,7 @@ val locale = DayutsLocale(name = "zh-cn", weekdays = utsArrayOf(
     "周四",
     "周五",
     "周六"
-), weekdaysMin = utsArrayOf(
+), weekdaysMin = _uA(
     "日",
     "一",
     "二",
@@ -2138,7 +2134,7 @@ val locale = DayutsLocale(name = "zh-cn", weekdays = utsArrayOf(
     "四",
     "五",
     "六"
-), months = utsArrayOf(
+), months = _uA(
     "一月",
     "二月",
     "三月",
@@ -2151,7 +2147,7 @@ val locale = DayutsLocale(name = "zh-cn", weekdays = utsArrayOf(
     "十月",
     "十一月",
     "十二月"
-), monthsShort = utsArrayOf(
+), monthsShort = _uA(
     "1月",
     "2月",
     "3月",
@@ -2216,27 +2212,27 @@ open class LocaleStateReactiveObject : LocaleState, IUTSReactive<LocaleState> {
     }
     override var lang: String
         get() {
-            return trackReactiveGet(__v_raw, "lang", __v_raw.lang, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "lang", __v_raw.lang, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("lang")) {
+            if (!__v_canSet("lang")) {
                 return
             }
             val oldValue = __v_raw.lang
             __v_raw.lang = value
-            triggerReactiveSet(__v_raw, "lang", oldValue, value)
+            _tRS(__v_raw, "lang", oldValue, value)
         }
     override var locales: Map<String, DayutsLocale>
         get() {
-            return trackReactiveGet(__v_raw, "locales", __v_raw.locales, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "locales", __v_raw.locales, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("locales")) {
+            if (!__v_canSet("locales")) {
                 return
             }
             val oldValue = __v_raw.locales
             __v_raw.locales = value
-            triggerReactiveSet(__v_raw, "locales", oldValue, value)
+            _tRS(__v_raw, "locales", oldValue, value)
         }
 }
 var localeState = reactive(LocaleState(lang = "en", locales = localesMap))
@@ -2261,7 +2257,7 @@ open class DayutsIntl : IUTSSourceMap {
             if (localeState.locales.has(locale)) {
                 localeState.lang = locale
             } else {
-                var list: UTSArray<String> = utsArrayOf()
+                var list: UTSArray<String> = _uA()
                 localeState.locales.forEach(fun(_: Any, key: String) {
                     list.push(key)
                 }
@@ -2346,7 +2342,7 @@ fun padZoneStr(instance: Dayuts): String {
     ) + padStart(hourOffset.toString(10), 2, "0") + ":" + padStart(minuteOffset.toString(10), 2, "0")
 }
 fun isNumber1(value: Any?): Boolean {
-    return utsArrayOf(
+    return _uA(
         "Byte",
         "UByte",
         "Short",
@@ -2424,44 +2420,44 @@ fun wrapper(date: Any, instance: Dayuts): Dayuts {
     return dayuts(date, instance.`$L`)
 }
 fun prettyUnit(u: String): DayutsUnit {
-    val special = Map<String, String>(utsArrayOf(
-        utsArrayOf(
+    val special = Map<String, String>(_uA(
+        _uA(
             "M",
             M
         ),
-        utsArrayOf(
+        _uA(
             "y",
             Y
         ),
-        utsArrayOf(
+        _uA(
             "w",
             W
         ),
-        utsArrayOf(
+        _uA(
             "d",
             D
         ),
-        utsArrayOf(
+        _uA(
             "D",
             DATE
         ),
-        utsArrayOf(
+        _uA(
             "h",
             H
         ),
-        utsArrayOf(
+        _uA(
             "m",
             MIN
         ),
-        utsArrayOf(
+        _uA(
             "s",
             S
         ),
-        utsArrayOf(
+        _uA(
             "ms",
             MS
         ),
-        utsArrayOf(
+        _uA(
             "Q",
             Q
         )
@@ -2784,13 +2780,13 @@ open class Dayuts : IUTSSourceMap {
             }
         }
         val instanceFactorySet = fun(method: String, slice: Number): Dayuts {
-            val argumentStart: UTSArray<Number> = utsArrayOf(
+            val argumentStart: UTSArray<Number> = _uA(
                 0,
                 0,
                 0,
                 0
             )
-            val argumentEnd: UTSArray<Number> = utsArrayOf(
+            val argumentEnd: UTSArray<Number> = _uA(
                 23,
                 59,
                 59,
@@ -3042,16 +3038,16 @@ open class Dayuts : IUTSSourceMap {
         if (unit == W) {
             return instanceFactorySet(7)
         }
-        val steps = Map<String, Number>(utsArrayOf(
-            utsArrayOf(
+        val steps = Map<String, Number>(_uA(
+            _uA(
                 MIN,
                 MILLISECONDS_A_MINUTE
             ),
-            utsArrayOf(
+            _uA(
                 H,
                 MILLISECONDS_A_HOUR
             ),
-            utsArrayOf(
+            _uA(
                 S,
                 MILLISECONDS_A_SECOND
             )
@@ -3077,7 +3073,7 @@ open class Dayuts : IUTSSourceMap {
         val weekdays = locale.weekdays
         val months = locale.months
         val meridiem = locale.meridiem
-        fun getShort(arr: UTSArray<String>?, index: Number, full: UTSArray<String> = utsArrayOf(), length: Number = 0): String {
+        fun getShort(arr: UTSArray<String>?, index: Number, full: UTSArray<String> = _uA(), length: Number = 0): String {
             if (arr != null && arr.length >= index) {
                 return arr[index]
             } else if (full.length >= index) {
@@ -3208,7 +3204,7 @@ open class Dayuts : IUTSSourceMap {
         return DayutsObject(years = this.`$y`, months = this.`$M`, date = this.`$D`, hours = this.`$H`, minutes = this.`$m`, seconds = this.`$s`, milliseconds = this.`$ms`)
     }
     open fun toArray(): UTSArray<Number> {
-        return utsArrayOf(
+        return _uA(
             this.`$y`,
             this.`$M`,
             this.`$D`,
@@ -3282,7 +3278,7 @@ open class Dayuts : IUTSSourceMap {
         if (loc == null) {
             return ""
         }
-        val T1 = utsArrayOf(
+        val T1 = _uA(
             Threshold(l = "s", r = 44, d = S),
             Threshold(l = "m", r = 89),
             Threshold(l = "mm", r = 44, d = MIN),
@@ -3483,111 +3479,111 @@ open class RadioItemReactiveObject : RadioItem, IUTSReactive<RadioItem> {
     }
     override var deviceTitle: String
         get() {
-            return trackReactiveGet(__v_raw, "deviceTitle", __v_raw.deviceTitle, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "deviceTitle", __v_raw.deviceTitle, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("deviceTitle")) {
+            if (!__v_canSet("deviceTitle")) {
                 return
             }
             val oldValue = __v_raw.deviceTitle
             __v_raw.deviceTitle = value
-            triggerReactiveSet(__v_raw, "deviceTitle", oldValue, value)
+            _tRS(__v_raw, "deviceTitle", oldValue, value)
         }
     override var iccid: String
         get() {
-            return trackReactiveGet(__v_raw, "iccid", __v_raw.iccid, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "iccid", __v_raw.iccid, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("iccid")) {
+            if (!__v_canSet("iccid")) {
                 return
             }
             val oldValue = __v_raw.iccid
             __v_raw.iccid = value
-            triggerReactiveSet(__v_raw, "iccid", oldValue, value)
+            _tRS(__v_raw, "iccid", oldValue, value)
         }
     override var cardid: String
         get() {
-            return trackReactiveGet(__v_raw, "cardid", __v_raw.cardid, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "cardid", __v_raw.cardid, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("cardid")) {
+            if (!__v_canSet("cardid")) {
                 return
             }
             val oldValue = __v_raw.cardid
             __v_raw.cardid = value
-            triggerReactiveSet(__v_raw, "cardid", oldValue, value)
+            _tRS(__v_raw, "cardid", oldValue, value)
         }
     override var cardState: String
         get() {
-            return trackReactiveGet(__v_raw, "cardState", __v_raw.cardState, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "cardState", __v_raw.cardState, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("cardState")) {
+            if (!__v_canSet("cardState")) {
                 return
             }
             val oldValue = __v_raw.cardState
             __v_raw.cardState = value
-            triggerReactiveSet(__v_raw, "cardState", oldValue, value)
+            _tRS(__v_raw, "cardState", oldValue, value)
         }
     override var currentPackage: String
         get() {
-            return trackReactiveGet(__v_raw, "currentPackage", __v_raw.currentPackage, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "currentPackage", __v_raw.currentPackage, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("currentPackage")) {
+            if (!__v_canSet("currentPackage")) {
                 return
             }
             val oldValue = __v_raw.currentPackage
             __v_raw.currentPackage = value
-            triggerReactiveSet(__v_raw, "currentPackage", oldValue, value)
+            _tRS(__v_raw, "currentPackage", oldValue, value)
         }
     override var useDate: String
         get() {
-            return trackReactiveGet(__v_raw, "useDate", __v_raw.useDate, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "useDate", __v_raw.useDate, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("useDate")) {
+            if (!__v_canSet("useDate")) {
                 return
             }
             val oldValue = __v_raw.useDate
             __v_raw.useDate = value
-            triggerReactiveSet(__v_raw, "useDate", oldValue, value)
+            _tRS(__v_raw, "useDate", oldValue, value)
         }
     override var percent: Number
         get() {
-            return trackReactiveGet(__v_raw, "percent", __v_raw.percent, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "percent", __v_raw.percent, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("percent")) {
+            if (!__v_canSet("percent")) {
                 return
             }
             val oldValue = __v_raw.percent
             __v_raw.percent = value
-            triggerReactiveSet(__v_raw, "percent", oldValue, value)
+            _tRS(__v_raw, "percent", oldValue, value)
         }
     override var total: String
         get() {
-            return trackReactiveGet(__v_raw, "total", __v_raw.total, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "total", __v_raw.total, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("total")) {
+            if (!__v_canSet("total")) {
                 return
             }
             val oldValue = __v_raw.total
             __v_raw.total = value
-            triggerReactiveSet(__v_raw, "total", oldValue, value)
+            _tRS(__v_raw, "total", oldValue, value)
         }
     override var checked: Boolean?
         get() {
-            return trackReactiveGet(__v_raw, "checked", __v_raw.checked, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "checked", __v_raw.checked, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("checked")) {
+            if (!__v_canSet("checked")) {
                 return
             }
             val oldValue = __v_raw.checked
             __v_raw.checked = value
-            triggerReactiveSet(__v_raw, "checked", oldValue, value)
+            _tRS(__v_raw, "checked", oldValue, value)
         }
 }
 val GenPagesMessageMessageClass = CreateVueComponent(GenPagesMessageMessage::class.java, fun(): VueComponentOptions {
@@ -3792,12 +3788,12 @@ open class Timeline : IUTSSourceMap {
     }
     open var state: String
     open var animations: Set<Animation> = Set<Animation>()
-    open var delAnimations: UTSArray<Animation> = utsArrayOf()
+    open var delAnimations: UTSArray<Animation> = _uA()
     open var startTimes: Map<Animation, Number> = Map<Animation, Number>()
     open var pauseTime: Number = 0
     open var pauseStart: Number = Date.now()
     open var tickHandler: Number = 0
-    open var tickHandlers: UTSArray<Number> = utsArrayOf()
+    open var tickHandlers: UTSArray<Number> = _uA()
     open var tick: (() -> Unit)? = null
     constructor(){
         this.state = "Initiated"
@@ -3972,7 +3968,7 @@ fun calculateBorderRadius(width: Number, height: Number, radius: UTSArray<Number
         }
         ])
     }
-    val factors = utsArrayOf(
+    val factors = _uA(
         width / (radius[0] + radius[1]),
         height / (radius[1] + radius[2]),
         width / (radius[2] + radius[3]),
@@ -4013,7 +4009,7 @@ fun roundRect(ctx: DrawableContext, x: Number, y: Number, width: Number, height:
     ctx.closePath()
 }
 fun drawRoundedRect(ctx: DrawableContext, x: Number, y: Number, width: Number, height: Number, radius: Number = 0) {
-    roundRect(ctx, x - radius, y - radius, width + radius, height, utsArrayOf(
+    roundRect(ctx, x - radius, y - radius, width + radius, height, _uA(
         radius
     ))
 }
@@ -4210,111 +4206,111 @@ open class RadioItem1ReactiveObject : RadioItem1, IUTSReactive<RadioItem1> {
     }
     override var deviceTitle: String
         get() {
-            return trackReactiveGet(__v_raw, "deviceTitle", __v_raw.deviceTitle, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "deviceTitle", __v_raw.deviceTitle, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("deviceTitle")) {
+            if (!__v_canSet("deviceTitle")) {
                 return
             }
             val oldValue = __v_raw.deviceTitle
             __v_raw.deviceTitle = value
-            triggerReactiveSet(__v_raw, "deviceTitle", oldValue, value)
+            _tRS(__v_raw, "deviceTitle", oldValue, value)
         }
     override var iccid: String
         get() {
-            return trackReactiveGet(__v_raw, "iccid", __v_raw.iccid, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "iccid", __v_raw.iccid, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("iccid")) {
+            if (!__v_canSet("iccid")) {
                 return
             }
             val oldValue = __v_raw.iccid
             __v_raw.iccid = value
-            triggerReactiveSet(__v_raw, "iccid", oldValue, value)
+            _tRS(__v_raw, "iccid", oldValue, value)
         }
     override var cardid: String
         get() {
-            return trackReactiveGet(__v_raw, "cardid", __v_raw.cardid, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "cardid", __v_raw.cardid, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("cardid")) {
+            if (!__v_canSet("cardid")) {
                 return
             }
             val oldValue = __v_raw.cardid
             __v_raw.cardid = value
-            triggerReactiveSet(__v_raw, "cardid", oldValue, value)
+            _tRS(__v_raw, "cardid", oldValue, value)
         }
     override var cardState: String
         get() {
-            return trackReactiveGet(__v_raw, "cardState", __v_raw.cardState, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "cardState", __v_raw.cardState, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("cardState")) {
+            if (!__v_canSet("cardState")) {
                 return
             }
             val oldValue = __v_raw.cardState
             __v_raw.cardState = value
-            triggerReactiveSet(__v_raw, "cardState", oldValue, value)
+            _tRS(__v_raw, "cardState", oldValue, value)
         }
     override var currentPackage: String
         get() {
-            return trackReactiveGet(__v_raw, "currentPackage", __v_raw.currentPackage, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "currentPackage", __v_raw.currentPackage, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("currentPackage")) {
+            if (!__v_canSet("currentPackage")) {
                 return
             }
             val oldValue = __v_raw.currentPackage
             __v_raw.currentPackage = value
-            triggerReactiveSet(__v_raw, "currentPackage", oldValue, value)
+            _tRS(__v_raw, "currentPackage", oldValue, value)
         }
     override var useDate: String
         get() {
-            return trackReactiveGet(__v_raw, "useDate", __v_raw.useDate, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "useDate", __v_raw.useDate, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("useDate")) {
+            if (!__v_canSet("useDate")) {
                 return
             }
             val oldValue = __v_raw.useDate
             __v_raw.useDate = value
-            triggerReactiveSet(__v_raw, "useDate", oldValue, value)
+            _tRS(__v_raw, "useDate", oldValue, value)
         }
     override var percent: Number
         get() {
-            return trackReactiveGet(__v_raw, "percent", __v_raw.percent, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "percent", __v_raw.percent, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("percent")) {
+            if (!__v_canSet("percent")) {
                 return
             }
             val oldValue = __v_raw.percent
             __v_raw.percent = value
-            triggerReactiveSet(__v_raw, "percent", oldValue, value)
+            _tRS(__v_raw, "percent", oldValue, value)
         }
     override var total: String
         get() {
-            return trackReactiveGet(__v_raw, "total", __v_raw.total, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "total", __v_raw.total, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("total")) {
+            if (!__v_canSet("total")) {
                 return
             }
             val oldValue = __v_raw.total
             __v_raw.total = value
-            triggerReactiveSet(__v_raw, "total", oldValue, value)
+            _tRS(__v_raw, "total", oldValue, value)
         }
     override var checked: Boolean?
         get() {
-            return trackReactiveGet(__v_raw, "checked", __v_raw.checked, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "checked", __v_raw.checked, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("checked")) {
+            if (!__v_canSet("checked")) {
                 return
             }
             val oldValue = __v_raw.checked
             __v_raw.checked = value
-            triggerReactiveSet(__v_raw, "checked", oldValue, value)
+            _tRS(__v_raw, "checked", oldValue, value)
         }
 }
 val GenPagesMineRechargeDataTrafficRechargeDataTrafficClass = CreateVueComponent(GenPagesMineRechargeDataTrafficRechargeDataTraffic::class.java, fun(): VueComponentOptions {
@@ -4483,7 +4479,7 @@ open class LColorOptions (
 }
 typealias LColorInput = Any
 fun isNumber2(value: Any?): Boolean {
-    return utsArrayOf(
+    return _uA(
         "Byte",
         "UByte",
         "Short",
@@ -4813,7 +4809,7 @@ fun hsvToRgb(reassignedH: Any, reassignedS: Any, reassignedV: Any): RGB {
     val q = v * (1 - f * s)
     val t = v * (1 - (1 - f) * s)
     val mod = i % 6
-    val r = utsArrayOf(
+    val r = _uA(
         v,
         q,
         p,
@@ -4821,7 +4817,7 @@ fun hsvToRgb(reassignedH: Any, reassignedS: Any, reassignedV: Any): RGB {
         t,
         v
     )[mod]
-    val g = utsArrayOf(
+    val g = _uA(
         t,
         v,
         v,
@@ -4829,7 +4825,7 @@ fun hsvToRgb(reassignedH: Any, reassignedS: Any, reassignedV: Any): RGB {
         p,
         p
     )[mod]
-    val b = utsArrayOf(
+    val b = _uA(
         p,
         p,
         t,
@@ -4840,7 +4836,7 @@ fun hsvToRgb(reassignedH: Any, reassignedS: Any, reassignedV: Any): RGB {
     return RGB(r = r * 255, g = g * 255, b = b * 255)
 }
 fun rgbToHex(r: Number, g: Number, b: Number, allow3Char: Boolean = false): String {
-    val hex = utsArrayOf(
+    val hex = _uA(
         pad2(Math.round(r).toString(16)),
         pad2(Math.round(g).toString(16)),
         pad2(Math.round(b).toString(16))
@@ -4851,7 +4847,7 @@ fun rgbToHex(r: Number, g: Number, b: Number, allow3Char: Boolean = false): Stri
     return hex.join("")
 }
 fun rgbaToHex(r: Number, g: Number, b: Number, a: Number, allow4Char: Boolean = false): String {
-    val hex = utsArrayOf(
+    val hex = _uA(
         pad2(Math.round(r).toString(16)),
         pad2(Math.round(g).toString(16)),
         pad2(Math.round(b).toString(16)),
@@ -4880,596 +4876,596 @@ fun parseIntFromHex(kVal: String): Number {
 fun numberInputToObject(color: Number): RGB {
     return RGB(r = color shr 16, g = (color and 0xff00) shr 8, b = color and 0xff)
 }
-val names: Map<String, String> = Map<String, String>(utsArrayOf(
-    utsArrayOf(
+val names: Map<String, String> = Map<String, String>(_uA(
+    _uA(
         "aliceblue",
         "#f0f8ff"
     ),
-    utsArrayOf(
+    _uA(
         "antiquewhite",
         "#faebd7"
     ),
-    utsArrayOf(
+    _uA(
         "aqua",
         "#00ffff"
     ),
-    utsArrayOf(
+    _uA(
         "aquamarine",
         "#7fffd4"
     ),
-    utsArrayOf(
+    _uA(
         "azure",
         "#f0ffff"
     ),
-    utsArrayOf(
+    _uA(
         "beige",
         "#f5f5dc"
     ),
-    utsArrayOf(
+    _uA(
         "bisque",
         "#ffe4c4"
     ),
-    utsArrayOf(
+    _uA(
         "black",
         "#000000"
     ),
-    utsArrayOf(
+    _uA(
         "blanchedalmond",
         "#ffebcd"
     ),
-    utsArrayOf(
+    _uA(
         "blue",
         "#0000ff"
     ),
-    utsArrayOf(
+    _uA(
         "blueviolet",
         "#8a2be2"
     ),
-    utsArrayOf(
+    _uA(
         "brown",
         "#a52a2a"
     ),
-    utsArrayOf(
+    _uA(
         "burlywood",
         "#deb887"
     ),
-    utsArrayOf(
+    _uA(
         "cadetblue",
         "#5f9ea0"
     ),
-    utsArrayOf(
+    _uA(
         "chartreuse",
         "#7fff00"
     ),
-    utsArrayOf(
+    _uA(
         "chocolate",
         "#d2691e"
     ),
-    utsArrayOf(
+    _uA(
         "coral",
         "#ff7f50"
     ),
-    utsArrayOf(
+    _uA(
         "cornflowerblue",
         "#6495ed"
     ),
-    utsArrayOf(
+    _uA(
         "cornsilk",
         "#fff8dc"
     ),
-    utsArrayOf(
+    _uA(
         "crimson",
         "#dc143c"
     ),
-    utsArrayOf(
+    _uA(
         "cyan",
         "#00ffff"
     ),
-    utsArrayOf(
+    _uA(
         "darkblue",
         "#00008b"
     ),
-    utsArrayOf(
+    _uA(
         "darkcyan",
         "#008b8b"
     ),
-    utsArrayOf(
+    _uA(
         "darkgoldenrod",
         "#b8860b"
     ),
-    utsArrayOf(
+    _uA(
         "darkgray",
         "#a9a9a9"
     ),
-    utsArrayOf(
+    _uA(
         "darkgreen",
         "#006400"
     ),
-    utsArrayOf(
+    _uA(
         "darkgrey",
         "#a9a9a9"
     ),
-    utsArrayOf(
+    _uA(
         "darkkhaki",
         "#bdb76b"
     ),
-    utsArrayOf(
+    _uA(
         "darkmagenta",
         "#8b008b"
     ),
-    utsArrayOf(
+    _uA(
         "darkolivegreen",
         "#556b2f"
     ),
-    utsArrayOf(
+    _uA(
         "darkorange",
         "#ff8c00"
     ),
-    utsArrayOf(
+    _uA(
         "darkorchid",
         "#9932cc"
     ),
-    utsArrayOf(
+    _uA(
         "darkred",
         "#8b0000"
     ),
-    utsArrayOf(
+    _uA(
         "darksalmon",
         "#e9967a"
     ),
-    utsArrayOf(
+    _uA(
         "darkseagreen",
         "#8fbc8f"
     ),
-    utsArrayOf(
+    _uA(
         "darkslateblue",
         "#483d8b"
     ),
-    utsArrayOf(
+    _uA(
         "darkslategray",
         "#2f4f4f"
     ),
-    utsArrayOf(
+    _uA(
         "darkslategrey",
         "#2f4f4f"
     ),
-    utsArrayOf(
+    _uA(
         "darkturquoise",
         "#00ced1"
     ),
-    utsArrayOf(
+    _uA(
         "darkviolet",
         "#9400d3"
     ),
-    utsArrayOf(
+    _uA(
         "deeppink",
         "#ff1493"
     ),
-    utsArrayOf(
+    _uA(
         "deepskyblue",
         "#00bfff"
     ),
-    utsArrayOf(
+    _uA(
         "dimgray",
         "#696969"
     ),
-    utsArrayOf(
+    _uA(
         "dimgrey",
         "#696969"
     ),
-    utsArrayOf(
+    _uA(
         "dodgerblue",
         "#1e90ff"
     ),
-    utsArrayOf(
+    _uA(
         "firebrick",
         "#b22222"
     ),
-    utsArrayOf(
+    _uA(
         "floralwhite",
         "#fffaf0"
     ),
-    utsArrayOf(
+    _uA(
         "forestgreen",
         "#228b22"
     ),
-    utsArrayOf(
+    _uA(
         "fuchsia",
         "#ff00ff"
     ),
-    utsArrayOf(
+    _uA(
         "gainsboro",
         "#dcdcdc"
     ),
-    utsArrayOf(
+    _uA(
         "ghostwhite",
         "#f8f8ff"
     ),
-    utsArrayOf(
+    _uA(
         "goldenrod",
         "#daa520"
     ),
-    utsArrayOf(
+    _uA(
         "gold",
         "#ffd700"
     ),
-    utsArrayOf(
+    _uA(
         "gray",
         "#808080"
     ),
-    utsArrayOf(
+    _uA(
         "green",
         "#008000"
     ),
-    utsArrayOf(
+    _uA(
         "greenyellow",
         "#adff2f"
     ),
-    utsArrayOf(
+    _uA(
         "grey",
         "#808080"
     ),
-    utsArrayOf(
+    _uA(
         "honeydew",
         "#f0fff0"
     ),
-    utsArrayOf(
+    _uA(
         "hotpink",
         "#ff69b4"
     ),
-    utsArrayOf(
+    _uA(
         "indianred",
         "#cd5c5c"
     ),
-    utsArrayOf(
+    _uA(
         "indigo",
         "#4b0082"
     ),
-    utsArrayOf(
+    _uA(
         "ivory",
         "#fffff0"
     ),
-    utsArrayOf(
+    _uA(
         "khaki",
         "#f0e68c"
     ),
-    utsArrayOf(
+    _uA(
         "lavenderblush",
         "#fff0f5"
     ),
-    utsArrayOf(
+    _uA(
         "lavender",
         "#e6e6fa"
     ),
-    utsArrayOf(
+    _uA(
         "lawngreen",
         "#7cfc00"
     ),
-    utsArrayOf(
+    _uA(
         "lemonchiffon",
         "#fffacd"
     ),
-    utsArrayOf(
+    _uA(
         "lightblue",
         "#add8e6"
     ),
-    utsArrayOf(
+    _uA(
         "lightcoral",
         "#f08080"
     ),
-    utsArrayOf(
+    _uA(
         "lightcyan",
         "#e0ffff"
     ),
-    utsArrayOf(
+    _uA(
         "lightgoldenrodyellow",
         "#fafad2"
     ),
-    utsArrayOf(
+    _uA(
         "lightgray",
         "#d3d3d3"
     ),
-    utsArrayOf(
+    _uA(
         "lightgreen",
         "#90ee90"
     ),
-    utsArrayOf(
+    _uA(
         "lightgrey",
         "#d3d3d3"
     ),
-    utsArrayOf(
+    _uA(
         "lightpink",
         "#ffb6c1"
     ),
-    utsArrayOf(
+    _uA(
         "lightsalmon",
         "#ffa07a"
     ),
-    utsArrayOf(
+    _uA(
         "lightseagreen",
         "#20b2aa"
     ),
-    utsArrayOf(
+    _uA(
         "lightskyblue",
         "#87cefa"
     ),
-    utsArrayOf(
+    _uA(
         "lightslategray",
         "#778899"
     ),
-    utsArrayOf(
+    _uA(
         "lightslategrey",
         "#778899"
     ),
-    utsArrayOf(
+    _uA(
         "lightsteelblue",
         "#b0c4de"
     ),
-    utsArrayOf(
+    _uA(
         "lightyellow",
         "#ffffe0"
     ),
-    utsArrayOf(
+    _uA(
         "lime",
         "#00ff00"
     ),
-    utsArrayOf(
+    _uA(
         "limegreen",
         "#32cd32"
     ),
-    utsArrayOf(
+    _uA(
         "linen",
         "#faf0e6"
     ),
-    utsArrayOf(
+    _uA(
         "magenta",
         "#ff00ff"
     ),
-    utsArrayOf(
+    _uA(
         "maroon",
         "#800000"
     ),
-    utsArrayOf(
+    _uA(
         "mediumaquamarine",
         "#66cdaa"
     ),
-    utsArrayOf(
+    _uA(
         "mediumblue",
         "#0000cd"
     ),
-    utsArrayOf(
+    _uA(
         "mediumorchid",
         "#ba55d3"
     ),
-    utsArrayOf(
+    _uA(
         "mediumpurple",
         "#9370db"
     ),
-    utsArrayOf(
+    _uA(
         "mediumseagreen",
         "#3cb371"
     ),
-    utsArrayOf(
+    _uA(
         "mediumslateblue",
         "#7b68ee"
     ),
-    utsArrayOf(
+    _uA(
         "mediumspringgreen",
         "#00fa9a"
     ),
-    utsArrayOf(
+    _uA(
         "mediumturquoise",
         "#48d1cc"
     ),
-    utsArrayOf(
+    _uA(
         "mediumvioletred",
         "#c71585"
     ),
-    utsArrayOf(
+    _uA(
         "midnightblue",
         "#191970"
     ),
-    utsArrayOf(
+    _uA(
         "mintcream",
         "#f5fffa"
     ),
-    utsArrayOf(
+    _uA(
         "mistyrose",
         "#ffe4e1"
     ),
-    utsArrayOf(
+    _uA(
         "moccasin",
         "#ffe4b5"
     ),
-    utsArrayOf(
+    _uA(
         "navajowhite",
         "#ffdead"
     ),
-    utsArrayOf(
+    _uA(
         "navy",
         "#000080"
     ),
-    utsArrayOf(
+    _uA(
         "oldlace",
         "#fdf5e6"
     ),
-    utsArrayOf(
+    _uA(
         "olive",
         "#808000"
     ),
-    utsArrayOf(
+    _uA(
         "olivedrab",
         "#6b8e23"
     ),
-    utsArrayOf(
+    _uA(
         "orange",
         "#ffa500"
     ),
-    utsArrayOf(
+    _uA(
         "orangered",
         "#ff4500"
     ),
-    utsArrayOf(
+    _uA(
         "orchid",
         "#da70d6"
     ),
-    utsArrayOf(
+    _uA(
         "palegoldenrod",
         "#eee8aa"
     ),
-    utsArrayOf(
+    _uA(
         "palegreen",
         "#98fb98"
     ),
-    utsArrayOf(
+    _uA(
         "paleturquoise",
         "#afeeee"
     ),
-    utsArrayOf(
+    _uA(
         "palevioletred",
         "#db7093"
     ),
-    utsArrayOf(
+    _uA(
         "papayawhip",
         "#ffefd5"
     ),
-    utsArrayOf(
+    _uA(
         "peachpuff",
         "#ffdab9"
     ),
-    utsArrayOf(
+    _uA(
         "peru",
         "#cd853f"
     ),
-    utsArrayOf(
+    _uA(
         "pink",
         "#ffc0cb"
     ),
-    utsArrayOf(
+    _uA(
         "plum",
         "#dda0dd"
     ),
-    utsArrayOf(
+    _uA(
         "powderblue",
         "#b0e0e6"
     ),
-    utsArrayOf(
+    _uA(
         "purple",
         "#800080"
     ),
-    utsArrayOf(
+    _uA(
         "rebeccapurple",
         "#663399"
     ),
-    utsArrayOf(
+    _uA(
         "red",
         "#ff0000"
     ),
-    utsArrayOf(
+    _uA(
         "rosybrown",
         "#bc8f8f"
     ),
-    utsArrayOf(
+    _uA(
         "royalblue",
         "#4169e1"
     ),
-    utsArrayOf(
+    _uA(
         "saddlebrown",
         "#8b4513"
     ),
-    utsArrayOf(
+    _uA(
         "salmon",
         "#fa8072"
     ),
-    utsArrayOf(
+    _uA(
         "sandybrown",
         "#f4a460"
     ),
-    utsArrayOf(
+    _uA(
         "seagreen",
         "#2e8b57"
     ),
-    utsArrayOf(
+    _uA(
         "seashell",
         "#fff5ee"
     ),
-    utsArrayOf(
+    _uA(
         "sienna",
         "#a0522d"
     ),
-    utsArrayOf(
+    _uA(
         "silver",
         "#c0c0c0"
     ),
-    utsArrayOf(
+    _uA(
         "skyblue",
         "#87ceeb"
     ),
-    utsArrayOf(
+    _uA(
         "slateblue",
         "#6a5acd"
     ),
-    utsArrayOf(
+    _uA(
         "slategray",
         "#708090"
     ),
-    utsArrayOf(
+    _uA(
         "slategrey",
         "#708090"
     ),
-    utsArrayOf(
+    _uA(
         "snow",
         "#fffafa"
     ),
-    utsArrayOf(
+    _uA(
         "springgreen",
         "#00ff7f"
     ),
-    utsArrayOf(
+    _uA(
         "steelblue",
         "#4682b4"
     ),
-    utsArrayOf(
+    _uA(
         "tan",
         "#d2b48c"
     ),
-    utsArrayOf(
+    _uA(
         "teal",
         "#008080"
     ),
-    utsArrayOf(
+    _uA(
         "thistle",
         "#d8bfd8"
     ),
-    utsArrayOf(
+    _uA(
         "tomato",
         "#ff6347"
     ),
-    utsArrayOf(
+    _uA(
         "turquoise",
         "#40e0d0"
     ),
-    utsArrayOf(
+    _uA(
         "violet",
         "#ee82ee"
     ),
-    utsArrayOf(
+    _uA(
         "wheat",
         "#f5deb3"
     ),
-    utsArrayOf(
+    _uA(
         "white",
         "#ffffff"
     ),
-    utsArrayOf(
+    _uA(
         "whitesmoke",
         "#f5f5f5"
     ),
-    utsArrayOf(
+    _uA(
         "yellow",
         "#ffff00"
     ),
-    utsArrayOf(
+    _uA(
         "yellowgreen",
         "#9acd32"
     )
@@ -5623,20 +5619,7 @@ fun stringInputToObject(color: String): UTSJSONObject? {
         val r = match[1]
         val g = match[2]
         val b = match[3]
-        return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-            utsArrayOf(
-                "r",
-                r
-            ),
-            utsArrayOf(
-                "g",
-                g
-            ),
-            utsArrayOf(
-                "b",
-                b
-            )
-        )))
+        return _uO("r" to r, "g" to g, "b" to b)
     }
     match = matchers.rgba.exec(_color)
     if (match != null) {
@@ -5644,44 +5627,14 @@ fun stringInputToObject(color: String): UTSJSONObject? {
         val g = match[2]
         val b = match[3]
         val a = match[4]
-        return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-            utsArrayOf(
-                "r",
-                r
-            ),
-            utsArrayOf(
-                "g",
-                g
-            ),
-            utsArrayOf(
-                "b",
-                b
-            ),
-            utsArrayOf(
-                "a",
-                a
-            )
-        )))
+        return _uO("r" to r, "g" to g, "b" to b, "a" to a)
     }
     match = matchers.hsl.exec(_color)
     if (match != null) {
         val h = match[1]
         val s = match[2]
         val l = match[3]
-        return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-            utsArrayOf(
-                "h",
-                h
-            ),
-            utsArrayOf(
-                "s",
-                s
-            ),
-            utsArrayOf(
-                "l",
-                l
-            )
-        )))
+        return _uO("h" to h, "s" to s, "l" to l)
     }
     match = matchers.hsla.exec(_color)
     if (match != null) {
@@ -5689,44 +5642,14 @@ fun stringInputToObject(color: String): UTSJSONObject? {
         val s = match[2]
         val l = match[3]
         val a = match[4]
-        return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-            utsArrayOf(
-                "h",
-                h
-            ),
-            utsArrayOf(
-                "s",
-                s
-            ),
-            utsArrayOf(
-                "l",
-                l
-            ),
-            utsArrayOf(
-                "a",
-                a
-            )
-        )))
+        return _uO("h" to h, "s" to s, "l" to l, "a" to a)
     }
     match = matchers.hsv.exec(_color)
     if (match != null) {
         val h = match[1]
         val s = match[2]
         val v = match[3]
-        return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-            utsArrayOf(
-                "h",
-                h
-            ),
-            utsArrayOf(
-                "s",
-                s
-            ),
-            utsArrayOf(
-                "v",
-                v
-            )
-        )))
+        return _uO("h" to h, "s" to s, "v" to v)
     }
     match = matchers.hsva.exec(_color)
     if (match != null) {
@@ -5734,24 +5657,7 @@ fun stringInputToObject(color: String): UTSJSONObject? {
         val s = match[2]
         val v = match[3]
         val a = match[4]
-        return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-            utsArrayOf(
-                "h",
-                h
-            ),
-            utsArrayOf(
-                "s",
-                s
-            ),
-            utsArrayOf(
-                "v",
-                v
-            ),
-            utsArrayOf(
-                "a",
-                a
-            )
-        )))
+        return _uO("h" to h, "s" to s, "v" to v, "a" to a)
     }
     match = matchers.hex8.exec(_color)
     if (match != null) {
@@ -5759,60 +5665,24 @@ fun stringInputToObject(color: String): UTSJSONObject? {
         val g = parseIntFromHex(match[2]!!)
         val b = parseIntFromHex(match[3]!!)
         val a = convertHexToDecimal(match[4]!!)
-        return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-            utsArrayOf(
-                "r",
-                r
-            ),
-            utsArrayOf(
-                "g",
-                g
-            ),
-            utsArrayOf(
-                "b",
-                b
-            ),
-            utsArrayOf(
-                "a",
-                a
-            ),
-            utsArrayOf(
-                "format",
-                if (named) {
-                    "name"
-                } else {
-                    "hex8"
-                }
-            )
-        )))
+        return _uO("r" to r, "g" to g, "b" to b, "a" to a, "format" to if (named) {
+            "name"
+        } else {
+            "hex8"
+        }
+        )
     }
     match = matchers.hex6.exec(_color)
     if (match != null) {
         val r = parseIntFromHex(match[1]!!)
         val g = parseIntFromHex(match[2]!!)
         val b = parseIntFromHex(match[3]!!)
-        return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-            utsArrayOf(
-                "r",
-                r
-            ),
-            utsArrayOf(
-                "g",
-                g
-            ),
-            utsArrayOf(
-                "b",
-                b
-            ),
-            utsArrayOf(
-                "format",
-                if (named) {
-                    "name"
-                } else {
-                    "hex"
-                }
-            )
-        )))
+        return _uO("r" to r, "g" to g, "b" to b, "format" to if (named) {
+            "name"
+        } else {
+            "hex"
+        }
+        )
     }
     match = matchers.hex4.exec(_color)
     if (match != null) {
@@ -5820,60 +5690,24 @@ fun stringInputToObject(color: String): UTSJSONObject? {
         val g = parseIntFromHex((match[2] + match[2]))
         val b = parseIntFromHex((match[3] + match[3]))
         val a = convertHexToDecimal((match[4] + match[4]))
-        return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-            utsArrayOf(
-                "r",
-                r
-            ),
-            utsArrayOf(
-                "g",
-                g
-            ),
-            utsArrayOf(
-                "b",
-                b
-            ),
-            utsArrayOf(
-                "a",
-                a
-            ),
-            utsArrayOf(
-                "format",
-                if (named) {
-                    "name"
-                } else {
-                    "hex8"
-                }
-            )
-        )))
+        return _uO("r" to r, "g" to g, "b" to b, "a" to a, "format" to if (named) {
+            "name"
+        } else {
+            "hex8"
+        }
+        )
     }
     match = matchers.hex3.exec(_color)
     if (match != null) {
         val r = parseIntFromHex((match[1] + match[1]))
         val g = parseIntFromHex((match[2] + match[2]))
         val b = parseIntFromHex((match[3] + match[3]))
-        return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-            utsArrayOf(
-                "r",
-                r
-            ),
-            utsArrayOf(
-                "g",
-                g
-            ),
-            utsArrayOf(
-                "b",
-                b
-            ),
-            utsArrayOf(
-                "format",
-                if (named) {
-                    "name"
-                } else {
-                    "hex"
-                }
-            )
-        )))
+        return _uO("r" to r, "g" to g, "b" to b, "format" to if (named) {
+            "name"
+        } else {
+            "hex"
+        }
+        )
     }
     return null
 }
@@ -6195,7 +6029,7 @@ open class TinyColor : IUTSSourceMap {
     open fun analogous(results: Number = 6, slices: Number = 30): UTSArray<TinyColor> {
         val hsl = this.toHsl()
         val part = (360 as Number) / slices
-        val ret = utsArrayOf(
+        val ret = _uA(
             this
         ) as UTSArray<TinyColor>
         var _results = results
@@ -6217,24 +6051,11 @@ open class TinyColor : IUTSSourceMap {
         val h = hsv.h
         val s = hsv.s
         var v = hsv.v
-        val res: UTSArray<TinyColor> = utsArrayOf()
+        val res: UTSArray<TinyColor> = _uA()
         val modification = (1 as Number) / results
         var _results = results
         while(_results > 0){
-            res.push(TinyColor(UTSJSONObject(Map<String, Any?>(utsArrayOf(
-                utsArrayOf(
-                    "h",
-                    h
-                ),
-                utsArrayOf(
-                    "s",
-                    s
-                ),
-                utsArrayOf(
-                    "v",
-                    v
-                )
-            )))))
+            res.push(TinyColor(_uO("h" to h, "s" to s, "v" to v)))
             v = (v + modification) % 1
             _results--
         }
@@ -6243,7 +6064,7 @@ open class TinyColor : IUTSSourceMap {
     open fun splitcomplement(): UTSArray<TinyColor> {
         val hsl = this.toHsl()
         val h = hsl.h
-        return utsArrayOf<TinyColor>(this, TinyColor(object : UTSJSONObject() {
+        return _uA<TinyColor>(this, TinyColor(object : UTSJSONObject() {
             var h = (h + 72) % 360
             var s = hsl.s
             var l = hsl.l
@@ -6273,7 +6094,7 @@ open class TinyColor : IUTSSourceMap {
     open fun polyad(n: Number): UTSArray<TinyColor> {
         val hsl = this.toHsl()
         val h = hsl.h
-        val result = utsArrayOf(
+        val result = _uA(
             this
         ) as UTSArray<TinyColor>
         val increment = (360 as Number) / n
@@ -6342,58 +6163,58 @@ open class UseLoadingReturnReactiveObject : UseLoadingReturn, IUTSReactive<UseLo
     }
     override var ratio: Number
         get() {
-            return trackReactiveGet(__v_raw, "ratio", __v_raw.ratio, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "ratio", __v_raw.ratio, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("ratio")) {
+            if (!__v_canSet("ratio")) {
                 return
             }
             val oldValue = __v_raw.ratio
             __v_raw.ratio = value
-            triggerReactiveSet(__v_raw, "ratio", oldValue, value)
+            _tRS(__v_raw, "ratio", oldValue, value)
         }
     override var type: LoadingType
         get() {
-            return trackReactiveGet(__v_raw, "type", __v_raw.type, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "type", __v_raw.type, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("type")) {
+            if (!__v_canSet("type")) {
                 return
             }
             val oldValue = __v_raw.type
             __v_raw.type = value
-            triggerReactiveSet(__v_raw, "type", oldValue, value)
+            _tRS(__v_raw, "type", oldValue, value)
         }
     override var mode: String
         get() {
-            return trackReactiveGet(__v_raw, "mode", __v_raw.mode, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "mode", __v_raw.mode, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("mode")) {
+            if (!__v_canSet("mode")) {
                 return
             }
             val oldValue = __v_raw.mode
             __v_raw.mode = value
-            triggerReactiveSet(__v_raw, "mode", oldValue, value)
+            _tRS(__v_raw, "mode", oldValue, value)
         }
     override var color: String
         get() {
-            return trackReactiveGet(__v_raw, "color", __v_raw.color, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "color", __v_raw.color, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("color")) {
+            if (!__v_canSet("color")) {
                 return
             }
             val oldValue = __v_raw.color
             __v_raw.color = value
-            triggerReactiveSet(__v_raw, "color", oldValue, value)
+            _tRS(__v_raw, "color", oldValue, value)
         }
 }
 fun getPointOnCircle(centerX: Number, centerY: Number, radius: Number, angleDegrees: Number): UTSArray<Number> {
     val angleRadians = (angleDegrees * Math.PI) / 180
     val x = centerX + radius * Math.cos(angleRadians)
     val y = centerY + radius * Math.sin(angleRadians)
-    return utsArrayOf(
+    return _uA(
         x,
         y
     )
@@ -6483,7 +6304,7 @@ fun useLoading(element: Ref<UniElement?>): UseLoadingReturn {
         val length = size.value / 3.6 - lineWidth
         val offset = size.value / 4
         fun generateColorGradient(hex: String, steps: Number): UTSArray<String> {
-            val colors: UTSArray<String> = utsArrayOf()
+            val colors: UTSArray<String> = _uA()
             val _color = tinyColor(hex)
             run {
                 var i: Number = 1
@@ -6582,7 +6403,7 @@ fun useLoading(element: Ref<UniElement?>): UseLoadingReturn {
     var currentType: LoadingType? = null
     val useMode = fun(){
         if (state.mode != "raf") {
-            val keyframes = utsArrayOf<UTSJSONObject>(object : UTSJSONObject() {
+            val keyframes = _uA<UTSJSONObject>(object : UTSJSONObject() {
                 var transform = "rotate(0)"
             }, object : UTSJSONObject() {
                 var transform = "rotate(360)"
@@ -7177,63 +6998,63 @@ open class msgTypeReactiveObject : msgType, IUTSReactive<msgType> {
     }
     override var id: Number
         get() {
-            return trackReactiveGet(__v_raw, "id", __v_raw.id, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "id", __v_raw.id, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("id")) {
+            if (!__v_canSet("id")) {
                 return
             }
             val oldValue = __v_raw.id
             __v_raw.id = value
-            triggerReactiveSet(__v_raw, "id", oldValue, value)
+            _tRS(__v_raw, "id", oldValue, value)
         }
     override var desc: String
         get() {
-            return trackReactiveGet(__v_raw, "desc", __v_raw.desc, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "desc", __v_raw.desc, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("desc")) {
+            if (!__v_canSet("desc")) {
                 return
             }
             val oldValue = __v_raw.desc
             __v_raw.desc = value
-            triggerReactiveSet(__v_raw, "desc", oldValue, value)
+            _tRS(__v_raw, "desc", oldValue, value)
         }
     override var time: String
         get() {
-            return trackReactiveGet(__v_raw, "time", __v_raw.time, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "time", __v_raw.time, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("time")) {
+            if (!__v_canSet("time")) {
                 return
             }
             val oldValue = __v_raw.time
             __v_raw.time = value
-            triggerReactiveSet(__v_raw, "time", oldValue, value)
+            _tRS(__v_raw, "time", oldValue, value)
         }
     override var type: String
         get() {
-            return trackReactiveGet(__v_raw, "type", __v_raw.type, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "type", __v_raw.type, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("type")) {
+            if (!__v_canSet("type")) {
                 return
             }
             val oldValue = __v_raw.type
             __v_raw.type = value
-            triggerReactiveSet(__v_raw, "type", oldValue, value)
+            _tRS(__v_raw, "type", oldValue, value)
         }
     override var flag: String
         get() {
-            return trackReactiveGet(__v_raw, "flag", __v_raw.flag, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "flag", __v_raw.flag, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("flag")) {
+            if (!__v_canSet("flag")) {
                 return
             }
             val oldValue = __v_raw.flag
             __v_raw.flag = value
-            triggerReactiveSet(__v_raw, "flag", oldValue, value)
+            _tRS(__v_raw, "flag", oldValue, value)
         }
 }
 val GenPagesMessageMessageSystemMessageSystemClass = CreateVueComponent(GenPagesMessageMessageSystemMessageSystem::class.java, fun(): VueComponentOptions {
@@ -7277,39 +7098,39 @@ open class tabItemReactiveObject : tabItem, IUTSReactive<tabItem> {
     }
     override var id: String
         get() {
-            return trackReactiveGet(__v_raw, "id", __v_raw.id, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "id", __v_raw.id, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("id")) {
+            if (!__v_canSet("id")) {
                 return
             }
             val oldValue = __v_raw.id
             __v_raw.id = value
-            triggerReactiveSet(__v_raw, "id", oldValue, value)
+            _tRS(__v_raw, "id", oldValue, value)
         }
     override var title: String
         get() {
-            return trackReactiveGet(__v_raw, "title", __v_raw.title, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "title", __v_raw.title, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("title")) {
+            if (!__v_canSet("title")) {
                 return
             }
             val oldValue = __v_raw.title
             __v_raw.title = value
-            triggerReactiveSet(__v_raw, "title", oldValue, value)
+            _tRS(__v_raw, "title", oldValue, value)
         }
     override var content: UTSArray<Object>
         get() {
-            return trackReactiveGet(__v_raw, "content", __v_raw.content, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "content", __v_raw.content, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("content")) {
+            if (!__v_canSet("content")) {
                 return
             }
             val oldValue = __v_raw.content
             __v_raw.content = value
-            triggerReactiveSet(__v_raw, "content", oldValue, value)
+            _tRS(__v_raw, "content", oldValue, value)
         }
 }
 open class ContentType (
@@ -7351,87 +7172,87 @@ open class ContentTypeReactiveObject : ContentType, IUTSReactive<ContentType> {
     }
     override var id: String
         get() {
-            return trackReactiveGet(__v_raw, "id", __v_raw.id, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "id", __v_raw.id, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("id")) {
+            if (!__v_canSet("id")) {
                 return
             }
             val oldValue = __v_raw.id
             __v_raw.id = value
-            triggerReactiveSet(__v_raw, "id", oldValue, value)
+            _tRS(__v_raw, "id", oldValue, value)
         }
     override var title: String
         get() {
-            return trackReactiveGet(__v_raw, "title", __v_raw.title, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "title", __v_raw.title, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("title")) {
+            if (!__v_canSet("title")) {
                 return
             }
             val oldValue = __v_raw.title
             __v_raw.title = value
-            triggerReactiveSet(__v_raw, "title", oldValue, value)
+            _tRS(__v_raw, "title", oldValue, value)
         }
     override var date: String
         get() {
-            return trackReactiveGet(__v_raw, "date", __v_raw.date, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "date", __v_raw.date, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("date")) {
+            if (!__v_canSet("date")) {
                 return
             }
             val oldValue = __v_raw.date
             __v_raw.date = value
-            triggerReactiveSet(__v_raw, "date", oldValue, value)
+            _tRS(__v_raw, "date", oldValue, value)
         }
     override var price: String
         get() {
-            return trackReactiveGet(__v_raw, "price", __v_raw.price, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "price", __v_raw.price, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("price")) {
+            if (!__v_canSet("price")) {
                 return
             }
             val oldValue = __v_raw.price
             __v_raw.price = value
-            triggerReactiveSet(__v_raw, "price", oldValue, value)
+            _tRS(__v_raw, "price", oldValue, value)
         }
     override var state: String
         get() {
-            return trackReactiveGet(__v_raw, "state", __v_raw.state, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "state", __v_raw.state, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("state")) {
+            if (!__v_canSet("state")) {
                 return
             }
             val oldValue = __v_raw.state
             __v_raw.state = value
-            triggerReactiveSet(__v_raw, "state", oldValue, value)
+            _tRS(__v_raw, "state", oldValue, value)
         }
     override var iccid: String
         get() {
-            return trackReactiveGet(__v_raw, "iccid", __v_raw.iccid, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "iccid", __v_raw.iccid, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("iccid")) {
+            if (!__v_canSet("iccid")) {
                 return
             }
             val oldValue = __v_raw.iccid
             __v_raw.iccid = value
-            triggerReactiveSet(__v_raw, "iccid", oldValue, value)
+            _tRS(__v_raw, "iccid", oldValue, value)
         }
     override var isPay: String
         get() {
-            return trackReactiveGet(__v_raw, "isPay", __v_raw.isPay, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "isPay", __v_raw.isPay, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("isPay")) {
+            if (!__v_canSet("isPay")) {
                 return
             }
             val oldValue = __v_raw.isPay
             __v_raw.isPay = value
-            triggerReactiveSet(__v_raw, "isPay", oldValue, value)
+            _tRS(__v_raw, "isPay", oldValue, value)
         }
 }
 val GenPagesMineMyOrdersMyOrdersClass = CreateVueComponent(GenPagesMineMyOrdersMyOrders::class.java, fun(): VueComponentOptions {
@@ -7487,63 +7308,63 @@ open class PickerColumnItemReactiveObject : PickerColumnItem, IUTSReactive<Picke
     }
     override var id: Any?
         get() {
-            return trackReactiveGet(__v_raw, "id", __v_raw.id, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "id", __v_raw.id, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("id")) {
+            if (!__v_canSet("id")) {
                 return
             }
             val oldValue = __v_raw.id
             __v_raw.id = value
-            triggerReactiveSet(__v_raw, "id", oldValue, value)
+            _tRS(__v_raw, "id", oldValue, value)
         }
     override var label: String
         get() {
-            return trackReactiveGet(__v_raw, "label", __v_raw.label, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "label", __v_raw.label, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("label")) {
+            if (!__v_canSet("label")) {
                 return
             }
             val oldValue = __v_raw.label
             __v_raw.label = value
-            triggerReactiveSet(__v_raw, "label", oldValue, value)
+            _tRS(__v_raw, "label", oldValue, value)
         }
     override var disabled: Boolean?
         get() {
-            return trackReactiveGet(__v_raw, "disabled", __v_raw.disabled, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "disabled", __v_raw.disabled, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("disabled")) {
+            if (!__v_canSet("disabled")) {
                 return
             }
             val oldValue = __v_raw.disabled
             __v_raw.disabled = value
-            triggerReactiveSet(__v_raw, "disabled", oldValue, value)
+            _tRS(__v_raw, "disabled", oldValue, value)
         }
     override var value: String
         get() {
-            return trackReactiveGet(__v_raw, "value", __v_raw.value, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "value", __v_raw.value, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("value")) {
+            if (!__v_canSet("value")) {
                 return
             }
             val oldValue = __v_raw.value
             __v_raw.value = value
-            triggerReactiveSet(__v_raw, "value", oldValue, value)
+            _tRS(__v_raw, "value", oldValue, value)
         }
     override var children: PickerColumn?
         get() {
-            return trackReactiveGet(__v_raw, "children", __v_raw.children, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "children", __v_raw.children, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("children")) {
+            if (!__v_canSet("children")) {
                 return
             }
             val oldValue = __v_raw.children
             __v_raw.children = value
-            triggerReactiveSet(__v_raw, "children", oldValue, value)
+            _tRS(__v_raw, "children", oldValue, value)
         }
 }
 typealias PickerColumn = UTSArray<PickerColumnItem>
@@ -7843,135 +7664,135 @@ open class UploadFileReactiveObject : UploadFile, IUTSReactive<UploadFile> {
     }
     override var url: String
         get() {
-            return trackReactiveGet(__v_raw, "url", __v_raw.url, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "url", __v_raw.url, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("url")) {
+            if (!__v_canSet("url")) {
                 return
             }
             val oldValue = __v_raw.url
             __v_raw.url = value
-            triggerReactiveSet(__v_raw, "url", oldValue, value)
+            _tRS(__v_raw, "url", oldValue, value)
         }
     override var path: String?
         get() {
-            return trackReactiveGet(__v_raw, "path", __v_raw.path, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "path", __v_raw.path, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("path")) {
+            if (!__v_canSet("path")) {
                 return
             }
             val oldValue = __v_raw.path
             __v_raw.path = value
-            triggerReactiveSet(__v_raw, "path", oldValue, value)
+            _tRS(__v_raw, "path", oldValue, value)
         }
     override var name: String?
         get() {
-            return trackReactiveGet(__v_raw, "name", __v_raw.name, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "name", __v_raw.name, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("name")) {
+            if (!__v_canSet("name")) {
                 return
             }
             val oldValue = __v_raw.name
             __v_raw.name = value
-            triggerReactiveSet(__v_raw, "name", oldValue, value)
+            _tRS(__v_raw, "name", oldValue, value)
         }
     override var thumb: String?
         get() {
-            return trackReactiveGet(__v_raw, "thumb", __v_raw.thumb, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "thumb", __v_raw.thumb, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("thumb")) {
+            if (!__v_canSet("thumb")) {
                 return
             }
             val oldValue = __v_raw.thumb
             __v_raw.thumb = value
-            triggerReactiveSet(__v_raw, "thumb", oldValue, value)
+            _tRS(__v_raw, "thumb", oldValue, value)
         }
     override var size: Number?
         get() {
-            return trackReactiveGet(__v_raw, "size", __v_raw.size, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "size", __v_raw.size, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("size")) {
+            if (!__v_canSet("size")) {
                 return
             }
             val oldValue = __v_raw.size
             __v_raw.size = value
-            triggerReactiveSet(__v_raw, "size", oldValue, value)
+            _tRS(__v_raw, "size", oldValue, value)
         }
     override var width: Number?
         get() {
-            return trackReactiveGet(__v_raw, "width", __v_raw.width, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "width", __v_raw.width, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("width")) {
+            if (!__v_canSet("width")) {
                 return
             }
             val oldValue = __v_raw.width
             __v_raw.width = value
-            triggerReactiveSet(__v_raw, "width", oldValue, value)
+            _tRS(__v_raw, "width", oldValue, value)
         }
     override var height: Number?
         get() {
-            return trackReactiveGet(__v_raw, "height", __v_raw.height, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "height", __v_raw.height, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("height")) {
+            if (!__v_canSet("height")) {
                 return
             }
             val oldValue = __v_raw.height
             __v_raw.height = value
-            triggerReactiveSet(__v_raw, "height", oldValue, value)
+            _tRS(__v_raw, "height", oldValue, value)
         }
     override var duration: Number?
         get() {
-            return trackReactiveGet(__v_raw, "duration", __v_raw.duration, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "duration", __v_raw.duration, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("duration")) {
+            if (!__v_canSet("duration")) {
                 return
             }
             val oldValue = __v_raw.duration
             __v_raw.duration = value
-            triggerReactiveSet(__v_raw, "duration", oldValue, value)
+            _tRS(__v_raw, "duration", oldValue, value)
         }
     override var type: String?
         get() {
-            return trackReactiveGet(__v_raw, "type", __v_raw.type, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "type", __v_raw.type, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("type")) {
+            if (!__v_canSet("type")) {
                 return
             }
             val oldValue = __v_raw.type
             __v_raw.type = value
-            triggerReactiveSet(__v_raw, "type", oldValue, value)
+            _tRS(__v_raw, "type", oldValue, value)
         }
     override var percent: Number?
         get() {
-            return trackReactiveGet(__v_raw, "percent", __v_raw.percent, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "percent", __v_raw.percent, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("percent")) {
+            if (!__v_canSet("percent")) {
                 return
             }
             val oldValue = __v_raw.percent
             __v_raw.percent = value
-            triggerReactiveSet(__v_raw, "percent", oldValue, value)
+            _tRS(__v_raw, "percent", oldValue, value)
         }
     override var status: String?
         get() {
-            return trackReactiveGet(__v_raw, "status", __v_raw.status, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "status", __v_raw.status, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("status")) {
+            if (!__v_canSet("status")) {
                 return
             }
             val oldValue = __v_raw.status
             __v_raw.status = value
-            triggerReactiveSet(__v_raw, "status", oldValue, value)
+            _tRS(__v_raw, "status", oldValue, value)
         }
 }
 typealias Oversize = (file: Any) -> Unit
@@ -8033,7 +7854,7 @@ fun getFileType(tempFilePath: String, fileType: String?): String {
     if (fileType != null) {
         return fileType.replace(UTSRegExp("\\/.+", ""), "")
     }
-    val videoType = utsArrayOf(
+    val videoType = _uA(
         "avi",
         "wmv",
         "mkv",
@@ -8082,7 +7903,7 @@ fun chooseVideo(opts: ChooseFileOptions1) {
     ))
 }
 fun chooseMedia(opts: ChooseFileOptions1) {
-    uni_chooseMedia(ChooseMediaOptions(count = opts.count, mediaType = utsArrayOf(
+    uni_chooseMedia(ChooseMediaOptions(count = opts.count, mediaType = _uA(
         "image",
         "video"
     ), sourceType = opts.sourceType, maxDuration = opts.maxDuration ?: 10, camera = opts.camera ?: "back", success = fun(res) {
@@ -8103,7 +7924,7 @@ fun chooseAll(opts: ChooseFileOptions1) {
     ))
 }
 fun normalizeChooseFiles(type: String, tempFiles: UTSArray<UTSJSONObject>, tempFilePaths: UTSArray<String>, sizeLimit: Number?, oversize: Oversize?): UTSArray<UploadFile> {
-    val files: UTSArray<UploadFile> = utsArrayOf()
+    val files: UTSArray<UploadFile> = _uA()
     tempFiles.forEach(fun(temp, index){
         val tempFilePath = (temp["tempFilePath"] as String?) ?: tempFilePaths[index]
         val name = (temp["name"] as String?) ?: getFileName(tempFilePath)
@@ -8148,38 +7969,13 @@ fun chooseFiles(opts: ChooseFileOptions1): UTSPromise<UTSArray<UploadFile>> {
         } else if (opts.mediaType == "video") {
             chooseVideo(ChooseFileOptions1(count = opts.count, mediaType = opts.mediaType, sourceType = opts.sourceType, sizeType = opts.sizeType, maxDuration = opts.maxDuration, success = fun(result) {
                 val res = result as ChooseVideoSuccess
-                val tempFilePaths = utsArrayOf<String>(res.tempFilePath)
+                val tempFilePaths = _uA<String>(res.tempFilePath)
                 val tempFilePath = res.tempFilePath
                 val duration = res.duration
                 val size = res.size
                 val height = res.height
                 val width = res.width
-                val tempFiles = utsArrayOf<UTSJSONObject>(UTSJSONObject(Map<String, Any?>(utsArrayOf(
-                    utsArrayOf(
-                        "path",
-                        tempFilePath
-                    ),
-                    utsArrayOf(
-                        "duration",
-                        duration
-                    ),
-                    utsArrayOf(
-                        "duration",
-                        duration
-                    ),
-                    utsArrayOf(
-                        "size",
-                        size
-                    ),
-                    utsArrayOf(
-                        "height",
-                        height
-                    ),
-                    utsArrayOf(
-                        "width",
-                        width
-                    )
-                ))))
+                val tempFiles = _uA<UTSJSONObject>(_uO("path" to tempFilePath, "duration" to duration, "duration" to duration, "size" to size, "height" to height, "width" to width))
                 val files = normalizeChooseFiles("video", tempFiles, tempFilePaths, opts.sizeLimit, opts.oversize)
                 resolve(files)
             }))
@@ -8313,27 +8109,27 @@ open class AuthTypeReactiveObject : AuthType, IUTSReactive<AuthType> {
     }
     override var code: String
         get() {
-            return trackReactiveGet(__v_raw, "code", __v_raw.code, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "code", __v_raw.code, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("code")) {
+            if (!__v_canSet("code")) {
                 return
             }
             val oldValue = __v_raw.code
             __v_raw.code = value
-            triggerReactiveSet(__v_raw, "code", oldValue, value)
+            _tRS(__v_raw, "code", oldValue, value)
         }
     override var state: String
         get() {
-            return trackReactiveGet(__v_raw, "state", __v_raw.state, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "state", __v_raw.state, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("state")) {
+            if (!__v_canSet("state")) {
                 return
             }
             val oldValue = __v_raw.state
             __v_raw.state = value
-            triggerReactiveSet(__v_raw, "state", oldValue, value)
+            _tRS(__v_raw, "state", oldValue, value)
         }
 }
 open class PermissionItem (
@@ -8367,39 +8163,39 @@ open class PermissionItemReactiveObject : PermissionItem, IUTSReactive<Permissio
     }
     override var name: String
         get() {
-            return trackReactiveGet(__v_raw, "name", __v_raw.name, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "name", __v_raw.name, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("name")) {
+            if (!__v_canSet("name")) {
                 return
             }
             val oldValue = __v_raw.name
             __v_raw.name = value
-            triggerReactiveSet(__v_raw, "name", oldValue, value)
+            _tRS(__v_raw, "name", oldValue, value)
         }
     override var code: String
         get() {
-            return trackReactiveGet(__v_raw, "code", __v_raw.code, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "code", __v_raw.code, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("code")) {
+            if (!__v_canSet("code")) {
                 return
             }
             val oldValue = __v_raw.code
             __v_raw.code = value
-            triggerReactiveSet(__v_raw, "code", oldValue, value)
+            _tRS(__v_raw, "code", oldValue, value)
         }
     override var status: String
         get() {
-            return trackReactiveGet(__v_raw, "status", __v_raw.status, this.__v_isReadonly, this.__v_isShallow)
+            return _tRG(__v_raw, "status", __v_raw.status, __v_isReadonly, __v_isShallow)
         }
         set(value) {
-            if (!this.__v_canSet("status")) {
+            if (!__v_canSet("status")) {
                 return
             }
             val oldValue = __v_raw.status
             __v_raw.status = value
-            triggerReactiveSet(__v_raw, "status", oldValue, value)
+            _tRS(__v_raw, "status", oldValue, value)
         }
 }
 val GenPagesMineSystemSettingSystemSettingClass = CreateVueComponent(GenPagesMineSystemSettingSystemSetting::class.java, fun(): VueComponentOptions {
@@ -8500,14 +8296,19 @@ val GenPagesMineLocalFilesLocalFilesClass = CreateVueComponent(GenPagesMineLocal
     return GenPagesMineLocalFilesLocalFiles(instance, renderer)
 }
 )
+val GenPagesIndexDeviceDetailClass = CreateVueComponent(GenPagesIndexDeviceDetail::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexDeviceDetail.inheritAttrs, inject = GenPagesIndexDeviceDetail.inject, props = GenPagesIndexDeviceDetail.props, propsNeedCastKeys = GenPagesIndexDeviceDetail.propsNeedCastKeys, emits = GenPagesIndexDeviceDetail.emits, components = GenPagesIndexDeviceDetail.components, styles = GenPagesIndexDeviceDetail.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesIndexDeviceDetail.setup(props as GenPagesIndexDeviceDetail)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesIndexDeviceDetail {
+    return GenPagesIndexDeviceDetail(instance, renderer)
+}
+)
 fun createApp(): UTSJSONObject {
     val app = createSSRApp(GenAppClass)
-    return UTSJSONObject(Map<String, Any?>(utsArrayOf(
-        utsArrayOf(
-            "app",
-            app
-        )
-    )))
+    return _uO("app" to app)
 }
 fun main(app: IApp) {
     definePageRoutes()
@@ -8519,50 +8320,51 @@ open class UniAppConfig : io.dcloud.uniapp.appframe.AppConfig {
     override var appid: String = "__UNI__1F0985E"
     override var versionName: String = "1.0.0"
     override var versionCode: String = "100"
-    override var uniCompilerVersion: String = "4.66"
+    override var uniCompilerVersion: String = "4.75"
     constructor() : super() {}
 }
 fun definePageRoutes() {
-    __uniRoutes.push(UniPageRoute(path = "pages/index/index", component = GenPagesIndexIndexClass, meta = UniPageMeta(isQuit = true), style = utsMapOf("navigationBarTitleText" to "首页")))
-    __uniRoutes.push(UniPageRoute(path = "pages/message/message", component = GenPagesMessageMessageClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "消息")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/mine", component = GenPagesMineMineClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "我的")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/userInfo", component = GenPagesMineUserInfoUserInfoClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "个人信息")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/CancelAnAccount/CancelAnAccount", component = GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "注销账号")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/changePhoneNumber/changePhoneNumber", component = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "修改手机号")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/changePassword/changePassword", component = GenPagesMineUserInfoChangePasswordChangePasswordClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "修改密码")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/rechargeDataTraffic/rechargeDataTraffic", component = GenPagesMineRechargeDataTrafficRechargeDataTrafficClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "流量充值")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/helpCenter/helpCenter", component = GenPagesMineHelpCenterHelpCenterClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "帮助中心")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/helpCenter/questionDetail/questionDetail", component = GenPagesMineHelpCenterQuestionDetailQuestionDetailClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "问题详情")))
-    __uniRoutes.push(UniPageRoute(path = "pages/message/messageDetail/messageDetail", component = GenPagesMessageMessageDetailMessageDetailClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "消息详情")))
-    __uniRoutes.push(UniPageRoute(path = "pages/login/login", component = GenPagesLoginLoginClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationStyle" to "custom", "navigationBarTitleText" to "登陆")))
-    __uniRoutes.push(UniPageRoute(path = "pages/message/messageDeviceDetail/messageDeviceDetail", component = GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "设备信息")))
-    __uniRoutes.push(UniPageRoute(path = "pages/message/messageSystem/messageSystem", component = GenPagesMessageMessageSystemMessageSystemClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "系统消息")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/myOrders/myOrders", component = GenPagesMineMyOrdersMyOrdersClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "订单列表")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/myOrders/orderDetail/orderDetail", component = GenPagesMineMyOrdersOrderDetailOrderDetailClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "订单详情")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/feeback/feeback", component = GenPagesMineFeebackFeebackClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "意见反馈")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/systemSetting/systemSetting", component = GenPagesMineSystemSettingSystemSettingClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "设置")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/about/about", component = GenPagesMineAboutAboutClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "关于")))
-    __uniRoutes.push(UniPageRoute(path = "pages/mine/localFiles/localFiles", component = GenPagesMineLocalFilesLocalFilesClass, meta = UniPageMeta(isQuit = false), style = utsMapOf("navigationBarTitleText" to "本地文件")))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/index", component = GenPagesIndexIndexClass, meta = UniPageMeta(isQuit = true), style = _uM("navigationBarTitleText" to "首页", "enableVideo" to true)))
+    __uniRoutes.push(UniPageRoute(path = "pages/message/message", component = GenPagesMessageMessageClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "消息")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/mine", component = GenPagesMineMineClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "我的")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/userInfo", component = GenPagesMineUserInfoUserInfoClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "个人信息")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/CancelAnAccount/CancelAnAccount", component = GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "注销账号")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/changePhoneNumber/changePhoneNumber", component = GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "修改手机号")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/userInfo/changePassword/changePassword", component = GenPagesMineUserInfoChangePasswordChangePasswordClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "修改密码")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/rechargeDataTraffic/rechargeDataTraffic", component = GenPagesMineRechargeDataTrafficRechargeDataTrafficClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "流量充值")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/helpCenter/helpCenter", component = GenPagesMineHelpCenterHelpCenterClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "帮助中心")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/helpCenter/questionDetail/questionDetail", component = GenPagesMineHelpCenterQuestionDetailQuestionDetailClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "问题详情")))
+    __uniRoutes.push(UniPageRoute(path = "pages/message/messageDetail/messageDetail", component = GenPagesMessageMessageDetailMessageDetailClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "消息详情")))
+    __uniRoutes.push(UniPageRoute(path = "pages/login/login", component = GenPagesLoginLoginClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationStyle" to "custom", "navigationBarTitleText" to "登陆")))
+    __uniRoutes.push(UniPageRoute(path = "pages/message/messageDeviceDetail/messageDeviceDetail", component = GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "设备信息")))
+    __uniRoutes.push(UniPageRoute(path = "pages/message/messageSystem/messageSystem", component = GenPagesMessageMessageSystemMessageSystemClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "系统消息")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/myOrders/myOrders", component = GenPagesMineMyOrdersMyOrdersClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "订单列表")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/myOrders/orderDetail/orderDetail", component = GenPagesMineMyOrdersOrderDetailOrderDetailClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "订单详情")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/feeback/feeback", component = GenPagesMineFeebackFeebackClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "意见反馈")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/systemSetting/systemSetting", component = GenPagesMineSystemSettingSystemSettingClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "设置")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/about/about", component = GenPagesMineAboutAboutClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "关于")))
+    __uniRoutes.push(UniPageRoute(path = "pages/mine/localFiles/localFiles", component = GenPagesMineLocalFilesLocalFilesClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "本地文件")))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/deviceDetail", component = GenPagesIndexDeviceDetailClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationStyle" to "custom", "navigationBarTitleText" to "")))
 }
-val __uniTabBar: Map<String, Any?>? = utsMapOf("list" to utsArrayOf(
-    utsMapOf("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),
-    utsMapOf("pagePath" to "pages/message/message", "iconPath" to "./static/tabbar/message.png", "selectedIconPath" to "./static/tabbar/message1.png", "text" to "消息"),
-    utsMapOf("pagePath" to "pages/mine/mine", "iconPath" to "./static/tabbar/userCenter.png", "selectedIconPath" to "./static/tabbar/userCenter1.png", "text" to "我的")
+val __uniTabBar: Map<String, Any?>? = _uM("list" to _uA(
+    _uM("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),
+    _uM("pagePath" to "pages/message/message", "iconPath" to "./static/tabbar/message.png", "selectedIconPath" to "./static/tabbar/message1.png", "text" to "消息"),
+    _uM("pagePath" to "pages/mine/mine", "iconPath" to "./static/tabbar/userCenter.png", "selectedIconPath" to "./static/tabbar/userCenter1.png", "text" to "我的")
 ))
-val __uniLaunchPage: Map<String, Any?> = utsMapOf("url" to "pages/index/index", "style" to utsMapOf("navigationBarTitleText" to "首页"))
+val __uniLaunchPage: Map<String, Any?> = _uM("url" to "pages/index/index", "style" to _uM("navigationBarTitleText" to "首页", "enableVideo" to true))
 fun defineAppConfig() {
     __uniConfig.entryPagePath = "/pages/index/index"
-    __uniConfig.globalStyle = utsMapOf("navigationBarTextStyle" to "black", "navigationBarTitleText" to "uniappX", "navigationBarBackgroundColor" to "#F8F8F8", "backgroundColor" to "#F8F8F8")
+    __uniConfig.globalStyle = _uM("navigationBarTextStyle" to "black", "navigationBarTitleText" to "uniappX", "navigationBarBackgroundColor" to "#F8F8F8", "backgroundColor" to "#F8F8F8")
     __uniConfig.getTabBarConfig = fun(): Map<String, Any>? {
-        return utsMapOf("list" to utsArrayOf(
-            utsMapOf("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),
-            utsMapOf("pagePath" to "pages/message/message", "iconPath" to "./static/tabbar/message.png", "selectedIconPath" to "./static/tabbar/message1.png", "text" to "消息"),
-            utsMapOf("pagePath" to "pages/mine/mine", "iconPath" to "./static/tabbar/userCenter.png", "selectedIconPath" to "./static/tabbar/userCenter1.png", "text" to "我的")
+        return _uM("list" to _uA(
+            _uM("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),
+            _uM("pagePath" to "pages/message/message", "iconPath" to "./static/tabbar/message.png", "selectedIconPath" to "./static/tabbar/message1.png", "text" to "消息"),
+            _uM("pagePath" to "pages/mine/mine", "iconPath" to "./static/tabbar/userCenter.png", "selectedIconPath" to "./static/tabbar/userCenter1.png", "text" to "我的")
         ))
     }
     __uniConfig.tabBar = __uniConfig.getTabBarConfig()
     __uniConfig.conditionUrl = ""
-    __uniConfig.uniIdRouter = utsMapOf()
+    __uniConfig.uniIdRouter = _uM()
     __uniConfig.ready = true
 }
 open class GenUniApp : UniAppImpl() {

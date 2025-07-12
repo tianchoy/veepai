@@ -10,7 +10,7 @@ const _easycom_l_grid = () => "../../../uni_modules/lime-grid/components/l-grid/
 if (!Math) {
   (_easycom_l_grid_item + _easycom_l_grid)();
 }
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "localFiles",
   setup(__props) {
     return (_ctx = null, _cache = null) => {
@@ -61,7 +61,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-587484ea"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/mine/localFiles/localFiles.js.map

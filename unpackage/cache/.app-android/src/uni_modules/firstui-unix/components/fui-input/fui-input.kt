@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesFirstuiUnixComponentsFuiInputFuiInput : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {
         onCreated(fun() {
@@ -77,43 +73,43 @@ open class GenUniModulesFirstuiUnixComponentsFuiInputFuiInput : VueComponent {
     override fun `$render`(): Any? {
         val _ctx = this
         val _cache = this.`$`.renderCache
-        return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+        return _cE("view", _uM("class" to _nC(_uA(
             "fui-input__wrap",
-            utsMapOf("fui-input__border-uvue" to _ctx.inputBorder, "fui-input__border-color" to (_ctx.inputBorder && _ctx.borderColor == ""), "fui-input__disabled-styl" to (_ctx.disabled && _ctx.disabledStyle))
-        )), "style" to normalizeStyle(_ctx.getStyle), "onClick" to _ctx.fieldClick), utsArrayOf(
+            _uM("fui-input__border-uvue" to _ctx.inputBorder, "fui-input__border-color" to (_ctx.inputBorder && _ctx.borderColor == ""), "fui-input__disabled-styl" to (_ctx.disabled && _ctx.disabledStyle))
+        )), "style" to _nS(_ctx.getStyle), "onClick" to _ctx.fieldClick), _uA(
             if (isTrue(_ctx.borderTop && !_ctx.inputBorder)) {
-                createElementVNode("view", utsMapOf("key" to 0, "style" to normalizeStyle(utsMapOf("background" to _ctx.borderColor, "left" to ("" + _ctx.topLeft + "rpx"), "right" to ("" + _ctx.topRight + "rpx"))), "class" to normalizeClass(utsArrayOf(
+                _cE("view", _uM("key" to 0, "style" to _nS(_uM("background" to _ctx.borderColor, "left" to ("" + _ctx.topLeft + "rpx"), "right" to ("" + _ctx.topRight + "rpx"))), "class" to _nC(_uA(
                     "fui-input__border-top",
-                    utsMapOf("fui-input__background" to (_ctx.borderColor == ""))
+                    _uM("fui-input__background" to (_ctx.borderColor == ""))
                 ))), null, 6)
             } else {
-                createCommentVNode("v-if", true)
+                _cC("v-if", true)
             }
             ,
             if (isTrue(_ctx.required)) {
-                createElementVNode("view", utsMapOf("key" to 1, "class" to "fui-input__required"), utsArrayOf(
-                    createElementVNode("text", utsMapOf("style" to normalizeStyle(_ctx.getRequiredColor), "class" to normalizeClass(utsArrayOf(
+                _cE("view", _uM("key" to 1, "class" to "fui-input__required"), _uA(
+                    _cE("text", _uM("style" to _nS(_ctx.getRequiredColor), "class" to _nC(_uA(
                         "fui-input__asterisk-text",
-                        utsMapOf("fui-input__asterisk-color" to (_ctx.requiredColor == ""))
+                        _uM("fui-input__asterisk-color" to (_ctx.requiredColor == ""))
                     ))), "*", 6)
                 ))
             } else {
-                createCommentVNode("v-if", true)
+                _cC("v-if", true)
             }
             ,
             if (_ctx.label != "") {
-                createElementVNode("view", utsMapOf("key" to 2, "class" to "fui-input__label", "style" to normalizeStyle(utsMapOf("minWidth" to ("" + _ctx.labelWidth + "rpx")))), utsArrayOf(
-                    createElementVNode("text", utsMapOf("class" to normalizeClass(utsMapOf("fui-input__label-size" to (_ctx.labelSize == 0))), "style" to normalizeStyle(_ctx.getLabelStyl)), toDisplayString(_ctx.label), 7)
+                _cE("view", _uM("key" to 2, "class" to "fui-input__label", "style" to _nS(_uM("minWidth" to ("" + _ctx.labelWidth + "rpx")))), _uA(
+                    _cE("text", _uM("class" to _nC(_uM("fui-input__label-size" to (_ctx.labelSize == 0))), "style" to _nS(_ctx.getLabelStyl)), _tD(_ctx.label), 7)
                 ), 4)
             } else {
-                createCommentVNode("v-if", true)
+                _cC("v-if", true)
             }
             ,
             renderSlot(_ctx.`$slots`, "left"),
-            createElementVNode("input", utsMapOf("ref" to _ctx.refId, "class" to normalizeClass(utsArrayOf(
+            _cE("input", _uM("ref" to _ctx.refId, "class" to _nC(_uA(
                 "fui-input__self",
-                utsMapOf("fui-input__disabled" to (_ctx.disabled || _ctx.readonly), "fui-input__size" to (_ctx.size == 0))
-            )), "style" to normalizeStyle(utsMapOf("fontSize" to ("" + _ctx.size + "rpx"), "color" to _ctx.color, "textAlign" to _ctx.textAlign)), "placeholder-class" to "fui-input__placeholder", "type" to _ctx.type, "name" to _ctx.name, "value" to _ctx.`val`, "placeholder" to _ctx.placeholder, "password" to (_ctx.password || _ctx.type == "password"), "placeholder-style" to _ctx.placeholderStyle, "disabled" to (_ctx.disabled || _ctx.readonly), "cursor-spacing" to _ctx.cursorSpacing, "maxlength" to _ctx.maxlength, "confirm-type" to _ctx.confirmType, "confirm-hold" to _ctx.confirmHold, "cursor" to _ctx.cursor, "selection-start" to _ctx.selectionStart, "selection-end" to _ctx.selectionEnd, "adjust-position" to _ctx.adjustPosition, "onFocus" to _ctx.onFocus, "onBlur" to _ctx.onBlur, "onInput" to _ctx.onInput, "onConfirm" to _ctx.onConfirm, "onKeyboardheightchange" to _ctx.onKeyboardheightchange), null, 46, utsArrayOf(
+                _uM("fui-input__disabled" to (_ctx.disabled || _ctx.readonly), "fui-input__size" to (_ctx.size == 0))
+            )), "style" to _nS(_uM("fontSize" to ("" + _ctx.size + "rpx"), "color" to _ctx.color, "textAlign" to _ctx.textAlign)), "placeholder-class" to "fui-input__placeholder", "type" to _ctx.type, "name" to _ctx.name, "value" to _ctx.`val`, "placeholder" to _ctx.placeholder, "password" to (_ctx.password || _ctx.type == "password"), "placeholder-style" to _ctx.placeholderStyle, "disabled" to (_ctx.disabled || _ctx.readonly), "cursor-spacing" to _ctx.cursorSpacing, "maxlength" to _ctx.maxlength, "confirm-type" to _ctx.confirmType, "confirm-hold" to _ctx.confirmHold, "cursor" to _ctx.cursor, "selection-start" to _ctx.selectionStart, "selection-end" to _ctx.selectionEnd, "adjust-position" to _ctx.adjustPosition, "onFocus" to _ctx.onFocus, "onBlur" to _ctx.onBlur, "onInput" to _ctx.onInput, "onConfirm" to _ctx.onConfirm, "onKeyboardheightchange" to _ctx.onKeyboardheightchange), null, 46, _uA(
                 "type",
                 "name",
                 "value",
@@ -136,32 +132,32 @@ open class GenUniModulesFirstuiUnixComponentsFuiInputFuiInput : VueComponent {
                 "onKeyboardheightchange"
             )),
             if (isTrue(_ctx.clearable && _ctx.`val` != "")) {
-                createElementVNode("view", utsMapOf("key" to 3, "class" to "fui-input__clear-wrap", "style" to normalizeStyle(utsMapOf("background" to _ctx.clearColor)), "onClick" to withModifiers(_ctx.onClear, utsArrayOf(
+                _cE("view", _uM("key" to 3, "class" to "fui-input__clear-wrap", "style" to _nS(_uM("background" to _ctx.clearColor)), "onClick" to withModifiers(_ctx.onClear, _uA(
                     "stop"
-                ))), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "fui-input__clear"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "fui-input__clear-a"))
+                ))), _uA(
+                    _cE("view", _uM("class" to "fui-input__clear"), _uA(
+                        _cE("view", _uM("class" to "fui-input__clear-a"))
                     )),
-                    createElementVNode("view", utsMapOf("class" to "fui-input__clear"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "fui-input__clear-b"))
+                    _cE("view", _uM("class" to "fui-input__clear"), _uA(
+                        _cE("view", _uM("class" to "fui-input__clear-b"))
                     ))
-                ), 12, utsArrayOf(
+                ), 12, _uA(
                     "onClick"
                 ))
             } else {
-                createCommentVNode("v-if", true)
+                _cC("v-if", true)
             }
             ,
             renderSlot(_ctx.`$slots`, "default"),
             if (isTrue(_ctx.borderBottom && !_ctx.inputBorder)) {
-                createElementVNode("view", utsMapOf("key" to 4, "style" to normalizeStyle(_ctx.getBtnLineStyl), "class" to normalizeClass(utsArrayOf(
+                _cE("view", _uM("key" to 4, "style" to _nS(_ctx.getBtnLineStyl), "class" to _nC(_uA(
                     "fui-input__border-bottom",
-                    utsMapOf("fui-input__background" to (_ctx.borderColor == ""))
+                    _uM("fui-input__background" to (_ctx.borderColor == ""))
                 ))), null, 6)
             } else {
-                createCommentVNode("v-if", true)
+                _cC("v-if", true)
             }
-        ), 14, utsArrayOf(
+        ), 14, _uA(
             "onClick"
         ))
     }
@@ -224,7 +220,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiInputFuiInput : VueComponent {
     @Suppress("USELESS_CAST")
     override fun data(): Map<String, Any?> {
         val refInputId = "fui_input_" + parseInt(Math.ceil(Math.random() * 10e5).toString(10), 36)
-        return utsMapOf("refId" to refInputId, "val" to "", "fuiForm" to null as ComponentPublicInstance?, "valueType" to 1, "getStyle" to computed<Any>(fun(): Any {
+        return _uM("refId" to refInputId, "val" to "", "fuiForm" to null as ComponentPublicInstance?, "valueType" to 1, "getStyle" to computed<Any>(fun(): Any {
             val mp: Map<String, String> = Map()
             mp.set("padding", this.padding)
             mp.set("background", this.backgroundColor)
@@ -400,27 +396,27 @@ open class GenUniModulesFirstuiUnixComponentsFuiInputFuiInput : VueComponent {
     companion object {
         var name = "fui-input"
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("fui-input__wrap" to padStyleMapOf(utsMapOf("width" to "100%", "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "position" to "relative", "boxSizing" to "border-box", "overflow" to "visible")), "fui-input__border-uvue" to padStyleMapOf(utsMapOf("borderTopWidth" to 0.5, "borderRightWidth" to 0.5, "borderBottomWidth" to 0.5, "borderLeftWidth" to 0.5, "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid")), "fui-input__border-color" to padStyleMapOf(utsMapOf("!borderTopColor" to "#EEEEEE", "!borderRightColor" to "#EEEEEE", "!borderBottomColor" to "#EEEEEE", "!borderLeftColor" to "#EEEEEE")), "fui-input__background" to padStyleMapOf(utsMapOf("!backgroundImage" to "none", "!backgroundColor" to "#EEEEEE")), "fui-input__border-top" to padStyleMapOf(utsMapOf("position" to "absolute", "top" to 0, "height" to 1, "transform" to "scaleY(0.5)", "transformOrigin" to "0 0", "zIndex" to 1, "pointerEvents" to "none")), "fui-input__border-bottom" to padStyleMapOf(utsMapOf("position" to "absolute", "bottom" to 0, "height" to 1, "transform" to "scaleY(0.5)", "transformOrigin" to "0 100%", "zIndex" to 1, "pointerEvents" to "none")), "fui-input__required" to padStyleMapOf(utsMapOf("position" to "absolute", "left" to "12rpx", "height" to "100%", "display" to "flex", "alignItems" to "center", "justifyContent" to "center")), "fui-input__asterisk-text" to padStyleMapOf(utsMapOf("fontSize" to "32rpx", "height" to "32rpx", "lineHeight" to "32rpx")), "fui-input__asterisk-color" to padStyleMapOf(utsMapOf("!color" to "#FF2B2B")), "fui-input__label" to padStyleMapOf(utsMapOf("paddingRight" to "12rpx", "flexShrink" to 0)), "fui-input__label-size" to padStyleMapOf(utsMapOf("!fontSize" to "32rpx", "!lineHeight" to "32rpx")), "fui-input__self" to padStyleMapOf(utsMapOf("flex" to 1, "paddingRight" to "12rpx", "overflow" to "visible", "backgroundColor" to "rgba(0,0,0,0)", "boxSizing" to "border-box")), "fui-input__size" to padStyleMapOf(utsMapOf("!fontSize" to "32rpx")), "fui-input__clear-wrap" to padStyleMapOf(utsMapOf("width" to "32rpx", "height" to "32rpx", "transform" to "rotate(45deg) scale(1.1)", "position" to "relative", "flexShrink" to 0, "borderTopLeftRadius" to "32rpx", "borderTopRightRadius" to "32rpx", "borderBottomRightRadius" to "32rpx", "borderBottomLeftRadius" to "32rpx")), "fui-input__clear" to padStyleMapOf(utsMapOf("width" to "32rpx", "height" to "32rpx", "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "center", "position" to "absolute", "left" to 0, "top" to 0, "transform" to "scale(0.5)")), "fui-input__clear-a" to padStyleMapOf(utsMapOf("width" to "32rpx", "borderTopWidth" to "2rpx", "borderRightWidth" to "2rpx", "borderBottomWidth" to "2rpx", "borderLeftWidth" to "2rpx", "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopColor" to "#ffffff", "borderRightColor" to "#ffffff", "borderBottomColor" to "#ffffff", "borderLeftColor" to "#ffffff", "backgroundColor" to "#ffffff", "boxSizing" to "border-box")), "fui-input__clear-b" to padStyleMapOf(utsMapOf("height" to "32rpx", "borderTopWidth" to "2rpx", "borderRightWidth" to "2rpx", "borderBottomWidth" to "2rpx", "borderLeftWidth" to "2rpx", "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopColor" to "#ffffff", "borderRightColor" to "#ffffff", "borderBottomColor" to "#ffffff", "borderLeftColor" to "#ffffff", "backgroundColor" to "#ffffff", "boxSizing" to "border-box")), "fui-input__placeholder" to padStyleMapOf(utsMapOf("color" to "#CCCCCC", "overflow" to "visible")), "fui-input__disabled" to padStyleMapOf(utsMapOf("pointerEvents" to "none")), "fui-input__disabled-styl" to padStyleMapOf(utsMapOf("opacity" to 0.6)))
+                return _uM("fui-input__wrap" to _pS(_uM("width" to "100%", "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "position" to "relative", "boxSizing" to "border-box", "overflow" to "visible")), "fui-input__border-uvue" to _pS(_uM("borderTopWidth" to 0.5, "borderRightWidth" to 0.5, "borderBottomWidth" to 0.5, "borderLeftWidth" to 0.5, "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid")), "fui-input__border-color" to _pS(_uM("!borderTopColor" to "#EEEEEE", "!borderRightColor" to "#EEEEEE", "!borderBottomColor" to "#EEEEEE", "!borderLeftColor" to "#EEEEEE")), "fui-input__background" to _pS(_uM("!backgroundImage" to "none", "!backgroundColor" to "#EEEEEE")), "fui-input__border-top" to _pS(_uM("position" to "absolute", "top" to 0, "height" to 1, "transform" to "scaleY(0.5)", "transformOrigin" to "0 0", "zIndex" to 1, "pointerEvents" to "none")), "fui-input__border-bottom" to _pS(_uM("position" to "absolute", "bottom" to 0, "height" to 1, "transform" to "scaleY(0.5)", "transformOrigin" to "0 100%", "zIndex" to 1, "pointerEvents" to "none")), "fui-input__required" to _pS(_uM("position" to "absolute", "left" to "12rpx", "height" to "100%", "display" to "flex", "alignItems" to "center", "justifyContent" to "center")), "fui-input__asterisk-text" to _pS(_uM("fontSize" to "32rpx", "height" to "32rpx", "lineHeight" to "32rpx")), "fui-input__asterisk-color" to _pS(_uM("!color" to "#FF2B2B")), "fui-input__label" to _pS(_uM("paddingRight" to "12rpx", "flexShrink" to 0)), "fui-input__label-size" to _pS(_uM("!fontSize" to "32rpx", "!lineHeight" to "32rpx")), "fui-input__self" to _pS(_uM("flex" to 1, "paddingRight" to "12rpx", "overflow" to "visible", "backgroundColor" to "rgba(0,0,0,0)", "boxSizing" to "border-box")), "fui-input__size" to _pS(_uM("!fontSize" to "32rpx")), "fui-input__clear-wrap" to _pS(_uM("width" to "32rpx", "height" to "32rpx", "transform" to "rotate(45deg) scale(1.1)", "position" to "relative", "flexShrink" to 0, "borderTopLeftRadius" to "32rpx", "borderTopRightRadius" to "32rpx", "borderBottomRightRadius" to "32rpx", "borderBottomLeftRadius" to "32rpx")), "fui-input__clear" to _pS(_uM("width" to "32rpx", "height" to "32rpx", "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "center", "position" to "absolute", "left" to 0, "top" to 0, "transform" to "scale(0.5)")), "fui-input__clear-a" to _pS(_uM("width" to "32rpx", "borderTopWidth" to "2rpx", "borderRightWidth" to "2rpx", "borderBottomWidth" to "2rpx", "borderLeftWidth" to "2rpx", "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopColor" to "#ffffff", "borderRightColor" to "#ffffff", "borderBottomColor" to "#ffffff", "borderLeftColor" to "#ffffff", "backgroundColor" to "#ffffff", "boxSizing" to "border-box")), "fui-input__clear-b" to _pS(_uM("height" to "32rpx", "borderTopWidth" to "2rpx", "borderRightWidth" to "2rpx", "borderBottomWidth" to "2rpx", "borderLeftWidth" to "2rpx", "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopColor" to "#ffffff", "borderRightColor" to "#ffffff", "borderBottomColor" to "#ffffff", "borderLeftColor" to "#ffffff", "backgroundColor" to "#ffffff", "boxSizing" to "border-box")), "fui-input__placeholder" to _pS(_uM("color" to "#CCCCCC", "overflow" to "visible")), "fui-input__disabled" to _pS(_uM("pointerEvents" to "none")), "fui-input__disabled-styl" to _pS(_uM("opacity" to 0.6)))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("input" to null, "update:modelValue" to null, "focus" to null, "blur" to null, "confirm" to null, "onclick" to null, "keyboardheightchange" to null)
-        var props = normalizePropsOptions(utsMapOf("required" to utsMapOf("type" to "Boolean", "default" to false), "requiredColor" to utsMapOf("type" to "String", "default" to ""), "label" to utsMapOf("type" to "String", "default" to ""), "labelSize" to utsMapOf("type" to "Number", "default" to 0), "labelColor" to utsMapOf("type" to "String", "default" to "#333"), "labelWidth" to utsMapOf("type" to "Number", "default" to 140), "clearable" to utsMapOf("type" to "Boolean", "default" to false), "clearColor" to utsMapOf("type" to "String", "default" to "#CCCCCC"), "focus" to utsMapOf("type" to "Boolean", "default" to false), "placeholder" to utsMapOf("type" to "String", "default" to ""), "placeholderStyle" to utsMapOf("type" to "String", "default" to ""), "name" to utsMapOf("type" to "String", "default" to ""), "value" to utsMapOf("type" to utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("input" to null, "update:modelValue" to null, "focus" to null, "blur" to null, "confirm" to null, "onclick" to null, "keyboardheightchange" to null)
+        var props = _nP(_uM("required" to _uM("type" to "Boolean", "default" to false), "requiredColor" to _uM("type" to "String", "default" to ""), "label" to _uM("type" to "String", "default" to ""), "labelSize" to _uM("type" to "Number", "default" to 0), "labelColor" to _uM("type" to "String", "default" to "#333"), "labelWidth" to _uM("type" to "Number", "default" to 140), "clearable" to _uM("type" to "Boolean", "default" to false), "clearColor" to _uM("type" to "String", "default" to "#CCCCCC"), "focus" to _uM("type" to "Boolean", "default" to false), "placeholder" to _uM("type" to "String", "default" to ""), "placeholderStyle" to _uM("type" to "String", "default" to ""), "name" to _uM("type" to "String", "default" to ""), "value" to _uM("type" to _uA(
             "Object",
             "String",
             "Number"
-        ), "default" to ""), "modelValue" to utsMapOf("type" to utsArrayOf(
+        ), "default" to ""), "modelValue" to _uM("type" to _uA(
             "Object",
             "String",
             "Number"
-        ), "default" to ""), "type" to utsMapOf("type" to "String", "default" to "text"), "password" to utsMapOf("type" to "Boolean", "default" to false), "disabled" to utsMapOf("type" to "Boolean", "default" to false), "disabledStyle" to utsMapOf("type" to "Boolean", "default" to false), "readonly" to utsMapOf("type" to "Boolean", "default" to false), "maxlength" to utsMapOf("type" to "Number", "default" to 140), "min" to utsMapOf("type" to "Number", "default" to -1), "max" to utsMapOf("type" to "Number", "default" to -1), "cursorSpacing" to utsMapOf("type" to "Number", "default" to 0), "cursorColor" to utsMapOf("type" to "String", "default" to ""), "confirmType" to utsMapOf("type" to "String", "default" to "done"), "confirmHold" to utsMapOf("type" to "Boolean", "default" to false), "cursor" to utsMapOf("type" to "Number", "default" to -1), "selectionStart" to utsMapOf("type" to "Number", "default" to -1), "selectionEnd" to utsMapOf("type" to "Number", "default" to -1), "adjustPosition" to utsMapOf("type" to "Boolean", "default" to true), "size" to utsMapOf("type" to "Number", "default" to 0), "color" to utsMapOf("type" to "String", "default" to "#333"), "inputBorder" to utsMapOf("type" to "Boolean", "default" to false), "isFillet" to utsMapOf("type" to "Boolean", "default" to false), "radius" to utsMapOf("type" to "Number", "default" to 0), "borderTop" to utsMapOf("type" to "Boolean", "default" to false), "topLeft" to utsMapOf("type" to "Number", "default" to 0), "topRight" to utsMapOf("type" to "Number", "default" to 0), "borderBottom" to utsMapOf("type" to "Boolean", "default" to true), "bottomLeft" to utsMapOf("type" to "Number", "default" to 32), "bottomRight" to utsMapOf("type" to "Number", "default" to 0), "borderColor" to utsMapOf("type" to "String", "default" to ""), "trim" to utsMapOf("type" to "Boolean", "default" to true), "textAlign" to utsMapOf("type" to "String", "default" to "left"), "padding" to utsMapOf("type" to "String", "default" to "28rpx 32rpx"), "backgroundColor" to utsMapOf("type" to "String", "default" to "#FFFFFF"), "marginTop" to utsMapOf("type" to "Number", "default" to 0)))
-        var propsNeedCastKeys = utsArrayOf(
+        ), "default" to ""), "type" to _uM("type" to "String", "default" to "text"), "password" to _uM("type" to "Boolean", "default" to false), "disabled" to _uM("type" to "Boolean", "default" to false), "disabledStyle" to _uM("type" to "Boolean", "default" to false), "readonly" to _uM("type" to "Boolean", "default" to false), "maxlength" to _uM("type" to "Number", "default" to 140), "min" to _uM("type" to "Number", "default" to -1), "max" to _uM("type" to "Number", "default" to -1), "cursorSpacing" to _uM("type" to "Number", "default" to 0), "cursorColor" to _uM("type" to "String", "default" to ""), "confirmType" to _uM("type" to "String", "default" to "done"), "confirmHold" to _uM("type" to "Boolean", "default" to false), "cursor" to _uM("type" to "Number", "default" to -1), "selectionStart" to _uM("type" to "Number", "default" to -1), "selectionEnd" to _uM("type" to "Number", "default" to -1), "adjustPosition" to _uM("type" to "Boolean", "default" to true), "size" to _uM("type" to "Number", "default" to 0), "color" to _uM("type" to "String", "default" to "#333"), "inputBorder" to _uM("type" to "Boolean", "default" to false), "isFillet" to _uM("type" to "Boolean", "default" to false), "radius" to _uM("type" to "Number", "default" to 0), "borderTop" to _uM("type" to "Boolean", "default" to false), "topLeft" to _uM("type" to "Number", "default" to 0), "topRight" to _uM("type" to "Number", "default" to 0), "borderBottom" to _uM("type" to "Boolean", "default" to true), "bottomLeft" to _uM("type" to "Number", "default" to 32), "bottomRight" to _uM("type" to "Number", "default" to 0), "borderColor" to _uM("type" to "String", "default" to ""), "trim" to _uM("type" to "Boolean", "default" to true), "textAlign" to _uM("type" to "String", "default" to "left"), "padding" to _uM("type" to "String", "default" to "28rpx 32rpx"), "backgroundColor" to _uM("type" to "String", "default" to "#FFFFFF"), "marginTop" to _uM("type" to "Number", "default" to 0)))
+        var propsNeedCastKeys = _uA(
             "required",
             "requiredColor",
             "label",
@@ -469,6 +465,6 @@ open class GenUniModulesFirstuiUnixComponentsFuiInputFuiInput : VueComponent {
             "backgroundColor",
             "marginTop"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

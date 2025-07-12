@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesLimeBadgeComponentsLBadgeLBadge : VueComponent, BadgeProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     override var color: String? by `$props`
@@ -140,81 +136,81 @@ open class GenUniModulesLimeBadgeComponentsLBadgeLBadge : VueComponent, BadgePro
             )
             return fun(): Any? {
                 return if (_ctx.`$slots`["default"] != null) {
-                    createElementVNode("view", utsMapOf("key" to 0, "class" to "l-badge__wrapper"), utsArrayOf(
+                    _cE("view", _uM("key" to 0, "class" to "l-badge__wrapper"), _uA(
                         renderSlot(_ctx.`$slots`, "default"),
                         if (isTrue(unref(hasContent) || _ctx.dot)) {
-                            createElementVNode("text", utsMapOf("key" to 0, "class" to normalizeClass(utsArrayOf(
+                            _cE("text", _uM("key" to 0, "class" to _nC(_uA(
                                 "l-badge",
                                 unref(classes)
-                            )), "ref_key" to "textRef", "ref" to textRef, "style" to normalizeStyle(utsArrayOf(
+                            )), "ref_key" to "textRef", "ref" to textRef, "style" to _nS(_uA(
                                 unref(styles)
-                            ))), utsArrayOf(
+                            ))), _uA(
                                 renderSlot(_ctx.`$slots`, "content", UTSJSONObject(), fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        toDisplayString(unref(renderContent))
+                                    return _uA(
+                                        _tD(unref(renderContent))
                                     )
                                 })
                             ), 6)
                         } else {
-                            createCommentVNode("v-if", true)
+                            _cC("v-if", true)
                         },
                         if (isTrue(unref(hasContent) || _ctx.dot)) {
-                            createElementVNode("text", utsMapOf("key" to 1, "class" to normalizeClass(utsArrayOf(
+                            _cE("text", _uM("key" to 1, "class" to _nC(_uA(
                                 "l-badge l-badge--offscreen",
                                 unref(classes)
-                            )), "ref_key" to "offscreenRef", "ref" to offscreenRef, "style" to normalizeStyle(utsArrayOf(
+                            )), "ref_key" to "offscreenRef", "ref" to offscreenRef, "style" to _nS(_uA(
                                 unref(styles)
-                            ))), utsArrayOf(
+                            ))), _uA(
                                 renderSlot(_ctx.`$slots`, "content", UTSJSONObject(), fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        toDisplayString(unref(renderContent))
+                                    return _uA(
+                                        _tD(unref(renderContent))
                                     )
                                 })
                             ), 6)
                         } else {
-                            createCommentVNode("v-if", true)
+                            _cC("v-if", true)
                         }
                     ))
                 } else {
                     if (isTrue(unref(hasContent) || _ctx.dot)) {
-                        createElementVNode("text", utsMapOf("key" to 1, "class" to normalizeClass(utsArrayOf(
+                        _cE("text", _uM("key" to 1, "class" to _nC(_uA(
                             "l-badge",
                             unref(classes)
-                        )), "style" to normalizeStyle(utsArrayOf(
+                        )), "style" to _nS(_uA(
                             unref(styles)
-                        ))), utsArrayOf(
+                        ))), _uA(
                             renderSlot(_ctx.`$slots`, "content", UTSJSONObject(), fun(): UTSArray<Any> {
-                                return utsArrayOf(
-                                    toDisplayString(unref(renderContent))
+                                return _uA(
+                                    _tD(unref(renderContent))
                                 )
                             })
                         ), 6)
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
                 }
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-badge" to padStyleMapOf(utsMapOf("boxSizing" to "border-box", "paddingTop" to 0, "paddingRight" to "8rpx", "paddingBottom" to 0, "paddingLeft" to "8rpx", "color" to "#FFFFFF", "fontWeight" to "bold", "fontSize" to 12, "fontFamily" to "-apple-system-font, helvetica neue, arial, sans-serif", "lineHeight" to 1.2, "textAlign" to "center", "backgroundColor" to "#FF4D4F", "borderTopWidth" to "1rpx", "borderRightWidth" to "1rpx", "borderBottomWidth" to "1rpx", "borderLeftWidth" to "1rpx", "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopColor" to "#FFFFFF", "borderRightColor" to "#FFFFFF", "borderBottomColor" to "#FFFFFF", "borderLeftColor" to "#FFFFFF", "borderTopLeftRadius" to 999, "borderTopRightRadius" to 999, "borderBottomRightRadius" to 999, "borderBottomLeftRadius" to 999, "overflow" to "visible")), "l-badge--fixed" to utsMapOf("" to utsMapOf("position" to "absolute", "transformOrigin" to "100%"), ".l-badge--offscreen" to utsMapOf("position" to "fixed", "opacity" to 0, "top" to -10000000000)), "l-badge--top-left" to padStyleMapOf(utsMapOf("top" to 0, "left" to 0, "transform" to "translate(-50%, -50%)")), "l-badge--top-right" to padStyleMapOf(utsMapOf("top" to 0, "right" to 0, "transform" to "translate(50%, -50%)")), "l-badge--bottom-left" to padStyleMapOf(utsMapOf("bottom" to 0, "left" to 0, "transform" to "translate(-50%, 50%)")), "l-badge--bottom-right" to padStyleMapOf(utsMapOf("bottom" to 0, "right" to 0, "transform" to "translate(50%, 50%)")), "l-badge--dot" to padStyleMapOf(utsMapOf("width" to "16rpx", "minWidth" to 0, "height" to "16rpx", "backgroundImage" to "none", "backgroundColor" to "#FF4D4F", "borderTopLeftRadius" to 99, "borderTopRightRadius" to 99, "borderBottomRightRadius" to 99, "borderBottomLeftRadius" to 99, "borderTopWidth" to 0, "borderRightWidth" to 0, "borderBottomWidth" to 0, "borderLeftWidth" to 0, "paddingTop" to 0, "paddingRight" to 0, "paddingBottom" to 0, "paddingLeft" to 0, "overflow" to "visible")), "l-badge__wrapper" to padStyleMapOf(utsMapOf("position" to "relative", "overflow" to "visible")))
+                return _uM("l-badge" to _pS(_uM("boxSizing" to "border-box", "paddingTop" to 0, "paddingRight" to "8rpx", "paddingBottom" to 0, "paddingLeft" to "8rpx", "color" to "#FFFFFF", "fontWeight" to "bold", "fontSize" to 12, "fontFamily" to "-apple-system-font, helvetica neue, arial, sans-serif", "lineHeight" to 1.2, "textAlign" to "center", "backgroundColor" to "#FF4D4F", "borderTopWidth" to "1rpx", "borderRightWidth" to "1rpx", "borderBottomWidth" to "1rpx", "borderLeftWidth" to "1rpx", "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopColor" to "#FFFFFF", "borderRightColor" to "#FFFFFF", "borderBottomColor" to "#FFFFFF", "borderLeftColor" to "#FFFFFF", "borderTopLeftRadius" to 999, "borderTopRightRadius" to 999, "borderBottomRightRadius" to 999, "borderBottomLeftRadius" to 999, "overflow" to "visible")), "l-badge--fixed" to _uM("" to _uM("position" to "absolute", "transformOrigin" to "100%"), ".l-badge--offscreen" to _uM("position" to "fixed", "opacity" to 0, "top" to -10000000000)), "l-badge--top-left" to _pS(_uM("top" to 0, "left" to 0, "transform" to "translate(-50%, -50%)")), "l-badge--top-right" to _pS(_uM("top" to 0, "right" to 0, "transform" to "translate(50%, -50%)")), "l-badge--bottom-left" to _pS(_uM("bottom" to 0, "left" to 0, "transform" to "translate(-50%, 50%)")), "l-badge--bottom-right" to _pS(_uM("bottom" to 0, "right" to 0, "transform" to "translate(50%, 50%)")), "l-badge--dot" to _pS(_uM("width" to "16rpx", "minWidth" to 0, "height" to "16rpx", "backgroundImage" to "none", "backgroundColor" to "#FF4D4F", "borderTopLeftRadius" to 99, "borderTopRightRadius" to 99, "borderBottomRightRadius" to 99, "borderBottomLeftRadius" to 99, "borderTopWidth" to 0, "borderRightWidth" to 0, "borderBottomWidth" to 0, "borderLeftWidth" to 0, "paddingTop" to 0, "paddingRight" to 0, "paddingBottom" to 0, "paddingLeft" to 0, "overflow" to "visible")), "l-badge__wrapper" to _pS(_uM("position" to "relative", "overflow" to "visible")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf("color" to utsMapOf("type" to "String", "required" to false), "content" to utsMapOf("required" to false), "dot" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "max" to utsMapOf("type" to "Number", "required" to true, "default" to 99), "offset" to utsMapOf("type" to "Array", "required" to true, "default" to utsArrayOf<Any>()), "position" to utsMapOf("type" to "String", "required" to true, "default" to "top-right"), "shape" to utsMapOf("type" to "String", "required" to false), "showZero" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "size" to utsMapOf("type" to "String", "required" to false)))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM("color" to _uM("type" to "String", "required" to false), "content" to _uM("required" to false), "dot" to _uM("type" to "Boolean", "required" to true, "default" to false), "max" to _uM("type" to "Number", "required" to true, "default" to 99), "offset" to _uM("type" to "Array", "required" to true, "default" to _uA<Any>()), "position" to _uM("type" to "String", "required" to true, "default" to "top-right"), "shape" to _uM("type" to "String", "required" to false), "showZero" to _uM("type" to "Boolean", "required" to true, "default" to false), "size" to _uM("type" to "String", "required" to false)))
+        var propsNeedCastKeys = _uA(
             "dot",
             "max",
             "offset",
             "position",
             "showZero"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

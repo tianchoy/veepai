@@ -44,14 +44,14 @@ export default __sfc__;
 function GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabelRender(this: InstanceType<typeof __sfc__>): any | null {
     const _ctx = this;
     const _cache = this.$.renderCache;
-    return createElementVNode("view", utsMapOf({
-        class: normalizeClass(["fui-label__wrap", utsMapOf({ 'fui-label__full': _ctx.full })]),
-        style: normalizeStyle(utsMapOf({ padding: _ctx.padding, margin: _ctx.margin })),
+    return _cE("view", _uM({
+        class: _nC(["fui-label__wrap", _uM({ 'fui-label__full': _ctx.full })]),
+        style: _nS(_uM({ padding: _ctx.padding, margin: _ctx.margin })),
         onClick: withModifiers(_ctx.onclick, ["stop"])
     }), [
         renderSlot(_ctx.$slots, "default")
     ], 14 /* CLASS, STYLE, PROPS */, ["onClick"]);
 }
 export type FuiLabelComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabelStyles = [utsMapOf([["fui-label__wrap", padStyleMapOf(utsMapOf([["boxSizing", "border-box"]]))], ["fui-label__full", padStyleMapOf(utsMapOf([["width", "100%"]]))]])];
+const GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabelStyles = [_uM([["fui-label__wrap", _pS(_uM([["boxSizing", "border-box"]]))], ["fui-label__full", _pS(_uM([["width", "100%"]]))]])];
 //# sourceMappingURL=fui-label.uvue.map

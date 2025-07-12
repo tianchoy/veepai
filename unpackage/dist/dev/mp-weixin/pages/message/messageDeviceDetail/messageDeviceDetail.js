@@ -15,7 +15,7 @@ if (!Math) {
   (_easycom_l_daily_punch + _easycom_fui_bottom_popup)();
 }
 const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "messageDeviceDetail",
   setup(__props) {
     const checkIns = common_vendor.ref(["2025-06-09", "2025-07-01", "2025-07-02"]);
@@ -132,7 +132,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-52a55c74"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/message/messageDeviceDetail/messageDeviceDetail.js.map

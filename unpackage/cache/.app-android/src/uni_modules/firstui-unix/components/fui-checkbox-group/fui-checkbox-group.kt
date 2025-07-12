@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {
         onCreated(fun() {
@@ -38,12 +34,12 @@ open class GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup : 
         val _ctx = this
         val _cache = this.`$`.renderCache
         val _component_checkbox_group = resolveComponent("checkbox-group")
-        return createVNode(_component_checkbox_group, utsMapOf("name" to _ctx.name), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-            return utsArrayOf(
+        return _cV(_component_checkbox_group, _uM("name" to _ctx.name), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+            return _uA(
                 renderSlot(_ctx.`$slots`, "default")
             )
         }
-        ), "_" to 3), 8, utsArrayOf(
+        ), "_" to 3), 8, _uA(
             "name"
         ))
     }
@@ -54,7 +50,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup : 
     open var fuiForm: ComponentPublicInstance? by `$data`
     @Suppress("USELESS_CAST")
     override fun data(): Map<String, Any?> {
-        return utsMapOf("vals" to utsArrayOf<String>(), "childrens" to utsArrayOf<ComponentPublicInstance>(), "fuiForm" to null as ComponentPublicInstance?)
+        return _uM("vals" to _uA<String>(), "childrens" to _uA<ComponentPublicInstance>(), "fuiForm" to null as ComponentPublicInstance?)
     }
     open var checkboxChange = ::gen_checkboxChange_fn
     open fun gen_checkboxChange_fn(e: UTSArray<String>) {
@@ -63,7 +59,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup : 
     }
     open var changeValue = ::gen_changeValue_fn
     open fun gen_changeValue_fn() {
-        val vals = utsArrayOf<String>()
+        val vals = _uA<String>()
         this.childrens.forEach(fun(item: ComponentPublicInstance){
             val isChk = item.`$data`["val"] as Boolean
             if (isChk) {
@@ -113,7 +109,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup : 
             item.`$data`["val"] = false
         }
         )
-        this.vals = utsArrayOf<String>()
+        this.vals = _uA<String>()
         this.checkboxChange(this.vals)
     }
     open var getSubmitValue = ::gen_getSubmitValue_fn
@@ -123,19 +119,19 @@ open class GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroup : 
     companion object {
         var name = "fui-checkbox-group"
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf())
+            _nCS(_uA())
         }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("change" to null, "update:modelValue" to null)
-        var props = normalizePropsOptions(utsMapOf("name" to utsMapOf("type" to "String", "default" to ""), "modelValue" to utsMapOf("type" to "Array", "default" to fun(): UTSArray<String> {
-            return utsArrayOf<String>()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("change" to null, "update:modelValue" to null)
+        var props = _nP(_uM("name" to _uM("type" to "String", "default" to ""), "modelValue" to _uM("type" to "Array", "default" to fun(): UTSArray<String> {
+            return _uA<String>()
         }
         )))
-        var propsNeedCastKeys = utsArrayOf(
+        var propsNeedCastKeys = _uA(
             "name",
             "modelValue"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesLimePickerComponentsLPickerItemLPickerItem : VueComponent, PickerItemProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     override var options: UTSArray<PickerColumnItem> by `$props`
@@ -69,14 +65,14 @@ open class GenUniModulesLimePickerComponentsLPickerItemLPickerItem : VueComponen
             )
             val elementPosition = computed(fun(): UTSArray<Boolean> {
                 val totalElements = pickerItemInstanceArray?.length ?: 0
-                return utsArrayOf(
+                return _uA(
                     column.value == 0,
                     column.value == totalElements - 1
                 )
             }
             )
             val innerIndex = computed(fun(): UTSArray<Number> {
-                return utsArrayOf(
+                return _uA(
                     curIndex.value
                 )
             }
@@ -243,26 +239,26 @@ open class GenUniModulesLimePickerComponentsLPickerItemLPickerItem : VueComponen
                 resizeObserver.disconnect()
             }
             )
-            __expose(utsMapOf("setIndex" to setIndex, "setValue" to setValue, "getIndexByValue" to getIndexByValue))
+            __expose(_uM("setIndex" to setIndex, "setValue" to setValue, "getIndexByValue" to getIndexByValue))
             return fun(): Any? {
                 val _component_picker_view_column = resolveComponent("picker-view-column")
                 val _component_picker_view = resolveComponent("picker-view")
-                return createVNode(_component_picker_view, utsMapOf("class" to "l-picker-item__group", "style" to normalizeStyle(utsMapOf("opacity" to if (_ctx.options.length > 0) {
+                return _cV(_component_picker_view, _uM("class" to "l-picker-item__group", "style" to _nS(_uM("opacity" to if (_ctx.options.length > 0) {
                     1
                 } else {
                     0
                 }
-                )), "indicator-style" to unref(indicatorStyles), "value" to unref(innerIndex), "onChange" to handlePick, "indicator-class" to "l-picker-item__indicator"), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                    return utsArrayOf(
-                        createVNode(_component_picker_view_column, utsMapOf("class" to "l-picker-item__wrapper"), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                            return utsArrayOf(
-                                createElementVNode("view", utsMapOf("ref_key" to "itemRef", "ref" to itemRef), null, 512)
+                )), "indicator-style" to unref(indicatorStyles), "value" to unref(innerIndex), "onChange" to handlePick, "indicator-class" to "l-picker-item__indicator"), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                    return _uA(
+                        _cV(_component_picker_view_column, _uM("class" to "l-picker-item__wrapper"), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                            return _uA(
+                                _cE("view", _uM("ref_key" to "itemRef", "ref" to itemRef), null, 512)
                             )
                         }
                         ), "_" to 1))
                     )
                 }
-                ), "_" to 1), 8, utsArrayOf(
+                ), "_" to 1), 8, _uA(
                     "style",
                     "indicator-style",
                     "value"
@@ -270,25 +266,25 @@ open class GenUniModulesLimePickerComponentsLPickerItemLPickerItem : VueComponen
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-picker-item__group" to padStyleMapOf(utsMapOf("flex" to 1)), "l-picker-item__group-item" to padStyleMapOf(utsMapOf("height" to 50, "lineHeight" to "50px", "textAlign" to "center", "transitionDuration" to "100ms", "transitionProperty" to "fontWeight,color", "transitionTimingFunction" to "linear", "fontWeight" to "400", "color" to "rgba(0,0,0,0.88)", "fontSize" to 16, "whiteSpace" to "nowrap")), "l-picker-item__group-item--active" to padStyleMapOf(utsMapOf("color" to "rgba(0,0,0,0.88)", "fontWeight" to "700")), "l-picker-item__indicator" to padStyleMapOf(utsMapOf("left" to "0rpx", "right" to "0rpx", "width" to "auto", "height" to 50, "pointerEvents" to "none", "backgroundColor" to "rgba(0,0,0,0.02)")), "@TRANSITION" to utsMapOf("l-picker-item__group-item" to utsMapOf("duration" to "100ms", "property" to "fontWeight,color", "timingFunction" to "linear")))
+                return _uM("l-picker-item__group" to _pS(_uM("flex" to 1)), "l-picker-item__group-item" to _pS(_uM("height" to 50, "lineHeight" to "50px", "textAlign" to "center", "transitionDuration" to "100ms", "transitionProperty" to "fontWeight,color", "transitionTimingFunction" to "linear", "fontWeight" to "400", "color" to "rgba(0,0,0,0.88)", "fontSize" to 16, "whiteSpace" to "nowrap")), "l-picker-item__group-item--active" to _pS(_uM("color" to "rgba(0,0,0,0.88)", "fontWeight" to "700")), "l-picker-item__indicator" to _pS(_uM("left" to "0rpx", "right" to "0rpx", "width" to "auto", "height" to 50, "pointerEvents" to "none", "backgroundColor" to "rgba(0,0,0,0.02)")), "@TRANSITION" to _uM("l-picker-item__group-item" to _uM("duration" to "100ms", "property" to "fontWeight,color", "timingFunction" to "linear")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf("options" to utsMapOf("type" to "Array", "required" to true, "default" to utsArrayOf<PickerColumnItem>()), "value" to utsMapOf("required" to false), "column" to utsMapOf("type" to "Number", "required" to true, "default" to -1), "name" to utsMapOf("type" to utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM("options" to _uM("type" to "Array", "required" to true, "default" to _uA<PickerColumnItem>()), "value" to _uM("required" to false), "column" to _uM("type" to "Number", "required" to true, "default" to -1), "name" to _uM("type" to _uA(
             "String",
             "Number"
         ), "required" to false)))
-        var propsNeedCastKeys = utsArrayOf(
+        var propsNeedCastKeys = _uA(
             "options",
             "column"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

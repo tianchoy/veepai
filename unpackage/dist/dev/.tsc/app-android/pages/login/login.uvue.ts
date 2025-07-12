@@ -11,7 +11,7 @@ import { ref } from 'vue'
     
 const __sfc__ = defineComponent({
   __name: 'login',
-  setup(__props): any | null {
+  setup(__props) {
 const __ins = getCurrentInstance()!;
 const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
@@ -100,30 +100,30 @@ const _component_fui_label = resolveEasyComponent("fui-label",_easycom_fui_label
 const _component_fui_checkbox_group = resolveEasyComponent("fui-checkbox-group",_easycom_fui_checkbox_group)
 const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_easycom_fui_bottom_popup)
 
-  return createElementVNode("view", utsMapOf({ class: "container" }), [
-    createVNode(unref(TopNavBar), utsMapOf({
+  return _cE("view", _uM({ class: "container" }), [
+    _cV(unref(TopNavBar), _uM({
       title: "登陆",
       rightText: "注册"
     })),
-    createElementVNode("image", utsMapOf({
+    _cE("image", _uM({
       src: _imports_0,
       class: "longin_banner"
     })),
-    createElementVNode("view", utsMapOf({ class: "content" }), [
+    _cE("view", _uM({ class: "content" }), [
       isTrue(loginType.value)
-        ? createElementVNode("view", utsMapOf({ key: 0 }), [
-            createVNode(_component_fui_input, utsMapOf({
+        ? _cE("view", _uM({ key: 0 }), [
+            _cV(_component_fui_input, _uM({
               "placeholder-style": "color:#000",
               backgroundColor: "#d3a0fa",
               radius: 40,
               borderBottom: false,
               placeholder: "请输入账号"
-            }), utsMapOf({
+            }), _uM({
               left: withSlotCtx((): any[] => [
-                createElementVNode("view", utsMapOf({
-                  style: normalizeStyle(utsMapOf({"margin-right":"20rpx"}))
+                _cE("view", _uM({
+                  style: _nS(_uM({"margin-right":"20rpx"}))
                 }), [
-                  createVNode(_component_fui_icon, utsMapOf({
+                  _cV(_component_fui_icon, _uM({
                     name: "mobile",
                     color: "#1296db",
                     size: 48
@@ -132,7 +132,7 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
               ]),
               _: 1 /* STABLE */
             })),
-            createVNode(_component_fui_input, utsMapOf({
+            _cV(_component_fui_input, _uM({
               "placeholder-style": "color:#000",
               backgroundColor: "#d3a0fa",
               marginTop: 40,
@@ -140,12 +140,12 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
               borderBottom: false,
               placeholder: "请输入密码",
               type: "password"
-            }), utsMapOf({
+            }), _uM({
               left: withSlotCtx((): any[] => [
-                createElementVNode("view", utsMapOf({
-                  style: normalizeStyle(utsMapOf({"margin-right":"20rpx"}))
+                _cE("view", _uM({
+                  style: _nS(_uM({"margin-right":"20rpx"}))
                 }), [
-                  createVNode(_component_fui_icon, utsMapOf({
+                  _cV(_component_fui_icon, _uM({
                     name: "captcha",
                     color: "#1296db",
                     size: 48
@@ -154,26 +154,26 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
               ]),
               _: 1 /* STABLE */
             })),
-            createElementVNode("view", utsMapOf({ class: "tips" }), [
-              createElementVNode("text", utsMapOf({
+            _cE("view", _uM({ class: "tips" }), [
+              _cE("text", _uM({
                 onClick: () => {changeType(false)}
               }), "短信登陆", 8 /* PROPS */, ["onClick"]),
-              createElementVNode("text", null, "忘记密码")
+              _cE("text", null, "忘记密码")
             ])
           ])
-        : createElementVNode("view", utsMapOf({ key: 1 }), [
-            createVNode(_component_fui_input, utsMapOf({
+        : _cE("view", _uM({ key: 1 }), [
+            _cV(_component_fui_input, _uM({
               "placeholder-style": "color:#000",
               backgroundColor: "#d3a0fa",
               radius: 40,
               borderBottom: false,
               placeholder: "请输入账号"
-            }), utsMapOf({
+            }), _uM({
               left: withSlotCtx((): any[] => [
-                createElementVNode("view", utsMapOf({
-                  style: normalizeStyle(utsMapOf({"margin-right":"20rpx"}))
+                _cE("view", _uM({
+                  style: _nS(_uM({"margin-right":"20rpx"}))
                 }), [
-                  createVNode(_component_fui_icon, utsMapOf({
+                  _cV(_component_fui_icon, _uM({
                     name: "mobile",
                     color: "#1296db",
                     size: 48
@@ -182,7 +182,7 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
               ]),
               _: 1 /* STABLE */
             })),
-            createVNode(_component_fui_input, utsMapOf({
+            _cV(_component_fui_input, _uM({
               padding: "20rpx 32rpx",
               backgroundColor: "#d3a0fa",
               placeholder: "请输入验证码",
@@ -192,12 +192,12 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
               placeholderStyle: "font-size: 26rpx;",
               "placeholder-style": "color:#000",
               borderBottom: false
-            }), utsMapOf({
+            }), _uM({
               left: withSlotCtx((): any[] => [
-                createElementVNode("view", utsMapOf({
-                  style: normalizeStyle(utsMapOf({"margin-right":"20rpx"}))
+                _cE("view", _uM({
+                  style: _nS(_uM({"margin-right":"20rpx"}))
                 }), [
-                  createVNode(_component_fui_icon, utsMapOf({
+                  _cV(_component_fui_icon, _uM({
                     name: "captcha",
                     color: "#1296db",
                     size: 48
@@ -205,7 +205,7 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
                 ], 4 /* STYLE */)
               ]),
               default: withSlotCtx((): any[] => [
-                createVNode(_component_fui_button, utsMapOf({
+                _cV(_component_fui_button, _uM({
                   width: "200rpx",
                   height: "64rpx",
                   size: 28,
@@ -218,33 +218,33 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
               ]),
               _: 1 /* STABLE */
             })),
-            createElementVNode("view", utsMapOf({ class: "tips" }), [
-              createElementVNode("text", utsMapOf({
+            _cE("view", _uM({ class: "tips" }), [
+              _cE("text", _uM({
                 onClick: () => {changeType(true)}
               }), "密码登陆", 8 /* PROPS */, ["onClick"]),
-              createElementVNode("text", null, "忘记密码")
+              _cE("text", null, "忘记密码")
             ])
           ]),
-      createVNode(_component_fui_checkbox_group, utsMapOf({
+      _cV(_component_fui_checkbox_group, _uM({
         name: "checkbox",
         class: "check-box",
         onChange: isChecked
-      }), utsMapOf({
+      }), _uM({
         default: withSlotCtx((): any[] => [
-          createVNode(_component_fui_label, null, utsMapOf({
+          _cV(_component_fui_label, null, _uM({
             default: withSlotCtx((): any[] => [
-              createVNode(_component_fui_checkbox, utsMapOf({ value: "1" }))
+              _cV(_component_fui_checkbox, _uM({ value: "1" }))
             ]),
             _: 1 /* STABLE */
           })),
-          createElementVNode("view", utsMapOf({ class: "fui-text-box" }), [
-            createElementVNode("text", null, "已阅读并同意"),
-            createElementVNode("text", utsMapOf({
+          _cE("view", _uM({ class: "fui-text-box" }), [
+            _cE("text", null, "已阅读并同意"),
+            _cE("text", _uM({
               class: "fui-text",
               onClick: showUserInfo
             }), "《用户协议》"),
-            createElementVNode("text", null, "和"),
-            createElementVNode("text", utsMapOf({
+            _cE("text", null, "和"),
+            _cE("text", _uM({
               class: "fui-text",
               onClick: priviteInfo
             }), "《隐私政策》")
@@ -252,7 +252,7 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
         ]),
         _: 1 /* STABLE */
       })),
-      createVNode(_component_fui_button, utsMapOf({
+      _cV(_component_fui_button, _uM({
         text: "登录",
         margin: "20rpx 0 0 0",
         background: "#1296db",
@@ -261,27 +261,27 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
         onOnclick: login
       }))
     ]),
-    createElementVNode("view", null, [
-      createVNode(_component_fui_bottom_popup, utsMapOf({
+    _cE("view", null, [
+      _cV(_component_fui_bottom_popup, _uM({
         visible: user_info.value,
         onClose: closeUserPopup
-      }), utsMapOf({
+      }), _uM({
         default: withSlotCtx((): any[] => [
-          createElementVNode("view", utsMapOf({ class: "fui-scroll__wrap" }), [
-            createElementVNode("view", utsMapOf({ class: "fui-title__pb" }), [
-              createElementVNode("text", null, toDisplayString(user_text.value.title), 1 /* TEXT */),
-              createElementVNode("view", utsMapOf({ onClick: closeUserPopup }), [
-                createVNode(_component_fui_icon, utsMapOf({
+          _cE("view", _uM({ class: "fui-scroll__wrap" }), [
+            _cE("view", _uM({ class: "fui-title__pb" }), [
+              _cE("text", null, _tD(user_text.value.title), 1 /* TEXT */),
+              _cE("view", _uM({ onClick: closeUserPopup }), [
+                _cV(_component_fui_icon, _uM({
                   name: "close",
                   size: 48
                 }))
               ])
             ]),
-            createElementVNode("scroll-view", utsMapOf({
+            _cE("scroll-view", _uM({
               "scroll-y": true,
               "show-scrollbar": false
             }), [
-              createElementVNode("view", null, toDisplayString(user_text.value.content), 1 /* TEXT */)
+              _cE("view", null, _tD(user_text.value.content), 1 /* TEXT */)
             ])
           ])
         ]),
@@ -294,4 +294,4 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
 
 })
 export default __sfc__
-const GenPagesLoginLoginStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundColor", "#ffffff"], ["paddingTop", "20rpx"], ["paddingRight", "40rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "40rpx"], ["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"]]))], ["longin_banner", utsMapOf([[".container ", utsMapOf([["width", "250rpx"], ["height", "400rpx"], ["marginBottom", "20rpx"]])]])], ["content", utsMapOf([[".container ", utsMapOf([["width", "100%"]])]])], ["check-box", utsMapOf([[".container .content ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-start"], ["marginTop", "20rpx"]])]])], ["fui-text-box", utsMapOf([[".container .content .check-box ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-start"], ["marginLeft", "10rpx"]])]])], ["fui-text", utsMapOf([[".container .content .check-box .fui-text-box ", utsMapOf([["color", "#1296db"]])]])], ["tips", utsMapOf([[".container .content ", utsMapOf([["marginTop", "20rpx"], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "space-between"]])]])], ["fui-scroll__wrap", utsMapOf([[".container ", utsMapOf([["width", "100%"], ["paddingTop", "40rpx"], ["paddingRight", "40rpx"], ["paddingBottom", "40rpx"], ["paddingLeft", "40rpx"]])]])], ["fui-title__pb", utsMapOf([[".container .fui-scroll__wrap ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"]])]])]])]
+const GenPagesLoginLoginStyles = [_uM([["container", _pS(_uM([["height", "100%"], ["backgroundColor", "#ffffff"], ["paddingTop", "20rpx"], ["paddingRight", "40rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "40rpx"], ["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"]]))], ["longin_banner", _uM([[".container ", _uM([["width", "250rpx"], ["height", "400rpx"], ["marginBottom", "20rpx"]])]])], ["content", _uM([[".container ", _uM([["width", "100%"]])]])], ["check-box", _uM([[".container .content ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-start"], ["marginTop", "20rpx"]])]])], ["fui-text-box", _uM([[".container .content .check-box ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-start"], ["marginLeft", "10rpx"]])]])], ["fui-text", _uM([[".container .content .check-box .fui-text-box ", _uM([["color", "#1296db"]])]])], ["tips", _uM([[".container .content ", _uM([["marginTop", "20rpx"], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "space-between"]])]])], ["fui-scroll__wrap", _uM([[".container ", _uM([["width", "100%"], ["paddingTop", "40rpx"], ["paddingRight", "40rpx"], ["paddingBottom", "40rpx"], ["paddingLeft", "40rpx"]])]])], ["fui-title__pb", _uM([[".container .fui-scroll__wrap ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"]])]])]])]

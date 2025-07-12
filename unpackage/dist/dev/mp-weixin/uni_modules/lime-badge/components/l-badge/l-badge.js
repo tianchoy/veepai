@@ -9,15 +9,15 @@ const name = "l-badge";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "l-badge",
   props: {
-    color: new UTSJSONObject({}),
-    content: new UTSJSONObject({}),
-    dot: new UTSJSONObject({ type: Boolean, default: false }),
-    max: new UTSJSONObject({ default: 99 }),
-    offset: new UTSJSONObject({ default: [] }),
-    position: new UTSJSONObject({ default: "top-right" }),
-    shape: new UTSJSONObject({}),
-    showZero: new UTSJSONObject({ type: Boolean, default: false }),
-    size: new UTSJSONObject({})
+    color: {},
+    content: {},
+    dot: { type: Boolean, default: false },
+    max: { default: 99 },
+    offset: { default: [] },
+    position: { default: "top-right" },
+    shape: {},
+    showZero: { type: Boolean, default: false },
+    size: {}
   },
   setup(__props) {
     const props = __props;

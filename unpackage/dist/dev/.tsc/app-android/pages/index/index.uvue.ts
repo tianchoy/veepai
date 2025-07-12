@@ -3,7 +3,7 @@ import { ref } from 'vue'
 	
 const __sfc__ = defineComponent({
   __name: 'index',
-  setup(__props): any | null {
+  setup(__props) {
 const __ins = getCurrentInstance()!;
 const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
@@ -56,6 +56,9 @@ const _cache = __ins.renderCache;
 			title: '设备详情',
 			icon: 'none'
 		})
+		uni.navigateTo({
+			url: '/pages/index/deviceDetail'
+		})
 	}
 
 	const pauseClick = () => {
@@ -85,13 +88,13 @@ const _cache = __ins.renderCache;
 
 return (): any | null => {
 
-  return createElementVNode("view", utsMapOf({ class: "container" }), [
-    createElementVNode("view", utsMapOf({ class: "content" }), [
-      createElementVNode("view", utsMapOf({
+  return _cE("view", _uM({ class: "container" }), [
+    _cE("view", _uM({ class: "content" }), [
+      _cE("view", _uM({
         class: "video-container",
-        style: normalizeStyle(utsMapOf({"border-radius":"15rpx","overflow":"hidden"}))
+        style: _nS(_uM({"border-radius":"15rpx","overflow":"hidden"}))
       }), [
-        createElementVNode("video", utsMapOf({
+        _cE("video", _uM({
           class: "video",
           id: "myVideo",
           title: deviceTitle.value,
@@ -107,40 +110,40 @@ return (): any | null => {
           onClick: clickVdedio
         }), null, 8 /* PROPS */, ["title"])
       ], 4 /* STYLE */),
-      createElementVNode("view", null, toDisplayString(deviceTitle.value), 1 /* TEXT */),
-      createElementVNode("view", utsMapOf({ class: "video-right-control" }), [
-        createElementVNode("view", utsMapOf({ class: "vedio-control" }), [
-          createElementVNode("image", utsMapOf({
+      _cE("view", null, _tD(deviceTitle.value), 1 /* TEXT */),
+      _cE("view", _uM({ class: "video-right-control" }), [
+        _cE("view", _uM({ class: "vedio-control" }), [
+          _cE("image", _uM({
             class: "vedio-control-icon",
             src: forward,
             onClick: toDeviceDetail
           }))
         ]),
-        createElementVNode("view", utsMapOf({ class: "vedio-control" }), [
-          createElementVNode("image", utsMapOf({
+        _cE("view", _uM({ class: "vedio-control" }), [
+          _cE("image", _uM({
             class: "vedio-control-icon",
             src: errIcon,
             onClick: errClick
           }))
         ]),
-        createElementVNode("view", utsMapOf({ class: "vedio-control" }), [
-          createElementVNode("image", utsMapOf({
+        _cE("view", _uM({ class: "vedio-control" }), [
+          _cE("image", _uM({
             class: "vedio-control-icon",
             src: transfer,
             onClick: transferClick
           }))
         ]),
-        createElementVNode("view", utsMapOf({ class: "vedio-control" }), [
-          createElementVNode("image", utsMapOf({
+        _cE("view", _uM({ class: "vedio-control" }), [
+          _cE("image", _uM({
             class: "vedio-control-icon",
             src: replayIcon,
             onClick: replay
           }))
         ])
       ]),
-      createElementVNode("view", utsMapOf({ class: "video-bottom-control" }), [
-        createElementVNode("view", utsMapOf({ class: "vedio-control" }), [
-          createElementVNode("image", utsMapOf({
+      _cE("view", _uM({ class: "video-bottom-control" }), [
+        _cE("view", _uM({ class: "vedio-control" }), [
+          _cE("image", _uM({
             class: "vedio-control-icon",
             onClick: pauseClick,
             src: pauseIcon
@@ -154,4 +157,4 @@ return (): any | null => {
 
 })
 export default __sfc__
-const GenPagesIndexIndexStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["width", "100%"], ["height", "100%"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"], ["display", "flex"], ["flexDirection", "column"]]))], ["content", utsMapOf([[".container ", utsMapOf([["position", "relative"], ["borderTopLeftRadius", "15rpx"], ["borderTopRightRadius", "15rpx"], ["borderBottomRightRadius", "15rpx"], ["borderBottomLeftRadius", "15rpx"], ["width", "100%"], ["height", "400rpx"], ["overflow", "hidden"]])]])], ["video-container", utsMapOf([[".container .content ", utsMapOf([["width", "100%"], ["height", "100%"]])]])], ["video", utsMapOf([[".container .content ", utsMapOf([["width", "100%"], ["height", "100%"], ["objectFit", "cover"], ["marginBottom", 0]])]])], ["video-top-title", utsMapOf([[".container .content ", utsMapOf([["position", "absolute"], ["top", 0], ["height", "60rpx"], ["width", "80%"], ["paddingTop", "15rpx"], ["paddingRight", 0], ["paddingBottom", 0], ["paddingLeft", "20rpx"], ["backgroundImage", "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))"], ["backgroundColor", "rgba(0,0,0,0)"], ["zIndex", 3]])]])], ["video-right-control", utsMapOf([[".container .content ", utsMapOf([["position", "absolute"], ["top", 0], ["right", "10rpx"], ["display", "flex"], ["flexDirection", "column"], ["justifyContent", "space-around"], ["height", "100%"], ["alignItems", "center"], ["zIndex", 2]])]])], ["vedio-control", utsMapOf([[".container .content .video-right-control ", utsMapOf([["width", "50rpx"], ["height", "50rpx"], ["paddingTop", "10rpx"], ["paddingRight", "10rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "10rpx"], ["borderTopLeftRadius", "25rpx"], ["borderTopRightRadius", "25rpx"], ["borderBottomRightRadius", "25rpx"], ["borderBottomLeftRadius", "25rpx"], ["backgroundImage", "none"], ["backgroundColor", "rgba(255,255,255,0.7)"]])], [".container .content .video-bottom-control ", utsMapOf([["marginTop", 0], ["marginRight", "auto"], ["marginBottom", 0], ["marginLeft", "auto"], ["width", "50rpx"], ["height", "50rpx"], ["paddingTop", "10rpx"], ["paddingRight", "10rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "10rpx"], ["borderTopLeftRadius", "25rpx"], ["borderTopRightRadius", "25rpx"], ["borderBottomRightRadius", "25rpx"], ["borderBottomLeftRadius", "25rpx"], ["backgroundImage", "none"], ["backgroundColor", "rgba(255,255,255,0.7)"]])]])], ["vedio-control-icon", utsMapOf([[".container .content .video-right-control .vedio-control ", utsMapOf([["width", "100%"], ["height", "100%"]])], [".container .content .video-bottom-control .vedio-control ", utsMapOf([["width", "100%"], ["height", "100%"]])]])], ["video-bottom-control", utsMapOf([[".container .content ", utsMapOf([["position", "absolute"], ["bottom", "10rpx"], ["left", 0], ["width", "100%"], ["height", "50rpx"], ["zIndex", 1]])]])]])]
+const GenPagesIndexIndexStyles = [_uM([["container", _pS(_uM([["width", "100%"], ["height", "100%"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"], ["display", "flex"], ["flexDirection", "column"]]))], ["content", _uM([[".container ", _uM([["position", "relative"], ["borderTopLeftRadius", "15rpx"], ["borderTopRightRadius", "15rpx"], ["borderBottomRightRadius", "15rpx"], ["borderBottomLeftRadius", "15rpx"], ["width", "100%"], ["height", "400rpx"], ["overflow", "hidden"]])]])], ["video-container", _uM([[".container .content ", _uM([["width", "100%"], ["height", "100%"]])]])], ["video", _uM([[".container .content ", _uM([["width", "100%"], ["height", "100%"], ["objectFit", "cover"], ["marginBottom", 0]])]])], ["video-top-title", _uM([[".container .content ", _uM([["position", "absolute"], ["top", 0], ["height", "60rpx"], ["width", "80%"], ["paddingTop", "15rpx"], ["paddingRight", 0], ["paddingBottom", 0], ["paddingLeft", "20rpx"], ["backgroundImage", "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))"], ["backgroundColor", "rgba(0,0,0,0)"], ["zIndex", 3]])]])], ["video-right-control", _uM([[".container .content ", _uM([["position", "absolute"], ["top", 0], ["right", "10rpx"], ["display", "flex"], ["flexDirection", "column"], ["justifyContent", "space-around"], ["height", "100%"], ["alignItems", "center"], ["zIndex", 2]])]])], ["vedio-control", _uM([[".container .content .video-right-control ", _uM([["width", "50rpx"], ["height", "50rpx"], ["paddingTop", "10rpx"], ["paddingRight", "10rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "10rpx"], ["borderTopLeftRadius", "25rpx"], ["borderTopRightRadius", "25rpx"], ["borderBottomRightRadius", "25rpx"], ["borderBottomLeftRadius", "25rpx"], ["backgroundImage", "none"], ["backgroundColor", "rgba(255,255,255,0.7)"]])], [".container .content .video-bottom-control ", _uM([["marginTop", 0], ["marginRight", "auto"], ["marginBottom", 0], ["marginLeft", "auto"], ["width", "50rpx"], ["height", "50rpx"], ["paddingTop", "10rpx"], ["paddingRight", "10rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "10rpx"], ["borderTopLeftRadius", "25rpx"], ["borderTopRightRadius", "25rpx"], ["borderBottomRightRadius", "25rpx"], ["borderBottomLeftRadius", "25rpx"], ["backgroundImage", "none"], ["backgroundColor", "rgba(255,255,255,0.7)"]])]])], ["vedio-control-icon", _uM([[".container .content .video-right-control .vedio-control ", _uM([["width", "100%"], ["height", "100%"]])], [".container .content .video-bottom-control .vedio-control ", _uM([["width", "100%"], ["height", "100%"]])]])], ["video-bottom-control", _uM([[".container .content ", _uM([["position", "absolute"], ["bottom", "10rpx"], ["left", 0], ["width", "100%"], ["height", "50rpx"], ["zIndex", 1]])]])]])]

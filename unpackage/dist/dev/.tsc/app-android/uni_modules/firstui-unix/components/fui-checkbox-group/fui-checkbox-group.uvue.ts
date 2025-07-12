@@ -102,7 +102,7 @@ const _ctx = this
 const _cache = this.$.renderCache
 const _component_checkbox_group = resolveComponent("checkbox-group")
 
-  return createVNode(_component_checkbox_group, utsMapOf({ name: _ctx.name }), utsMapOf({
+  return _cV(_component_checkbox_group, _uM({ name: _ctx.name }), _uM({
     default: withSlotCtx((): any[] => [
       renderSlot(_ctx.$slots, "default")
     ]),

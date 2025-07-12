@@ -1,0 +1,136 @@
+<template>
+	<view class="container">
+        <TopNavBar title="设备详情" :showBack="true" rightText="setup" @rightEvent="deviceSetting" />
+        <view class="content">
+            <video class="video" id="myVideo" title="deviceTitle" :src="videoSrc" ref="videoRef" :controls="true" :show-play-btn="true"
+				:show-center-play-btn="true" :enable-progress-gesture="true" :show-fullscreen-btn="true"
+				:show-mute-btn="true" ></video>
+        </view>
+        <view class="control-big">
+            <view class="big-item">
+                <image class="big-item-icon" src="/static/device/camera.png" />
+            </view>
+            <view class="big-item">
+                <image class="big-item-icon" src="/static/device/vedio.png" />
+            </view>
+            <view class="big-item">
+                <image class="big-item-icon" src="/static/device/volume_1.png" />
+            </view>
+            <view class="big-item">
+                <image class="big-item-icon" src="/static/device/voice_1.png" />
+            </view>
+        </view>
+        <view class="control-more">
+            <view class="small-item">
+                <image class="small-item-icon" src="/static/device/hd.png" />
+                <text class="small-item-text">画质</text>
+            </view>
+            <view class="small-item">
+                <image class="small-item-icon" src="/static/device/zhence.png" />
+                <text class="small-item-text">智能侦测</text>
+            </view>
+            <view class="small-item">
+                <image class="small-item-icon" src="/static/device/night.png" />
+                <text class="small-item-text">夜视模式</text>
+            </view>
+            <view class="small-item">
+                <image class="small-item-icon" src="/static/device/jtfz.png" />
+                <text class="small-item-text">镜头翻转</text>
+            </view>
+            <view class="small-item">
+                <image class="small-item-icon" src="/static/device/cloud.png" />
+                <text class="small-item-text">云台</text>
+            </view>
+            <view class="small-item">
+                <image class="small-item-icon" src="/static/device/winfo.png" />
+                <text class="small-item-text">巡航</text>
+            </view>
+            <view class="small-item">
+                <image class="small-item-icon" src="/static/device/jd.png" />
+                <text class="small-item-text">警笛</text>
+            </view>
+            <view class="small-item">
+                <image class="small-item-icon" src="/static/device/redblue_1.png" />
+                <text class="small-item-text">红蓝灯</text>
+            </view>
+            <view class="small-item">
+                <image class="small-item-icon" src="/static/device/replay.png" />
+                <text class="small-item-text">回放</text>
+            </view>
+            <view class="small-item">
+                <image class="small-item-icon" src="/static/device/share.png" />
+                <text class="small-item-text">分享</text>
+            </view>
+        </view>
+    </view>
+</template>
+
+<script setup lang="uts">
+    import { ref } from 'vue'
+	import TopNavBar from '@/components/TopNavBar'
+	const videoSrc = ref('https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4')
+
+
+    const deviceSetting = () =>{
+        uni.showToast({
+            title: '设备设置',
+            icon: 'none'
+        })
+    }
+
+</script>
+
+<style lang="scss" scoped>
+	.container{
+        height: 100%;
+        background-color: #f5f5f5;
+        .video{
+            width:100%;
+        }
+        .control-big{
+            padding:50rpx 20rpx;
+            display:flex;
+            flex-direction:row;
+            justify-content:space-between;
+            align-items: center;
+            .big-item{
+                background-color: #fff;
+                border-radius: 20rpx;
+                padding:40rpx;
+                .big-item-icon{
+                    width:70rpx;
+                    height:70rpx;
+                }
+            }
+        }
+        .control-more{
+			margin: 20rpx;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            background-color: #fff;
+            border-radius: 20rpx;
+            padding: 20rpx 0;
+			
+			.small-item{
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 20rpx 0; 
+				
+				.small-item-icon{
+					width: 45rpx;
+					height: 45rpx;
+                    margin-bottom:10rpx;
+				}
+				.small-item-text{
+                    font-size: 24rpx;
+                    color: #333;
+                }
+			}
+		}
+    }	
+</style>

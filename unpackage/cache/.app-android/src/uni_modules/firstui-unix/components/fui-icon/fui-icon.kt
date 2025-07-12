@@ -11,20 +11,16 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     @Suppress("UNUSED_PARAMETER", "UNUSED_VARIABLE")
     override fun `$render`(): Any? {
         val _ctx = this
         val _cache = this.`$`.renderCache
-        return createElementVNode("text", utsMapOf("style" to normalizeStyle(_ctx.getIconStyl), "class" to normalizeClass(utsArrayOf(
+        return _cE("text", _uM("style" to _nS(_ctx.getIconStyl), "class" to _nC(_uA(
             "fui-icon",
-            utsMapOf("fui-icon__fontsize" to _ctx.isBind, "fui-icon__active-color" to (_ctx.primary && _ctx.color == ""), "fui-icon__color" to (_ctx.color == "" && !_ctx.primary))
-        )), "onClick" to _ctx.handleClick), toDisplayString(_ctx.getIcon), 15, utsArrayOf(
+            _uM("fui-icon__fontsize" to _ctx.isBind, "fui-icon__active-color" to (_ctx.primary && _ctx.color == ""), "fui-icon__color" to (_ctx.color == "" && !_ctx.primary))
+        )), "onClick" to _ctx.handleClick), _tD(_ctx.getIcon), 15, _uA(
             "onClick"
         ))
     }
@@ -43,7 +39,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon : VueComponent {
     open var getIconStyl: Any by `$data`
     @Suppress("USELESS_CAST")
     override fun data(): Map<String, Any?> {
-        return utsMapOf("icons" to default1 as UTSJSONObject, "getSize" to computed<String>(fun(): String {
+        return _uM("icons" to default1 as UTSJSONObject, "getSize" to computed<String>(fun(): String {
             var size: String
             if (UTSAndroid.`typeof`(this.size) == "number") {
                 size = (this.size as Number).toString(10) + this.unit
@@ -92,23 +88,23 @@ open class GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon : VueComponent {
     companion object {
         var name = "fui-icon"
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("fui-icon" to padStyleMapOf(utsMapOf("fontFamily" to "fuiFont")), "fui-icon__color" to padStyleMapOf(utsMapOf("!color" to "#333333")), "fui-icon__active-color" to padStyleMapOf(utsMapOf("!color" to "#465CFF")), "fui-icon__fontsize" to padStyleMapOf(utsMapOf("!fontSize" to "64rpx", "!lineHeight" to "64rpx")), "@FONT-FACE" to utsMapOf("0" to utsMapOf("fontFamily" to "fuiFont", "src" to "url(\"/assets/fui-icon.9165208c.ttf\")")))
+                return _uM("fui-icon" to _pS(_uM("fontFamily" to "fuiFont")), "fui-icon__color" to _pS(_uM("!color" to "#333333")), "fui-icon__active-color" to _pS(_uM("!color" to "#465CFF")), "fui-icon__fontsize" to _pS(_uM("!fontSize" to "64rpx", "!lineHeight" to "64rpx")), "@FONT-FACE" to _uM("0" to _uM("fontFamily" to "fuiFont", "src" to "url(\"/assets/fui-icon.9165208c.ttf\")")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("onclick" to null)
-        var props = normalizePropsOptions(utsMapOf("name" to utsMapOf("type" to "String", "default" to ""), "size" to utsMapOf("type" to utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("onclick" to null)
+        var props = _nP(_uM("name" to _uM("type" to "String", "default" to ""), "size" to _uM("type" to _uA(
             "Object",
             "String",
             "Number"
-        ), "default" to 0), "unit" to utsMapOf("type" to "String", "default" to "rpx"), "color" to utsMapOf("type" to "String", "default" to ""), "fontWeight" to utsMapOf("type" to "String", "default" to "normal"), "disabled" to utsMapOf("type" to "Boolean", "default" to false), "param" to utsMapOf("type" to "String", "default" to "0"), "primary" to utsMapOf("type" to "Boolean", "default" to false)))
-        var propsNeedCastKeys = utsArrayOf(
+        ), "default" to 0), "unit" to _uM("type" to "String", "default" to "rpx"), "color" to _uM("type" to "String", "default" to ""), "fontWeight" to _uM("type" to "String", "default" to "normal"), "disabled" to _uM("type" to "Boolean", "default" to false), "param" to _uM("type" to "String", "default" to "0"), "primary" to _uM("type" to "Boolean", "default" to false)))
+        var propsNeedCastKeys = _uA(
             "name",
             "size",
             "unit",
@@ -118,6 +114,6 @@ open class GenUniModulesFirstuiUnixComponentsFuiIconFuiIcon : VueComponent {
             "param",
             "primary"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

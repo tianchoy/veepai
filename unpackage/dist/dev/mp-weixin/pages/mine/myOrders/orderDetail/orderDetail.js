@@ -1,6 +1,6 @@
 "use strict";
 const common_vendor = require("../../../../common/vendor.js");
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "orderDetail",
   setup(__props) {
     const id = common_vendor.ref("");
@@ -14,7 +14,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-02b2f871"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../../../.sourcemap/mp-weixin/pages/mine/myOrders/orderDetail/orderDetail.js.map

@@ -20,7 +20,7 @@ const _easycom_fui_bottom_popup = () => "../../../uni_modules/firstui-unix/compo
 if (!Math) {
   (_easycom_fui_icon + _easycom_fui_input + _easycom_l_textarea + _easycom_l_upload + _easycom_fui_button + _easycom_l_picker + _easycom_fui_bottom_popup)();
 }
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "feeback",
   setup(__props) {
     const questionType = common_vendor.ref("请选择问题类型");
@@ -141,7 +141,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-9d38f2ce"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/mine/feeback/feeback.js.map

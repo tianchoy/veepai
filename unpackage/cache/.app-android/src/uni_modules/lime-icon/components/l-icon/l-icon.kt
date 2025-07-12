@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.getStorageSync as uni_getStorageSync
 open class GenUniModulesLimeIconComponentsLIconLIcon : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
@@ -137,64 +133,64 @@ open class GenUniModulesLimeIconComponentsLIconLIcon : VueComponent {
             )
             return fun(): Any? {
                 return if (isTrue(!unref(isImage) && !unref(isIconify) && !unref(isSVG))) {
-                    createElementVNode("text", utsMapOf("key" to 0, "class" to normalizeClass(utsArrayOf(
+                    _cE("text", _uM("key" to 0, "class" to _nC(_uA(
                         "l-icon",
-                        utsArrayOf(
+                        _uA(
                             unref(classes),
                             _ctx.lClass
                         )
-                    )), "style" to normalizeStyle(utsArrayOf(
+                    )), "style" to _nS(_uA(
                         unref(styles),
                         _ctx.lStyle
                     )), "onClick" to fun(){
                         _ctx.`$emit`("click")
-                    }), toDisplayString(unref(iconCode)), 15, utsArrayOf(
+                    }), _tD(unref(iconCode)), 15, _uA(
                         "onClick"
                     ))
                 } else {
                     if (isTrue((!unref(isSVG) && !unref(isIconify)) && unref(isImage))) {
-                        createElementVNode("image", utsMapOf("key" to 1, "class" to normalizeClass(utsArrayOf(
+                        _cE("image", _uM("key" to 1, "class" to _nC(_uA(
                             "l-icon",
-                            utsArrayOf(
+                            _uA(
                                 unref(classes),
                                 _ctx.lClass
                             )
-                        )), "style" to normalizeStyle(utsArrayOf(
+                        )), "style" to _nS(_uA(
                             unref(styles),
                             _ctx.lStyle
                         )), "src" to unref(iconUrl), "onClick" to fun(){
                             _ctx.`$emit`("click")
-                        }), null, 14, utsArrayOf(
+                        }), null, 14, _uA(
                             "src",
                             "onClick"
                         ))
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
                 }
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-icon--font" to padStyleMapOf(utsMapOf("fontFamily" to "l", "textAlign" to "center")), "@FONT-FACE" to utsMapOf("0" to utsMapOf("fontFamily" to "l", "src" to "url(\"/assets/t3.9658ea31.ttf\")")))
+                return _uM("l-icon--font" to _pS(_uM("fontFamily" to "l", "textAlign" to "center")), "@FONT-FACE" to _uM("0" to _uM("fontFamily" to "l", "src" to "url(\"/assets/t3.9658ea31.ttf\")")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("click" to null)
-        var props = normalizePropsOptions(utsMapOf("name" to utsMapOf("type" to "String", "default" to "", "required" to true), "color" to utsMapOf("type" to "String"), "size" to utsMapOf("type" to utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("click" to null)
+        var props = _nP(_uM("name" to _uM("type" to "String", "default" to "", "required" to true), "color" to _uM("type" to "String"), "size" to _uM("type" to _uA(
             "String",
             "Number"
-        )), "prefix" to utsMapOf("type" to "String", "default" to ""), "lClass" to utsMapOf("type" to "String", "default" to ""), "inherit" to utsMapOf("type" to "Boolean", "default" to true), "web" to utsMapOf("type" to "Boolean", "default" to false), "lStyle" to utsMapOf("type" to utsArrayOf(
+        )), "prefix" to _uM("type" to "String", "default" to ""), "lClass" to _uM("type" to "String", "default" to ""), "inherit" to _uM("type" to "Boolean", "default" to true), "web" to _uM("type" to "Boolean", "default" to false), "lStyle" to _uM("type" to _uA(
             "String",
             "Object",
             "Array"
         ), "default" to "")))
-        var propsNeedCastKeys = utsArrayOf(
+        var propsNeedCastKeys = _uA(
             "name",
             "prefix",
             "lClass",
@@ -202,6 +198,6 @@ open class GenUniModulesLimeIconComponentsLIconLIcon : VueComponent {
             "web",
             "lStyle"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

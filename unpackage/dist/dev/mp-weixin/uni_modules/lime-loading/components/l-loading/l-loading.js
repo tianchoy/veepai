@@ -4,15 +4,15 @@ const name = "l-loading";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "l-loading",
   props: {
-    color: new UTSJSONObject({}),
-    type: new UTSJSONObject({ default: "circular" }),
-    size: new UTSJSONObject({}),
-    text: new UTSJSONObject({}),
-    textColor: new UTSJSONObject({}),
-    textSize: new UTSJSONObject({}),
-    mode: new UTSJSONObject({ default: "raf" }),
-    vertical: new UTSJSONObject({ type: Boolean, default: false }),
-    animated: new UTSJSONObject({ type: Boolean, default: true })
+    color: {},
+    type: { default: "circular" },
+    size: {},
+    text: {},
+    textColor: {},
+    textSize: {},
+    mode: { default: "raf" },
+    vertical: { type: Boolean, default: false },
+    animated: { type: Boolean, default: true }
   },
   setup(__props) {
     const props = __props;

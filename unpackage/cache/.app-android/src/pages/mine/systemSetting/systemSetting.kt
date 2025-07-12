@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.getAppAuthorizeSetting as uni_getAppAuthorizeSetting
 import io.dcloud.uniapp.extapi.getSystemSetting as uni_getSystemSetting
 import io.dcloud.uniapp.extapi.openAppAuthorizeSetting as uni_openAppAuthorizeSetting
@@ -29,11 +25,11 @@ open class GenPagesMineSystemSettingSystemSetting : BasePage {
             val _cache = __ins.renderCache
             val checked = ref<Boolean>(true)
             val showPicker = ref<Boolean>(false)
-            val pickerOptions = ref(utsArrayOf<PickerColumn>())
+            val pickerOptions = ref(_uA<PickerColumn>())
             val playTypeItem = ref<String>("WIFI下自动播放")
             val systemNotifyState = ref<String>("")
-            val AuthState = ref(utsArrayOf<AuthType>(AuthType(code = "authorized", state = "已授权"), AuthType(code = "not determined", state = "未授权"), AuthType(code = "denied", state = "未授权")))
-            val permissionList = ref(utsArrayOf<PermissionItem>(PermissionItem(name = "位置信息", code = "locationAuthorized", status = "notDetermined"), PermissionItem(name = "相册", code = "albumAuthorized", status = "notDetermined"), PermissionItem(name = "麦克风", code = "microphoneAuthorized", status = "notDetermined"), PermissionItem(name = "蓝牙", code = "bluetoothAuthorized", status = "notDetermined"), PermissionItem(name = "系统通知", code = "notificationAuthorized", status = "notDetermined"), PermissionItem(name = "相机", code = "cameraAuthorized", status = "notDetermined")))
+            val AuthState = ref(_uA<AuthType>(AuthType(code = "authorized", state = "已授权"), AuthType(code = "not determined", state = "未授权"), AuthType(code = "denied", state = "未授权")))
+            val permissionList = ref(_uA<PermissionItem>(PermissionItem(name = "位置信息", code = "locationAuthorized", status = "notDetermined"), PermissionItem(name = "相册", code = "albumAuthorized", status = "notDetermined"), PermissionItem(name = "麦克风", code = "microphoneAuthorized", status = "notDetermined"), PermissionItem(name = "蓝牙", code = "bluetoothAuthorized", status = "notDetermined"), PermissionItem(name = "系统通知", code = "notificationAuthorized", status = "notDetermined"), PermissionItem(name = "相机", code = "cameraAuthorized", status = "notDetermined")))
             val getSystemAuth = fun(item: PermissionItem){
                 val res = uni_getAppAuthorizeSetting()
                 val code = item.code
@@ -66,7 +62,7 @@ open class GenPagesMineSystemSettingSystemSetting : BasePage {
                 checked.value = !checked.value
             }
             val playType = fun(){
-                pickerOptions.value = utsArrayOf<PickerColumn>(utsArrayOf(
+                pickerOptions.value = _uA<PickerColumn>(_uA(
                     PickerColumnItem(label = "WIFI下自动播放", value = "WIFI下自动播放"),
                     PickerColumnItem(label = "总是播放", value = "总是播放"),
                     PickerColumnItem(label = "不播放", value = "不播放")
@@ -106,35 +102,35 @@ open class GenPagesMineSystemSettingSystemSetting : BasePage {
                 val _component_fui_input = resolveEasyComponent("fui-input", GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass)
                 val _component_l_picker = resolveEasyComponent("l-picker", GenUniModulesLimePickerComponentsLPickerLPickerClass)
                 val _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup", GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass)
-                return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
-                        createElementVNode("view", utsMapOf("class" to "items underline"), utsArrayOf(
-                            createElementVNode("view", utsMapOf("class" to "offline"), utsArrayOf(
-                                createElementVNode("text", null, "离线提醒"),
-                                createVNode(_component_fui_switch, utsMapOf("checked" to checked.value, "onChange" to changeChecked, "onUpdate:checked" to isChecked), null, 8, utsArrayOf(
+                return _cE("view", _uM("class" to "container"), _uA(
+                    _cE("view", _uM("class" to "content"), _uA(
+                        _cE("view", _uM("class" to "items underline"), _uA(
+                            _cE("view", _uM("class" to "offline"), _uA(
+                                _cE("text", null, "离线提醒"),
+                                _cV(_component_fui_switch, _uM("checked" to checked.value, "onChange" to changeChecked, "onUpdate:checked" to isChecked), null, 8, _uA(
                                     "checked"
                                 ))
                             )),
-                            createElementVNode("text", utsMapOf("class" to "tips"), "设备离线8小时后,推送消息到APP")
+                            _cE("text", _uM("class" to "tips"), "设备离线8小时后,推送消息到APP")
                         )),
-                        createElementVNode("view", utsMapOf("class" to "items"), utsArrayOf(
-                            createVNode(_component_fui_input, utsMapOf("label" to "自动播放", "labelSize" to 28, "textAlign" to "right", "borderBottom" to false, "placeholderStyle" to "font-size: 28rpx;", "disabled" to true, "placeholder" to playTypeItem.value, "onClick" to playType), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                                return utsArrayOf(
-                                    createElementVNode("text", null, utsArrayOf(
-                                        createVNode(_component_fui_icon, utsMapOf("name" to "arrowright", "size" to 48))
+                        _cE("view", _uM("class" to "items"), _uA(
+                            _cV(_component_fui_input, _uM("label" to "自动播放", "labelSize" to 28, "textAlign" to "right", "borderBottom" to false, "placeholderStyle" to "font-size: 28rpx;", "disabled" to true, "placeholder" to playTypeItem.value, "onClick" to playType), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                                return _uA(
+                                    _cE("text", null, _uA(
+                                        _cV(_component_fui_icon, _uM("name" to "arrowright", "size" to 48))
                                     ))
                                 )
                             }
-                            ), "_" to 1), 8, utsArrayOf(
+                            ), "_" to 1), 8, _uA(
                                 "placeholder"
                             )),
-                            createElementVNode("text", utsMapOf("class" to "tips"), "摄像机视频是否自动播放")
+                            _cE("text", _uM("class" to "tips"), "摄像机视频是否自动播放")
                         ))
                     )),
-                    createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
-                        createElementVNode(Fragment, null, RenderHelpers.renderList(permissionList.value, fun(item, index, __index, _cached): Any {
-                            return createElementVNode("view", utsMapOf("key" to index), utsArrayOf(
-                                createVNode(_component_fui_input, utsMapOf("label" to item.name, "labelSize" to 28, "textAlign" to "right", "borderBottom" to true, "placeholderStyle" to if (item.status == "未授权") {
+                    _cE("view", _uM("class" to "content"), _uA(
+                        _cE(Fragment, null, RenderHelpers.renderList(permissionList.value, fun(item, index, __index, _cached): Any {
+                            return _cE("view", _uM("key" to index), _uA(
+                                _cV(_component_fui_input, _uM("label" to item.name, "labelSize" to 28, "textAlign" to "right", "borderBottom" to true, "placeholderStyle" to if (item.status == "未授权") {
                                     "font-size: 28rpx;color:red;"
                                 } else {
                                     "font-size: 28rpx;color:green;"
@@ -142,14 +138,14 @@ open class GenPagesMineSystemSettingSystemSetting : BasePage {
                                 , "disabled" to true, "placeholder" to item.status, "onClick" to fun(){
                                     getSystemAuth(item)
                                 }
-                                ), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createElementVNode("text", null, utsArrayOf(
-                                            createVNode(_component_fui_icon, utsMapOf("name" to "arrowright", "size" to 48))
+                                ), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
+                                        _cE("text", null, _uA(
+                                            _cV(_component_fui_icon, _uM("name" to "arrowright", "size" to 48))
                                         ))
                                     )
                                 }
-                                ), "_" to 2), 1032, utsArrayOf(
+                                ), "_" to 2), 1032, _uA(
                                     "label",
                                     "placeholderStyle",
                                     "placeholder",
@@ -159,35 +155,35 @@ open class GenPagesMineSystemSettingSystemSetting : BasePage {
                         }
                         ), 128)
                     )),
-                    createVNode(_component_fui_bottom_popup, utsMapOf("visible" to showPicker.value), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                        return utsArrayOf(
-                            createVNode(_component_l_picker, utsMapOf("cancel-btn" to "取消", "confirm-btn" to "确定", "columns" to pickerOptions.value, "onCancel" to oncancel, "onConfirm" to onConfirm), null, 8, utsArrayOf(
+                    _cV(_component_fui_bottom_popup, _uM("visible" to showPicker.value), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                        return _uA(
+                            _cV(_component_l_picker, _uM("cancel-btn" to "取消", "confirm-btn" to "确定", "columns" to pickerOptions.value, "onCancel" to oncancel, "onConfirm" to onConfirm), null, 8, _uA(
                                 "columns"
                             ))
                         )
                     }
-                    ), "_" to 1), 8, utsArrayOf(
+                    ), "_" to 1), 8, _uA(
                         "visible"
                     ))
                 ))
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundColor" to "#f5f5f5", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "content" to utsMapOf(".container " to utsMapOf("backgroundColor" to "#ffffff", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "marginBottom" to "20rpx")), "items" to utsMapOf(".container .content " to utsMapOf("display" to "flex", "flexDirection" to "column", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "fui-input__wrap" to utsMapOf(".container .content .items " to utsMapOf("!paddingTop" to "20rpx", "!paddingRight" to 0, "!paddingBottom" to "20rpx", "!paddingLeft" to 0)), "offline" to utsMapOf(".container .content .items " to utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "space-between", "paddingBottom" to "10rpx")), "tips" to utsMapOf(".container .content .items " to utsMapOf("color" to "#999999", "fontSize" to "24rpx")), "underline" to utsMapOf(".container .content " to utsMapOf("borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f5f5f5")), "l-picker" to utsMapOf(".container " to utsMapOf("width" to "100%")))
+                return _uM("container" to _pS(_uM("height" to "100%", "backgroundColor" to "#f5f5f5", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "content" to _uM(".container " to _uM("backgroundColor" to "#ffffff", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "marginBottom" to "20rpx")), "items" to _uM(".container .content " to _uM("display" to "flex", "flexDirection" to "column", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "fui-input__wrap" to _uM(".container .content .items " to _uM("!paddingTop" to "20rpx", "!paddingRight" to 0, "!paddingBottom" to "20rpx", "!paddingLeft" to 0)), "offline" to _uM(".container .content .items " to _uM("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "space-between", "paddingBottom" to "10rpx")), "tips" to _uM(".container .content .items " to _uM("color" to "#999999", "fontSize" to "24rpx")), "underline" to _uM(".container .content " to _uM("borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f5f5f5")), "l-picker" to _uM(".container " to _uM("width" to "100%")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

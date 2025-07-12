@@ -34,4 +34,4 @@
 	})
 
 export default __sfc__
-const GenAppStyles = [utsMapOf([["uni-row", padStyleMapOf(utsMapOf([["flexDirection", "row"]]))], ["uni-column", padStyleMapOf(utsMapOf([["flexDirection", "column"]]))]])]
+const GenAppStyles = [_uM([["uni-row", _pS(_uM([["flexDirection", "row"]]))], ["uni-column", _pS(_uM([["flexDirection", "column"]]))]])]

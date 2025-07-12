@@ -20,7 +20,7 @@ import { ref } from 'vue'
 	
 const __sfc__ = defineComponent({
   __name: 'systemSetting',
-  setup(__props): any | null {
+  setup(__props) {
 const __ins = getCurrentInstance()!;
 const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
@@ -175,21 +175,21 @@ const _component_fui_input = resolveEasyComponent("fui-input",_easycom_fui_input
 const _component_l_picker = resolveEasyComponent("l-picker",_easycom_l_picker)
 const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_easycom_fui_bottom_popup)
 
-  return createElementVNode("view", utsMapOf({ class: "container" }), [
-    createElementVNode("view", utsMapOf({ class: "content" }), [
-      createElementVNode("view", utsMapOf({ class: "items underline" }), [
-        createElementVNode("view", utsMapOf({ class: "offline" }), [
-          createElementVNode("text", null, "离线提醒"),
-          createVNode(_component_fui_switch, utsMapOf({
+  return _cE("view", _uM({ class: "container" }), [
+    _cE("view", _uM({ class: "content" }), [
+      _cE("view", _uM({ class: "items underline" }), [
+        _cE("view", _uM({ class: "offline" }), [
+          _cE("text", null, "离线提醒"),
+          _cV(_component_fui_switch, _uM({
             checked: checked.value,
             onChange: changeChecked,
             "onUpdate:checked": isChecked
           }), null, 8 /* PROPS */, ["checked"])
         ]),
-        createElementVNode("text", utsMapOf({ class: "tips" }), "设备离线8小时后,推送消息到APP")
+        _cE("text", _uM({ class: "tips" }), "设备离线8小时后,推送消息到APP")
       ]),
-      createElementVNode("view", utsMapOf({ class: "items" }), [
-        createVNode(_component_fui_input, utsMapOf({
+      _cE("view", _uM({ class: "items" }), [
+        _cV(_component_fui_input, _uM({
           label: "自动播放",
           labelSize: 28,
           textAlign: "right",
@@ -198,10 +198,10 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
           disabled: true,
           placeholder: playTypeItem.value,
           onClick: playType
-        }), utsMapOf({
+        }), _uM({
           default: withSlotCtx((): any[] => [
-            createElementVNode("text", null, [
-              createVNode(_component_fui_icon, utsMapOf({
+            _cE("text", null, [
+              _cV(_component_fui_icon, _uM({
                 name: "arrowright",
                 size: 48
               }))
@@ -209,13 +209,13 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
           ]),
           _: 1 /* STABLE */
         }), 8 /* PROPS */, ["placeholder"]),
-        createElementVNode("text", utsMapOf({ class: "tips" }), "摄像机视频是否自动播放")
+        _cE("text", _uM({ class: "tips" }), "摄像机视频是否自动播放")
       ])
     ]),
-    createElementVNode("view", utsMapOf({ class: "content" }), [
-      createElementVNode(Fragment, null, RenderHelpers.renderList(permissionList.value, (item, index, __index, _cached): any => {
-        return createElementVNode("view", utsMapOf({ key: index }), [
-          createVNode(_component_fui_input, utsMapOf({
+    _cE("view", _uM({ class: "content" }), [
+      _cE(Fragment, null, RenderHelpers.renderList(permissionList.value, (item, index, __index, _cached): any => {
+        return _cE("view", _uM({ key: index }), [
+          _cV(_component_fui_input, _uM({
             label: item.name,
             labelSize: 28,
             textAlign: "right",
@@ -224,10 +224,10 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
             disabled: true,
             placeholder: item.status,
             onClick: () => {getSystemAuth(item)}
-          }), utsMapOf({
+          }), _uM({
             default: withSlotCtx((): any[] => [
-              createElementVNode("text", null, [
-                createVNode(_component_fui_icon, utsMapOf({
+              _cE("text", null, [
+                _cV(_component_fui_icon, _uM({
                   name: "arrowright",
                   size: 48
                 }))
@@ -238,9 +238,9 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
         ])
       }), 128 /* KEYED_FRAGMENT */)
     ]),
-    createVNode(_component_fui_bottom_popup, utsMapOf({ visible: showPicker.value }), utsMapOf({
+    _cV(_component_fui_bottom_popup, _uM({ visible: showPicker.value }), _uM({
       default: withSlotCtx((): any[] => [
-        createVNode(_component_l_picker, utsMapOf({
+        _cV(_component_l_picker, _uM({
           "cancel-btn": "取消",
           "confirm-btn": "确定",
           columns: pickerOptions.value,
@@ -256,4 +256,4 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
 
 })
 export default __sfc__
-const GenPagesMineSystemSettingSystemSettingStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundColor", "#f5f5f5"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]]))], ["content", utsMapOf([[".container ", utsMapOf([["backgroundColor", "#ffffff"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["marginBottom", "20rpx"]])]])], ["items", utsMapOf([[".container .content ", utsMapOf([["display", "flex"], ["flexDirection", "column"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]])]])], ["fui-input__wrap", utsMapOf([[".container .content .items ", utsMapOf([["!paddingTop", "20rpx"], ["!paddingRight", 0], ["!paddingBottom", "20rpx"], ["!paddingLeft", 0]])]])], ["offline", utsMapOf([[".container .content .items ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "space-between"], ["paddingBottom", "10rpx"]])]])], ["tips", utsMapOf([[".container .content .items ", utsMapOf([["color", "#999999"], ["fontSize", "24rpx"]])]])], ["underline", utsMapOf([[".container .content ", utsMapOf([["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#f5f5f5"]])]])], ["l-picker", utsMapOf([[".container ", utsMapOf([["width", "100%"]])]])]])]
+const GenPagesMineSystemSettingSystemSettingStyles = [_uM([["container", _pS(_uM([["height", "100%"], ["backgroundColor", "#f5f5f5"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]]))], ["content", _uM([[".container ", _uM([["backgroundColor", "#ffffff"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["marginBottom", "20rpx"]])]])], ["items", _uM([[".container .content ", _uM([["display", "flex"], ["flexDirection", "column"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]])]])], ["fui-input__wrap", _uM([[".container .content .items ", _uM([["!paddingTop", "20rpx"], ["!paddingRight", 0], ["!paddingBottom", "20rpx"], ["!paddingLeft", 0]])]])], ["offline", _uM([[".container .content .items ", _uM([["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "space-between"], ["paddingBottom", "10rpx"]])]])], ["tips", _uM([[".container .content .items ", _uM([["color", "#999999"], ["fontSize", "24rpx"]])]])], ["underline", _uM([[".container .content ", _uM([["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#f5f5f5"]])]])], ["l-picker", _uM([[".container ", _uM([["width", "100%"]])]])]])]

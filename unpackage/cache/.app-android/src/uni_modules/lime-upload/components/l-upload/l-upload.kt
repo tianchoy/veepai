@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.previewImage as uni_previewImage
 import io.dcloud.uniapp.extapi.uploadFile as uni_uploadFile
 open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, UploadProps {
@@ -92,7 +88,7 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
                 val file = UTSJSONObject.assign(UTSJSONObject(), it as UTSJSONObject)
                 return UploadFile(url = file.getString("url") ?: "", path = file.getString("path"), name = file.getString("name"), thumb = file.getString("thumb"), size = file.getNumber("size"), type = file.getString("type"), percent = file.getNumber("percent"), status = file.getString("status") ?: "done")
             }
-            val customFiles = ref<UTSArray<UploadFile>>((props.modelValue ?: props.defaultFiles)?.map(transformFiles) ?: utsArrayOf())
+            val customFiles = ref<UTSArray<UploadFile>>((props.modelValue ?: props.defaultFiles)?.map(transformFiles) ?: _uA())
             val listWidth = ref(0)
             val uploadRef = ref<UniElement?>(null)
             val styles = computed(fun(): Map<String, Any> {
@@ -124,12 +120,7 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
             )
             val onFileClick = fun(index: Number){
                 val file = customFiles.value[index]
-                emits("click", UTSJSONObject(Map<String, Any?>(utsArrayOf(
-                    utsArrayOf(
-                        "file",
-                        file
-                    )
-                ))))
+                emits("click", _uO("file" to file))
             }
             val onProofTap = fun(index: Number){
                 onFileClick(index)
@@ -153,16 +144,7 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
                     return index != i
                 }
                 )
-                emits("remove", UTSJSONObject(Map<String, Any?>(utsArrayOf(
-                    utsArrayOf(
-                        "index",
-                        index
-                    ),
-                    utsArrayOf(
-                        "file",
-                        delFile
-                    )
-                ))))
+                emits("remove", _uO("index" to index, "file" to delFile))
             }
             var last: Number
             val upload = fun(files: UTSArray<UploadFile>){
@@ -170,7 +152,7 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
                     return
                 }
                 if (props.action == "uniCloud") {
-                    var uploadImgs: UTSArray<UTSPromise<UniCloudUploadFileResult>> = utsArrayOf()
+                    var uploadImgs: UTSArray<UTSPromise<UniCloudUploadFileResult>> = _uA()
                     files.forEach(fun(file, index){
                         val promise = UTSPromise<UniCloudUploadFileResult>(fun(resolve, reject){
                             val dotIndex = file.name!!.lastIndexOf(".")
@@ -183,7 +165,7 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
                             })).then(fun(res){
                                 file.path = res.fileID
                                 file.status = "done"
-                                uniCloud.getTempFileURL(UniCloudGetTempFileURLOptions(fileList = utsArrayOf(
+                                uniCloud.getTempFileURL(UniCloudGetTempFileURLOptions(fileList = _uA(
                                     res.fileID
                                 ))).then(fun(result){
                                     if (result.fileList.length > 0) {
@@ -207,7 +189,7 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
                         emits("fail", err)
                     })
                 } else {
-                    var uploadImgs: UTSArray<UTSPromise<UploadFileSuccess>> = utsArrayOf()
+                    var uploadImgs: UTSArray<UTSPromise<UploadFileSuccess>> = _uA()
                     files.forEach(fun(file, index){
                         val promise = UTSPromise<UploadFileSuccess>(fun(resolve, reject){
                             val task = uni_uploadFile(UploadFileOptions(url = props.action!!, filePath = file.url, name = file.name, formData = props.formData, header = props.headers, success = fun(res){
@@ -287,7 +269,7 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
                 }
             }
             )
-            __expose(utsMapOf("remove" to onDelete))
+            __expose(_uM("remove" to onDelete))
             val resizeObserver = UniResizeObserver(fun(entries: UTSArray<UniResizeObserverEntry>){
                 listWidth.value = entries[0].target.getBoundingClientRect().width
             }
@@ -308,88 +290,88 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
             return fun(): Any? {
                 val _component_l_loading = resolveEasyComponent("l-loading", GenUniModulesLimeLoadingComponentsLLoadingLLoadingClass)
                 val _component_l_icon = resolveEasyComponent("l-icon", GenUniModulesLimeIconComponentsLIconLIconClass)
-                return createElementVNode("view", utsMapOf("class" to "l-upload", "ref_key" to "uploadRef", "ref" to uploadRef, "style" to normalizeStyle(unref(styles))), utsArrayOf(
-                    createElementVNode(Fragment, null, RenderHelpers.renderList(unref(customFiles), fun(file, index, __index, _cached): Any {
-                        return createElementVNode("view", utsMapOf("class" to "l-upload__item", "style" to normalizeStyle(utsArrayOf(
+                return _cE("view", _uM("class" to "l-upload", "ref_key" to "uploadRef", "ref" to uploadRef, "style" to _nS(unref(styles))), _uA(
+                    _cE(Fragment, null, RenderHelpers.renderList(unref(customFiles), fun(file, index, __index, _cached): Any {
+                        return _cE("view", _uM("class" to "l-upload__item", "style" to _nS(_uA(
                             unref(itemStyle)
-                        )), "key" to file.url), utsArrayOf(
+                        )), "key" to file.url), _uA(
                             renderSlot(_ctx.`$slots`, "file", GenUniModulesLimeUploadComponentsLUploadLUploadSlotDataFile(file = file, index = index), fun(): UTSArray<Any> {
-                                return utsArrayOf(
+                                return _uA(
                                     if (file.type == "image") {
-                                        createElementVNode("image", utsMapOf("key" to 0, "class" to "l-upload__image", "src" to file.url, "data-file" to file, "mode" to _ctx.imageFit, "onClick" to fun(){
+                                        _cE("image", _uM("key" to 0, "class" to "l-upload__image", "src" to file.url, "data-file" to file, "mode" to _ctx.imageFit, "onClick" to fun(){
                                             onProofTap(index)
-                                        }), null, 8, utsArrayOf(
+                                        }), null, 8, _uA(
                                             "src",
                                             "data-file",
                                             "mode",
                                             "onClick"
                                         ))
                                     } else {
-                                        createCommentVNode("v-if", true)
+                                        _cC("v-if", true)
                                     }
                                     ,
                                     if (file.type == "video") {
-                                        createElementVNode("video", utsMapOf("key" to 1, "class" to "l-upload__image", "src" to file.url, "data-file" to file, "autoplay" to false, "objectFit" to "contain", "onClick" to fun(){
+                                        _cE("video", _uM("key" to 1, "class" to "l-upload__image", "src" to file.url, "data-file" to file, "autoplay" to false, "objectFit" to "contain", "onClick" to fun(){
                                             onFileClick(index)
-                                        }), null, 8, utsArrayOf(
+                                        }), null, 8, _uA(
                                             "src",
                                             "data-file",
                                             "onClick"
                                         ))
                                     } else {
-                                        createCommentVNode("v-if", true)
+                                        _cC("v-if", true)
                                     }
                                     ,
                                     if (isTrue(file.status != null && file.status != "done")) {
-                                        createElementVNode("view", utsMapOf("key" to 2, "class" to "l-upload__progress-mask", "data-file" to file, "onClick" to fun(){
+                                        _cE("view", _uM("key" to 2, "class" to "l-upload__progress-mask", "data-file" to file, "onClick" to fun(){
                                             onFileClick(index)
-                                        }), utsArrayOf(
+                                        }), _uA(
                                             if (file.status == "loading") {
-                                                createElementVNode(Fragment, utsMapOf("key" to 0), utsArrayOf(
-                                                    createVNode(_component_l_loading, utsMapOf("class" to "l-upload__progress-loading", "size" to "24px", "color" to "white")),
+                                                _cE(Fragment, _uM("key" to 0), _uA(
+                                                    _cV(_component_l_loading, _uM("class" to "l-upload__progress-loading", "size" to "24px", "color" to "white")),
                                                     if (file.percent != null) {
-                                                        createElementVNode("text", utsMapOf("key" to 0, "class" to "l-upload__progress-text"), toDisplayString(file.percent) + "%", 1)
+                                                        _cE("text", _uM("key" to 0, "class" to "l-upload__progress-text"), _tD(file.percent) + "%", 1)
                                                     } else {
-                                                        createElementVNode("text", utsMapOf("key" to 1, "class" to "l-upload__progress-text"), toDisplayString(_ctx.loadingText), 1)
+                                                        _cE("text", _uM("key" to 1, "class" to "l-upload__progress-text"), _tD(_ctx.loadingText), 1)
                                                     }
                                                 ), 64)
                                             } else {
-                                                createVNode(_component_l_icon, utsMapOf("key" to 1, "class" to "l-upload__progress-icon", "name" to if (file.status == "reload") {
+                                                _cV(_component_l_icon, _uM("key" to 1, "class" to "l-upload__progress-icon", "name" to if (file.status == "reload") {
                                                     "refresh"
                                                 } else {
                                                     "close-circle"
-                                                }, "size" to "48rpx", "aria-hidden" to ""), null, 8, utsArrayOf(
+                                                }, "size" to "48rpx", "aria-hidden" to ""), null, 8, _uA(
                                                     "name"
                                                 ))
                                             },
                                             if (isTrue(file.status == "reload" || file.status == "failed")) {
-                                                createElementVNode("text", utsMapOf("key" to 2, "class" to "l-upload__progress-text"), toDisplayString(if (file.status == "reload") {
+                                                _cE("text", _uM("key" to 2, "class" to "l-upload__progress-text"), _tD(if (file.status == "reload") {
                                                     _ctx.reloadText
                                                 } else {
                                                     _ctx.failedText
                                                 }), 1)
                                             } else {
-                                                createCommentVNode("v-if", true)
+                                                _cC("v-if", true)
                                             }
-                                        ), 8, utsArrayOf(
+                                        ), 8, _uA(
                                             "data-file",
                                             "onClick"
                                         ))
                                     } else {
-                                        createCommentVNode("v-if", true)
+                                        _cC("v-if", true)
                                     }
                                     ,
                                     if (isTrue(!unref(isReadonly))) {
-                                        createElementVNode("view", utsMapOf("key" to 3, "class" to "l-upload__delete-btn", "aria-role" to "button", "aria-label" to "删除", "data-index" to index, "onClick" to fun(){
+                                        _cE("view", _uM("key" to 3, "class" to "l-upload__delete-btn", "aria-role" to "button", "aria-label" to "删除", "data-index" to index, "onClick" to fun(){
                                             onDelete(index)
-                                        }), utsArrayOf(
-                                            createVNode(_component_l_icon, utsMapOf("name" to "close", "size" to "16px", "color" to "#fff"))
-                                        ), 8, utsArrayOf(
+                                        }), _uA(
+                                            _cV(_component_l_icon, _uM("name" to "close", "size" to "16px", "color" to "#fff"))
+                                        ), 8, _uA(
                                             "data-index",
                                             "onClick"
                                         ))
                                     } else {
-                                        createCommentVNode("v-if", true)
+                                        _cC("v-if", true)
                                     }
                                 )
                             }
@@ -398,27 +380,27 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
                     }
                     ), 128),
                     if (isTrue(!unref(isReadonly))) {
-                        withDirectives(createElementVNode("view", utsMapOf("key" to 0, "class" to normalizeClass(utsArrayOf(
+                        withDirectives(_cE("view", _uM("key" to 0, "class" to _nC(_uA(
                             "l-upload__item l-upload__item--add",
-                            utsMapOf("l-upload__item--disabled" to unref(isDisabled))
-                        )), "style" to normalizeStyle(utsArrayOf(
+                            _uM("l-upload__item--disabled" to unref(isDisabled))
+                        )), "style" to _nS(_uA(
                             unref(itemStyle),
                             if (_ctx.addBgColor != null) {
-                                utsMapOf("background" to _ctx.addBgColor)
+                                _uM("background" to _ctx.addBgColor)
                             } else {
                                 ""
                             }
-                        )), "aria-label" to "上传", "onClick" to onAddTap), utsArrayOf(
+                        )), "aria-label" to "上传", "onClick" to onAddTap), _uA(
                             renderSlot(_ctx.`$slots`, "default", UTSJSONObject(), fun(): UTSArray<Any> {
-                                return utsArrayOf(
-                                    createVNode(_component_l_icon, utsMapOf("class" to "l-upload__add-icon", "size" to _ctx.uploadIconSize, "name" to _ctx.uploadIcon), null, 8, utsArrayOf(
+                                return _uA(
+                                    _cV(_component_l_icon, _uM("class" to "l-upload__add-icon", "size" to _ctx.uploadIconSize, "name" to _ctx.uploadIcon), null, 8, _uA(
                                         "size",
                                         "name"
                                     ))
                                 )
                             })
-                        ), 6), utsArrayOf(
-                            utsArrayOf(
+                        ), 6), _uA(
+                            _uA(
                                 vShow,
                                 if (!_ctx.multiple) {
                                     unref(customFiles).length == 0
@@ -428,31 +410,31 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
                             )
                         ))
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
                 ), 4)
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-upload" to padStyleMapOf(utsMapOf("flex" to 1, "position" to "relative", "flexDirection" to "row", "flexWrap" to "wrap")), "l-upload__item" to padStyleMapOf(utsMapOf("position" to "relative", "display" to "flex", "width" to 80, "height" to 80, "borderTopLeftRadius" to "12rpx", "borderTopRightRadius" to "12rpx", "borderBottomRightRadius" to "12rpx", "borderBottomLeftRadius" to "12rpx", "overflow" to "hidden", "alignItems" to "center", "justifyContent" to "center")), "l-upload__item--add" to padStyleMapOf(utsMapOf("backgroundImage" to "none", "backgroundColor" to "#f3f3f3")), "l-upload__item--disabled" to padStyleMapOf(utsMapOf("opacity" to 0.5)), "l-upload__image" to padStyleMapOf(utsMapOf("width" to "100%", "height" to "100%")), "l-upload__add-icon" to padStyleMapOf(utsMapOf("fontSize" to 28, "color" to "rgba(0,0,0,0.25)")), "l-upload__delete-btn" to padStyleMapOf(utsMapOf("position" to "absolute", "top" to 0, "right" to 0, "display" to "flex", "alignItems" to "center", "justifyContent" to "center", "width" to 20, "height" to 20, "borderTopRightRadius" to "12rpx", "borderBottomLeftRadius" to "12rpx", "backgroundColor" to "rgba(0,0,0,0.65)")), "l-upload__progress-mask" to padStyleMapOf(utsMapOf("position" to "absolute", "left" to 0, "top" to 0, "bottom" to 0, "width" to "100%", "backgroundColor" to "rgba(0,0,0,0.45)", "flexDirection" to "column", "alignItems" to "center", "justifyContent" to "center", "borderTopLeftRadius" to "12rpx", "borderTopRightRadius" to "12rpx", "borderBottomRightRadius" to "12rpx", "borderBottomLeftRadius" to "12rpx", "paddingTop" to 16, "paddingRight" to 0, "paddingBottom" to 16, "paddingLeft" to 0)), "l-upload__progress-text" to padStyleMapOf(utsMapOf("fontSize" to 12, "lineHeight" to "20px", "marginTop" to 4, "color" to "#FFFFFF")), "l-upload__progress-loading" to padStyleMapOf(utsMapOf("alignSelf" to "center")), "l-upload__progress-icon" to padStyleMapOf(utsMapOf("color" to "#FFFFFF", "!fontSize" to 24, "!width" to 24)))
+                return _uM("l-upload" to _pS(_uM("flex" to 1, "position" to "relative", "flexDirection" to "row", "flexWrap" to "wrap")), "l-upload__item" to _pS(_uM("position" to "relative", "display" to "flex", "width" to 80, "height" to 80, "borderTopLeftRadius" to "12rpx", "borderTopRightRadius" to "12rpx", "borderBottomRightRadius" to "12rpx", "borderBottomLeftRadius" to "12rpx", "overflow" to "hidden", "alignItems" to "center", "justifyContent" to "center")), "l-upload__item--add" to _pS(_uM("backgroundImage" to "none", "backgroundColor" to "#f3f3f3")), "l-upload__item--disabled" to _pS(_uM("opacity" to 0.5)), "l-upload__image" to _pS(_uM("width" to "100%", "height" to "100%")), "l-upload__add-icon" to _pS(_uM("fontSize" to 28, "color" to "rgba(0,0,0,0.25)")), "l-upload__delete-btn" to _pS(_uM("position" to "absolute", "top" to 0, "right" to 0, "display" to "flex", "alignItems" to "center", "justifyContent" to "center", "width" to 20, "height" to 20, "borderTopRightRadius" to "12rpx", "borderBottomLeftRadius" to "12rpx", "backgroundColor" to "rgba(0,0,0,0.65)")), "l-upload__progress-mask" to _pS(_uM("position" to "absolute", "left" to 0, "top" to 0, "bottom" to 0, "width" to "100%", "backgroundColor" to "rgba(0,0,0,0.45)", "flexDirection" to "column", "alignItems" to "center", "justifyContent" to "center", "borderTopLeftRadius" to "12rpx", "borderTopRightRadius" to "12rpx", "borderBottomRightRadius" to "12rpx", "borderBottomLeftRadius" to "12rpx", "paddingTop" to 16, "paddingRight" to 0, "paddingBottom" to 16, "paddingLeft" to 0)), "l-upload__progress-text" to _pS(_uM("fontSize" to 12, "lineHeight" to "20px", "marginTop" to 4, "color" to "#FFFFFF")), "l-upload__progress-loading" to _pS(_uM("alignSelf" to "center")), "l-upload__progress-icon" to _pS(_uM("color" to "#FFFFFF", "!fontSize" to 24, "!width" to 24)))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("fail" to null, "remove" to null, "success" to null, "click" to null, "add" to null, "update:modelValue" to null)
-        var props = normalizePropsOptions(utsMapOf("name" to utsMapOf("type" to "String", "required" to false), "modelValue" to utsMapOf("type" to "Array", "required" to false), "disabled" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "readonly" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "multiple" to utsMapOf("type" to "Boolean", "required" to true, "default" to true), "imageFit" to utsMapOf("type" to "String", "required" to true, "default" to "aspectFill"), "gutter" to utsMapOf("type" to "String", "required" to false), "column" to utsMapOf("type" to "Number", "required" to false), "max" to utsMapOf("type" to "Number", "required" to true, "default" to 0), "sizeLimit" to utsMapOf("type" to "Number", "required" to false), "uploadIcon" to utsMapOf("type" to "String", "required" to true, "default" to "camera"), "uploadIconSize" to utsMapOf("type" to "String", "required" to false), "gridWidth" to utsMapOf("type" to "String", "required" to false), "gridHeight" to utsMapOf("type" to "String", "required" to false), "gridBgColor" to utsMapOf("type" to "String", "required" to false), "addBgColor" to utsMapOf("type" to "String", "required" to false), "gridBorderRadius" to utsMapOf("type" to "String", "required" to false), "defaultFiles" to utsMapOf("type" to "Array", "required" to false), "loadingText" to utsMapOf("type" to "String", "required" to true, "default" to "上传中..."), "reloadText" to utsMapOf("type" to "String", "required" to true, "default" to "重新上传"), "failedText" to utsMapOf("type" to "String", "required" to true, "default" to "上传失败"), "disablePreview" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "autoUpload" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "mediaType" to utsMapOf("type" to "String", "required" to true, "default" to "image"), "maxDuration" to utsMapOf("type" to "Number", "required" to false), "sizeType" to utsMapOf("type" to "Array", "required" to true, "default" to utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("fail" to null, "remove" to null, "success" to null, "click" to null, "add" to null, "update:modelValue" to null)
+        var props = _nP(_uM("name" to _uM("type" to "String", "required" to false), "modelValue" to _uM("type" to "Array", "required" to false), "disabled" to _uM("type" to "Boolean", "required" to true, "default" to false), "readonly" to _uM("type" to "Boolean", "required" to true, "default" to false), "multiple" to _uM("type" to "Boolean", "required" to true, "default" to true), "imageFit" to _uM("type" to "String", "required" to true, "default" to "aspectFill"), "gutter" to _uM("type" to "String", "required" to false), "column" to _uM("type" to "Number", "required" to false), "max" to _uM("type" to "Number", "required" to true, "default" to 0), "sizeLimit" to _uM("type" to "Number", "required" to false), "uploadIcon" to _uM("type" to "String", "required" to true, "default" to "camera"), "uploadIconSize" to _uM("type" to "String", "required" to false), "gridWidth" to _uM("type" to "String", "required" to false), "gridHeight" to _uM("type" to "String", "required" to false), "gridBgColor" to _uM("type" to "String", "required" to false), "addBgColor" to _uM("type" to "String", "required" to false), "gridBorderRadius" to _uM("type" to "String", "required" to false), "defaultFiles" to _uM("type" to "Array", "required" to false), "loadingText" to _uM("type" to "String", "required" to true, "default" to "上传中..."), "reloadText" to _uM("type" to "String", "required" to true, "default" to "重新上传"), "failedText" to _uM("type" to "String", "required" to true, "default" to "上传失败"), "disablePreview" to _uM("type" to "Boolean", "required" to true, "default" to false), "autoUpload" to _uM("type" to "Boolean", "required" to true, "default" to false), "mediaType" to _uM("type" to "String", "required" to true, "default" to "image"), "maxDuration" to _uM("type" to "Number", "required" to false), "sizeType" to _uM("type" to "Array", "required" to true, "default" to _uA(
             "original",
             "compressed"
-        )), "sourceType" to utsMapOf("type" to "Array", "required" to true, "default" to utsArrayOf(
+        )), "sourceType" to _uM("type" to "Array", "required" to true, "default" to _uA(
             "album",
             "camera"
-        )), "action" to utsMapOf("type" to "String", "required" to false), "headers" to utsMapOf("type" to "UTSJSONObject", "required" to false), "formData" to utsMapOf("type" to "UTSJSONObject", "required" to false), "mode" to utsMapOf("type" to "String", "required" to true, "default" to "grid")))
-        var propsNeedCastKeys = utsArrayOf(
+        )), "action" to _uM("type" to "String", "required" to false), "headers" to _uM("type" to "UTSJSONObject", "required" to false), "formData" to _uM("type" to "UTSJSONObject", "required" to false), "mode" to _uM("type" to "String", "required" to true, "default" to "grid")))
+        var propsNeedCastKeys = _uA(
             "disabled",
             "readonly",
             "multiple",
@@ -469,6 +451,6 @@ open class GenUniModulesLimeUploadComponentsLUploadLUpload : VueComponent, Uploa
             "sourceType",
             "mode"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

@@ -63,7 +63,7 @@ class RadioItem extends UTS.UTSType {
     delete this.__props__;
   }
 }
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "message",
   setup(__props) {
     const checkIns = common_vendor.ref(["2025-07-07", "2025-07-08", "2025-07-09"]);
@@ -79,7 +79,6 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       date.getFullYear();
       date.getMonth() + 1;
       const curDate = date.getDate();
-      common_vendor.index.__f__("log", "at pages/message/message.uvue:130", day.key);
       day.prefix = "";
       const specialDates = /* @__PURE__ */ new Set([7, 8, 10]);
       if (specialDates.has(curDate)) {
@@ -88,16 +87,16 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return day;
     };
     const onChange = (time) => {
-      common_vendor.index.__f__("log", "at pages/message/message.uvue:144", time);
+      common_vendor.index.__f__("log", "at pages/message/message.uvue:143", time);
     };
     const select = (day) => {
       today.value = uni_modules_limeDayuts_common_index.dayuts(day.fullDate).format("YYYY-MM-DD");
-      common_vendor.index.__f__("log", "at pages/message/message.uvue:151", today.value);
+      common_vendor.index.__f__("log", "at pages/message/message.uvue:150", today.value);
       currentDay.value = new Date(today.value).getTime();
       showCalendar.value = false;
     };
     const change = (res) => {
-      common_vendor.index.__f__("log", "at pages/message/message.uvue:156", "res", res);
+      common_vendor.index.__f__("log", "at pages/message/message.uvue:155", "res", res);
     };
     const ShowCalendar = () => {
       showCalendar.value = !showCalendar.value;
@@ -155,7 +154,6 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         return item.iccid == e;
       });
       if (selectedItem != null) {
-        common_vendor.index.__f__("log", "at pages/message/message.uvue:222", selectedItem);
         selectedItem.checked = true;
         currentDeviceInfo.value = selectedItem;
       }
@@ -249,7 +247,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-0e403ad2"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/message/message.js.map

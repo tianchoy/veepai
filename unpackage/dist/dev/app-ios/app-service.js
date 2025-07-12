@@ -42,9 +42,9 @@
     });
   }
   function initRuntimeSocketService() {
-    const hosts = "127.0.0.1,192.168.3.34";
+    const hosts = "127.0.0.1,192.168.3.34,169.254.174.95";
     const port = "8090";
-    const id = "app-ios_9PNVBl";
+    const id = "app-ios_ZOJO7w";
     let socketTask = null;
     __registerWebViewUniConsole(() => {
       return '!function(){"use strict";"function"==typeof SuppressedError&&SuppressedError;var e=["log","warn","error","info","debug"],n=e.reduce((function(e,n){return e[n]=console[n].bind(console),e}),{}),t=null,r=new Set,o={};function i(e){if(null!=t){var n=e.map((function(e){if("string"==typeof e)return e;var n=e&&"promise"in e&&"reason"in e,t=n?"UnhandledPromiseRejection: ":"";if(n&&(e=e.reason),e instanceof Error&&e.stack)return e.message&&!e.stack.includes(e.message)?"".concat(t).concat(e.message,"\\n").concat(e.stack):"".concat(t).concat(e.stack);if("object"==typeof e&&null!==e)try{return t+JSON.stringify(e)}catch(e){return t+String(e)}return t+String(e)})).filter(Boolean);n.length>0&&t(JSON.stringify(Object.assign({type:"error",data:n},o)))}else e.forEach((function(e){r.add(e)}))}function a(e,n){try{return{type:e,args:u(n)}}catch(e){}return{type:e,args:[]}}function u(e){return e.map((function(e){return c(e)}))}function c(e,n){if(void 0===n&&(n=0),n>=7)return{type:"object",value:"[Maximum depth reached]"};switch(typeof e){case"string":return{type:"string",value:e};case"number":return function(e){return{type:"number",value:String(e)}}(e);case"boolean":return function(e){return{type:"boolean",value:String(e)}}(e);case"object":try{return function(e,n){if(null===e)return{type:"null"};if(function(e){return e.$&&s(e.$)}(e))return function(e,n){return{type:"object",className:"ComponentPublicInstance",value:{properties:Object.entries(e.$.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(s(e))return function(e,n){return{type:"object",className:"ComponentInternalInstance",value:{properties:Object.entries(e.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return e.style&&null!=e.tagName&&null!=e.nodeName}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e).filter((function(e){var n=e[0];return["id","tagName","nodeName","dataset","offsetTop","offsetLeft","style"].includes(n)})).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return"function"==typeof e.getPropertyValue&&"function"==typeof e.setProperty&&e.$styles}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e.$styles).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(Array.isArray(e))return{type:"object",subType:"array",value:{properties:e.map((function(e,t){return function(e,n,t){var r=c(e,t);return r.name="".concat(n),r}(e,t,n+1)}))}};if(e instanceof Set)return{type:"object",subType:"set",className:"Set",description:"Set(".concat(e.size,")"),value:{entries:Array.from(e).map((function(e){return function(e,n){return{value:c(e,n)}}(e,n+1)}))}};if(e instanceof Map)return{type:"object",subType:"map",className:"Map",description:"Map(".concat(e.size,")"),value:{entries:Array.from(e.entries()).map((function(e){return function(e,n){return{key:c(e[0],n),value:c(e[1],n)}}(e,n+1)}))}};if(e instanceof Promise)return{type:"object",subType:"promise",value:{properties:[]}};if(e instanceof RegExp)return{type:"object",subType:"regexp",value:String(e),className:"Regexp"};if(e instanceof Date)return{type:"object",subType:"date",value:String(e),className:"Date"};if(e instanceof Error)return{type:"object",subType:"error",value:e.message||String(e),className:e.name||"Error"};var t=void 0,r=e.constructor;r&&r.get$UTSMetadata$&&(t=r.get$UTSMetadata$().name);var o=Object.entries(e);(function(e){return e.modifier&&e.modifier._attribute&&e.nodeContent})(e)&&(o=o.filter((function(e){var n=e[0];return"modifier"!==n&&"nodeContent"!==n})));return{type:"object",className:t,value:{properties:o.map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n)}catch(e){return{type:"object",value:{properties:[]}}}case"undefined":return{type:"undefined"};case"function":return function(e){return{type:"function",value:"function ".concat(e.name,"() {}")}}(e);case"symbol":return function(e){return{type:"symbol",value:e.description}}(e);case"bigint":return function(e){return{type:"bigint",value:String(e)}}(e)}}function s(e){return e.type&&null!=e.uid&&e.appContext}function f(e,n,t){var r=c(n,t);return r.name=e,r}var l=null,p=[],y={},g="---BEGIN:EXCEPTION---",d="---END:EXCEPTION---";function v(e){null!=l?l(JSON.stringify(Object.assign({type:"console",data:e},y))):p.push.apply(p,e)}var m=/^\\s*at\\s+[\\w/./-]+:\\d+$/;function b(){function t(e){return function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];var o=function(e,n,t){if(t||2===arguments.length)for(var r,o=0,i=n.length;o<i;o++)!r&&o in n||(r||(r=Array.prototype.slice.call(n,0,o)),r[o]=n[o]);return e.concat(r||Array.prototype.slice.call(n))}([],t,!0);if(o.length){var u=o[o.length-1];"string"==typeof u&&m.test(u)&&o.pop()}if(n[e].apply(n,o),"error"===e&&1===t.length){var c=t[0];if("string"==typeof c&&c.startsWith(g)){var s=g.length,f=c.length-d.length;return void i([c.slice(s,f)])}if(c instanceof Error)return void i([c])}v([a(e,t)])}}return function(){var e=console.log,n=Symbol();try{console.log=n}catch(e){return!1}var t=console.log===n;return console.log=e,t}()?(e.forEach((function(e){console[e]=t(e)})),function(){e.forEach((function(e){console[e]=n[e]}))}):function(){}}function _(e){var n={type:"WEB_INVOKE_APPSERVICE",args:{data:{name:"console",arg:e}}};return window.__uniapp_x_postMessageToService?window.__uniapp_x_postMessageToService(n):window.__uniapp_x_.postMessageToService(JSON.stringify(n))}!function(){if(!window.__UNI_CONSOLE_WEBVIEW__){window.__UNI_CONSOLE_WEBVIEW__=!0;var e="[web-view]".concat(window.__UNI_PAGE_ROUTE__?"[".concat(window.__UNI_PAGE_ROUTE__,"]"):"");b(),function(e,n){if(void 0===n&&(n={}),l=e,Object.assign(y,n),null!=e&&p.length>0){var t=p.slice();p.length=0,v(t)}}((function(e){_(e)}),{channel:e}),function(e,n){if(void 0===n&&(n={}),t=e,Object.assign(o,n),null!=e&&r.size>0){var a=Array.from(r);r.clear(),i(a)}}((function(e){_(e)}),{channel:e}),window.addEventListener("error",(function(e){i([e.error])})),window.addEventListener("unhandledrejection",(function(e){i([e])}))}}()}();';
@@ -74,7 +74,7 @@
   const pauseIcon = "/static/video/pause.png";
   const addIcon = "/static/tabbar/add.png";
   const videoSrc$1 = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$O = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$P = /* @__PURE__ */ vue.defineComponent({
     __name: "index",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -112,6 +112,9 @@
           title: "设备详情",
           icon: "none"
         });
+        uni.navigateTo({
+          url: "/pages/index/deviceDetail"
+        });
       };
       const pauseClick = () => {
         videoRef.value.pause();
@@ -137,8 +140,8 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$M = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
+  });
+  const _style_0$N = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
   const _export_sfc = (sfc, props) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
@@ -146,7 +149,7 @@
     }
     return target;
   };
-  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", {
@@ -217,19 +220,19 @@
       ])
     ]);
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["styles", [_style_0$M]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
-  const _sfc_main$N = /* @__PURE__ */ vue.defineComponent({
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["styles", [_style_0$N]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
+  const _sfc_main$O = /* @__PURE__ */ vue.defineComponent({
     __name: "l-date-strip-item",
     props: {
-      dates: new UTSJSONObject({ type: Array, required: true, default: [] }),
-      color: new UTSJSONObject({ type: String, required: false }),
-      activeBgColor: new UTSJSONObject({ type: String, required: false }),
-      activeColor: new UTSJSONObject({ type: String, required: false }),
-      bgColor: new UTSJSONObject({ type: String, required: false }),
-      radius: new UTSJSONObject({ type: String, required: false }),
-      gridWidth: new UTSJSONObject({ type: String, required: false }),
-      switchMode: new UTSJSONObject({ type: String, required: true, default: "week" }),
-      shape: new UTSJSONObject({ type: String, required: true, default: "square" })
+      dates: { type: Array, required: true, default: [] },
+      color: { type: String, required: false },
+      activeBgColor: { type: String, required: false },
+      activeColor: { type: String, required: false },
+      bgColor: { type: String, required: false },
+      radius: { type: String, required: false },
+      gridWidth: { type: String, required: false },
+      switchMode: { type: String, required: true, default: "week" },
+      shape: { type: String, required: true, default: "square" }
     },
     emits: ["click"],
     setup(__props, _a) {
@@ -254,8 +257,8 @@
     }
   });
   const _imports_0$8 = "/static/dot1.png";
-  const _style_0$L = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
-  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$M = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
+  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -351,18 +354,10 @@
       /* CLASS */
     );
   }
-  const __easycom_0$a = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["styles", [_style_0$L]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip-item/l-date-strip-item.uvue"]]);
-  const ON_SHOW = "onShow";
-  const ON_LOAD = "onLoad";
+  const __easycom_0$a = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["styles", [_style_0$M]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip-item/l-date-strip-item.uvue"]]);
   function resolveEasycom(component, easycom2) {
     return typeof component === "string" ? easycom2 : component;
   }
-  const createHook = (lifecycle) => (hook, target = vue.getCurrentInstance()) => {
-    !vue.isInSSRComponentSetup && vue.injectHook(lifecycle, hook, target);
-  };
-  const onShow = /* @__PURE__ */ createHook(ON_SHOW);
-  const onLoad = /* @__PURE__ */ createHook(ON_LOAD);
-  const onPageShow = onShow;
   function getWeekRange(date, firstDayOfWeek) {
     const start = new Date(date.getTime());
     const dayOffset = (date.getDay() - firstDayOfWeek + 7) % 7;
@@ -442,27 +437,27 @@
     }
     return 0;
   }
-  const _sfc_main$M = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$N = /* @__PURE__ */ vue.defineComponent({
     __name: "l-date-strip",
     props: {
-      firstDayOfWeek: new UTSJSONObject({ type: Number, required: true, default: 1 }),
-      format: new UTSJSONObject({ type: Function, required: false }),
-      maxDate: new UTSJSONObject({ type: Number, required: false }),
-      minDate: new UTSJSONObject({ type: Number, required: false }),
-      value: new UTSJSONObject({ type: Number, required: false }),
-      defaultValue: new UTSJSONObject({ type: Number, required: false }),
-      modelValue: new UTSJSONObject({ type: Number, required: false }),
-      height: new UTSJSONObject({ type: String, required: false }),
-      gridWidth: new UTSJSONObject({ type: String, required: false }),
-      color: new UTSJSONObject({ type: String, required: false }),
-      activeBgColor: new UTSJSONObject({ type: String, required: false }),
-      activeColor: new UTSJSONObject({ type: String, required: false }),
-      bgColor: new UTSJSONObject({ type: String, required: false }),
-      radius: new UTSJSONObject({ type: String, required: false }),
-      switchMode: new UTSJSONObject({ type: String, required: true, default: "week" }),
-      shape: new UTSJSONObject({ type: String, required: true, default: "square" }),
-      showNavigation: new UTSJSONObject({ type: Boolean, required: false }),
-      weekdays: new UTSJSONObject({ type: Array, required: true, default: ["日", "一", "二", "三", "四", "五", "六"] })
+      firstDayOfWeek: { type: Number, required: true, default: 1 },
+      format: { type: Function, required: false },
+      maxDate: { type: Number, required: false },
+      minDate: { type: Number, required: false },
+      value: { type: Number, required: false },
+      defaultValue: { type: Number, required: false },
+      modelValue: { type: Number, required: false },
+      height: { type: String, required: false },
+      gridWidth: { type: String, required: false },
+      color: { type: String, required: false },
+      activeBgColor: { type: String, required: false },
+      activeColor: { type: String, required: false },
+      bgColor: { type: String, required: false },
+      radius: { type: String, required: false },
+      switchMode: { type: String, required: true, default: "week" },
+      shape: { type: String, required: true, default: "square" },
+      showNavigation: { type: Boolean, required: false },
+      weekdays: { type: Array, required: true, default: ["日", "一", "二", "三", "四", "五", "六"] }
     },
     emits: ["change", "select", "scroll", "panelChange", "update:modelValue"],
     setup(__props, _a) {
@@ -593,8 +588,8 @@
       return __returned__;
     }
   });
-  const _style_0$K = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
-  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$L = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
+  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_date_strip_item = resolveEasycom(vue.resolveDynamicComponent("l-date-strip-item"), __easycom_0$a);
     return $props.switchMode == "none" ? (vue.openBlock(), vue.createElementBlock("scroll-view", {
       key: 0,
@@ -648,7 +643,7 @@
       ))
     ], 44, ["current", "circular"]));
   }
-  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["styles", [_style_0$K]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip/l-date-strip.uvue"]]);
+  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["styles", [_style_0$L]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip/l-date-strip.uvue"]]);
   function isDef(value) {
     return value != null;
   }
@@ -679,10 +674,10 @@
   }
   const name$4 = "l-icon";
   const IconifyURL = "https://api.iconify.design/";
-  const _sfc_main$L = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$M = /* @__PURE__ */ vue.defineComponent({
     __name: "l-icon",
     props: {
-      name: new UTSJSONObject({
+      name: {
         type: String,
         default: "",
         required: true
@@ -690,36 +685,36 @@
         // 	// 确保是字符串类型且不为空
         // 	return typeof value == 'string' && value.trim().length > 0
         // }
-      }),
-      color: new UTSJSONObject({
+      },
+      color: {
         type: String
         // default: ''
-      }),
-      size: new UTSJSONObject({
+      },
+      size: {
         type: [String, Number]
         // default: 32,
-      }),
-      prefix: new UTSJSONObject({
+      },
+      prefix: {
         type: String,
         default: ""
-      }),
-      lClass: new UTSJSONObject({
+      },
+      lClass: {
         type: String,
         default: ""
-      }),
+      },
       // 对安卓IOS无效
-      inherit: new UTSJSONObject({
+      inherit: {
         type: Boolean,
         default: true
-      }),
-      web: new UTSJSONObject({
+      },
+      web: {
         type: Boolean,
         default: false
-      }),
-      lStyle: new UTSJSONObject({
+      },
+      lStyle: {
         type: [String, Object, Array],
         default: ""
-      })
+      }
     },
     emits: ["click"],
     setup(__props, _a) {
@@ -810,8 +805,8 @@
       return __returned__;
     }
   });
-  const _style_0$J = { "l-icon--font": { "": { "fontFamily": "l", "textAlign": "center" } }, "@FONT-FACE": [{ "fontFamily": "l", "src": 'url("/assets/t3.9658ea31.ttf")' }] };
-  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$K = { "l-icon--font": { "": { "fontFamily": "l", "textAlign": "center" } }, "@FONT-FACE": [{ "fontFamily": "l", "src": 'url("/assets/t3.9658ea31.ttf")' }] };
+  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -840,7 +835,7 @@
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["styles", [_style_0$J]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-icon/components/l-icon/l-icon.uvue"]]);
+  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["styles", [_style_0$K]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-icon/components/l-icon/l-icon.uvue"]]);
   function __awaiter(thisArg, _arguments, P2, generator) {
     function adopt(value) {
       return value instanceof P2 ? value : new P2(function(resolve) {
@@ -894,37 +889,37 @@
     return e2.name = "SuppressedError", e2.error = error, e2.suppressed = suppressed, e2;
   };
   class ArrowIcon {
-    constructor(x, y2, size, type, color) {
+    constructor(x2, y2, size, type, color) {
       this.x = 0;
       this.y = 0;
       this.size = 0;
       this.type = "";
       this.color = "";
-      this.x = x;
+      this.x = x2;
       this.y = y2;
       this.size = size;
       this.type = type;
       this.color = color;
     }
     draw(ctx) {
-      const _a = this, x = _a.x, y2 = _a.y, size = _a.size, color = _a.color, type = _a.type;
+      const _a = this, x2 = _a.x, y2 = _a.y, size = _a.size, color = _a.color, type = _a.type;
       ctx.strokeStyle = color;
       ctx.beginPath();
       ctx.lineJoin = "round";
       ctx.lineWidth = 2;
       if (type === "left") {
-        ctx.moveTo(x + size * 0.6042, y2 + size * 0.25);
-        ctx.lineTo(x + size * 0.3542, y2 + size * 0.5);
-        ctx.lineTo(x + size * 0.6042, y2 + size * 0.75);
+        ctx.moveTo(x2 + size * 0.6042, y2 + size * 0.25);
+        ctx.lineTo(x2 + size * 0.3542, y2 + size * 0.5);
+        ctx.lineTo(x2 + size * 0.6042, y2 + size * 0.75);
       } else if (type === "right") {
-        ctx.moveTo(x + size * (1 - 0.6042), y2 + size * 0.25);
-        ctx.lineTo(x + size * (1 - 0.3542), y2 + size * 0.5);
-        ctx.lineTo(x + size * (1 - 0.6042), y2 + size * 0.75);
+        ctx.moveTo(x2 + size * (1 - 0.6042), y2 + size * 0.25);
+        ctx.lineTo(x2 + size * (1 - 0.3542), y2 + size * 0.5);
+        ctx.lineTo(x2 + size * (1 - 0.6042), y2 + size * 0.75);
       }
       ctx.stroke();
     }
-    isCoordinateInside(x, y2) {
-      return x >= this.x && x <= this.x + this.size && y2 >= this.y && y2 <= this.y + this.size;
+    isCoordinateInside(x2, y2) {
+      return x2 >= this.x && x2 <= this.x + this.size && y2 >= this.y && y2 <= this.y + this.size;
     }
   }
   class Day {
@@ -965,11 +960,11 @@
     formatMonth(month) {
       return "".concat(month).padStart(2, "0");
     }
-    isCoordinateInside(x, y2) {
-      return x >= this.x && x <= this.x + this.width && y2 >= this.y && y2 <= this.y + this.height;
+    isCoordinateInside(x2, y2) {
+      return x2 >= this.x && x2 <= this.x + this.width && y2 >= this.y && y2 <= this.y + this.height;
     }
-    setPosition(x, y2) {
-      this.x = x;
+    setPosition(x2, y2) {
+      this.x = x2;
       this.y = y2;
     }
     setDimensions(width, height) {
@@ -994,14 +989,14 @@
     }
     set isCheckedIn(_v) {
     }
-    drawCircle(ctx, x, y2, radius, color, border = false) {
+    drawCircle(ctx, x2, y2, radius, color, border = false) {
       ctx.beginPath();
       if (border) {
         ctx.lineWidth = 1;
         ctx.strokeStyle = "white";
       }
       ctx.fillStyle = color;
-      ctx.arc(x, y2, radius, 0, Math.PI * 2);
+      ctx.arc(x2, y2, radius, 0, Math.PI * 2);
       ctx.fill();
       if (border) {
         ctx.stroke();
@@ -1218,10 +1213,10 @@
         const width = rect == null ? 0 : rect.width / 7;
         const row = Math.floor(i3 / 7);
         const col = i3 % 7;
-        const x = col * width;
+        const x2 = col * width;
         const y2 = row * height + this.opt.monthTitleHeight + this.opt.weekHeight;
         return {
-          x,
+          x: x2,
           y: y2,
           width,
           height
@@ -1229,33 +1224,33 @@
         };
       };
       for (var i2 = 0; i2 < beforeEmptyLength; i2++) {
-        const _a = getGridSize(index), x = _a.x, y2 = _a.y, width = _a.width, height = _a.height;
+        const _a = getGridSize(index), x2 = _a.x, y2 = _a.y, width = _a.width, height = _a.height;
         const date = lastMonthEndDay - beforeEmptyLength + i2 + 1;
         const time = new Date(last.year, last.month - 1, date).getTime();
         const day = new Day(date, last.month, last.year, last.year == this.currentYear && last.month == this.currentMonth, time == today, time < today, this);
         day.type = "last";
-        day.setPosition(x, y2);
+        day.setPosition(x2, y2);
         day.setDimensions(width, height);
         arr.push(day);
         index++;
       }
       for (var i2 = 0; i2 < days; i2++) {
-        const _b = getGridSize(index), x = _b.x, y2 = _b.y, width = _b.width, height = _b.height;
+        const _b = getGridSize(index), x2 = _b.x, y2 = _b.y, width = _b.width, height = _b.height;
         const date = i2 + 1;
         const time = new Date(year, month - 1, date).getTime();
         const day = new Day(date, month, year, year == this.currentYear && month == this.currentMonth, time == today, time < today, this);
-        day.setPosition(x, y2);
+        day.setPosition(x2, y2);
         day.setDimensions(width, height);
         arr.push(day);
         index++;
       }
       for (var i2 = 0; i2 < afterEmptyLength; i2++) {
-        const _c = getGridSize(index), x = _c.x, y2 = _c.y, width = _c.width, height = _c.height;
+        const _c = getGridSize(index), x2 = _c.x, y2 = _c.y, width = _c.width, height = _c.height;
         const date = i2 + 1;
         const time = new Date(next.year, next.month - 1, date).getTime();
         const day = new Day(date, next.month, next.year, next.year == this.currentYear && next.month == this.currentMonth, time == today, time < today, this);
         day.type = "next";
-        day.setPosition(x, y2);
+        day.setPosition(x2, y2);
         day.setDimensions(width, height);
         arr.push(day);
         index++;
@@ -1306,19 +1301,19 @@
         }
       }
     }
-    drawIcon(ctx, size, x, y2, arrow, color) {
+    drawIcon(ctx, size, x2, y2, arrow, color) {
       ctx.strokeStyle = color;
       ctx.beginPath();
       ctx.lineJoin = "round";
       ctx.lineWidth = 2;
       if (arrow === "left") {
-        ctx.moveTo(x + size * 0.6042, y2 + size * 0.25);
-        ctx.lineTo(x + size * 0.3542, y2 + size * 0.5);
-        ctx.lineTo(x + size * 0.6042, y2 + size * 0.75);
+        ctx.moveTo(x2 + size * 0.6042, y2 + size * 0.25);
+        ctx.lineTo(x2 + size * 0.3542, y2 + size * 0.5);
+        ctx.lineTo(x2 + size * 0.6042, y2 + size * 0.75);
       } else if (arrow === "right") {
-        ctx.moveTo(x + size * (1 - 0.6042), y2 + size * 0.25);
-        ctx.lineTo(x + size * (1 - 0.3542), y2 + size * 0.5);
-        ctx.lineTo(x + size * (1 - 0.6042), y2 + size * 0.75);
+        ctx.moveTo(x2 + size * (1 - 0.6042), y2 + size * 0.25);
+        ctx.lineTo(x2 + size * (1 - 0.3542), y2 + size * 0.5);
+        ctx.lineTo(x2 + size * (1 - 0.6042), y2 + size * 0.75);
       }
       ctx.stroke();
     }
@@ -1376,10 +1371,10 @@
       if (this.el == null)
         return null;
       const rect = this.el.getBoundingClientRect();
-      const x = e2.clientX - rect.left;
+      const x2 = e2.clientX - rect.left;
       const y2 = e2.clientY - rect.top;
       const icon = UTS.arrayFind(this.arrowIcons, (icon2) => {
-        return icon2.isCoordinateInside(x, y2);
+        return icon2.isCoordinateInside(x2, y2);
       });
       if (icon != null) {
         if (icon.type == "left") {
@@ -1397,7 +1392,7 @@
       if (month == null)
         return null;
       const day = UTS.arrayFind(month.days, (day2) => {
-        return day2.isCoordinateInside(x, y2);
+        return day2.isCoordinateInside(x2, y2);
       });
       if (day != null && day.type == "current") {
         this.selectDate = day;
@@ -1406,18 +1401,18 @@
       }
     }
   }
-  const _sfc_main$K = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$L = /* @__PURE__ */ vue.defineComponent({
     __name: "l-daily-punch",
     props: {
-      canSupplement: new UTSJSONObject({
+      canSupplement: {
         type: Boolean,
         default: true
-      }),
-      isFullCalendar: new UTSJSONObject({
+      },
+      isFullCalendar: {
         type: Boolean,
         default: true
-      }),
-      yearMonth: new UTSJSONObject({
+      },
+      yearMonth: {
         type: String,
         default: () => {
           const date = /* @__PURE__ */ new Date();
@@ -1425,8 +1420,8 @@
           const month = (date.getMonth() + 1).toString().padStart(2, "0");
           return "".concat(year, "-").concat(month);
         }
-      }),
-      signedDates: new UTSJSONObject({
+      },
+      signedDates: {
         type: Array,
         default: () => {
           return [];
@@ -1436,68 +1431,68 @@
             return /^\d{4}-\d{2}-\d{2}$/.test(date);
           });
         }
-      }),
-      dayHeight: new UTSJSONObject({
+      },
+      dayHeight: {
         type: [String, Number],
         default: 76
-      }),
-      week: new UTSJSONObject({
+      },
+      week: {
         type: Array,
         default: () => {
           return ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
         }
-      }),
-      weekStartsOn: new UTSJSONObject({
+      },
+      weekStartsOn: {
         type: Number,
         default: 6,
         validator: (value) => {
           return value <= 6;
         }
-      }),
-      weekColor: new UTSJSONObject({
+      },
+      weekColor: {
         type: String,
         default: "#BDC0C3"
-      }),
-      weekFontSize: new UTSJSONObject({
+      },
+      weekFontSize: {
         type: Number,
         default: 14
-      }),
-      weekHeight: new UTSJSONObject({
+      },
+      weekHeight: {
         type: Number,
         default: 30
-      }),
-      selectedDayBgColor: new UTSJSONObject({
+      },
+      selectedDayBgColor: {
         type: String,
         default: "rgba(0,0,0,0.06)"
-      }),
-      dayFontSize: new UTSJSONObject({
+      },
+      dayFontSize: {
         type: Number,
         default: 16
-      }),
-      textColor: new UTSJSONObject({
+      },
+      textColor: {
         type: String,
         default: "#1A1F24"
-      }),
-      disabledColor: new UTSJSONObject({
+      },
+      disabledColor: {
         type: String,
         default: "#BDC0C3"
-      }),
-      monthTitleHeight: new UTSJSONObject({
+      },
+      monthTitleHeight: {
         type: Number,
         default: 50
-      }),
-      monthTitleFontSize: new UTSJSONObject({
+      },
+      monthTitleFontSize: {
         type: Number,
         default: 20
-      }),
-      color: new UTSJSONObject({
+      },
+      color: {
         type: String,
         default: "#3B87F6"
-      }),
-      unsignedColor: new UTSJSONObject({
+      },
+      unsignedColor: {
         type: String,
         default: "#F1A33A"
-      })
+      }
     },
     emits: ["select", "panelChange", "streak"],
     setup(__props, _a) {
@@ -1577,8 +1572,8 @@
       return __returned__;
     }
   });
-  const _style_0$I = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
-  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$J = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
+  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "calender" }, [
       vue.createElementVNode(
         "canvas",
@@ -1595,8 +1590,8 @@
       )
     ]);
   }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["styles", [_style_0$I]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
-  const _sfc_main$J = vue.defineComponent({
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["styles", [_style_0$J]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
+  const _sfc_main$K = vue.defineComponent({
     name: "fui-bottom-popup",
     emits: ["close", "update:visible"],
     props: {
@@ -1727,8 +1722,8 @@
       }
     }
   });
-  const _style_0$H = { "fui-bottom__popup-wrap": { "": { "position": "fixed", "left": 0, "right": 0, "top": 0, "bottom": 0, "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "center", "transitionProperty": "opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "visibility": "hidden", "borderBottomWidth": 0, "overflow": "hidden", "opacity": 0 } }, "fui-bottom__popup": { "": { "width": "100%", "transitionProperty": "transform,opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "minHeight": "20rpx", "overflow": "hidden", "transform": "translateY(100%)", "display": "flex", "flexDirection": "row", "position": "relative" } }, "fui-bp__safe-weex": { "": { "paddingBottom": 34 } }, "@TRANSITION": { "fui-bottom__popup-wrap": { "property": "opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" }, "fui-bottom__popup": { "property": "transform,opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" } } };
-  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$I = { "fui-bottom__popup-wrap": { "": { "position": "fixed", "left": 0, "right": 0, "top": 0, "bottom": 0, "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "center", "transitionProperty": "opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "visibility": "hidden", "borderBottomWidth": 0, "overflow": "hidden", "opacity": 0 } }, "fui-bottom__popup": { "": { "width": "100%", "transitionProperty": "transform,opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "minHeight": "20rpx", "overflow": "hidden", "transform": "translateY(100%)", "display": "flex", "flexDirection": "row", "position": "relative" } }, "fui-bp__safe-weex": { "": { "paddingBottom": 34 } }, "@TRANSITION": { "fui-bottom__popup-wrap": { "property": "opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" }, "fui-bottom__popup": { "property": "transform,opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" } } };
+  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -1757,7 +1752,7 @@
       /* STYLE */
     );
   }
-  const __easycom_4$3 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["styles", [_style_0$H]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue"]]);
+  const __easycom_4$3 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["styles", [_style_0$I]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue"]]);
   const icons = new UTSJSONObject({
     "addressbook": "",
     "addfriends-fill": "",
@@ -1923,7 +1918,7 @@
     "goods": "",
     "goods-fill": ""
   });
-  const _sfc_main$I = vue.defineComponent({
+  const _sfc_main$J = vue.defineComponent({
     name: "fui-icon",
     emits: ["onclick"],
     props: {
@@ -2008,8 +2003,8 @@
       }
     }
   });
-  const _style_0$G = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
-  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$H = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
+  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -2022,8 +2017,8 @@
       /* TEXT, CLASS, STYLE */
     );
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["styles", [_style_0$G]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
-  const _sfc_main$H = vue.defineComponent({
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["styles", [_style_0$H]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
+  const _sfc_main$I = vue.defineComponent({
     name: "fui-radio",
     props: {
       value: {
@@ -2188,8 +2183,8 @@
       }
     }
   });
-  const _style_0$F = { "fui-radio__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "display": "flex", "boxSizing": "border-box", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-radio__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-radio__scale-center": { "": { "transformOrigin": "center center" } }, "fui-radio__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-radio__active-bgcolor": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-radio__color": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-radio__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-radio__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-radio__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-check__mark-circle": { "": { "width": "16rpx", "height": "16rpx", "borderTopLeftRadius": "16rpx", "borderTopRightRadius": "16rpx", "borderBottomRightRadius": "16rpx", "borderBottomLeftRadius": "16rpx" } }, "fui-radio__disabled": { "": { "opacity": 0.6 } } };
-  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$G = { "fui-radio__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "display": "flex", "boxSizing": "border-box", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-radio__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-radio__scale-center": { "": { "transformOrigin": "center center" } }, "fui-radio__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-radio__active-bgcolor": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-radio__color": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-radio__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-radio__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-radio__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-check__mark-circle": { "": { "width": "16rpx", "height": "16rpx", "borderTopLeftRadius": "16rpx", "borderTopRightRadius": "16rpx", "borderBottomRightRadius": "16rpx", "borderBottomLeftRadius": "16rpx" } }, "fui-radio__disabled": { "": { "opacity": 0.6 } } };
+  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2225,8 +2220,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["styles", [_style_0$F]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio/fui-radio.uvue"]]);
-  const _sfc_main$G = vue.defineComponent({
+  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["styles", [_style_0$G]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio/fui-radio.uvue"]]);
+  const _sfc_main$H = vue.defineComponent({
     name: "fui-list-cell",
     emits: ["onclick"],
     props: {
@@ -2331,8 +2326,8 @@
       }
     }
   });
-  const _style_0$E = { "fui-list__cell": { "": { "position": "relative", "width": "100%", "display": "flex", "flexDirection": "row", "boxSizing": "border-box" } }, "fui-list__cell-inner": { "": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "boxSizing": "border-box" } }, "fui-cell__arrow": { "": { "height": "40rpx", "width": "40rpx", "borderTopWidth": 3, "borderRightWidth": 3, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "transform": "rotate(45deg) scale(0.5)", "borderTopLeftRadius": "4rpx", "borderTopRightRadius": "4rpx", "borderBottomRightRadius": "4rpx", "borderBottomLeftRadius": "4rpx", "flexShrink": 0, "marginLeft": "auto", "boxSizing": "border-box", "transformOrigin": "center center", "marginRight": "-5.8579rpx" } }, "fui-cell__border-top": { "": { "position": "absolute", "top": 0, "height": 0.5, "zIndex": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "pointerEvents": "none" } }, "fui-cell__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-cell__border-color": { "": { "!backgroundColor": "#EEEEEE" } }, "fui-list__cell-background": { "": { "!backgroundColor": "#FFFFFF" } }, "fui-list__cell-highlight": { "": { "!backgroundColor": "rgba(0,0,0,0.2)" } }, "fui-list__cell-padding": { "": { "!paddingTop": "32rpx", "!paddingRight": "32rpx", "!paddingBottom": "32rpx", "!paddingLeft": "32rpx" } }, "fui-list__cell-arrowcolor": { "": { "!borderTopColor": "#B2B2B2", "!borderRightColor": "#B2B2B2", "!borderBottomColor": "#B2B2B2", "!borderLeftColor": "#B2B2B2" } }, "fui-list__cell-bleft": { "": { "!left": "32rpx" } } };
-  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$F = { "fui-list__cell": { "": { "position": "relative", "width": "100%", "display": "flex", "flexDirection": "row", "boxSizing": "border-box" } }, "fui-list__cell-inner": { "": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "boxSizing": "border-box" } }, "fui-cell__arrow": { "": { "height": "40rpx", "width": "40rpx", "borderTopWidth": 3, "borderRightWidth": 3, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "transform": "rotate(45deg) scale(0.5)", "borderTopLeftRadius": "4rpx", "borderTopRightRadius": "4rpx", "borderBottomRightRadius": "4rpx", "borderBottomLeftRadius": "4rpx", "flexShrink": 0, "marginLeft": "auto", "boxSizing": "border-box", "transformOrigin": "center center", "marginRight": "-5.8579rpx" } }, "fui-cell__border-top": { "": { "position": "absolute", "top": 0, "height": 0.5, "zIndex": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "pointerEvents": "none" } }, "fui-cell__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-cell__border-color": { "": { "!backgroundColor": "#EEEEEE" } }, "fui-list__cell-background": { "": { "!backgroundColor": "#FFFFFF" } }, "fui-list__cell-highlight": { "": { "!backgroundColor": "rgba(0,0,0,0.2)" } }, "fui-list__cell-padding": { "": { "!paddingTop": "32rpx", "!paddingRight": "32rpx", "!paddingBottom": "32rpx", "!paddingLeft": "32rpx" } }, "fui-list__cell-arrowcolor": { "": { "!borderTopColor": "#B2B2B2", "!borderRightColor": "#B2B2B2", "!borderBottomColor": "#B2B2B2", "!borderLeftColor": "#B2B2B2" } }, "fui-list__cell-bleft": { "": { "!left": "32rpx" } } };
+  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["fui-list__cell", { "fui-list__cell-background": $props.background == "" }]),
       "hover-class": $props.highlight ? "fui-list__cell-highlight" : "",
@@ -2388,8 +2383,8 @@
       )) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class"]);
   }
-  const __easycom_4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["styles", [_style_0$E]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell.uvue"]]);
-  const _sfc_main$F = vue.defineComponent({
+  const __easycom_4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["styles", [_style_0$F]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell.uvue"]]);
+  const _sfc_main$G = vue.defineComponent({
     name: "fui-label",
     props: {
       //padding值：'20rpx 32rpx'
@@ -2422,8 +2417,8 @@
       }
     }
   });
-  const _style_0$D = { "fui-label__wrap": { "": { "boxSizing": "border-box" } }, "fui-label__full": { "": { "width": "100%" } } };
-  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$E = { "fui-label__wrap": { "": { "boxSizing": "border-box" } }, "fui-label__full": { "": { "width": "100%" } } };
+  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2438,8 +2433,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["styles", [_style_0$D]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-label/fui-label.uvue"]]);
-  const _sfc_main$E = vue.defineComponent({
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["styles", [_style_0$E]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-label/fui-label.uvue"]]);
+  const _sfc_main$F = vue.defineComponent({
     name: "fui-radio-group",
     emits: ["change", "update:modelValue"],
     props: {
@@ -2523,7 +2518,7 @@
       }
     }
   });
-  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_radio_group = vue.resolveComponent("radio-group");
     return vue.openBlock(), vue.createBlock(_component_radio_group, { name: $props.name }, {
       default: vue.withCtx(() => [
@@ -2533,7 +2528,7 @@
       /* FORWARDED */
     }, 8, ["name"]);
   }
-  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.uvue"]]);
+  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.uvue"]]);
   class DayutsConfig extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -2829,8 +2824,8 @@
       const s2 = ["th", "st", "nd", "rd"];
       const v2 = n2 % 100;
       const i2 = (v2 - 20) % 10;
-      const k = i2 < s2.length ? i2 : v2 < s2.length ? v2 : 0;
-      return "[".concat(n2).concat(s2[k], "]");
+      const k2 = i2 < s2.length ? i2 : v2 < s2.length ? v2 : 0;
+      return "[".concat(n2).concat(s2[k2], "]");
     }
   };
   const locale = {
@@ -3688,7 +3683,7 @@
       delete this.__props__;
     }
   };
-  const _sfc_main$D = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$E = /* @__PURE__ */ vue.defineComponent({
     __name: "message",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -3706,7 +3701,6 @@
         date.getFullYear();
         date.getMonth() + 1;
         const curDate = date.getDate();
-        uni.__log__("log", "at pages/message/message.uvue:130", day.key);
         day.prefix = "";
         const specialDates = /* @__PURE__ */ new Set([7, 8, 10]);
         if (specialDates.has(curDate)) {
@@ -3715,16 +3709,16 @@
         return day;
       };
       const onChange = (time) => {
-        uni.__log__("log", "at pages/message/message.uvue:144", time);
+        uni.__log__("log", "at pages/message/message.uvue:143", time);
       };
       const select = (day) => {
         today.value = dayuts(day.fullDate).format("YYYY-MM-DD");
-        uni.__log__("log", "at pages/message/message.uvue:151", today.value);
+        uni.__log__("log", "at pages/message/message.uvue:150", today.value);
         currentDay.value = new Date(today.value).getTime();
         showCalendar.value = false;
       };
       const change = (res) => {
-        uni.__log__("log", "at pages/message/message.uvue:156", "res", res);
+        uni.__log__("log", "at pages/message/message.uvue:155", "res", res);
       };
       const ShowCalendar = () => {
         showCalendar.value = !showCalendar.value;
@@ -3782,7 +3776,6 @@
           return item.iccid == e2;
         });
         if (selectedItem != null) {
-          uni.__log__("log", "at pages/message/message.uvue:222", selectedItem);
           selectedItem.checked = true;
           currentDeviceInfo.value = selectedItem;
         }
@@ -3811,14 +3804,14 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
+  });
   const _imports_0$7 = "/static/down.png";
-  const _imports_1$2 = "/static/notice.png";
-  const _imports_1$1 = "/static/vedio.png";
-  const _imports_3$1 = "/static/people.png";
-  const _imports_4 = "/static/mobile.png";
-  const _style_0$C = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "data-strip": { ".container ": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "backgroundColor": "#ffffff", "paddingRight": "20rpx" } }, "rili": { ".container .data-strip ": { "flex": 3, "height": "95rpx" } }, "down": { ".container .data-strip ": { "width": "32rpx", "height": "32rpx" }, ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "width": "140rpx" } }, "notice": { ".container .content-box .sub-nav .select ": { "width": "48rpx", "height": "48rpx" } }, "tab-content": { ".container .content-box ": { "width": "100%", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "item-content": { ".container .content-box .tab-content ": { "width": "100%", "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginTop": "30rpx" } }, "title-box": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "30rpx" } }, "title": { ".container .content-box .tab-content .item-content .title-box ": { "fontSize": "30rpx", "color": "#333333", "fontWeight": "bold" } }, "more": { ".container .content-box .tab-content .item-content .title-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-detail": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { ".container .content-box .tab-content .item-content .item-detail ": { "display": "flex", "flexDirection": "row" } }, "device-img": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "width": "200rpx", "height": "100rpx", "marginRight": "20rpx" } }, "item-info": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "space-between" } }, "item-icon": { ".container .content-box .tab-content .item-content .item-detail ": { "width": "50rpx", "height": "50rpx" } }, "calendar-box": { ".container ": { "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
-  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
+  const _imports_1$3 = "/static/notice.png";
+  const _imports_1$2 = "/static/vedio.png";
+  const _imports_3$2 = "/static/people.png";
+  const _imports_4$1 = "/static/mobile.png";
+  const _style_0$D = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "data-strip": { ".container ": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "backgroundColor": "#ffffff", "paddingRight": "20rpx" } }, "rili": { ".container .data-strip ": { "flex": 3, "height": "95rpx" } }, "down": { ".container .data-strip ": { "width": "32rpx", "height": "32rpx" }, ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "width": "140rpx" } }, "notice": { ".container .content-box .sub-nav .select ": { "width": "48rpx", "height": "48rpx" } }, "tab-content": { ".container .content-box ": { "width": "100%", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "item-content": { ".container .content-box .tab-content ": { "width": "100%", "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginTop": "30rpx" } }, "title-box": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "30rpx" } }, "title": { ".container .content-box .tab-content .item-content .title-box ": { "fontSize": "30rpx", "color": "#333333", "fontWeight": "bold" } }, "more": { ".container .content-box .tab-content .item-content .title-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-detail": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { ".container .content-box .tab-content .item-content .item-detail ": { "display": "flex", "flexDirection": "row" } }, "device-img": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "width": "200rpx", "height": "100rpx", "marginRight": "20rpx" } }, "item-info": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "space-between" } }, "item-icon": { ".container .content-box .tab-content .item-content .item-detail ": { "width": "50rpx", "height": "50rpx" } }, "calendar-box": { ".container ": { "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
+  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_date_strip = resolveEasycom(vue.resolveDynamicComponent("l-date-strip"), __easycom_0$9);
     const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
     const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$7);
@@ -3862,7 +3855,7 @@
           vue.createElementVNode("view", { class: "select" }, [
             vue.createElementVNode("image", {
               class: "notice",
-              src: _imports_1$2,
+              src: _imports_1$3,
               onClick: $setup.msgSystem
             })
           ])
@@ -3886,7 +3879,7 @@
               vue.createElementVNode("view", { class: "item-left" }, [
                 vue.createElementVNode("image", {
                   class: "device-img",
-                  src: _imports_1$1
+                  src: _imports_1$2
                 }),
                 vue.createElementVNode("view", { class: "item-info" }, [
                   vue.createElementVNode("text", null, "人形侦测"),
@@ -3896,7 +3889,7 @@
               vue.createElementVNode("image", {
                 class: "item-icon",
                 mode: "aspectFit",
-                src: _imports_3$1
+                src: _imports_3$2
               })
             ])
           ]),
@@ -3915,7 +3908,7 @@
               vue.createElementVNode("view", { class: "item-left" }, [
                 vue.createElementVNode("image", {
                   class: "device-img",
-                  src: _imports_1$1
+                  src: _imports_1$2
                 }),
                 vue.createElementVNode("view", { class: "item-info" }, [
                   vue.createElementVNode("text", null, "移动侦测"),
@@ -3925,7 +3918,7 @@
               vue.createElementVNode("image", {
                 class: "item-icon",
                 mode: "aspectFit",
-                src: _imports_4
+                src: _imports_4$1
               })
             ])
           ])
@@ -4025,8 +4018,8 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["styles", [_style_0$C]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
-  const _sfc_main$C = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["styles", [_style_0$D]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
+  const _sfc_main$D = /* @__PURE__ */ vue.defineComponent({
     __name: "mine",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -4080,21 +4073,21 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
+  });
   const _imports_0$6 = "/static/mine/local.png";
-  const _imports_1 = "/static/mine/cloud.png";
-  const _imports_2 = "/static/mine/msgList.png";
-  const _imports_3 = "/static/mine/user.png";
+  const _imports_1$1 = "/static/mine/cloud.png";
+  const _imports_2$1 = "/static/mine/msgList.png";
+  const _imports_3$1 = "/static/mine/user.png";
   const _imports_0$5 = "/static/mine/right.png";
-  const _imports_5 = "/static/mine/liuliang.png";
-  const _imports_6 = "/static/mine/order.png";
-  const _imports_7 = "/static/mine/quetion.png";
-  const _imports_8 = "/static/mine/online.png";
-  const _imports_9 = "/static/mine/advice.png";
-  const _imports_10 = "/static/mine/setting.png";
-  const _imports_11 = "/static/mine/about.png";
-  const _style_0$B = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
-  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
+  const _imports_5$1 = "/static/mine/liuliang.png";
+  const _imports_6$1 = "/static/mine/order.png";
+  const _imports_7$1 = "/static/mine/quetion.png";
+  const _imports_8$1 = "/static/mine/online.png";
+  const _imports_9$1 = "/static/mine/advice.png";
+  const _imports_10$1 = "/static/mine/setting.png";
+  const _imports_11$1 = "/static/mine/about.png";
+  const _style_0$C = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
+  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "files" }, [
         vue.createElementVNode("view", {
@@ -4111,7 +4104,7 @@
         vue.createElementVNode("view", { class: "file" }, [
           vue.createElementVNode("image", {
             class: "fileIcon",
-            src: _imports_1,
+            src: _imports_1$1,
             mode: "aspectFit"
           }),
           vue.createElementVNode("text", { class: "file-text" }, "永久备份")
@@ -4122,7 +4115,7 @@
         }, [
           vue.createElementVNode("image", {
             class: "fileIcon",
-            src: _imports_2,
+            src: _imports_2$1,
             mode: "aspectFit"
           }),
           vue.createElementVNode("text", { class: "file-text" }, "消息列表")
@@ -4136,7 +4129,7 @@
           vue.createElementVNode("view", { class: "info" }, [
             vue.createElementVNode("image", {
               class: "item-icon",
-              src: _imports_3,
+              src: _imports_3$1,
               mode: "aspectFit"
             }),
             vue.createElementVNode("text", { class: "item-text" }, "个人信息")
@@ -4156,7 +4149,7 @@
           vue.createElementVNode("view", { class: "info" }, [
             vue.createElementVNode("image", {
               class: "item-icon",
-              src: _imports_5,
+              src: _imports_5$1,
               mode: "aspectFit"
             }),
             vue.createElementVNode("text", { class: "item-text" }, "流量充值")
@@ -4176,7 +4169,7 @@
           vue.createElementVNode("view", { class: "info" }, [
             vue.createElementVNode("image", {
               class: "item-icon",
-              src: _imports_6,
+              src: _imports_6$1,
               mode: "aspectFit"
             }),
             vue.createElementVNode("text", { class: "item-text" }, "我的订单")
@@ -4196,7 +4189,7 @@
           vue.createElementVNode("view", { class: "info" }, [
             vue.createElementVNode("image", {
               class: "item-icon",
-              src: _imports_7,
+              src: _imports_7$1,
               mode: "aspectFit"
             }),
             vue.createElementVNode("text", { class: "item-text" }, "常见问题")
@@ -4213,7 +4206,7 @@
           vue.createElementVNode("view", { class: "info" }, [
             vue.createElementVNode("image", {
               class: "item-icon",
-              src: _imports_8,
+              src: _imports_8$1,
               mode: "aspectFit"
             }),
             vue.createElementVNode("text", { class: "item-text" }, "在线客服")
@@ -4233,7 +4226,7 @@
           vue.createElementVNode("view", { class: "info" }, [
             vue.createElementVNode("image", {
               class: "item-icon",
-              src: _imports_9,
+              src: _imports_9$1,
               mode: "aspectFit"
             }),
             vue.createElementVNode("text", { class: "item-text" }, "意见反馈")
@@ -4253,7 +4246,7 @@
           vue.createElementVNode("view", { class: "info" }, [
             vue.createElementVNode("image", {
               class: "item-icon",
-              src: _imports_10,
+              src: _imports_10$1,
               mode: "aspectFit"
             }),
             vue.createElementVNode("text", { class: "item-text" }, "设置")
@@ -4273,7 +4266,7 @@
           vue.createElementVNode("view", { class: "info" }, [
             vue.createElementVNode("image", {
               class: "item-icon",
-              src: _imports_11,
+              src: _imports_11$1,
               mode: "aspectFit"
             }),
             vue.createElementVNode("text", { class: "item-text" }, "关于")
@@ -4289,8 +4282,8 @@
       ])
     ]);
   }
-  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["styles", [_style_0$B]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
-  const _sfc_main$B = vue.defineComponent({
+  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["styles", [_style_0$C]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
+  const _sfc_main$C = vue.defineComponent({
     name: "fui-switch",
     emits: ["change", "update:checked"],
     props: {
@@ -4474,8 +4467,8 @@
       }
     }
   });
-  const _style_0$A = { "fui-switch__input": { "": { "flexShrink": 0 } }, "fui-switch__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-switch__scale-center": { "": { "transformOrigin": "center center" } }, "fui-switch__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-switch__size-switch": { "": { "width": 52, "height": 32 } }, "fui-switch__size-checkbox": { "": { "width": "40rpx", "height": "40rpx" } }, "fui-switch__checkbox-self": { "": { "width": "40rpx", "height": "40rpx", "borderTopLeftRadius": 40, "borderTopRightRadius": 40, "borderBottomRightRadius": 40, "borderBottomLeftRadius": 40, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-switch__input-def": { "": { "position": "relative", "width": 52, "height": 32, "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "boxSizing": "border-box" } }, "fui-switch__normal-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#dfdfdf" } }, "fui-switch__checked-color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-switch__normal-bcolor": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-switch__input-before": { "": { "position": "absolute", "top": 0, "left": 0, "width": 50, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "transitionProperty": "transform", "transitionDuration": "0.3s" } }, "fui-switch__before-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input-after": { "": { "position": "absolute", "top": 0, "left": 0, "width": 30, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "boxShadow": "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty": "transform", "transitionDuration": "0.3s", "display": "flex", "alignItems": "center", "justifyContent": "center", "transform": "translateX(0)" } }, "fui-switch__after-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input--before": { "": { "transform": "scale(0)" } }, "fui-switch__input--after": { "": { "transform": "translateX(20px)" } }, "fui-switch__check-mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%", "boxSizing": "border-box" } }, "fui-switch__circle-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__checkbox-disabled": { "": { "opacity": 0.6 } }, "@TRANSITION": { "fui-switch__input-before": { "property": "transform", "duration": "0.3s" }, "fui-switch__input-after": { "property": "transform", "duration": "0.3s" } } };
-  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$B = { "fui-switch__input": { "": { "flexShrink": 0 } }, "fui-switch__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-switch__scale-center": { "": { "transformOrigin": "center center" } }, "fui-switch__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-switch__size-switch": { "": { "width": 52, "height": 32 } }, "fui-switch__size-checkbox": { "": { "width": "40rpx", "height": "40rpx" } }, "fui-switch__checkbox-self": { "": { "width": "40rpx", "height": "40rpx", "borderTopLeftRadius": 40, "borderTopRightRadius": 40, "borderBottomRightRadius": 40, "borderBottomLeftRadius": 40, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-switch__input-def": { "": { "position": "relative", "width": 52, "height": 32, "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "boxSizing": "border-box" } }, "fui-switch__normal-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#dfdfdf" } }, "fui-switch__checked-color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-switch__normal-bcolor": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-switch__input-before": { "": { "position": "absolute", "top": 0, "left": 0, "width": 50, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "transitionProperty": "transform", "transitionDuration": "0.3s" } }, "fui-switch__before-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input-after": { "": { "position": "absolute", "top": 0, "left": 0, "width": 30, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "boxShadow": "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty": "transform", "transitionDuration": "0.3s", "display": "flex", "alignItems": "center", "justifyContent": "center", "transform": "translateX(0)" } }, "fui-switch__after-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input--before": { "": { "transform": "scale(0)" } }, "fui-switch__input--after": { "": { "transform": "translateX(20px)" } }, "fui-switch__check-mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%", "boxSizing": "border-box" } }, "fui-switch__circle-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__checkbox-disabled": { "": { "opacity": 0.6 } }, "@TRANSITION": { "fui-switch__input-before": { "property": "transform", "duration": "0.3s" }, "fui-switch__input-after": { "property": "transform", "duration": "0.3s" } } };
+  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4546,8 +4539,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["styles", [_style_0$A]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
-  const _sfc_main$A = vue.defineComponent({
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["styles", [_style_0$B]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
+  const _sfc_main$B = vue.defineComponent({
     name: "fui-button",
     emits: ["onclick"],
     props: {
@@ -4815,8 +4808,8 @@
       }
     }
   });
-  const _style_0$z = { "fui-button__wrap": { "": { "position": "relative", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-button__flex-1": { "": { "width": "100%" } }, "fui-button__opacity": { "": { "opacity": 0.5 } }, "fui-button__hover": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "backgroundColor": "rgba(0,0,0,0.2)", "zIndex": 2, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "visibility": "hidden", "pointerEvents": "none" } }, "fui-button__spin": { "": { "width": "32rpx", "height": "32rpx", "borderTopWidth": 2, "borderRightWidth": 2, "borderBottomWidth": 2, "borderLeftWidth": 2, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "transitionDuration": "600ms", "transitionProperty": "transform", "transitionTimingFunction": "linear", "transform": "rotate(0deg)", "boxSizing": "border-box", "marginRight": "8rpx", "position": "relative" } }, "fui-button__spin-dot": { "": { "position": "absolute", "width": "12rpx", "height": "12rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx", "left": 0, "top": 0 } }, "fui-button__text": { "": { "textAlign": "center" } }, "fui-text__bold": { "": { "fontWeight": "bold" } }, "fui-button__link": { "": { "!borderTopColor": "rgba(0,0,0,0)", "!borderRightColor": "rgba(0,0,0,0)", "!borderBottomColor": "rgba(0,0,0,0)", "!borderLeftColor": "rgba(0,0,0,0)", "!backgroundColor": "rgba(0,0,0,0)" } }, "fui-button__primary": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF", "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-button__success": { "": { "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F", "!backgroundImage": "none", "!backgroundColor": "#09BE4F" } }, "fui-button__warning": { "": { "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703", "!backgroundImage": "none", "!backgroundColor": "#FFB703" } }, "fui-button__danger": { "": { "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B", "!backgroundImage": "none", "!backgroundColor": "#FF2B2B" } }, "fui-button__purple": { "": { "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF", "!backgroundImage": "none", "!backgroundColor": "#6831FF" } }, "fui-button__gray": { "": { "!borderTopColor": "#F8F8F8", "!borderRightColor": "#F8F8F8", "!borderBottomColor": "#F8F8F8", "!borderLeftColor": "#F8F8F8", "!backgroundImage": "none", "!backgroundColor": "#F8F8F8" } }, "fui-btn__gray-color": { "": { "!color": "#465CFF" } }, "fui-button__height": { "": { "!height": "96rpx" } }, "fui-button__height-text": { "": { "!height": "96rpx", "!lineHeight": "96rpx" } }, "fui-button__size": { "": { "!fontSize": "32rpx" } }, "fui-button__radius": { "": { "!borderTopLeftRadius": "16rpx", "!borderTopRightRadius": "16rpx", "!borderBottomRightRadius": "16rpx", "!borderBottomLeftRadius": "16rpx" } }, "@TRANSITION": { "fui-button__spin": { "duration": "600ms", "property": "transform", "timingFunction": "linear" } } };
-  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$A = { "fui-button__wrap": { "": { "position": "relative", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-button__flex-1": { "": { "width": "100%" } }, "fui-button__opacity": { "": { "opacity": 0.5 } }, "fui-button__hover": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "backgroundColor": "rgba(0,0,0,0.2)", "zIndex": 2, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "visibility": "hidden", "pointerEvents": "none" } }, "fui-button__spin": { "": { "width": "32rpx", "height": "32rpx", "borderTopWidth": 2, "borderRightWidth": 2, "borderBottomWidth": 2, "borderLeftWidth": 2, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "transitionDuration": "600ms", "transitionProperty": "transform", "transitionTimingFunction": "linear", "transform": "rotate(0deg)", "boxSizing": "border-box", "marginRight": "8rpx", "position": "relative" } }, "fui-button__spin-dot": { "": { "position": "absolute", "width": "12rpx", "height": "12rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx", "left": 0, "top": 0 } }, "fui-button__text": { "": { "textAlign": "center" } }, "fui-text__bold": { "": { "fontWeight": "bold" } }, "fui-button__link": { "": { "!borderTopColor": "rgba(0,0,0,0)", "!borderRightColor": "rgba(0,0,0,0)", "!borderBottomColor": "rgba(0,0,0,0)", "!borderLeftColor": "rgba(0,0,0,0)", "!backgroundColor": "rgba(0,0,0,0)" } }, "fui-button__primary": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF", "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-button__success": { "": { "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F", "!backgroundImage": "none", "!backgroundColor": "#09BE4F" } }, "fui-button__warning": { "": { "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703", "!backgroundImage": "none", "!backgroundColor": "#FFB703" } }, "fui-button__danger": { "": { "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B", "!backgroundImage": "none", "!backgroundColor": "#FF2B2B" } }, "fui-button__purple": { "": { "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF", "!backgroundImage": "none", "!backgroundColor": "#6831FF" } }, "fui-button__gray": { "": { "!borderTopColor": "#F8F8F8", "!borderRightColor": "#F8F8F8", "!borderBottomColor": "#F8F8F8", "!borderLeftColor": "#F8F8F8", "!backgroundImage": "none", "!backgroundColor": "#F8F8F8" } }, "fui-btn__gray-color": { "": { "!color": "#465CFF" } }, "fui-button__height": { "": { "!height": "96rpx" } }, "fui-button__height-text": { "": { "!height": "96rpx", "!lineHeight": "96rpx" } }, "fui-button__size": { "": { "!fontSize": "32rpx" } }, "fui-button__radius": { "": { "!borderTopLeftRadius": "16rpx", "!borderTopRightRadius": "16rpx", "!borderBottomRightRadius": "16rpx", "!borderBottomLeftRadius": "16rpx" } }, "@TRANSITION": { "fui-button__spin": { "duration": "600ms", "property": "transform", "timingFunction": "linear" } } };
+  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4881,8 +4874,8 @@
       /* CLASS, STYLE, NEED_HYDRATION */
     );
   }
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["styles", [_style_0$z]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
-  const _sfc_main$z = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["styles", [_style_0$A]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
+  const _sfc_main$A = /* @__PURE__ */ vue.defineComponent({
     __name: "userInfo",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -4970,9 +4963,9 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$y = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
-  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$z = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
+  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_0$5);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -5058,8 +5051,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoUserInfo = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["styles", [_style_0$y]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/userInfo.uvue"]]);
-  const _sfc_main$y = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMineUserInfoUserInfo = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["styles", [_style_0$z]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/userInfo.uvue"]]);
+  const _sfc_main$z = /* @__PURE__ */ vue.defineComponent({
     __name: "CancelAnAccount",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -5075,10 +5068,10 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
+  });
   const _imports_0$4 = "/static/error_big.png";
-  const _style_0$x = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
-  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$y = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
+  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("image", {
@@ -5111,8 +5104,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoCancelAnAccountCancelAnAccount = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["styles", [_style_0$x]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue"]]);
-  const _sfc_main$x = vue.defineComponent({
+  const PagesMineUserInfoCancelAnAccountCancelAnAccount = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["styles", [_style_0$y]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue"]]);
+  const _sfc_main$y = vue.defineComponent({
     name: "fui-input",
     emits: ["input", "update:modelValue", "focus", "blur", "confirm", "onclick", "keyboardheightchange"],
     props: {
@@ -5497,8 +5490,8 @@
       }
     }
   });
-  const _style_0$w = { "fui-input__wrap": { "": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "position": "relative", "boxSizing": "border-box", "overflow": "visible" } }, "fui-input__border-uvue": { "": { "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "fui-input__border-color": { "": { "!borderTopColor": "#EEEEEE", "!borderRightColor": "#EEEEEE", "!borderBottomColor": "#EEEEEE", "!borderLeftColor": "#EEEEEE" } }, "fui-input__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#EEEEEE" } }, "fui-input__border-top": { "": { "position": "absolute", "top": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__required": { "": { "position": "absolute", "left": "12rpx", "height": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "fui-input__asterisk-text": { "": { "fontSize": "32rpx", "height": "32rpx", "lineHeight": "32rpx" } }, "fui-input__asterisk-color": { "": { "!color": "#FF2B2B" } }, "fui-input__label": { "": { "paddingRight": "12rpx", "flexShrink": 0 } }, "fui-input__label-size": { "": { "!fontSize": "32rpx", "!lineHeight": "32rpx" } }, "fui-input__self": { "": { "flex": 1, "paddingRight": "12rpx", "overflow": "visible", "backgroundColor": "rgba(0,0,0,0)", "boxSizing": "border-box" } }, "fui-input__size": { "": { "!fontSize": "32rpx" } }, "fui-input__clear-wrap": { "": { "width": "32rpx", "height": "32rpx", "transform": "rotate(45deg) scale(1.1)", "position": "relative", "flexShrink": 0, "borderTopLeftRadius": "32rpx", "borderTopRightRadius": "32rpx", "borderBottomRightRadius": "32rpx", "borderBottomLeftRadius": "32rpx" } }, "fui-input__clear": { "": { "width": "32rpx", "height": "32rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "absolute", "left": 0, "top": 0, "transform": "scale(0.5)" } }, "fui-input__clear-a": { "": { "width": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__clear-b": { "": { "height": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__placeholder": { "": { "color": "#CCCCCC", "overflow": "visible" } }, "fui-input__disabled": { "": { "pointerEvents": "none" } }, "fui-input__disabled-styl": { "": { "opacity": 0.6 } } };
-  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$x = { "fui-input__wrap": { "": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "position": "relative", "boxSizing": "border-box", "overflow": "visible" } }, "fui-input__border-uvue": { "": { "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "fui-input__border-color": { "": { "!borderTopColor": "#EEEEEE", "!borderRightColor": "#EEEEEE", "!borderBottomColor": "#EEEEEE", "!borderLeftColor": "#EEEEEE" } }, "fui-input__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#EEEEEE" } }, "fui-input__border-top": { "": { "position": "absolute", "top": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__required": { "": { "position": "absolute", "left": "12rpx", "height": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "fui-input__asterisk-text": { "": { "fontSize": "32rpx", "height": "32rpx", "lineHeight": "32rpx" } }, "fui-input__asterisk-color": { "": { "!color": "#FF2B2B" } }, "fui-input__label": { "": { "paddingRight": "12rpx", "flexShrink": 0 } }, "fui-input__label-size": { "": { "!fontSize": "32rpx", "!lineHeight": "32rpx" } }, "fui-input__self": { "": { "flex": 1, "paddingRight": "12rpx", "overflow": "visible", "backgroundColor": "rgba(0,0,0,0)", "boxSizing": "border-box" } }, "fui-input__size": { "": { "!fontSize": "32rpx" } }, "fui-input__clear-wrap": { "": { "width": "32rpx", "height": "32rpx", "transform": "rotate(45deg) scale(1.1)", "position": "relative", "flexShrink": 0, "borderTopLeftRadius": "32rpx", "borderTopRightRadius": "32rpx", "borderBottomRightRadius": "32rpx", "borderBottomLeftRadius": "32rpx" } }, "fui-input__clear": { "": { "width": "32rpx", "height": "32rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "absolute", "left": 0, "top": 0, "transform": "scale(0.5)" } }, "fui-input__clear-a": { "": { "width": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__clear-b": { "": { "height": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__placeholder": { "": { "color": "#CCCCCC", "overflow": "visible" } }, "fui-input__disabled": { "": { "pointerEvents": "none" } }, "fui-input__disabled-styl": { "": { "opacity": 0.6 } } };
+  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -5618,8 +5611,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["styles", [_style_0$w]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
-  const _sfc_main$w = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["styles", [_style_0$x]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
+  const _sfc_main$x = /* @__PURE__ */ vue.defineComponent({
     __name: "changePhoneNumber",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -5648,9 +5641,9 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$v = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "icon": { ".container .content ": { "width": "40rpx", "height": "40rpx", "marginRight": "10rpx" } } };
-  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$w = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "icon": { ".container .content ": { "width": "40rpx", "height": "40rpx", "marginRight": "10rpx" } } };
+  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$2);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
@@ -5706,8 +5699,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoChangePhoneNumberChangePhoneNumber = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["styles", [_style_0$v]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue"]]);
-  const _sfc_main$v = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMineUserInfoChangePhoneNumberChangePhoneNumber = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["styles", [_style_0$w]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue"]]);
+  const _sfc_main$w = /* @__PURE__ */ vue.defineComponent({
     __name: "changePassword",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -5777,9 +5770,9 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$u = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } }, "error-msg": { ".container ": { "marginTop": "10rpx", "color": "#e64340", "fontSize": "24rpx" } } };
-  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$v = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } }, "error-msg": { ".container ": { "marginTop": "10rpx", "color": "#e64340", "fontSize": "24rpx" } } };
+  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$2);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -5830,8 +5823,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoChangePasswordChangePassword = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["styles", [_style_0$u]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePassword/changePassword.uvue"]]);
-  const _sfc_main$u = /* @__PURE__ */ vue.defineComponent({
+  const PagesMineUserInfoChangePasswordChangePassword = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["styles", [_style_0$v]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePassword/changePassword.uvue"]]);
+  const _sfc_main$v = /* @__PURE__ */ vue.defineComponent({
     __name: "l-progress",
     props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
       showInfo: { type: Boolean, required: true, default: false },
@@ -5924,8 +5917,8 @@
       return __returned__;
     }
   });
-  const _style_0$t = { "l-progress": { "": { "flexDirection": "row" } }, "l-progress-bg": { "": { "height": 4, "position": "relative", "backgroundColor": "#3283ff", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "transitionProperty": "width", "transitionDuration": "300ms", "transitionTimingFunction": "cubic-bezier(0,0,0.15,1)", "justifyContent": "center" }, ".l-progress--inner ": { "height": 20 } }, "l-progress__inner-text": { ".l-progress-bg ": { "paddingTop": 0, "paddingRight": "8rpx", "paddingBottom": 0, "paddingLeft": "8rpx", "color": "#FFFFFF", "fontSize": 10, "whiteSpace": "nowrap" } }, "l-progress__inner": { "": { "flex": 1, "alignSelf": "center", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "backgroundColor": "rgba(0,0,0,0.06)" } }, "@TRANSITION": { "l-progress-bg": { "property": "width", "duration": "300ms", "timingFunction": "cubic-bezier(0,0,0.15,1)" } } };
-  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$u = { "l-progress": { "": { "flexDirection": "row" } }, "l-progress-bg": { "": { "height": 4, "position": "relative", "backgroundColor": "#3283ff", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "transitionProperty": "width", "transitionDuration": "300ms", "transitionTimingFunction": "cubic-bezier(0,0,0.15,1)", "justifyContent": "center" }, ".l-progress--inner ": { "height": 20 } }, "l-progress__inner-text": { ".l-progress-bg ": { "paddingTop": 0, "paddingRight": "8rpx", "paddingBottom": 0, "paddingLeft": "8rpx", "color": "#FFFFFF", "fontSize": 10, "whiteSpace": "nowrap" } }, "l-progress__inner": { "": { "flex": 1, "alignSelf": "center", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "backgroundColor": "rgba(0,0,0,0.06)" } }, "@TRANSITION": { "l-progress-bg": { "property": "width", "duration": "300ms", "timingFunction": "cubic-bezier(0,0,0.15,1)" } } };
+  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -5994,7 +5987,7 @@
       /* CLASS */
     );
   }
-  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["styles", [_style_0$t]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-progress/components/l-progress/l-progress.uvue"]]);
+  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["styles", [_style_0$u]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-progress/components/l-progress/l-progress.uvue"]]);
   const { registerUTSInterface, initUTSProxyClass, initUTSProxyFunction, initUTSPackageName, initUTSIndexClassName, initUTSClassName } = uni;
   const name$3 = "limeClipboard";
   const moduleName = "lime-clipboard 剪贴板";
@@ -6039,7 +6032,7 @@
       delete this.__props__;
     }
   }
-  const _sfc_main$t = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$u = /* @__PURE__ */ vue.defineComponent({
     __name: "rechargeDataTraffic",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -6091,7 +6084,6 @@
           return item.iccid == e2;
         });
         if (selectedItem != null) {
-          uni.__log__("log", "at pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue:143", selectedItem);
           selectedItem.checked = true;
           currentDeviceInfo.value = selectedItem;
         }
@@ -6137,9 +6129,9 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$s = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "device-total": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } }, "device-total-title": { ".container .device-total ": { "display": "flex", "flexDirection": "row", "justifyContent": "center", "alignItems": "center" } }, "device-total-title-color": { ".container .device-total .device-total-title ": { "color": "#999999" } }, "device-info-box": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "30rpx", "paddingRight": "40rpx", "paddingBottom": "30rpx", "paddingLeft": "40rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0, "display": "flex", "flexDirection": "column" } }, "device-title": { ".container .device-info-box ": { "fontSize": "35rpx" } }, "device-info-item": { ".container .device-info-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "marginTop": "20rpx" } }, "iccid-info": { ".container .device-info-box .device-info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "add-style": { ".container .device-info-box ": { "paddingBottom": "60rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#999999", "marginBottom": "60rpx" } }, "progess": { ".container .device-info-box ": { "marginTop": "10rpx", "marginRight": 0, "marginBottom": "10rpx", "marginLeft": 0 } }, "btn-box": { ".container ": { "marginTop": "60rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
-  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$t = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "device-total": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } }, "device-total-title": { ".container .device-total ": { "display": "flex", "flexDirection": "row", "justifyContent": "center", "alignItems": "center" } }, "device-total-title-color": { ".container .device-total .device-total-title ": { "color": "#999999" } }, "device-info-box": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "30rpx", "paddingRight": "40rpx", "paddingBottom": "30rpx", "paddingLeft": "40rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0, "display": "flex", "flexDirection": "column" } }, "device-title": { ".container .device-info-box ": { "fontSize": "35rpx" } }, "device-info-item": { ".container .device-info-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "marginTop": "20rpx" } }, "iccid-info": { ".container .device-info-box .device-info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "add-style": { ".container .device-info-box ": { "paddingBottom": "60rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#999999", "marginBottom": "60rpx" } }, "progess": { ".container .device-info-box ": { "marginTop": "10rpx", "marginRight": 0, "marginBottom": "10rpx", "marginLeft": 0 } }, "btn-box": { ".container ": { "marginTop": "60rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
+  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
     const _component_l_progress = resolveEasycom(vue.resolveDynamicComponent("l-progress"), __easycom_1$4);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
@@ -6321,7 +6313,7 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMineRechargeDataTrafficRechargeDataTraffic = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["styles", [_style_0$s]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue"]]);
+  const PagesMineRechargeDataTrafficRechargeDataTraffic = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["styles", [_style_0$t]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue"]]);
   class RGB extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -7453,8 +7445,8 @@
      * @returns 一个包含 `r`、`g`、`b` 和 `a` 属性的对象，表示当前颜色的百分比表示的 RGB 格式。
      */
     toPercentageRgb() {
-      const fmt = (x) => {
-        return "".concat(Math.round(bound01(x, 255) * 100), "%");
+      const fmt = (x2) => {
+        return "".concat(Math.round(bound01(x2, 255) * 100), "%");
       };
       return new RGBAString({
         r: fmt(this.r),
@@ -7467,8 +7459,8 @@
      * 将RGBA相对值插值为一个字符串，颜色值以百分比表示。
      */
     toPercentageRgbString() {
-      const rnd = (x) => {
-        return Math.round(bound01(x, 255) * 100);
+      const rnd = (x2) => {
+        return Math.round(bound01(x2, 255) * 100);
       };
       return this.a == 1 ? "rgb(".concat(rnd(this.r), "%, ").concat(rnd(this.g), "%, ").concat(rnd(this.b), "%)") : "rgba(".concat(rnd(this.r), "%, ").concat(rnd(this.g), "%, ").concat(rnd(this.b), "%, ").concat(this.roundA, ")");
     }
@@ -7850,9 +7842,9 @@
   }
   function getPointOnCircle(centerX, centerY, radius, angleDegrees) {
     const angleRadians = angleDegrees * Math.PI / 180;
-    const x = centerX + radius * Math.cos(angleRadians);
+    const x2 = centerX + radius * Math.cos(angleRadians);
     const y2 = centerY + radius * Math.sin(angleRadians);
-    return [x, y2];
+    return [x2, y2];
   }
   function useLoading(element) {
     const tick = vue.ref("pause");
@@ -7898,7 +7890,7 @@
       const SPEED = 0.018 / 4;
       const ROTATE_INTERVAL = 0.09 / 4;
       const lineWidth = size.value / 10;
-      const x = canvasWidth.value / 2;
+      const x2 = canvasWidth.value / 2;
       const y2 = canvasHeight.value / 2;
       const radius = size.value / 2 - lineWidth;
       drawFrame = () => {
@@ -7907,7 +7899,7 @@
         let ctx = context.value;
         ctx.reset();
         ctx.beginPath();
-        ctx.arc(x, y2, radius, startAngle * PI + rotate, endAngle * PI + rotate);
+        ctx.arc(x2, y2, radius, startAngle * PI + rotate, endAngle * PI + rotate);
         ctx.lineWidth = lineWidth;
         ctx.strokeStyle = state.color;
         ctx.stroke();
@@ -7932,7 +7924,7 @@
     const drawSpinner = () => {
       const steps = 12;
       const lineWidth = size.value / 10;
-      const x = canvasWidth.value / 2;
+      const x2 = canvasWidth.value / 2;
       const y2 = canvasHeight.value / 2;
       let step = 0;
       const length = size.value / 3.6 - lineWidth;
@@ -7965,8 +7957,8 @@
             const cos = Math.cos(radian);
             const sin = Math.sin(radian);
             ctx.beginPath();
-            ctx.moveTo(x + offset * cos, y2 + offset * sin);
-            ctx.lineTo(x + (offset + length) * cos, y2 + (offset + length) * sin);
+            ctx.moveTo(x2 + offset * cos, y2 + offset * sin);
+            ctx.lineTo(x2 + (offset + length) * cos, y2 + (offset + length) * sin);
             ctx.lineWidth = lineWidth;
             ctx.lineCap = "round";
             ctx.strokeStyle = colors.value[index];
@@ -8117,18 +8109,18 @@
     return state;
   }
   const name$2 = "l-loading";
-  const _sfc_main$s = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$t = /* @__PURE__ */ vue.defineComponent({
     __name: "l-loading",
     props: {
-      color: new UTSJSONObject({ type: String, required: false }),
-      type: new UTSJSONObject({ type: String, required: true, default: "circular" }),
-      size: new UTSJSONObject({ type: String, required: true, default: "40rpx" }),
-      text: new UTSJSONObject({ type: String, required: false }),
-      textColor: new UTSJSONObject({ type: String, required: false }),
-      textSize: new UTSJSONObject({ type: String, required: false }),
-      mode: new UTSJSONObject({ type: String, required: true, default: "raf" }),
-      vertical: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      animated: new UTSJSONObject({ type: Boolean, required: true, default: true })
+      color: { type: String, required: false },
+      type: { type: String, required: true, default: "circular" },
+      size: { type: String, required: true, default: "40rpx" },
+      text: { type: String, required: false },
+      textColor: { type: String, required: false },
+      textSize: { type: String, required: false },
+      mode: { type: String, required: true, default: "raf" },
+      vertical: { type: Boolean, required: true, default: false },
+      animated: { type: Boolean, required: true, default: true }
     },
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -8184,8 +8176,8 @@
       return __returned__;
     }
   });
-  const _style_0$r = { "l-loading": { "": { "display": "flex", "position": "relative", "flexDirection": "row", "alignItems": "center", "borderLeftColor": "#3283ff", "borderLeftWidth": 0 }, ".is-vertical": { "flexDirection": "column" } }, "l-loading__text": { "": { "marginLeft": "16rpx", "color": "rgba(0,0,0,0.45)", "fontSize": 14 }, ".l-loading.is-vertical ": { "marginTop": "8rpx", "marginRight": 0, "marginBottom": 0, "marginLeft": 0 } }, "l-loading__ball": { "": { "width": "40rpx", "height": "40rpx" } }, "l-loading__circular": { "": { "width": "40rpx", "height": "40rpx" } }, "l-loading__spinner": { "": { "width": "40rpx", "height": "40rpx" } } };
-  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$s = { "l-loading": { "": { "display": "flex", "position": "relative", "flexDirection": "row", "alignItems": "center", "borderLeftColor": "#3283ff", "borderLeftWidth": 0 }, ".is-vertical": { "flexDirection": "column" } }, "l-loading__text": { "": { "marginLeft": "16rpx", "color": "rgba(0,0,0,0.45)", "fontSize": 14 }, ".l-loading.is-vertical ": { "marginTop": "8rpx", "marginRight": 0, "marginBottom": 0, "marginLeft": 0 } }, "l-loading__ball": { "": { "width": "40rpx", "height": "40rpx" } }, "l-loading__circular": { "": { "width": "40rpx", "height": "40rpx" } }, "l-loading__spinner": { "": { "width": "40rpx", "height": "40rpx" } } };
+  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -8227,44 +8219,44 @@
       /* CLASS */
     );
   }
-  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["styles", [_style_0$r]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-loading/components/l-loading/l-loading.uvue"]]);
-  const _sfc_main$r = /* @__PURE__ */ vue.defineComponent(Object.assign({
+  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["styles", [_style_0$s]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-loading/components/l-loading/l-loading.uvue"]]);
+  const _sfc_main$s = /* @__PURE__ */ vue.defineComponent(Object.assign({
     behaviors: ["wx://form-field-button"]
   }, { __name: "l-button", props: {
-    ariaLabel: new UTSJSONObject({ type: String, required: false }),
-    lId: new UTSJSONObject({ type: String, required: false }),
-    content: new UTSJSONObject({ type: String, required: false }),
-    block: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-    disabled: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-    ghost: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-    icon: new UTSJSONObject({ type: String, required: false }),
-    iconSize: new UTSJSONObject({ type: String, required: false }),
-    loading: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-    loadingProps: new UTSJSONObject({ type: null, required: false }),
-    shape: new UTSJSONObject({ type: String, required: true, default: "rectangle" }),
-    size: new UTSJSONObject({ type: String, required: true, default: "medium" }),
-    suffix: new UTSJSONObject({ type: String, required: false }),
-    type: new UTSJSONObject({ type: String, required: true, default: "default" }),
-    variant: new UTSJSONObject({ type: String, required: false }),
-    radius: new UTSJSONObject({ type: String, required: false }),
-    fontSize: new UTSJSONObject({ type: String, required: false }),
-    textColor: new UTSJSONObject({ type: String, required: false }),
-    color: new UTSJSONObject({ type: String, required: false }),
-    lStyle: new UTSJSONObject({ type: String, required: false }),
-    gap: new UTSJSONObject({ type: String, required: false }),
-    formType: new UTSJSONObject({ type: String, required: false }),
-    openType: new UTSJSONObject({ type: String, required: false }),
-    hoverClass: new UTSJSONObject({ type: String, required: false }),
-    hoverStopPropagation: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-    hoverStartTime: new UTSJSONObject({ type: Number, required: true, default: 20 }),
-    hoverStayTime: new UTSJSONObject({ type: Number, required: true, default: 70 }),
-    lang: new UTSJSONObject({ type: String, required: true, default: "en" }),
-    sessionFrom: new UTSJSONObject({ type: String, required: true, default: "" }),
-    sendMessageTitle: new UTSJSONObject({ type: String, required: true, default: "" }),
-    sendMessagePath: new UTSJSONObject({ type: String, required: true, default: "" }),
-    sendMessageImg: new UTSJSONObject({ type: String, required: true, default: "" }),
-    appParameter: new UTSJSONObject({ type: String, required: true, default: "" }),
-    showMessageCard: new UTSJSONObject({ type: Boolean, required: true, default: false })
+    ariaLabel: { type: String, required: false },
+    lId: { type: String, required: false },
+    content: { type: String, required: false },
+    block: { type: Boolean, required: true, default: false },
+    disabled: { type: Boolean, required: true, default: false },
+    ghost: { type: Boolean, required: true, default: false },
+    icon: { type: String, required: false },
+    iconSize: { type: String, required: false },
+    loading: { type: Boolean, required: true, default: false },
+    loadingProps: { type: null, required: false },
+    shape: { type: String, required: true, default: "rectangle" },
+    size: { type: String, required: true, default: "medium" },
+    suffix: { type: String, required: false },
+    type: { type: String, required: true, default: "default" },
+    variant: { type: String, required: false },
+    radius: { type: String, required: false },
+    fontSize: { type: String, required: false },
+    textColor: { type: String, required: false },
+    color: { type: String, required: false },
+    lStyle: { type: String, required: false },
+    gap: { type: String, required: false },
+    formType: { type: String, required: false },
+    openType: { type: String, required: false },
+    hoverClass: { type: String, required: false },
+    hoverStopPropagation: { type: Boolean, required: true, default: false },
+    hoverStartTime: { type: Number, required: true, default: 20 },
+    hoverStayTime: { type: Number, required: true, default: 70 },
+    lang: { type: String, required: true, default: "en" },
+    sessionFrom: { type: String, required: true, default: "" },
+    sendMessageTitle: { type: String, required: true, default: "" },
+    sendMessagePath: { type: String, required: true, default: "" },
+    sendMessageImg: { type: String, required: true, default: "" },
+    appParameter: { type: String, required: true, default: "" },
+    showMessageCard: { type: Boolean, required: true, default: false }
   }, emits: ["click", "agreeprivacyauthorization", "chooseavatar", "getuserinfo", "contact", "getphonenumber", "error", "opensetting", "launchapp"], setup(__props, _a) {
     var __expose = _a.expose, __emit = _a.emit;
     __expose();
@@ -8379,8 +8371,8 @@
     Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
     return __returned__;
   } }));
-  const _style_0$q = { "l-button--mini": { "": { "paddingTop": 0, "paddingRight": "16rpx", "paddingBottom": 0, "paddingLeft": "16rpx", "height": "56rpx" }, ".l-button--square": { "width": "56rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "56rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button__content": { ".l-button--mini ": { "fontSize": 12 }, ".l-button--small ": { "fontSize": 14 }, ".l-button--medium ": { "fontSize": 16 }, ".l-button--large ": { "fontSize": 16 }, ".l-button--default ": { "color": "rgba(0,0,0,0.88)" }, ".l-button--primary ": { "color": "#3283ff" }, ".l-button--danger ": { "color": "#FF4D4F" }, ".l-button--info ": { "color": "#3283ff" }, ".l-button--warning ": { "color": "#ffb400" }, ".l-button--success ": { "color": "#34c471" }, ".l-button--solid ": { "color": "#FFFFFF" } }, "l-button--small": { "": { "paddingTop": 0, "paddingRight": "24rpx", "paddingBottom": 0, "paddingLeft": "24rpx", "height": "64rpx" }, ".l-button--square": { "width": "64rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "64rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button--medium": { "": { "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "height": "80rpx" }, ".l-button--square": { "width": "80rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "80rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button--large": { "": { "paddingTop": 0, "paddingRight": "48rpx", "paddingBottom": 0, "paddingLeft": "48rpx", "height": "96rpx" }, ".l-button--square": { "width": "96rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "96rpx", "paddingLeft": 0, "paddingRight": 0 } }, "hover": { ".l-button--default": { "backgroundColor": "#eeeeee" }, ".l-button--default.l-button--solid": { "backgroundColor": "#000000" }, ".l-button--default.l-button--light": { "backgroundColor": "#e7e7e7" }, ".l-button--primary": { "backgroundColor": "#F0F8FF" }, ".l-button--primary.l-button--solid": { "backgroundColor": "#2164d9" }, ".l-button--primary.l-button--light": { "backgroundColor": "#d6ecff" }, ".l-button--danger": { "backgroundColor": "#fff2f0" }, ".l-button--danger.l-button--solid": { "backgroundColor": "#d9363e" }, ".l-button--danger.l-button--light": { "backgroundColor": "#ffccc7" }, ".l-button--info": { "backgroundColor": "#d6ecff" }, ".l-button--info.l-button--solid": { "backgroundColor": "#2164d9" }, ".l-button--info.l-button--light": { "backgroundColor": "#add6ff" }, ".l-button--warning": { "backgroundColor": "#fffce6" }, ".l-button--warning.l-button--solid": { "backgroundColor": "#d99100" }, ".l-button--warning.l-button--light": { "backgroundColor": "#fff0a3" }, ".l-button--success": { "backgroundColor": "#f0fff4" }, ".l-button--success.l-button--solid": { "backgroundColor": "#239e5a" }, ".l-button--success.l-button--light": { "backgroundColor": "#e1f7e7" } }, "l-button--default": { ".l-button--solid": { "backgroundColor": "rgba(0,0,0,0.88)" }, ".l-button--outline": { "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" }, ".l-button--dashed": { "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" }, ".l-button--light": { "backgroundColor": "#eeeeee" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" } }, "l-button--primary": { ".l-button--solid": { "backgroundColor": "#3283ff" }, ".l-button--outline": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--dashed": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--light": { "backgroundColor": "#F0F8FF" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } }, "l-button--danger": { ".l-button--solid": { "backgroundColor": "#FF4D4F" }, ".l-button--outline": { "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" }, ".l-button--dashed": { "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" }, ".l-button--light": { "backgroundColor": "#fff2f0" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" } }, "l-button--info": { ".l-button--solid": { "backgroundColor": "#3283ff" }, ".l-button--outline": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--dashed": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--light": { "backgroundColor": "#d6ecff" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } }, "l-button--warning": { ".l-button--solid": { "backgroundColor": "#ffb400" }, ".l-button--outline": { "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" }, ".l-button--dashed": { "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" }, ".l-button--light": { "backgroundColor": "#fffce6" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" } }, "l-button--success": { ".l-button--solid": { "backgroundColor": "#34c471" }, ".l-button--outline": { "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" }, ".l-button--dashed": { "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" }, ".l-button--light": { "backgroundColor": "#f0fff4" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" } }, "l-button": { "": { "opacity": 1, "position": "relative", "alignItems": "center", "justifyContent": "center", "flexDirection": "row", "transitionDuration": "200ms", "transitionProperty": "backgroundColor,opacity,borderColor,width,height", "borderTopLeftRadius": "6rpx", "borderTopRightRadius": "6rpx", "borderBottomRightRadius": "6rpx", "borderBottomLeftRadius": "6rpx" }, ".l-button--disabled": { "opacity": 0.6 } }, "l-button__button": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "borderTopWidth": "medium", "borderRightWidth": "medium", "borderBottomWidth": "medium", "borderLeftWidth": "medium", "borderTopStyle": "none", "borderRightStyle": "none", "borderBottomStyle": "none", "borderLeftStyle": "none", "borderTopColor": "#000000", "borderRightColor": "#000000", "borderBottomColor": "#000000", "borderLeftColor": "#000000", "backgroundColor": "rgba(0,0,0,0)" } }, "l-button--block": { "": { "width": "100%", "alignSelf": "auto" } }, "l-button__icon": { ".l-button--solid ": { "color": "#FFFFFF" }, "": { "alignSelf": "center" } }, "l-button--outline": { "": { "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 0.71, "borderRightWidth": 0.71, "borderBottomWidth": 0.71, "borderLeftWidth": 0.71 } }, "l-button--dashed": { "": { "borderTopStyle": "dashed", "borderRightStyle": "dashed", "borderBottomStyle": "dashed", "borderLeftStyle": "dashed", "borderTopWidth": 0.71, "borderRightWidth": 0.71, "borderBottomWidth": 0.71, "borderLeftWidth": 0.71 } }, "l-button__loading": { "": { "alignSelf": "center" } }, "l-button--round": { "": { "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999 } }, "l-button--circle": { "": { "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999 } }, "gap": { ".l-button ": { "marginLeft": 4 } }, "@TRANSITION": { "l-button": { "duration": "200ms", "property": "backgroundColor,opacity,borderColor,width,height" } } };
-  function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$r = { "l-button--mini": { "": { "paddingTop": 0, "paddingRight": "16rpx", "paddingBottom": 0, "paddingLeft": "16rpx", "height": "56rpx" }, ".l-button--square": { "width": "56rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "56rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button__content": { ".l-button--mini ": { "fontSize": 12 }, ".l-button--small ": { "fontSize": 14 }, ".l-button--medium ": { "fontSize": 16 }, ".l-button--large ": { "fontSize": 16 }, ".l-button--default ": { "color": "rgba(0,0,0,0.88)" }, ".l-button--primary ": { "color": "#3283ff" }, ".l-button--danger ": { "color": "#FF4D4F" }, ".l-button--info ": { "color": "#3283ff" }, ".l-button--warning ": { "color": "#ffb400" }, ".l-button--success ": { "color": "#34c471" }, ".l-button--solid ": { "color": "#FFFFFF" } }, "l-button--small": { "": { "paddingTop": 0, "paddingRight": "24rpx", "paddingBottom": 0, "paddingLeft": "24rpx", "height": "64rpx" }, ".l-button--square": { "width": "64rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "64rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button--medium": { "": { "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "height": "80rpx" }, ".l-button--square": { "width": "80rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "80rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button--large": { "": { "paddingTop": 0, "paddingRight": "48rpx", "paddingBottom": 0, "paddingLeft": "48rpx", "height": "96rpx" }, ".l-button--square": { "width": "96rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "96rpx", "paddingLeft": 0, "paddingRight": 0 } }, "hover": { ".l-button--default": { "backgroundColor": "#eeeeee" }, ".l-button--default.l-button--solid": { "backgroundColor": "#000000" }, ".l-button--default.l-button--light": { "backgroundColor": "#e7e7e7" }, ".l-button--primary": { "backgroundColor": "#F0F8FF" }, ".l-button--primary.l-button--solid": { "backgroundColor": "#2164d9" }, ".l-button--primary.l-button--light": { "backgroundColor": "#d6ecff" }, ".l-button--danger": { "backgroundColor": "#fff2f0" }, ".l-button--danger.l-button--solid": { "backgroundColor": "#d9363e" }, ".l-button--danger.l-button--light": { "backgroundColor": "#ffccc7" }, ".l-button--info": { "backgroundColor": "#d6ecff" }, ".l-button--info.l-button--solid": { "backgroundColor": "#2164d9" }, ".l-button--info.l-button--light": { "backgroundColor": "#add6ff" }, ".l-button--warning": { "backgroundColor": "#fffce6" }, ".l-button--warning.l-button--solid": { "backgroundColor": "#d99100" }, ".l-button--warning.l-button--light": { "backgroundColor": "#fff0a3" }, ".l-button--success": { "backgroundColor": "#f0fff4" }, ".l-button--success.l-button--solid": { "backgroundColor": "#239e5a" }, ".l-button--success.l-button--light": { "backgroundColor": "#e1f7e7" } }, "l-button--default": { ".l-button--solid": { "backgroundColor": "rgba(0,0,0,0.88)" }, ".l-button--outline": { "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" }, ".l-button--dashed": { "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" }, ".l-button--light": { "backgroundColor": "#eeeeee" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" } }, "l-button--primary": { ".l-button--solid": { "backgroundColor": "#3283ff" }, ".l-button--outline": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--dashed": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--light": { "backgroundColor": "#F0F8FF" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } }, "l-button--danger": { ".l-button--solid": { "backgroundColor": "#FF4D4F" }, ".l-button--outline": { "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" }, ".l-button--dashed": { "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" }, ".l-button--light": { "backgroundColor": "#fff2f0" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" } }, "l-button--info": { ".l-button--solid": { "backgroundColor": "#3283ff" }, ".l-button--outline": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--dashed": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--light": { "backgroundColor": "#d6ecff" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } }, "l-button--warning": { ".l-button--solid": { "backgroundColor": "#ffb400" }, ".l-button--outline": { "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" }, ".l-button--dashed": { "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" }, ".l-button--light": { "backgroundColor": "#fffce6" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" } }, "l-button--success": { ".l-button--solid": { "backgroundColor": "#34c471" }, ".l-button--outline": { "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" }, ".l-button--dashed": { "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" }, ".l-button--light": { "backgroundColor": "#f0fff4" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" } }, "l-button": { "": { "opacity": 1, "position": "relative", "alignItems": "center", "justifyContent": "center", "flexDirection": "row", "transitionDuration": "200ms", "transitionProperty": "backgroundColor,opacity,borderColor,width,height", "borderTopLeftRadius": "6rpx", "borderTopRightRadius": "6rpx", "borderBottomRightRadius": "6rpx", "borderBottomLeftRadius": "6rpx" }, ".l-button--disabled": { "opacity": 0.6 } }, "l-button__button": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "borderTopWidth": "medium", "borderRightWidth": "medium", "borderBottomWidth": "medium", "borderLeftWidth": "medium", "borderTopStyle": "none", "borderRightStyle": "none", "borderBottomStyle": "none", "borderLeftStyle": "none", "borderTopColor": "#000000", "borderRightColor": "#000000", "borderBottomColor": "#000000", "borderLeftColor": "#000000", "backgroundColor": "rgba(0,0,0,0)" } }, "l-button--block": { "": { "width": "100%", "alignSelf": "auto" } }, "l-button__icon": { ".l-button--solid ": { "color": "#FFFFFF" }, "": { "alignSelf": "center" } }, "l-button--outline": { "": { "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 0.71, "borderRightWidth": 0.71, "borderBottomWidth": 0.71, "borderLeftWidth": 0.71 } }, "l-button--dashed": { "": { "borderTopStyle": "dashed", "borderRightStyle": "dashed", "borderBottomStyle": "dashed", "borderLeftStyle": "dashed", "borderTopWidth": 0.71, "borderRightWidth": 0.71, "borderBottomWidth": 0.71, "borderLeftWidth": 0.71 } }, "l-button__loading": { "": { "alignSelf": "center" } }, "l-button--round": { "": { "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999 } }, "l-button--circle": { "": { "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999 } }, "gap": { ".l-button ": { "marginLeft": 4 } }, "@TRANSITION": { "l-button": { "duration": "200ms", "property": "backgroundColor,opacity,borderColor,width,height" } } };
+  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
     var _a;
     const _component_l_loading = resolveEasycom(vue.resolveDynamicComponent("l-loading"), __easycom_0$4);
     const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
@@ -8436,7 +8428,7 @@
       }, null, 40, ["disabled", "form-type", "open-type"])) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class", "hover-start-time", "hover-stay-time", "data-disabled"]);
   }
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["styles", [_style_0$q]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-button/components/l-button/l-button.uvue"]]);
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["styles", [_style_0$r]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-button/components/l-button/l-button.uvue"]]);
   function characterLimit(type, char, max) {
     const str = "".concat(char);
     if (str.length == 0) {
@@ -8479,7 +8471,7 @@
       characters: str
     };
   }
-  const _sfc_main$q = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$r = /* @__PURE__ */ vue.defineComponent({
     __name: "l-search",
     props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
       action: { type: String, required: false },
@@ -8607,8 +8599,8 @@
       return __returned__;
     }
   });
-  const _style_0$p = { "l-search": { "": { "width": "100%", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "l-search__content": { "": { "flex": 1, "alignItems": "center", "flexDirection": "row", "boxSizing": "border-box", "height": "80rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "rgba(0,0,0,0.04)", "borderRightColor": "rgba(0,0,0,0.04)", "borderBottomColor": "rgba(0,0,0,0.04)", "borderLeftColor": "rgba(0,0,0,0.04)", "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.04)", "paddingTop": "16rpx", "paddingRight": "24rpx", "paddingBottom": "16rpx", "paddingLeft": "24rpx" } }, "l-search__content--focused": { "": { "borderTopColor": "rgba(0,0,0,0.04)", "borderRightColor": "rgba(0,0,0,0.04)", "borderBottomColor": "rgba(0,0,0,0.04)", "borderLeftColor": "rgba(0,0,0,0.04)" } }, "l-search__content--round": { "": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 } }, "l-search__content--square": { "": { "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx" } }, "l-search__keyword": { "": { "flex": 1, "color": "rgba(0,0,0,0.88)", "fontSize": 16, "paddingLeft": "10rpx" } }, "l-search__placeholder": { "": { "color": "rgba(0,0,0,0.45)" } }, "l-search__placeholder--center": { "": { "textAlign": "center" } }, "l-search__icon": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-search__clear": { "": { "position": "relative", "marginLeft": 10 } }, "l-search__clear-icon": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-search__clear--right": { "": { "marginRight": 10 } }, "l-search__action": { "": { "marginLeft": "30rpx", "fontSize": 16, "color": "#3283ff" } } };
-  function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$q = { "l-search": { "": { "width": "100%", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "l-search__content": { "": { "flex": 1, "alignItems": "center", "flexDirection": "row", "boxSizing": "border-box", "height": "80rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "rgba(0,0,0,0.04)", "borderRightColor": "rgba(0,0,0,0.04)", "borderBottomColor": "rgba(0,0,0,0.04)", "borderLeftColor": "rgba(0,0,0,0.04)", "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.04)", "paddingTop": "16rpx", "paddingRight": "24rpx", "paddingBottom": "16rpx", "paddingLeft": "24rpx" } }, "l-search__content--focused": { "": { "borderTopColor": "rgba(0,0,0,0.04)", "borderRightColor": "rgba(0,0,0,0.04)", "borderBottomColor": "rgba(0,0,0,0.04)", "borderLeftColor": "rgba(0,0,0,0.04)" } }, "l-search__content--round": { "": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 } }, "l-search__content--square": { "": { "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx" } }, "l-search__keyword": { "": { "flex": 1, "color": "rgba(0,0,0,0.88)", "fontSize": 16, "paddingLeft": "10rpx" } }, "l-search__placeholder": { "": { "color": "rgba(0,0,0,0.45)" } }, "l-search__placeholder--center": { "": { "textAlign": "center" } }, "l-search__icon": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-search__clear": { "": { "position": "relative", "marginLeft": 10 } }, "l-search__clear-icon": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-search__clear--right": { "": { "marginRight": 10 } }, "l-search__action": { "": { "marginLeft": "30rpx", "fontSize": 16, "color": "#3283ff" } } };
+  function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
     var _a;
     const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
     return vue.openBlock(), vue.createElementBlock(
@@ -8709,18 +8701,18 @@
       /* STYLE */
     );
   }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["styles", [_style_0$p]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-search/components/l-search/l-search.uvue"]]);
-  const _sfc_main$p = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["styles", [_style_0$q]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-search/components/l-search/l-search.uvue"]]);
+  const _sfc_main$q = /* @__PURE__ */ vue.defineComponent({
     __name: "l-tab-panel",
     props: {
-      badge: new UTSJSONObject({ type: null, required: false }),
-      offset: new UTSJSONObject({ type: Array, required: false }),
-      dot: new UTSJSONObject({ type: Boolean, required: false }),
-      destroyOnHide: new UTSJSONObject({ type: Boolean, required: false }),
-      disabled: new UTSJSONObject({ type: Boolean, required: false }),
-      label: new UTSJSONObject({ type: String, required: false }),
-      lazy: new UTSJSONObject({ type: Boolean, required: false }),
-      value: new UTSJSONObject({ type: Number, required: false })
+      badge: { type: null, required: false },
+      offset: { type: Array, required: false },
+      dot: { type: Boolean, required: false },
+      destroyOnHide: { type: Boolean, required: false },
+      disabled: { type: Boolean, required: false },
+      label: { type: String, required: false },
+      lazy: { type: Boolean, required: false },
+      value: { type: Number, required: false }
     },
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -8736,7 +8728,7 @@
       vue.onUnmounted(() => {
         if (children == null)
           return null;
-        children.value = children.value.filter((it2) => {
+        children.value = children.value.filter((it2 = null) => {
           return it2 != instance;
         });
       });
@@ -8745,8 +8737,8 @@
       return __returned__;
     }
   });
-  const _style_0$o = { "l-tab__panel": { "": { "width": "100%", "flex": 1, "flexShrink": 0, "boxSizing": "border-box" } } };
-  function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$p = { "l-tab__panel": { "": { "width": "100%", "flex": 1, "flexShrink": 0, "boxSizing": "border-box" } } };
+  function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "l-tab__panel",
       "aria-role": "tabpanel"
@@ -8754,7 +8746,7 @@
       vue.renderSlot(_ctx.$slots, "default")
     ]);
   }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["styles", [_style_0$o]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-tabs/components/l-tab-panel/l-tab-panel.uvue"]]);
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["styles", [_style_0$p]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-tabs/components/l-tab-panel/l-tab-panel.uvue"]]);
   function toBoolean(value) {
     return value != null && value != void 0;
   }
@@ -8762,18 +8754,18 @@
     return val.startsWith("-") ? val.replace("-", "") : "-".concat(val);
   }
   const name$1 = "l-badge";
-  const _sfc_main$o = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$p = /* @__PURE__ */ vue.defineComponent({
     __name: "l-badge",
     props: {
-      color: new UTSJSONObject({ type: String, required: false }),
-      content: new UTSJSONObject({ type: [String, Number], required: false }),
-      dot: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      max: new UTSJSONObject({ type: Number, required: true, default: 99 }),
-      offset: new UTSJSONObject({ type: Array, required: true, default: [] }),
-      position: new UTSJSONObject({ type: String, required: true, default: "top-right" }),
-      shape: new UTSJSONObject({ type: String, required: false }),
-      showZero: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      size: new UTSJSONObject({ type: String, required: false })
+      color: { type: String, required: false },
+      content: { type: [String, Number], required: false },
+      dot: { type: Boolean, required: true, default: false },
+      max: { type: Number, required: true, default: 99 },
+      offset: { type: Array, required: true, default: [] },
+      position: { type: String, required: true, default: "top-right" },
+      shape: { type: String, required: false },
+      showZero: { type: Boolean, required: true, default: false },
+      size: { type: String, required: false }
     },
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -8795,7 +8787,7 @@
         const positions = props.position.split("-");
         const offset = props.offset;
         if (offset.length == 2) {
-          const x = offset[0];
+          const x2 = offset[0];
           const y2 = offset[1];
           if (context.slots["default"] != null) {
             if (positions.length == 2) {
@@ -8806,16 +8798,16 @@
               } else {
                 style.set(offsetY, offsetY == "top" ? addUnit(y2) : getOffsetWithMinusString("".concat(y2)));
               }
-              if (isNumber$2(x)) {
-                const _x = x;
+              if (isNumber$2(x2)) {
+                const _x = x2;
                 style.set(offsetX, addUnit(offsetX == "left" ? _x : -_x));
               } else {
-                style.set(offsetY, offsetY == "left" ? addUnit(x) : getOffsetWithMinusString("".concat(x)));
+                style.set(offsetY, offsetY == "left" ? addUnit(x2) : getOffsetWithMinusString("".concat(x2)));
               }
             }
           } else {
             style.set("margin-top", addUnit(y2));
-            style.set("margin-left", addUnit(x));
+            style.set("margin-left", addUnit(x2));
           }
         }
         return style;
@@ -8846,8 +8838,8 @@
       return __returned__;
     }
   });
-  const _style_0$n = { "l-badge": { "": { "boxSizing": "border-box", "paddingTop": 0, "paddingRight": "8rpx", "paddingBottom": 0, "paddingLeft": "8rpx", "color": "#FFFFFF", "fontWeight": "bold", "fontSize": 12, "fontFamily": "-apple-system-font, helvetica neue, arial, sans-serif", "lineHeight": 1.2, "textAlign": "center", "backgroundColor": "#FF4D4F", "borderTopWidth": "1rpx", "borderRightWidth": "1rpx", "borderBottomWidth": "1rpx", "borderLeftWidth": "1rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#FFFFFF", "borderRightColor": "#FFFFFF", "borderBottomColor": "#FFFFFF", "borderLeftColor": "#FFFFFF", "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999, "overflow": "visible" } }, "l-badge--fixed": { "": { "position": "absolute", "transformOrigin": "100%" }, ".l-badge--offscreen": { "position": "fixed", "opacity": 0.13, "top": -1e10 } }, "l-badge--top-left": { "": { "top": 0, "left": 0, "transform": "translate(-50%, -50%)" } }, "l-badge--top-right": { "": { "top": 0, "right": 0, "transform": "translate(50%, -50%)" } }, "l-badge--bottom-left": { "": { "bottom": 0, "left": 0, "transform": "translate(-50%, 50%)" } }, "l-badge--bottom-right": { "": { "bottom": 0, "right": 0, "transform": "translate(50%, 50%)" } }, "l-badge--dot": { "": { "width": "16rpx", "minWidth": 0, "height": "16rpx", "backgroundImage": "none", "backgroundColor": "#FF4D4F", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0, "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "overflow": "visible" } }, "l-badge__wrapper": { "": { "position": "relative", "overflow": "visible" } } };
-  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$o = { "l-badge": { "": { "boxSizing": "border-box", "paddingTop": 0, "paddingRight": "8rpx", "paddingBottom": 0, "paddingLeft": "8rpx", "color": "#FFFFFF", "fontWeight": "bold", "fontSize": 12, "fontFamily": "-apple-system-font, helvetica neue, arial, sans-serif", "lineHeight": 1.2, "textAlign": "center", "backgroundColor": "#FF4D4F", "borderTopWidth": "1rpx", "borderRightWidth": "1rpx", "borderBottomWidth": "1rpx", "borderLeftWidth": "1rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#FFFFFF", "borderRightColor": "#FFFFFF", "borderBottomColor": "#FFFFFF", "borderLeftColor": "#FFFFFF", "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999, "overflow": "visible" } }, "l-badge--fixed": { "": { "position": "absolute", "transformOrigin": "100%" }, ".l-badge--offscreen": { "position": "fixed", "opacity": 0.13, "top": -1e10 } }, "l-badge--top-left": { "": { "top": 0, "left": 0, "transform": "translate(-50%, -50%)" } }, "l-badge--top-right": { "": { "top": 0, "right": 0, "transform": "translate(50%, -50%)" } }, "l-badge--bottom-left": { "": { "bottom": 0, "left": 0, "transform": "translate(-50%, 50%)" } }, "l-badge--bottom-right": { "": { "bottom": 0, "right": 0, "transform": "translate(50%, 50%)" } }, "l-badge--dot": { "": { "width": "16rpx", "minWidth": 0, "height": "16rpx", "backgroundImage": "none", "backgroundColor": "#FF4D4F", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0, "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "overflow": "visible" } }, "l-badge__wrapper": { "": { "position": "relative", "overflow": "visible" } } };
+  function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.$slots["default"] != null ? (vue.openBlock(), vue.createElementBlock("view", {
       key: 0,
       class: "l-badge__wrapper"
@@ -8913,7 +8905,7 @@
       /* CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["styles", [_style_0$n]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-badge/components/l-badge/l-badge.uvue"]]);
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["styles", [_style_0$o]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-badge/components/l-badge/l-badge.uvue"]]);
   function calcScrollOffset(containerWidth, targetLeft, targetWidth, offset) {
     return offset + targetLeft - 1 / 2 * containerWidth + targetWidth / 2;
   }
@@ -8928,11 +8920,11 @@
   function clamp(val, min, max) {
     return Math.max(min, Math.min(max, val));
   }
-  function getDirection(x, y2) {
-    if (x > y2) {
+  function getDirection(x2, y2) {
+    if (x2 > y2) {
       return "horizontal";
     }
-    if (y2 > x) {
+    if (y2 > x2) {
       return "vertical";
     }
     return "";
@@ -8995,7 +8987,7 @@
       isTap
     };
   }
-  const _sfc_main$n = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$o = /* @__PURE__ */ vue.defineComponent({
     __name: "l-tabs",
     props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
       list: { type: Array, required: false },
@@ -9098,7 +9090,7 @@
             };
           });
         }
-        return children.value.map((item) => {
+        return children.value.map((item = null) => {
           var _a2, _b, _c, _d, _e2;
           const offset = (_a2 = item.offset) !== null && _a2 !== void 0 ? _a2 : [];
           return {
@@ -9357,8 +9349,8 @@
       return __returned__;
     }
   });
-  const _style_0$m = { "l-tabs": { "": { "position": "relative", "backgroundImage": "none", "backgroundColor": "#FFFFFF" } }, "l-tabs__wrap": { "": { "flex": 1, "backgroundImage": "none", "backgroundColor": "#FFFFFF", "flexDirection": "row" } }, "l-tabs__scroll": { "": { "position": "relative", "flex": 1, "flexDirection": "row" } }, "l-tabs__scroll--split": { "": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#eeeeee" } }, "l-tabs__nav": { "": { "flexDirection": "row", "position": "relative", "flexWrap": "nowrap", "alignItems": "center" } }, "l-tabs__track": { "": { "position": "absolute", "zIndex": 1, "transitionDuration": "0.3s", "backgroundColor": "#3283ff", "left": 0, "bottom": "1rpx", "width": "32rpx", "height": "6rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx" } }, "l-tabs__content": { "": { "width": "100%", "overflow": "hidden" } }, "l-tabs__content-inner": { "": { "display": "flex", "flexDirection": "row", "flex": 1, "overflow": "visible", "opacity": 0 }, ".l-tabs__content--animated ": { "position": "relative", "width": "100%", "height": "100%", "transitionProperty": "transform" } }, "l-tabs__item": { "": { "position": "relative", "flex": "none", "alignItems": "center", "justifyContent": "center", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "boxSizing": "border-box", "overflow": "hidden", "height": "96rpx" } }, "l-tabs__item-text": { "": { "fontWeight": "400", "fontSize": 14, "whiteSpace": "nowrap", "transitionProperty": "color", "transitionDuration": "300ms", "color": "rgba(0,0,0,0.88)" } }, "l-tabs__item-text--large": { "": { "fontSize": 16 } }, "l-tabs__item-text--active": { "": { "fontWeight": "700", "color": "#3283ff" } }, "l-tabs__item-text--disabled": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-tabs__item--evenly": { "": { "flex": 1 } }, "@TRANSITION": { "l-tabs__track": { "duration": "0.3s" }, "l-tabs__content-inner": { "property": "transform" }, "l-tabs__item-text": { "property": "color", "duration": "300ms" } } };
-  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$n = { "l-tabs": { "": { "position": "relative", "backgroundImage": "none", "backgroundColor": "#FFFFFF" } }, "l-tabs__wrap": { "": { "flex": 1, "backgroundImage": "none", "backgroundColor": "#FFFFFF", "flexDirection": "row" } }, "l-tabs__scroll": { "": { "position": "relative", "flex": 1, "flexDirection": "row" } }, "l-tabs__scroll--split": { "": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#eeeeee" } }, "l-tabs__nav": { "": { "flexDirection": "row", "position": "relative", "flexWrap": "nowrap", "alignItems": "center" } }, "l-tabs__track": { "": { "position": "absolute", "zIndex": 1, "transitionDuration": "0.3s", "backgroundColor": "#3283ff", "left": 0, "bottom": "1rpx", "width": "32rpx", "height": "6rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx" } }, "l-tabs__content": { "": { "width": "100%", "overflow": "hidden" } }, "l-tabs__content-inner": { "": { "display": "flex", "flexDirection": "row", "flex": 1, "overflow": "visible", "opacity": 0 }, ".l-tabs__content--animated ": { "position": "relative", "width": "100%", "height": "100%", "transitionProperty": "transform" } }, "l-tabs__item": { "": { "position": "relative", "flex": "none", "alignItems": "center", "justifyContent": "center", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "boxSizing": "border-box", "overflow": "hidden", "height": "96rpx" } }, "l-tabs__item-text": { "": { "fontWeight": "400", "fontSize": 14, "whiteSpace": "nowrap", "transitionProperty": "color", "transitionDuration": "300ms", "color": "rgba(0,0,0,0.88)" } }, "l-tabs__item-text--large": { "": { "fontSize": 16 } }, "l-tabs__item-text--active": { "": { "fontWeight": "700", "color": "#3283ff" } }, "l-tabs__item-text--disabled": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-tabs__item--evenly": { "": { "flex": 1 } }, "@TRANSITION": { "l-tabs__track": { "duration": "0.3s" }, "l-tabs__content-inner": { "property": "transform" }, "l-tabs__item-text": { "property": "color", "duration": "300ms" } } };
+  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_badge = resolveEasycom(vue.resolveDynamicComponent("l-badge"), __easycom_1$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "l-tabs" }, [
       vue.createElementVNode(
@@ -9503,8 +9495,8 @@
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["styles", [_style_0$m]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-tabs/components/l-tabs/l-tabs.uvue"]]);
-  const _sfc_main$m = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["styles", [_style_0$n]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-tabs/components/l-tabs/l-tabs.uvue"]]);
+  const _sfc_main$n = /* @__PURE__ */ vue.defineComponent({
     __name: "helpCenter",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -9525,9 +9517,9 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$l = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "search-bar": { ".container ": { "marginTop": "30rpx", "marginRight": 0, "marginBottom": "30rpx", "marginLeft": 0 } }, "l-tabs": { ".container ": { "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "question-item": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } } };
-  function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$m = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "search-bar": { ".container ": { "marginTop": "30rpx", "marginRight": 0, "marginBottom": "30rpx", "marginLeft": 0 } }, "l-tabs": { ".container ": { "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "question-item": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } } };
+  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_button = resolveEasycom(vue.resolveDynamicComponent("l-button"), __easycom_0$3);
     const _component_l_search = resolveEasycom(vue.resolveDynamicComponent("l-search"), __easycom_1$3);
     const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
@@ -9625,10 +9617,10 @@
       ])
     ]);
   }
-  const PagesMineHelpCenterHelpCenter = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["styles", [_style_0$l]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/helpCenter/helpCenter.uvue"]]);
-  const _style_0$k = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "title": { ".container .content ": { "fontSize": "36rpx", "fontWeight": "bold", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "desc": { ".container .content ": { "fontSize": "28rpx", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } } };
-  const _sfc_main$l = {};
-  function _sfc_render$k(_ctx, _cache) {
+  const PagesMineHelpCenterHelpCenter = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["styles", [_style_0$m]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/helpCenter/helpCenter.uvue"]]);
+  const _style_0$l = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "title": { ".container .content ": { "fontSize": "36rpx", "fontWeight": "bold", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "desc": { ".container .content ": { "fontSize": "28rpx", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } } };
+  const _sfc_main$m = {};
+  function _sfc_render$l(_ctx, _cache) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", { class: "title" }, " 如何添加设备？ "),
@@ -9636,23 +9628,23 @@
       ])
     ]);
   }
-  const PagesMineHelpCenterQuestionDetailQuestionDetail = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["styles", [_style_0$k]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/helpCenter/questionDetail/questionDetail.uvue"]]);
-  const _sfc_main$k = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMineHelpCenterQuestionDetailQuestionDetail = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["styles", [_style_0$l]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/helpCenter/questionDetail/questionDetail.uvue"]]);
+  const _sfc_main$l = /* @__PURE__ */ vue.defineComponent({
     __name: "messageDetail",
     setup(__props, _a) {
       var __expose = _a.expose;
       __expose();
       const title = vue.ref("消息详情");
-      onLoad((options) => {
+      vue.onLoad((options) => {
         uni.__log__("log", "at pages/message/messageDetail/messageDetail.uvue:17", options.id);
       });
       const __returned__ = { title };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$j = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "title": { ".container .content ": { "fontSize": "36rpx", "fontWeight": "bold", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "desc": { ".container .content ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } } };
-  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$k = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "title": { ".container .content ": { "fontSize": "36rpx", "fontWeight": "bold", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "desc": { ".container .content ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } } };
+  function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", { class: "title" }, "标题"),
@@ -9662,7 +9654,7 @@
       ])
     ]);
   }
-  const PagesMessageMessageDetailMessageDetail = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["styles", [_style_0$j]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageDetail/messageDetail.uvue"]]);
+  const PagesMessageMessageDetailMessageDetail = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["styles", [_style_0$k]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageDetail/messageDetail.uvue"]]);
   /*!
   * type：组件内props属性参数、事件回调参数、方法参数类型
   * fui-types - v1.0.0 (2023/11/11, 11:07:14 AM)
@@ -10114,7 +10106,7 @@
       delete this.__props__;
     }
   }
-  const _sfc_main$j = vue.defineComponent({
+  const _sfc_main$k = vue.defineComponent({
     name: "fui-checkbox",
     emits: ["change"],
     props: {
@@ -10269,8 +10261,8 @@
       }
     }
   });
-  const _style_0$i = { "fui-checkbox__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "boxSizing": "border-box", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "flexShrink": 0, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-checkbox__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-checkbox__scale-center": { "": { "transformOrigin": "center center" } }, "fui-checkbox__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-checkbox__color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-checkbox__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-checkbox__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-checkbox__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-checkbox__disabled": { "": { "opacity": 0.6 } } };
-  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$j = { "fui-checkbox__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "boxSizing": "border-box", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "flexShrink": 0, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-checkbox__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-checkbox__scale-center": { "": { "transformOrigin": "center center" } }, "fui-checkbox__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-checkbox__color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-checkbox__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-checkbox__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-checkbox__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-checkbox__disabled": { "": { "opacity": 0.6 } } };
+  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -10295,8 +10287,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["styles", [_style_0$i]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-checkbox/fui-checkbox.uvue"]]);
-  const _sfc_main$i = vue.defineComponent({
+  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["styles", [_style_0$j]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-checkbox/fui-checkbox.uvue"]]);
+  const _sfc_main$j = vue.defineComponent({
     name: "fui-checkbox-group",
     emits: ["change", "update:modelValue"],
     props: {
@@ -10386,7 +10378,7 @@
       }
     }
   });
-  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_checkbox_group = vue.resolveComponent("checkbox-group");
     return vue.openBlock(), vue.createBlock(_component_checkbox_group, { name: $props.name }, {
       default: vue.withCtx(() => [
@@ -10396,28 +10388,28 @@
       /* FORWARDED */
     }, 8, ["name"]);
   }
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-checkbox-group/fui-checkbox-group.uvue"]]);
-  const _sfc_main$h = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-checkbox-group/fui-checkbox-group.uvue"]]);
+  const _sfc_main$i = /* @__PURE__ */ vue.defineComponent({
     __name: "TopNavBar",
     props: {
-      title: new UTSJSONObject({
+      title: {
         type: String,
         default: "首页"
-      }),
-      showBack: new UTSJSONObject({
+      },
+      showBack: {
         type: Boolean,
         default: false
-      }),
-      messageCount: new UTSJSONObject({
+      },
+      messageCount: {
         type: Number,
         default: 0
-      }),
-      rightText: new UTSJSONObject({
+      },
+      rightText: {
         type: String,
         default: ""
-      })
+      }
     },
-    emits: ["back", "message", "add", "changeNav"],
+    emits: ["back", "message", "rightEvent"],
     setup(__props, _a) {
       var __expose = _a.expose, __emit = _a.emit;
       __expose();
@@ -10429,27 +10421,26 @@
       const onMessage = () => {
         return emits("message");
       };
-      const onAdd = () => {
-        return emits("add");
+      const rightIcon = () => {
+        return emits("rightEvent");
       };
-      const __returned__ = { props, emits, goBack, onMessage, onAdd };
+      const __returned__ = { props, emits, goBack, onMessage, rightIcon };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   });
-  const _imports_0$3 = "/static/tabbar/back.png";
-  const _style_0$h = { "custom-nav": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "30rpx", "paddingRight": "25rpx", "paddingBottom": "30rpx", "paddingLeft": "25rpx", "backgroundColor": "#ffffff", "marginTop": "50rpx", "width": "100%" } }, "nav-back": { "": { "width": "32rpx", "height": "32rpx", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "nav-item": { "": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-around" } }, "nav-title": { "": { "color": "#333333", "marginTop": 0, "marginRight": "20rpx", "marginBottom": 0, "marginLeft": "20rpx", "maxWidth": "400rpx", "textAlign": "center", "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap" } }, "nav-actions": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "nav-icon": { "": { "width": "60rpx", "height": "60rpx", "display": "flex", "alignItems": "center", "justifyContent": "center", "position": "relative", "marginLeft": "16rpx" } } };
-  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$i = { "custom-nav": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "100rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx", "width": "100%" } }, "nav-back": { "": { "width": "45rpx", "height": "45rpx", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "nav-item": { "": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-around" } }, "nav-title": { "": { "color": "#333333", "marginTop": 0, "marginRight": "20rpx", "marginBottom": 0, "marginLeft": "20rpx", "maxWidth": "400rpx", "textAlign": "center", "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap" } }, "nav-actions": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "nav-icon": { "": { "width": "45rpx", "height": "45rpx", "display": "flex", "alignItems": "center", "justifyContent": "center", "position": "relative", "marginLeft": "16rpx" } } };
+  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "custom-nav" }, [
       vue.createElementVNode("view", {
         class: "nav-back",
         onClick: $setup.goBack
       }, [
-        $setup.props.showBack ? (vue.openBlock(), vue.createElementBlock("image", {
+        $setup.props.showBack ? (vue.openBlock(), vue.createBlock(_component_fui_icon, {
           key: 0,
-          class: "nav-icon",
-          onClick: $setup.goBack,
-          src: _imports_0$3
+          name: "arrowleft",
+          size: "50"
         })) : vue.createCommentVNode("v-if", true)
       ]),
       vue.createElementVNode("view", { class: "nav-item" }, [
@@ -10463,19 +10454,17 @@
       ]),
       vue.createElementVNode("view", {
         class: "nav-actions",
-        onClick: $setup.onAdd
+        onClick: $setup.rightIcon
       }, [
-        vue.createTextVNode(
-          vue.toDisplayString($setup.props.rightText) + " ",
-          1
-          /* TEXT */
-        ),
-        vue.createCommentVNode(' <image class="nav-icon" @click="onAdd" src="/static/tabbar/add.png"/> ')
+        vue.createVNode(_component_fui_icon, {
+          name: $props.rightText,
+          size: "45"
+        }, null, 8, ["name"])
       ])
     ]);
   }
-  const TopNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["styles", [_style_0$h]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/components/TopNavBar.uvue"]]);
-  const _sfc_main$g = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const TopNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["styles", [_style_0$i]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/components/TopNavBar.uvue"]]);
+  const _sfc_main$h = /* @__PURE__ */ vue.defineComponent({
     __name: "login",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -10549,10 +10538,10 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _imports_0$2 = "/static/login_banner.png";
-  const _style_0$g = { "container": { "": { "height": "100%", "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "longin_banner": { ".container ": { "width": "250rpx", "height": "400rpx", "marginBottom": "20rpx" } }, "content": { ".container ": { "width": "100%" } }, "check-box": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginTop": "20rpx" } }, "fui-text-box": { ".container .content .check-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginLeft": "10rpx" } }, "fui-text": { ".container .content .check-box .fui-text-box ": { "color": "#1296db" } }, "tips": { ".container .content ": { "marginTop": "20rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "40rpx", "paddingRight": "40rpx", "paddingBottom": "40rpx", "paddingLeft": "40rpx" } }, "fui-title__pb": { ".container .fui-scroll__wrap ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } } };
-  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _imports_0$3 = "/static/login_banner.png";
+  const _style_0$h = { "container": { "": { "height": "100%", "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "longin_banner": { ".container ": { "width": "250rpx", "height": "400rpx", "marginBottom": "20rpx" } }, "content": { ".container ": { "width": "100%" } }, "check-box": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginTop": "20rpx" } }, "fui-text-box": { ".container .content .check-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginLeft": "10rpx" } }, "fui-text": { ".container .content .check-box .fui-text-box ": { "color": "#1296db" } }, "tips": { ".container .content ": { "marginTop": "20rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "40rpx", "paddingRight": "40rpx", "paddingBottom": "40rpx", "paddingLeft": "40rpx" } }, "fui-title__pb": { ".container .fui-scroll__wrap ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } } };
+  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$2);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
@@ -10566,7 +10555,7 @@
         rightText: "注册"
       }),
       vue.createElementVNode("image", {
-        src: _imports_0$2,
+        src: _imports_0$3,
         class: "longin_banner"
       }),
       vue.createElementVNode("view", { class: "content" }, [
@@ -10759,9 +10748,9 @@
       ])
     ]);
   }
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["styles", [_style_0$g]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/login/login.uvue"]]);
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["styles", [_style_0$h]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/login/login.uvue"]]);
   const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$f = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$g = /* @__PURE__ */ vue.defineComponent({
     __name: "messageDeviceDetail",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -10842,9 +10831,9 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$f = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
-  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$g = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
+  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$7);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -10937,7 +10926,7 @@
                 vue.createElementVNode("image", {
                   class: "item-img",
                   mode: "aspectFit",
-                  src: _imports_1$1
+                  src: _imports_1$2
                 })
               ], 8, ["onClick"]);
             }),
@@ -10969,8 +10958,8 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMessageMessageDeviceDetailMessageDeviceDetail = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["styles", [_style_0$f]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageDeviceDetail/messageDeviceDetail.uvue"]]);
-  const _sfc_main$e = vue.defineComponent({
+  const PagesMessageMessageDeviceDetailMessageDeviceDetail = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["styles", [_style_0$g]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageDeviceDetail/messageDeviceDetail.uvue"]]);
+  const _sfc_main$f = vue.defineComponent({
     name: "fui-tag",
     emits: ["onclick"],
     props: {
@@ -11060,8 +11049,8 @@
       }
     }
   });
-  const _style_0$e = { "fui-tag__wrap": { "": { "display": "flex", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "rgba(0,0,0,0)", "borderRightColor": "rgba(0,0,0,0)", "borderBottomColor": "rgba(0,0,0,0)", "borderLeftColor": "rgba(0,0,0,0)", "overflow": "hidden", "boxSizing": "border-box" } }, "fui-tag__no-border": { "": { "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0 } }, "fui-tag__text": { "": { "lines": 1, "overflow": "hidden", "textOverflow": "ellipsis" } }, "fui-tag__primary-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-tag_primary-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_success-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_warning-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_danger-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_purple-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag__success-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#09BE4F", "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F" } }, "fui-tag__warning-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFB703", "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703" } }, "fui-tag__danger-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#FF2B2B", "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B" } }, "fui-tag__purple-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#6831FF", "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF" } }, "fui-tag__primary-light": { "": { "!backgroundImage": "none", "!backgroundColor": "#F1F4FA", "!borderTopColor": "#F1F4FA", "!borderRightColor": "#F1F4FA", "!borderBottomColor": "#F1F4FA", "!borderLeftColor": "#F1F4FA" } }, "fui-tag_primary-light": { "": { "!color": "#465CFF" } }, "fui-tag_primary-plain": { "": { "!color": "#465CFF" } }, "fui-tag__success-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(9,190,79,0.05)", "!borderTopColor": "rgba(9,190,79,0.05)", "!borderRightColor": "rgba(9,190,79,0.05)", "!borderBottomColor": "rgba(9,190,79,0.05)", "!borderLeftColor": "rgba(9,190,79,0.05)" } }, "fui-tag_success-light": { "": { "!color": "#09BE4F" } }, "fui-tag_success-plain": { "": { "!color": "#09BE4F" } }, "fui-tag__warning-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(255,183,3,0.1)", "!borderTopColor": "rgba(255,183,3,0.1)", "!borderRightColor": "rgba(255,183,3,0.1)", "!borderBottomColor": "rgba(255,183,3,0.1)", "!borderLeftColor": "rgba(255,183,3,0.1)" } }, "fui-tag_warning-light": { "": { "!color": "#FFB703" } }, "fui-tag_warning-plain": { "": { "!color": "#FFB703" } }, "fui-tag__danger-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(255,43,43,0.05)", "!borderTopColor": "rgba(255,43,43,0.05)", "!borderRightColor": "rgba(255,43,43,0.05)", "!borderBottomColor": "rgba(255,43,43,0.05)", "!borderLeftColor": "rgba(255,43,43,0.05)" } }, "fui-tag_danger-light": { "": { "!color": "#FF2B2B" } }, "fui-tag_danger-plain": { "": { "!color": "#FF2B2B" } }, "fui-tag__purple-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(104,49,255,0.05)", "!borderTopColor": "rgba(104,49,255,0.05)", "!borderRightColor": "rgba(104,49,255,0.05)", "!borderBottomColor": "rgba(104,49,255,0.05)", "!borderLeftColor": "rgba(104,49,255,0.05)" } }, "fui-tag_purple-light": { "": { "!color": "#6831FF" } }, "fui-tag_purple-plain": { "": { "!color": "#6831FF" } }, "fui-tag__primary-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-tag__success-plain": { "": { "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F" } }, "fui-tag__warning-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703" } }, "fui-tag__danger-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B" } }, "fui-tag__purple-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF" } }, "fui-tag__origin-left": { "": { "transformOrigin": "0 center" } }, "fui-tag__origin-right": { "": { "transformOrigin": "100% center" } }, "fui-tag__opacity-active": { "": { "opacity": 0.5 } } };
-  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$f = { "fui-tag__wrap": { "": { "display": "flex", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "rgba(0,0,0,0)", "borderRightColor": "rgba(0,0,0,0)", "borderBottomColor": "rgba(0,0,0,0)", "borderLeftColor": "rgba(0,0,0,0)", "overflow": "hidden", "boxSizing": "border-box" } }, "fui-tag__no-border": { "": { "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0 } }, "fui-tag__text": { "": { "lines": 1, "overflow": "hidden", "textOverflow": "ellipsis" } }, "fui-tag__primary-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-tag_primary-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_success-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_warning-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_danger-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_purple-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag__success-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#09BE4F", "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F" } }, "fui-tag__warning-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFB703", "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703" } }, "fui-tag__danger-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#FF2B2B", "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B" } }, "fui-tag__purple-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#6831FF", "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF" } }, "fui-tag__primary-light": { "": { "!backgroundImage": "none", "!backgroundColor": "#F1F4FA", "!borderTopColor": "#F1F4FA", "!borderRightColor": "#F1F4FA", "!borderBottomColor": "#F1F4FA", "!borderLeftColor": "#F1F4FA" } }, "fui-tag_primary-light": { "": { "!color": "#465CFF" } }, "fui-tag_primary-plain": { "": { "!color": "#465CFF" } }, "fui-tag__success-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(9,190,79,0.05)", "!borderTopColor": "rgba(9,190,79,0.05)", "!borderRightColor": "rgba(9,190,79,0.05)", "!borderBottomColor": "rgba(9,190,79,0.05)", "!borderLeftColor": "rgba(9,190,79,0.05)" } }, "fui-tag_success-light": { "": { "!color": "#09BE4F" } }, "fui-tag_success-plain": { "": { "!color": "#09BE4F" } }, "fui-tag__warning-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(255,183,3,0.1)", "!borderTopColor": "rgba(255,183,3,0.1)", "!borderRightColor": "rgba(255,183,3,0.1)", "!borderBottomColor": "rgba(255,183,3,0.1)", "!borderLeftColor": "rgba(255,183,3,0.1)" } }, "fui-tag_warning-light": { "": { "!color": "#FFB703" } }, "fui-tag_warning-plain": { "": { "!color": "#FFB703" } }, "fui-tag__danger-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(255,43,43,0.05)", "!borderTopColor": "rgba(255,43,43,0.05)", "!borderRightColor": "rgba(255,43,43,0.05)", "!borderBottomColor": "rgba(255,43,43,0.05)", "!borderLeftColor": "rgba(255,43,43,0.05)" } }, "fui-tag_danger-light": { "": { "!color": "#FF2B2B" } }, "fui-tag_danger-plain": { "": { "!color": "#FF2B2B" } }, "fui-tag__purple-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(104,49,255,0.05)", "!borderTopColor": "rgba(104,49,255,0.05)", "!borderRightColor": "rgba(104,49,255,0.05)", "!borderBottomColor": "rgba(104,49,255,0.05)", "!borderLeftColor": "rgba(104,49,255,0.05)" } }, "fui-tag_purple-light": { "": { "!color": "#6831FF" } }, "fui-tag_purple-plain": { "": { "!color": "#6831FF" } }, "fui-tag__primary-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-tag__success-plain": { "": { "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F" } }, "fui-tag__warning-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703" } }, "fui-tag__danger-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B" } }, "fui-tag__purple-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF" } }, "fui-tag__origin-left": { "": { "transformOrigin": "0 center" } }, "fui-tag__origin-right": { "": { "transformOrigin": "100% center" } }, "fui-tag__opacity-active": { "": { "opacity": 0.5 } } };
+  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["fui-tag__wrap", [$props.originLeft ? "fui-tag__origin-left" : "", $props.originRight ? "fui-tag__origin-right" : "", $props.background == "" ? "fui-tag__".concat($props.type, "-").concat($props.theme) : "", $props.background != "" && $props.borderColor == "" || !$props.isBorder ? "fui-tag__no-border" : ""]]),
       style: vue.normalizeStyle({ background: $props.background, borderColor: $props.borderColor, transform: "scale(".concat($props.scaleRatio, ")"), borderRadius: "".concat($props.radius, "rpx"), padding: $props.padding, marginTop: "".concat($props.marginTop, "rpx"), marginRight: "".concat($props.marginRight, "rpx"), marginBottom: "".concat($props.marginBottom, "rpx"), marginLeft: "".concat($props.marginLeft, "rpx") }),
@@ -11083,7 +11072,7 @@
       vue.renderSlot(_ctx.$slots, "default")
     ], 14, ["hover-class"]);
   }
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["styles", [_style_0$e]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-tag/fui-tag.uvue"]]);
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["styles", [_style_0$f]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-tag/fui-tag.uvue"]]);
   class msgType extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -11111,7 +11100,7 @@
       delete this.__props__;
     }
   }
-  const _sfc_main$d = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$e = /* @__PURE__ */ vue.defineComponent({
     __name: "messageSystem",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -11154,9 +11143,9 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$d = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#f5f5f5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row" } }, "unread": { ".container .content .item ": { "width": "20rpx", "height": "20rpx", "marginRight": "10rpx" } }, "item-content": { ".container .content .item ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1", "paddingBottom": "20rpx", "marginBottom": "20rpx", "flex": 1 } }, "item-content-bottom": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "tag-time": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "fui-tag__wrap": { ".container .content .item .item-content .tag-time ": { "!width": "70rpx", "!height": "40rpx", "!paddingTop": "5rpx", "!paddingRight": "10rpx", "!paddingBottom": "5rpx", "!paddingLeft": "10rpx", "!marginBottom": 0 } }, "fui-tag__text": { ".container .content .item .item-content .tag-time .fui-tag__wrap ": { "!fontSize": "22rpx" } } };
-  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$e = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#f5f5f5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row" } }, "unread": { ".container .content .item ": { "width": "20rpx", "height": "20rpx", "marginRight": "10rpx" } }, "item-content": { ".container .content .item ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1", "paddingBottom": "20rpx", "marginBottom": "20rpx", "flex": 1 } }, "item-content-bottom": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "tag-time": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "fui-tag__wrap": { ".container .content .item .item-content .tag-time ": { "!width": "70rpx", "!height": "40rpx", "!paddingTop": "5rpx", "!paddingRight": "10rpx", "!paddingBottom": "5rpx", "!paddingLeft": "10rpx", "!marginBottom": 0 } }, "fui-tag__text": { ".container .content .item .item-content .tag-time .fui-tag__wrap ": { "!fontSize": "22rpx" } } };
+  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_tag = resolveEasycom(vue.resolveDynamicComponent("fui-tag"), __easycom_0$2);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -11223,7 +11212,7 @@
       ])
     ]);
   }
-  const PagesMessageMessageSystemMessageSystem = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["styles", [_style_0$d]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageSystem/messageSystem.uvue"]]);
+  const PagesMessageMessageSystemMessageSystem = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["styles", [_style_0$e]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageSystem/messageSystem.uvue"]]);
   class tabItem extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -11278,7 +11267,7 @@
       delete this.__props__;
     }
   }
-  const _sfc_main$c = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$d = /* @__PURE__ */ vue.defineComponent({
     __name: "myOrders",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -11375,9 +11364,9 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$c = { "container": { "": { "width": "100%", "height": "100%", "backgroundColor": "#F5F5F5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "l-tabs": { ".container ": { "!backgroundColor": "rgba(0,0,0,0)" } }, "list-item": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "marginTop": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "title-state": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "date-price": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "device-type": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "title-style": { ".container .list-item .title-state ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .date-price ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .device-type ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" } }, "state-style": { ".container .list-item .title-state ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .date-price ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .device-type ": { "fontSize": "24rpx", "color": "#FF5722" } }, "price": { ".container .list-item .date-price ": { "fontSize": "38rpx" } }, "btn": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } } };
-  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$d = { "container": { "": { "width": "100%", "height": "100%", "backgroundColor": "#F5F5F5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "l-tabs": { ".container ": { "!backgroundColor": "rgba(0,0,0,0)" } }, "list-item": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "marginTop": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "title-state": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "date-price": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "device-type": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "title-style": { ".container .list-item .title-state ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .date-price ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .device-type ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" } }, "state-style": { ".container .list-item .title-state ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .date-price ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .device-type ": { "fontSize": "24rpx", "color": "#FF5722" } }, "price": { ".container .list-item .date-price ": { "fontSize": "38rpx" } }, "btn": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } } };
+  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
     const _component_l_tab_panel = resolveEasycom(vue.resolveDynamicComponent("l-tab-panel"), __easycom_1$2);
     const _component_l_tabs = resolveEasycom(vue.resolveDynamicComponent("l-tabs"), __easycom_2$1);
@@ -11486,23 +11475,23 @@
       }, 8, ["value"])
     ]);
   }
-  const PagesMineMyOrdersMyOrders = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["styles", [_style_0$c]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/myOrders/myOrders.uvue"]]);
-  const _sfc_main$b = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const PagesMineMyOrdersMyOrders = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["styles", [_style_0$d]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/myOrders/myOrders.uvue"]]);
+  const _sfc_main$c = /* @__PURE__ */ vue.defineComponent({
     __name: "orderDetail",
     setup(__props, _a) {
       var __expose = _a.expose;
       __expose();
       const id = vue.ref("");
-      onLoad((options) => {
+      vue.onLoad((options) => {
         id.value = options.id.toString();
       });
       const __returned__ = { id };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$b = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#F5F5F5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } }, "price": { ".container .content .item ": { "fontSize": "38rpx", "color": "#555555", "fontWeight": "bold" } }, "underline": { ".container .content ": { "borderBottomWidth": "2rpx", "borderBottomStyle": "solid", "borderBottomColor": "#F1f1f1" } } };
-  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$c = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#F5F5F5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } }, "price": { ".container .content .item ": { "fontSize": "38rpx", "color": "#555555", "fontWeight": "bold" } }, "underline": { ".container .content ": { "borderBottomWidth": "2rpx", "borderBottomStyle": "solid", "borderBottomColor": "#F1f1f1" } } };
+  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", { class: "item" }, [
@@ -11540,7 +11529,7 @@
       ])
     ]);
   }
-  const PagesMineMyOrdersOrderDetailOrderDetail = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["styles", [_style_0$b]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/myOrders/orderDetail/orderDetail.uvue"]]);
+  const PagesMineMyOrdersOrderDetailOrderDetail = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["styles", [_style_0$c]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/myOrders/orderDetail/orderDetail.uvue"]]);
   class DrawBorderOptions extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -11697,7 +11686,7 @@
       color
     });
   }
-  const _sfc_main$a = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$b = /* @__PURE__ */ vue.defineComponent({
     __name: "l-textarea",
     props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
       adjustPosition: { type: Boolean, required: true, default: true },
@@ -11862,8 +11851,8 @@
       return __returned__;
     }
   });
-  const _style_0$a = { "l-textarea": { "": { "boxSizing": "border-box", "paddingTop": "32rpx", "paddingRight": "32rpx", "paddingBottom": "32rpx", "paddingLeft": "32rpx", "backgroundColor": "#ffffff" } }, "l-textarea--horizontal": { "": { "flexDirection": "row" } }, "l-textarea__label": { "": { "color": "rgba(0,0,0,0.88)", "flexShrink": 0, "lineHeight": "36px", "overflow": "hidden", "whiteSpace": "nowrap", "textOverflow": "ellipsis" } }, "l-textarea__label--vertical": { "": { "fontSize": 14, "paddingBottom": "16rpx" } }, "l-textarea__label--horizontal": { "": { "fontSize": 16, "marginRight": "32rpx" } }, "l-textarea__wrapper": { "": { "flex": 1, "overflow": "hidden" } }, "l-textarea__wrapper-inner": { "": { "flex": "1 1 auto", "width": "100%", "boxSizing": "border-box", "minWidth": 0, "minHeight": 20, "marginTop": 0, "marginRight": 0, "marginBottom": 0, "marginLeft": 0, "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "textAlign": "left", "backgroundColor": "rgba(0,0,0,0)", "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "none", "borderRightStyle": "none", "borderBottomStyle": "none", "borderLeftStyle": "none", "borderTopColor": "#000000", "borderRightColor": "#000000", "borderBottomColor": "#000000", "borderLeftColor": "#000000", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "lineHeight": "48rpx" } }, "l-textarea__placeholder": { "": { "color": "rgba(0,0,0,0.45)", "fontSize": 16, "lineHeight": "48rpx" } }, "l-textarea__indicator": { "": { "flexShrink": 0, "color": "rgba(0,0,0,0.45)", "fontSize": "24rpx", "textAlign": "right", "lineHeight": "40rpx", "paddingTop": "16rpx" } }, "l-textarea--border": { "": { "position": "relative" } }, "l-textarea--border-focused": { "": { "borderBottomColor": "#3283ff" } }, "is-disabled": { ".l-textarea ": { "color": "rgba(0,0,0,0.25)" } }, "l-textarea--classic": { "": { "paddingTop": 12, "paddingRight": 16, "paddingBottom": 12, "paddingLeft": 16, "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#eeeeee", "borderRightColor": "#eeeeee", "borderBottomColor": "#eeeeee", "borderLeftColor": "#eeeeee" } }, "l-textarea--classic-focused": { "": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } } };
-  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$b = { "l-textarea": { "": { "boxSizing": "border-box", "paddingTop": "32rpx", "paddingRight": "32rpx", "paddingBottom": "32rpx", "paddingLeft": "32rpx", "backgroundColor": "#ffffff" } }, "l-textarea--horizontal": { "": { "flexDirection": "row" } }, "l-textarea__label": { "": { "color": "rgba(0,0,0,0.88)", "flexShrink": 0, "lineHeight": "36px", "overflow": "hidden", "whiteSpace": "nowrap", "textOverflow": "ellipsis" } }, "l-textarea__label--vertical": { "": { "fontSize": 14, "paddingBottom": "16rpx" } }, "l-textarea__label--horizontal": { "": { "fontSize": 16, "marginRight": "32rpx" } }, "l-textarea__wrapper": { "": { "flex": 1, "overflow": "hidden" } }, "l-textarea__wrapper-inner": { "": { "flex": "1 1 auto", "width": "100%", "boxSizing": "border-box", "minWidth": 0, "minHeight": 20, "marginTop": 0, "marginRight": 0, "marginBottom": 0, "marginLeft": 0, "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "textAlign": "left", "backgroundColor": "rgba(0,0,0,0)", "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "none", "borderRightStyle": "none", "borderBottomStyle": "none", "borderLeftStyle": "none", "borderTopColor": "#000000", "borderRightColor": "#000000", "borderBottomColor": "#000000", "borderLeftColor": "#000000", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "lineHeight": "48rpx" } }, "l-textarea__placeholder": { "": { "color": "rgba(0,0,0,0.45)", "fontSize": 16, "lineHeight": "48rpx" } }, "l-textarea__indicator": { "": { "flexShrink": 0, "color": "rgba(0,0,0,0.45)", "fontSize": "24rpx", "textAlign": "right", "lineHeight": "40rpx", "paddingTop": "16rpx" } }, "l-textarea--border": { "": { "position": "relative" } }, "l-textarea--border-focused": { "": { "borderBottomColor": "#3283ff" } }, "is-disabled": { ".l-textarea ": { "color": "rgba(0,0,0,0.25)" } }, "l-textarea--classic": { "": { "paddingTop": 12, "paddingRight": 16, "paddingBottom": 12, "paddingLeft": 16, "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#eeeeee", "borderRightColor": "#eeeeee", "borderBottomColor": "#eeeeee", "borderLeftColor": "#eeeeee" } }, "l-textarea--classic-focused": { "": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } } };
+  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
     var _a, _b;
     return vue.openBlock(), vue.createElementBlock(
       "view",
@@ -11951,7 +11940,7 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["styles", [_style_0$a]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-textarea/components/l-textarea/l-textarea.uvue"]]);
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["styles", [_style_0$b]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-textarea/components/l-textarea/l-textarea.uvue"]]);
   function getFileType(tempFilePath, fileType) {
     if (fileType != null)
       return fileType.replace(/\/.+/, "");
@@ -12139,7 +12128,8 @@
     new UTSJSONObject({
       path: "pages/index/index",
       style: new UTSJSONObject({
-        navigationBarTitleText: "首页"
+        navigationBarTitleText: "首页",
+        enableVideo: true
       })
     }),
     new UTSJSONObject({
@@ -12256,6 +12246,13 @@
       style: new UTSJSONObject({
         navigationBarTitleText: "本地文件"
       })
+    }),
+    new UTSJSONObject({
+      path: "pages/index/deviceDetail",
+      style: new UTSJSONObject({
+        navigationStyle: "custom",
+        navigationBarTitleText: ""
+      })
     })
   ];
   const tabBar = new UTSJSONObject({
@@ -12353,7 +12350,6 @@
         return e4.words = this.words.slice(0), e4;
       }, random: function(t4) {
         for (var n4, s3 = [], r3 = function(t5) {
-          t5 = t5;
           var n5 = 987654321, s4 = 4294967295;
           return function() {
             var r4 = ((n5 = 36969 * (65535 & n5) + (n5 >> 16) & s4) << 16) + (t5 = 18e3 * (65535 & t5) + (t5 >> 16) & s4) & s4;
@@ -12444,8 +12440,8 @@
           var s3 = t4 + n3, r3 = e4[s3];
           e4[s3] = 16711935 & (r3 << 8 | r3 >>> 24) | 4278255360 & (r3 << 24 | r3 >>> 8);
         }
-        var i3 = this._hash.words, o3 = e4[t4 + 0], c3 = e4[t4 + 1], p2 = e4[t4 + 2], f2 = e4[t4 + 3], g2 = e4[t4 + 4], m2 = e4[t4 + 5], y2 = e4[t4 + 6], _2 = e4[t4 + 7], w2 = e4[t4 + 8], v2 = e4[t4 + 9], I2 = e4[t4 + 10], S2 = e4[t4 + 11], b2 = e4[t4 + 12], k2 = e4[t4 + 13], T2 = e4[t4 + 14], A2 = e4[t4 + 15], P2 = i3[0], C2 = i3[1], x2 = i3[2], O2 = i3[3];
-        P2 = u2(P2, C2, x2, O2, o3, 7, a2[0]), O2 = u2(O2, P2, C2, x2, c3, 12, a2[1]), x2 = u2(x2, O2, P2, C2, p2, 17, a2[2]), C2 = u2(C2, x2, O2, P2, f2, 22, a2[3]), P2 = u2(P2, C2, x2, O2, g2, 7, a2[4]), O2 = u2(O2, P2, C2, x2, m2, 12, a2[5]), x2 = u2(x2, O2, P2, C2, y2, 17, a2[6]), C2 = u2(C2, x2, O2, P2, _2, 22, a2[7]), P2 = u2(P2, C2, x2, O2, w2, 7, a2[8]), O2 = u2(O2, P2, C2, x2, v2, 12, a2[9]), x2 = u2(x2, O2, P2, C2, I2, 17, a2[10]), C2 = u2(C2, x2, O2, P2, S2, 22, a2[11]), P2 = u2(P2, C2, x2, O2, b2, 7, a2[12]), O2 = u2(O2, P2, C2, x2, k2, 12, a2[13]), x2 = u2(x2, O2, P2, C2, T2, 17, a2[14]), P2 = h2(P2, C2 = u2(C2, x2, O2, P2, A2, 22, a2[15]), x2, O2, c3, 5, a2[16]), O2 = h2(O2, P2, C2, x2, y2, 9, a2[17]), x2 = h2(x2, O2, P2, C2, S2, 14, a2[18]), C2 = h2(C2, x2, O2, P2, o3, 20, a2[19]), P2 = h2(P2, C2, x2, O2, m2, 5, a2[20]), O2 = h2(O2, P2, C2, x2, I2, 9, a2[21]), x2 = h2(x2, O2, P2, C2, A2, 14, a2[22]), C2 = h2(C2, x2, O2, P2, g2, 20, a2[23]), P2 = h2(P2, C2, x2, O2, v2, 5, a2[24]), O2 = h2(O2, P2, C2, x2, T2, 9, a2[25]), x2 = h2(x2, O2, P2, C2, f2, 14, a2[26]), C2 = h2(C2, x2, O2, P2, w2, 20, a2[27]), P2 = h2(P2, C2, x2, O2, k2, 5, a2[28]), O2 = h2(O2, P2, C2, x2, p2, 9, a2[29]), x2 = h2(x2, O2, P2, C2, _2, 14, a2[30]), P2 = l2(P2, C2 = h2(C2, x2, O2, P2, b2, 20, a2[31]), x2, O2, m2, 4, a2[32]), O2 = l2(O2, P2, C2, x2, w2, 11, a2[33]), x2 = l2(x2, O2, P2, C2, S2, 16, a2[34]), C2 = l2(C2, x2, O2, P2, T2, 23, a2[35]), P2 = l2(P2, C2, x2, O2, c3, 4, a2[36]), O2 = l2(O2, P2, C2, x2, g2, 11, a2[37]), x2 = l2(x2, O2, P2, C2, _2, 16, a2[38]), C2 = l2(C2, x2, O2, P2, I2, 23, a2[39]), P2 = l2(P2, C2, x2, O2, k2, 4, a2[40]), O2 = l2(O2, P2, C2, x2, o3, 11, a2[41]), x2 = l2(x2, O2, P2, C2, f2, 16, a2[42]), C2 = l2(C2, x2, O2, P2, y2, 23, a2[43]), P2 = l2(P2, C2, x2, O2, v2, 4, a2[44]), O2 = l2(O2, P2, C2, x2, b2, 11, a2[45]), x2 = l2(x2, O2, P2, C2, A2, 16, a2[46]), P2 = d2(P2, C2 = l2(C2, x2, O2, P2, p2, 23, a2[47]), x2, O2, o3, 6, a2[48]), O2 = d2(O2, P2, C2, x2, _2, 10, a2[49]), x2 = d2(x2, O2, P2, C2, T2, 15, a2[50]), C2 = d2(C2, x2, O2, P2, m2, 21, a2[51]), P2 = d2(P2, C2, x2, O2, b2, 6, a2[52]), O2 = d2(O2, P2, C2, x2, f2, 10, a2[53]), x2 = d2(x2, O2, P2, C2, I2, 15, a2[54]), C2 = d2(C2, x2, O2, P2, c3, 21, a2[55]), P2 = d2(P2, C2, x2, O2, w2, 6, a2[56]), O2 = d2(O2, P2, C2, x2, A2, 10, a2[57]), x2 = d2(x2, O2, P2, C2, y2, 15, a2[58]), C2 = d2(C2, x2, O2, P2, k2, 21, a2[59]), P2 = d2(P2, C2, x2, O2, g2, 6, a2[60]), O2 = d2(O2, P2, C2, x2, S2, 10, a2[61]), x2 = d2(x2, O2, P2, C2, p2, 15, a2[62]), C2 = d2(C2, x2, O2, P2, v2, 21, a2[63]), i3[0] = i3[0] + P2 | 0, i3[1] = i3[1] + C2 | 0, i3[2] = i3[2] + x2 | 0, i3[3] = i3[3] + O2 | 0;
+        var i3 = this._hash.words, o3 = e4[t4 + 0], c3 = e4[t4 + 1], p2 = e4[t4 + 2], f2 = e4[t4 + 3], g2 = e4[t4 + 4], m2 = e4[t4 + 5], y2 = e4[t4 + 6], _2 = e4[t4 + 7], w2 = e4[t4 + 8], I2 = e4[t4 + 9], v2 = e4[t4 + 10], S2 = e4[t4 + 11], T2 = e4[t4 + 12], b2 = e4[t4 + 13], k2 = e4[t4 + 14], E2 = e4[t4 + 15], A2 = i3[0], P2 = i3[1], C2 = i3[2], O2 = i3[3];
+        A2 = u2(A2, P2, C2, O2, o3, 7, a2[0]), O2 = u2(O2, A2, P2, C2, c3, 12, a2[1]), C2 = u2(C2, O2, A2, P2, p2, 17, a2[2]), P2 = u2(P2, C2, O2, A2, f2, 22, a2[3]), A2 = u2(A2, P2, C2, O2, g2, 7, a2[4]), O2 = u2(O2, A2, P2, C2, m2, 12, a2[5]), C2 = u2(C2, O2, A2, P2, y2, 17, a2[6]), P2 = u2(P2, C2, O2, A2, _2, 22, a2[7]), A2 = u2(A2, P2, C2, O2, w2, 7, a2[8]), O2 = u2(O2, A2, P2, C2, I2, 12, a2[9]), C2 = u2(C2, O2, A2, P2, v2, 17, a2[10]), P2 = u2(P2, C2, O2, A2, S2, 22, a2[11]), A2 = u2(A2, P2, C2, O2, T2, 7, a2[12]), O2 = u2(O2, A2, P2, C2, b2, 12, a2[13]), C2 = u2(C2, O2, A2, P2, k2, 17, a2[14]), A2 = h2(A2, P2 = u2(P2, C2, O2, A2, E2, 22, a2[15]), C2, O2, c3, 5, a2[16]), O2 = h2(O2, A2, P2, C2, y2, 9, a2[17]), C2 = h2(C2, O2, A2, P2, S2, 14, a2[18]), P2 = h2(P2, C2, O2, A2, o3, 20, a2[19]), A2 = h2(A2, P2, C2, O2, m2, 5, a2[20]), O2 = h2(O2, A2, P2, C2, v2, 9, a2[21]), C2 = h2(C2, O2, A2, P2, E2, 14, a2[22]), P2 = h2(P2, C2, O2, A2, g2, 20, a2[23]), A2 = h2(A2, P2, C2, O2, I2, 5, a2[24]), O2 = h2(O2, A2, P2, C2, k2, 9, a2[25]), C2 = h2(C2, O2, A2, P2, f2, 14, a2[26]), P2 = h2(P2, C2, O2, A2, w2, 20, a2[27]), A2 = h2(A2, P2, C2, O2, b2, 5, a2[28]), O2 = h2(O2, A2, P2, C2, p2, 9, a2[29]), C2 = h2(C2, O2, A2, P2, _2, 14, a2[30]), A2 = l2(A2, P2 = h2(P2, C2, O2, A2, T2, 20, a2[31]), C2, O2, m2, 4, a2[32]), O2 = l2(O2, A2, P2, C2, w2, 11, a2[33]), C2 = l2(C2, O2, A2, P2, S2, 16, a2[34]), P2 = l2(P2, C2, O2, A2, k2, 23, a2[35]), A2 = l2(A2, P2, C2, O2, c3, 4, a2[36]), O2 = l2(O2, A2, P2, C2, g2, 11, a2[37]), C2 = l2(C2, O2, A2, P2, _2, 16, a2[38]), P2 = l2(P2, C2, O2, A2, v2, 23, a2[39]), A2 = l2(A2, P2, C2, O2, b2, 4, a2[40]), O2 = l2(O2, A2, P2, C2, o3, 11, a2[41]), C2 = l2(C2, O2, A2, P2, f2, 16, a2[42]), P2 = l2(P2, C2, O2, A2, y2, 23, a2[43]), A2 = l2(A2, P2, C2, O2, I2, 4, a2[44]), O2 = l2(O2, A2, P2, C2, T2, 11, a2[45]), C2 = l2(C2, O2, A2, P2, E2, 16, a2[46]), A2 = d2(A2, P2 = l2(P2, C2, O2, A2, p2, 23, a2[47]), C2, O2, o3, 6, a2[48]), O2 = d2(O2, A2, P2, C2, _2, 10, a2[49]), C2 = d2(C2, O2, A2, P2, k2, 15, a2[50]), P2 = d2(P2, C2, O2, A2, m2, 21, a2[51]), A2 = d2(A2, P2, C2, O2, T2, 6, a2[52]), O2 = d2(O2, A2, P2, C2, f2, 10, a2[53]), C2 = d2(C2, O2, A2, P2, v2, 15, a2[54]), P2 = d2(P2, C2, O2, A2, c3, 21, a2[55]), A2 = d2(A2, P2, C2, O2, w2, 6, a2[56]), O2 = d2(O2, A2, P2, C2, E2, 10, a2[57]), C2 = d2(C2, O2, A2, P2, y2, 15, a2[58]), P2 = d2(P2, C2, O2, A2, b2, 21, a2[59]), A2 = d2(A2, P2, C2, O2, g2, 6, a2[60]), O2 = d2(O2, A2, P2, C2, S2, 10, a2[61]), C2 = d2(C2, O2, A2, P2, p2, 15, a2[62]), P2 = d2(P2, C2, O2, A2, I2, 21, a2[63]), i3[0] = i3[0] + A2 | 0, i3[1] = i3[1] + P2 | 0, i3[2] = i3[2] + C2 | 0, i3[3] = i3[3] + O2 | 0;
       }, _doFinalize: function() {
         var t4 = this._data, n3 = t4.words, s3 = 8 * this._nDataBytes, r3 = 8 * t4.sigBytes;
         n3[r3 >>> 5] |= 128 << 24 - r3 % 32;
@@ -12542,17 +12538,17 @@
       }, _map: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=" };
     }(), n2.enc.Base64);
   });
-  const c = "FUNCTION", u = "OBJECT", h = "CLIENT_DB", l = "pending", d = "fulfilled", p = "rejected";
-  function f(e2) {
+  const c = "uni_id_token", u = "uni_id_token_expired", h = "uniIdToken", l = { DEFAULT: "FUNCTION", FUNCTION: "FUNCTION", OBJECT: "OBJECT", CLIENT_DB: "CLIENT_DB" }, d = "pending", p = "fulfilled", f = "rejected";
+  function g(e2) {
     return Object.prototype.toString.call(e2).slice(8, -1).toLowerCase();
   }
-  function g(e2) {
-    return "object" === f(e2);
-  }
   function m(e2) {
-    return "function" == typeof e2;
+    return "object" === g(e2);
   }
   function y(e2) {
+    return "function" == typeof e2;
+  }
+  function _(e2) {
     return function() {
       try {
         return e2.apply(e2, arguments);
@@ -12561,41 +12557,78 @@
       }
     };
   }
-  const _ = "REJECTED", w = "NOT_PENDING";
+  const w = "REJECTED", I = "NOT_PENDING";
   class v {
-    constructor({ createPromise: e2, retryRule: t2 = _ } = {}) {
+    constructor({ createPromise: e2, retryRule: t2 = w } = {}) {
       this.createPromise = e2, this.status = null, this.promise = null, this.retryRule = t2;
     }
     get needRetry() {
       if (!this.status)
         return true;
       switch (this.retryRule) {
-        case _:
-          return this.status === p;
         case w:
-          return this.status !== l;
+          return this.status === f;
+        case I:
+          return this.status !== d;
       }
     }
     exec() {
-      return this.needRetry ? (this.status = l, this.promise = this.createPromise().then((e2) => (this.status = d, Promise.resolve(e2)), (e2) => (this.status = p, Promise.reject(e2))), this.promise) : this.promise;
+      return this.needRetry ? (this.status = d, this.promise = this.createPromise().then((e2) => (this.status = p, Promise.resolve(e2)), (e2) => (this.status = f, Promise.reject(e2))), this.promise) : this.promise;
     }
   }
-  function I(e2) {
+  class S {
+    constructor() {
+      this._callback = {};
+    }
+    addListener(e2, t2) {
+      this._callback[e2] || (this._callback[e2] = []), this._callback[e2].push(t2);
+    }
+    on(e2, t2) {
+      return this.addListener(e2, t2);
+    }
+    removeListener(e2, t2) {
+      if (!t2)
+        throw new Error('The "listener" argument must be of type function. Received undefined');
+      const n2 = this._callback[e2];
+      if (!n2)
+        return;
+      const s2 = function(e3, t3) {
+        for (let n3 = e3.length - 1; n3 >= 0; n3--)
+          if (e3[n3] === t3)
+            return n3;
+        return -1;
+      }(n2, t2);
+      n2.splice(s2, 1);
+    }
+    off(e2, t2) {
+      return this.removeListener(e2, t2);
+    }
+    removeAllListener(e2) {
+      delete this._callback[e2];
+    }
+    emit(e2, ...t2) {
+      const n2 = this._callback[e2];
+      if (n2)
+        for (let e3 = 0; e3 < n2.length; e3++)
+          n2[e3](...t2);
+    }
+  }
+  function T(e2) {
     return e2 && "string" == typeof e2 ? JSON.parse(e2) : e2;
   }
-  const S = true, b = "app", T = I(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), A = b, P = I(""), C = I("[]") || [];
-  let O = "";
+  const b = true, k = "app", E = T(define_process_env_UNI_SECURE_NETWORK_CONFIG_default), A = k, P = T(""), C = T("[]") || [];
+  let x = "";
   try {
-    O = "__UNI__1F0985E";
+    x = "__UNI__1F0985E";
   } catch (e2) {
   }
-  let E, L = {};
-  function R(e2, t2 = {}) {
+  let N, R = {};
+  function L(e2, t2 = {}) {
     var n2, s2;
-    return n2 = L, s2 = e2, Object.prototype.hasOwnProperty.call(n2, s2) || (L[e2] = t2), L[e2];
+    return n2 = R, s2 = e2, Object.prototype.hasOwnProperty.call(n2, s2) || (R[e2] = t2), R[e2];
   }
   function U() {
-    return E || (E = function() {
+    return N || (N = function() {
       if ("undefined" != typeof globalThis)
         return globalThis;
       if ("undefined" != typeof self)
@@ -12606,102 +12639,103 @@
         return this;
       }
       return void 0 !== e2() ? e2() : new Function("return this")();
-    }(), E);
+    }(), N);
   }
-  L = uni._globalUniCloudObj ? uni._globalUniCloudObj : uni._globalUniCloudObj = {};
-  const N = ["invoke", "success", "fail", "complete"], D = R("_globalUniCloudInterceptor");
-  function M(e2, t2) {
-    D[e2] || (D[e2] = {}), g(t2) && Object.keys(t2).forEach((n2) => {
-      N.indexOf(n2) > -1 && function(e3, t3, n3) {
-        let s2 = D[e3][t3];
-        s2 || (s2 = D[e3][t3] = []), -1 === s2.indexOf(n3) && m(n3) && s2.push(n3);
+  R = uni._globalUniCloudObj ? uni._globalUniCloudObj : uni._globalUniCloudObj = {};
+  const D = ["invoke", "success", "fail", "complete"], M = L("_globalUniCloudInterceptor");
+  function q(e2, t2) {
+    M[e2] || (M[e2] = {}), m(t2) && Object.keys(t2).forEach((n2) => {
+      D.indexOf(n2) > -1 && function(e3, t3, n3) {
+        let s2 = M[e3][t3];
+        s2 || (s2 = M[e3][t3] = []), -1 === s2.indexOf(n3) && y(n3) && s2.push(n3);
       }(e2, n2, t2[n2]);
     });
   }
-  function q(e2, t2) {
-    D[e2] || (D[e2] = {}), g(t2) ? Object.keys(t2).forEach((n2) => {
-      N.indexOf(n2) > -1 && function(e3, t3, n3) {
-        const s2 = D[e3][t3];
+  function F(e2, t2) {
+    M[e2] || (M[e2] = {}), m(t2) ? Object.keys(t2).forEach((n2) => {
+      D.indexOf(n2) > -1 && function(e3, t3, n3) {
+        const s2 = M[e3][t3];
         if (!s2)
           return;
         const r2 = s2.indexOf(n3);
         r2 > -1 && s2.splice(r2, 1);
       }(e2, n2, t2[n2]);
-    }) : delete D[e2];
+    }) : delete M[e2];
   }
   function K(e2, t2) {
     return e2 && 0 !== e2.length ? e2.reduce((e3, n2) => e3.then(() => n2(t2)), Promise.resolve()) : Promise.resolve();
   }
-  function F(e2, t2) {
-    return D[e2] && D[e2][t2] || [];
+  function j(e2, t2) {
+    return M[e2] && M[e2][t2] || [];
   }
-  function j(e2) {
-    M("callObject", e2);
+  function B(e2) {
+    q("callObject", e2);
   }
-  const $ = R("_globalUniCloudListener"), B = "response", W = "needLogin", H = "refreshToken", J = "clientdb", z = "cloudfunction", V = "cloudobject";
-  function G(e2) {
+  const $ = L("_globalUniCloudListener"), H = { RESPONSE: "response", NEED_LOGIN: "needLogin", REFRESH_TOKEN: "refreshToken" }, W = { CLIENT_DB: "clientdb", CLOUD_FUNCTION: "cloudfunction", CLOUD_OBJECT: "cloudobject" };
+  function J(e2) {
     return $[e2] || ($[e2] = []), $[e2];
   }
-  function Y(e2, t2) {
-    const n2 = G(e2);
+  function z(e2, t2) {
+    const n2 = J(e2);
     n2.includes(t2) || n2.push(t2);
   }
-  function Q(e2, t2) {
-    const n2 = G(e2), s2 = n2.indexOf(t2);
+  function V(e2, t2) {
+    const n2 = J(e2), s2 = n2.indexOf(t2);
     -1 !== s2 && n2.splice(s2, 1);
   }
-  function X(e2, t2) {
-    const n2 = G(e2);
+  function G(e2, t2) {
+    const n2 = J(e2);
     for (let e3 = 0; e3 < n2.length; e3++) {
       (0, n2[e3])(t2);
     }
   }
-  let Z, ee = false;
-  function te() {
-    return Z || (Z = new Promise((e2) => {
-      ee && e2(), function t2() {
+  let Y, Q = false;
+  function X() {
+    return Y || (Y = new Promise((e2) => {
+      Q && e2(), function t2() {
         if ("function" == typeof getCurrentPages) {
           const t3 = getCurrentPages();
-          t3 && t3[0] && (ee = true, e2());
+          t3 && t3[0] && (Q = true, e2());
         }
-        ee || setTimeout(() => {
+        Q || setTimeout(() => {
           t2();
         }, 30);
       }();
-    }), Z);
+    }), Y);
   }
-  function ne(e2) {
+  function Z(e2) {
     const t2 = {};
     for (const n2 in e2) {
       const s2 = e2[n2];
-      m(s2) && (t2[n2] = y(s2));
+      y(s2) && (t2[n2] = _(s2));
     }
     return t2;
   }
-  class se extends Error {
+  class ee extends Error {
     constructor(e2) {
-      super(e2.message), this.errMsg = e2.message || e2.errMsg || "unknown system error", this.code = this.errCode = e2.code || e2.errCode || "SYSTEM_ERROR", this.errSubject = this.subject = e2.subject || e2.errSubject, this.cause = e2.cause, this.requestId = e2.requestId;
+      const t2 = e2.message || e2.errMsg || "unknown system error";
+      super(t2), this.errMsg = t2, this.code = this.errCode = e2.code || e2.errCode || "SYSTEM_ERROR", this.errSubject = this.subject = e2.subject || e2.errSubject, this.cause = e2.cause, this.requestId = e2.requestId;
     }
     toJson(e2 = 0) {
       if (!(e2 >= 10))
         return e2++, { errCode: this.errCode, errMsg: this.errMsg, errSubject: this.errSubject, cause: this.cause && this.cause.toJson ? this.cause.toJson(e2) : this.cause };
     }
   }
-  var re = { request: (e2) => uni.request(e2), uploadFile: (e2) => uni.uploadFile(e2), setStorageSync: (e2, t2) => uni.setStorageSync(e2, t2), getStorageSync: (e2) => uni.getStorageSync(e2), removeStorageSync: (e2) => uni.removeStorageSync(e2), clearStorageSync: () => uni.clearStorageSync(), connectSocket: (e2) => uni.connectSocket(e2) };
-  function ie(e2) {
-    return e2 && ie(e2.__v_raw) || e2;
+  var te = { request: (e2) => uni.request(e2), uploadFile: (e2) => uni.uploadFile(e2), setStorageSync: (e2, t2) => uni.setStorageSync(e2, t2), getStorageSync: (e2) => uni.getStorageSync(e2), removeStorageSync: (e2) => uni.removeStorageSync(e2), clearStorageSync: () => uni.clearStorageSync(), connectSocket: (e2) => uni.connectSocket(e2) };
+  function ne(e2) {
+    return e2 && ne(e2.__v_raw) || e2;
   }
-  function oe() {
-    return { token: re.getStorageSync("uni_id_token") || re.getStorageSync("uniIdToken"), tokenExpired: re.getStorageSync("uni_id_token_expired") };
+  function se() {
+    return { token: te.getStorageSync(c) || te.getStorageSync(h), tokenExpired: te.getStorageSync(u) };
   }
-  function ae({ token: e2, tokenExpired: t2 } = {}) {
-    e2 && re.setStorageSync("uni_id_token", e2), t2 && re.setStorageSync("uni_id_token_expired", t2);
+  function re({ token: e2, tokenExpired: t2 } = {}) {
+    e2 && te.setStorageSync(c, e2), t2 && te.setStorageSync(u, t2);
   }
-  let ce, ue;
-  function he() {
-    return ce || (ce = uni.getSystemInfoSync()), ce;
+  let ie, oe;
+  function ae() {
+    return ie || (ie = uni.getSystemInfoSync()), ie;
   }
-  function le() {
+  function ce() {
     let e2, t2;
     try {
       if (uni.getLaunchOptionsSync) {
@@ -12714,17 +12748,17 @@
     }
     return { channel: e2, scene: t2 };
   }
-  let de = {};
-  function pe() {
+  let ue = {};
+  function he() {
     const e2 = uni.getLocale && uni.getLocale() || "en";
-    if (ue)
-      return { ...de, ...ue, locale: e2, LOCALE: e2 };
-    const t2 = he(), { deviceId: n2, osName: s2, uniPlatform: r2, appId: i2 } = t2, o2 = ["appId", "appLanguage", "appName", "appVersion", "appVersionCode", "appWgtVersion", "browserName", "browserVersion", "deviceBrand", "deviceId", "deviceModel", "deviceType", "osName", "osVersion", "romName", "romVersion", "ua", "hostName", "hostVersion", "uniPlatform", "uniRuntimeVersion", "uniRuntimeVersionCode", "uniCompilerVersion", "uniCompilerVersionCode"];
+    if (oe)
+      return { ...ue, ...oe, locale: e2, LOCALE: e2 };
+    const t2 = ae(), { deviceId: n2, osName: s2, uniPlatform: r2, appId: i2 } = t2, o2 = ["appId", "appLanguage", "appName", "appVersion", "appVersionCode", "appWgtVersion", "browserName", "browserVersion", "deviceBrand", "deviceId", "deviceModel", "deviceType", "osName", "osVersion", "romName", "romVersion", "ua", "hostName", "hostVersion", "uniPlatform", "uniRuntimeVersion", "uniRuntimeVersionCode", "uniCompilerVersion", "uniCompilerVersionCode"];
     for (const e3 in t2)
       Object.hasOwnProperty.call(t2, e3) && -1 === o2.indexOf(e3) && delete t2[e3];
-    return ue = { PLATFORM: r2, OS: s2, APPID: i2, DEVICEID: n2, ...le(), ...t2 }, { ...de, ...ue, locale: e2, LOCALE: e2 };
+    return oe = { PLATFORM: r2, OS: s2, APPID: i2, DEVICEID: n2, ...ce(), ...t2 }, { ...ue, ...oe, locale: e2, LOCALE: e2 };
   }
-  var fe = { sign: function(e2, t2) {
+  var le = { sign: function(e2, t2) {
     let n2 = "";
     return Object.keys(e2).sort().forEach(function(t3) {
       e2[t3] && (n2 = n2 + "&" + t3 + "=" + e2[t3]);
@@ -12736,27 +12770,27 @@
         const t3 = e3.data && e3.data.header && e3.data.header["x-serverless-request-id"] || e3.header && e3.header["request-id"];
         if (!e3.statusCode || e3.statusCode >= 400) {
           const n3 = e3.data && e3.data.error && e3.data.error.code || "SYS_ERR", r3 = e3.data && e3.data.error && e3.data.error.message || e3.errMsg || "request:fail";
-          return s2(new se({ code: n3, message: r3, requestId: t3 }));
+          return s2(new ee({ code: n3, message: r3, requestId: t3 }));
         }
         const r2 = e3.data;
         if (r2.error)
-          return s2(new se({ code: r2.error.code, message: r2.error.message, requestId: t3 }));
+          return s2(new ee({ code: r2.error.code, message: r2.error.message, requestId: t3 }));
         r2.result = r2.data, r2.requestId = t3, delete r2.data, n2(r2);
       } }));
     });
   }, toBase64: function(e2) {
     return a.stringify(o.parse(e2));
   } };
-  var ge = class {
+  var de = class {
     constructor(e2) {
       ["spaceId", "clientSecret"].forEach((t2) => {
         if (!Object.prototype.hasOwnProperty.call(e2, t2))
           throw new Error("".concat(t2, " required"));
-      }), this.config = Object.assign({}, { endpoint: 0 === e2.spaceId.indexOf("mp-") ? "https://api.next.bspapp.com" : "https://api.bspapp.com" }, e2), this.config.provider = "aliyun", this.config.requestUrl = this.config.endpoint + "/client", this.config.envType = this.config.envType || "public", this.config.accessTokenKey = "access_token_" + this.config.spaceId, this.adapter = re, this._getAccessTokenPromiseHub = new v({ createPromise: () => this.requestAuth(this.setupRequest({ method: "serverless.auth.user.anonymousAuthorize", params: "{}" }, "auth")).then((e3) => {
+      }), this.config = Object.assign({}, { endpoint: 0 === e2.spaceId.indexOf("mp-") ? "https://api.next.bspapp.com" : "https://api.bspapp.com" }, e2), this.config.provider = "aliyun", this.config.requestUrl = this.config.endpoint + "/client", this.config.envType = this.config.envType || "public", this.config.accessTokenKey = "access_token_" + this.config.spaceId, this.adapter = te, this._getAccessTokenPromiseHub = new v({ createPromise: () => this.requestAuth(this.setupRequest({ method: "serverless.auth.user.anonymousAuthorize", params: "{}" }, "auth")).then((e3) => {
         if (!e3.result || !e3.result.accessToken)
-          throw new se({ code: "AUTH_FAILED", message: "获取accessToken失败" });
+          throw new ee({ code: "AUTH_FAILED", message: "获取accessToken失败" });
         this.setAccessToken(e3.result.accessToken);
-      }), retryRule: w });
+      }), retryRule: I });
     }
     get hasAccessToken() {
       return !!this.accessToken;
@@ -12765,7 +12799,7 @@
       this.accessToken = e2;
     }
     requestWrapped(e2) {
-      return fe.wrappedRequest(e2, this.adapter.request);
+      return le.wrappedRequest(e2, this.adapter.request);
     }
     requestAuth(e2) {
       return this.requestWrapped(e2);
@@ -12783,11 +12817,11 @@
     }
     rebuildRequest(e2) {
       const t2 = Object.assign({}, e2);
-      return t2.data.token = this.accessToken, t2.header["x-basement-token"] = this.accessToken, t2.header["x-serverless-sign"] = fe.sign(t2.data, this.config.clientSecret), t2;
+      return t2.data.token = this.accessToken, t2.header["x-basement-token"] = this.accessToken, t2.header["x-serverless-sign"] = le.sign(t2.data, this.config.clientSecret), t2;
     }
     setupRequest(e2, t2) {
       const n2 = Object.assign({}, e2, { spaceId: this.config.spaceId, timestamp: Date.now() }), s2 = { "Content-Type": "application/json" };
-      return "auth" !== t2 && (n2.token = this.accessToken, s2["x-basement-token"] = this.accessToken), s2["x-serverless-sign"] = fe.sign(n2, this.config.clientSecret), { url: this.config.requestUrl, method: "POST", data: n2, dataType: "json", header: s2 };
+      return "auth" !== t2 && (n2.token = this.accessToken, s2["x-basement-token"] = this.accessToken), s2["x-serverless-sign"] = le.sign(n2, this.config.clientSecret), { url: this.config.requestUrl, method: "POST", data: n2, dataType: "json", header: s2 };
     }
     getAccessToken() {
       return this._getAccessTokenPromiseHub.exec();
@@ -12806,9 +12840,9 @@
     uploadFileToOSS({ url: e2, formData: t2, name: n2, filePath: s2, fileType: r2, onUploadProgress: i2 }) {
       return new Promise((o2, a2) => {
         const c2 = this.adapter.uploadFile({ url: e2, formData: t2, name: n2, filePath: s2, fileType: r2, header: { "X-OSS-server-side-encrpytion": "AES256" }, success(e3) {
-          e3 && e3.statusCode < 400 ? o2(e3) : a2(new se({ code: "UPLOAD_FAILED", message: "文件上传失败" }));
+          e3 && e3.statusCode < 400 ? o2(e3) : a2(new ee({ code: "UPLOAD_FAILED", message: "文件上传失败" }));
         }, fail(e3) {
-          a2(new se({ code: e3.code || "UPLOAD_FAILED", message: e3.message || e3.errMsg || "文件上传失败" }));
+          a2(new ee({ code: e3.code || "UPLOAD_FAILED", message: e3.message || e3.errMsg || "文件上传失败" }));
         } });
         "function" == typeof i2 && c2 && "function" == typeof c2.onProgressUpdate && c2.onProgressUpdate((e3) => {
           i2({ loaded: e3.totalBytesSent, total: e3.totalBytesExpectedToSend });
@@ -12820,41 +12854,46 @@
       return this.request(this.setupRequest(t2));
     }
     async uploadFile({ filePath: e2, cloudPath: t2, fileType: n2 = "image", cloudPathAsRealPath: s2 = false, onUploadProgress: r2, config: i2 }) {
-      if ("string" !== f(t2))
-        throw new se({ code: "INVALID_PARAM", message: "cloudPath必须为字符串类型" });
+      if ("string" !== g(t2))
+        throw new ee({ code: "INVALID_PARAM", message: "cloudPath必须为字符串类型" });
       if (!(t2 = t2.trim()))
-        throw new se({ code: "INVALID_PARAM", message: "cloudPath不可为空" });
+        throw new ee({ code: "INVALID_PARAM", message: "cloudPath不可为空" });
       if (/:\/\//.test(t2))
-        throw new se({ code: "INVALID_PARAM", message: "cloudPath不合法" });
+        throw new ee({ code: "INVALID_PARAM", message: "cloudPath不合法" });
       const o2 = i2 && i2.envType || this.config.envType;
       if (s2 && ("/" !== t2[0] && (t2 = "/" + t2), t2.indexOf("\\") > -1))
-        throw new se({ code: "INVALID_PARAM", message: "使用cloudPath作为路径时，cloudPath不可包含“\\”" });
-      const a2 = (await this.getOSSUploadOptionsFromPath({ env: o2, filename: s2 ? t2.split("/").pop() : t2, fileId: s2 ? t2 : void 0 })).result, c2 = "https://" + a2.cdnDomain + "/" + a2.ossPath, { securityToken: u2, accessKeyId: h2, signature: l2, host: d2, ossPath: p2, id: g2, policy: m2, ossCallbackUrl: y2 } = a2, _2 = { "Cache-Control": "max-age=2592000", "Content-Disposition": "attachment", OSSAccessKeyId: h2, Signature: l2, host: d2, id: g2, key: p2, policy: m2, success_action_status: 200 };
+        throw new ee({ code: "INVALID_PARAM", message: "使用cloudPath作为路径时，cloudPath不可包含“\\”" });
+      const a2 = (await this.getOSSUploadOptionsFromPath({ env: o2, filename: s2 ? t2.split("/").pop() : t2, fileId: s2 ? t2 : void 0 })).result, c2 = "https://" + a2.cdnDomain + "/" + a2.ossPath, { securityToken: u2, accessKeyId: h2, signature: l2, host: d2, ossPath: p2, id: f2, policy: m2, ossCallbackUrl: y2 } = a2, _2 = { "Cache-Control": "max-age=2592000", "Content-Disposition": "attachment", OSSAccessKeyId: h2, Signature: l2, host: d2, id: f2, key: p2, policy: m2, success_action_status: 200 };
       if (u2 && (_2["x-oss-security-token"] = u2), y2) {
-        const e3 = JSON.stringify({ callbackUrl: y2, callbackBody: JSON.stringify({ fileId: g2, spaceId: this.config.spaceId }), callbackBodyType: "application/json" });
-        _2.callback = fe.toBase64(e3);
+        const e3 = JSON.stringify({ callbackUrl: y2, callbackBody: JSON.stringify({ fileId: f2, spaceId: this.config.spaceId }), callbackBodyType: "application/json" });
+        _2.callback = le.toBase64(e3);
       }
       const w2 = { url: "https://" + a2.host, formData: _2, fileName: "file", name: "file", filePath: e2, fileType: n2 };
       if (await this.uploadFileToOSS(Object.assign({}, w2, { onUploadProgress: r2 })), y2)
         return { success: true, filePath: e2, fileID: c2 };
-      if ((await this.reportOSSUpload({ id: g2 })).success)
+      if ((await this.reportOSSUpload({ id: f2 })).success)
         return { success: true, filePath: e2, fileID: c2 };
-      throw new se({ code: "UPLOAD_FAILED", message: "文件上传失败" });
+      throw new ee({ code: "UPLOAD_FAILED", message: "文件上传失败" });
     }
     getTempFileURL({ fileList: e2 } = {}) {
       return new Promise((t2, n2) => {
-        Array.isArray(e2) && 0 !== e2.length || n2(new se({ code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" })), t2({ fileList: e2.map((e3) => ({ fileID: e3, tempFileURL: e3 })) });
+        Array.isArray(e2) && 0 !== e2.length || n2(new ee({ code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" })), this.getFileInfo({ fileList: e2 }).then((n3) => {
+          t2({ fileList: e2.map((e3, t3) => {
+            const s2 = n3.fileList[t3];
+            return { fileID: e3, tempFileURL: s2 && s2.url || e3 };
+          }) });
+        });
       });
     }
     async getFileInfo({ fileList: e2 } = {}) {
       if (!Array.isArray(e2) || 0 === e2.length)
-        throw new se({ code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" });
+        throw new ee({ code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" });
       const t2 = { method: "serverless.file.resource.info", params: JSON.stringify({ id: e2.map((e3) => e3.split("?")[0]).join(",") }) };
       return { fileList: (await this.request(this.setupRequest(t2))).result };
     }
   };
-  var me = { init(e2) {
-    const t2 = new ge(e2), n2 = { signInAnonymously: function() {
+  var pe = { init(e2) {
+    const t2 = new de(e2), n2 = { signInAnonymously: function() {
       return t2.authorize();
     }, getLoginState: function() {
       return Promise.resolve(false);
@@ -12863,13 +12902,13 @@
       return n2;
     }, t2.customAuth = t2.auth, t2;
   } };
-  const ye = "undefined" != typeof location && "http:" === location.protocol ? "http:" : "https:";
-  var _e;
+  const fe = "undefined" != typeof location && "http:" === location.protocol ? "http:" : "https:";
+  var ge;
   !function(e2) {
     e2.local = "local", e2.none = "none", e2.session = "session";
-  }(_e || (_e = {}));
-  var we = function() {
-  }, ve = n(function(e2, t2) {
+  }(ge || (ge = {}));
+  var me = function() {
+  }, ye = n(function(e2, t2) {
     var n2;
     e2.exports = (n2 = r, function(e3) {
       var t3 = n2, s2 = t3.lib, r2 = s2.WordArray, i2 = s2.Hasher, o2 = t3.algo, a2 = [], c2 = [];
@@ -12896,8 +12935,8 @@
             var f2 = u2[p2 - 15], g2 = (f2 << 25 | f2 >>> 7) ^ (f2 << 14 | f2 >>> 18) ^ f2 >>> 3, m2 = u2[p2 - 2], y2 = (m2 << 15 | m2 >>> 17) ^ (m2 << 13 | m2 >>> 19) ^ m2 >>> 10;
             u2[p2] = g2 + u2[p2 - 7] + y2 + u2[p2 - 16];
           }
-          var _2 = s3 & r3 ^ s3 & i3 ^ r3 & i3, w2 = (s3 << 30 | s3 >>> 2) ^ (s3 << 19 | s3 >>> 13) ^ (s3 << 10 | s3 >>> 22), v2 = d2 + ((a3 << 26 | a3 >>> 6) ^ (a3 << 21 | a3 >>> 11) ^ (a3 << 7 | a3 >>> 25)) + (a3 & h3 ^ ~a3 & l2) + c2[p2] + u2[p2];
-          d2 = l2, l2 = h3, h3 = a3, a3 = o3 + v2 | 0, o3 = i3, i3 = r3, r3 = s3, s3 = v2 + (w2 + _2) | 0;
+          var _2 = s3 & r3 ^ s3 & i3 ^ r3 & i3, w2 = (s3 << 30 | s3 >>> 2) ^ (s3 << 19 | s3 >>> 13) ^ (s3 << 10 | s3 >>> 22), I2 = d2 + ((a3 << 26 | a3 >>> 6) ^ (a3 << 21 | a3 >>> 11) ^ (a3 << 7 | a3 >>> 25)) + (a3 & h3 ^ ~a3 & l2) + c2[p2] + u2[p2];
+          d2 = l2, l2 = h3, h3 = a3, a3 = o3 + I2 | 0, o3 = i3, i3 = r3, r3 = s3, s3 = I2 + (w2 + _2) | 0;
         }
         n3[0] = n3[0] + s3 | 0, n3[1] = n3[1] + r3 | 0, n3[2] = n3[2] + i3 | 0, n3[3] = n3[3] + o3 | 0, n3[4] = n3[4] + a3 | 0, n3[5] = n3[5] + h3 | 0, n3[6] = n3[6] + l2 | 0, n3[7] = n3[7] + d2 | 0;
       }, _doFinalize: function() {
@@ -12909,16 +12948,16 @@
       } });
       t3.SHA256 = i2._createHelper(h2), t3.HmacSHA256 = i2._createHmacHelper(h2);
     }(Math), n2.SHA256);
-  }), Ie = ve, Se = n(function(e2, t2) {
+  }), _e = ye, we = n(function(e2, t2) {
     e2.exports = r.HmacSHA256;
   });
-  const be = () => {
+  const Ie = () => {
     let e2;
     if (!Promise) {
       e2 = () => {
       }, e2.promise = {};
       const t3 = () => {
-        throw new se({ message: 'Your Node runtime does support ES6 Promises. Set "global.Promise" to your preferred implementation of promises.' });
+        throw new ee({ message: 'Your Node runtime does support ES6 Promises. Set "global.Promise" to your preferred implementation of promises.' });
       };
       return Object.defineProperty(e2.promise, "then", { get: t3 }), Object.defineProperty(e2.promise, "catch", { get: t3 }), e2;
     }
@@ -12927,24 +12966,24 @@
     });
     return e2.promise = t2, e2;
   };
-  function ke(e2) {
+  function ve(e2) {
     return void 0 === e2;
   }
-  function Te(e2) {
+  function Se(e2) {
     return "[object Null]" === Object.prototype.toString.call(e2);
   }
-  function Ae(e2 = "") {
+  function Te(e2 = "") {
     return e2.replace(/([\s\S]+)\s+(请前往云开发AI小助手查看问题：.*)/, "$1");
   }
-  function Pe(e2 = 32) {
-    const t2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789", n2 = t2.length;
-    let s2 = "";
-    for (let r2 = 0; r2 < e2; r2++)
-      s2 += t2.charAt(Math.floor(Math.random() * n2));
-    return s2;
+  function be(e2 = 32) {
+    const t2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let n2 = "";
+    for (let s2 = 0; s2 < e2; s2++)
+      n2 += t2.charAt(Math.floor(62 * Math.random()));
+    return n2;
   }
-  var Ce;
-  function xe(e2) {
+  var ke;
+  function Ee(e2) {
     const t2 = (n2 = e2, "[object Array]" === Object.prototype.toString.call(n2) ? e2 : [e2]);
     var n2;
     for (const e3 of t2) {
@@ -12955,39 +12994,39 @@
   }
   !function(e2) {
     e2.WEB = "web", e2.WX_MP = "wx_mp";
-  }(Ce || (Ce = {}));
-  const Oe = { adapter: null, runtime: void 0 }, Ee = ["anonymousUuidKey"];
-  class Le extends we {
+  }(ke || (ke = {}));
+  const Ae = { adapter: null, runtime: void 0 }, Pe = ["anonymousUuidKey"];
+  class Ce extends me {
     constructor() {
-      super(), Oe.adapter.root.tcbObject || (Oe.adapter.root.tcbObject = {});
+      super(), Ae.adapter.root.tcbObject || (Ae.adapter.root.tcbObject = {});
     }
     setItem(e2, t2) {
-      Oe.adapter.root.tcbObject[e2] = t2;
+      Ae.adapter.root.tcbObject[e2] = t2;
     }
     getItem(e2) {
-      return Oe.adapter.root.tcbObject[e2];
+      return Ae.adapter.root.tcbObject[e2];
     }
     removeItem(e2) {
-      delete Oe.adapter.root.tcbObject[e2];
+      delete Ae.adapter.root.tcbObject[e2];
     }
     clear() {
-      delete Oe.adapter.root.tcbObject;
+      delete Ae.adapter.root.tcbObject;
     }
   }
-  function Re(e2, t2) {
+  function Oe(e2, t2) {
     switch (e2) {
       case "local":
-        return t2.localStorage || new Le();
+        return t2.localStorage || new Ce();
       case "none":
-        return new Le();
+        return new Ce();
       default:
-        return t2.sessionStorage || new Le();
+        return t2.sessionStorage || new Ce();
     }
   }
-  class Ue {
+  class xe {
     constructor(e2) {
       if (!this._storage) {
-        this._persistence = Oe.adapter.primaryStorage || e2.persistence, this._storage = Re(this._persistence, Oe.adapter);
+        this._persistence = Ae.adapter.primaryStorage || e2.persistence, this._storage = Oe(this._persistence, Ae.adapter);
         const t2 = "access_token_".concat(e2.env), n2 = "access_token_expire_".concat(e2.env), s2 = "refresh_token_".concat(e2.env), r2 = "anonymous_uuid_".concat(e2.env), i2 = "login_type_".concat(e2.env), o2 = "device_id", a2 = "token_type_".concat(e2.env), c2 = "user_info_".concat(e2.env);
         this.keys = { accessTokenKey: t2, accessTokenExpireKey: n2, refreshTokenKey: s2, anonymousUuidKey: r2, loginTypeKey: i2, userInfoKey: c2, deviceIdKey: o2, tokenTypeKey: a2 };
       }
@@ -12997,13 +13036,13 @@
         return;
       const t2 = "local" === this._persistence;
       this._persistence = e2;
-      const n2 = Re(e2, Oe.adapter);
+      const n2 = Oe(e2, Ae.adapter);
       for (const e3 in this.keys) {
         const s2 = this.keys[e3];
-        if (t2 && Ee.includes(e3))
+        if (t2 && Pe.includes(e3))
           continue;
         const r2 = this._storage.getItem(s2);
-        ke(r2) || Te(r2) || (n2.setItem(s2, r2), this._storage.removeItem(s2));
+        ve(r2) || Se(r2) || (n2.setItem(s2, r2), this._storage.removeItem(s2));
       }
       this._storage = n2;
     }
@@ -13037,21 +13076,21 @@
       this._storage.removeItem(e2);
     }
   }
-  const Ne = {}, De = {};
-  function Me(e2) {
+  const Ne = {}, Re = {};
+  function Le(e2) {
     return Ne[e2];
   }
-  class qe {
+  class Ue {
     constructor(e2, t2) {
       this.data = t2 || null, this.name = e2;
     }
   }
-  class Ke extends qe {
+  class De extends Ue {
     constructor(e2, t2) {
       super("error", { error: e2, data: t2 }), this.error = e2;
     }
   }
-  const Fe = new class {
+  const Me = new class {
     constructor() {
       this._listeners = {};
     }
@@ -13069,9 +13108,9 @@
       }(e2, t2, this._listeners), this;
     }
     fire(e2, t2) {
-      if (e2 instanceof Ke)
+      if (e2 instanceof De)
         return console.error(e2.error), this;
-      const n2 = "string" == typeof e2 ? new qe(e2, t2 || {}) : e2;
+      const n2 = "string" == typeof e2 ? new Ue(e2, t2 || {}) : e2;
       const s2 = n2.name;
       if (this._listens(s2)) {
         n2.target = this;
@@ -13085,21 +13124,21 @@
       return this._listeners[e2] && this._listeners[e2].length > 0;
     }
   }();
-  function je(e2, t2) {
-    Fe.on(e2, t2);
+  function qe(e2, t2) {
+    Me.on(e2, t2);
   }
-  function $e(e2, t2 = {}) {
-    Fe.fire(e2, t2);
+  function Fe(e2, t2 = {}) {
+    Me.fire(e2, t2);
   }
-  function Be(e2, t2) {
-    Fe.off(e2, t2);
+  function Ke(e2, t2) {
+    Me.off(e2, t2);
   }
-  const We = "loginStateChanged", He = "loginStateExpire", Je = "loginTypeChanged", ze = "anonymousConverted", Ve = "refreshAccessToken";
-  var Ge;
+  const je = "loginStateChanged", Be = "loginStateExpire", $e = "loginTypeChanged", He = "anonymousConverted", We = "refreshAccessToken";
+  var Je;
   !function(e2) {
     e2.ANONYMOUS = "ANONYMOUS", e2.WECHAT = "WECHAT", e2.WECHAT_PUBLIC = "WECHAT-PUBLIC", e2.WECHAT_OPEN = "WECHAT-OPEN", e2.CUSTOM = "CUSTOM", e2.EMAIL = "EMAIL", e2.USERNAME = "USERNAME", e2.NULL = "NULL";
-  }(Ge || (Ge = {}));
-  class Ye {
+  }(Je || (Je = {}));
+  class ze {
     constructor() {
       this._fnPromiseMap = /* @__PURE__ */ new Map();
     }
@@ -13108,8 +13147,8 @@
       return n2 || (n2 = new Promise(async (n3, s2) => {
         try {
           await this._runIdlePromise();
-          const s3 = t2();
-          n3(await s3);
+          const e3 = t2();
+          n3(await e3);
         } catch (e3) {
           s2(e3);
         } finally {
@@ -13121,19 +13160,19 @@
       return Promise.resolve();
     }
   }
-  class Qe {
+  class Ve {
     constructor(e2) {
-      this._singlePromise = new Ye(), this._cache = Me(e2.env), this._baseURL = "https://".concat(e2.env, ".ap-shanghai.tcb-api.tencentcloudapi.com"), this._reqClass = new Oe.adapter.reqClass({ timeout: e2.timeout, timeoutMsg: "请求在".concat(e2.timeout / 1e3, "s内未完成，已中断"), restrictedMethods: ["post"] });
+      this._singlePromise = new ze(), this._cache = Le(e2.env), this._baseURL = "https://".concat(e2.env, ".ap-shanghai.tcb-api.tencentcloudapi.com"), this._reqClass = new Ae.adapter.reqClass({ timeout: e2.timeout, timeoutMsg: "请求在".concat(e2.timeout / 1e3, "s内未完成，已中断"), restrictedMethods: ["post"] });
     }
     _getDeviceId() {
       if (this._deviceID)
         return this._deviceID;
       const { deviceIdKey: e2 } = this._cache.keys;
       let t2 = this._cache.getStore(e2);
-      return "string" == typeof t2 && t2.length >= 16 && t2.length <= 48 || (t2 = Pe(), this._cache.setStore(e2, t2)), this._deviceID = t2, t2;
+      return "string" == typeof t2 && t2.length >= 16 && t2.length <= 48 || (t2 = be(), this._cache.setStore(e2, t2)), this._deviceID = t2, t2;
     }
     async _request(e2, t2, n2 = {}) {
-      const s2 = { "x-request-id": Pe(), "x-device-id": this._getDeviceId() };
+      const s2 = { "x-request-id": be(), "x-device-id": this._getDeviceId() };
       if (n2.withAccessToken) {
         const { tokenTypeKey: e3 } = this._cache.keys, t3 = await this.getAccessToken(), n3 = this._cache.getStore(e3);
         s2.authorization = "".concat(n3, " ").concat(t3);
@@ -13142,8 +13181,8 @@
     }
     async _fetchAccessToken() {
       const { loginTypeKey: e2, accessTokenKey: t2, accessTokenExpireKey: n2, tokenTypeKey: s2 } = this._cache.keys, r2 = this._cache.getStore(e2);
-      if (r2 && r2 !== Ge.ANONYMOUS)
-        throw new se({ code: "INVALID_OPERATION", message: "非匿名登录不支持刷新 access token" });
+      if (r2 && r2 !== Je.ANONYMOUS)
+        throw new ee({ code: "INVALID_OPERATION", message: "非匿名登录不支持刷新 access token" });
       const i2 = await this._singlePromise.run("fetchAccessToken", async () => (await this._request("/auth/v1/signin/anonymously", {}, { method: "post" })).data), { access_token: o2, expires_in: a2, token_type: c2 } = i2;
       return this._cache.setStore(s2, c2), this._cache.setStore(t2, o2), this._cache.setStore(n2, Date.now() + 1e3 * a2), o2;
     }
@@ -13157,14 +13196,14 @@
     }
     async refreshAccessToken() {
       const { accessTokenKey: e2, accessTokenExpireKey: t2, loginTypeKey: n2 } = this._cache.keys;
-      return this._cache.removeStore(e2), this._cache.removeStore(t2), this._cache.setStore(n2, Ge.ANONYMOUS), this.getAccessToken();
+      return this._cache.removeStore(e2), this._cache.removeStore(t2), this._cache.setStore(n2, Je.ANONYMOUS), this.getAccessToken();
     }
     async getUserInfo() {
       return this._singlePromise.run("getUserInfo", async () => (await this._request("/auth/v1/user/me", {}, { withAccessToken: true, method: "get" })).data);
     }
   }
-  const Xe = ["auth.getJwt", "auth.logout", "auth.signInWithTicket", "auth.signInAnonymously", "auth.signIn", "auth.fetchAccessTokenWithRefreshToken", "auth.signUpWithEmailAndPassword", "auth.activateEndUserMail", "auth.sendPasswordResetEmail", "auth.resetPasswordWithToken", "auth.isUsernameRegistered"], Ze = { "X-SDK-Version": "1.3.5" };
-  function et(e2, t2, n2) {
+  const Ge = ["auth.getJwt", "auth.logout", "auth.signInWithTicket", "auth.signInAnonymously", "auth.signIn", "auth.fetchAccessTokenWithRefreshToken", "auth.signUpWithEmailAndPassword", "auth.activateEndUserMail", "auth.sendPasswordResetEmail", "auth.resetPasswordWithToken", "auth.isUsernameRegistered"], Ye = { "X-SDK-Version": "1.3.5" };
+  function Qe(e2, t2, n2) {
     const s2 = e2[t2];
     e2[t2] = function(t3) {
       const r2 = {}, i2 = {};
@@ -13183,14 +13222,14 @@
       })(), t3.headers = { ...t3.headers || {}, ...i2 }, s2.call(e2, t3);
     };
   }
-  function tt() {
+  function Xe() {
     const e2 = Math.random().toString(16).slice(2);
-    return { data: { seqId: e2 }, headers: { ...Ze, "x-seqid": e2 } };
+    return { data: { seqId: e2 }, headers: { ...Ye, "x-seqid": e2 } };
   }
-  class nt {
+  class Ze {
     constructor(e2 = {}) {
       var t2;
-      this.config = e2, this._reqClass = new Oe.adapter.reqClass({ timeout: this.config.timeout, timeoutMsg: "请求在".concat(this.config.timeout / 1e3, "s内未完成，已中断"), restrictedMethods: ["post"] }), this._cache = Me(this.config.env), this._localCache = (t2 = this.config.env, De[t2]), this.oauth = new Qe(this.config), et(this._reqClass, "post", [tt]), et(this._reqClass, "upload", [tt]), et(this._reqClass, "download", [tt]);
+      this.config = e2, this._reqClass = new Ae.adapter.reqClass({ timeout: this.config.timeout, timeoutMsg: "请求在".concat(this.config.timeout / 1e3, "s内未完成，已中断"), restrictedMethods: ["post"] }), this._cache = Le(this.config.env), this._localCache = (t2 = this.config.env, Re[t2]), this.oauth = new Ve(this.config), Qe(this._reqClass, "post", [Xe]), Qe(this._reqClass, "upload", [Xe]), Qe(this._reqClass, "download", [Xe]);
     }
     async post(e2) {
       return await this._reqClass.post(e2);
@@ -13218,27 +13257,27 @@
       this._cache.removeStore(e2), this._cache.removeStore(t2);
       let i2 = this._cache.getStore(n2);
       if (!i2)
-        throw new se({ message: "未登录CloudBase" });
+        throw new ee({ message: "未登录CloudBase" });
       const o2 = { refresh_token: i2 }, a2 = await this.request("auth.fetchAccessTokenWithRefreshToken", o2);
       if (a2.data.code) {
         const { code: e3 } = a2.data;
         if ("SIGN_PARAM_INVALID" === e3 || "REFRESH_TOKEN_EXPIRED" === e3 || "INVALID_REFRESH_TOKEN" === e3) {
-          if (this._cache.getStore(s2) === Ge.ANONYMOUS && "INVALID_REFRESH_TOKEN" === e3) {
+          if (this._cache.getStore(s2) === Je.ANONYMOUS && "INVALID_REFRESH_TOKEN" === e3) {
             const e4 = this._cache.getStore(r2), t3 = this._cache.getStore(n2), s3 = await this.send("auth.signInAnonymously", { anonymous_uuid: e4, refresh_token: t3 });
             return this.setRefreshToken(s3.refresh_token), this._refreshAccessToken();
           }
-          $e(He), this._cache.removeStore(n2);
+          Fe(Be), this._cache.removeStore(n2);
         }
-        throw new se({ code: a2.data.code, message: "刷新access token失败：".concat(a2.data.code) });
+        throw new ee({ code: a2.data.code, message: "刷新access token失败：".concat(a2.data.code) });
       }
       if (a2.data.access_token)
-        return $e(Ve), this._cache.setStore(e2, a2.data.access_token), this._cache.setStore(t2, a2.data.access_token_expire + Date.now()), { accessToken: a2.data.access_token, accessTokenExpire: a2.data.access_token_expire };
+        return Fe(We), this._cache.setStore(e2, a2.data.access_token), this._cache.setStore(t2, a2.data.access_token_expire + Date.now()), { accessToken: a2.data.access_token, accessTokenExpire: a2.data.access_token_expire };
       a2.data.refresh_token && (this._cache.removeStore(n2), this._cache.setStore(n2, a2.data.refresh_token), this._refreshAccessToken());
     }
     async getAccessToken() {
       const { accessTokenKey: e2, accessTokenExpireKey: t2, refreshTokenKey: n2 } = this._cache.keys;
       if (!this._cache.getStore(n2))
-        throw new se({ message: "refresh token不存在，登录状态异常" });
+        throw new ee({ message: "refresh token不存在，登录状态异常" });
       let s2 = this._cache.getStore(e2), r2 = this._cache.getStore(t2), i2 = true;
       return this._shouldRefreshAccessTokenHook && !await this._shouldRefreshAccessTokenHook(s2, r2) && (i2 = false), (!s2 || !r2 || r2 < Date.now()) && i2 ? this.refreshAccessToken() : { accessToken: s2, accessTokenExpire: r2 };
     }
@@ -13247,7 +13286,7 @@
       let r2 = "application/x-www-form-urlencoded";
       const i2 = { action: e2, env: this.config.env, dataVersion: "2019-08-16", ...t2 };
       let o2;
-      if (-1 === Xe.indexOf(e2) && (this._cache.keys, i2.access_token = await this.oauth.getAccessToken()), "storage.uploadFile" === e2) {
+      if (-1 === Ge.indexOf(e2) && (this._cache.keys, i2.access_token = await this.oauth.getAccessToken()), "storage.uploadFile" === e2) {
         o2 = new FormData();
         for (let e3 in o2)
           o2.hasOwnProperty(e3) && void 0 !== o2[e3] && o2.append(e3, i2[e3]);
@@ -13270,24 +13309,24 @@
         for (let e4 in n3)
           "" === r3 ? !s3 && (t3 += "?") : r3 += "&", r3 += "".concat(e4, "=").concat(encodeURIComponent(n3[e4]));
         return /^http(s)?\:\/\//.test(t3 += r3) ? t3 : "".concat(e3).concat(t3);
-      }(ye, "//tcb-api.tencentcloudapi.com/web", d2);
+      }(fe, "//tcb-api.tencentcloudapi.com/web", d2);
       l2 && (p2 += l2);
       const f2 = await this.post({ url: p2, data: o2, ...a2 }), g2 = f2.header && f2.header["x-tcb-trace"];
       if (g2 && this._localCache.setStore(s2, g2), 200 !== Number(f2.status) && 200 !== Number(f2.statusCode) || !f2.data)
-        throw new se({ code: "NETWORK_ERROR", message: "network request error" });
+        throw new ee({ code: "NETWORK_ERROR", message: "network request error" });
       return f2;
     }
     async send(e2, t2 = {}, n2 = {}) {
       const s2 = await this.request(e2, t2, { ...n2, onUploadProgress: t2.onUploadProgress });
-      if (("ACCESS_TOKEN_DISABLED" === s2.data.code || "ACCESS_TOKEN_EXPIRED" === s2.data.code) && -1 === Xe.indexOf(e2)) {
+      if (("ACCESS_TOKEN_DISABLED" === s2.data.code || "ACCESS_TOKEN_EXPIRED" === s2.data.code) && -1 === Ge.indexOf(e2)) {
         await this.oauth.refreshAccessToken();
         const s3 = await this.request(e2, t2, { ...n2, onUploadProgress: t2.onUploadProgress });
         if (s3.data.code)
-          throw new se({ code: s3.data.code, message: Ae(s3.data.message) });
+          throw new ee({ code: s3.data.code, message: Te(s3.data.message) });
         return s3.data;
       }
       if (s2.data.code)
-        throw new se({ code: s2.data.code, message: Ae(s2.data.message) });
+        throw new ee({ code: s2.data.code, message: Te(s2.data.message) });
       return s2.data;
     }
     setRefreshToken(e2) {
@@ -13295,13 +13334,13 @@
       this._cache.removeStore(t2), this._cache.removeStore(n2), this._cache.setStore(s2, e2);
     }
   }
-  const st = {};
-  function rt(e2) {
-    return st[e2];
+  const et = {};
+  function tt(e2) {
+    return et[e2];
   }
-  class it {
+  class nt {
     constructor(e2) {
-      this.config = e2, this._cache = Me(e2.env), this._request = rt(e2.env);
+      this.config = e2, this._cache = Le(e2.env), this._request = tt(e2.env);
     }
     setRefreshToken(e2) {
       const { accessTokenKey: t2, accessTokenExpireKey: n2, refreshTokenKey: s2 } = this._cache.keys;
@@ -13320,15 +13359,15 @@
       this._cache.setStore(t2, e2);
     }
   }
-  class ot {
+  class st {
     constructor(e2) {
       if (!e2)
-        throw new se({ code: "PARAM_ERROR", message: "envId is not defined" });
-      this._envId = e2, this._cache = Me(this._envId), this._request = rt(this._envId), this.setUserInfo();
+        throw new ee({ code: "PARAM_ERROR", message: "envId is not defined" });
+      this._envId = e2, this._cache = Le(this._envId), this._request = tt(this._envId), this.setUserInfo();
     }
     linkWithTicket(e2) {
       if ("string" != typeof e2)
-        throw new se({ code: "PARAM_ERROR", message: "ticket must be string" });
+        throw new ee({ code: "PARAM_ERROR", message: "ticket must be string" });
       return this._request.send("auth.linkWithTicket", { ticket: e2 });
     }
     linkWithRedirect(e2) {
@@ -13342,7 +13381,7 @@
     }
     updateUsername(e2) {
       if ("string" != typeof e2)
-        throw new se({ code: "PARAM_ERROR", message: "username must be a string" });
+        throw new ee({ code: "PARAM_ERROR", message: "username must be a string" });
       return this._request.send("auth.updateUsername", { username: e2 });
     }
     async getLinkedUidList() {
@@ -13378,65 +13417,65 @@
       this._cache.setStore(t2, e2), this.setUserInfo();
     }
   }
-  class at {
+  class rt {
     constructor(e2) {
       if (!e2)
-        throw new se({ code: "PARAM_ERROR", message: "envId is not defined" });
-      this._cache = Me(e2);
+        throw new ee({ code: "PARAM_ERROR", message: "envId is not defined" });
+      this._cache = Le(e2);
       const { refreshTokenKey: t2, accessTokenKey: n2, accessTokenExpireKey: s2 } = this._cache.keys, r2 = this._cache.getStore(t2), i2 = this._cache.getStore(n2), o2 = this._cache.getStore(s2);
-      this.credential = { refreshToken: r2, accessToken: i2, accessTokenExpire: o2 }, this.user = new ot(e2);
+      this.credential = { refreshToken: r2, accessToken: i2, accessTokenExpire: o2 }, this.user = new st(e2);
     }
     get isAnonymousAuth() {
-      return this.loginType === Ge.ANONYMOUS;
+      return this.loginType === Je.ANONYMOUS;
     }
     get isCustomAuth() {
-      return this.loginType === Ge.CUSTOM;
+      return this.loginType === Je.CUSTOM;
     }
     get isWeixinAuth() {
-      return this.loginType === Ge.WECHAT || this.loginType === Ge.WECHAT_OPEN || this.loginType === Ge.WECHAT_PUBLIC;
+      return this.loginType === Je.WECHAT || this.loginType === Je.WECHAT_OPEN || this.loginType === Je.WECHAT_PUBLIC;
     }
     get loginType() {
       return this._cache.getStore(this._cache.keys.loginTypeKey);
     }
   }
-  class ct extends it {
+  class it extends nt {
     async signIn() {
-      this._cache.updatePersistence("local"), await this._request.oauth.getAccessToken(), $e(We), $e(Je, { env: this.config.env, loginType: Ge.ANONYMOUS, persistence: "local" });
-      const e2 = new at(this.config.env);
+      this._cache.updatePersistence("local"), await this._request.oauth.getAccessToken(), Fe(je), Fe($e, { env: this.config.env, loginType: Je.ANONYMOUS, persistence: "local" });
+      const e2 = new rt(this.config.env);
       return await e2.user.refresh(), e2;
     }
     async linkAndRetrieveDataWithTicket(e2) {
       const { anonymousUuidKey: t2, refreshTokenKey: n2 } = this._cache.keys, s2 = this._cache.getStore(t2), r2 = this._cache.getStore(n2), i2 = await this._request.send("auth.linkAndRetrieveDataWithTicket", { anonymous_uuid: s2, refresh_token: r2, ticket: e2 });
       if (i2.refresh_token)
-        return this._clearAnonymousUUID(), this.setRefreshToken(i2.refresh_token), await this._request.refreshAccessToken(), $e(ze, { env: this.config.env }), $e(Je, { loginType: Ge.CUSTOM, persistence: "local" }), { credential: { refreshToken: i2.refresh_token } };
-      throw new se({ message: "匿名转化失败" });
+        return this._clearAnonymousUUID(), this.setRefreshToken(i2.refresh_token), await this._request.refreshAccessToken(), Fe(He, { env: this.config.env }), Fe($e, { loginType: Je.CUSTOM, persistence: "local" }), { credential: { refreshToken: i2.refresh_token } };
+      throw new ee({ message: "匿名转化失败" });
     }
     _setAnonymousUUID(e2) {
       const { anonymousUuidKey: t2, loginTypeKey: n2 } = this._cache.keys;
-      this._cache.removeStore(t2), this._cache.setStore(t2, e2), this._cache.setStore(n2, Ge.ANONYMOUS);
+      this._cache.removeStore(t2), this._cache.setStore(t2, e2), this._cache.setStore(n2, Je.ANONYMOUS);
     }
     _clearAnonymousUUID() {
       this._cache.removeStore(this._cache.keys.anonymousUuidKey);
     }
   }
-  class ut extends it {
+  class ot extends nt {
     async signIn(e2) {
       if ("string" != typeof e2)
-        throw new se({ code: "PARAM_ERROR", message: "ticket must be a string" });
+        throw new ee({ code: "PARAM_ERROR", message: "ticket must be a string" });
       const { refreshTokenKey: t2 } = this._cache.keys, n2 = await this._request.send("auth.signInWithTicket", { ticket: e2, refresh_token: this._cache.getStore(t2) || "" });
       if (n2.refresh_token)
-        return this.setRefreshToken(n2.refresh_token), await this._request.refreshAccessToken(), $e(We), $e(Je, { env: this.config.env, loginType: Ge.CUSTOM, persistence: this.config.persistence }), await this.refreshUserInfo(), new at(this.config.env);
-      throw new se({ message: "自定义登录失败" });
+        return this.setRefreshToken(n2.refresh_token), await this._request.refreshAccessToken(), Fe(je), Fe($e, { env: this.config.env, loginType: Je.CUSTOM, persistence: this.config.persistence }), await this.refreshUserInfo(), new rt(this.config.env);
+      throw new ee({ message: "自定义登录失败" });
     }
   }
-  class ht extends it {
+  class at extends nt {
     async signIn(e2, t2) {
       if ("string" != typeof e2)
-        throw new se({ code: "PARAM_ERROR", message: "email must be a string" });
+        throw new ee({ code: "PARAM_ERROR", message: "email must be a string" });
       const { refreshTokenKey: n2 } = this._cache.keys, s2 = await this._request.send("auth.signIn", { loginType: "EMAIL", email: e2, password: t2, refresh_token: this._cache.getStore(n2) || "" }), { refresh_token: r2, access_token: i2, access_token_expire: o2 } = s2;
       if (r2)
-        return this.setRefreshToken(r2), i2 && o2 ? this.setAccessToken(i2, o2) : await this._request.refreshAccessToken(), await this.refreshUserInfo(), $e(We), $e(Je, { env: this.config.env, loginType: Ge.EMAIL, persistence: this.config.persistence }), new at(this.config.env);
-      throw s2.code ? new se({ code: s2.code, message: "邮箱登录失败: ".concat(s2.message) }) : new se({ message: "邮箱登录失败" });
+        return this.setRefreshToken(r2), i2 && o2 ? this.setAccessToken(i2, o2) : await this._request.refreshAccessToken(), await this.refreshUserInfo(), Fe(je), Fe($e, { env: this.config.env, loginType: Je.EMAIL, persistence: this.config.persistence }), new rt(this.config.env);
+      throw s2.code ? new ee({ code: s2.code, message: "邮箱登录失败: ".concat(s2.message) }) : new ee({ message: "邮箱登录失败" });
     }
     async activate(e2) {
       return this._request.send("auth.activateEndUserMail", { token: e2 });
@@ -13445,20 +13484,20 @@
       return this._request.send("auth.resetPasswordWithToken", { token: e2, newPassword: t2 });
     }
   }
-  class lt extends it {
+  class ct extends nt {
     async signIn(e2, t2) {
       if ("string" != typeof e2)
-        throw new se({ code: "PARAM_ERROR", message: "username must be a string" });
+        throw new ee({ code: "PARAM_ERROR", message: "username must be a string" });
       "string" != typeof t2 && (t2 = "", console.warn("password is empty"));
-      const { refreshTokenKey: n2 } = this._cache.keys, s2 = await this._request.send("auth.signIn", { loginType: Ge.USERNAME, username: e2, password: t2, refresh_token: this._cache.getStore(n2) || "" }), { refresh_token: r2, access_token_expire: i2, access_token: o2 } = s2;
+      const { refreshTokenKey: n2 } = this._cache.keys, s2 = await this._request.send("auth.signIn", { loginType: Je.USERNAME, username: e2, password: t2, refresh_token: this._cache.getStore(n2) || "" }), { refresh_token: r2, access_token_expire: i2, access_token: o2 } = s2;
       if (r2)
-        return this.setRefreshToken(r2), o2 && i2 ? this.setAccessToken(o2, i2) : await this._request.refreshAccessToken(), await this.refreshUserInfo(), $e(We), $e(Je, { env: this.config.env, loginType: Ge.USERNAME, persistence: this.config.persistence }), new at(this.config.env);
-      throw s2.code ? new se({ code: s2.code, message: "用户名密码登录失败: ".concat(s2.message) }) : new se({ message: "用户名密码登录失败" });
+        return this.setRefreshToken(r2), o2 && i2 ? this.setAccessToken(o2, i2) : await this._request.refreshAccessToken(), await this.refreshUserInfo(), Fe(je), Fe($e, { env: this.config.env, loginType: Je.USERNAME, persistence: this.config.persistence }), new rt(this.config.env);
+      throw s2.code ? new ee({ code: s2.code, message: "用户名密码登录失败: ".concat(s2.message) }) : new ee({ message: "用户名密码登录失败" });
     }
   }
-  class dt {
+  class ut {
     constructor(e2) {
-      this.config = e2, this._cache = Me(e2.env), this._request = rt(e2.env), this._onAnonymousConverted = this._onAnonymousConverted.bind(this), this._onLoginTypeChanged = this._onLoginTypeChanged.bind(this), je(Je, this._onLoginTypeChanged);
+      this.config = e2, this._cache = Le(e2.env), this._request = tt(e2.env), this._onAnonymousConverted = this._onAnonymousConverted.bind(this), this._onLoginTypeChanged = this._onLoginTypeChanged.bind(this), qe($e, this._onLoginTypeChanged);
     }
     get currentUser() {
       const e2 = this.hasLoginState();
@@ -13468,38 +13507,38 @@
       return this._cache.getStore(this._cache.keys.loginTypeKey);
     }
     anonymousAuthProvider() {
-      return new ct(this.config);
+      return new it(this.config);
     }
     customAuthProvider() {
-      return new ut(this.config);
+      return new ot(this.config);
     }
     emailAuthProvider() {
-      return new ht(this.config);
+      return new at(this.config);
     }
     usernameAuthProvider() {
-      return new lt(this.config);
+      return new ct(this.config);
     }
     async signInAnonymously() {
-      return new ct(this.config).signIn();
+      return new it(this.config).signIn();
     }
     async signInWithEmailAndPassword(e2, t2) {
-      return new ht(this.config).signIn(e2, t2);
+      return new at(this.config).signIn(e2, t2);
     }
     signInWithUsernameAndPassword(e2, t2) {
-      return new lt(this.config).signIn(e2, t2);
+      return new ct(this.config).signIn(e2, t2);
     }
     async linkAndRetrieveDataWithTicket(e2) {
-      this._anonymousAuthProvider || (this._anonymousAuthProvider = new ct(this.config)), je(ze, this._onAnonymousConverted);
+      this._anonymousAuthProvider || (this._anonymousAuthProvider = new it(this.config)), qe(He, this._onAnonymousConverted);
       return await this._anonymousAuthProvider.linkAndRetrieveDataWithTicket(e2);
     }
     async signOut() {
-      if (this.loginType === Ge.ANONYMOUS)
-        throw new se({ message: "匿名用户不支持登出操作" });
+      if (this.loginType === Je.ANONYMOUS)
+        throw new ee({ message: "匿名用户不支持登出操作" });
       const { refreshTokenKey: e2, accessTokenKey: t2, accessTokenExpireKey: n2 } = this._cache.keys, s2 = this._cache.getStore(e2);
       if (!s2)
         return;
       const r2 = await this._request.send("auth.logout", { refresh_token: s2 });
-      return this._cache.removeStore(e2), this._cache.removeStore(t2), this._cache.removeStore(n2), $e(We), $e(Je, { env: this.config.env, loginType: Ge.NULL, persistence: this.config.persistence }), r2;
+      return this._cache.removeStore(e2), this._cache.removeStore(t2), this._cache.removeStore(n2), Fe(je), Fe($e, { env: this.config.env, loginType: Je.NULL, persistence: this.config.persistence }), r2;
     }
     async signUpWithEmailAndPassword(e2, t2) {
       return this._request.send("auth.signUpWithEmailAndPassword", { email: e2, password: t2 });
@@ -13508,7 +13547,7 @@
       return this._request.send("auth.sendPasswordResetEmail", { email: e2 });
     }
     onLoginStateChanged(e2) {
-      je(We, () => {
+      qe(je, () => {
         const t3 = this.hasLoginState();
         e2.call(this, t3);
       });
@@ -13516,16 +13555,16 @@
       e2.call(this, t2);
     }
     onLoginStateExpired(e2) {
-      je(He, e2.bind(this));
+      qe(Be, e2.bind(this));
     }
     onAccessTokenRefreshed(e2) {
-      je(Ve, e2.bind(this));
+      qe(We, e2.bind(this));
     }
     onAnonymousConverted(e2) {
-      je(ze, e2.bind(this));
+      qe(He, e2.bind(this));
     }
     onLoginTypeChanged(e2) {
-      je(Je, () => {
+      qe($e, () => {
         const t2 = this.hasLoginState();
         e2.call(this, t2);
       });
@@ -13535,11 +13574,11 @@
     }
     hasLoginState() {
       const { accessTokenKey: e2, accessTokenExpireKey: t2 } = this._cache.keys, n2 = this._cache.getStore(e2), s2 = this._cache.getStore(t2);
-      return this._request.oauth.isAccessTokenExpired(n2, s2) ? null : new at(this.config.env);
+      return this._request.oauth.isAccessTokenExpired(n2, s2) ? null : new rt(this.config.env);
     }
     async isUsernameRegistered(e2) {
       if ("string" != typeof e2)
-        throw new se({ code: "PARAM_ERROR", message: "username must be a string" });
+        throw new ee({ code: "PARAM_ERROR", message: "username must be a string" });
       const { data: t2 } = await this._request.send("auth.isUsernameRegistered", { username: e2 });
       return t2 && t2.isRegistered;
     }
@@ -13547,7 +13586,7 @@
       return Promise.resolve(this.hasLoginState());
     }
     async signInWithTicket(e2) {
-      return new ut(this.config).signIn(e2);
+      return new ot(this.config).signIn(e2);
     }
     shouldRefreshAccessToken(e2) {
       this._request._shouldRefreshAccessTokenHook = e2.bind(this);
@@ -13568,63 +13607,63 @@
       s2 === this.config.env && (this._cache.updatePersistence(n2), this._cache.setStore(this._cache.keys.loginTypeKey, t2));
     }
   }
-  const pt = function(e2, t2) {
-    t2 = t2 || be();
-    const n2 = rt(this.config.env), { cloudPath: s2, filePath: r2, onUploadProgress: i2, fileType: o2 = "image" } = e2;
+  const ht = function(e2, t2) {
+    t2 = t2 || Ie();
+    const n2 = tt(this.config.env), { cloudPath: s2, filePath: r2, onUploadProgress: i2, fileType: o2 = "image" } = e2;
     return n2.send("storage.getUploadMetadata", { path: s2 }).then((e3) => {
       const { data: { url: a2, authorization: c2, token: u2, fileId: h2, cosFileId: l2 }, requestId: d2 } = e3, p2 = { key: s2, signature: c2, "x-cos-meta-fileid": l2, success_action_status: "201", "x-cos-security-token": u2 };
       n2.upload({ url: a2, data: p2, file: r2, name: s2, fileType: o2, onUploadProgress: i2 }).then((e4) => {
-        201 === e4.statusCode ? t2(null, { fileID: h2, requestId: d2 }) : t2(new se({ code: "STORAGE_REQUEST_FAIL", message: "STORAGE_REQUEST_FAIL: ".concat(e4.data) }));
+        201 === e4.statusCode ? t2(null, { fileID: h2, requestId: d2 }) : t2(new ee({ code: "STORAGE_REQUEST_FAIL", message: "STORAGE_REQUEST_FAIL: ".concat(e4.data) }));
       }).catch((e4) => {
         t2(e4);
       });
     }).catch((e3) => {
       t2(e3);
     }), t2.promise;
-  }, ft = function(e2, t2) {
-    t2 = t2 || be();
-    const n2 = rt(this.config.env), { cloudPath: s2 } = e2;
+  }, lt = function(e2, t2) {
+    t2 = t2 || Ie();
+    const n2 = tt(this.config.env), { cloudPath: s2 } = e2;
     return n2.send("storage.getUploadMetadata", { path: s2 }).then((e3) => {
       t2(null, e3);
     }).catch((e3) => {
       t2(e3);
     }), t2.promise;
-  }, gt = function({ fileList: e2 }, t2) {
-    if (t2 = t2 || be(), !e2 || !Array.isArray(e2))
+  }, dt = function({ fileList: e2 }, t2) {
+    if (t2 = t2 || Ie(), !e2 || !Array.isArray(e2))
       return { code: "INVALID_PARAM", message: "fileList必须是非空的数组" };
     for (let t3 of e2)
       if (!t3 || "string" != typeof t3)
         return { code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" };
     const n2 = { fileid_list: e2 };
-    return rt(this.config.env).send("storage.batchDeleteFile", n2).then((e3) => {
+    return tt(this.config.env).send("storage.batchDeleteFile", n2).then((e3) => {
       e3.code ? t2(null, e3) : t2(null, { fileList: e3.data.delete_list, requestId: e3.requestId });
     }).catch((e3) => {
       t2(e3);
     }), t2.promise;
-  }, mt = function({ fileList: e2 }, t2) {
-    t2 = t2 || be(), e2 && Array.isArray(e2) || t2(null, { code: "INVALID_PARAM", message: "fileList必须是非空的数组" });
+  }, pt = function({ fileList: e2 }, t2) {
+    t2 = t2 || Ie(), e2 && Array.isArray(e2) || t2(null, { code: "INVALID_PARAM", message: "fileList必须是非空的数组" });
     let n2 = [];
     for (let s3 of e2)
       "object" == typeof s3 ? (s3.hasOwnProperty("fileID") && s3.hasOwnProperty("maxAge") || t2(null, { code: "INVALID_PARAM", message: "fileList的元素必须是包含fileID和maxAge的对象" }), n2.push({ fileid: s3.fileID, max_age: s3.maxAge })) : "string" == typeof s3 ? n2.push({ fileid: s3 }) : t2(null, { code: "INVALID_PARAM", message: "fileList的元素必须是字符串" });
     const s2 = { file_list: n2 };
-    return rt(this.config.env).send("storage.batchGetDownloadUrl", s2).then((e3) => {
+    return tt(this.config.env).send("storage.batchGetDownloadUrl", s2).then((e3) => {
       e3.code ? t2(null, e3) : t2(null, { fileList: e3.data.download_list, requestId: e3.requestId });
     }).catch((e3) => {
       t2(e3);
     }), t2.promise;
-  }, yt = async function({ fileID: e2 }, t2) {
-    const n2 = (await mt.call(this, { fileList: [{ fileID: e2, maxAge: 600 }] })).fileList[0];
+  }, ft = async function({ fileID: e2 }, t2) {
+    const n2 = (await pt.call(this, { fileList: [{ fileID: e2, maxAge: 600 }] })).fileList[0];
     if ("SUCCESS" !== n2.code)
       return t2 ? t2(n2) : new Promise((e3) => {
         e3(n2);
       });
-    const s2 = rt(this.config.env);
+    const s2 = tt(this.config.env);
     let r2 = n2.download_url;
     if (r2 = encodeURI(r2), !t2)
       return s2.download({ url: r2 });
     t2(await s2.download({ url: r2 }));
-  }, _t = function({ name: e2, data: t2, query: n2, parse: s2, search: r2, timeout: i2 }, o2) {
-    const a2 = o2 || be();
+  }, gt = function({ name: e2, data: t2, query: n2, parse: s2, search: r2, timeout: i2 }, o2) {
+    const a2 = o2 || Ie();
     let c2;
     try {
       c2 = t2 ? JSON.stringify(t2) : "";
@@ -13632,9 +13671,9 @@
       return Promise.reject(e3);
     }
     if (!e2)
-      return Promise.reject(new se({ code: "PARAM_ERROR", message: "函数名不能为空" }));
+      return Promise.reject(new ee({ code: "PARAM_ERROR", message: "函数名不能为空" }));
     const u2 = { inQuery: n2, parse: s2, search: r2, function_name: e2, request_data: c2 };
-    return rt(this.config.env).send("functions.invokeFunction", u2, { timeout: i2 }).then((e3) => {
+    return tt(this.config.env).send("functions.invokeFunction", u2, { timeout: i2 }).then((e3) => {
       if (e3.code)
         a2(null, e3);
       else {
@@ -13645,89 +13684,89 @@
           try {
             t3 = JSON.parse(e3.data.response_data), a2(null, { result: t3, requestId: e3.requestId });
           } catch (e4) {
-            a2(new se({ message: "response data must be json" }));
+            a2(new ee({ message: "response data must be json" }));
           }
       }
       return a2.promise;
     }).catch((e3) => {
       a2(e3);
     }), a2.promise;
-  }, wt = { timeout: 15e3, persistence: "session" }, vt = {};
-  class It {
+  }, mt = { timeout: 15e3, persistence: "session" }, yt = 6e5, _t = {};
+  class wt {
     constructor(e2) {
       this.config = e2 || this.config, this.authObj = void 0;
     }
     init(e2) {
-      switch (Oe.adapter || (this.requestClient = new Oe.adapter.reqClass({ timeout: e2.timeout || 5e3, timeoutMsg: "请求在".concat((e2.timeout || 5e3) / 1e3, "s内未完成，已中断") })), this.config = { ...wt, ...e2 }, true) {
-        case this.config.timeout > 6e5:
-          console.warn("timeout大于可配置上限[10分钟]，已重置为上限数值"), this.config.timeout = 6e5;
+      switch (Ae.adapter || (this.requestClient = new Ae.adapter.reqClass({ timeout: e2.timeout || 5e3, timeoutMsg: "请求在".concat((e2.timeout || 5e3) / 1e3, "s内未完成，已中断") })), this.config = { ...mt, ...e2 }, true) {
+        case this.config.timeout > yt:
+          console.warn("timeout大于可配置上限[10分钟]，已重置为上限数值"), this.config.timeout = yt;
           break;
         case this.config.timeout < 100:
           console.warn("timeout小于可配置下限[100ms]，已重置为下限数值"), this.config.timeout = 100;
       }
-      return new It(this.config);
+      return new wt(this.config);
     }
     auth({ persistence: e2 } = {}) {
       if (this.authObj)
         return this.authObj;
-      const t2 = e2 || Oe.adapter.primaryStorage || wt.persistence;
+      const t2 = e2 || Ae.adapter.primaryStorage || mt.persistence;
       var n2;
       return t2 !== this.config.persistence && (this.config.persistence = t2), function(e3) {
         const { env: t3 } = e3;
-        Ne[t3] = new Ue(e3), De[t3] = new Ue({ ...e3, persistence: "local" });
-      }(this.config), n2 = this.config, st[n2.env] = new nt(n2), this.authObj = new dt(this.config), this.authObj;
+        Ne[t3] = new xe(e3), Re[t3] = new xe({ ...e3, persistence: "local" });
+      }(this.config), n2 = this.config, et[n2.env] = new Ze(n2), this.authObj = new ut(this.config), this.authObj;
     }
     on(e2, t2) {
-      return je.apply(this, [e2, t2]);
+      return qe.apply(this, [e2, t2]);
     }
     off(e2, t2) {
-      return Be.apply(this, [e2, t2]);
+      return Ke.apply(this, [e2, t2]);
     }
     callFunction(e2, t2) {
-      return _t.apply(this, [e2, t2]);
-    }
-    deleteFile(e2, t2) {
       return gt.apply(this, [e2, t2]);
     }
+    deleteFile(e2, t2) {
+      return dt.apply(this, [e2, t2]);
+    }
     getTempFileURL(e2, t2) {
-      return mt.apply(this, [e2, t2]);
-    }
-    downloadFile(e2, t2) {
-      return yt.apply(this, [e2, t2]);
-    }
-    uploadFile(e2, t2) {
       return pt.apply(this, [e2, t2]);
     }
-    getUploadMetadata(e2, t2) {
+    downloadFile(e2, t2) {
       return ft.apply(this, [e2, t2]);
     }
+    uploadFile(e2, t2) {
+      return ht.apply(this, [e2, t2]);
+    }
+    getUploadMetadata(e2, t2) {
+      return lt.apply(this, [e2, t2]);
+    }
     registerExtension(e2) {
-      vt[e2.name] = e2;
+      _t[e2.name] = e2;
     }
     async invokeExtension(e2, t2) {
-      const n2 = vt[e2];
+      const n2 = _t[e2];
       if (!n2)
-        throw new se({ message: "扩展".concat(e2, " 必须先注册") });
+        throw new ee({ message: "扩展".concat(e2, " 必须先注册") });
       return await n2.invoke(t2, this);
     }
     useAdapters(e2) {
-      const { adapter: t2, runtime: n2 } = xe(e2) || {};
-      t2 && (Oe.adapter = t2), n2 && (Oe.runtime = n2);
+      const { adapter: t2, runtime: n2 } = Ee(e2) || {};
+      t2 && (Ae.adapter = t2), n2 && (Ae.runtime = n2);
     }
   }
-  var St = new It();
-  function bt(e2, t2, n2) {
+  var It = new wt();
+  function vt(e2, t2, n2) {
     void 0 === n2 && (n2 = {});
     var s2 = /\?/.test(t2), r2 = "";
     for (var i2 in n2)
       "" === r2 ? !s2 && (t2 += "?") : r2 += "&", r2 += i2 + "=" + encodeURIComponent(n2[i2]);
     return /^http(s)?:\/\//.test(t2 += r2) ? t2 : "" + e2 + t2;
   }
-  class kt {
+  class St {
     get(e2) {
       const { url: t2, data: n2, headers: s2, timeout: r2 } = e2;
       return new Promise((e3, i2) => {
-        re.request({ url: bt("https:", t2), data: n2, method: "GET", header: s2, timeout: r2, success(t3) {
+        te.request({ url: vt("https:", t2), data: n2, method: "GET", header: s2, timeout: r2, success(t3) {
           e3(t3);
         }, fail(e4) {
           i2(e4);
@@ -13737,7 +13776,7 @@
     post(e2) {
       const { url: t2, data: n2, headers: s2, timeout: r2 } = e2;
       return new Promise((e3, i2) => {
-        re.request({ url: bt("https:", t2), data: n2, method: "POST", header: s2, timeout: r2, success(t3) {
+        te.request({ url: vt("https:", t2), data: n2, method: "POST", header: s2, timeout: r2, success(t3) {
           e3(t3);
         }, fail(e4) {
           i2(e4);
@@ -13746,7 +13785,7 @@
     }
     upload(e2) {
       return new Promise((t2, n2) => {
-        const { url: s2, file: r2, data: i2, headers: o2, fileType: a2 } = e2, c2 = re.uploadFile({ url: bt("https:", s2), name: "file", formData: Object.assign({}, i2), filePath: r2, fileType: a2, header: o2, success(e3) {
+        const { url: s2, file: r2, data: i2, headers: o2, fileType: a2 } = e2, c2 = te.uploadFile({ url: vt("https:", s2), name: "file", formData: Object.assign({}, i2), filePath: r2, fileType: a2, header: o2, success(e3) {
           const n3 = { statusCode: e3.statusCode, data: e3.data || {} };
           200 === e3.statusCode && i2.success_action_status && (n3.statusCode = parseInt(i2.success_action_status, 10)), t2(n3);
         }, fail(e3) {
@@ -13759,22 +13798,22 @@
     }
   }
   const Tt = { setItem(e2, t2) {
-    re.setStorageSync(e2, t2);
-  }, getItem: (e2) => re.getStorageSync(e2), removeItem(e2) {
-    re.removeStorageSync(e2);
+    te.setStorageSync(e2, t2);
+  }, getItem: (e2) => te.getStorageSync(e2), removeItem(e2) {
+    te.removeStorageSync(e2);
   }, clear() {
-    re.clearStorageSync();
+    te.clearStorageSync();
   } };
-  var At = { genAdapter: function() {
-    return { root: {}, reqClass: kt, localStorage: Tt, primaryStorage: "local" };
+  var bt = { genAdapter: function() {
+    return { root: {}, reqClass: St, localStorage: Tt, primaryStorage: "local" };
   }, isMatch: function() {
     return true;
   }, runtime: "uni_app" };
-  St.useAdapters(At);
-  const Pt = St, Ct = Pt.init;
-  Pt.init = function(e2) {
+  It.useAdapters(bt);
+  const kt = It, Et = kt.init;
+  kt.init = function(e2) {
     e2.env = e2.spaceId;
-    const t2 = Ct.call(this, e2);
+    const t2 = Et.call(this, e2);
     t2.config.provider = "tencent", t2.config.spaceId = e2.spaceId;
     const n2 = t2.auth;
     return t2.auth = function(e3) {
@@ -13783,7 +13822,7 @@
         var n3;
         t3[e4] = (n3 = t3[e4], function(e5) {
           e5 = e5 || {};
-          const { success: t4, fail: s2, complete: r2 } = ne(e5);
+          const { success: t4, fail: s2, complete: r2 } = Z(e5);
           if (!(t4 || s2 || r2))
             return n3.call(this, e5);
           n3.call(this, e5).then((e6) => {
@@ -13795,12 +13834,12 @@
       }), t3;
     }, t2.customAuth = t2.auth, t2;
   };
-  var xt = Pt;
-  async function Ot(e2, t2) {
+  var At = kt;
+  async function Pt(e2, t2) {
     const n2 = "http://".concat(e2, ":").concat(t2, "/system/ping");
     try {
       const e3 = await (s2 = { url: n2, timeout: 500 }, new Promise((e4, t3) => {
-        re.request({ ...s2, success(t4) {
+        te.request({ ...s2, success(t4) {
           e4(t4);
         }, fail(e5) {
           t3(e5);
@@ -13812,37 +13851,37 @@
     }
     var s2;
   }
-  async function Et(e2, t2) {
+  async function Ct(e2, t2) {
     let n2;
     for (let s2 = 0; s2 < e2.length; s2++) {
       const r2 = e2[s2];
-      if (await Ot(r2, t2)) {
+      if (await Pt(r2, t2)) {
         n2 = r2;
         break;
       }
     }
     return { address: n2, port: t2 };
   }
-  const Lt = { "serverless.file.resource.generateProximalSign": "storage/generate-proximal-sign", "serverless.file.resource.report": "storage/report", "serverless.file.resource.delete": "storage/delete", "serverless.file.resource.getTempFileURL": "storage/get-temp-file-url" };
-  var Rt = class {
+  const Ot = { "serverless.file.resource.generateProximalSign": "storage/generate-proximal-sign", "serverless.file.resource.report": "storage/report", "serverless.file.resource.delete": "storage/delete", "serverless.file.resource.getTempFileURL": "storage/get-temp-file-url" };
+  var xt = class {
     constructor(e2) {
       if (["spaceId", "clientSecret"].forEach((t2) => {
         if (!Object.prototype.hasOwnProperty.call(e2, t2))
           throw new Error("".concat(t2, " required"));
       }), !e2.endpoint)
         throw new Error("集群空间未配置ApiEndpoint，配置后需要重新关联服务空间后生效");
-      this.config = Object.assign({}, e2), this.config.provider = "dcloud", this.config.requestUrl = this.config.endpoint + "/client", this.config.envType = this.config.envType || "public", this.adapter = re;
+      this.config = Object.assign({}, e2), this.config.provider = "dcloud", this.config.requestUrl = this.config.endpoint + "/client", this.config.envType = this.config.envType || "public", this.adapter = te;
     }
     async request(e2, t2 = true) {
       const n2 = t2;
-      return e2 = n2 ? await this.setupLocalRequest(e2) : this.setupRequest(e2), Promise.resolve().then(() => n2 ? this.requestLocal(e2) : fe.wrappedRequest(e2, this.adapter.request));
+      return e2 = n2 ? await this.setupLocalRequest(e2) : this.setupRequest(e2), Promise.resolve().then(() => n2 ? this.requestLocal(e2) : le.wrappedRequest(e2, this.adapter.request));
     }
     requestLocal(e2) {
       return new Promise((t2, n2) => {
         this.adapter.request(Object.assign(e2, { complete(e3) {
           if (e3 || (e3 = {}), !e3.statusCode || e3.statusCode >= 400) {
             const t3 = e3.data && e3.data.code || "SYS_ERR", s2 = e3.data && e3.data.message || "request:fail";
-            return n2(new se({ code: t3, message: s2 }));
+            return n2(new ee({ code: t3, message: s2 }));
           }
           t2({ success: true, result: e3.data });
         } }));
@@ -13850,15 +13889,15 @@
     }
     setupRequest(e2) {
       const t2 = Object.assign({}, e2, { spaceId: this.config.spaceId, timestamp: Date.now() }), n2 = { "Content-Type": "application/json" };
-      n2["x-serverless-sign"] = fe.sign(t2, this.config.clientSecret);
-      const s2 = pe();
+      n2["x-serverless-sign"] = le.sign(t2, this.config.clientSecret);
+      const s2 = he();
       n2["x-client-info"] = encodeURIComponent(JSON.stringify(s2));
-      const { token: r2 } = oe();
+      const { token: r2 } = se();
       return n2["x-client-token"] = r2, { url: this.config.requestUrl, method: "POST", data: t2, dataType: "json", header: JSON.parse(JSON.stringify(n2)) };
     }
     async setupLocalRequest(e2) {
-      const t2 = pe(), { token: n2 } = oe(), s2 = Object.assign({}, e2, { spaceId: this.config.spaceId, timestamp: Date.now(), clientInfo: t2, token: n2 }), { address: r2, servePort: i2 } = this.__dev__ && this.__dev__.debugInfo || {}, { address: o2 } = await Et(r2, i2);
-      return { url: "http://".concat(o2, ":").concat(i2, "/").concat(Lt[e2.method]), method: "POST", data: s2, dataType: "json", header: JSON.parse(JSON.stringify({ "Content-Type": "application/json" })) };
+      const t2 = he(), { token: n2 } = se(), s2 = Object.assign({}, e2, { spaceId: this.config.spaceId, timestamp: Date.now(), clientInfo: t2, token: n2 }), { address: r2, servePort: i2 } = this.__dev__ && this.__dev__.debugInfo || {}, { address: o2 } = await Ct(r2, i2);
+      return { url: "http://".concat(o2, ":").concat(i2, "/").concat(Ot[e2.method]), method: "POST", data: s2, dataType: "json", header: JSON.parse(JSON.stringify({ "Content-Type": "application/json" })) };
     }
     callFunction(e2) {
       const t2 = { method: "serverless.function.runtime.invoke", params: JSON.stringify({ functionTarget: e2.name, functionArgs: e2.data || {} }) };
@@ -13874,22 +13913,22 @@
     }
     uploadFile({ filePath: e2, cloudPath: t2, fileType: n2 = "image", onUploadProgress: s2 }) {
       if (!t2)
-        throw new se({ code: "CLOUDPATH_REQUIRED", message: "cloudPath不可为空" });
+        throw new ee({ code: "CLOUDPATH_REQUIRED", message: "cloudPath不可为空" });
       let r2;
       return this.getUploadFileOptions({ cloudPath: t2 }).then((t3) => {
         const { url: i2, formData: o2, name: a2 } = t3.result;
         return r2 = t3.result.fileUrl, new Promise((t4, r3) => {
           const c2 = this.adapter.uploadFile({ url: i2, formData: o2, name: a2, filePath: e2, fileType: n2, success(e3) {
-            e3 && e3.statusCode < 400 ? t4(e3) : r3(new se({ code: "UPLOAD_FAILED", message: "文件上传失败" }));
+            e3 && e3.statusCode < 400 ? t4(e3) : r3(new ee({ code: "UPLOAD_FAILED", message: "文件上传失败" }));
           }, fail(e3) {
-            r3(new se({ code: e3.code || "UPLOAD_FAILED", message: e3.message || e3.errMsg || "文件上传失败" }));
+            r3(new ee({ code: e3.code || "UPLOAD_FAILED", message: e3.message || e3.errMsg || "文件上传失败" }));
           } });
           "function" == typeof s2 && c2 && "function" == typeof c2.onProgressUpdate && c2.onProgressUpdate((e3) => {
             s2({ loaded: e3.totalBytesSent, total: e3.totalBytesExpectedToSend });
           });
         });
       }).then(() => this.reportUploadFile({ cloudPath: t2 })).then((t3) => new Promise((n3, s3) => {
-        t3.success ? n3({ success: true, filePath: e2, fileID: r2 }) : s3(new se({ code: "UPLOAD_FAILED", message: "文件上传失败" }));
+        t3.success ? n3({ success: true, filePath: e2, fileID: r2 }) : s3(new ee({ code: "UPLOAD_FAILED", message: "文件上传失败" }));
       }));
     }
     deleteFile({ fileList: e2 }) {
@@ -13897,22 +13936,22 @@
       return this.request(t2).then((e3) => {
         if (e3.success)
           return e3.result;
-        throw new se({ code: "DELETE_FILE_FAILED", message: "删除文件失败" });
+        throw new ee({ code: "DELETE_FILE_FAILED", message: "删除文件失败" });
       });
     }
     getTempFileURL({ fileList: e2, maxAge: t2 } = {}) {
       if (!Array.isArray(e2) || 0 === e2.length)
-        throw new se({ code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" });
+        throw new ee({ code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" });
       const n2 = { method: "serverless.file.resource.getTempFileURL", params: JSON.stringify({ fileList: e2, maxAge: t2 }) };
       return this.request(n2).then((e3) => {
         if (e3.success)
           return { fileList: e3.result.fileList.map((e4) => ({ fileID: e4.fileID, tempFileURL: e4.tempFileURL })) };
-        throw new se({ code: "GET_TEMP_FILE_URL_FAILED", message: "获取临时文件链接失败" });
+        throw new ee({ code: "GET_TEMP_FILE_URL_FAILED", message: "获取临时文件链接失败" });
       });
     }
   };
-  var Ut = { init(e2) {
-    const t2 = new Rt(e2), n2 = { signInAnonymously: function() {
+  var Nt = { init(e2) {
+    const t2 = new xt(e2), n2 = { signInAnonymously: function() {
       return Promise.resolve();
     }, getLoginState: function() {
       return Promise.resolve(false);
@@ -13920,67 +13959,67 @@
     return t2.auth = function() {
       return n2;
     }, t2.customAuth = t2.auth, t2;
-  } }, Nt = n(function(e2, t2) {
+  } }, Rt = n(function(e2, t2) {
     e2.exports = r.enc.Hex;
   });
-  function Dt() {
+  function Lt() {
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(e2) {
       var t2 = 16 * Math.random() | 0;
       return ("x" === e2 ? t2 : 3 & t2 | 8).toString(16);
     });
   }
-  function Mt(e2 = "", t2 = {}) {
-    const { data: n2, functionName: s2, method: r2, headers: i2, signHeaderKeys: o2 = [], config: a2 } = t2, c2 = String(Date.now()), u2 = Dt(), h2 = Object.assign({}, i2, { "x-from-app-id": a2.spaceAppId, "x-from-env-id": a2.spaceId, "x-to-env-id": a2.spaceId, "x-from-instance-id": c2, "x-from-function-name": s2, "x-client-timestamp": c2, "x-alipay-source": "client", "x-request-id": u2, "x-alipay-callid": u2, "x-trace-id": u2 }), l2 = ["x-from-app-id", "x-from-env-id", "x-to-env-id", "x-from-instance-id", "x-from-function-name", "x-client-timestamp"].concat(o2), [d2 = "", p2 = ""] = e2.split("?") || [], f2 = function(e3) {
-      const t3 = e3.signedHeaders.join(";"), n3 = e3.signedHeaders.map((t4) => "".concat(t4.toLowerCase(), ":").concat(e3.headers[t4], "\n")).join(""), s3 = Ie(e3.body).toString(Nt), r3 = "".concat(e3.method.toUpperCase(), "\n").concat(e3.path, "\n").concat(e3.query, "\n").concat(n3, "\n").concat(t3, "\n").concat(s3, "\n"), i3 = Ie(r3).toString(Nt), o3 = "HMAC-SHA256\n".concat(e3.timestamp, "\n").concat(i3, "\n"), a3 = Se(o3, e3.secretKey).toString(Nt);
-      return "HMAC-SHA256 Credential=".concat(e3.secretId, ", SignedHeaders=").concat(t3, ", Signature=").concat(a3);
+  function Ut(e2 = "", t2 = {}) {
+    const { data: n2, functionName: s2, method: r2, headers: i2, signHeaderKeys: o2 = [], config: a2 } = t2, c2 = String(Date.now()), u2 = Lt(), h2 = Object.assign({}, i2, { "x-from-app-id": a2.spaceAppId, "x-from-env-id": a2.spaceId, "x-to-env-id": a2.spaceId, "x-from-instance-id": c2, "x-from-function-name": s2, "x-client-timestamp": c2, "x-alipay-source": "client", "x-request-id": u2, "x-alipay-callid": u2, "x-trace-id": u2 }), l2 = ["x-from-app-id", "x-from-env-id", "x-to-env-id", "x-from-instance-id", "x-from-function-name", "x-client-timestamp"].concat(o2), [d2 = "", p2 = ""] = e2.split("?") || [], f2 = function(e3) {
+      const t3 = "HMAC-SHA256", n3 = e3.signedHeaders.join(";"), s3 = e3.signedHeaders.map((t4) => "".concat(t4.toLowerCase(), ":").concat(e3.headers[t4], "\n")).join(""), r3 = _e(e3.body).toString(Rt), i3 = "".concat(e3.method.toUpperCase(), "\n").concat(e3.path, "\n").concat(e3.query, "\n").concat(s3, "\n").concat(n3, "\n").concat(r3, "\n"), o3 = _e(i3).toString(Rt), a3 = "".concat(t3, "\n").concat(e3.timestamp, "\n").concat(o3, "\n"), c3 = we(a3, e3.secretKey).toString(Rt);
+      return "".concat(t3, " Credential=").concat(e3.secretId, ", SignedHeaders=").concat(n3, ", Signature=").concat(c3);
     }({ path: d2, query: p2, method: r2, headers: h2, timestamp: c2, body: JSON.stringify(n2), secretId: a2.accessKey, secretKey: a2.secretKey, signedHeaders: l2.sort() });
     return { url: "".concat(a2.endpoint).concat(e2), headers: Object.assign({}, h2, { Authorization: f2 }) };
   }
-  function qt({ url: e2, data: t2, method: n2 = "POST", headers: s2 = {}, timeout: r2 }) {
+  function Dt({ url: e2, data: t2, method: n2 = "POST", headers: s2 = {}, timeout: r2 }) {
     return new Promise((i2, o2) => {
-      re.request({ url: e2, method: n2, data: "object" == typeof t2 ? JSON.stringify(t2) : t2, header: s2, dataType: "json", timeout: r2, complete: (e3 = {}) => {
+      te.request({ url: e2, method: n2, data: "object" == typeof t2 ? JSON.stringify(t2) : t2, header: s2, dataType: "json", timeout: r2, complete: (e3 = {}) => {
         const t3 = s2["x-trace-id"] || "";
         if (!e3.statusCode || e3.statusCode >= 400) {
           const { message: n3, errMsg: s3, trace_id: r3 } = e3.data || {};
-          return o2(new se({ code: "SYS_ERR", message: n3 || s3 || "request:fail", requestId: r3 || t3 }));
+          return o2(new ee({ code: "SYS_ERR", message: n3 || s3 || "request:fail", requestId: r3 || t3 }));
         }
         i2({ status: e3.statusCode, data: e3.data, headers: e3.header, requestId: t3 });
       } });
     });
   }
-  function Kt(e2, t2) {
-    const { path: n2, data: s2, method: r2 = "GET" } = e2, { url: i2, headers: o2 } = Mt(n2, { functionName: "", data: s2, method: r2, headers: { "x-alipay-cloud-mode": "oss", "x-data-api-type": "oss", "x-expire-timestamp": Date.now() + 6e4 }, signHeaderKeys: ["x-data-api-type", "x-expire-timestamp"], config: t2 });
-    return qt({ url: i2, data: s2, method: r2, headers: o2 }).then((e3) => {
+  function Mt(e2, t2) {
+    const { path: n2, data: s2, method: r2 = "GET" } = e2, { url: i2, headers: o2 } = Ut(n2, { functionName: "", data: s2, method: r2, headers: { "x-alipay-cloud-mode": "oss", "x-data-api-type": "oss", "x-expire-timestamp": Date.now() + 6e4 }, signHeaderKeys: ["x-data-api-type", "x-expire-timestamp"], config: t2 });
+    return Dt({ url: i2, data: s2, method: r2, headers: o2 }).then((e3) => {
       const t3 = e3.data || {};
       if (!t3.success)
-        throw new se({ code: e3.errCode, message: e3.errMsg, requestId: e3.requestId });
+        throw new ee({ code: e3.errCode, message: e3.errMsg, requestId: e3.requestId });
       return t3.data || {};
     }).catch((e3) => {
-      throw new se({ code: e3.errCode, message: e3.errMsg, requestId: e3.requestId });
+      throw new ee({ code: e3.errCode, message: e3.errMsg, requestId: e3.requestId });
     });
   }
-  function Ft(e2 = "") {
+  function qt(e2 = "") {
     const t2 = e2.trim().replace(/^cloud:\/\//, ""), n2 = t2.indexOf("/");
     if (n2 <= 0)
-      throw new se({ code: "INVALID_PARAM", message: "fileID不合法" });
+      throw new ee({ code: "INVALID_PARAM", message: "fileID不合法" });
     const s2 = t2.substring(0, n2), r2 = t2.substring(n2 + 1);
     return s2 !== this.config.spaceId && console.warn("file ".concat(e2, " does not belong to env ").concat(this.config.spaceId)), r2;
   }
-  function jt(e2 = "") {
+  function Ft(e2 = "") {
     return "cloud://".concat(this.config.spaceId, "/").concat(e2.replace(/^\/+/, ""));
   }
-  class $t {
+  class Kt {
     constructor(e2) {
       this.config = e2;
     }
     signedURL(e2, t2 = {}) {
-      const n2 = "/ws/function/".concat(e2), s2 = this.config.wsEndpoint.replace(/^ws(s)?:\/\//, ""), r2 = Object.assign({}, t2, { accessKeyId: this.config.accessKey, signatureNonce: Dt(), timestamp: "" + Date.now() }), i2 = [n2, ["accessKeyId", "authorization", "signatureNonce", "timestamp"].sort().map(function(e3) {
+      const n2 = "/ws/function/".concat(e2), s2 = this.config.wsEndpoint.replace(/^ws(s)?:\/\//, ""), r2 = Object.assign({}, t2, { accessKeyId: this.config.accessKey, signatureNonce: Lt(), timestamp: "" + Date.now() }), i2 = [n2, ["accessKeyId", "authorization", "signatureNonce", "timestamp"].sort().map(function(e3) {
         return r2[e3] ? "".concat(e3, "=").concat(r2[e3]) : null;
-      }).filter(Boolean).join("&"), "host:".concat(s2)].join("\n"), o2 = ["HMAC-SHA256", Ie(i2).toString(Nt)].join("\n"), a2 = Se(o2, this.config.secretKey).toString(Nt), c2 = Object.keys(r2).map((e3) => "".concat(e3, "=").concat(encodeURIComponent(r2[e3]))).join("&");
+      }).filter(Boolean).join("&"), "host:".concat(s2)].join("\n"), o2 = ["HMAC-SHA256", _e(i2).toString(Rt)].join("\n"), a2 = we(o2, this.config.secretKey).toString(Rt), c2 = Object.keys(r2).map((e3) => "".concat(e3, "=").concat(encodeURIComponent(r2[e3]))).join("&");
       return "".concat(this.config.wsEndpoint).concat(n2, "?").concat(c2, "&signature=").concat(a2);
     }
   }
-  var Bt = class {
+  var jt = class {
     constructor(e2) {
       if (["spaceId", "spaceAppId", "accessKey", "secretKey"].forEach((t2) => {
         if (!Object.prototype.hasOwnProperty.call(e2, t2))
@@ -13992,33 +14031,33 @@
           throw new Error("endpoint must start with https://");
         e2.endpoint = e2.endpoint.replace(/\/$/, "");
       }
-      this.config = Object.assign({}, e2, { endpoint: e2.endpoint || "https://".concat(e2.spaceId, ".api-hz.cloudbasefunction.cn"), wsEndpoint: e2.wsEndpoint || "wss://".concat(e2.spaceId, ".api-hz.cloudbasefunction.cn") }), this._websocket = new $t(this.config);
+      this.config = Object.assign({}, e2, { endpoint: e2.endpoint || "https://".concat(e2.spaceId, ".api-hz.cloudbasefunction.cn"), wsEndpoint: e2.wsEndpoint || "wss://".concat(e2.spaceId, ".api-hz.cloudbasefunction.cn") }), this._websocket = new Kt(this.config);
     }
     callFunction(e2) {
       return function(e3, t2) {
         const { name: n2, data: s2, async: r2 = false, timeout: i2 } = e3, o2 = "POST", a2 = { "x-to-function-name": n2 };
         r2 && (a2["x-function-invoke-type"] = "async");
-        const { url: c2, headers: u2 } = Mt("/functions/invokeFunction", { functionName: n2, data: s2, method: o2, headers: a2, signHeaderKeys: ["x-to-function-name"], config: t2 });
-        return qt({ url: c2, data: s2, method: o2, headers: u2, timeout: i2 }).then((e4) => {
+        const { url: c2, headers: u2 } = Ut("/functions/invokeFunction", { functionName: n2, data: s2, method: o2, headers: a2, signHeaderKeys: ["x-to-function-name"], config: t2 });
+        return Dt({ url: c2, data: s2, method: o2, headers: u2, timeout: i2 }).then((e4) => {
           let t3 = 0;
           if (r2) {
             const n3 = e4.data || {};
             t3 = "200" === n3.errCode ? 0 : n3.errCode, e4.data = n3.data || {}, e4.errMsg = n3.errMsg;
           }
           if (0 !== t3)
-            throw new se({ code: t3, message: e4.errMsg, requestId: e4.requestId });
+            throw new ee({ code: t3, message: e4.errMsg, requestId: e4.requestId });
           return { errCode: t3, success: 0 === t3, requestId: e4.requestId, result: e4.data };
         }).catch((e4) => {
-          throw new se({ code: e4.errCode, message: e4.errMsg, requestId: e4.requestId });
+          throw new ee({ code: e4.errCode, message: e4.errMsg, requestId: e4.requestId });
         });
       }(e2, this.config);
     }
     uploadFileToOSS({ url: e2, filePath: t2, fileType: n2, formData: s2, onUploadProgress: r2 }) {
       return new Promise((i2, o2) => {
-        const a2 = re.uploadFile({ url: e2, filePath: t2, fileType: n2, formData: s2, name: "file", success(e3) {
-          e3 && e3.statusCode < 400 ? i2(e3) : o2(new se({ code: "UPLOAD_FAILED", message: "文件上传失败" }));
+        const a2 = te.uploadFile({ url: e2, filePath: t2, fileType: n2, formData: s2, name: "file", success(e3) {
+          e3 && e3.statusCode < 400 ? i2(e3) : o2(new ee({ code: "UPLOAD_FAILED", message: "文件上传失败" }));
         }, fail(e3) {
-          o2(new se({ code: e3.code || "UPLOAD_FAILED", message: e3.message || e3.errMsg || "文件上传失败" }));
+          o2(new ee({ code: e3.code || "UPLOAD_FAILED", message: e3.message || e3.errMsg || "文件上传失败" }));
         } });
         "function" == typeof r2 && a2 && "function" == typeof a2.onProgressUpdate && a2.onProgressUpdate((e3) => {
           r2({ loaded: e3.totalBytesSent, total: e3.totalBytesExpectedToSend });
@@ -14026,13 +14065,13 @@
       });
     }
     async uploadFile({ filePath: e2, cloudPath: t2 = "", fileType: n2 = "image", onUploadProgress: s2 }) {
-      if ("string" !== f(t2))
-        throw new se({ code: "INVALID_PARAM", message: "cloudPath必须为字符串类型" });
+      if ("string" !== g(t2))
+        throw new ee({ code: "INVALID_PARAM", message: "cloudPath必须为字符串类型" });
       if (!(t2 = t2.trim()))
-        throw new se({ code: "INVALID_PARAM", message: "cloudPath不可为空" });
+        throw new ee({ code: "INVALID_PARAM", message: "cloudPath不可为空" });
       if (/:\/\//.test(t2))
-        throw new se({ code: "INVALID_PARAM", message: "cloudPath不合法" });
-      const r2 = await Kt({ path: "/".concat(t2.replace(/^\//, ""), "?post_url") }, this.config), { file_id: i2, upload_url: o2, form_data: a2 } = r2, c2 = a2 && a2.reduce((e3, t3) => (e3[t3.key] = t3.value, e3), {});
+        throw new ee({ code: "INVALID_PARAM", message: "cloudPath不合法" });
+      const r2 = await Mt({ path: "/".concat(t2.replace(/^\//, ""), "?post_url") }, this.config), { file_id: i2, upload_url: o2, form_data: a2 } = r2, c2 = a2 && a2.reduce((e3, t3) => (e3[t3.key] = t3.value, e3), {});
       return this.uploadFileToOSS({ url: o2, filePath: e2, fileType: n2, formData: c2, onUploadProgress: s2 }).then(() => ({ fileID: i2 }));
     }
     async getTempFileURL({ fileList: e2 }) {
@@ -14041,29 +14080,29 @@
         const s2 = [];
         for (const n3 of e2) {
           let e3;
-          "string" !== f(n3) && t2({ code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" });
+          "string" !== g(n3) && t2({ code: "INVALID_PARAM", message: "fileList的元素必须是非空的字符串" });
           try {
-            e3 = Ft.call(this, n3);
+            e3 = qt.call(this, n3);
           } catch (t3) {
             console.warn(t3.errCode, t3.errMsg), e3 = n3;
           }
           s2.push({ file_id: e3, expire: 600 });
         }
-        Kt({ path: "/?download_url", data: { file_list: s2 }, method: "POST" }, this.config).then((e3) => {
+        Mt({ path: "/?download_url", data: { file_list: s2 }, method: "POST" }, this.config).then((e3) => {
           const { file_list: n3 = [] } = e3;
-          t2({ fileList: n3.map((e4) => ({ fileID: jt.call(this, e4.file_id), tempFileURL: e4.download_url })) });
+          t2({ fileList: n3.map((e4) => ({ fileID: Ft.call(this, e4.file_id), tempFileURL: e4.download_url })) });
         }).catch((e3) => n2(e3));
       });
     }
     async connectWebSocket(e2) {
       const { name: t2, query: n2 } = e2;
-      return re.connectSocket({ url: this._websocket.signedURL(t2, n2), complete: () => {
+      return te.connectSocket({ url: this._websocket.signedURL(t2, n2), complete: () => {
       } });
     }
   };
-  var Wt = { init: (e2) => {
+  var Bt = { init: (e2) => {
     e2.provider = "alipay";
-    const t2 = new Bt(e2);
+    const t2 = new jt(e2);
     return t2.auth = function() {
       return { signInAnonymously: function() {
         return Promise.resolve();
@@ -14072,21 +14111,21 @@
       } };
     }, t2;
   } };
-  function Ht({ data: e2 }) {
+  function $t({ data: e2 }) {
     let t2;
-    t2 = pe();
+    t2 = he();
     const n2 = JSON.parse(JSON.stringify(e2 || {}));
     if (Object.assign(n2, { clientInfo: t2 }), !n2.uniIdToken) {
-      const { token: e3 } = oe();
+      const { token: e3 } = se();
       e3 && (n2.uniIdToken = e3);
     }
     return n2;
   }
-  async function Jt(e2 = {}) {
+  async function Ht(e2 = {}) {
     await this.__dev__.initLocalNetwork();
     const { localAddress: t2, localPort: n2 } = this.__dev__, s2 = { aliyun: "aliyun", tencent: "tcb", alipay: "alipay", dcloud: "dcloud" }[this.config.provider], r2 = this.config.spaceId, i2 = "http://".concat(t2, ":").concat(n2, "/system/check-function"), o2 = "http://".concat(t2, ":").concat(n2, "/cloudfunctions/").concat(e2.name);
     return new Promise((t3, n3) => {
-      re.request({ method: "POST", url: i2, data: { name: e2.name, platform: A, provider: s2, spaceId: r2 }, timeout: 3e3, success(e3) {
+      te.request({ method: "POST", url: i2, data: { name: e2.name, platform: A, provider: s2, spaceId: r2 }, timeout: 3e3, success(e3) {
         t3(e3);
       }, fail() {
         t3({ data: { code: "NETWORK_ERROR", message: "连接本地调试服务失败，请检查客户端是否和主机在同一局域网下，自动切换为已部署的云函数。" } });
@@ -14119,38 +14158,153 @@
         return this._callCloudFunction(e2);
       }
       return new Promise((t4, n4) => {
-        const r3 = Ht.call(this, { data: e2.data });
-        re.request({ method: "POST", url: o2, data: { provider: s2, platform: A, param: r3 }, timeout: e2.timeout, success: ({ statusCode: e3, data: s3 } = {}) => !e3 || e3 >= 400 ? n4(new se({ code: s3.code || "SYS_ERR", message: s3.message || "request:fail" })) : t4({ result: s3 }), fail(e3) {
-          n4(new se({ code: e3.code || e3.errCode || "SYS_ERR", message: e3.message || e3.errMsg || "request:fail" }));
+        const r3 = $t.call(this, { data: e2.data });
+        te.request({ method: "POST", url: o2, data: { provider: s2, platform: A, param: r3 }, timeout: e2.timeout, success: ({ statusCode: e3, data: s3 } = {}) => !e3 || e3 >= 400 ? n4(new ee({ code: s3.code || "SYS_ERR", message: s3.message || "request:fail" })) : t4({ result: s3 }), fail(e3) {
+          n4(new ee({ code: e3.code || e3.errCode || "SYS_ERR", message: e3.message || e3.errMsg || "request:fail" }));
         } });
       });
     });
   }
-  const zt = [{ rule: /fc_function_not_found|FUNCTION_NOT_FOUND/, content: "，云函数[{functionName}]在云端不存在，请检查此云函数名称是否正确以及该云函数是否已上传到服务空间", mode: "append" }];
-  var Vt = /[\\^$.*+?()[\]{}|]/g, Gt = RegExp(Vt.source);
-  function Yt(e2, t2, n2) {
-    return e2.replace(new RegExp((s2 = t2) && Gt.test(s2) ? s2.replace(Vt, "\\$&") : s2, "g"), n2);
+  const Wt = [{ rule: /fc_function_not_found|FUNCTION_NOT_FOUND/, content: "，云函数[{functionName}]在云端不存在，请检查此云函数名称是否正确以及该云函数是否已上传到服务空间", mode: "append" }];
+  var Jt = /[\\^$.*+?()[\]{}|]/g, zt = RegExp(Jt.source);
+  function Vt(e2, t2, n2) {
+    return e2.replace(new RegExp((s2 = t2) && zt.test(s2) ? s2.replace(Jt, "\\$&") : s2, "g"), n2);
     var s2;
   }
-  const Xt = "request", Zt = "response", en = "both";
-  const Mn = { code: 2e4, message: "System error" }, qn = { code: 20101, message: "Invalid client" };
-  function jn(e2) {
+  const Gt = { NONE: "none", REQUEST: "request", RESPONSE: "response", BOTH: "both" }, Yt = "_globalUniCloudStatus", Qt = "_globalUniCloudSecureNetworkCache__{spaceId}", Xt = "uni-secure-network", Zt = { SYSTEM_ERROR: { code: 2e4, message: "System error" }, APP_INFO_INVALID: { code: 20101, message: "Invalid client" }, GET_ENCRYPT_KEY_FAILED: { code: 20102, message: "Get encrypt key failed" } }, en = { 10001: "Secure network is not supported on current playground or unimpsdk", 10003: "Config missing in current app. If the problem pesist, please contact DCloud.", 10009: "Encrypt payload failed", 10010: "Decrypt response failed" };
+  function tn(e2) {
+    return new ee({ subject: e2.errSubject || Xt, code: e2.errCode || e2.code || Zt.SYSTEM_ERROR.code, message: e2.errMsg || e2.message || Zt.SYSTEM_ERROR.message });
+  }
+  function nn(e2) {
     const { errSubject: t2, subject: n2, errCode: s2, errMsg: r2, code: i2, message: o2, cause: a2 } = e2 || {};
-    return new se({ subject: t2 || n2 || "uni-secure-network", code: s2 || i2 || Mn.code, message: r2 || o2, cause: a2 });
+    return new ee({ subject: t2 || n2 || Xt, code: s2 || i2 || Zt.SYSTEM_ERROR.code, message: r2 || o2, cause: a2 });
   }
-  let Bn;
-  function Vn({ secretType: e2 } = {}) {
-    return e2 === Xt || e2 === Zt || e2 === en;
+  class sn {
+    constructor({ secretType: e2, uniCloudIns: t2 } = {}) {
+      this.clientType = "", this.secretType = e2 || Gt.NONE, this.uniCloudIns = t2;
+      const { provider: n2, spaceId: s2 } = this.uniCloudIns.config;
+      var r2;
+      this.provider = n2, this.spaceId = s2, this.scopedGlobalCache = (r2 = this.uniCloudIns, L(Qt.replace("{spaceId}", r2.config.spaceId)));
+    }
+    getSystemInfo() {
+      return this._systemInfo || (this._systemInfo = ae()), this._systemInfo;
+    }
+    get appId() {
+      return this.getSystemInfo().appId;
+    }
+    get deviceId() {
+      return this.getSystemInfo().deviceId;
+    }
+    async encryptData(e2) {
+      return this.secretType === Gt.NONE ? e2 : this.platformEncryptData(e2);
+    }
+    async decryptResult(e2) {
+      if (this.secretType === Gt.NONE)
+        return e2;
+      const { errCode: t2, errMsg: n2, content: s2 } = e2 || {};
+      if (t2 || !s2) {
+        if (t2)
+          throw tn({ errCode: t2, errMsg: n2 });
+        if (!s2)
+          throw tn();
+        return e2;
+      }
+      return this.secretType === Gt.REQUEST ? s2 : this.platformDecryptResult(e2);
+    }
+    wrapVerifyClientCallFunction(e2) {
+      const t2 = this;
+      return async function({ name: n2, data: s2 = {} } = {}) {
+        await t2.prepare(), (s2 = JSON.parse(JSON.stringify(s2)))._uniCloudOptions = await t2.platformGetSignOption();
+        let r2 = await e2({ name: n2, data: s2 });
+        return t2.isClientKeyNotFound(r2) && (await t2.prepare({ forceUpdate: true }), s2._uniCloudOptions = await t2.platformGetSignOption(), r2 = await e2({ name: n2, data: s2 })), r2;
+      };
+    }
+    wrapEncryptDataCallFunction(e2) {
+      const t2 = this;
+      return async function({ name: n2, data: s2 = {} } = {}) {
+        await t2.prepare();
+        const r2 = await t2.encryptData(s2);
+        let i2 = await e2({ name: n2, data: r2 });
+        if (t2.isClientKeyNotFound(i2)) {
+          await t2.prepare({ forceUpdate: true });
+          const r3 = await t2.encryptData(s2);
+          i2 = await e2({ name: n2, data: r3 });
+        }
+        return i2.result = await t2.decryptResult(i2.result), i2;
+      };
+    }
   }
-  function Gn({ name: e2, data: t2 = {} } = {}) {
+  let Fn, Kn;
+  function $n(e2) {
+    const t2 = ["hasClientKey", "encryptGetClientKeyPayload", "setClientKey", "encrypt", "decrypt"], n2 = {};
+    for (let s2 = 0; s2 < t2.length; s2++) {
+      const r2 = t2[s2];
+      n2[r2] = function(...t3) {
+        return new Promise((n3, s3) => {
+          "function" == typeof e2[r2] ? e2[r2]({ ...t3[0], success(e3) {
+            n3(e3);
+          }, fail(e3) {
+            s3(nn({ errCode: e3.errCode, errMsg: en[e3.errCode] || e3.errMsg || e3.message }));
+          } }) : s3(nn({ message: "请检查manifest.json内是否开启安全网络模块，另外注意标准基座不支持安全网络模块" }));
+        });
+      };
+    }
+    return n2;
+  }
+  class Hn extends sn {
+    constructor(e2) {
+      super(e2), this.clientType = "app", this.appUtils = { ...$n(uni.__getSecureNetworkManager()) }, this.systemInfo = Fn || (Fn = ae());
+    }
+    async hasClientKey() {
+      return this._hasClientKey = await this.appUtils.hasClientKey({ provider: this.provider, spaceId: this.spaceId }), this._hasClientKey;
+    }
+    async getAppClientKey() {
+      const { data: e2, key: t2 } = await this.appUtils.encryptGetClientKeyPayload({ data: {} }), n2 = (await this.uniCloudIns.callFunction({ name: "DCloud-clientDB", data: { redirectTo: "encryption", action: "getAppClientKey", data: e2, key: t2 } })).result || {};
+      if (0 !== n2.errCode)
+        throw tn(n2);
+      const { clientKey: s2, key: r2 } = n2;
+      await this.appUtils.setClientKey({ provider: this.provider, spaceId: this.spaceId, clientKey: s2, key: r2 });
+    }
+    async ensureClientKey({ forceUpdate: e2 = false } = {}) {
+      if (true !== await this.hasClientKey() || e2)
+        return e2 && this.scopedGlobalCache.initPromise && this.scopedGlobalCache.initStatus === d || !e2 && this.scopedGlobalCache.initPromise && this.scopedGlobalCache.initStatus !== f || (this.scopedGlobalCache.initPromise = this.getAppClientKey(), this.scopedGlobalCache.initPromise.then((e3) => {
+          this.scopedGlobalCache.initStatus = p;
+        }).catch((e3) => {
+          throw this.scopedGlobalCache.initStatus = f, e3;
+        }), this.scopedGlobalCache.initStatus = d), this.scopedGlobalCache.initPromise;
+    }
+    async prepare({ forceUpdate: e2 = false } = {}) {
+      await this.ensureClientKey({ forceUpdate: e2 });
+    }
+    async platformGetSignOption() {
+      const { data: e2, key: t2 } = await this.appUtils.encrypt({ provider: this.provider, spaceId: this.spaceId, data: JSON.stringify({}) });
+      return { verifyClientSign: e2, encryptKeyId: t2 };
+    }
+    async platformEncryptData(e2) {
+      const { data: t2, key: n2 } = await this.appUtils.encrypt({ provider: this.provider, spaceId: this.spaceId, data: JSON.stringify(e2) }), s2 = { secretType: this.secretType, encryptKeyId: n2 };
+      return this.secretType === Gt.RESPONSE ? { content: e2, _uniCloudOptions: s2 } : { content: t2, _uniCloudOptions: s2 };
+    }
+    async platformDecryptResult(e2) {
+      const { content: t2, _uniCloudOptions: n2 = {} } = e2, s2 = n2.encryptKeyId, r2 = await this.appUtils.decrypt({ provider: this.provider, spaceId: this.spaceId, data: t2, key: s2 });
+      return JSON.parse(r2.data);
+    }
+    isClientKeyNotFound(e2 = {}) {
+      const t2 = e2.result || {};
+      return 70009 === t2.errCode && t2.errSubject === Xt;
+    }
+  }
+  function Wn({ secretType: e2 } = {}) {
+    return e2 === Gt.REQUEST || e2 === Gt.RESPONSE || e2 === Gt.BOTH;
+  }
+  function Jn({ name: e2, data: t2 = {} } = {}) {
     return "DCloud-clientDB" === e2 && "encryption" === t2.redirectTo && "getAppClientKey" === t2.action;
   }
-  function Yn({ provider: e2, spaceId: t2, functionName: n2 } = {}) {
-    const { appId: s2, uniPlatform: r2, osName: i2 } = he();
+  function zn({ provider: e2, spaceId: t2, functionName: n2 } = {}) {
+    const { appId: s2, uniPlatform: r2, osName: i2 } = ae();
     let o2 = r2;
     "app" === r2 && (o2 = i2);
     const a2 = function({ provider: e3, spaceId: t3 } = {}) {
-      const n3 = T;
+      const n3 = E;
       if (!n3)
         return {};
       e3 = /* @__PURE__ */ function(e4) {
@@ -14176,56 +14330,52 @@
       return false;
     if ((c2[h2] || []).find((e3 = {}) => e3.appId === s2 && (e3.platform || "").toLowerCase() === o2.toLowerCase()))
       return true;
-    throw console.error("此应用[appId: ".concat(s2, ", platform: ").concat(o2, "]不在云端配置的允许访问的应用列表内，参考：https://uniapp.dcloud.net.cn/uniCloud/secure-network.html#verify-client")), jn(qn);
+    throw console.error("此应用[appId: ".concat(s2, ", platform: ").concat(o2, "]不在云端配置的允许访问的应用列表内，参考：https://uniapp.dcloud.net.cn/uniCloud/secure-network.html#verify-client")), nn(Zt.APP_INFO_INVALID);
   }
-  function Qn({ functionName: e2, result: t2, logPvd: n2 }) {
+  function Vn({ functionName: e2, result: t2, logPvd: n2 }) {
     if (this.__dev__.debugLog && t2 && t2.requestId) {
       const s2 = JSON.stringify({ spaceId: this.config.spaceId, functionName: e2, requestId: t2.requestId });
       console.log("[".concat(n2, "-request]").concat(s2, "[/").concat(n2, "-request]"));
     }
   }
-  function Xn(e2) {
+  function Gn(e2) {
     const t2 = e2.callFunction, n2 = function(n3) {
       const s2 = n3.name;
-      n3.data = Ht.call(e2, { data: n3.data });
-      const r2 = { aliyun: "aliyun", tencent: "tcb", tcb: "tcb", alipay: "alipay", dcloud: "dcloud" }[this.config.provider], i2 = Vn(n3), o2 = Gn(n3), a2 = i2 || o2;
-      return t2.call(this, n3).then((e3) => (e3.errCode = 0, !a2 && Qn.call(this, { functionName: s2, result: e3, logPvd: r2 }), Promise.resolve(e3)), (e3) => (!a2 && Qn.call(this, { functionName: s2, result: e3, logPvd: r2 }), e3 && e3.message && (e3.message = function({ message: e4 = "", extraInfo: t3 = {}, formatter: n4 = [] } = {}) {
+      n3.data = $t.call(e2, { data: n3.data });
+      const r2 = { aliyun: "aliyun", tencent: "tcb", tcb: "tcb", alipay: "alipay", dcloud: "dcloud" }[this.config.provider], i2 = Wn(n3), o2 = Jn(n3), a2 = i2 || o2;
+      return t2.call(this, n3).then((e3) => (e3.errCode = 0, !a2 && Vn.call(this, { functionName: s2, result: e3, logPvd: r2 }), Promise.resolve(e3)), (e3) => (!a2 && Vn.call(this, { functionName: s2, result: e3, logPvd: r2 }), e3 && e3.message && (e3.message = function({ message: e4 = "", extraInfo: t3 = {}, formatter: n4 = [] } = {}) {
         for (let s3 = 0; s3 < n4.length; s3++) {
           const { rule: r3, content: i3, mode: o3 } = n4[s3], a3 = e4.match(r3);
           if (!a3)
             continue;
           let c2 = i3;
           for (let e5 = 1; e5 < a3.length; e5++)
-            c2 = Yt(c2, "{$".concat(e5, "}"), a3[e5]);
+            c2 = Vt(c2, "{$".concat(e5, "}"), a3[e5]);
           for (const e5 in t3)
-            c2 = Yt(c2, "{".concat(e5, "}"), t3[e5]);
+            c2 = Vt(c2, "{".concat(e5, "}"), t3[e5]);
           return "replace" === o3 ? c2 : e4 + c2;
         }
         return e4;
-      }({ message: "[".concat(n3.name, "]: ").concat(e3.message), formatter: zt, extraInfo: { functionName: s2 } })), Promise.reject(e3)));
+      }({ message: "[".concat(n3.name, "]: ").concat(e3.message), formatter: Wt, extraInfo: { functionName: s2 } })), Promise.reject(e3)));
     };
     e2.callFunction = function(t3) {
       const { provider: s2, spaceId: r2 } = e2.config, i2 = t3.name;
       let o2, a2;
-      if (t3.data = t3.data || {}, e2.__dev__.debugInfo && !e2.__dev__.debugInfo.forceRemote && C ? (e2._callCloudFunction || (e2._callCloudFunction = n2, e2._callLocalFunction = Jt), o2 = Jt) : o2 = n2, o2 = o2.bind(e2), Gn(t3))
+      if (t3.data = t3.data || {}, e2.__dev__.debugInfo && !e2.__dev__.debugInfo.forceRemote && C ? (e2._callCloudFunction || (e2._callCloudFunction = n2, e2._callLocalFunction = Ht), o2 = Ht) : o2 = n2, o2 = o2.bind(e2), Jn(t3))
         a2 = n2.call(e2, t3);
-      else if (Vn(t3)) {
-        a2 = new Bn({ secretType: t3.secretType, uniCloudIns: e2 }).wrapEncryptDataCallFunction(n2.bind(e2))(t3);
-      } else if (Yn({ provider: s2, spaceId: r2, functionName: i2 })) {
-        a2 = new Bn({ secretType: t3.secretType, uniCloudIns: e2 }).wrapVerifyClientCallFunction(n2.bind(e2))(t3);
+      else if (Wn(t3)) {
+        a2 = new Kn({ secretType: t3.secretType, uniCloudIns: e2 }).wrapEncryptDataCallFunction(n2.bind(e2))(t3);
+      } else if (zn({ provider: s2, spaceId: r2, functionName: i2 })) {
+        a2 = new Kn({ secretType: t3.secretType, uniCloudIns: e2 }).wrapVerifyClientCallFunction(n2.bind(e2))(t3);
       } else
         a2 = o2(t3);
-      return Object.defineProperty(a2, "result", { get: () => (console.warn("当前返回结果为Promise类型，不可直接访问其result属性，详情请参考：https://uniapp.dcloud.net.cn/uniCloud/faq?id=promise"), {}) }), a2.then((e3) => ("undefined" != typeof UTSJSONObject && "undefined" != typeof UTS && (e3.result = UTS.JSON.parse(JSON.stringify(e3.result))), e3));
+      return Object.defineProperty(a2, "result", { get: () => (console.warn("当前返回结果为Promise类型，不可直接访问其result属性，详情请参考：https://uniapp.dcloud.net.cn/uniCloud/faq?id=promise"), {}) }), a2.then((e3) => (e3.result = UTS.JSON.parse(JSON.stringify(e3.result)), e3));
     };
   }
-  Bn = class {
-    constructor() {
-      throw jn({ message: "Platform ".concat(A, " is not enabled, please check whether secure network module is enabled in your manifest.json") });
-    }
-  };
-  const Zn = Symbol("CLIENT_DB_INTERNAL");
-  function es(e2, t2) {
-    return e2.then = "DoNotReturnProxyWithAFunctionNamedThen", e2._internalType = Zn, e2.inspect = null, e2.__v_raw = void 0, new Proxy(e2, { get(e3, n2, s2) {
+  Kn = Hn;
+  const Yn = Symbol("CLIENT_DB_INTERNAL");
+  function Qn(e2, t2) {
+    return e2.then = "DoNotReturnProxyWithAFunctionNamedThen", e2._internalType = Yn, e2.inspect = null, e2.__v_raw = void 0, new Proxy(e2, { get(e3, n2, s2) {
       if ("_uniClient" === n2)
         return null;
       if ("symbol" == typeof n2)
@@ -14237,7 +14387,7 @@
       return t2.get(e3, n2, s2);
     } });
   }
-  function ts(e2) {
+  function Xn(e2) {
     return { on: (t2, n2) => {
       e2[t2] = e2[t2] || [], e2[t2].indexOf(n2) > -1 || e2[t2].push(n2);
     }, off: (t2, n2) => {
@@ -14246,17 +14396,17 @@
       -1 !== s2 && e2[t2].splice(s2, 1);
     } };
   }
-  const ns = ["db.Geo", "db.command", "command.aggregate"];
-  function ss(e2, t2) {
-    return ns.indexOf("".concat(e2, ".").concat(t2)) > -1;
+  const Zn = ["db.Geo", "db.command", "command.aggregate"];
+  function es(e2, t2) {
+    return Zn.indexOf("".concat(e2, ".").concat(t2)) > -1;
   }
-  function rs(e2) {
-    switch (f(e2 = ie(e2))) {
+  function ts(e2) {
+    switch (g(e2 = ne(e2))) {
       case "array":
-        return e2.map((e3) => rs(e3));
+        return e2.map((e3) => ts(e3));
       case "object":
-        return e2._internalType === Zn || Object.keys(e2).forEach((t2) => {
-          e2[t2] = rs(e2[t2]);
+        return e2._internalType === Yn || Object.keys(e2).forEach((t2) => {
+          e2[t2] = ts(e2[t2]);
         }), e2;
       case "regexp":
         return { $regexp: { source: e2.source, flags: e2.flags } };
@@ -14266,10 +14416,10 @@
         return e2;
     }
   }
-  function is(e2) {
+  function ns(e2) {
     return e2 && e2.content && e2.content.$method;
   }
-  class os {
+  class ss {
     constructor(e2, t2, n2) {
       this.content = e2, this.prevStage = t2 || null, this.udb = null, this._database = n2;
     }
@@ -14278,7 +14428,7 @@
       const t2 = [e2.content];
       for (; e2.prevStage; )
         e2 = e2.prevStage, t2.push(e2.content);
-      return { $db: t2.reverse().map((e3) => ({ $method: e3.$method, $param: rs(e3.$param) })) };
+      return { $db: t2.reverse().map((e3) => ({ $method: e3.$method, $param: ts(e3.$param) })) };
     }
     toString() {
       return JSON.stringify(this.toJSON());
@@ -14293,7 +14443,7 @@
     get isAggregate() {
       let e2 = this;
       for (; e2; ) {
-        const t2 = is(e2), n2 = is(e2.prevStage);
+        const t2 = ns(e2), n2 = ns(e2.prevStage);
         if ("aggregate" === t2 && "collection" === n2 || "pipeline" === t2)
           return true;
         e2 = e2.prevStage;
@@ -14303,7 +14453,7 @@
     get isCommand() {
       let e2 = this;
       for (; e2; ) {
-        if ("command" === is(e2))
+        if ("command" === ns(e2))
           return true;
         e2 = e2.prevStage;
       }
@@ -14312,7 +14462,7 @@
     get isAggregateCommand() {
       let e2 = this;
       for (; e2; ) {
-        const t2 = is(e2), n2 = is(e2.prevStage);
+        const t2 = ns(e2), n2 = ns(e2.prevStage);
         if ("aggregate" === t2 && "command" === n2)
           return true;
         e2 = e2.prevStage;
@@ -14322,7 +14472,7 @@
     getNextStageFn(e2) {
       const t2 = this;
       return function() {
-        return as({ $method: e2, $param: rs(Array.from(arguments)) }, t2, t2._database);
+        return rs({ $method: e2, $param: ts(Array.from(arguments)) }, t2, t2._database);
       };
     }
     get count() {
@@ -14356,22 +14506,22 @@
     }
     _send(e2, t2) {
       const n2 = this.getAction(), s2 = this.getCommand();
-      if (s2.$db.push({ $method: e2, $param: rs(t2) }), S) {
+      if (s2.$db.push({ $method: e2, $param: ts(t2) }), b) {
         const e3 = s2.$db.find((e4) => "collection" === e4.$method), t3 = e3 && e3.$param;
         t3 && 1 === t3.length && "string" == typeof e3.$param[0] && e3.$param[0].indexOf(",") > -1 && console.warn("检测到使用JQL语法联表查询时，未使用getTemp先过滤主表数据，在主表数据量大的情况下可能会查询缓慢。\n- 如何优化请参考此文档：https://uniapp.dcloud.net.cn/uniCloud/jql?id=lookup-with-temp \n- 如果主表数据量很小请忽略此信息，项目发行时不会出现此提示。");
       }
       return this._database._callCloudFunction({ action: n2, command: s2 });
     }
   }
-  function as(e2, t2, n2) {
-    return es(new os(e2, t2, n2), { get(e3, t3) {
+  function rs(e2, t2, n2) {
+    return Qn(new ss(e2, t2, n2), { get(e3, t3) {
       let s2 = "db";
-      return e3 && e3.content && (s2 = e3.content.$method), ss(s2, t3) ? as({ $method: t3 }, e3, n2) : function() {
-        return as({ $method: t3, $param: rs(Array.from(arguments)) }, e3, n2);
+      return e3 && e3.content && (s2 = e3.content.$method), es(s2, t3) ? rs({ $method: t3 }, e3, n2) : function() {
+        return rs({ $method: t3, $param: ts(Array.from(arguments)) }, e3, n2);
       };
     } });
   }
-  function cs({ path: e2, method: t2 }) {
+  function is({ path: e2, method: t2 }) {
     return class {
       constructor() {
         this.param = Array.from(arguments);
@@ -14384,14 +14534,9 @@
       }
     };
   }
-  function us(e2, t2 = {}) {
-    return es(new e2(t2), { get: (e3, t3) => ss("db", t3) ? as({ $method: t3 }, null, e3) : function() {
-      return as({ $method: t3, $param: rs(Array.from(arguments)) }, null, e3);
-    } });
-  }
-  class hs extends class {
+  class os {
     constructor({ uniClient: e2 = {}, isJQL: t2 = false } = {}) {
-      this._uniClient = e2, this._authCallBacks = {}, this._dbCallBacks = {}, e2._isDefault && (this._dbCallBacks = R("_globalUniCloudDatabaseCallback")), t2 || (this.auth = ts(this._authCallBacks)), this._isJQL = t2, Object.assign(this, ts(this._dbCallBacks)), this.env = es({}, { get: (e3, t3) => ({ $env: t3 }) }), this.Geo = es({}, { get: (e3, t3) => cs({ path: ["Geo"], method: t3 }) }), this.serverDate = cs({ path: [], method: "serverDate" }), this.RegExp = cs({ path: [], method: "RegExp" });
+      this._uniClient = e2, this._authCallBacks = {}, this._dbCallBacks = {}, e2._isDefault && (this._dbCallBacks = L("_globalUniCloudDatabaseCallback")), t2 || (this.auth = Xn(this._authCallBacks)), this._isJQL = t2, Object.assign(this, Xn(this._dbCallBacks)), this.env = Qn({}, { get: (e3, t3) => ({ $env: t3 }) }), this.Geo = Qn({}, { get: (e3, t3) => is({ path: ["Geo"], method: t3 }) }), this.serverDate = is({ path: [], method: "serverDate" }), this.RegExp = is({ path: [], method: "RegExp" });
     }
     getCloudEnv(e2) {
       if ("string" != typeof e2 || !e2.trim())
@@ -14419,7 +14564,13 @@
       });
       return this._callCloudFunction({ multiCommand: t2, queryList: e2 });
     }
-  } {
+  }
+  function as(e2, t2 = {}) {
+    return Qn(new e2(t2), { get: (e3, t3) => es("db", t3) ? rs({ $method: t3 }, null, e3) : function() {
+      return rs({ $method: t3, $param: ts(Array.from(arguments)) }, null, e3);
+    } });
+  }
+  class cs extends os {
     _parseResult(e2) {
       return this._isJQL ? e2.result : e2;
     }
@@ -14433,21 +14584,21 @@
       }
       const i2 = this, o2 = this._isJQL ? "databaseForJQL" : "database";
       function a2(e3) {
-        return i2._callback("error", [e3]), K(F(o2, "fail"), e3).then(() => K(F(o2, "complete"), e3)).then(() => (r2(null, e3), X(B, { type: J, content: e3 }), Promise.reject(e3)));
+        return i2._callback("error", [e3]), K(j(o2, "fail"), e3).then(() => K(j(o2, "complete"), e3)).then(() => (r2(null, e3), G(H.RESPONSE, { type: W.CLIENT_DB, content: e3 }), Promise.reject(e3)));
       }
-      const c2 = K(F(o2, "invoke")), u2 = this._uniClient;
-      return c2.then(() => u2.callFunction({ name: "DCloud-clientDB", type: h, data: { action: e2, command: t2, multiCommand: n2 } })).then((e3) => {
+      const c2 = K(j(o2, "invoke")), u2 = this._uniClient;
+      return c2.then(() => u2.callFunction({ name: "DCloud-clientDB", type: l.CLIENT_DB, data: { action: e2, command: t2, multiCommand: n2 } })).then((e3) => {
         const { code: t3, message: n3, token: s3, tokenExpired: c3, systemInfo: u3 = [] } = e3.result;
         if (u3)
           for (let e4 = 0; e4 < u3.length; e4++) {
-            const { level: t4, message: n4, detail: s4 } = u3[e4], r3 = console["warn" === t4 ? "error" : t4] || console.log;
-            let i3 = "[System Info]" + n4;
-            s4 && (i3 = "".concat(i3, "\n详细信息：").concat(s4)), r3(i3);
+            const { level: t4, message: n4, detail: s4 } = u3[e4];
+            let r3 = "[System Info]" + n4;
+            s4 && (r3 = "".concat(r3, "\n详细信息：").concat(s4)), (console["warn" === t4 ? "error" : t4] || console.log)(r3);
           }
         if (t3) {
-          return a2(new se({ code: t3, message: n3, requestId: e3.requestId }));
+          return a2(new ee({ code: t3, message: n3, requestId: e3.requestId }));
         }
-        e3.result.errCode = e3.result.errCode || e3.result.code, e3.result.errMsg = e3.result.errMsg || e3.result.message, s3 && c3 && (ae({ token: s3, tokenExpired: c3 }), this._callbackAuth("refreshToken", [{ token: s3, tokenExpired: c3 }]), this._callback("refreshToken", [{ token: s3, tokenExpired: c3 }]), X(H, { token: s3, tokenExpired: c3 }));
+        e3.result.errCode = e3.result.errCode || e3.result.code, e3.result.errMsg = e3.result.errMsg || e3.result.message, s3 && c3 && (re({ token: s3, tokenExpired: c3 }), this._callbackAuth("refreshToken", [{ token: s3, tokenExpired: c3 }]), this._callback("refreshToken", [{ token: s3, tokenExpired: c3 }]), G(H.REFRESH_TOKEN, { token: s3, tokenExpired: c3 }));
         const h2 = [{ prop: "affectedDocs", tips: "affectedDocs不再推荐使用，请使用inserted/deleted/updated/data.length替代" }, { prop: "code", tips: "code不再推荐使用，请使用errCode替代" }, { prop: "message", tips: "message不再推荐使用，请使用errMsg替代" }];
         for (let t4 = 0; t4 < h2.length; t4++) {
           const { prop: n4, tips: s4 } = h2[t4];
@@ -14457,67 +14608,67 @@
           }
         }
         return function(e4) {
-          return K(F(o2, "success"), e4).then(() => K(F(o2, "complete"), e4)).then(() => {
+          return K(j(o2, "success"), e4).then(() => K(j(o2, "complete"), e4)).then(() => {
             r2(e4, null);
             const t4 = i2._parseResult(e4);
-            return X(B, { type: J, content: t4 }), Promise.resolve(t4);
+            return G(H.RESPONSE, { type: W.CLIENT_DB, content: t4 }), Promise.resolve(t4);
           });
         }(e3);
       }, (e3) => {
         /fc_function_not_found|FUNCTION_NOT_FOUND/g.test(e3.message) && console.warn("clientDB未初始化，请在web控制台保存一次schema以开启clientDB");
-        return a2(new se({ code: e3.code || "SYSTEM_ERROR", message: e3.message, requestId: e3.requestId }));
+        return a2(new ee({ code: e3.code || "SYSTEM_ERROR", message: e3.message, requestId: e3.requestId }));
       });
     }
   }
-  const ls = "token无效，跳转登录页面", ds = "token过期，跳转登录页面", ps = { TOKEN_INVALID_TOKEN_EXPIRED: ds, TOKEN_INVALID_INVALID_CLIENTID: ls, TOKEN_INVALID: ls, TOKEN_INVALID_WRONG_TOKEN: ls, TOKEN_INVALID_ANONYMOUS_USER: ls }, fs = { "uni-id-token-expired": ds, "uni-id-check-token-failed": ls, "uni-id-token-not-exist": ls, "uni-id-check-device-feature-failed": ls };
-  function gs(e2, t2) {
+  const us = "token无效，跳转登录页面", hs = "token过期，跳转登录页面", ls = { TOKEN_INVALID_TOKEN_EXPIRED: hs, TOKEN_INVALID_INVALID_CLIENTID: us, TOKEN_INVALID: us, TOKEN_INVALID_WRONG_TOKEN: us, TOKEN_INVALID_ANONYMOUS_USER: us }, ds = { "uni-id-token-expired": hs, "uni-id-check-token-failed": us, "uni-id-token-not-exist": us, "uni-id-check-device-feature-failed": us }, ps = { ...ls, ...ds, default: "用户未登录或登录状态过期，自动跳转登录页面" };
+  function fs(e2, t2) {
     let n2 = "";
     return n2 = e2 ? "".concat(e2, "/").concat(t2) : t2, n2.replace(/^\//, "");
   }
-  function ms(e2 = [], t2 = "") {
+  function gs(e2 = [], t2 = "") {
     const n2 = [], s2 = [];
     return e2.forEach((e3) => {
-      true === e3.needLogin ? n2.push(gs(t2, e3.path)) : false === e3.needLogin && s2.push(gs(t2, e3.path));
+      true === e3.needLogin ? n2.push(fs(t2, e3.path)) : false === e3.needLogin && s2.push(fs(t2, e3.path));
     }), { needLoginPage: n2, notNeedLoginPage: s2 };
   }
-  function ys(e2) {
+  function ms(e2) {
     return e2.split("?")[0].replace(/^\//, "");
   }
-  function _s() {
+  function ys() {
     return function(e2) {
-      let t2 = e2 && e2.$page && e2.$page.fullPath || "";
-      return t2 ? ("/" !== t2.charAt(0) && (t2 = "/" + t2), t2) : t2;
+      let t2 = e2 && e2.route;
+      return t2 ? ("/" !== t2.charAt(0) && (t2 = "/" + t2), t2) : "";
     }(function() {
       const e2 = getCurrentPages();
       return e2[e2.length - 1];
     }());
   }
-  function ws() {
-    return ys(_s());
+  function _s() {
+    return ms(ys());
   }
-  function vs(e2 = "", t2 = {}) {
+  function ws(e2 = "", t2 = {}) {
     if (!e2)
       return false;
     if (!(t2 && t2.list && t2.list.length))
       return false;
-    const n2 = t2.list, s2 = ys(e2);
+    const n2 = t2.list, s2 = ms(e2);
     return n2.some((e3) => e3.pagePath === s2);
   }
   const Is = !!e.uniIdRouter;
-  const { loginPage: Ss, routerNeedLogin: bs, resToLogin: ks, needLoginPage: Ts, notNeedLoginPage: As, loginPageInTabBar: Ps } = function({ pages: t2 = [], subPackages: n2 = [], uniIdRouter: s2 = {}, tabBar: r2 = {} } = e) {
-    const { loginPage: i2, needLogin: o2 = [], resToLogin: a2 = true } = s2, { needLoginPage: c2, notNeedLoginPage: u2 } = ms(t2), { needLoginPage: h2, notNeedLoginPage: l2 } = function(e2 = []) {
+  const { loginPage: vs, routerNeedLogin: Ss, resToLogin: Ts, needLoginPage: bs, notNeedLoginPage: ks, loginPageInTabBar: Es } = function({ pages: t2 = [], subPackages: n2 = [], uniIdRouter: s2 = {}, tabBar: r2 = {} } = e) {
+    const { loginPage: i2, needLogin: o2 = [], resToLogin: a2 = true } = s2, { needLoginPage: c2, notNeedLoginPage: u2 } = gs(t2), { needLoginPage: h2, notNeedLoginPage: l2 } = function(e2 = []) {
       const t3 = [], n3 = [];
       return e2.forEach((e3) => {
-        const { root: s3, pages: r3 = [] } = e3, { needLoginPage: i3, notNeedLoginPage: o3 } = ms(r3, s3);
+        const { root: s3, pages: r3 = [] } = e3, { needLoginPage: i3, notNeedLoginPage: o3 } = gs(r3, s3);
         t3.push(...i3), n3.push(...o3);
       }), { needLoginPage: t3, notNeedLoginPage: n3 };
     }(n2);
-    return { loginPage: i2, routerNeedLogin: o2, resToLogin: a2, needLoginPage: [...c2, ...h2], notNeedLoginPage: [...u2, ...l2], loginPageInTabBar: vs(i2, r2) };
+    return { loginPage: i2, routerNeedLogin: o2, resToLogin: a2, needLoginPage: [...c2, ...h2], notNeedLoginPage: [...u2, ...l2], loginPageInTabBar: ws(i2, r2) };
   }();
-  if (Ts.indexOf(Ss) > -1)
-    throw new Error("Login page [".concat(Ss, '] should not be "needLogin", please check your pages.json'));
-  function Cs(e2) {
-    const t2 = ws();
+  if (bs.indexOf(vs) > -1)
+    throw new Error("Login page [".concat(vs, '] should not be "needLogin", please check your pages.json'));
+  function As(e2) {
+    const t2 = _s();
     if ("/" === e2.charAt(0))
       return e2;
     const [n2, s2] = e2.split("?"), r2 = n2.replace(/^\//, "").split("/"), i2 = t2.split("/");
@@ -14528,68 +14679,68 @@
     }
     return "" === i2[0] && i2.shift(), "/" + i2.join("/") + (s2 ? "?" + s2 : "");
   }
-  function xs(e2) {
-    const t2 = ys(Cs(e2));
-    return !(As.indexOf(t2) > -1) && (Ts.indexOf(t2) > -1 || bs.some((t3) => function(e3, t4) {
+  function Ps(e2) {
+    const t2 = ms(As(e2));
+    return !(ks.indexOf(t2) > -1) && (bs.indexOf(t2) > -1 || Ss.some((t3) => function(e3, t4) {
       return new RegExp(t4).test(e3);
     }(e2, t3)));
   }
-  function Os({ redirect: e2 }) {
-    const t2 = ys(e2), n2 = ys(Ss);
-    return ws() !== n2 && t2 !== n2;
+  function Cs({ redirect: e2 }) {
+    const t2 = ms(e2), n2 = ms(vs);
+    return _s() !== n2 && t2 !== n2;
   }
-  function Es({ api: e2, redirect: t2 } = {}) {
-    if (!t2 || !Os({ redirect: t2 }))
+  function Os({ api: e2, redirect: t2 } = {}) {
+    if (!t2 || !Cs({ redirect: t2 }))
       return;
     const n2 = function(e3, t3) {
       return "/" !== e3.charAt(0) && (e3 = "/" + e3), t3 ? e3.indexOf("?") > -1 ? e3 + "&uniIdRedirectUrl=".concat(encodeURIComponent(t3)) : e3 + "?uniIdRedirectUrl=".concat(encodeURIComponent(t3)) : e3;
-    }(Ss, t2);
-    Ps ? "navigateTo" !== e2 && "redirectTo" !== e2 || (e2 = "switchTab") : "switchTab" === e2 && (e2 = "navigateTo");
+    }(vs, t2);
+    Es ? "navigateTo" !== e2 && "redirectTo" !== e2 || (e2 = "switchTab") : "switchTab" === e2 && (e2 = "navigateTo");
     const s2 = { navigateTo: uni.navigateTo, redirectTo: uni.redirectTo, switchTab: uni.switchTab, reLaunch: uni.reLaunch };
     setTimeout(() => {
       s2[e2]({ url: n2 });
     }, 0);
   }
-  function Ls({ url: e2 } = {}) {
+  function xs({ url: e2 } = {}) {
     const t2 = { abortLoginPageJump: false, autoToLoginPage: false }, n2 = function() {
-      const { token: e3, tokenExpired: t3 } = oe();
+      const { token: e3, tokenExpired: t3 } = se();
       let n3;
       if (e3) {
         if (t3 < Date.now()) {
           const e4 = "uni-id-token-expired";
-          n3 = { errCode: e4, errMsg: fs[e4] };
+          n3 = { errCode: e4, errMsg: ps[e4] };
         }
       } else {
         const e4 = "uni-id-check-token-failed";
-        n3 = { errCode: e4, errMsg: fs[e4] };
+        n3 = { errCode: e4, errMsg: ps[e4] };
       }
       return n3;
     }();
-    if (xs(e2) && n2) {
+    if (Ps(e2) && n2) {
       n2.uniIdRedirectUrl = e2;
-      if (G(W).length > 0)
+      if (J(H.NEED_LOGIN).length > 0)
         return setTimeout(() => {
-          X(W, n2);
+          G(H.NEED_LOGIN, n2);
         }, 0), t2.abortLoginPageJump = true, t2;
       t2.autoToLoginPage = true;
     }
     return t2;
   }
-  function Rs() {
+  function Ns() {
     !function() {
-      const e3 = _s(), { abortLoginPageJump: t2, autoToLoginPage: n2 } = Ls({ url: e3 });
-      t2 || n2 && Es({ api: "redirectTo", redirect: e3 });
+      const e3 = ys(), { abortLoginPageJump: t2, autoToLoginPage: n2 } = xs({ url: e3 });
+      t2 || n2 && Os({ api: "redirectTo", redirect: e3 });
     }();
     const e2 = ["navigateTo", "redirectTo", "reLaunch", "switchTab"];
     for (let t2 = 0; t2 < e2.length; t2++) {
       const n2 = e2[t2];
       uni.addInterceptor(n2, { invoke(e3) {
-        const { abortLoginPageJump: t3, autoToLoginPage: s2 } = Ls({ url: e3.url });
-        return t3 ? e3 : s2 ? (Es({ api: n2, redirect: Cs(e3.url) }), false) : e3;
+        const { abortLoginPageJump: t3, autoToLoginPage: s2 } = xs({ url: e3.url });
+        return t3 ? e3 : s2 ? (Os({ api: n2, redirect: As(e3.url) }), false) : e3;
       } });
     }
   }
-  function Us() {
+  function Rs() {
     this.onResponse((e2) => {
       const { type: t2, content: n2 } = e2;
       let s2 = false;
@@ -14599,7 +14750,7 @@
             if ("object" != typeof e3)
               return false;
             const { errCode: t3 } = e3 || {};
-            return t3 in fs;
+            return t3 in ps;
           }(n2);
           break;
         case "clientdb":
@@ -14607,51 +14758,51 @@
             if ("object" != typeof e3)
               return false;
             const { errCode: t3 } = e3 || {};
-            return t3 in ps;
+            return t3 in ls;
           }(n2);
       }
       s2 && function(e3 = {}) {
-        const t3 = G(W);
-        te().then(() => {
-          const n3 = _s();
-          if (n3 && Os({ redirect: n3 }))
-            return t3.length > 0 ? X(W, Object.assign({ uniIdRedirectUrl: n3 }, e3)) : void (Ss && Es({ api: "navigateTo", redirect: n3 }));
+        const t3 = J(H.NEED_LOGIN);
+        X().then(() => {
+          const n3 = ys();
+          if (n3 && Cs({ redirect: n3 }))
+            return t3.length > 0 ? G(H.NEED_LOGIN, Object.assign({ uniIdRedirectUrl: n3 }, e3)) : void (vs && Os({ api: "navigateTo", redirect: n3 }));
         });
       }(n2);
     });
   }
-  function Ns(e2) {
+  function Ls(e2) {
     !function(e3) {
       e3.onResponse = function(e4) {
-        Y(B, e4);
+        z(H.RESPONSE, e4);
       }, e3.offResponse = function(e4) {
-        Q(B, e4);
+        V(H.RESPONSE, e4);
       };
     }(e2), function(e3) {
       e3.onNeedLogin = function(e4) {
-        Y(W, e4);
+        z(H.NEED_LOGIN, e4);
       }, e3.offNeedLogin = function(e4) {
-        Q(W, e4);
-      }, Is && (R("_globalUniCloudStatus").needLoginInit || (R("_globalUniCloudStatus").needLoginInit = true, te().then(() => {
-        Rs.call(e3);
-      }), ks && Us.call(e3)));
+        V(H.NEED_LOGIN, e4);
+      }, Is && (L(Yt).needLoginInit || (L(Yt).needLoginInit = true, X().then(() => {
+        Ns.call(e3);
+      }), Ts && Rs.call(e3)));
     }(e2), function(e3) {
       e3.onRefreshToken = function(e4) {
-        Y(H, e4);
+        z(H.REFRESH_TOKEN, e4);
       }, e3.offRefreshToken = function(e4) {
-        Q(H, e4);
+        V(H.REFRESH_TOKEN, e4);
       };
     }(e2);
   }
-  let Ds;
-  const Ms = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", qs = /^(?:[A-Za-z\d+/]{4})*?(?:[A-Za-z\d+/]{2}(?:==)?|[A-Za-z\d+/]{3}=?)?$/;
-  function Ks() {
-    const e2 = oe().token || "", t2 = e2.split(".");
+  let Us;
+  const Ds = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=", Ms = /^(?:[A-Za-z\d+/]{4})*?(?:[A-Za-z\d+/]{2}(?:==)?|[A-Za-z\d+/]{3}=?)?$/;
+  function qs() {
+    const e2 = se().token || "", t2 = e2.split(".");
     if (!e2 || 3 !== t2.length)
       return { uid: null, role: [], permission: [], tokenExpired: 0 };
     let n2;
     try {
-      n2 = JSON.parse((s2 = t2[1], decodeURIComponent(Ds(s2).split("").map(function(e3) {
+      n2 = JSON.parse((s2 = t2[1], decodeURIComponent(Us(s2).split("").map(function(e3) {
         return "%" + ("00" + e3.charCodeAt(0).toString(16)).slice(-2);
       }).join(""))));
     } catch (e3) {
@@ -14660,13 +14811,13 @@
     var s2;
     return n2.tokenExpired = 1e3 * n2.exp, delete n2.exp, delete n2.iat, n2;
   }
-  Ds = "function" != typeof atob ? function(e2) {
-    if (e2 = String(e2).replace(/[\t\n\f\r ]+/g, ""), !qs.test(e2))
+  Us = "function" != typeof atob ? function(e2) {
+    if (e2 = String(e2).replace(/[\t\n\f\r ]+/g, ""), !Ms.test(e2))
       throw new Error("Failed to execute 'atob' on 'Window': The string to be decoded is not correctly encoded.");
     var t2;
     e2 += "==".slice(2 - (3 & e2.length));
     for (var n2, s2, r2 = "", i2 = 0; i2 < e2.length; )
-      t2 = Ms.indexOf(e2.charAt(i2++)) << 18 | Ms.indexOf(e2.charAt(i2++)) << 12 | (n2 = Ms.indexOf(e2.charAt(i2++))) << 6 | (s2 = Ms.indexOf(e2.charAt(i2++))), r2 += 64 === n2 ? String.fromCharCode(t2 >> 16 & 255) : 64 === s2 ? String.fromCharCode(t2 >> 16 & 255, t2 >> 8 & 255) : String.fromCharCode(t2 >> 16 & 255, t2 >> 8 & 255, 255 & t2);
+      t2 = Ds.indexOf(e2.charAt(i2++)) << 18 | Ds.indexOf(e2.charAt(i2++)) << 12 | (n2 = Ds.indexOf(e2.charAt(i2++))) << 6 | (s2 = Ds.indexOf(e2.charAt(i2++))), r2 += 64 === n2 ? String.fromCharCode(t2 >> 16 & 255) : 64 === s2 ? String.fromCharCode(t2 >> 16 & 255, t2 >> 8 & 255) : String.fromCharCode(t2 >> 16 & 255, t2 >> 8 & 255, 255 & t2);
     return r2;
   } : atob;
   var Fs = n(function(e2, t2) {
@@ -14744,8 +14895,8 @@
         }(t3), t3);
       };
     };
-  }), js = t(Fs);
-  const $s = "manual";
+  }), Ks = t(Fs);
+  const js = { auto: "auto", onready: "onready", manual: "manual" };
   function Bs(e2) {
     return { props: { localdata: { type: Array, default: () => [] }, options: { type: [Object, Array], default: () => ({}) }, spaceInfo: { type: Object, default: () => ({}) }, collection: { type: [String, Array], default: "" }, action: { type: String, default: "" }, field: { type: String, default: "" }, orderby: { type: String, default: "" }, where: { type: [String, Object], default: "" }, pageData: { type: String, default: "add" }, pageCurrent: { type: Number, default: 1 }, pageSize: { type: Number, default: 20 }, getcount: { type: [Boolean, String], default: false }, gettree: { type: [Boolean, String], default: false }, gettreepath: { type: [Boolean, String], default: false }, startwith: { type: String, default: "" }, limitlevel: { type: Number, default: 10 }, groupby: { type: String, default: "" }, groupField: { type: String, default: "" }, distinct: { type: [Boolean, String], default: false }, foreignKey: { type: String, default: "" }, loadtime: { type: String, default: "auto" }, manual: { type: Boolean, default: false } }, data: () => ({ mixinDatacomLoading: false, mixinDatacomHasMore: false, mixinDatacomResData: [], mixinDatacomErrorMessage: "", mixinDatacomPage: {}, mixinDatacomError: null }), created() {
       this.mixinDatacomPage = { current: this.pageCurrent, size: this.pageSize, count: 0 }, this.$watch(() => {
@@ -14754,7 +14905,7 @@
           e3.push(this[t2]);
         }), e3;
       }, (e3, t2) => {
-        if (this.loadtime === $s)
+        if (this.loadtime === js.manual)
           return;
         let n2 = false;
         const s2 = [];
@@ -14797,7 +14948,7 @@
       return f2 && (m2.getTree = y2), g2 && (m2.getTreePath = y2), n2 = n2.skip(d2 * (l2 - 1)).limit(d2).get(m2), n2;
     } } };
   }
-  function Ws(e2) {
+  function $s(e2) {
     return function(t2, n2 = {}) {
       n2 = function(e3, t3 = {}) {
         return e3.customUI = t3.customUI || e3.customUI, e3.parseSystemError = t3.parseSystemError || e3.parseSystemError, Object.assign(e3.loadingOptions, t3.loadingOptions), Object.assign(e3.errorOptions, t3.errorOptions), "object" == typeof t3.secretMethods && (e3.secretMethods = t3.secretMethods), e3;
@@ -14815,32 +14966,32 @@
             const r3 = n3 ? n3({ params: s4 }) : {};
             let i3, o3;
             try {
-              return await K(F(t3, "invoke"), { ...r3 }), i3 = await e3(...s4), await K(F(t3, "success"), { ...r3, result: i3 }), i3;
+              return await K(j(t3, "invoke"), { ...r3 }), i3 = await e3(...s4), await K(j(t3, "success"), { ...r3, result: i3 }), i3;
             } catch (e4) {
-              throw o3 = e4, await K(F(t3, "fail"), { ...r3, error: o3 }), o3;
+              throw o3 = e4, await K(j(t3, "fail"), { ...r3, error: o3 }), o3;
             } finally {
-              await K(F(t3, "complete"), o3 ? { ...r3, error: o3 } : { ...r3, result: i3 });
+              await K(j(t3, "complete"), o3 ? { ...r3, error: o3 } : { ...r3, result: i3 });
             }
           };
-        }({ fn: async function s4(...h2) {
-          let l2;
+        }({ fn: async function s4(...u2) {
+          let h2;
           a2 && uni.showLoading({ title: r2.title, mask: r2.mask });
-          const d2 = { name: t2, type: u, data: { method: c2, params: h2 } };
+          const d2 = { name: t2, type: l.OBJECT, data: { method: c2, params: u2 } };
           "object" == typeof n2.secretMethods && function(e3, t3) {
             const n3 = t3.data.method, s5 = e3.secretMethods || {}, r3 = s5[n3] || s5["*"];
             r3 && (t3.secretType = r3);
           }(n2, d2);
           let p2 = false;
           try {
-            l2 = await e2.callFunction(d2);
+            h2 = await e2.callFunction(d2);
           } catch (e3) {
-            p2 = true, l2 = { result: new se(e3) };
+            p2 = true, h2 = { result: new ee(e3) };
           }
-          const { errSubject: f2, errCode: g2, errMsg: m2, newToken: y2 } = l2.result || {};
-          if (a2 && uni.hideLoading(), y2 && y2.token && y2.tokenExpired && (ae(y2), X(H, { ...y2 })), g2) {
+          const { errSubject: f2, errCode: g2, errMsg: m2, newToken: y2 } = h2.result || {};
+          if (a2 && uni.hideLoading(), y2 && y2.token && y2.tokenExpired && (re(y2), G(H.REFRESH_TOKEN, { ...y2 })), g2) {
             let e3 = m2;
             if (p2 && o2) {
-              e3 = (await o2({ objectName: t2, methodName: c2, params: h2, errSubject: f2, errCode: g2, errMsg: m2 })).errMsg || m2;
+              e3 = (await o2({ objectName: t2, methodName: c2, params: u2, errSubject: f2, errCode: g2, errMsg: m2 })).errMsg || m2;
             }
             if (a2)
               if ("toast" === i2.type)
@@ -14859,13 +15010,13 @@
                     });
                   }({ title: "提示", content: e3, showCancel: i2.retry, cancelText: "取消", confirmText: i2.retry ? "重试" : "确定" });
                   if (i2.retry && t3)
-                    return s4(...h2);
+                    return s4(...u2);
                 }
               }
-            const n3 = new se({ subject: f2, code: g2, message: m2, requestId: l2.requestId });
-            throw n3.detail = l2.result, X(B, { type: V, content: n3 }), n3;
+            const n3 = new ee({ subject: f2, code: g2, message: m2, requestId: h2.requestId });
+            throw n3.detail = h2.result, G(H.RESPONSE, { type: W.CLOUD_OBJECT, content: n3 }), n3;
           }
-          return X(B, { type: V, content: l2.result }), l2.result;
+          return G(H.RESPONSE, { type: W.CLOUD_OBJECT, content: h2.result }), h2.result;
         }, interceptorName: "callObject", getCallbackArgs: function({ params: e3 } = {}) {
           return { objectName: t2, methodName: c2, params: e3 };
         } });
@@ -14873,82 +15024,46 @@
     };
   }
   function Hs(e2) {
-    return R("_globalUniCloudSecureNetworkCache__{spaceId}".replace("{spaceId}", e2.config.spaceId));
+    return L(Qt.replace("{spaceId}", e2.config.spaceId));
   }
-  async function Js({ openid: e2, callLoginByWeixin: t2 = false } = {}) {
+  async function Ws({ openid: e2, callLoginByWeixin: t2 = false } = {}) {
     Hs(this);
     throw new Error("[SecureNetwork] API `initSecureNetworkByWeixin` is not supported on platform `".concat(A, "`"));
   }
-  async function zs(e2) {
+  async function Js(e2) {
     const t2 = Hs(this);
-    return t2.initPromise || (t2.initPromise = Js.call(this, e2).then((e3) => e3).catch((e3) => {
+    return t2.initPromise || (t2.initPromise = Ws.call(this, e2).then((e3) => e3).catch((e3) => {
       throw delete t2.initPromise, e3;
     })), t2.initPromise;
   }
-  function Vs(e2) {
+  function zs(e2) {
     return function({ openid: t2, callLoginByWeixin: n2 = false } = {}) {
-      return zs.call(e2, { openid: t2, callLoginByWeixin: n2 });
+      return Js.call(e2, { openid: t2, callLoginByWeixin: n2 });
     };
   }
-  function Gs(e2) {
+  function Vs(e2) {
     !function(e3) {
-      de = e3;
+      ue = e3;
     }(e2);
   }
-  function Ys(e2) {
-    const t2 = { getSystemInfo: uni.getSystemInfo, getPushClientId: uni.getPushClientId };
-    return function(n2) {
-      return new Promise((s2, r2) => {
-        t2[e2]({ ...n2, success(e3) {
-          s2(e3);
-        }, fail(e3) {
+  function Gs(e2) {
+    const n2 = { getAppBaseInfo: uni.getSystemInfo, getPushClientId: uni.getPushClientId };
+    return function(s2) {
+      return new Promise((r2, i2) => {
+        n2[e2]({ ...s2, success(e3) {
           r2(e3);
+        }, fail(e3) {
+          i2(e3);
         } });
       });
     };
   }
-  class Qs extends class {
-    constructor() {
-      this._callback = {};
-    }
-    addListener(e2, t2) {
-      this._callback[e2] || (this._callback[e2] = []), this._callback[e2].push(t2);
-    }
-    on(e2, t2) {
-      return this.addListener(e2, t2);
-    }
-    removeListener(e2, t2) {
-      if (!t2)
-        throw new Error('The "listener" argument must be of type function. Received undefined');
-      const n2 = this._callback[e2];
-      if (!n2)
-        return;
-      const s2 = function(e3, t3) {
-        for (let n3 = e3.length - 1; n3 >= 0; n3--)
-          if (e3[n3] === t3)
-            return n3;
-        return -1;
-      }(n2, t2);
-      n2.splice(s2, 1);
-    }
-    off(e2, t2) {
-      return this.removeListener(e2, t2);
-    }
-    removeAllListener(e2) {
-      delete this._callback[e2];
-    }
-    emit(e2, ...t2) {
-      const n2 = this._callback[e2];
-      if (n2)
-        for (let e3 = 0; e3 < n2.length; e3++)
-          n2[e3](...t2);
-    }
-  } {
+  class Ys extends S {
     constructor() {
       super(), this._uniPushMessageCallback = this._receivePushMessage.bind(this), this._currentMessageId = -1, this._payloadQueue = [];
     }
     init() {
-      return Promise.all([Ys("getSystemInfo")(), Ys("getPushClientId")()]).then(([{ appId: e2 } = {}, { cid: t2 } = {}] = []) => {
+      return Promise.all([Gs("getAppBaseInfo")(), Gs("getPushClientId")()]).then(([{ appId: e2 } = {}, { cid: t2 } = {}] = []) => {
         if (!e2)
           throw new Error("Invalid appId, please check the manifest.json file");
         if (!t2)
@@ -15004,9 +15119,9 @@
       this._destroy(), this.emit("close");
     }
   }
-  async function Xs(e2) {
+  async function Qs(e2) {
     {
-      const { osName: e3, osVersion: t3 } = he();
+      const { osName: e3, osVersion: t3 } = ae();
       "ios" === e3 && function(e4) {
         if (!e4 || "string" != typeof e4)
           return 0;
@@ -15017,7 +15132,7 @@
     const t2 = e2.__dev__;
     if (!t2.debugInfo)
       return;
-    const { address: n2, servePort: s2 } = t2.debugInfo, { address: r2 } = await Et(n2, s2);
+    const { address: n2, servePort: s2 } = t2.debugInfo, { address: r2 } = await Ct(n2, s2);
     if (r2)
       return t2.localAddress = r2, void (t2.localPort = s2);
     const i2 = console["error"];
@@ -15026,7 +15141,7 @@
       throw new Error(o2);
     i2(o2);
   }
-  function Zs(e2) {
+  function Xs(e2) {
     e2._initPromiseHub || (e2._initPromiseHub = new v({ createPromise: function() {
       let t2 = Promise.resolve();
       var n2;
@@ -15039,11 +15154,11 @@
       return t2.then(() => s2.getLoginState()).then((e3) => e3 ? Promise.resolve() : s2.signInAnonymously());
     } }));
   }
-  const er = { tcb: xt, tencent: xt, aliyun: me, private: Ut, dcloud: Ut, alipay: Wt };
-  let tr = new class {
+  const Zs = { tcb: At, tencent: At, aliyun: pe, private: Nt, dcloud: Nt, alipay: Bt };
+  let er = new class {
     init(e2) {
       let t2 = {};
-      const n2 = er[e2.provider];
+      const n2 = Zs[e2.provider];
       if (!n2)
         throw new Error("未提供正确的provider参数");
       t2 = n2.init(e2), function(e3) {
@@ -15052,12 +15167,12 @@
         const n3 = P;
         n3 && !n3.code && (t3.debugInfo = n3);
         const s2 = new v({ createPromise: function() {
-          return Xs(e3);
+          return Qs(e3);
         } });
         t3.initLocalNetwork = function() {
           return s2.exec();
         };
-      }(t2), Zs(t2), Xn(t2), function(e3) {
+      }(t2), Xs(t2), Gn(t2), function(e3) {
         const t3 = e3.uploadFile;
         e3.uploadFile = function(e4) {
           return t3.call(this, e4);
@@ -15068,20 +15183,20 @@
             return e3.init(t3).database();
           if (this._database)
             return this._database;
-          const n3 = us(hs, { uniClient: e3 });
+          const n3 = as(cs, { uniClient: e3 });
           return this._database = n3, n3;
         }, e3.databaseForJQL = function(t3) {
           if (t3 && Object.keys(t3).length > 0)
             return e3.init(t3).databaseForJQL();
           if (this._databaseForJQL)
             return this._databaseForJQL;
-          const n3 = us(hs, { uniClient: e3, isJQL: true });
+          const n3 = as(cs, { uniClient: e3, isJQL: true });
           return this._databaseForJQL = n3, n3;
         };
       }(t2), function(e3) {
-        e3.getCurrentUserInfo = Ks, e3.chooseAndUploadFile = js.initChooseAndUploadFile(e3), Object.assign(e3, { get mixinDatacom() {
+        e3.getCurrentUserInfo = qs, e3.chooseAndUploadFile = Ks.initChooseAndUploadFile(e3), Object.assign(e3, { get mixinDatacom() {
           return Bs(e3);
-        } }), e3.SSEChannel = Qs, e3.initSecureNetworkByWeixin = Vs(e3), e3.setCustomClientInfo = Gs, e3.importObject = Ws(e3);
+        } }), e3.SSEChannel = Ys, e3.initSecureNetworkByWeixin = zs(e3), e3.setCustomClientInfo = Vs, e3.importObject = $s(e3);
       }(t2);
       return ["callFunction", "uploadFile", "deleteFile", "getTempFileURL", "downloadFile", "chooseAndUploadFile"].forEach((e3) => {
         if (!t2[e3])
@@ -15093,18 +15208,18 @@
           return function(n4) {
             let s2 = false;
             if ("callFunction" === t3) {
-              const e5 = n4 && n4.type || c;
-              s2 = e5 !== c;
+              const e5 = n4 && n4.type || l.DEFAULT;
+              s2 = e5 !== l.DEFAULT;
             }
             const r2 = "callFunction" === t3 && !s2, i2 = this._initPromiseHub.exec();
             n4 = n4 || {};
-            const { success: o2, fail: a2, complete: u2 } = ne(n4), h2 = i2.then(() => s2 ? Promise.resolve() : K(F(t3, "invoke"), n4)).then(() => e4.call(this, n4)).then((e5) => s2 ? Promise.resolve(e5) : K(F(t3, "success"), e5).then(() => K(F(t3, "complete"), e5)).then(() => (r2 && X(B, { type: z, content: e5 }), Promise.resolve(e5))), (e5) => s2 ? Promise.reject(e5) : K(F(t3, "fail"), e5).then(() => K(F(t3, "complete"), e5)).then(() => (X(B, { type: z, content: e5 }), Promise.reject(e5))));
-            if (!(o2 || a2 || u2))
-              return h2;
-            h2.then((e5) => {
-              o2 && o2(e5), u2 && u2(e5), r2 && X(B, { type: z, content: e5 });
+            const { success: o2, fail: a2, complete: c2 } = Z(n4), u2 = i2.then(() => s2 ? Promise.resolve() : K(j(t3, "invoke"), n4)).then(() => e4.call(this, n4)).then((e5) => s2 ? Promise.resolve(e5) : K(j(t3, "success"), e5).then(() => K(j(t3, "complete"), e5)).then(() => (r2 && G(H.RESPONSE, { type: W.CLOUD_FUNCTION, content: e5 }), Promise.resolve(e5))), (e5) => s2 ? Promise.reject(e5) : K(j(t3, "fail"), e5).then(() => K(j(t3, "complete"), e5)).then(() => (G(H.RESPONSE, { type: W.CLOUD_FUNCTION, content: e5 }), Promise.reject(e5))));
+            if (!(o2 || a2 || c2))
+              return u2;
+            u2.then((e5) => {
+              o2 && o2(e5), c2 && c2(e5), r2 && G(H.RESPONSE, { type: W.CLOUD_FUNCTION, content: e5 });
             }, (e5) => {
-              a2 && a2(e5), u2 && u2(e5), r2 && X(B, { type: z, content: e5 });
+              a2 && a2(e5), c2 && c2(e5), r2 && G(H.RESPONSE, { type: W.CLOUD_FUNCTION, content: e5 });
             });
           };
         }(t2[e3], e3)).bind(t2);
@@ -15115,57 +15230,59 @@
     const e2 = C;
     let t2 = {};
     if (e2 && 1 === e2.length)
-      t2 = e2[0], tr = tr.init(t2), tr._isDefault = true;
+      t2 = e2[0], er = er.init(t2), er._isDefault = true;
     else {
-      const t3 = ["auth", "callFunction", "uploadFile", "deleteFile", "getTempFileURL", "downloadFile", "database", "getCurrentUSerInfo", "importObject"];
-      let n2;
-      n2 = e2 && e2.length > 0 ? "应用有多个服务空间，请通过uniCloud.init方法指定要使用的服务空间" : "应用未关联服务空间，请在uniCloud目录右键关联服务空间", t3.forEach((e3) => {
-        tr[e3] = function() {
-          return console.error(n2), Promise.reject(new se({ code: "SYS_ERR", message: n2 }));
+      const t3 = ["auth", "callFunction", "uploadFile", "deleteFile", "getTempFileURL", "downloadFile"], n2 = ["database", "getCurrentUserInfo", "importObject"];
+      let s2;
+      s2 = e2 && e2.length > 0 ? "应用有多个服务空间，请通过uniCloud.init方法指定要使用的服务空间" : "应用未关联服务空间，请在uniCloud目录右键关联服务空间", [...t3, ...n2].forEach((e3) => {
+        er[e3] = function() {
+          if (console.error(s2), -1 === n2.indexOf(e3))
+            return Promise.reject(new ee({ code: "SYS_ERR", message: s2 }));
+          console.error(s2);
         };
       });
     }
-    if (Object.assign(tr, { get mixinDatacom() {
-      return Bs(tr);
-    } }), Ns(tr), tr.addInterceptor = M, tr.removeInterceptor = q, tr.interceptObject = j, uni.__uniCloud = tr, "app" === A) {
+    if (Object.assign(er, { get mixinDatacom() {
+      return Bs(er);
+    } }), Ls(er), er.addInterceptor = q, er.removeInterceptor = F, er.interceptObject = B, uni.__uniCloud = er, "app" === A) {
       const e3 = U();
-      e3.uniCloud = tr, e3.UniCloudError = se;
+      e3.uniCloud = er, e3.UniCloudError = ee;
     }
   })();
-  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$a = /* @__PURE__ */ vue.defineComponent({
     __name: "l-upload",
     props: {
-      name: new UTSJSONObject({ type: String, required: false }),
-      modelValue: new UTSJSONObject({ type: Array, required: false }),
-      disabled: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      readonly: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      multiple: new UTSJSONObject({ type: Boolean, required: true, default: true }),
-      imageFit: new UTSJSONObject({ type: String, required: true, default: "aspectFill" }),
-      gutter: new UTSJSONObject({ type: String, required: false }),
-      column: new UTSJSONObject({ type: Number, required: false }),
-      max: new UTSJSONObject({ type: Number, required: true, default: 0 }),
-      sizeLimit: new UTSJSONObject({ type: Number, required: false }),
-      uploadIcon: new UTSJSONObject({ type: String, required: true, default: "camera" }),
-      uploadIconSize: new UTSJSONObject({ type: String, required: false }),
-      gridWidth: new UTSJSONObject({ type: String, required: false }),
-      gridHeight: new UTSJSONObject({ type: String, required: false }),
-      gridBgColor: new UTSJSONObject({ type: String, required: false }),
-      addBgColor: new UTSJSONObject({ type: String, required: false }),
-      gridBorderRadius: new UTSJSONObject({ type: String, required: false }),
-      defaultFiles: new UTSJSONObject({ type: Array, required: false }),
-      loadingText: new UTSJSONObject({ type: String, required: true, default: "上传中..." }),
-      reloadText: new UTSJSONObject({ type: String, required: true, default: "重新上传" }),
-      failedText: new UTSJSONObject({ type: String, required: true, default: "上传失败" }),
-      disablePreview: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      autoUpload: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      mediaType: new UTSJSONObject({ type: String, required: true, default: "image" }),
-      maxDuration: new UTSJSONObject({ type: Number, required: false }),
-      sizeType: new UTSJSONObject({ type: Array, required: true, default: ["original", "compressed"] }),
-      sourceType: new UTSJSONObject({ type: Array, required: true, default: ["album", "camera"] }),
-      action: new UTSJSONObject({ type: String, required: false }),
-      headers: new UTSJSONObject({ type: null, required: false }),
-      formData: new UTSJSONObject({ type: null, required: false }),
-      mode: new UTSJSONObject({ type: String, required: true, default: "grid" })
+      name: { type: String, required: false },
+      modelValue: { type: Array, required: false },
+      disabled: { type: Boolean, required: true, default: false },
+      readonly: { type: Boolean, required: true, default: false },
+      multiple: { type: Boolean, required: true, default: true },
+      imageFit: { type: String, required: true, default: "aspectFill" },
+      gutter: { type: String, required: false },
+      column: { type: Number, required: false },
+      max: { type: Number, required: true, default: 0 },
+      sizeLimit: { type: Number, required: false },
+      uploadIcon: { type: String, required: true, default: "camera" },
+      uploadIconSize: { type: String, required: false },
+      gridWidth: { type: String, required: false },
+      gridHeight: { type: String, required: false },
+      gridBgColor: { type: String, required: false },
+      addBgColor: { type: String, required: false },
+      gridBorderRadius: { type: String, required: false },
+      defaultFiles: { type: Array, required: false },
+      loadingText: { type: String, required: true, default: "上传中..." },
+      reloadText: { type: String, required: true, default: "重新上传" },
+      failedText: { type: String, required: true, default: "上传失败" },
+      disablePreview: { type: Boolean, required: true, default: false },
+      autoUpload: { type: Boolean, required: true, default: false },
+      mediaType: { type: String, required: true, default: "image" },
+      maxDuration: { type: Number, required: false },
+      sizeType: { type: Array, required: true, default: ["original", "compressed"] },
+      sourceType: { type: Array, required: true, default: ["album", "camera"] },
+      action: { type: String, required: false },
+      headers: { type: null, required: false },
+      formData: { type: null, required: false },
+      mode: { type: String, required: true, default: "grid" }
     },
     emits: ["fail", "remove", "success", "click", "add", "update:modelValue"],
     setup(__props, _a) {
@@ -15270,7 +15387,7 @@
               const baseName = file.name.substring(0, dotIndex);
               const extension = file.name.substring(dotIndex);
               const timestamp = Date.now();
-              tr.uploadFile({
+              er.uploadFile({
                 filePath: file.url,
                 cloudPath: "".concat(baseName, "_").concat(timestamp).concat(extension),
                 // cloudPath: file.name!.substring(file.name!.lastIndexOf('.')),
@@ -15281,7 +15398,7 @@
               }).then((res) => {
                 file.path = res.fileID;
                 file.status = "done";
-                tr.getTempFileURL({
+                er.getTempFileURL({
                   fileList: [res.fileID]
                 }).then((result) => {
                   if (result.fileList.length > 0) {
@@ -15407,8 +15524,8 @@
       return __returned__;
     }
   });
-  const _style_0$9 = { "l-upload": { "": { "flex": 1, "position": "relative", "flexDirection": "row", "flexWrap": "wrap" } }, "l-upload__item": { "": { "position": "relative", "display": "flex", "width": 80, "height": 80, "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "overflow": "hidden", "alignItems": "center", "justifyContent": "center" } }, "l-upload__item--add": { "": { "backgroundImage": "none", "backgroundColor": "#f3f3f3" } }, "l-upload__item--disabled": { "": { "opacity": 0.5 } }, "l-upload__image": { "": { "width": "100%", "height": "100%" } }, "l-upload__add-icon": { "": { "fontSize": 28, "color": "rgba(0,0,0,0.25)" } }, "l-upload__delete-btn": { "": { "position": "absolute", "top": 0, "right": 0, "display": "flex", "alignItems": "center", "justifyContent": "center", "width": 20, "height": 20, "borderTopRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "backgroundColor": "rgba(0,0,0,0.65)" } }, "l-upload__progress-mask": { "": { "position": "absolute", "left": 0, "top": 0, "bottom": 0, "width": "100%", "backgroundColor": "rgba(0,0,0,0.45)", "flexDirection": "column", "alignItems": "center", "justifyContent": "center", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "paddingTop": 16, "paddingRight": 0, "paddingBottom": 16, "paddingLeft": 0 } }, "l-upload__progress-text": { "": { "fontSize": 12, "lineHeight": "20px", "marginTop": 4, "color": "#FFFFFF" } }, "l-upload__progress-loading": { "": { "alignSelf": "center" } }, "l-upload__progress-icon": { "": { "color": "#FFFFFF", "!fontSize": 24, "!width": 24 } } };
-  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$a = { "l-upload": { "": { "flex": 1, "position": "relative", "flexDirection": "row", "flexWrap": "wrap" } }, "l-upload__item": { "": { "position": "relative", "display": "flex", "width": 80, "height": 80, "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "overflow": "hidden", "alignItems": "center", "justifyContent": "center" } }, "l-upload__item--add": { "": { "backgroundImage": "none", "backgroundColor": "#f3f3f3" } }, "l-upload__item--disabled": { "": { "opacity": 0.5 } }, "l-upload__image": { "": { "width": "100%", "height": "100%" } }, "l-upload__add-icon": { "": { "fontSize": 28, "color": "rgba(0,0,0,0.25)" } }, "l-upload__delete-btn": { "": { "position": "absolute", "top": 0, "right": 0, "display": "flex", "alignItems": "center", "justifyContent": "center", "width": 20, "height": 20, "borderTopRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "backgroundColor": "rgba(0,0,0,0.65)" } }, "l-upload__progress-mask": { "": { "position": "absolute", "left": 0, "top": 0, "bottom": 0, "width": "100%", "backgroundColor": "rgba(0,0,0,0.45)", "flexDirection": "column", "alignItems": "center", "justifyContent": "center", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "paddingTop": 16, "paddingRight": 0, "paddingBottom": 16, "paddingLeft": 0 } }, "l-upload__progress-text": { "": { "fontSize": 12, "lineHeight": "20px", "marginTop": 4, "color": "#FFFFFF" } }, "l-upload__progress-loading": { "": { "alignSelf": "center" } }, "l-upload__progress-icon": { "": { "color": "#FFFFFF", "!fontSize": 24, "!width": 24 } } };
+  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_loading = resolveEasycom(vue.resolveDynamicComponent("l-loading"), __easycom_0$4);
     const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
     return vue.openBlock(), vue.createElementBlock(
@@ -15558,14 +15675,14 @@
       /* STYLE */
     );
   }
-  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["styles", [_style_0$9]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-upload/components/l-upload/l-upload.uvue"]]);
-  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["styles", [_style_0$a]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-upload/components/l-upload/l-upload.uvue"]]);
+  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent({
     __name: "l-picker-item",
     props: {
-      options: new UTSJSONObject({ type: Array, required: true, default: [] }),
-      value: new UTSJSONObject({ type: null, required: false }),
-      column: new UTSJSONObject({ type: Number, required: true, default: -1 }),
-      name: new UTSJSONObject({ type: [String, Number], required: false })
+      options: { type: Array, required: true, default: [] },
+      value: { type: null, required: false },
+      column: { type: Number, required: true, default: -1 },
+      name: { type: [String, Number], required: false }
     },
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -15691,8 +15808,8 @@
       return __returned__;
     }
   });
-  const _style_0$8 = { "l-picker-item__group": { "": { "flex": 1 } }, "l-picker-item__group-item": { "": { "height": 50, "lineHeight": "50px", "textAlign": "center", "transitionDuration": "100ms", "transitionProperty": "fontWeight,color", "transitionTimingFunction": "linear", "fontWeight": "400", "color": "rgba(0,0,0,0.88)", "fontSize": 16, "whiteSpace": "nowrap" } }, "l-picker-item__group-item--active": { "": { "color": "rgba(0,0,0,0.88)", "fontWeight": "700" } }, "l-picker-item__indicator": { "": { "left": "0rpx", "right": "0rpx", "width": "auto", "height": 50, "pointerEvents": "none", "backgroundColor": "rgba(0,0,0,0.02)" } }, "@TRANSITION": { "l-picker-item__group-item": { "duration": "100ms", "property": "fontWeight,color", "timingFunction": "linear" } } };
-  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$9 = { "l-picker-item__group": { "": { "flex": 1 } }, "l-picker-item__group-item": { "": { "height": 50, "lineHeight": "50px", "textAlign": "center", "transitionDuration": "100ms", "transitionProperty": "fontWeight,color", "transitionTimingFunction": "linear", "fontWeight": "400", "color": "rgba(0,0,0,0.88)", "fontSize": 16, "whiteSpace": "nowrap" } }, "l-picker-item__group-item--active": { "": { "color": "rgba(0,0,0,0.88)", "fontWeight": "700" } }, "l-picker-item__indicator": { "": { "left": "0rpx", "right": "0rpx", "width": "auto", "height": 50, "pointerEvents": "none", "backgroundColor": "rgba(0,0,0,0.02)" } }, "@TRANSITION": { "l-picker-item__group-item": { "duration": "100ms", "property": "fontWeight,color", "timingFunction": "linear" } } };
+  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_picker_view_column = vue.resolveComponent("picker-view-column");
     const _component_picker_view = vue.resolveComponent("picker-view");
     return vue.openBlock(), vue.createBlock(_component_picker_view, {
@@ -15734,38 +15851,38 @@
       /* STABLE */
     }, 8, ["style", "indicator-style", "value"]);
   }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["styles", [_style_0$8]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-picker/components/l-picker-item/l-picker-item.uvue"]]);
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["styles", [_style_0$9]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-picker/components/l-picker-item/l-picker-item.uvue"]]);
   function pushAt(arr, index, value) {
     arr[index] = value;
   }
-  const _sfc_main$7 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent({
     __name: "l-picker",
     props: {
-      cancelBtn: new UTSJSONObject({ type: String, required: false }),
-      cancelStyle: new UTSJSONObject({ type: null, required: false }),
-      confirmBtn: new UTSJSONObject({ type: String, required: false }),
-      confirmStyle: new UTSJSONObject({ type: null, required: false }),
-      title: new UTSJSONObject({ type: String, required: false }),
-      titleStyle: new UTSJSONObject({ type: null, required: false }),
-      keys: new UTSJSONObject({ type: null, required: false }),
-      columns: new UTSJSONObject({ type: Array, required: true, default: [] }),
-      modelValue: new UTSJSONObject({ type: Array, required: false }),
-      defaultValue: new UTSJSONObject({ type: Array, required: false }),
-      value: new UTSJSONObject({ type: Array, required: false }),
-      loading: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      loadingColor: new UTSJSONObject({ type: String, required: false }),
-      loadingMaskColor: new UTSJSONObject({ type: String, required: false }),
-      loadingSize: new UTSJSONObject({ type: String, required: true, default: "64rpx" }),
-      itemHeight: new UTSJSONObject({ type: String, required: false }),
-      itemColor: new UTSJSONObject({ type: String, required: false }),
-      itemFontSize: new UTSJSONObject({ type: String, required: false }),
-      itemActiveColor: new UTSJSONObject({ type: String, required: false }),
-      itemActiveFontWeight: new UTSJSONObject({ type: Number, required: false }),
-      indicatorStyle: new UTSJSONObject({ type: String, required: false }),
-      bgColor: new UTSJSONObject({ type: String, required: false }),
-      groupHeight: new UTSJSONObject({ type: String, required: false }),
-      radius: new UTSJSONObject({ type: String, required: false }),
-      resetIndex: new UTSJSONObject({ type: Boolean, required: true, default: false })
+      cancelBtn: { type: String, required: false },
+      cancelStyle: { type: null, required: false },
+      confirmBtn: { type: String, required: false },
+      confirmStyle: { type: null, required: false },
+      title: { type: String, required: false },
+      titleStyle: { type: null, required: false },
+      keys: { type: null, required: false },
+      columns: { type: Array, required: true, default: [] },
+      modelValue: { type: Array, required: false },
+      defaultValue: { type: Array, required: false },
+      value: { type: Array, required: false },
+      loading: { type: Boolean, required: true, default: false },
+      loadingColor: { type: String, required: false },
+      loadingMaskColor: { type: String, required: false },
+      loadingSize: { type: String, required: true, default: "64rpx" },
+      itemHeight: { type: String, required: false },
+      itemColor: { type: String, required: false },
+      itemFontSize: { type: String, required: false },
+      itemActiveColor: { type: String, required: false },
+      itemActiveFontWeight: { type: Number, required: false },
+      indicatorStyle: { type: String, required: false },
+      bgColor: { type: String, required: false },
+      groupHeight: { type: String, required: false },
+      radius: { type: String, required: false },
+      resetIndex: { type: Boolean, required: true, default: false }
     },
     emits: ["change", "cancel", "pick", "confirm", "update:modelValue", "update:value"],
     setup(__props, _a) {
@@ -15791,7 +15908,7 @@
         }
       });
       const isEmpty = vue.computed(() => {
-        return props.columns.length == 0 && pickerItemInstanceArray.every((child) => {
+        return props.columns.length == 0 && pickerItemInstanceArray.every((child = null) => {
           return child.options.length == 0;
         });
       });
@@ -15810,7 +15927,7 @@
       const curValueArray = vue.ref([...pickerValue.value]);
       const curItemArray = [];
       const realColumns = vue.computed(() => {
-        const pickerColumns = pickerItemInstanceArray.map((child) => {
+        const pickerColumns = pickerItemInstanceArray.map((child = null) => {
           return child.options;
         });
         if (pickerColumns.length > 0) {
@@ -15818,7 +15935,7 @@
         }
         return props.columns;
       });
-      const manageChildInList = (child, shouldAdd) => {
+      const manageChildInList = (child = null, shouldAdd) => {
         const index = pickerItemInstanceArray.indexOf(child);
         if (shouldAdd) {
           if (index != -1)
@@ -15838,7 +15955,7 @@
       const updatePickerItems = () => {
         const _indexs = [];
         const _values = [];
-        pickerItemInstanceArray.forEach((child, column) => {
+        pickerItemInstanceArray.forEach((child = null, column) => {
           if (child.options.length == 0)
             return null;
           const value = curValueArray.value.length > column ? curValueArray.value[column] : null;
@@ -15934,8 +16051,8 @@
       return __returned__;
     }
   });
-  const _style_0$7 = { "l-picker": { "": { "position": "relative", "backgroundColor": "#ffffff", "borderTopLeftRadius": "24rpx", "borderTopRightRadius": "24rpx" } }, "l-picker__toolbar": { "": { "display": "flex", "alignItems": "center", "justifyContent": "space-between", "overflow": "hidden", "height": "116rpx", "flexDirection": "row", "position": "relative" } }, "l-picker__title": { "": { "position": "absolute", "left": "50%", "top": "50%", "transform": "translateX(-50%) translateY(-50%)", "textAlign": "center", "overflow": "hidden", "whiteSpace": "nowrap", "textOverflow": "ellipsis", "color": "rgba(0,0,0,0.88)", "lineHeight": "52rpx", "fontWeight": "700", "fontSize": 18 } }, "l-picker__cancel": { "": { "fontSize": 16, "lineHeight": "116rpx", "height": "100%", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "color": "rgba(0,0,0,0.65)" } }, "l-picker__confirm": { "": { "fontSize": 16, "lineHeight": "116rpx", "height": "100%", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "color": "#3283ff" } }, "l-picker__main": { "": { "display": "flex", "height": "400rpx", "flexDirection": "row", "paddingTop": 0, "paddingRight": "16rpx", "paddingBottom": 0, "paddingLeft": "16rpx" } }, "l-picker__empty": { "": { "pointerEvents": "none", "justifyContent": "center", "alignItems": "center", "display": "flex", "position": "absolute", "top": 0, "bottom": 0, "left": 0, "right": 0, "zIndex": 3 } }, "l-picker__loading": { "": { "zIndex": 3, "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.9)", "justifyContent": "center", "alignItems": "center", "display": "flex", "position": "absolute", "top": 0, "bottom": 0, "left": 0, "right": 0 } } };
-  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$8 = { "l-picker": { "": { "position": "relative", "backgroundColor": "#ffffff", "borderTopLeftRadius": "24rpx", "borderTopRightRadius": "24rpx" } }, "l-picker__toolbar": { "": { "display": "flex", "alignItems": "center", "justifyContent": "space-between", "overflow": "hidden", "height": "116rpx", "flexDirection": "row", "position": "relative" } }, "l-picker__title": { "": { "position": "absolute", "left": "50%", "top": "50%", "transform": "translateX(-50%) translateY(-50%)", "textAlign": "center", "overflow": "hidden", "whiteSpace": "nowrap", "textOverflow": "ellipsis", "color": "rgba(0,0,0,0.88)", "lineHeight": "52rpx", "fontWeight": "700", "fontSize": 18 } }, "l-picker__cancel": { "": { "fontSize": 16, "lineHeight": "116rpx", "height": "100%", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "color": "rgba(0,0,0,0.65)" } }, "l-picker__confirm": { "": { "fontSize": 16, "lineHeight": "116rpx", "height": "100%", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "color": "#3283ff" } }, "l-picker__main": { "": { "display": "flex", "height": "400rpx", "flexDirection": "row", "paddingTop": 0, "paddingRight": "16rpx", "paddingBottom": 0, "paddingLeft": "16rpx" } }, "l-picker__empty": { "": { "pointerEvents": "none", "justifyContent": "center", "alignItems": "center", "display": "flex", "position": "absolute", "top": 0, "bottom": 0, "left": 0, "right": 0, "zIndex": 3 } }, "l-picker__loading": { "": { "zIndex": 3, "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.9)", "justifyContent": "center", "alignItems": "center", "display": "flex", "position": "absolute", "top": 0, "bottom": 0, "left": 0, "right": 0 } } };
+  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
     var _a, _b, _c;
     const _component_l_picker_item = resolveEasycom(vue.resolveDynamicComponent("l-picker-item"), __easycom_0$1);
     return vue.openBlock(), vue.createElementBlock(
@@ -16038,8 +16155,8 @@
       /* STYLE */
     );
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["styles", [_style_0$7]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-picker/components/l-picker/l-picker.uvue"]]);
-  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["styles", [_style_0$8]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-picker/components/l-picker/l-picker.uvue"]]);
+  const _sfc_main$7 = /* @__PURE__ */ vue.defineComponent({
     __name: "feeback",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -16087,10 +16204,10 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _imports_0$1 = "/static/required_ios.png";
-  const _style_0$6 = { "container": { "": { "height": "100%", "backgroundColor": "#F5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "item-label": { ".container .content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginTop": "30rpx" } }, "little-title": { ".container .content .item-label ": { "color": "#999999", "fontSize": "20rpx", "marginLeft": "10rpx" } }, "btn-box": { ".container ": { "marginTop": "50rpx" } }, "l-picker": { ".container ": { "width": "100%" } } };
-  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _imports_0$2 = "/static/required_ios.png";
+  const _style_0$7 = { "container": { "": { "height": "100%", "backgroundColor": "#F5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "item-label": { ".container .content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginTop": "30rpx" } }, "little-title": { ".container .content .item-label ": { "color": "#999999", "fontSize": "20rpx", "marginLeft": "10rpx" } }, "btn-box": { ".container ": { "marginTop": "50rpx" } }, "l-picker": { ".container ": { "width": "100%" } } };
+  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$2);
     const _component_l_textarea = resolveEasycom(vue.resolveDynamicComponent("l-textarea"), __easycom_2);
@@ -16164,7 +16281,7 @@
           vue.createElementVNode("view", { class: "item-label" }, [
             vue.createElementVNode("image", {
               style: { "width": "20rpx", "height": "20rpx", "margin-right": "10rpx" },
-              src: _imports_0$1
+              src: _imports_0$2
             }),
             vue.createElementVNode("text", null, "问题描述")
           ]),
@@ -16215,7 +16332,7 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMineFeebackFeeback = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["styles", [_style_0$6]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/feeback/feeback.uvue"]]);
+  const PagesMineFeebackFeeback = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["styles", [_style_0$7]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/feeback/feeback.uvue"]]);
   class AuthType extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -16260,7 +16377,7 @@
       delete this.__props__;
     }
   }
-  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent({
     __name: "systemSetting",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -16367,7 +16484,7 @@
       const oncancel = () => {
         showPicker.value = false;
       };
-      onPageShow(() => {
+      vue.onPageShow(() => {
         const res = uni.getAppAuthorizeSetting();
         const resu = uni.getSystemSetting();
         permissionList.value = permissionList.value.map((item) => {
@@ -16388,9 +16505,9 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$5 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginBottom": "20rpx" } }, "items": { ".container .content ": { "display": "flex", "flexDirection": "column", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "fui-input__wrap": { ".container .content .items ": { "!paddingTop": "20rpx", "!paddingRight": 0, "!paddingBottom": "20rpx", "!paddingLeft": 0 } }, "offline": { ".container .content .items ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingBottom": "10rpx" } }, "tips": { ".container .content .items ": { "color": "#999999", "fontSize": "24rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5" } }, "l-picker": { ".container ": { "width": "100%" } } };
-  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$6 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginBottom": "20rpx" } }, "items": { ".container .content ": { "display": "flex", "flexDirection": "column", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "fui-input__wrap": { ".container .content .items ": { "!paddingTop": "20rpx", "!paddingRight": 0, "!paddingBottom": "20rpx", "!paddingLeft": 0 } }, "offline": { ".container .content .items ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingBottom": "10rpx" } }, "tips": { ".container .content .items ": { "color": "#999999", "fontSize": "24rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5" } }, "l-picker": { ".container ": { "width": "100%" } } };
+  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_0$5);
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$2);
@@ -16482,17 +16599,17 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMineSystemSettingSystemSetting = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["styles", [_style_0$5]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/systemSetting/systemSetting.uvue"]]);
-  const _imports_0 = "/static/logo.png";
-  const _style_0$4 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "appinfo": { ".container ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "logo": { ".container ": { "width": "150rpx", "height": "150rpx", "marginTop": "100rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "title": { ".container ": { "fontSize": "30rpx", "fontWeight": "bold", "marginBottom": "50rpx" } }, "version": { ".container ": { "fontSize": "20rpx", "color": "#999999", "marginBottom": "50rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "copyright": { ".container ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "200rpx" } }, "txt": { ".container .copyright ": { "fontSize": "15rpx", "color": "#999999" } } };
-  const _sfc_main$4 = {};
-  function _sfc_render$3(_ctx, _cache) {
+  const PagesMineSystemSettingSystemSetting = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["styles", [_style_0$6]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/systemSetting/systemSetting.uvue"]]);
+  const _imports_0$1 = "/static/logo.png";
+  const _style_0$5 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "appinfo": { ".container ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "logo": { ".container ": { "width": "150rpx", "height": "150rpx", "marginTop": "100rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "title": { ".container ": { "fontSize": "30rpx", "fontWeight": "bold", "marginBottom": "50rpx" } }, "version": { ".container ": { "fontSize": "20rpx", "color": "#999999", "marginBottom": "50rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "copyright": { ".container ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "200rpx" } }, "txt": { ".container .copyright ": { "fontSize": "15rpx", "color": "#999999" } } };
+  const _sfc_main$5 = {};
+  function _sfc_render$4(_ctx, _cache) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "appinfo" }, [
         vue.createElementVNode("image", {
           class: "logo",
-          src: _imports_0
+          src: _imports_0$1
         }),
         vue.createElementVNode("text", { class: "title" }, "夜鹰智联"),
         vue.createElementVNode("text", { class: "version" }, "V1.0.1.250512")
@@ -16553,34 +16670,34 @@
       ])
     ]);
   }
-  const PagesMineAboutAbout = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["styles", [_style_0$4]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/about/about.uvue"]]);
+  const PagesMineAboutAbout = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["styles", [_style_0$5]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/about/about.uvue"]]);
   const name = "l-grid-item";
-  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
     __name: "l-grid-item",
     props: {
-      text: new UTSJSONObject({ type: String, required: false }),
-      description: new UTSJSONObject({ type: String, required: false }),
-      url: new UTSJSONObject({ type: String, required: false }),
-      openType: new UTSJSONObject({ type: String, required: true, default: "navigateTo" }),
-      icon: new UTSJSONObject({ type: String, required: false }),
-      prefix: new UTSJSONObject({ type: String, required: false }),
-      image: new UTSJSONObject({ type: String, required: false }),
-      imageWidth: new UTSJSONObject({ type: String, required: false }),
-      imageHeight: new UTSJSONObject({ type: String, required: false }),
-      bgColor: new UTSJSONObject({ type: String, required: false }),
-      padding: new UTSJSONObject({ type: String, required: false }),
-      layout: new UTSJSONObject({ type: String, required: true, default: "vertical" }),
-      dot: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      iconSize: new UTSJSONObject({ type: String, required: true, default: "48rpx" }),
-      iconColor: new UTSJSONObject({ type: String, required: true, default: "rgba(0,0,0,0.88)" }),
-      badge: new UTSJSONObject({ type: null, required: false }),
-      borderColor: new UTSJSONObject({ type: String, required: false }),
-      lStyle: new UTSJSONObject({ type: null, required: false }),
-      lImageStyle: new UTSJSONObject({ type: null, required: false }),
-      lTitleStyle: new UTSJSONObject({ type: null, required: false }),
-      lDescriptionStyle: new UTSJSONObject({ type: null, required: false }),
-      lClass: new UTSJSONObject({ type: String, required: false }),
-      lClassIcon: new UTSJSONObject({ type: String, required: false })
+      text: { type: String, required: false },
+      description: { type: String, required: false },
+      url: { type: String, required: false },
+      openType: { type: String, required: true, default: "navigateTo" },
+      icon: { type: String, required: false },
+      prefix: { type: String, required: false },
+      image: { type: String, required: false },
+      imageWidth: { type: String, required: false },
+      imageHeight: { type: String, required: false },
+      bgColor: { type: String, required: false },
+      padding: { type: String, required: false },
+      layout: { type: String, required: true, default: "vertical" },
+      dot: { type: Boolean, required: true, default: false },
+      iconSize: { type: String, required: true, default: "48rpx" },
+      iconColor: { type: String, required: true, default: "rgba(0,0,0,0.88)" },
+      badge: { type: null, required: false },
+      borderColor: { type: String, required: false },
+      lStyle: { type: null, required: false },
+      lImageStyle: { type: null, required: false },
+      lTitleStyle: { type: null, required: false },
+      lDescriptionStyle: { type: null, required: false },
+      lClass: { type: String, required: false },
+      lClassIcon: { type: String, required: false }
     },
     emits: ["click"],
     setup(__props, _a) {
@@ -16713,8 +16830,8 @@
       return __returned__;
     }
   });
-  const _style_0$3 = { "l-grid-item": { "": { "alignItems": "center", "paddingTop": "32rpx", "paddingRight": 0, "paddingBottom": "24rpx", "paddingLeft": 0, "flexDirection": "column", "backgroundImage": "none", "backgroundColor": "#ffffff", "width": "25%", "overflow": "visible" } }, "l-grid-item--bordered": { "": { "borderTopWidth": "0.5rpx", "borderRightWidth": "0.5rpx", "borderBottomWidth": "0.5rpx", "borderLeftWidth": "0.5rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#eeeeee", "borderRightColor": "#eeeeee", "borderBottomColor": "#eeeeee", "borderLeftColor": "#eeeeee" } }, "l-grid-item--horizontal": { "": { "paddingTop": "32rpx", "paddingRight": 0, "paddingBottom": "32rpx", "paddingLeft": 0, "flexDirection": "row", "justifyContent": "center" } }, "l-grid-item__content": { ".l-grid-item--horizontal ": { "marginTop": 0, "marginLeft": "24rpx" }, "": { "position": "relative", "marginTop": "16rpx" } }, "l-grid-item--hover": { "": { "backgroundColor": "rgba(0,0,0,0.02)" } }, "l-grid-item__title": { ".l-grid-item--center ": { "textAlign": "center" }, "": { "color": "rgba(0,0,0,0.88)", "fontSize": 14, "lineHeight": "44rpx" } }, "l-grid-item__description": { ".l-grid-item--center ": { "textAlign": "center" }, "": { "color": "rgba(0,0,0,0.45)", "fontSize": 12, "lineHeight": "40rpx" } }, "l-grid-item__icon": { "": { "alignItems": "center", "justifyContent": "center", "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.02)", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "width": "96rpx", "height": "96rpx" } }, "l-grid-item__image": { "": { "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.02)", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "width": "96rpx", "height": "96rpx" } }, "l-grid-item__image--small": { "": { "width": 32, "height": 32 } }, "l-grid-item__icon--small": { "": { "width": 32, "height": 32 } }, "l-grid-item__image--middle": { "": { "width": "80rpx", "height": "80rpx" } }, "l-grid-item__icon--middle": { "": { "width": "80rpx", "height": "80rpx" } }, "l-grid-item__title--small": { "": { "fontSize": 12 } }, "l-grid-item__title--middle": { "": { "fontSize": 12 } } };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$4 = { "l-grid-item": { "": { "alignItems": "center", "paddingTop": "32rpx", "paddingRight": 0, "paddingBottom": "24rpx", "paddingLeft": 0, "flexDirection": "column", "backgroundImage": "none", "backgroundColor": "#ffffff", "width": "25%", "overflow": "visible" } }, "l-grid-item--bordered": { "": { "borderTopWidth": "0.5rpx", "borderRightWidth": "0.5rpx", "borderBottomWidth": "0.5rpx", "borderLeftWidth": "0.5rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#eeeeee", "borderRightColor": "#eeeeee", "borderBottomColor": "#eeeeee", "borderLeftColor": "#eeeeee" } }, "l-grid-item--horizontal": { "": { "paddingTop": "32rpx", "paddingRight": 0, "paddingBottom": "32rpx", "paddingLeft": 0, "flexDirection": "row", "justifyContent": "center" } }, "l-grid-item__content": { ".l-grid-item--horizontal ": { "marginTop": 0, "marginLeft": "24rpx" }, "": { "position": "relative", "marginTop": "16rpx" } }, "l-grid-item--hover": { "": { "backgroundColor": "rgba(0,0,0,0.02)" } }, "l-grid-item__title": { ".l-grid-item--center ": { "textAlign": "center" }, "": { "color": "rgba(0,0,0,0.88)", "fontSize": 14, "lineHeight": "44rpx" } }, "l-grid-item__description": { ".l-grid-item--center ": { "textAlign": "center" }, "": { "color": "rgba(0,0,0,0.45)", "fontSize": 12, "lineHeight": "40rpx" } }, "l-grid-item__icon": { "": { "alignItems": "center", "justifyContent": "center", "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.02)", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "width": "96rpx", "height": "96rpx" } }, "l-grid-item__image": { "": { "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.02)", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "width": "96rpx", "height": "96rpx" } }, "l-grid-item__image--small": { "": { "width": 32, "height": 32 } }, "l-grid-item__icon--small": { "": { "width": 32, "height": 32 } }, "l-grid-item__image--middle": { "": { "width": "80rpx", "height": "80rpx" } }, "l-grid-item__icon--middle": { "": { "width": "80rpx", "height": "80rpx" } }, "l-grid-item__title--small": { "": { "fontSize": 12 } }, "l-grid-item__title--middle": { "": { "fontSize": 12 } } };
+  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
     const _component_l_badge = resolveEasycom(vue.resolveDynamicComponent("l-badge"), __easycom_1$1);
     return vue.openBlock(), vue.createElementBlock("view", {
@@ -16817,20 +16934,20 @@
       vue.renderSlot(_ctx.$slots, "extra")
     ], 14, ["hover-class"]);
   }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["styles", [_style_0$3]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-grid/components/l-grid-item/l-grid-item.uvue"]]);
-  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["styles", [_style_0$4]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-grid/components/l-grid-item/l-grid-item.uvue"]]);
+  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent({
     __name: "l-grid",
     props: {
-      align: new UTSJSONObject({ type: String, required: true, default: "center" }),
-      border: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      column: new UTSJSONObject({ type: Number, required: true, default: 4 }),
-      gutter: new UTSJSONObject({ type: Number, required: true, default: 0 }),
-      hover: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      inset: new UTSJSONObject({ type: Boolean, required: true, default: false }),
-      gridWidth: new UTSJSONObject({ type: String, required: false }),
-      padding: new UTSJSONObject({ type: String, required: false }),
-      bgColor: new UTSJSONObject({ type: String, required: false }),
-      wrap: new UTSJSONObject({ type: Boolean, required: true, default: true })
+      align: { type: String, required: true, default: "center" },
+      border: { type: Boolean, required: true, default: false },
+      column: { type: Number, required: true, default: 4 },
+      gutter: { type: Number, required: true, default: 0 },
+      hover: { type: Boolean, required: true, default: false },
+      inset: { type: Boolean, required: true, default: false },
+      gridWidth: { type: String, required: false },
+      padding: { type: String, required: false },
+      bgColor: { type: String, required: false },
+      wrap: { type: Boolean, required: true, default: true }
     },
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -16875,8 +16992,8 @@
       return __returned__;
     }
   });
-  const _style_0$2 = { "l-grid": { "": { "position": "relative", "overflow": "visible", "flexDirection": "row" } }, "l-grid--wrap": { "": { "flexWrap": "wrap" } }, "l-grid--inset": { "": { "marginTop": 0, "marginRight": "32rpx", "marginBottom": 0, "marginLeft": "32rpx", "borderTopLeftRadius": "18rpx", "borderTopRightRadius": "18rpx", "borderBottomRightRadius": "18rpx", "borderBottomLeftRadius": "18rpx", "overflow": "hidden" } } };
-  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$3 = { "l-grid": { "": { "position": "relative", "overflow": "visible", "flexDirection": "row" } }, "l-grid--wrap": { "": { "flexWrap": "wrap" } }, "l-grid--inset": { "": { "marginTop": 0, "marginRight": "32rpx", "marginBottom": 0, "marginLeft": "32rpx", "borderTopLeftRadius": "18rpx", "borderTopRightRadius": "18rpx", "borderBottomRightRadius": "18rpx", "borderBottomLeftRadius": "18rpx", "overflow": "hidden" } } };
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -16890,8 +17007,8 @@
       /* CLASS */
     );
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["styles", [_style_0$2]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-grid/components/l-grid/l-grid.uvue"]]);
-  const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent(new UTSJSONObject({
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["styles", [_style_0$3]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-grid/components/l-grid/l-grid.uvue"]]);
+  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent({
     __name: "localFiles",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -16900,9 +17017,9 @@
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
-  }));
-  const _style_0$1 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5" } } };
-  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  });
+  const _style_0$2 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5" } } };
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_grid_item = resolveEasycom(vue.resolveDynamicComponent("l-grid-item"), __easycom_0);
     const _component_l_grid = resolveEasycom(vue.resolveDynamicComponent("l-grid"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -16954,7 +17071,165 @@
       })
     ]);
   }
-  const PagesMineLocalFilesLocalFiles = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["styles", [_style_0$1]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/localFiles/localFiles.uvue"]]);
+  const PagesMineLocalFilesLocalFiles = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["styles", [_style_0$2]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/localFiles/localFiles.uvue"]]);
+  const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
+    __name: "deviceDetail",
+    setup(__props, _a) {
+      var __expose = _a.expose;
+      __expose();
+      const videoSrc2 = vue.ref("https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4");
+      const deviceSetting = () => {
+        uni.showToast({
+          title: "设备设置",
+          icon: "none"
+        });
+      };
+      const __returned__ = { videoSrc: videoSrc2, deviceSetting, get TopNavBar() {
+        return TopNavBar;
+      } };
+      Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+      return __returned__;
+    }
+  });
+  const _imports_0 = "/static/Camera.png";
+  const _imports_1 = "/static/vedio_icon.png";
+  const _imports_2 = "/static/device/volume_1.png";
+  const _imports_3 = "/static/device/voice_1.png";
+  const _imports_4 = "/static/device/hd.png";
+  const _imports_5 = "/static/device/zhence.png";
+  const _imports_6 = "/static/device/night.png";
+  const _imports_7 = "/static/device/jtfz.png";
+  const _imports_8 = "/static/device/cloud.png";
+  const _imports_9 = "/static/device/winfo.png";
+  const _imports_10 = "/static/device/jd.png";
+  const _imports_11 = "/static/device/redblue_1.png";
+  const _imports_12 = "/static/device/replay.png";
+  const _imports_13 = "/static/device/share.png";
+  const _style_0$1 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5" } }, "video": { ".container ": { "width": "100%" } }, "control-big": { ".container ": { "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx", "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "big-item": { ".container .control-big ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "40rpx", "paddingRight": "40rpx", "paddingBottom": "40rpx", "paddingLeft": "40rpx" } }, "big-item-icon": { ".container .control-big .big-item ": { "width": "70rpx", "height": "70rpx" } }, "control-more": { ".container ": { "marginTop": "20rpx", "marginRight": "20rpx", "marginBottom": "20rpx", "marginLeft": "20rpx", "display": "flex", "flexDirection": "row", "flexWrap": "wrap", "justifyContent": "flex-start", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } }, "small-item": { ".container .control-more ": { "width": "20%", "display": "flex", "flexDirection": "column", "alignItems": "center", "justifyContent": "center", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "small-item-icon": { ".container .control-more .small-item ": { "width": "45rpx", "height": "45rpx", "marginBottom": "10rpx" } }, "small-item-text": { ".container .control-more .small-item ": { "fontSize": "24rpx", "color": "#333333" } } };
+  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
+      vue.createVNode($setup["TopNavBar"], {
+        title: "设备详情",
+        showBack: true,
+        rightText: "setup",
+        onRightEvent: $setup.deviceSetting
+      }),
+      vue.createElementVNode("view", { class: "content" }, [
+        vue.createElementVNode("video", {
+          class: "video",
+          id: "myVideo",
+          title: "deviceTitle",
+          src: $setup.videoSrc,
+          ref: "videoRef",
+          controls: true,
+          "show-play-btn": true,
+          "show-center-play-btn": true,
+          "enable-progress-gesture": true,
+          "show-fullscreen-btn": true,
+          "show-mute-btn": true
+        }, null, 8, ["src"])
+      ]),
+      vue.createElementVNode("view", { class: "control-big" }, [
+        vue.createElementVNode("view", { class: "big-item" }, [
+          vue.createElementVNode("image", {
+            class: "big-item-icon",
+            src: _imports_0
+          })
+        ]),
+        vue.createElementVNode("view", { class: "big-item" }, [
+          vue.createElementVNode("image", {
+            class: "big-item-icon",
+            src: _imports_1
+          })
+        ]),
+        vue.createElementVNode("view", { class: "big-item" }, [
+          vue.createElementVNode("image", {
+            class: "big-item-icon",
+            src: _imports_2
+          })
+        ]),
+        vue.createElementVNode("view", { class: "big-item" }, [
+          vue.createElementVNode("image", {
+            class: "big-item-icon",
+            src: _imports_3
+          })
+        ])
+      ]),
+      vue.createElementVNode("view", { class: "control-more" }, [
+        vue.createElementVNode("view", { class: "small-item" }, [
+          vue.createElementVNode("image", {
+            class: "small-item-icon",
+            src: _imports_4
+          }),
+          vue.createElementVNode("text", { class: "small-item-text" }, "画质")
+        ]),
+        vue.createElementVNode("view", { class: "small-item" }, [
+          vue.createElementVNode("image", {
+            class: "small-item-icon",
+            src: _imports_5
+          }),
+          vue.createElementVNode("text", { class: "small-item-text" }, "智能侦测")
+        ]),
+        vue.createElementVNode("view", { class: "small-item" }, [
+          vue.createElementVNode("image", {
+            class: "small-item-icon",
+            src: _imports_6
+          }),
+          vue.createElementVNode("text", { class: "small-item-text" }, "夜视模式")
+        ]),
+        vue.createElementVNode("view", { class: "small-item" }, [
+          vue.createElementVNode("image", {
+            class: "small-item-icon",
+            src: _imports_7
+          }),
+          vue.createElementVNode("text", { class: "small-item-text" }, "镜头翻转")
+        ]),
+        vue.createElementVNode("view", { class: "small-item" }, [
+          vue.createElementVNode("image", {
+            class: "small-item-icon",
+            src: _imports_8
+          }),
+          vue.createElementVNode("text", { class: "small-item-text" }, "云台")
+        ]),
+        vue.createElementVNode("view", { class: "small-item" }, [
+          vue.createElementVNode("image", {
+            class: "small-item-icon",
+            src: _imports_9
+          }),
+          vue.createElementVNode("text", { class: "small-item-text" }, "巡航")
+        ]),
+        vue.createElementVNode("view", { class: "small-item" }, [
+          vue.createElementVNode("image", {
+            class: "small-item-icon",
+            src: _imports_10
+          }),
+          vue.createElementVNode("text", { class: "small-item-text" }, "警笛")
+        ]),
+        vue.createElementVNode("view", { class: "small-item" }, [
+          vue.createElementVNode("image", {
+            class: "small-item-icon",
+            src: _imports_11
+          }),
+          vue.createElementVNode("text", { class: "small-item-text" }, "红蓝灯")
+        ]),
+        vue.createElementVNode("view", { class: "small-item" }, [
+          vue.createElementVNode("image", {
+            class: "small-item-icon",
+            src: _imports_12
+          }),
+          vue.createElementVNode("text", { class: "small-item-text" }, "回放")
+        ]),
+        vue.createElementVNode("view", { class: "small-item" }, [
+          vue.createElementVNode("image", {
+            class: "small-item-icon",
+            src: _imports_13
+          }),
+          vue.createElementVNode("text", { class: "small-item-text" }, "分享")
+        ])
+      ])
+    ]);
+  }
+  const PagesIndexDeviceDetail = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["styles", [_style_0$1]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/deviceDetail.uvue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   __definePage("pages/message/message", PagesMessageMessage);
   __definePage("pages/mine/mine", PagesMineMine);
@@ -16975,6 +17250,7 @@
   __definePage("pages/mine/systemSetting/systemSetting", PagesMineSystemSettingSystemSetting);
   __definePage("pages/mine/about/about", PagesMineAboutAbout);
   __definePage("pages/mine/localFiles/localFiles", PagesMineLocalFilesLocalFiles);
+  __definePage("pages/index/deviceDetail", PagesIndexDeviceDetail);
   const _sfc_main = vue.defineComponent(new UTSJSONObject({
     onLaunch: function() {
       uni.__log__("log", "at App.uvue:5", "App Launch");

@@ -5,15 +5,15 @@ const uni_modules_limeShared_unitConvert_index = require("../../../lime-shared/u
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "l-daily-punch",
   props: {
-    canSupplement: new UTSJSONObject({
+    canSupplement: {
       type: Boolean,
       default: true
-    }),
-    isFullCalendar: new UTSJSONObject({
+    },
+    isFullCalendar: {
       type: Boolean,
       default: true
-    }),
-    yearMonth: new UTSJSONObject({
+    },
+    yearMonth: {
       type: String,
       default: () => {
         const date = /* @__PURE__ */ new Date();
@@ -21,8 +21,8 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         const month = (date.getMonth() + 1).toString().padStart(2, "0");
         return `${year}-${month}`;
       }
-    }),
-    signedDates: new UTSJSONObject({
+    },
+    signedDates: {
       type: Array,
       default: () => {
         return [];
@@ -32,68 +32,68 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           return /^\d{4}-\d{2}-\d{2}$/.test(date);
         });
       }
-    }),
-    dayHeight: new UTSJSONObject({
+    },
+    dayHeight: {
       type: [String, Number],
       default: 76
-    }),
-    week: new UTSJSONObject({
+    },
+    week: {
       type: Array,
       default: () => {
         return ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
       }
-    }),
-    weekStartsOn: new UTSJSONObject({
+    },
+    weekStartsOn: {
       type: Number,
       default: 6,
       validator: (value) => {
         return value <= 6;
       }
-    }),
-    weekColor: new UTSJSONObject({
+    },
+    weekColor: {
       type: String,
       default: "#BDC0C3"
-    }),
-    weekFontSize: new UTSJSONObject({
+    },
+    weekFontSize: {
       type: Number,
       default: 14
-    }),
-    weekHeight: new UTSJSONObject({
+    },
+    weekHeight: {
       type: Number,
       default: 30
-    }),
-    selectedDayBgColor: new UTSJSONObject({
+    },
+    selectedDayBgColor: {
       type: String,
       default: "rgba(0,0,0,0.06)"
-    }),
-    dayFontSize: new UTSJSONObject({
+    },
+    dayFontSize: {
       type: Number,
       default: 16
-    }),
-    textColor: new UTSJSONObject({
+    },
+    textColor: {
       type: String,
       default: "#1A1F24"
-    }),
-    disabledColor: new UTSJSONObject({
+    },
+    disabledColor: {
       type: String,
       default: "#BDC0C3"
-    }),
-    monthTitleHeight: new UTSJSONObject({
+    },
+    monthTitleHeight: {
       type: Number,
       default: 50
-    }),
-    monthTitleFontSize: new UTSJSONObject({
+    },
+    monthTitleFontSize: {
       type: Number,
       default: 20
-    }),
-    color: new UTSJSONObject({
+    },
+    color: {
       type: String,
       default: "#3B87F6"
-    }),
-    unsignedColor: new UTSJSONObject({
+    },
+    unsignedColor: {
       type: String,
       default: "#F1A33A"
-    })
+    }
   },
   emits: ["select", "panelChange", "streak"],
   setup(__props, _a) {

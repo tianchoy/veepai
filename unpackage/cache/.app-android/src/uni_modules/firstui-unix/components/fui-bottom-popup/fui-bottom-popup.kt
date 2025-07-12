@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {
         onCreated(fun() {}, __ins)
@@ -48,20 +44,20 @@ open class GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup : VueC
     override fun `$render`(): Any? {
         val _ctx = this
         val _cache = this.`$`.renderCache
-        return createElementVNode("view", utsMapOf("class" to "fui-bottom__popup-wrap", "style" to normalizeStyle(utsMapOf("zIndex" to _ctx.zIndex, "background" to _ctx.maskBackground)), "onClick" to withModifiers(_ctx.handleClose, utsArrayOf(
+        return _cE("view", _uM("class" to "fui-bottom__popup-wrap", "style" to _nS(_uM("zIndex" to _ctx.zIndex, "background" to _ctx.maskBackground)), "onClick" to withModifiers(_ctx.handleClose, _uA(
             "stop"
-        )), "ref" to _ctx.refMkId), utsArrayOf(
-            createElementVNode("view", utsMapOf("onClick" to withModifiers(_ctx.stop, utsArrayOf(
+        )), "ref" to _ctx.refMkId), _uA(
+            _cE("view", _uM("onClick" to withModifiers(_ctx.stop, _uA(
                 "stop"
-            )), "ref" to _ctx.refId, "class" to normalizeClass(utsArrayOf(
+            )), "ref" to _ctx.refId, "class" to _nC(_uA(
                 "fui-bottom__popup",
-                utsMapOf("fui-bp__safe-weex" to (_ctx.iphoneX && _ctx.safeArea))
-            )), "style" to normalizeStyle(utsMapOf("borderTopLeftRadius" to ("" + _ctx.radius + "rpx"), "borderTopRightRadius" to ("" + _ctx.radius + "rpx"), "background" to _ctx.background))), utsArrayOf(
+                _uM("fui-bp__safe-weex" to (_ctx.iphoneX && _ctx.safeArea))
+            )), "style" to _nS(_uM("borderTopLeftRadius" to ("" + _ctx.radius + "rpx"), "borderTopRightRadius" to ("" + _ctx.radius + "rpx"), "background" to _ctx.background))), _uA(
                 renderSlot(_ctx.`$slots`, "default")
-            ), 14, utsArrayOf(
+            ), 14, _uA(
                 "onClick"
             ))
-        ), 12, utsArrayOf(
+        ), 12, _uA(
             "onClick"
         ))
     }
@@ -82,7 +78,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup : VueC
     override fun data(): Map<String, Any?> {
         val refId = "fui_bp_" + parseInt(Math.ceil(Math.random() * 10e5).toString(10), 36)
         val refMkId = "fui_bpmk_" + parseInt(Math.ceil(Math.random() * 10e5).toString(10), 36)
-        return utsMapOf("refId" to refId, "refMkId" to refMkId, "iphoneX" to false, "isShow" to false, "element" to null as UniElement?, "mkElement" to null as UniElement?)
+        return _uM("refId" to refId, "refMkId" to refMkId, "iphoneX" to false, "isShow" to false, "element" to null as UniElement?, "mkElement" to null as UniElement?)
     }
     open var handleClose = ::gen_handleClose_fn
     open fun gen_handleClose_fn() {
@@ -150,19 +146,19 @@ open class GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup : VueC
     companion object {
         var name = "fui-bottom-popup"
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("fui-bottom__popup-wrap" to padStyleMapOf(utsMapOf("position" to "fixed", "left" to 0, "right" to 0, "top" to 0, "bottom" to 0, "display" to "flex", "flexDirection" to "row", "alignItems" to "flex-end", "justifyContent" to "center", "transitionProperty" to "opacity,visibility", "transitionTimingFunction" to "ease-in-out", "transitionDuration" to "0.3s", "visibility" to "hidden", "borderBottomWidth" to 0, "overflow" to "hidden", "opacity" to 0)), "fui-bottom__popup" to padStyleMapOf(utsMapOf("width" to "100%", "transitionProperty" to "transform,opacity,visibility", "transitionTimingFunction" to "ease-in-out", "transitionDuration" to "0.3s", "minHeight" to "20rpx", "overflow" to "hidden", "transform" to "translateY(100%)", "display" to "flex", "flexDirection" to "row", "position" to "relative")), "fui-bp__safe-weex" to padStyleMapOf(utsMapOf("paddingBottom" to 34)), "@TRANSITION" to utsMapOf("fui-bottom__popup-wrap" to utsMapOf("property" to "opacity,visibility", "timingFunction" to "ease-in-out", "duration" to "0.3s"), "fui-bottom__popup" to utsMapOf("property" to "transform,opacity,visibility", "timingFunction" to "ease-in-out", "duration" to "0.3s")))
+                return _uM("fui-bottom__popup-wrap" to _pS(_uM("position" to "fixed", "left" to 0, "right" to 0, "top" to 0, "bottom" to 0, "display" to "flex", "flexDirection" to "row", "alignItems" to "flex-end", "justifyContent" to "center", "transitionProperty" to "opacity,visibility", "transitionTimingFunction" to "ease-in-out", "transitionDuration" to "0.3s", "visibility" to "hidden", "borderBottomWidth" to 0, "overflow" to "hidden", "opacity" to 0)), "fui-bottom__popup" to _pS(_uM("width" to "100%", "transitionProperty" to "transform,opacity,visibility", "transitionTimingFunction" to "ease-in-out", "transitionDuration" to "0.3s", "minHeight" to "20rpx", "overflow" to "hidden", "transform" to "translateY(100%)", "display" to "flex", "flexDirection" to "row", "position" to "relative")), "fui-bp__safe-weex" to _pS(_uM("paddingBottom" to 34)), "@TRANSITION" to _uM("fui-bottom__popup-wrap" to _uM("property" to "opacity,visibility", "timingFunction" to "ease-in-out", "duration" to "0.3s"), "fui-bottom__popup" to _uM("property" to "transform,opacity,visibility", "timingFunction" to "ease-in-out", "duration" to "0.3s")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("close" to null, "update:visible" to null)
-        var props = normalizePropsOptions(utsMapOf("visible" to utsMapOf("type" to "Boolean", "default" to false), "background" to utsMapOf("type" to "String", "default" to "#fff"), "radius" to utsMapOf("type" to "Number", "default" to 24), "zIndex" to utsMapOf("type" to "Number", "default" to 996), "maskClosable" to utsMapOf("type" to "Boolean", "default" to true), "maskBackground" to utsMapOf("type" to "String", "default" to "rgba(0,0,0,.6)"), "safeArea" to utsMapOf("type" to "Boolean", "default" to true)))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("close" to null, "update:visible" to null)
+        var props = _nP(_uM("visible" to _uM("type" to "Boolean", "default" to false), "background" to _uM("type" to "String", "default" to "#fff"), "radius" to _uM("type" to "Number", "default" to 24), "zIndex" to _uM("type" to "Number", "default" to 996), "maskClosable" to _uM("type" to "Boolean", "default" to true), "maskBackground" to _uM("type" to "String", "default" to "rgba(0,0,0,.6)"), "safeArea" to _uM("type" to "Boolean", "default" to true)))
+        var propsNeedCastKeys = _uA(
             "visible",
             "background",
             "radius",
@@ -171,6 +167,6 @@ open class GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopup : VueC
             "maskBackground",
             "safeArea"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

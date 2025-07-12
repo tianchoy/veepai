@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesLimeTabsComponentsLTabPanelLTabPanel : VueComponent, TabPanelProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     override var badge: Any? by `$props`
@@ -49,7 +45,7 @@ open class GenUniModulesLimeTabsComponentsLTabPanelLTabPanel : VueComponent, Tab
                 children.value.push(instance as LTabPanelComponentPublicInstance)
             }
             )
-            val innderOffset = ref(utsArrayOf<Any>())
+            val innderOffset = ref(_uA<Any>())
             watch(fun(): UTSArray<Any>? {
                 return props.offset
             }
@@ -57,10 +53,10 @@ open class GenUniModulesLimeTabsComponentsLTabPanelLTabPanel : VueComponent, Tab
                 if (innderOffset.value.join("") == n?.join("")) {
                     return
                 }
-                innderOffset.value = n ?: utsArrayOf()
+                innderOffset.value = n ?: _uA()
             }
             , WatchOptions(immediate = true))
-            __expose(utsMapOf("innderOffset" to innderOffset))
+            __expose(_uM("innderOffset" to innderOffset))
             onUnmounted(fun(){
                 if (children == null) {
                     return
@@ -72,30 +68,30 @@ open class GenUniModulesLimeTabsComponentsLTabPanelLTabPanel : VueComponent, Tab
             }
             )
             return fun(): Any? {
-                return createElementVNode("view", utsMapOf("class" to "l-tab__panel", "aria-role" to "tabpanel"), utsArrayOf(
+                return _cE("view", _uM("class" to "l-tab__panel", "aria-role" to "tabpanel"), _uA(
                     renderSlot(_ctx.`$slots`, "default")
                 ))
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-tab__panel" to padStyleMapOf(utsMapOf("width" to "100%", "flex" to 1, "flexShrink" to 0, "boxSizing" to "border-box")))
+                return _uM("l-tab__panel" to _pS(_uM("width" to "100%", "flex" to 1, "flexShrink" to 0, "boxSizing" to "border-box")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf("badge" to utsMapOf("required" to false), "offset" to utsMapOf("type" to "Array", "required" to false), "dot" to utsMapOf("type" to "Boolean", "required" to false), "destroyOnHide" to utsMapOf("type" to "Boolean", "required" to false), "disabled" to utsMapOf("type" to "Boolean", "required" to false), "label" to utsMapOf("type" to "String", "required" to false), "lazy" to utsMapOf("type" to "Boolean", "required" to false), "value" to utsMapOf("type" to "Number", "required" to false)))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM("badge" to _uM("required" to false), "offset" to _uM("type" to "Array", "required" to false), "dot" to _uM("type" to "Boolean", "required" to false), "destroyOnHide" to _uM("type" to "Boolean", "required" to false), "disabled" to _uM("type" to "Boolean", "required" to false), "label" to _uM("type" to "String", "required" to false), "lazy" to _uM("type" to "Boolean", "required" to false), "value" to _uM("type" to "Number", "required" to false)))
+        var propsNeedCastKeys = _uA(
             "dot",
             "destroyOnHide",
             "disabled",
             "lazy"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

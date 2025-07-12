@@ -17,62 +17,64 @@ export class UniAppConfig extends io.dcloud.uniapp.appframe.AppConfig {
     override appid: string = "__UNI__1F0985E"
     override versionName: string = "1.0.0"
     override versionCode: string = "100"
-    override uniCompilerVersion: string = "4.66"
+    override uniCompilerVersion: string = "4.75"
     
     constructor() { super() }
 }
 
-import GenPagesIndexIndexClass from './pages/index/index.uvue?type=page'
-import GenPagesMessageMessageClass from './pages/message/message.uvue?type=page'
-import GenPagesMineMineClass from './pages/mine/mine.uvue?type=page'
-import GenPagesMineUserInfoUserInfoClass from './pages/mine/userInfo/userInfo.uvue?type=page'
-import GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass from './pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue?type=page'
-import GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass from './pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue?type=page'
-import GenPagesMineUserInfoChangePasswordChangePasswordClass from './pages/mine/userInfo/changePassword/changePassword.uvue?type=page'
-import GenPagesMineRechargeDataTrafficRechargeDataTrafficClass from './pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue?type=page'
-import GenPagesMineHelpCenterHelpCenterClass from './pages/mine/helpCenter/helpCenter.uvue?type=page'
-import GenPagesMineHelpCenterQuestionDetailQuestionDetailClass from './pages/mine/helpCenter/questionDetail/questionDetail.uvue?type=page'
-import GenPagesMessageMessageDetailMessageDetailClass from './pages/message/messageDetail/messageDetail.uvue?type=page'
-import GenPagesLoginLoginClass from './pages/login/login.uvue?type=page'
-import GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass from './pages/message/messageDeviceDetail/messageDeviceDetail.uvue?type=page'
-import GenPagesMessageMessageSystemMessageSystemClass from './pages/message/messageSystem/messageSystem.uvue?type=page'
-import GenPagesMineMyOrdersMyOrdersClass from './pages/mine/myOrders/myOrders.uvue?type=page'
-import GenPagesMineMyOrdersOrderDetailOrderDetailClass from './pages/mine/myOrders/orderDetail/orderDetail.uvue?type=page'
-import GenPagesMineFeebackFeebackClass from './pages/mine/feeback/feeback.uvue?type=page'
-import GenPagesMineSystemSettingSystemSettingClass from './pages/mine/systemSetting/systemSetting.uvue?type=page'
-import GenPagesMineAboutAboutClass from './pages/mine/about/about.uvue?type=page'
-import GenPagesMineLocalFilesLocalFilesClass from './pages/mine/localFiles/localFiles.uvue?type=page'
+import GenPagesIndexIndexClass from './pages/index/index.uvue'
+import GenPagesMessageMessageClass from './pages/message/message.uvue'
+import GenPagesMineMineClass from './pages/mine/mine.uvue'
+import GenPagesMineUserInfoUserInfoClass from './pages/mine/userInfo/userInfo.uvue'
+import GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass from './pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue'
+import GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass from './pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue'
+import GenPagesMineUserInfoChangePasswordChangePasswordClass from './pages/mine/userInfo/changePassword/changePassword.uvue'
+import GenPagesMineRechargeDataTrafficRechargeDataTrafficClass from './pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue'
+import GenPagesMineHelpCenterHelpCenterClass from './pages/mine/helpCenter/helpCenter.uvue'
+import GenPagesMineHelpCenterQuestionDetailQuestionDetailClass from './pages/mine/helpCenter/questionDetail/questionDetail.uvue'
+import GenPagesMessageMessageDetailMessageDetailClass from './pages/message/messageDetail/messageDetail.uvue'
+import GenPagesLoginLoginClass from './pages/login/login.uvue'
+import GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass from './pages/message/messageDeviceDetail/messageDeviceDetail.uvue'
+import GenPagesMessageMessageSystemMessageSystemClass from './pages/message/messageSystem/messageSystem.uvue'
+import GenPagesMineMyOrdersMyOrdersClass from './pages/mine/myOrders/myOrders.uvue'
+import GenPagesMineMyOrdersOrderDetailOrderDetailClass from './pages/mine/myOrders/orderDetail/orderDetail.uvue'
+import GenPagesMineFeebackFeebackClass from './pages/mine/feeback/feeback.uvue'
+import GenPagesMineSystemSettingSystemSettingClass from './pages/mine/systemSetting/systemSetting.uvue'
+import GenPagesMineAboutAboutClass from './pages/mine/about/about.uvue'
+import GenPagesMineLocalFilesLocalFilesClass from './pages/mine/localFiles/localFiles.uvue'
+import GenPagesIndexDeviceDetailClass from './pages/index/deviceDetail.uvue'
 function definePageRoutes() {
-__uniRoutes.push({ path: "pages/index/index", component: GenPagesIndexIndexClass, meta: { isQuit: true } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","首页"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/message/message", component: GenPagesMessageMessageClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","消息"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/mine", component: GenPagesMineMineClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","我的"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/userInfo/userInfo", component: GenPagesMineUserInfoUserInfoClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","个人信息"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/userInfo/CancelAnAccount/CancelAnAccount", component: GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","注销账号"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/userInfo/changePhoneNumber/changePhoneNumber", component: GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","修改手机号"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/userInfo/changePassword/changePassword", component: GenPagesMineUserInfoChangePasswordChangePasswordClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","修改密码"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/rechargeDataTraffic/rechargeDataTraffic", component: GenPagesMineRechargeDataTrafficRechargeDataTrafficClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","流量充值"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/helpCenter/helpCenter", component: GenPagesMineHelpCenterHelpCenterClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","帮助中心"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/helpCenter/questionDetail/questionDetail", component: GenPagesMineHelpCenterQuestionDetailQuestionDetailClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","问题详情"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/message/messageDetail/messageDetail", component: GenPagesMessageMessageDetailMessageDetailClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","消息详情"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/login/login", component: GenPagesLoginLoginClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationStyle","custom"],["navigationBarTitleText","登陆"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/message/messageDeviceDetail/messageDeviceDetail", component: GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","设备信息"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/message/messageSystem/messageSystem", component: GenPagesMessageMessageSystemMessageSystemClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","系统消息"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/myOrders/myOrders", component: GenPagesMineMyOrdersMyOrdersClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","订单列表"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/myOrders/orderDetail/orderDetail", component: GenPagesMineMyOrdersOrderDetailOrderDetailClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","订单详情"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/feeback/feeback", component: GenPagesMineFeebackFeebackClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","意见反馈"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/systemSetting/systemSetting", component: GenPagesMineSystemSettingSystemSettingClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","设置"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/about/about", component: GenPagesMineAboutAboutClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","关于"]]) } as UniPageRoute)
-__uniRoutes.push({ path: "pages/mine/localFiles/localFiles", component: GenPagesMineLocalFilesLocalFilesClass, meta: { isQuit: false } as UniPageMeta, style: utsMapOf([["navigationBarTitleText","本地文件"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/index", component: GenPagesIndexIndexClass, meta: { isQuit: true } as UniPageMeta, style: _uM([["navigationBarTitleText","首页"],["enableVideo",true]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/message/message", component: GenPagesMessageMessageClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","消息"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/mine", component: GenPagesMineMineClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","我的"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/userInfo/userInfo", component: GenPagesMineUserInfoUserInfoClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","个人信息"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/userInfo/CancelAnAccount/CancelAnAccount", component: GenPagesMineUserInfoCancelAnAccountCancelAnAccountClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","注销账号"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/userInfo/changePhoneNumber/changePhoneNumber", component: GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","修改手机号"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/userInfo/changePassword/changePassword", component: GenPagesMineUserInfoChangePasswordChangePasswordClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","修改密码"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/rechargeDataTraffic/rechargeDataTraffic", component: GenPagesMineRechargeDataTrafficRechargeDataTrafficClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","流量充值"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/helpCenter/helpCenter", component: GenPagesMineHelpCenterHelpCenterClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","帮助中心"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/helpCenter/questionDetail/questionDetail", component: GenPagesMineHelpCenterQuestionDetailQuestionDetailClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","问题详情"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/message/messageDetail/messageDetail", component: GenPagesMessageMessageDetailMessageDetailClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","消息详情"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/login/login", component: GenPagesLoginLoginClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationStyle","custom"],["navigationBarTitleText","登陆"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/message/messageDeviceDetail/messageDeviceDetail", component: GenPagesMessageMessageDeviceDetailMessageDeviceDetailClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","设备信息"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/message/messageSystem/messageSystem", component: GenPagesMessageMessageSystemMessageSystemClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","系统消息"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/myOrders/myOrders", component: GenPagesMineMyOrdersMyOrdersClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","订单列表"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/myOrders/orderDetail/orderDetail", component: GenPagesMineMyOrdersOrderDetailOrderDetailClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","订单详情"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/feeback/feeback", component: GenPagesMineFeebackFeebackClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","意见反馈"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/systemSetting/systemSetting", component: GenPagesMineSystemSettingSystemSettingClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","设置"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/about/about", component: GenPagesMineAboutAboutClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","关于"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/mine/localFiles/localFiles", component: GenPagesMineLocalFilesLocalFilesClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","本地文件"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/deviceDetail", component: GenPagesIndexDeviceDetailClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationStyle","custom"],["navigationBarTitleText",""]]) } as UniPageRoute)
 }
-const __uniTabBar: Map<string, any | null> | null = utsMapOf([["list",[utsMapOf([["pagePath","pages/index/index"],["iconPath","./static/tabbar/home.png"],["selectedIconPath","./static/tabbar/home1.png"],["text","首页"]]),utsMapOf([["pagePath","pages/message/message"],["iconPath","./static/tabbar/message.png"],["selectedIconPath","./static/tabbar/message1.png"],["text","消息"]]),utsMapOf([["pagePath","pages/mine/mine"],["iconPath","./static/tabbar/userCenter.png"],["selectedIconPath","./static/tabbar/userCenter1.png"],["text","我的"]])]]])
-const __uniLaunchPage: Map<string, any | null> = utsMapOf([["url","pages/index/index"],["style",utsMapOf([["navigationBarTitleText","首页"]])]])
+const __uniTabBar: Map<string, any | null> | null = _uM([["list",[_uM([["pagePath","pages/index/index"],["iconPath","./static/tabbar/home.png"],["selectedIconPath","./static/tabbar/home1.png"],["text","首页"]]),_uM([["pagePath","pages/message/message"],["iconPath","./static/tabbar/message.png"],["selectedIconPath","./static/tabbar/message1.png"],["text","消息"]]),_uM([["pagePath","pages/mine/mine"],["iconPath","./static/tabbar/userCenter.png"],["selectedIconPath","./static/tabbar/userCenter1.png"],["text","我的"]])]]])
+const __uniLaunchPage: Map<string, any | null> = _uM([["url","pages/index/index"],["style",_uM([["navigationBarTitleText","首页"],["enableVideo",true]])]])
 function defineAppConfig(){
   __uniConfig.entryPagePath = '/pages/index/index'
-  __uniConfig.globalStyle = utsMapOf([["navigationBarTextStyle","black"],["navigationBarTitleText","uniappX"],["navigationBarBackgroundColor","#F8F8F8"],["backgroundColor","#F8F8F8"]])
-  __uniConfig.getTabBarConfig = ():Map<string, any> | null =>  utsMapOf([["list",[utsMapOf([["pagePath","pages/index/index"],["iconPath","./static/tabbar/home.png"],["selectedIconPath","./static/tabbar/home1.png"],["text","首页"]]),utsMapOf([["pagePath","pages/message/message"],["iconPath","./static/tabbar/message.png"],["selectedIconPath","./static/tabbar/message1.png"],["text","消息"]]),utsMapOf([["pagePath","pages/mine/mine"],["iconPath","./static/tabbar/userCenter.png"],["selectedIconPath","./static/tabbar/userCenter1.png"],["text","我的"]])]]])
+  __uniConfig.globalStyle = _uM([["navigationBarTextStyle","black"],["navigationBarTitleText","uniappX"],["navigationBarBackgroundColor","#F8F8F8"],["backgroundColor","#F8F8F8"]])
+  __uniConfig.getTabBarConfig = ():Map<string, any> | null =>  _uM([["list",[_uM([["pagePath","pages/index/index"],["iconPath","./static/tabbar/home.png"],["selectedIconPath","./static/tabbar/home1.png"],["text","首页"]]),_uM([["pagePath","pages/message/message"],["iconPath","./static/tabbar/message.png"],["selectedIconPath","./static/tabbar/message1.png"],["text","消息"]]),_uM([["pagePath","pages/mine/mine"],["iconPath","./static/tabbar/userCenter.png"],["selectedIconPath","./static/tabbar/userCenter1.png"],["text","我的"]])]]])
   __uniConfig.tabBar = __uniConfig.getTabBarConfig()
   __uniConfig.conditionUrl = ''
-  __uniConfig.uniIdRouter = utsMapOf()
+  __uniConfig.uniIdRouter = _uM()
   
   __uniConfig.ready = true
 }

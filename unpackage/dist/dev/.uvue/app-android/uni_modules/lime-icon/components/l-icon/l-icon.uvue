@@ -46,7 +46,7 @@ const __sfc__ = defineComponent({
         },
     },
     emits: ['click'],
-    setup(__props): any | null {
+    setup(__props) {
         const __ins = getCurrentInstance()!;
         const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
         const _cache = __ins.renderCache;
@@ -149,25 +149,25 @@ const __sfc__ = defineComponent({
         };
         return (): any | null => {
             return isTrue(!unref(isImage) && !unref(isIconify) && !unref(isSVG))
-                ? createElementVNode("text", utsMapOf({
+                ? _cE("text", _uM({
                     key: 0,
-                    class: normalizeClass(["l-icon", [unref(classes), _ctx.lClass]]),
-                    style: normalizeStyle([unref(styles), _ctx.lStyle]),
+                    class: _nC(["l-icon", [unref(classes), _ctx.lClass]]),
+                    style: _nS([unref(styles), _ctx.lStyle]),
                     onClick: () => { _ctx.$emit('click'); }
-                }), toDisplayString(unref(iconCode)), 15 /* TEXT, CLASS, STYLE, PROPS */, ["onClick"])
+                }), _tD(unref(iconCode)), 15 /* TEXT, CLASS, STYLE, PROPS */, ["onClick"])
                 : isTrue((!unref(isSVG) && !unref(isIconify)) && unref(isImage))
-                    ? createElementVNode("image", utsMapOf({
+                    ? _cE("image", _uM({
                         key: 1,
-                        class: normalizeClass(["l-icon", [unref(classes), _ctx.lClass]]),
-                        style: normalizeStyle([unref(styles), _ctx.lStyle]),
+                        class: _nC(["l-icon", [unref(classes), _ctx.lClass]]),
+                        style: _nS([unref(styles), _ctx.lStyle]),
                         src: unref(iconUrl),
                         onClick: () => { _ctx.$emit('click'); }
                     }), null, 14 /* CLASS, STYLE, PROPS */, ["src", "onClick"])
-                    : createCommentVNode("v-if", true);
+                    : _cC("v-if", true);
         };
     }
 });
 export default __sfc__;
 export type LIconComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesLimeIconComponentsLIconLIconStyles = [utsMapOf([["l-icon--font", padStyleMapOf(utsMapOf([["fontFamily", "l"], ["textAlign", "center"]]))], ["@FONT-FACE", utsMapOf([["0", utsMapOf([["fontFamily", "l"], ["src", "url(\"/assets/t3.9658ea31.ttf\")"]])]])]])];
+const GenUniModulesLimeIconComponentsLIconLIconStyles = [_uM([["l-icon--font", _pS(_uM([["fontFamily", "l"], ["textAlign", "center"]]))], ["@FONT-FACE", _uM([["0", _uM([["fontFamily", "l"], ["src", "url(\"/assets/t3.9658ea31.ttf\")"]])]])]])];
 //# sourceMappingURL=l-icon.uvue.map

@@ -10,7 +10,8 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "首页"
+				"navigationBarTitleText": "首页",
+				"enableVideo": true
 			}
 		},
 		{
@@ -140,6 +141,14 @@
 			"style" : 
 			{
 				"navigationBarTitleText" : "本地文件"
+			}
+		},
+		{
+			"path" : "pages/index/deviceDetail",
+			"style" : 
+			{
+				"navigationStyle": "custom",
+				"navigationBarTitleText" : ""
 			}
 		}
 	],

@@ -123,7 +123,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           };
         });
       }
-      return children.value.map((item) => {
+      return children.value.map((item = null) => {
         var _a2, _b, _c, _d, _g;
         const offset = (_a2 = item.offset) !== null && _a2 !== void 0 ? _a2 : [];
         return {

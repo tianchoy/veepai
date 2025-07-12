@@ -22,7 +22,7 @@ fun measureText(fontSize: Number, text: String = "￥"): UTSArray<Number> {
     val textWidth = paint.measureText(text)
     val fontMetrics = paint.getFontMetrics()
     val textHeight = fontMetrics.bottom - fontMetrics.top
-    return utsArrayOf(
+    return _uA(
         textWidth,
         textHeight
     )

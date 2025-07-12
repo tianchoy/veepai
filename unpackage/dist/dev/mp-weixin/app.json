@@ -19,7 +19,8 @@
     "pages/mine/feeback/feeback",
     "pages/mine/systemSetting/systemSetting",
     "pages/mine/about/about",
-    "pages/mine/localFiles/localFiles"
+    "pages/mine/localFiles/localFiles",
+    "pages/index/deviceDetail"
   ],
   "window": {
     "navigationBarTextStyle": "black",

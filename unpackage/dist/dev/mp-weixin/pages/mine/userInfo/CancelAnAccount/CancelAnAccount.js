@@ -9,7 +9,7 @@ const _easycom_fui_button = () => "../../../../uni_modules/firstui-unix/componen
 if (!Math) {
   _easycom_fui_button();
 }
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "CancelAnAccount",
   setup(__props) {
     const cancelAccount = () => {
@@ -41,7 +41,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-413bf11b"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../../../.sourcemap/mp-weixin/pages/mine/userInfo/CancelAnAccount/CancelAnAccount.js.map

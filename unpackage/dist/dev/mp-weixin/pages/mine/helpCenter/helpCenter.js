@@ -16,7 +16,7 @@ const _easycom_l_tabs = () => "../../../uni_modules/lime-tabs/components/l-tabs/
 if (!Math) {
   (_easycom_l_button + _easycom_l_search + _easycom_l_icon + _easycom_l_tab_panel + _easycom_l_tabs)();
 }
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "helpCenter",
   setup(__props) {
     const value = common_vendor.ref("");
@@ -86,7 +86,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-d953926c"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/mine/helpCenter/helpCenter.js.map

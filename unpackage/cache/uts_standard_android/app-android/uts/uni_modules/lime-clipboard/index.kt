@@ -61,12 +61,12 @@ open class GetClipboardDataOption (
     }
 }
 val UniErrorSubject = "ClipboardData"
-val UniErrors: Map<LimeClipboardErrorCode, String> = Map(utsArrayOf(
-    utsArrayOf(
+val UniErrors: Map<LimeClipboardErrorCode, String> = Map(_uA(
+    _uA(
         9010001,
         "ClipboardData:ok"
     ),
-    utsArrayOf(
+    _uA(
         9010002,
         "ClipboardData:failed"
     )

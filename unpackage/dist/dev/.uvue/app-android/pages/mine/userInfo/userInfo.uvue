@@ -4,7 +4,7 @@ import _imports_0 from '@/static/mine/right.png';
 import { ref } from 'vue';
 const __sfc__ = defineComponent({
     __name: 'userInfo',
-    setup(__props): any | null {
+    setup(__props) {
         const __ins = getCurrentInstance()!;
         const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
         const _cache = __ins.renderCache;
@@ -97,23 +97,23 @@ const __sfc__ = defineComponent({
         return (): any | null => {
             const _component_fui_switch = resolveEasyComponent("fui-switch", _easycom_fui_switch);
             const _component_fui_button = resolveEasyComponent("fui-button", _easycom_fui_button);
-            return createElementVNode("view", utsMapOf({ class: "container" }), [
-                createElementVNode("view", utsMapOf({ class: "title" }), [
-                    createElementVNode("text", null, "个人信息")
+            return _cE("view", _uM({ class: "container" }), [
+                _cE("view", _uM({ class: "title" }), [
+                    _cE("text", null, "个人信息")
                 ]),
-                createElementVNode("view", utsMapOf({ class: "info" }), [
-                    createElementVNode("view", utsMapOf({ class: "info-item" }), [
-                        createElementVNode("text", null, "账号"),
-                        createElementVNode("text", null, "18888888888")
+                _cE("view", _uM({ class: "info" }), [
+                    _cE("view", _uM({ class: "info-item" }), [
+                        _cE("text", null, "账号"),
+                        _cE("text", null, "18888888888")
                     ]),
-                    createElementVNode("view", utsMapOf({
+                    _cE("view", _uM({
                         class: "info-item nobottom",
                         onClick: changePhoneNumber
                     }), [
-                        createElementVNode("text", null, "手机号"),
-                        createElementVNode("view", utsMapOf({ class: "phone" }), [
-                            createElementVNode("text", null, "18888888888"),
-                            createElementVNode("image", utsMapOf({
+                        _cE("text", null, "手机号"),
+                        _cE("view", _uM({ class: "phone" }), [
+                            _cE("text", null, "18888888888"),
+                            _cE("image", _uM({
                                 class: "icon",
                                 src: _imports_0,
                                 mode: "aspectFit"
@@ -121,44 +121,44 @@ const __sfc__ = defineComponent({
                         ])
                     ])
                 ]),
-                createElementVNode("view", utsMapOf({ class: "title" }), [
-                    createElementVNode("text", null, "安全信息")
+                _cE("view", _uM({ class: "title" }), [
+                    _cE("text", null, "安全信息")
                 ]),
-                createElementVNode("view", utsMapOf({ class: "info" }), [
-                    createElementVNode("view", utsMapOf({
+                _cE("view", _uM({ class: "info" }), [
+                    _cE("view", _uM({
                         class: "info-item",
                         onClick: editPassword
                     }), [
-                        createElementVNode("text", null, "修改密码"),
-                        createElementVNode("image", utsMapOf({
+                        _cE("text", null, "修改密码"),
+                        _cE("image", _uM({
                             class: "icon",
                             src: _imports_0,
                             mode: "aspectFit"
                         }))
                     ]),
-                    createElementVNode("view", utsMapOf({
+                    _cE("view", _uM({
                         class: "info-item nobottom",
                         onClick: cancelAnAccount
                     }), [
-                        createElementVNode("text", null, "注销账号"),
-                        createElementVNode("image", utsMapOf({
+                        _cE("text", null, "注销账号"),
+                        _cE("image", _uM({
                             class: "icon",
                             src: _imports_0,
                             mode: "aspectFit"
                         }))
                     ])
                 ]),
-                createElementVNode("view", utsMapOf({ class: "title" }), [
-                    createElementVNode("text", null, "第三方账号")
+                _cE("view", _uM({ class: "title" }), [
+                    _cE("text", null, "第三方账号")
                 ]),
-                createElementVNode("view", utsMapOf({ class: "info" }), [
-                    createElementVNode("view", utsMapOf({ class: "info-item nobottom" }), [
-                        createElementVNode("text", null, "微信"),
-                        createElementVNode("view", utsMapOf({ class: "switch-state" }), [
-                            createElementVNode("text", utsMapOf({
-                                style: normalizeStyle(utsMapOf({ "margin-right": "10rpx" }))
-                            }), toDisplayString(switchVal.value ? '已绑定' : '未绑定'), 5 /* TEXT, STYLE */),
-                            createVNode(_component_fui_switch, utsMapOf({
+                _cE("view", _uM({ class: "info" }), [
+                    _cE("view", _uM({ class: "info-item nobottom" }), [
+                        _cE("text", null, "微信"),
+                        _cE("view", _uM({ class: "switch-state" }), [
+                            _cE("text", _uM({
+                                style: _nS(_uM({ "margin-right": "10rpx" }))
+                            }), _tD(switchVal.value ? '已绑定' : '未绑定'), 5 /* TEXT, STYLE */),
+                            _cV(_component_fui_switch, _uM({
                                 checked: switchVal.value,
                                 color: "#1296db",
                                 onChange: change
@@ -166,8 +166,8 @@ const __sfc__ = defineComponent({
                         ])
                     ])
                 ]),
-                createElementVNode("view", utsMapOf({ class: "btn-box" }), [
-                    createVNode(_component_fui_button, utsMapOf({
+                _cE("view", _uM({ class: "btn-box" }), [
+                    _cV(_component_fui_button, _uM({
                         color: "#fff",
                         text: "退出登陆",
                         background: "#1296db",
@@ -179,5 +179,5 @@ const __sfc__ = defineComponent({
     }
 });
 export default __sfc__;
-const GenPagesMineUserInfoUserInfoStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundImage", "none"], ["backgroundColor", "#f3f3f3"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"]]))], ["title", utsMapOf([[".container ", utsMapOf([["fontSize", "30rpx"], ["color", "#333333"], ["paddingTop", "50rpx"], ["paddingRight", 0], ["paddingBottom", "10rpx"], ["paddingLeft", "20rpx"]])]])], ["info", utsMapOf([[".container ", utsMapOf([["backgroundImage", "none"], ["backgroundColor", "#ffffff"], ["paddingTop", "10rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "30rpx"], ["borderTopLeftRadius", "10rpx"], ["borderTopRightRadius", "10rpx"], ["borderBottomRightRadius", "10rpx"], ["borderBottomLeftRadius", "10rpx"]])]])], ["info-item", utsMapOf([[".container .info ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"], ["paddingTop", "20rpx"], ["paddingRight", 0], ["paddingBottom", "20rpx"], ["paddingLeft", 0], ["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#f1f1f1"]])]])], ["icon", utsMapOf([[".container .info .info-item ", utsMapOf([["width", "30rpx"], ["height", "30rpx"]])]])], ["switch-state", utsMapOf([[".container .info .info-item ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-end"], ["alignItems", "center"]])]])], ["phone", utsMapOf([[".container .info .info-item ", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-end"], ["alignItems", "center"]])]])], ["nobottom", utsMapOf([[".container .info ", utsMapOf([["borderBottomWidth", "medium"], ["borderBottomStyle", "none"], ["borderBottomColor", "#000000"]])]])], ["btn-box", utsMapOf([[".container ", utsMapOf([["marginTop", "200rpx"]])]])]])];
+const GenPagesMineUserInfoUserInfoStyles = [_uM([["container", _pS(_uM([["height", "100%"], ["backgroundImage", "none"], ["backgroundColor", "#f3f3f3"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"]]))], ["title", _uM([[".container ", _uM([["fontSize", "30rpx"], ["color", "#333333"], ["paddingTop", "50rpx"], ["paddingRight", 0], ["paddingBottom", "10rpx"], ["paddingLeft", "20rpx"]])]])], ["info", _uM([[".container ", _uM([["backgroundImage", "none"], ["backgroundColor", "#ffffff"], ["paddingTop", "10rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "30rpx"], ["borderTopLeftRadius", "10rpx"], ["borderTopRightRadius", "10rpx"], ["borderBottomRightRadius", "10rpx"], ["borderBottomLeftRadius", "10rpx"]])]])], ["info-item", _uM([[".container .info ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"], ["paddingTop", "20rpx"], ["paddingRight", 0], ["paddingBottom", "20rpx"], ["paddingLeft", 0], ["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#f1f1f1"]])]])], ["icon", _uM([[".container .info .info-item ", _uM([["width", "30rpx"], ["height", "30rpx"]])]])], ["switch-state", _uM([[".container .info .info-item ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-end"], ["alignItems", "center"]])]])], ["phone", _uM([[".container .info .info-item ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-end"], ["alignItems", "center"]])]])], ["nobottom", _uM([[".container .info ", _uM([["borderBottomWidth", "medium"], ["borderBottomStyle", "none"], ["borderBottomColor", "#000000"]])]])], ["btn-box", _uM([[".container ", _uM([["marginTop", "200rpx"]])]])]])];
 //# sourceMappingURL=userInfo.uvue.map

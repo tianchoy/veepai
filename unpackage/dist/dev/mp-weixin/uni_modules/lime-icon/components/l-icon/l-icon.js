@@ -7,7 +7,7 @@ const IconifyURL = "https://api.iconify.design/";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "l-icon",
   props: {
-    name: new UTSJSONObject({
+    name: {
       type: String,
       default: "",
       required: true
@@ -15,35 +15,35 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       // 	// 确保是字符串类型且不为空
       // 	return typeof value == 'string' && value.trim().length > 0
       // }
-    }),
-    color: new UTSJSONObject({
+    },
+    color: {
       type: String
       // default: ''
-    }),
-    size: new UTSJSONObject({
+    },
+    size: {
       type: [String, Number]
-    }),
-    prefix: new UTSJSONObject({
+    },
+    prefix: {
       type: String,
       default: ""
-    }),
-    lClass: new UTSJSONObject({
+    },
+    lClass: {
       type: String,
       default: ""
-    }),
+    },
     // 对安卓IOS无效
-    inherit: new UTSJSONObject({
+    inherit: {
       type: Boolean,
       default: true
-    }),
-    web: new UTSJSONObject({
+    },
+    web: {
       type: Boolean,
       default: false
-    }),
-    lStyle: new UTSJSONObject({
+    },
+    lStyle: {
       type: [String, Object, Array],
       default: ""
-    })
+    }
   },
   emits: ["click"],
   setup(__props, _a) {

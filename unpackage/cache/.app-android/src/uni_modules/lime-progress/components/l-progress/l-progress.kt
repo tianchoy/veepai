@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesLimeProgressComponentsLProgressLProgress : VueComponent, ProgressProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     override var showInfo: Boolean by `$props`
@@ -72,20 +68,20 @@ open class GenUniModulesLimeProgressComponentsLProgressLProgress : VueComponent,
             }
             )
             return fun(): Any? {
-                return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                return _cE("view", _uM("class" to _nC(_uA(
                     "l-progress",
                     unref(classes)
                 )), "ref_key" to "progressRef", "ref" to progressRef), null, 2)
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf())
+            _nCS(_uA())
         }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("update:percent" to null)
-        var props = normalizePropsOptions(utsMapOf("showInfo" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "infoType" to utsMapOf("type" to "String", "required" to true, "default" to "outer"), "infoAlign" to utsMapOf("type" to "String", "required" to true, "default" to "end"), "strokeColor" to utsMapOf("type" to "String", "required" to true, "default" to "#1677ff"), "trailColor" to utsMapOf("type" to "String", "required" to true, "default" to "rgba(0, 0, 0, 0.06)"), "linecap" to utsMapOf("type" to "String", "required" to true, "default" to "round"), "infoColor" to utsMapOf("type" to "String", "required" to true, "default" to "black"), "fontSize" to utsMapOf("required" to true, "default" to 12), "strokeWidth" to utsMapOf("required" to true, "default" to 4), "percent" to utsMapOf("type" to "Number", "default" to 0)))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("update:percent" to null)
+        var props = _nP(_uM("showInfo" to _uM("type" to "Boolean", "required" to true, "default" to false), "infoType" to _uM("type" to "String", "required" to true, "default" to "outer"), "infoAlign" to _uM("type" to "String", "required" to true, "default" to "end"), "strokeColor" to _uM("type" to "String", "required" to true, "default" to "#1677ff"), "trailColor" to _uM("type" to "String", "required" to true, "default" to "rgba(0, 0, 0, 0.06)"), "linecap" to _uM("type" to "String", "required" to true, "default" to "round"), "infoColor" to _uM("type" to "String", "required" to true, "default" to "black"), "fontSize" to _uM("required" to true, "default" to 12), "strokeWidth" to _uM("required" to true, "default" to 4), "percent" to _uM("type" to "Number", "default" to 0)))
+        var propsNeedCastKeys = _uA(
             "showInfo",
             "infoType",
             "infoAlign",
@@ -97,6 +93,6 @@ open class GenUniModulesLimeProgressComponentsLProgressLProgress : VueComponent,
             "strokeWidth",
             "percent"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

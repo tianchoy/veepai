@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem : VueComponent, DateStripItemProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     override var dates: UTSArray<DateStriPDay> by `$props`
@@ -49,88 +45,88 @@ open class GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem : Vu
                 emit("click", day)
             }
             return fun(): Any? {
-                return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                return _cE("view", _uM("class" to _nC(_uA(
                     "l-date-strip__item",
                     "l-date-strip__item--" + _ctx.switchMode
-                ))), utsArrayOf(
-                    createElementVNode(Fragment, null, RenderHelpers.renderList(_ctx.dates, fun(item, __key, __index, _cached): Any {
-                        return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                ))), _uA(
+                    _cE(Fragment, null, RenderHelpers.renderList(_ctx.dates, fun(item, __key, __index, _cached): Any {
+                        return _cE("view", _uM("class" to _nC(_uA(
                             "l-date-strip__grid",
-                            utsArrayOf(
+                            _uA(
                                 "l-date-strip__grid--" + _ctx.shape,
-                                utsMapOf("l-date-strip__grid--active-bg" to (_ctx.shape == "square" && item.type == "selected"), "l-date-strip__grid--selected" to (item.type == "selected"))
+                                _uM("l-date-strip__grid--active-bg" to (_ctx.shape == "square" && item.type == "selected"), "l-date-strip__grid--selected" to (item.type == "selected"))
                             )
-                        )), "style" to normalizeStyle(utsArrayOf(
+                        )), "style" to _nS(_uA(
                             unref(styles),
                             if (item.type == "selected" && _ctx.shape == "square" && _ctx.activeBgColor != null) {
-                                utsMapOf("background" to _ctx.activeBgColor)
+                                _uM("background" to _ctx.activeBgColor)
                             } else {
-                                utsMapOf<String, Any?>()
+                                _uM<String, Any?>()
                             }
                             ,
                             if (_ctx.shape == "square" && _ctx.radius != null) {
-                                utsMapOf("border-radius" to _ctx.radius)
+                                _uM("border-radius" to _ctx.radius)
                             } else {
-                                utsMapOf<String, Any?>()
+                                _uM<String, Any?>()
                             }
                         )), "onClick" to fun(){
                             onClick(item)
                         }
-                        , "key" to item.key), utsArrayOf(
+                        , "key" to item.key), _uA(
                             if (item.prefix != null) {
-                                createElementVNode("text", utsMapOf("key" to 0, "class" to normalizeClass(utsArrayOf(
+                                _cE("text", _uM("key" to 0, "class" to _nC(_uA(
                                     "l-date-strip__grid-prefix",
-                                    utsMapOf("l-date-strip__grid--active-text" to (item.type == "selected" && _ctx.shape == "square"), "l-date-strip__grid--active-text-none" to (item.type == "selected" && _ctx.shape == "none"))
-                                )), "style" to normalizeStyle(utsArrayOf(
+                                    _uM("l-date-strip__grid--active-text" to (item.type == "selected" && _ctx.shape == "square"), "l-date-strip__grid--active-text-none" to (item.type == "selected" && _ctx.shape == "none"))
+                                )), "style" to _nS(_uA(
                                     if (item.type == "selected" && _ctx.activeColor != null) {
-                                        utsMapOf("color" to _ctx.activeColor)
+                                        _uM("color" to _ctx.activeColor)
                                     } else {
-                                        utsMapOf<String, Any?>()
+                                        _uM<String, Any?>()
                                     }
-                                ))), toDisplayString(item.prefix), 7)
+                                ))), _tD(item.prefix), 7)
                             } else {
-                                createCommentVNode("v-if", true)
+                                _cC("v-if", true)
                             }
                             ,
-                            createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                            _cE("view", _uM("class" to _nC(_uA(
                                 "l-date-strip__grid-info",
-                                utsMapOf("l-date-strip__grid--active-bg" to (_ctx.shape == "circle" && item.type == "selected"))
-                            )), "style" to normalizeStyle(utsArrayOf(
+                                _uM("l-date-strip__grid--active-bg" to (_ctx.shape == "circle" && item.type == "selected"))
+                            )), "style" to _nS(_uA(
                                 if (item.type == "selected" && _ctx.shape == "circle" && _ctx.activeBgColor != null) {
-                                    utsMapOf("background" to _ctx.activeBgColor)
+                                    _uM("background" to _ctx.activeBgColor)
                                 } else {
-                                    utsMapOf<String, Any?>()
+                                    _uM<String, Any?>()
                                 }
                                 ,
                                 if (_ctx.shape == "square" && _ctx.radius != null) {
-                                    utsMapOf("border-radius" to _ctx.radius)
+                                    _uM("border-radius" to _ctx.radius)
                                 } else {
-                                    utsMapOf<String, Any?>()
+                                    _uM<String, Any?>()
                                 }
-                            ))), utsArrayOf(
-                                createElementVNode("text", utsMapOf("class" to normalizeClass(utsArrayOf(
+                            ))), _uA(
+                                _cE("text", _uM("class" to _nC(_uA(
                                     "l-date-strip__grid-day",
-                                    utsMapOf("l-date-strip__grid--active-text" to (item.type == "selected" && _ctx.shape != "none"), "l-date-strip__grid--active-text-none" to (item.type == "selected" && _ctx.shape == "none"))
-                                )), "style" to normalizeStyle(utsArrayOf(
+                                    _uM("l-date-strip__grid--active-text" to (item.type == "selected" && _ctx.shape != "none"), "l-date-strip__grid--active-text-none" to (item.type == "selected" && _ctx.shape == "none"))
+                                )), "style" to _nS(_uA(
                                     if (item.type == "selected" && _ctx.activeColor != null) {
-                                        utsMapOf("color" to _ctx.activeColor)
+                                        _uM("color" to _ctx.activeColor)
                                     } else {
-                                        utsMapOf<String, Any?>()
+                                        _uM<String, Any?>()
                                     }
-                                ))), toDisplayString(item.text), 7),
-                                createElementVNode("view", null, utsArrayOf(
+                                ))), _tD(item.text), 7),
+                                _cE("view", null, _uA(
                                     if (item.suffix == "true") {
-                                        createElementVNode("view", utsMapOf("key" to 0), utsArrayOf(
-                                            createElementVNode("image", utsMapOf("style" to normalizeStyle(utsMapOf("width" to "16rpx", "height" to "16rpx")), "src" to `default`), null, 4)
+                                        _cE("view", _uM("key" to 0), _uA(
+                                            _cE("image", _uM("style" to _nS(_uM("width" to "16rpx", "height" to "16rpx")), "src" to `default`), null, 4)
                                         ))
                                     } else {
-                                        createElementVNode("view", utsMapOf("key" to 1), utsArrayOf(
-                                            createElementVNode("text", utsMapOf("style" to normalizeStyle(utsMapOf("width" to "16rpx", "height" to "16rpx"))), null, 4)
+                                        _cE("view", _uM("key" to 1), _uA(
+                                            _cE("text", _uM("style" to _nS(_uM("width" to "16rpx", "height" to "16rpx"))), null, 4)
                                         ))
                                     }
                                 ))
                             ), 6)
-                        ), 14, utsArrayOf(
+                        ), 14, _uA(
                             "onClick"
                         ))
                     }
@@ -139,23 +135,23 @@ open class GenUniModulesLimeDateStripComponentsLDateStripItemLDateStripItem : Vu
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-date-strip" to padStyleMapOf(utsMapOf("height" to 86, "backgroundColor" to "#ffffff")), "l-date-strip__scroll" to padStyleMapOf(utsMapOf("flexDirection" to "row")), "l-date-strip__item" to padStyleMapOf(utsMapOf("display" to "flex", "flexDirection" to "row", "paddingTop" to 8, "paddingRight" to 0, "paddingBottom" to 8, "paddingLeft" to 0, "boxSizing" to "border-box")), "l-date-strip__item--week" to padStyleMapOf(utsMapOf("flex" to 1)), "l-date-strip__grid" to utsMapOf(".l-date-strip__item--week " to utsMapOf("flex" to 1), ".l-date-strip__item--none " to utsMapOf("width" to 50), "" to utsMapOf("display" to "flex", "flexDirection" to "column", "marginTop" to 0, "marginRight" to "4rpx", "marginBottom" to 0, "marginLeft" to "4rpx", "transitionDuration" to "300ms", "transitionProperty" to "backgroundColor,color", "transitionTimingFunction" to "linear")), "l-date-strip__grid-prefix" to utsMapOf("" to utsMapOf("textAlign" to "center", "transitionDuration" to "200ms", "transitionProperty" to "color", "transitionTimingFunction" to "linear", "fontSize" to 14, "color" to "rgba(0,0,0,0.45)"), ".l-date-strip__grid--none " to utsMapOf("paddingBottom" to 4, "paddingTop" to 4), ".l-date-strip__grid--circle " to utsMapOf("paddingBottom" to 4)), "l-date-strip__grid-day" to padStyleMapOf(utsMapOf("textAlign" to "center", "transitionDuration" to "200ms", "transitionProperty" to "color", "transitionTimingFunction" to "linear", "fontSize" to 16, "color" to "rgba(0,0,0,0.88)", "fontWeight" to "bold")), "l-date-strip__grid-suffix" to padStyleMapOf(utsMapOf("textAlign" to "center", "transitionDuration" to "200ms", "transitionProperty" to "color", "transitionTimingFunction" to "linear", "position" to "absolute", "top" to "50%", "transform" to "translateY(60%)", "fontSize" to 12, "color" to "rgba(0,0,0,0.65)")), "l-date-strip__grid-info" to utsMapOf(".l-date-strip__grid--circle " to utsMapOf("borderTopLeftRadius" to 99, "borderTopRightRadius" to 99, "borderBottomRightRadius" to 99, "borderBottomLeftRadius" to 99), "" to utsMapOf("display" to "flex", "flex" to 1, "justifyContent" to "center", "alignItems" to "center", "position" to "relative")), "l-date-strip__grid--square" to padStyleMapOf(utsMapOf("borderTopLeftRadius" to 5, "borderTopRightRadius" to 5, "borderBottomRightRadius" to 5, "borderBottomLeftRadius" to 5, "paddingTop" to 6, "paddingRight" to 0, "paddingBottom" to 6, "paddingLeft" to 0)), "l-date-strip__grid--active-bg" to padStyleMapOf(utsMapOf("backgroundColor" to "#3283ff")), "l-date-strip__grid--active-text" to padStyleMapOf(utsMapOf("color" to "#FFFFFF")), "l-date-strip__grid--active-text-none" to padStyleMapOf(utsMapOf("color" to "#3283ff")), "l-date-strip__grid--disabled" to padStyleMapOf(utsMapOf("opacity" to 0.4)), "@TRANSITION" to utsMapOf("l-date-strip__grid" to utsMapOf("duration" to "300ms", "property" to "backgroundColor,color", "timingFunction" to "linear"), "l-date-strip__grid-prefix" to utsMapOf("duration" to "200ms", "property" to "color", "timingFunction" to "linear"), "l-date-strip__grid-day" to utsMapOf("duration" to "200ms", "property" to "color", "timingFunction" to "linear"), "l-date-strip__grid-suffix" to utsMapOf("duration" to "200ms", "property" to "color", "timingFunction" to "linear")))
+                return _uM("l-date-strip" to _pS(_uM("height" to 86, "backgroundColor" to "#ffffff")), "l-date-strip__scroll" to _pS(_uM("flexDirection" to "row")), "l-date-strip__item" to _pS(_uM("display" to "flex", "flexDirection" to "row", "paddingTop" to 8, "paddingRight" to 0, "paddingBottom" to 8, "paddingLeft" to 0, "boxSizing" to "border-box")), "l-date-strip__item--week" to _pS(_uM("flex" to 1)), "l-date-strip__grid" to _uM(".l-date-strip__item--week " to _uM("flex" to 1), ".l-date-strip__item--none " to _uM("width" to 50), "" to _uM("display" to "flex", "flexDirection" to "column", "marginTop" to 0, "marginRight" to "4rpx", "marginBottom" to 0, "marginLeft" to "4rpx", "transitionDuration" to "300ms", "transitionProperty" to "backgroundColor,color", "transitionTimingFunction" to "linear")), "l-date-strip__grid-prefix" to _uM("" to _uM("textAlign" to "center", "transitionDuration" to "200ms", "transitionProperty" to "color", "transitionTimingFunction" to "linear", "fontSize" to 14, "color" to "rgba(0,0,0,0.45)"), ".l-date-strip__grid--none " to _uM("paddingBottom" to 4, "paddingTop" to 4), ".l-date-strip__grid--circle " to _uM("paddingBottom" to 4)), "l-date-strip__grid-day" to _pS(_uM("textAlign" to "center", "transitionDuration" to "200ms", "transitionProperty" to "color", "transitionTimingFunction" to "linear", "fontSize" to 16, "color" to "rgba(0,0,0,0.88)", "fontWeight" to "bold")), "l-date-strip__grid-suffix" to _pS(_uM("textAlign" to "center", "transitionDuration" to "200ms", "transitionProperty" to "color", "transitionTimingFunction" to "linear", "position" to "absolute", "top" to "50%", "transform" to "translateY(60%)", "fontSize" to 12, "color" to "rgba(0,0,0,0.65)")), "l-date-strip__grid-info" to _uM(".l-date-strip__grid--circle " to _uM("borderTopLeftRadius" to 99, "borderTopRightRadius" to 99, "borderBottomRightRadius" to 99, "borderBottomLeftRadius" to 99), "" to _uM("display" to "flex", "flex" to 1, "justifyContent" to "center", "alignItems" to "center", "position" to "relative")), "l-date-strip__grid--square" to _pS(_uM("borderTopLeftRadius" to 5, "borderTopRightRadius" to 5, "borderBottomRightRadius" to 5, "borderBottomLeftRadius" to 5, "paddingTop" to 6, "paddingRight" to 0, "paddingBottom" to 6, "paddingLeft" to 0)), "l-date-strip__grid--active-bg" to _pS(_uM("backgroundColor" to "#3283ff")), "l-date-strip__grid--active-text" to _pS(_uM("color" to "#FFFFFF")), "l-date-strip__grid--active-text-none" to _pS(_uM("color" to "#3283ff")), "l-date-strip__grid--disabled" to _pS(_uM("opacity" to 0.4)), "@TRANSITION" to _uM("l-date-strip__grid" to _uM("duration" to "300ms", "property" to "backgroundColor,color", "timingFunction" to "linear"), "l-date-strip__grid-prefix" to _uM("duration" to "200ms", "property" to "color", "timingFunction" to "linear"), "l-date-strip__grid-day" to _uM("duration" to "200ms", "property" to "color", "timingFunction" to "linear"), "l-date-strip__grid-suffix" to _uM("duration" to "200ms", "property" to "color", "timingFunction" to "linear")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("click" to null)
-        var props = normalizePropsOptions(utsMapOf("dates" to utsMapOf("type" to "Array", "required" to true, "default" to utsArrayOf<DateStriPDay>()), "color" to utsMapOf("type" to "String", "required" to false), "activeBgColor" to utsMapOf("type" to "String", "required" to false), "activeColor" to utsMapOf("type" to "String", "required" to false), "bgColor" to utsMapOf("type" to "String", "required" to false), "radius" to utsMapOf("type" to "String", "required" to false), "gridWidth" to utsMapOf("type" to "String", "required" to false), "switchMode" to utsMapOf("type" to "String", "required" to true, "default" to "week"), "shape" to utsMapOf("type" to "String", "required" to true, "default" to "square")))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("click" to null)
+        var props = _nP(_uM("dates" to _uM("type" to "Array", "required" to true, "default" to _uA<DateStriPDay>()), "color" to _uM("type" to "String", "required" to false), "activeBgColor" to _uM("type" to "String", "required" to false), "activeColor" to _uM("type" to "String", "required" to false), "bgColor" to _uM("type" to "String", "required" to false), "radius" to _uM("type" to "String", "required" to false), "gridWidth" to _uM("type" to "String", "required" to false), "switchMode" to _uM("type" to "String", "required" to true, "default" to "week"), "shape" to _uM("type" to "String", "required" to true, "default" to "square")))
+        var propsNeedCastKeys = _uA(
             "dates",
             "switchMode",
             "shape"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

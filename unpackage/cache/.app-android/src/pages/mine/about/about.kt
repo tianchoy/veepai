@@ -11,71 +11,67 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenPagesMineAboutAbout : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     @Suppress("UNUSED_PARAMETER", "UNUSED_VARIABLE")
     override fun `$render`(): Any? {
         val _cache = this.`$`.renderCache
         val _component_fui_icon = resolveEasyComponent("fui-icon", GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass)
-        return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-            createElementVNode("view", utsMapOf("class" to "appinfo"), utsArrayOf(
-                createElementVNode("image", utsMapOf("class" to "logo", "src" to default10)),
-                createElementVNode("text", utsMapOf("class" to "title"), "夜鹰智联"),
-                createElementVNode("text", utsMapOf("class" to "version"), "V1.0.1.250512")
+        return _cE("view", _uM("class" to "container"), _uA(
+            _cE("view", _uM("class" to "appinfo"), _uA(
+                _cE("image", _uM("class" to "logo", "src" to default10)),
+                _cE("text", _uM("class" to "title"), "夜鹰智联"),
+                _cE("text", _uM("class" to "version"), "V1.0.1.250512")
             )),
-            createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
-                createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
-                    createElementVNode("text", null, "用户协议"),
-                    createVNode(_component_fui_icon, utsMapOf("name" to "arrowright", "color" to "#333", "size" to 55))
+            _cE("view", _uM("class" to "content"), _uA(
+                _cE("view", _uM("class" to "item"), _uA(
+                    _cE("text", null, "用户协议"),
+                    _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#333", "size" to 55))
                 )),
-                createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
-                    createElementVNode("text", null, "隐私政策"),
-                    createVNode(_component_fui_icon, utsMapOf("name" to "arrowright", "color" to "#333", "size" to 55))
+                _cE("view", _uM("class" to "item"), _uA(
+                    _cE("text", null, "隐私政策"),
+                    _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#333", "size" to 55))
                 )),
-                createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
-                    createElementVNode("text", null, "个人信息收集"),
-                    createVNode(_component_fui_icon, utsMapOf("name" to "arrowright", "color" to "#333", "size" to 55))
+                _cE("view", _uM("class" to "item"), _uA(
+                    _cE("text", null, "个人信息收集"),
+                    _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#333", "size" to 55))
                 )),
-                createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
-                    createElementVNode("text", null, "第三方共享"),
-                    createVNode(_component_fui_icon, utsMapOf("name" to "arrowright", "color" to "#333", "size" to 55))
+                _cE("view", _uM("class" to "item"), _uA(
+                    _cE("text", null, "第三方共享"),
+                    _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#333", "size" to 55))
                 )),
-                createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
-                    createElementVNode("text", null, "检查更新"),
-                    createVNode(_component_fui_icon, utsMapOf("name" to "arrowright", "color" to "#333", "size" to 55))
+                _cE("view", _uM("class" to "item"), _uA(
+                    _cE("text", null, "检查更新"),
+                    _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#333", "size" to 55))
                 )),
-                createElementVNode("view", utsMapOf("class" to "item"), utsArrayOf(
-                    createElementVNode("text", null, "分享APP"),
-                    createVNode(_component_fui_icon, utsMapOf("name" to "arrowright", "color" to "#333", "size" to 55))
+                _cE("view", _uM("class" to "item"), _uA(
+                    _cE("text", null, "分享APP"),
+                    _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#333", "size" to 55))
                 ))
             )),
-            createElementVNode("view", utsMapOf("class" to "copyright"), utsArrayOf(
-                createElementVNode("text", utsMapOf("class" to "txt"), "版权所有：夜鹰智联"),
-                createElementVNode("text", utsMapOf("class" to "txt"), "粤ICP备18088888号")
+            _cE("view", _uM("class" to "copyright"), _uA(
+                _cE("text", _uM("class" to "txt"), "版权所有：夜鹰智联"),
+                _cE("text", _uM("class" to "txt"), "粤ICP备18088888号")
             ))
         ))
     }
     companion object {
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundColor" to "#f5f5f5", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "appinfo" to utsMapOf(".container " to utsMapOf("display" to "flex", "flexDirection" to "column", "alignItems" to "center")), "logo" to utsMapOf(".container " to utsMapOf("width" to "150rpx", "height" to "150rpx", "marginTop" to "100rpx", "marginRight" to 0, "marginBottom" to "50rpx", "marginLeft" to 0)), "title" to utsMapOf(".container " to utsMapOf("fontSize" to "30rpx", "fontWeight" to "bold", "marginBottom" to "50rpx")), "version" to utsMapOf(".container " to utsMapOf("fontSize" to "20rpx", "color" to "#999999", "marginBottom" to "50rpx")), "content" to utsMapOf(".container " to utsMapOf("backgroundColor" to "#ffffff", "paddingTop" to "20rpx", "paddingRight" to "30rpx", "paddingBottom" to "20rpx", "paddingLeft" to "30rpx", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx")), "item" to utsMapOf(".container .content " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between", "alignItems" to "center", "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f5f5f5", "paddingTop" to "10rpx", "paddingRight" to 0, "paddingBottom" to "10rpx", "paddingLeft" to 0)), "copyright" to utsMapOf(".container " to utsMapOf("display" to "flex", "flexDirection" to "column", "alignItems" to "center", "marginTop" to "200rpx")), "txt" to utsMapOf(".container .copyright " to utsMapOf("fontSize" to "15rpx", "color" to "#999999")))
+                return _uM("container" to _pS(_uM("height" to "100%", "backgroundColor" to "#f5f5f5", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "appinfo" to _uM(".container " to _uM("display" to "flex", "flexDirection" to "column", "alignItems" to "center")), "logo" to _uM(".container " to _uM("width" to "150rpx", "height" to "150rpx", "marginTop" to "100rpx", "marginRight" to 0, "marginBottom" to "50rpx", "marginLeft" to 0)), "title" to _uM(".container " to _uM("fontSize" to "30rpx", "fontWeight" to "bold", "marginBottom" to "50rpx")), "version" to _uM(".container " to _uM("fontSize" to "20rpx", "color" to "#999999", "marginBottom" to "50rpx")), "content" to _uM(".container " to _uM("backgroundColor" to "#ffffff", "paddingTop" to "20rpx", "paddingRight" to "30rpx", "paddingBottom" to "20rpx", "paddingLeft" to "30rpx", "borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx")), "item" to _uM(".container .content " to _uM("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between", "alignItems" to "center", "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#f5f5f5", "paddingTop" to "10rpx", "paddingRight" to 0, "paddingBottom" to "10rpx", "paddingLeft" to 0)), "copyright" to _uM(".container " to _uM("display" to "flex", "flexDirection" to "column", "alignItems" to "center", "marginTop" to "200rpx")), "txt" to _uM(".container .copyright " to _uM("fontSize" to "15rpx", "color" to "#999999")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

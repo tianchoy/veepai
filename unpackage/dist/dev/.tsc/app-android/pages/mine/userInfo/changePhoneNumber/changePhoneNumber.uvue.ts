@@ -6,7 +6,7 @@ import { ref } from 'vue'
 	
 const __sfc__ = defineComponent({
   __name: 'changePhoneNumber',
-  setup(__props): any | null {
+  setup(__props) {
 const __ins = getCurrentInstance()!;
 const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
@@ -43,15 +43,15 @@ const _component_fui_icon = resolveEasyComponent("fui-icon",_easycom_fui_icon)
 const _component_fui_input = resolveEasyComponent("fui-input",_easycom_fui_input)
 const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_button)
 
-  return createElementVNode("view", utsMapOf({ class: "container" }), [
-    createElementVNode("view", utsMapOf({ class: "content" }), [
-      createVNode(_component_fui_input, utsMapOf({
+  return _cE("view", _uM({ class: "container" }), [
+    _cE("view", _uM({ class: "content" }), [
+      _cV(_component_fui_input, _uM({
         placeholder: "请输入手机号",
         placeholderStyle: "font-size: 26rpx;"
-      }), utsMapOf({
+      }), _uM({
         left: withSlotCtx((): any[] => [
-          createElementVNode("view", null, [
-            createVNode(_component_fui_icon, utsMapOf({
+          _cE("view", null, [
+            _cV(_component_fui_icon, _uM({
               name: "mobile",
               color: "#1296db",
               size: 48
@@ -60,15 +60,15 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
         ]),
         _: 1 /* STABLE */
       })),
-      createVNode(_component_fui_input, utsMapOf({
+      _cV(_component_fui_input, _uM({
         padding: "20rpx 32rpx",
         placeholder: "请输入验证码",
         bottomLeft: 0,
         placeholderStyle: "font-size: 26rpx;"
-      }), utsMapOf({
+      }), _uM({
         left: withSlotCtx((): any[] => [
-          createElementVNode("view", null, [
-            createVNode(_component_fui_icon, utsMapOf({
+          _cE("view", null, [
+            _cV(_component_fui_icon, _uM({
               name: "captcha",
               color: "#1296db",
               size: 48
@@ -76,7 +76,7 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
           ])
         ]),
         default: withSlotCtx((): any[] => [
-          createVNode(_component_fui_button, utsMapOf({
+          _cV(_component_fui_button, _uM({
             type: "gray",
             width: "200rpx",
             height: "64rpx",
@@ -95,4 +95,4 @@ const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_but
 
 })
 export default __sfc__
-const GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberStyles = [utsMapOf([["container", padStyleMapOf(utsMapOf([["height", "100%"], ["backgroundImage", "none"], ["backgroundColor", "#f3f3f3"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"]]))], ["content", utsMapOf([[".container ", utsMapOf([["backgroundColor", "#ffffff"], ["paddingTop", "30rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "30rpx"], ["paddingLeft", "30rpx"], ["borderTopLeftRadius", "10rpx"], ["borderTopRightRadius", "10rpx"], ["borderBottomRightRadius", "10rpx"], ["borderBottomLeftRadius", "10rpx"]])]])], ["icon", utsMapOf([[".container .content ", utsMapOf([["width", "40rpx"], ["height", "40rpx"], ["marginRight", "10rpx"]])]])]])]
+const GenPagesMineUserInfoChangePhoneNumberChangePhoneNumberStyles = [_uM([["container", _pS(_uM([["height", "100%"], ["backgroundImage", "none"], ["backgroundColor", "#f3f3f3"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"]]))], ["content", _uM([[".container ", _uM([["backgroundColor", "#ffffff"], ["paddingTop", "30rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "30rpx"], ["paddingLeft", "30rpx"], ["borderTopLeftRadius", "10rpx"], ["borderTopRightRadius", "10rpx"], ["borderBottomRightRadius", "10rpx"], ["borderBottomLeftRadius", "10rpx"]])]])], ["icon", _uM([[".container .content ", _uM([["width", "40rpx"], ["height", "40rpx"], ["marginRight", "10rpx"]])]])]])]

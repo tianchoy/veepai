@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesLimeLoadingComponentsLLoadingLLoading : VueComponent, LoadingProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     override var color: String? by `$props`
@@ -88,45 +84,45 @@ open class GenUniModulesLimeLoadingComponentsLLoadingLLoading : VueComponent, Lo
             }
             )
             return fun(): Any? {
-                return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                return _cE("view", _uM("class" to _nC(_uA(
                     "l-loading",
                     unref(classes)
-                ))), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "l-loading__view", "ref_key" to "loadingRef", "ref" to loadingRef, "style" to normalizeStyle(unref(spinnerStyle))), null, 4),
+                ))), _uA(
+                    _cE("view", _uM("class" to "l-loading__view", "ref_key" to "loadingRef", "ref" to loadingRef, "style" to _nS(unref(spinnerStyle))), null, 4),
                     if (isTrue(_ctx.`$slots`["default"] != null || _ctx.text != null)) {
-                        createElementVNode("text", utsMapOf("key" to 0, "class" to "l-loading__text", "style" to normalizeStyle(unref(textStyle))), utsArrayOf(
+                        _cE("text", _uM("key" to 0, "class" to "l-loading__text", "style" to _nS(unref(textStyle))), _uA(
                             renderSlot(_ctx.`$slots`, "default", UTSJSONObject(), fun(): UTSArray<Any> {
-                                return utsArrayOf(
-                                    toDisplayString(_ctx.text)
+                                return _uA(
+                                    _tD(_ctx.text)
                                 )
                             })
                         ), 4)
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
                 ), 2)
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-loading" to utsMapOf("" to utsMapOf("display" to "flex", "position" to "relative", "flexDirection" to "row", "alignItems" to "center", "borderLeftColor" to "#3283ff", "borderLeftWidth" to 0), ".is-vertical" to utsMapOf("flexDirection" to "column")), "l-loading__text" to utsMapOf("" to utsMapOf("marginLeft" to "16rpx", "color" to "rgba(0,0,0,0.45)", "fontSize" to 14), ".l-loading.is-vertical " to utsMapOf("marginTop" to "8rpx", "marginRight" to 0, "marginBottom" to 0, "marginLeft" to 0)), "l-loading__ball" to padStyleMapOf(utsMapOf("width" to "40rpx", "height" to "40rpx")), "l-loading__circular" to padStyleMapOf(utsMapOf("width" to "40rpx", "height" to "40rpx")), "l-loading__spinner" to padStyleMapOf(utsMapOf("width" to "40rpx", "height" to "40rpx")))
+                return _uM("l-loading" to _uM("" to _uM("display" to "flex", "position" to "relative", "flexDirection" to "row", "alignItems" to "center", "borderLeftColor" to "#3283ff", "borderLeftWidth" to 0), ".is-vertical" to _uM("flexDirection" to "column")), "l-loading__text" to _uM("" to _uM("marginLeft" to "16rpx", "color" to "rgba(0,0,0,0.45)", "fontSize" to 14), ".l-loading.is-vertical " to _uM("marginTop" to "8rpx", "marginRight" to 0, "marginBottom" to 0, "marginLeft" to 0)), "l-loading__ball" to _pS(_uM("width" to "40rpx", "height" to "40rpx")), "l-loading__circular" to _pS(_uM("width" to "40rpx", "height" to "40rpx")), "l-loading__spinner" to _pS(_uM("width" to "40rpx", "height" to "40rpx")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf("color" to utsMapOf("type" to "String", "required" to false), "type" to utsMapOf("type" to "String", "required" to true, "default" to "circular"), "size" to utsMapOf("type" to "String", "required" to true, "default" to "40rpx"), "text" to utsMapOf("type" to "String", "required" to false), "textColor" to utsMapOf("type" to "String", "required" to false), "textSize" to utsMapOf("type" to "String", "required" to false), "mode" to utsMapOf("type" to "String", "required" to true, "default" to "raf"), "vertical" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "animated" to utsMapOf("type" to "Boolean", "required" to true, "default" to true)))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM("color" to _uM("type" to "String", "required" to false), "type" to _uM("type" to "String", "required" to true, "default" to "circular"), "size" to _uM("type" to "String", "required" to true, "default" to "40rpx"), "text" to _uM("type" to "String", "required" to false), "textColor" to _uM("type" to "String", "required" to false), "textSize" to _uM("type" to "String", "required" to false), "mode" to _uM("type" to "String", "required" to true, "default" to "raf"), "vertical" to _uM("type" to "Boolean", "required" to true, "default" to false), "animated" to _uM("type" to "Boolean", "required" to true, "default" to true)))
+        var propsNeedCastKeys = _uA(
             "type",
             "size",
             "mode",
             "vertical",
             "animated"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

@@ -128,22 +128,22 @@ export default __sfc__;
 function GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupRender(this: InstanceType<typeof __sfc__>): any | null {
     const _ctx = this;
     const _cache = this.$.renderCache;
-    return createElementVNode("view", utsMapOf({
+    return _cE("view", _uM({
         class: "fui-bottom__popup-wrap",
-        style: normalizeStyle(utsMapOf({ zIndex: _ctx.zIndex, background: _ctx.maskBackground })),
+        style: _nS(_uM({ zIndex: _ctx.zIndex, background: _ctx.maskBackground })),
         onClick: withModifiers(_ctx.handleClose, ["stop"]),
         ref: _ctx.refMkId
     }), [
-        createElementVNode("view", utsMapOf({
+        _cE("view", _uM({
             onClick: withModifiers(_ctx.stop, ["stop"]),
             ref: _ctx.refId,
-            class: normalizeClass(["fui-bottom__popup", utsMapOf({ 'fui-bp__safe-weex': _ctx.iphoneX && _ctx.safeArea })]),
-            style: normalizeStyle(utsMapOf({ borderTopLeftRadius: `${_ctx.radius}rpx`, borderTopRightRadius: `${_ctx.radius}rpx`, background: _ctx.background }))
+            class: _nC(["fui-bottom__popup", _uM({ 'fui-bp__safe-weex': _ctx.iphoneX && _ctx.safeArea })]),
+            style: _nS(_uM({ borderTopLeftRadius: `${_ctx.radius}rpx`, borderTopRightRadius: `${_ctx.radius}rpx`, background: _ctx.background }))
         }), [
             renderSlot(_ctx.$slots, "default")
         ], 14 /* CLASS, STYLE, PROPS */, ["onClick"])
     ], 12 /* STYLE, PROPS */, ["onClick"]);
 }
 export type FuiBottomPopupComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupStyles = [utsMapOf([["fui-bottom__popup-wrap", padStyleMapOf(utsMapOf([["position", "fixed"], ["left", 0], ["right", 0], ["top", 0], ["bottom", 0], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "flex-end"], ["justifyContent", "center"], ["transitionProperty", "opacity,visibility"], ["transitionTimingFunction", "ease-in-out"], ["transitionDuration", "0.3s"], ["visibility", "hidden"], ["borderBottomWidth", 0], ["overflow", "hidden"], ["opacity", 0]]))], ["fui-bottom__popup", padStyleMapOf(utsMapOf([["width", "100%"], ["transitionProperty", "transform,opacity,visibility"], ["transitionTimingFunction", "ease-in-out"], ["transitionDuration", "0.3s"], ["minHeight", "20rpx"], ["overflow", "hidden"], ["transform", "translateY(100%)"], ["display", "flex"], ["flexDirection", "row"], ["position", "relative"]]))], ["fui-bp__safe-weex", padStyleMapOf(utsMapOf([["paddingBottom", 34]]))], ["@TRANSITION", utsMapOf([["fui-bottom__popup-wrap", utsMapOf([["property", "opacity,visibility"], ["timingFunction", "ease-in-out"], ["duration", "0.3s"]])], ["fui-bottom__popup", utsMapOf([["property", "transform,opacity,visibility"], ["timingFunction", "ease-in-out"], ["duration", "0.3s"]])]])]])];
+const GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupStyles = [_uM([["fui-bottom__popup-wrap", _pS(_uM([["position", "fixed"], ["left", 0], ["right", 0], ["top", 0], ["bottom", 0], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "flex-end"], ["justifyContent", "center"], ["transitionProperty", "opacity,visibility"], ["transitionTimingFunction", "ease-in-out"], ["transitionDuration", "0.3s"], ["visibility", "hidden"], ["borderBottomWidth", 0], ["overflow", "hidden"], ["opacity", 0]]))], ["fui-bottom__popup", _pS(_uM([["width", "100%"], ["transitionProperty", "transform,opacity,visibility"], ["transitionTimingFunction", "ease-in-out"], ["transitionDuration", "0.3s"], ["minHeight", "20rpx"], ["overflow", "hidden"], ["transform", "translateY(100%)"], ["display", "flex"], ["flexDirection", "row"], ["position", "relative"]]))], ["fui-bp__safe-weex", _pS(_uM([["paddingBottom", 34]]))], ["@TRANSITION", _uM([["fui-bottom__popup-wrap", _uM([["property", "opacity,visibility"], ["timingFunction", "ease-in-out"], ["duration", "0.3s"]])], ["fui-bottom__popup", _uM([["property", "transform,opacity,visibility"], ["timingFunction", "ease-in-out"], ["duration", "0.3s"]])]])]])];
 //# sourceMappingURL=fui-bottom-popup.uvue.map

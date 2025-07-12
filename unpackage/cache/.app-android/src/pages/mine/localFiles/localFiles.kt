@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenPagesMineLocalFilesLocalFiles : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     companion object {
@@ -26,18 +22,18 @@ open class GenPagesMineLocalFilesLocalFiles : BasePage {
             return fun(): Any? {
                 val _component_l_grid_item = resolveEasyComponent("l-grid-item", GenUniModulesLimeGridComponentsLGridItemLGridItemClass)
                 val _component_l_grid = resolveEasyComponent("l-grid", GenUniModulesLimeGridComponentsLGridLGridClass)
-                return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createVNode(_component_l_grid, utsMapOf("column" to 3, "border" to true, "gutter" to 20), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                        return utsArrayOf(
-                            createVNode(_component_l_grid_item, utsMapOf("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar1.png")),
-                            createVNode(_component_l_grid_item, utsMapOf("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar2.png")),
-                            createVNode(_component_l_grid_item, utsMapOf("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar3.png")),
-                            createVNode(_component_l_grid_item, utsMapOf("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar4.png")),
-                            createVNode(_component_l_grid_item, utsMapOf("text" to "最多四字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar5.png")),
-                            createVNode(_component_l_grid_item, utsMapOf("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar1.png")),
-                            createVNode(_component_l_grid_item, utsMapOf("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar2.png")),
-                            createVNode(_component_l_grid_item, utsMapOf("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar3.png")),
-                            createVNode(_component_l_grid_item, utsMapOf("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar4.png"))
+                return _cE("view", _uM("class" to "container"), _uA(
+                    _cV(_component_l_grid, _uM("column" to 3, "border" to true, "gutter" to 20), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                        return _uA(
+                            _cV(_component_l_grid_item, _uM("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar1.png")),
+                            _cV(_component_l_grid_item, _uM("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar2.png")),
+                            _cV(_component_l_grid_item, _uM("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar3.png")),
+                            _cV(_component_l_grid_item, _uM("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar4.png")),
+                            _cV(_component_l_grid_item, _uM("text" to "最多四字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar5.png")),
+                            _cV(_component_l_grid_item, _uM("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar1.png")),
+                            _cV(_component_l_grid_item, _uM("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar2.png")),
+                            _cV(_component_l_grid_item, _uM("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar3.png")),
+                            _cV(_component_l_grid_item, _uM("text" to "标题文字", "image" to "https://tdesign.gtimg.com/mobile/demos/avatar4.png"))
                         )
                     }
                     ), "_" to 1))
@@ -45,21 +41,21 @@ open class GenPagesMineLocalFilesLocalFiles : BasePage {
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundColor" to "#f5f5f5")))
+                return _uM("container" to _pS(_uM("height" to "100%", "backgroundColor" to "#f5f5f5")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

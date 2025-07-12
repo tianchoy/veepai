@@ -12,7 +12,7 @@ const _easycom_fui_button = () => "../../../../uni_modules/firstui-unix/componen
 if (!Math) {
   (_easycom_fui_icon + _easycom_fui_input + _easycom_fui_button)();
 }
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "changePhoneNumber",
   setup(__props) {
     const btnWord = common_vendor.ref("获取验证码");
@@ -71,7 +71,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-2776b291"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../../../.sourcemap/mp-weixin/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.js.map

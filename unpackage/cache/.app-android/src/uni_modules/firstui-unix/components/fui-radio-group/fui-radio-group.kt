@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {
         onCreated(fun() {
@@ -38,12 +34,12 @@ open class GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup : VueCom
         val _ctx = this
         val _cache = this.`$`.renderCache
         val _component_radio_group = resolveComponent("radio-group")
-        return createVNode(_component_radio_group, utsMapOf("name" to _ctx.name), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-            return utsArrayOf(
+        return _cV(_component_radio_group, _uM("name" to _ctx.name), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+            return _uA(
                 renderSlot(_ctx.`$slots`, "default")
             )
         }
-        ), "_" to 3), 8, utsArrayOf(
+        ), "_" to 3), 8, _uA(
             "name"
         ))
     }
@@ -54,7 +50,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup : VueCom
     open var fuiForm: ComponentPublicInstance? by `$data`
     @Suppress("USELESS_CAST")
     override fun data(): Map<String, Any?> {
-        return utsMapOf("val" to "", "childrens" to utsArrayOf<ComponentPublicInstance>(), "fuiForm" to null as ComponentPublicInstance?)
+        return _uM("val" to "", "childrens" to _uA<ComponentPublicInstance>(), "fuiForm" to null as ComponentPublicInstance?)
     }
     open var radioChange = ::gen_radioChange_fn
     open fun gen_radioChange_fn(e: String) {
@@ -123,16 +119,16 @@ open class GenUniModulesFirstuiUnixComponentsFuiRadioGroupFuiRadioGroup : VueCom
     companion object {
         var name = "fui-radio-group"
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf())
+            _nCS(_uA())
         }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("change" to null, "update:modelValue" to null)
-        var props = normalizePropsOptions(utsMapOf("name" to utsMapOf("type" to "String", "default" to ""), "modelValue" to utsMapOf("type" to "String", "default" to "")))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("change" to null, "update:modelValue" to null)
+        var props = _nP(_uM("name" to _uM("type" to "String", "default" to ""), "modelValue" to _uM("type" to "String", "default" to "")))
+        var propsNeedCastKeys = _uA(
             "name",
             "modelValue"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

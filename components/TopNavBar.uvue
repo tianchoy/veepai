@@ -1,16 +1,15 @@
 <template>
 	<view class="custom-nav">
 		<view class="nav-back" @click="goBack">
-			<image v-if="props.showBack" class="nav-icon" @click="goBack" src="/static/tabbar/back.png"/>
+			<fui-icon v-if="props.showBack" name="arrowleft" size="50" />
 		</view>
 		<view class="nav-item">
 			<text class="nav-title" >
 				{{ props.title }}
 			</text>
 		</view>
-		<view class="nav-actions"  @click="onAdd">
-			{{props.rightText}}
-			<!-- <image class="nav-icon" @click="onAdd" src="/static/tabbar/add.png"/> -->
+		<view class="nav-actions"  @click="rightIcon">
+			<fui-icon :name="rightText" size="45" />
 		</view>
 	</view>
 </template>
@@ -37,12 +36,12 @@
 	})
 
 	// 定义触发给父组件的事件 
-	const emits = defineEmits(['back', 'message', 'add', 'changeNav'])
+	const emits = defineEmits(['back', 'message', 'rightEvent'])
 
 	// 导航事件处理
 	const goBack = () => emits('back')
 	const onMessage = () => emits('message')
-	const onAdd = () => emits('add')
+	const rightIcon = () => emits('rightEvent')
 	
 </script>
 
@@ -52,27 +51,20 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
-		padding: 30rpx 25rpx;
-		background-color: #fff;
-		margin-top: 50rpx;
+		padding: 100rpx 20rpx 30rpx 20rpx;
 		width:100%;
 		// #ifdef MP-WEIXIN
-		width: 70%;
-		margin-top: 60rpx;
+		padding: 110rpx 20rpx 30rpx 20rpx;
+    	width: 80%;
 		// #endif
 	}
 
 	.nav-back {
-		width: 60rpx;
-		height: 60rpx;
+		width: 45rpx;
+		height: 45rpx;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
-
-	.nav-back {
-		width: 32rpx;
-		height: 32rpx;
 	}
 
 	.nav-item {
@@ -99,8 +91,8 @@
 	}
 
 	.nav-icon {
-		width: 60rpx;
-		height: 60rpx;
+		width: 45rpx;
+		height: 45rpx;
 		display: flex;
 		align-items: center;
 		justify-content: center;

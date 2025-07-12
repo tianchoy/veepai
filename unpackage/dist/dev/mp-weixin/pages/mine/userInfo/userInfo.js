@@ -11,7 +11,7 @@ const _easycom_fui_button = () => "../../../uni_modules/firstui-unix/components/
 if (!Math) {
   (_easycom_fui_switch + _easycom_fui_button)();
 }
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "userInfo",
   setup(__props) {
     const switchVal = common_vendor.ref(false);
@@ -118,6 +118,6 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 wx.createPage(_sfc_main);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/mine/userInfo/userInfo.js.map

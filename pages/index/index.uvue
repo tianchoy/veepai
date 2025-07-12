@@ -82,6 +82,9 @@
 			title: '设备详情',
 			icon: 'none'
 		})
+		uni.navigateTo({
+			url: '/pages/index/deviceDetail'
+		})
 	}
 
 	const pauseClick = () => {

@@ -4,10 +4,10 @@ const uni_modules_limeShared_clamp_index = require("../../../lime-shared/clamp/i
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "l-picker-item",
   props: {
-    options: new UTSJSONObject({ default: [] }),
-    value: new UTSJSONObject({}),
-    column: new UTSJSONObject({ default: -1 }),
-    name: new UTSJSONObject({})
+    options: { default: [] },
+    value: {},
+    column: { default: -1 },
+    name: {}
   },
   setup(__props, _a) {
     var __expose = _a.expose;

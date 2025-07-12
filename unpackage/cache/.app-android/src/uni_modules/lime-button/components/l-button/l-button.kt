@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesLimeButtonComponentsLButtonLButton : VueComponent, ButtonProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     override var ariaLabel: String? by `$props`
@@ -102,7 +98,7 @@ open class GenUniModulesLimeButtonComponentsLButtonLButton : VueComponent, Butto
                 if (props.color != null) {
                     if (variant.value == "solid") {
                         style.set("background", props.color!!)
-                    } else if (utsArrayOf(
+                    } else if (_uA(
                         "outline",
                         "dashed"
                     ).includes(variant.value)) {
@@ -112,20 +108,20 @@ open class GenUniModulesLimeButtonComponentsLButtonLButton : VueComponent, Butto
                 return style
             }
             )
-            val sizes = Map<String, String>(utsArrayOf(
-                utsArrayOf(
+            val sizes = Map<String, String>(_uA(
+                _uA(
                     "mini",
                     "16px"
                 ),
-                utsArrayOf(
+                _uA(
                     "small",
                     "18px"
                 ),
-                utsArrayOf(
+                _uA(
                     "medium",
                     "18px"
                 ),
-                utsArrayOf(
+                _uA(
                     "large",
                     "24px"
                 )
@@ -134,7 +130,7 @@ open class GenUniModulesLimeButtonComponentsLButtonLButton : VueComponent, Butto
                 return props.iconSize ?: props.fontSize ?: sizes.get(props.size)
             }
             )
-            val colors = Map<String, String>(utsArrayOf())
+            val colors = Map<String, String>(_uA())
             val loadingColor = computed(fun(): String? {
                 return props.textColor ?: (if (variant.value == "solid") {
                     "white"
@@ -178,7 +174,7 @@ open class GenUniModulesLimeButtonComponentsLButtonLButton : VueComponent, Butto
             return fun(): Any? {
                 val _component_l_loading = resolveEasyComponent("l-loading", GenUniModulesLimeLoadingComponentsLLoadingLLoadingClass)
                 val _component_l_icon = resolveEasyComponent("l-icon", GenUniModulesLimeIconComponentsLIconLIconClass)
-                return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                return _cE("view", _uM("class" to _nC(_uA(
                     "l-button",
                     unref(classes)
                 )), "ref" to "rootRef", "hover-class" to if (_ctx.disabled || _ctx.loading || _ctx.color != null) {
@@ -186,45 +182,45 @@ open class GenUniModulesLimeButtonComponentsLButtonLButton : VueComponent, Butto
                 } else {
                     _ctx.hoverClass ?: "hover"
                 }
-                , "style" to normalizeStyle(utsArrayOf(
+                , "style" to _nS(_uA(
                     unref(styles),
                     _ctx.lStyle
-                )), "hover-start-time" to _ctx.hoverStartTime, "hover-stay-time" to _ctx.hoverStayTime, "data-disabled" to (_ctx.disabled || _ctx.loading), "onClick" to withModifiers(handleTap, utsArrayOf(
+                )), "hover-start-time" to _ctx.hoverStartTime, "hover-stay-time" to _ctx.hoverStayTime, "data-disabled" to (_ctx.disabled || _ctx.loading), "onClick" to withModifiers(handleTap, _uA(
                     "stop"
-                ))), utsArrayOf(
+                ))), _uA(
                     if (isTrue(_ctx.loading)) {
-                        createVNode(_component_l_loading, utsMapOf("key" to 0, "class" to "l-button__loading", "color" to unref(loadingColor)), null, 8, utsArrayOf(
+                        _cV(_component_l_loading, _uM("key" to 0, "class" to "l-button__loading", "color" to unref(loadingColor)), null, 8, _uA(
                             "color"
                         ))
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
                     ,
                     if (isTrue(_ctx.icon)) {
-                        createVNode(_component_l_icon, utsMapOf("key" to 1, "class" to "l-button__icon", "size" to unref(innerIconSize), "color" to unref(loadingColor), "name" to _ctx.icon), null, 8, utsArrayOf(
+                        _cV(_component_l_icon, _uM("key" to 1, "class" to "l-button__icon", "size" to unref(innerIconSize), "color" to unref(loadingColor), "name" to _ctx.icon), null, 8, _uA(
                             "size",
                             "color",
                             "name"
                         ))
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
                     ,
-                    createElementVNode("text", utsMapOf("class" to normalizeClass(utsArrayOf(
+                    _cE("text", _uM("class" to _nC(_uA(
                         "l-button__content",
                         unref(gapClass)
-                    )), "ref_key" to "buttonTextRef", "ref" to buttonTextRef, "style" to normalizeStyle(utsArrayOf(
+                    )), "ref_key" to "buttonTextRef", "ref" to buttonTextRef, "style" to _nS(_uA(
                         unref(contentStyle)
-                    ))), utsArrayOf(
+                    ))), _uA(
                         renderSlot(_ctx.`$slots`, "default", UTSJSONObject(), fun(): UTSArray<Any> {
-                            return utsArrayOf(
-                                toDisplayString(_ctx.content)
+                            return _uA(
+                                _tD(_ctx.content)
                             )
                         }
                         )
                     ), 6),
                     if (isTrue(_ctx.formType != null || _ctx.openType != null)) {
-                        createElementVNode("button", utsMapOf("key" to 2, "class" to "l-button__button", "hover-class" to "none", "onAgreeprivacyauthorization" to agreeprivacyauthorization, "disabled" to (_ctx.disabled || _ctx.loading), "form-type" to if (_ctx.disabled || _ctx.loading) {
+                        _cE("button", _uM("key" to 2, "class" to "l-button__button", "hover-class" to "none", "onAgreeprivacyauthorization" to agreeprivacyauthorization, "disabled" to (_ctx.disabled || _ctx.loading), "form-type" to if (_ctx.disabled || _ctx.loading) {
                             ""
                         } else {
                             _ctx.formType
@@ -232,15 +228,15 @@ open class GenUniModulesLimeButtonComponentsLButtonLButton : VueComponent, Butto
                             ""
                         } else {
                             _ctx.openType
-                        }), null, 40, utsArrayOf(
+                        }), null, 40, _uA(
                             "disabled",
                             "form-type",
                             "open-type"
                         ))
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
-                ), 14, utsArrayOf(
+                ), 14, _uA(
                     "hover-class",
                     "hover-start-time",
                     "hover-stay-time",
@@ -249,19 +245,19 @@ open class GenUniModulesLimeButtonComponentsLButtonLButton : VueComponent, Butto
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-button--mini" to utsMapOf("" to utsMapOf("paddingTop" to 0, "paddingRight" to "16rpx", "paddingBottom" to 0, "paddingLeft" to "16rpx", "height" to "56rpx"), ".l-button--square" to utsMapOf("width" to "56rpx", "paddingLeft" to 0, "paddingRight" to 0), ".l-button--circle" to utsMapOf("width" to "56rpx", "paddingLeft" to 0, "paddingRight" to 0)), "l-button__content" to utsMapOf(".l-button--mini " to utsMapOf("fontSize" to 12), ".l-button--small " to utsMapOf("fontSize" to 14), ".l-button--medium " to utsMapOf("fontSize" to 16), ".l-button--large " to utsMapOf("fontSize" to 16), ".l-button--default " to utsMapOf("color" to "rgba(0,0,0,0.88)"), ".l-button--primary " to utsMapOf("color" to "#3283ff"), ".l-button--danger " to utsMapOf("color" to "#FF4D4F"), ".l-button--info " to utsMapOf("color" to "#3283ff"), ".l-button--warning " to utsMapOf("color" to "#ffb400"), ".l-button--success " to utsMapOf("color" to "#34c471"), ".l-button--solid " to utsMapOf("color" to "#FFFFFF")), "l-button--small" to utsMapOf("" to utsMapOf("paddingTop" to 0, "paddingRight" to "24rpx", "paddingBottom" to 0, "paddingLeft" to "24rpx", "height" to "64rpx"), ".l-button--square" to utsMapOf("width" to "64rpx", "paddingLeft" to 0, "paddingRight" to 0), ".l-button--circle" to utsMapOf("width" to "64rpx", "paddingLeft" to 0, "paddingRight" to 0)), "l-button--medium" to utsMapOf("" to utsMapOf("paddingTop" to 0, "paddingRight" to "32rpx", "paddingBottom" to 0, "paddingLeft" to "32rpx", "height" to "80rpx"), ".l-button--square" to utsMapOf("width" to "80rpx", "paddingLeft" to 0, "paddingRight" to 0), ".l-button--circle" to utsMapOf("width" to "80rpx", "paddingLeft" to 0, "paddingRight" to 0)), "l-button--large" to utsMapOf("" to utsMapOf("paddingTop" to 0, "paddingRight" to "48rpx", "paddingBottom" to 0, "paddingLeft" to "48rpx", "height" to "96rpx"), ".l-button--square" to utsMapOf("width" to "96rpx", "paddingLeft" to 0, "paddingRight" to 0), ".l-button--circle" to utsMapOf("width" to "96rpx", "paddingLeft" to 0, "paddingRight" to 0)), "hover" to utsMapOf(".l-button--default" to utsMapOf("backgroundColor" to "#eeeeee"), ".l-button--default.l-button--solid" to utsMapOf("backgroundColor" to "#000000"), ".l-button--default.l-button--light" to utsMapOf("backgroundColor" to "#e7e7e7"), ".l-button--primary" to utsMapOf("backgroundColor" to "#F0F8FF"), ".l-button--primary.l-button--solid" to utsMapOf("backgroundColor" to "#2164d9"), ".l-button--primary.l-button--light" to utsMapOf("backgroundColor" to "#d6ecff"), ".l-button--danger" to utsMapOf("backgroundColor" to "#fff2f0"), ".l-button--danger.l-button--solid" to utsMapOf("backgroundColor" to "#d9363e"), ".l-button--danger.l-button--light" to utsMapOf("backgroundColor" to "#ffccc7"), ".l-button--info" to utsMapOf("backgroundColor" to "#d6ecff"), ".l-button--info.l-button--solid" to utsMapOf("backgroundColor" to "#2164d9"), ".l-button--info.l-button--light" to utsMapOf("backgroundColor" to "#add6ff"), ".l-button--warning" to utsMapOf("backgroundColor" to "#fffce6"), ".l-button--warning.l-button--solid" to utsMapOf("backgroundColor" to "#d99100"), ".l-button--warning.l-button--light" to utsMapOf("backgroundColor" to "#fff0a3"), ".l-button--success" to utsMapOf("backgroundColor" to "#f0fff4"), ".l-button--success.l-button--solid" to utsMapOf("backgroundColor" to "#239e5a"), ".l-button--success.l-button--light" to utsMapOf("backgroundColor" to "#e1f7e7")), "l-button--default" to utsMapOf(".l-button--solid" to utsMapOf("backgroundColor" to "rgba(0,0,0,0.88)"), ".l-button--outline" to utsMapOf("borderTopColor" to "#c5c5c5", "borderRightColor" to "#c5c5c5", "borderBottomColor" to "#c5c5c5", "borderLeftColor" to "#c5c5c5"), ".l-button--dashed" to utsMapOf("borderTopColor" to "#c5c5c5", "borderRightColor" to "#c5c5c5", "borderBottomColor" to "#c5c5c5", "borderLeftColor" to "#c5c5c5"), ".l-button--light" to utsMapOf("backgroundColor" to "#eeeeee"), ".l-button--ghost" to utsMapOf("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#c5c5c5", "borderRightColor" to "#c5c5c5", "borderBottomColor" to "#c5c5c5", "borderLeftColor" to "#c5c5c5")), "l-button--primary" to utsMapOf(".l-button--solid" to utsMapOf("backgroundColor" to "#3283ff"), ".l-button--outline" to utsMapOf("borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff"), ".l-button--dashed" to utsMapOf("borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff"), ".l-button--light" to utsMapOf("backgroundColor" to "#F0F8FF"), ".l-button--ghost" to utsMapOf("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff")), "l-button--danger" to utsMapOf(".l-button--solid" to utsMapOf("backgroundColor" to "#FF4D4F"), ".l-button--outline" to utsMapOf("borderTopColor" to "#FF4D4F", "borderRightColor" to "#FF4D4F", "borderBottomColor" to "#FF4D4F", "borderLeftColor" to "#FF4D4F"), ".l-button--dashed" to utsMapOf("borderTopColor" to "#FF4D4F", "borderRightColor" to "#FF4D4F", "borderBottomColor" to "#FF4D4F", "borderLeftColor" to "#FF4D4F"), ".l-button--light" to utsMapOf("backgroundColor" to "#fff2f0"), ".l-button--ghost" to utsMapOf("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#FF4D4F", "borderRightColor" to "#FF4D4F", "borderBottomColor" to "#FF4D4F", "borderLeftColor" to "#FF4D4F")), "l-button--info" to utsMapOf(".l-button--solid" to utsMapOf("backgroundColor" to "#3283ff"), ".l-button--outline" to utsMapOf("borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff"), ".l-button--dashed" to utsMapOf("borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff"), ".l-button--light" to utsMapOf("backgroundColor" to "#d6ecff"), ".l-button--ghost" to utsMapOf("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff")), "l-button--warning" to utsMapOf(".l-button--solid" to utsMapOf("backgroundColor" to "#ffb400"), ".l-button--outline" to utsMapOf("borderTopColor" to "#ffb400", "borderRightColor" to "#ffb400", "borderBottomColor" to "#ffb400", "borderLeftColor" to "#ffb400"), ".l-button--dashed" to utsMapOf("borderTopColor" to "#ffb400", "borderRightColor" to "#ffb400", "borderBottomColor" to "#ffb400", "borderLeftColor" to "#ffb400"), ".l-button--light" to utsMapOf("backgroundColor" to "#fffce6"), ".l-button--ghost" to utsMapOf("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#ffb400", "borderRightColor" to "#ffb400", "borderBottomColor" to "#ffb400", "borderLeftColor" to "#ffb400")), "l-button--success" to utsMapOf(".l-button--solid" to utsMapOf("backgroundColor" to "#34c471"), ".l-button--outline" to utsMapOf("borderTopColor" to "#34c471", "borderRightColor" to "#34c471", "borderBottomColor" to "#34c471", "borderLeftColor" to "#34c471"), ".l-button--dashed" to utsMapOf("borderTopColor" to "#34c471", "borderRightColor" to "#34c471", "borderBottomColor" to "#34c471", "borderLeftColor" to "#34c471"), ".l-button--light" to utsMapOf("backgroundColor" to "#f0fff4"), ".l-button--ghost" to utsMapOf("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#34c471", "borderRightColor" to "#34c471", "borderBottomColor" to "#34c471", "borderLeftColor" to "#34c471")), "l-button" to utsMapOf("" to utsMapOf("opacity" to 1, "position" to "relative", "alignItems" to "center", "justifyContent" to "center", "flexDirection" to "row", "transitionDuration" to "200ms", "transitionProperty" to "backgroundColor,opacity,borderColor,width,height", "borderTopLeftRadius" to "6rpx", "borderTopRightRadius" to "6rpx", "borderBottomRightRadius" to "6rpx", "borderBottomLeftRadius" to "6rpx"), ".l-button--disabled" to utsMapOf("opacity" to 0.6)), "l-button__button" to padStyleMapOf(utsMapOf("position" to "absolute", "left" to 0, "right" to 0, "top" to 0, "bottom" to 0, "borderTopWidth" to "medium", "borderRightWidth" to "medium", "borderBottomWidth" to "medium", "borderLeftWidth" to "medium", "borderTopStyle" to "none", "borderRightStyle" to "none", "borderBottomStyle" to "none", "borderLeftStyle" to "none", "borderTopColor" to "#000000", "borderRightColor" to "#000000", "borderBottomColor" to "#000000", "borderLeftColor" to "#000000", "backgroundColor" to "rgba(0,0,0,0)")), "l-button--block" to padStyleMapOf(utsMapOf("width" to "100%", "alignSelf" to "auto")), "l-button__icon" to utsMapOf(".l-button--solid " to utsMapOf("color" to "#FFFFFF"), "" to utsMapOf("alignSelf" to "center")), "l-button--outline" to padStyleMapOf(utsMapOf("borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopWidth" to 0.71, "borderRightWidth" to 0.71, "borderBottomWidth" to 0.71, "borderLeftWidth" to 0.71)), "l-button--dashed" to padStyleMapOf(utsMapOf("borderTopStyle" to "dashed", "borderRightStyle" to "dashed", "borderBottomStyle" to "dashed", "borderLeftStyle" to "dashed", "borderTopWidth" to 0.71, "borderRightWidth" to 0.71, "borderBottomWidth" to 0.71, "borderLeftWidth" to 0.71)), "l-button__loading" to padStyleMapOf(utsMapOf("alignSelf" to "center")), "l-button--round" to padStyleMapOf(utsMapOf("borderTopLeftRadius" to 999, "borderTopRightRadius" to 999, "borderBottomRightRadius" to 999, "borderBottomLeftRadius" to 999)), "l-button--circle" to padStyleMapOf(utsMapOf("borderTopLeftRadius" to 999, "borderTopRightRadius" to 999, "borderBottomRightRadius" to 999, "borderBottomLeftRadius" to 999)), "gap" to utsMapOf(".l-button " to utsMapOf("marginLeft" to 4)), "@TRANSITION" to utsMapOf("l-button" to utsMapOf("duration" to "200ms", "property" to "backgroundColor,opacity,borderColor,width,height")))
+                return _uM("l-button--mini" to _uM("" to _uM("paddingTop" to 0, "paddingRight" to "16rpx", "paddingBottom" to 0, "paddingLeft" to "16rpx", "height" to "56rpx"), ".l-button--square" to _uM("width" to "56rpx", "paddingLeft" to 0, "paddingRight" to 0), ".l-button--circle" to _uM("width" to "56rpx", "paddingLeft" to 0, "paddingRight" to 0)), "l-button__content" to _uM(".l-button--mini " to _uM("fontSize" to 12), ".l-button--small " to _uM("fontSize" to 14), ".l-button--medium " to _uM("fontSize" to 16), ".l-button--large " to _uM("fontSize" to 16), ".l-button--default " to _uM("color" to "rgba(0,0,0,0.88)"), ".l-button--primary " to _uM("color" to "#3283ff"), ".l-button--danger " to _uM("color" to "#FF4D4F"), ".l-button--info " to _uM("color" to "#3283ff"), ".l-button--warning " to _uM("color" to "#ffb400"), ".l-button--success " to _uM("color" to "#34c471"), ".l-button--solid " to _uM("color" to "#FFFFFF")), "l-button--small" to _uM("" to _uM("paddingTop" to 0, "paddingRight" to "24rpx", "paddingBottom" to 0, "paddingLeft" to "24rpx", "height" to "64rpx"), ".l-button--square" to _uM("width" to "64rpx", "paddingLeft" to 0, "paddingRight" to 0), ".l-button--circle" to _uM("width" to "64rpx", "paddingLeft" to 0, "paddingRight" to 0)), "l-button--medium" to _uM("" to _uM("paddingTop" to 0, "paddingRight" to "32rpx", "paddingBottom" to 0, "paddingLeft" to "32rpx", "height" to "80rpx"), ".l-button--square" to _uM("width" to "80rpx", "paddingLeft" to 0, "paddingRight" to 0), ".l-button--circle" to _uM("width" to "80rpx", "paddingLeft" to 0, "paddingRight" to 0)), "l-button--large" to _uM("" to _uM("paddingTop" to 0, "paddingRight" to "48rpx", "paddingBottom" to 0, "paddingLeft" to "48rpx", "height" to "96rpx"), ".l-button--square" to _uM("width" to "96rpx", "paddingLeft" to 0, "paddingRight" to 0), ".l-button--circle" to _uM("width" to "96rpx", "paddingLeft" to 0, "paddingRight" to 0)), "hover" to _uM(".l-button--default" to _uM("backgroundColor" to "#eeeeee"), ".l-button--default.l-button--solid" to _uM("backgroundColor" to "#000000"), ".l-button--default.l-button--light" to _uM("backgroundColor" to "#e7e7e7"), ".l-button--primary" to _uM("backgroundColor" to "#F0F8FF"), ".l-button--primary.l-button--solid" to _uM("backgroundColor" to "#2164d9"), ".l-button--primary.l-button--light" to _uM("backgroundColor" to "#d6ecff"), ".l-button--danger" to _uM("backgroundColor" to "#fff2f0"), ".l-button--danger.l-button--solid" to _uM("backgroundColor" to "#d9363e"), ".l-button--danger.l-button--light" to _uM("backgroundColor" to "#ffccc7"), ".l-button--info" to _uM("backgroundColor" to "#d6ecff"), ".l-button--info.l-button--solid" to _uM("backgroundColor" to "#2164d9"), ".l-button--info.l-button--light" to _uM("backgroundColor" to "#add6ff"), ".l-button--warning" to _uM("backgroundColor" to "#fffce6"), ".l-button--warning.l-button--solid" to _uM("backgroundColor" to "#d99100"), ".l-button--warning.l-button--light" to _uM("backgroundColor" to "#fff0a3"), ".l-button--success" to _uM("backgroundColor" to "#f0fff4"), ".l-button--success.l-button--solid" to _uM("backgroundColor" to "#239e5a"), ".l-button--success.l-button--light" to _uM("backgroundColor" to "#e1f7e7")), "l-button--default" to _uM(".l-button--solid" to _uM("backgroundColor" to "rgba(0,0,0,0.88)"), ".l-button--outline" to _uM("borderTopColor" to "#c5c5c5", "borderRightColor" to "#c5c5c5", "borderBottomColor" to "#c5c5c5", "borderLeftColor" to "#c5c5c5"), ".l-button--dashed" to _uM("borderTopColor" to "#c5c5c5", "borderRightColor" to "#c5c5c5", "borderBottomColor" to "#c5c5c5", "borderLeftColor" to "#c5c5c5"), ".l-button--light" to _uM("backgroundColor" to "#eeeeee"), ".l-button--ghost" to _uM("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#c5c5c5", "borderRightColor" to "#c5c5c5", "borderBottomColor" to "#c5c5c5", "borderLeftColor" to "#c5c5c5")), "l-button--primary" to _uM(".l-button--solid" to _uM("backgroundColor" to "#3283ff"), ".l-button--outline" to _uM("borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff"), ".l-button--dashed" to _uM("borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff"), ".l-button--light" to _uM("backgroundColor" to "#F0F8FF"), ".l-button--ghost" to _uM("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff")), "l-button--danger" to _uM(".l-button--solid" to _uM("backgroundColor" to "#FF4D4F"), ".l-button--outline" to _uM("borderTopColor" to "#FF4D4F", "borderRightColor" to "#FF4D4F", "borderBottomColor" to "#FF4D4F", "borderLeftColor" to "#FF4D4F"), ".l-button--dashed" to _uM("borderTopColor" to "#FF4D4F", "borderRightColor" to "#FF4D4F", "borderBottomColor" to "#FF4D4F", "borderLeftColor" to "#FF4D4F"), ".l-button--light" to _uM("backgroundColor" to "#fff2f0"), ".l-button--ghost" to _uM("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#FF4D4F", "borderRightColor" to "#FF4D4F", "borderBottomColor" to "#FF4D4F", "borderLeftColor" to "#FF4D4F")), "l-button--info" to _uM(".l-button--solid" to _uM("backgroundColor" to "#3283ff"), ".l-button--outline" to _uM("borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff"), ".l-button--dashed" to _uM("borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff"), ".l-button--light" to _uM("backgroundColor" to "#d6ecff"), ".l-button--ghost" to _uM("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#3283ff", "borderRightColor" to "#3283ff", "borderBottomColor" to "#3283ff", "borderLeftColor" to "#3283ff")), "l-button--warning" to _uM(".l-button--solid" to _uM("backgroundColor" to "#ffb400"), ".l-button--outline" to _uM("borderTopColor" to "#ffb400", "borderRightColor" to "#ffb400", "borderBottomColor" to "#ffb400", "borderLeftColor" to "#ffb400"), ".l-button--dashed" to _uM("borderTopColor" to "#ffb400", "borderRightColor" to "#ffb400", "borderBottomColor" to "#ffb400", "borderLeftColor" to "#ffb400"), ".l-button--light" to _uM("backgroundColor" to "#fffce6"), ".l-button--ghost" to _uM("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#ffb400", "borderRightColor" to "#ffb400", "borderBottomColor" to "#ffb400", "borderLeftColor" to "#ffb400")), "l-button--success" to _uM(".l-button--solid" to _uM("backgroundColor" to "#34c471"), ".l-button--outline" to _uM("borderTopColor" to "#34c471", "borderRightColor" to "#34c471", "borderBottomColor" to "#34c471", "borderLeftColor" to "#34c471"), ".l-button--dashed" to _uM("borderTopColor" to "#34c471", "borderRightColor" to "#34c471", "borderBottomColor" to "#34c471", "borderLeftColor" to "#34c471"), ".l-button--light" to _uM("backgroundColor" to "#f0fff4"), ".l-button--ghost" to _uM("backgroundColor" to "rgba(0,0,0,0)", "borderTopColor" to "#34c471", "borderRightColor" to "#34c471", "borderBottomColor" to "#34c471", "borderLeftColor" to "#34c471")), "l-button" to _uM("" to _uM("opacity" to 1, "position" to "relative", "alignItems" to "center", "justifyContent" to "center", "flexDirection" to "row", "transitionDuration" to "200ms", "transitionProperty" to "backgroundColor,opacity,borderColor,width,height", "borderTopLeftRadius" to "6rpx", "borderTopRightRadius" to "6rpx", "borderBottomRightRadius" to "6rpx", "borderBottomLeftRadius" to "6rpx"), ".l-button--disabled" to _uM("opacity" to 0.6)), "l-button__button" to _pS(_uM("position" to "absolute", "left" to 0, "right" to 0, "top" to 0, "bottom" to 0, "borderTopWidth" to "medium", "borderRightWidth" to "medium", "borderBottomWidth" to "medium", "borderLeftWidth" to "medium", "borderTopStyle" to "none", "borderRightStyle" to "none", "borderBottomStyle" to "none", "borderLeftStyle" to "none", "borderTopColor" to "#000000", "borderRightColor" to "#000000", "borderBottomColor" to "#000000", "borderLeftColor" to "#000000", "backgroundColor" to "rgba(0,0,0,0)")), "l-button--block" to _pS(_uM("width" to "100%", "alignSelf" to "auto")), "l-button__icon" to _uM(".l-button--solid " to _uM("color" to "#FFFFFF"), "" to _uM("alignSelf" to "center")), "l-button--outline" to _pS(_uM("borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopWidth" to 0.71, "borderRightWidth" to 0.71, "borderBottomWidth" to 0.71, "borderLeftWidth" to 0.71)), "l-button--dashed" to _pS(_uM("borderTopStyle" to "dashed", "borderRightStyle" to "dashed", "borderBottomStyle" to "dashed", "borderLeftStyle" to "dashed", "borderTopWidth" to 0.71, "borderRightWidth" to 0.71, "borderBottomWidth" to 0.71, "borderLeftWidth" to 0.71)), "l-button__loading" to _pS(_uM("alignSelf" to "center")), "l-button--round" to _pS(_uM("borderTopLeftRadius" to 999, "borderTopRightRadius" to 999, "borderBottomRightRadius" to 999, "borderBottomLeftRadius" to 999)), "l-button--circle" to _pS(_uM("borderTopLeftRadius" to 999, "borderTopRightRadius" to 999, "borderBottomRightRadius" to 999, "borderBottomLeftRadius" to 999)), "gap" to _uM(".l-button " to _uM("marginLeft" to 4)), "@TRANSITION" to _uM("l-button" to _uM("duration" to "200ms", "property" to "backgroundColor,opacity,borderColor,width,height")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("click" to null, "agreeprivacyauthorization" to null, "chooseavatar" to null, "getuserinfo" to null, "contact" to null, "getphonenumber" to null, "error" to null, "opensetting" to null, "launchapp" to null)
-        var props = normalizePropsOptions(utsMapOf("ariaLabel" to utsMapOf("type" to "String", "required" to false), "lId" to utsMapOf("type" to "String", "required" to false), "content" to utsMapOf("type" to "String", "required" to false), "block" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "disabled" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "ghost" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "icon" to utsMapOf("type" to "String", "required" to false), "iconSize" to utsMapOf("type" to "String", "required" to false), "loading" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "loadingProps" to utsMapOf("type" to "UTSJSONObject", "required" to false), "shape" to utsMapOf("type" to "String", "required" to true, "default" to "rectangle"), "size" to utsMapOf("type" to "String", "required" to true, "default" to "medium"), "suffix" to utsMapOf("type" to "String", "required" to false), "type" to utsMapOf("type" to "String", "required" to true, "default" to "default"), "variant" to utsMapOf("type" to "String", "required" to false), "radius" to utsMapOf("type" to "String", "required" to false), "fontSize" to utsMapOf("type" to "String", "required" to false), "textColor" to utsMapOf("type" to "String", "required" to false), "color" to utsMapOf("type" to "String", "required" to false), "lStyle" to utsMapOf("type" to "String", "required" to false), "gap" to utsMapOf("type" to "String", "required" to false), "formType" to utsMapOf("type" to "String", "required" to false), "openType" to utsMapOf("type" to "String", "required" to false), "hoverClass" to utsMapOf("type" to "String", "required" to false), "hoverStopPropagation" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "hoverStartTime" to utsMapOf("type" to "Number", "required" to true, "default" to 20), "hoverStayTime" to utsMapOf("type" to "Number", "required" to true, "default" to 70), "lang" to utsMapOf("type" to "String", "required" to true, "default" to "en"), "sessionFrom" to utsMapOf("type" to "String", "required" to true, "default" to ""), "sendMessageTitle" to utsMapOf("type" to "String", "required" to true, "default" to ""), "sendMessagePath" to utsMapOf("type" to "String", "required" to true, "default" to ""), "sendMessageImg" to utsMapOf("type" to "String", "required" to true, "default" to ""), "appParameter" to utsMapOf("type" to "String", "required" to true, "default" to ""), "showMessageCard" to utsMapOf("type" to "Boolean", "required" to true, "default" to false)))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("click" to null, "agreeprivacyauthorization" to null, "chooseavatar" to null, "getuserinfo" to null, "contact" to null, "getphonenumber" to null, "error" to null, "opensetting" to null, "launchapp" to null)
+        var props = _nP(_uM("ariaLabel" to _uM("type" to "String", "required" to false), "lId" to _uM("type" to "String", "required" to false), "content" to _uM("type" to "String", "required" to false), "block" to _uM("type" to "Boolean", "required" to true, "default" to false), "disabled" to _uM("type" to "Boolean", "required" to true, "default" to false), "ghost" to _uM("type" to "Boolean", "required" to true, "default" to false), "icon" to _uM("type" to "String", "required" to false), "iconSize" to _uM("type" to "String", "required" to false), "loading" to _uM("type" to "Boolean", "required" to true, "default" to false), "loadingProps" to _uM("type" to "UTSJSONObject", "required" to false), "shape" to _uM("type" to "String", "required" to true, "default" to "rectangle"), "size" to _uM("type" to "String", "required" to true, "default" to "medium"), "suffix" to _uM("type" to "String", "required" to false), "type" to _uM("type" to "String", "required" to true, "default" to "default"), "variant" to _uM("type" to "String", "required" to false), "radius" to _uM("type" to "String", "required" to false), "fontSize" to _uM("type" to "String", "required" to false), "textColor" to _uM("type" to "String", "required" to false), "color" to _uM("type" to "String", "required" to false), "lStyle" to _uM("type" to "String", "required" to false), "gap" to _uM("type" to "String", "required" to false), "formType" to _uM("type" to "String", "required" to false), "openType" to _uM("type" to "String", "required" to false), "hoverClass" to _uM("type" to "String", "required" to false), "hoverStopPropagation" to _uM("type" to "Boolean", "required" to true, "default" to false), "hoverStartTime" to _uM("type" to "Number", "required" to true, "default" to 20), "hoverStayTime" to _uM("type" to "Number", "required" to true, "default" to 70), "lang" to _uM("type" to "String", "required" to true, "default" to "en"), "sessionFrom" to _uM("type" to "String", "required" to true, "default" to ""), "sendMessageTitle" to _uM("type" to "String", "required" to true, "default" to ""), "sendMessagePath" to _uM("type" to "String", "required" to true, "default" to ""), "sendMessageImg" to _uM("type" to "String", "required" to true, "default" to ""), "appParameter" to _uM("type" to "String", "required" to true, "default" to ""), "showMessageCard" to _uM("type" to "Boolean", "required" to true, "default" to false)))
+        var propsNeedCastKeys = _uA(
             "block",
             "disabled",
             "ghost",
@@ -280,6 +276,6 @@ open class GenUniModulesLimeButtonComponentsLButtonLButton : VueComponent, Butto
             "appParameter",
             "showMessageCard"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

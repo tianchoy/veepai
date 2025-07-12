@@ -14,31 +14,31 @@ if (!Math) {
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "l-picker",
   props: {
-    cancelBtn: new UTSJSONObject({}),
-    cancelStyle: new UTSJSONObject({}),
-    confirmBtn: new UTSJSONObject({}),
-    confirmStyle: new UTSJSONObject({}),
-    title: new UTSJSONObject({}),
-    titleStyle: new UTSJSONObject({}),
-    keys: new UTSJSONObject({}),
-    columns: new UTSJSONObject({ default: [] }),
-    modelValue: new UTSJSONObject({}),
-    defaultValue: new UTSJSONObject({}),
-    value: new UTSJSONObject({}),
-    loading: new UTSJSONObject({ type: Boolean, default: false }),
-    loadingColor: new UTSJSONObject({}),
-    loadingMaskColor: new UTSJSONObject({}),
-    loadingSize: new UTSJSONObject({ default: "64rpx" }),
-    itemHeight: new UTSJSONObject({}),
-    itemColor: new UTSJSONObject({}),
-    itemFontSize: new UTSJSONObject({}),
-    itemActiveColor: new UTSJSONObject({}),
-    itemActiveFontWeight: new UTSJSONObject({}),
-    indicatorStyle: new UTSJSONObject({}),
-    bgColor: new UTSJSONObject({}),
-    groupHeight: new UTSJSONObject({}),
-    radius: new UTSJSONObject({}),
-    resetIndex: new UTSJSONObject({ type: Boolean, default: false })
+    cancelBtn: {},
+    cancelStyle: {},
+    confirmBtn: {},
+    confirmStyle: {},
+    title: {},
+    titleStyle: {},
+    keys: {},
+    columns: { default: [] },
+    modelValue: {},
+    defaultValue: {},
+    value: {},
+    loading: { type: Boolean, default: false },
+    loadingColor: {},
+    loadingMaskColor: {},
+    loadingSize: { default: "64rpx" },
+    itemHeight: {},
+    itemColor: {},
+    itemFontSize: {},
+    itemActiveColor: {},
+    itemActiveFontWeight: {},
+    indicatorStyle: {},
+    bgColor: {},
+    groupHeight: {},
+    radius: {},
+    resetIndex: { type: Boolean, default: false }
   },
   emits: ["change", "cancel", "pick", "confirm", "update:modelValue", "update:value"],
   setup(__props, _a) {
@@ -63,7 +63,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       }
     });
     const isEmpty = common_vendor.computed(() => {
-      return props.columns.length == 0 && pickerItemInstanceArray.every((child) => {
+      return props.columns.length == 0 && pickerItemInstanceArray.every((child = null) => {
         return child.options.length == 0;
       });
     });
@@ -82,7 +82,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const curValueArray = common_vendor.ref([...pickerValue.value]);
     const curItemArray = [];
     const realColumns = common_vendor.computed(() => {
-      const pickerColumns = pickerItemInstanceArray.map((child) => {
+      const pickerColumns = pickerItemInstanceArray.map((child = null) => {
         return child.options;
       });
       if (pickerColumns.length > 0) {
@@ -90,7 +90,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       }
       return props.columns;
     });
-    const manageChildInList = (child, shouldAdd) => {
+    const manageChildInList = (child = null, shouldAdd) => {
       const index = pickerItemInstanceArray.indexOf(child);
       if (shouldAdd) {
         if (index != -1)
@@ -110,7 +110,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const updatePickerItems = () => {
       const _indexs = [];
       const _values = [];
-      pickerItemInstanceArray.forEach((child, column) => {
+      pickerItemInstanceArray.forEach((child = null, column) => {
         if (child.options.length == 0)
           return null;
         const value = curValueArray.value.length > column ? curValueArray.value[column] : null;

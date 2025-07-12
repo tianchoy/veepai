@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     companion object {
@@ -50,26 +46,26 @@ open class GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber : BasePage {
                 val _component_fui_icon = resolveEasyComponent("fui-icon", GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass)
                 val _component_fui_input = resolveEasyComponent("fui-input", GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass)
                 val _component_fui_button = resolveEasyComponent("fui-button", GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass)
-                return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
-                        createVNode(_component_fui_input, utsMapOf("placeholder" to "请输入手机号", "placeholderStyle" to "font-size: 26rpx;"), utsMapOf("left" to withSlotCtx(fun(): UTSArray<Any> {
-                            return utsArrayOf(
-                                createElementVNode("view", null, utsArrayOf(
-                                    createVNode(_component_fui_icon, utsMapOf("name" to "mobile", "color" to "#1296db", "size" to 48))
+                return _cE("view", _uM("class" to "container"), _uA(
+                    _cE("view", _uM("class" to "content"), _uA(
+                        _cV(_component_fui_input, _uM("placeholder" to "请输入手机号", "placeholderStyle" to "font-size: 26rpx;"), _uM("left" to withSlotCtx(fun(): UTSArray<Any> {
+                            return _uA(
+                                _cE("view", null, _uA(
+                                    _cV(_component_fui_icon, _uM("name" to "mobile", "color" to "#1296db", "size" to 48))
                                 ))
                             )
                         }
                         ), "_" to 1)),
-                        createVNode(_component_fui_input, utsMapOf("padding" to "20rpx 32rpx", "placeholder" to "请输入验证码", "bottomLeft" to 0, "placeholderStyle" to "font-size: 26rpx;"), utsMapOf("left" to withSlotCtx(fun(): UTSArray<Any> {
-                            return utsArrayOf(
-                                createElementVNode("view", null, utsArrayOf(
-                                    createVNode(_component_fui_icon, utsMapOf("name" to "captcha", "color" to "#1296db", "size" to 48))
+                        _cV(_component_fui_input, _uM("padding" to "20rpx 32rpx", "placeholder" to "请输入验证码", "bottomLeft" to 0, "placeholderStyle" to "font-size: 26rpx;"), _uM("left" to withSlotCtx(fun(): UTSArray<Any> {
+                            return _uA(
+                                _cE("view", null, _uA(
+                                    _cV(_component_fui_icon, _uM("name" to "captcha", "color" to "#1296db", "size" to 48))
                                 ))
                             )
                         }
                         ), "default" to withSlotCtx(fun(): UTSArray<Any> {
-                            return utsArrayOf(
-                                createVNode(_component_fui_button, utsMapOf("type" to "gray", "width" to "200rpx", "height" to "64rpx", "size" to 28, "onClick" to getPsw, "text" to btnWord.value, "disabled" to isCounting.value), null, 8, utsArrayOf(
+                            return _uA(
+                                _cV(_component_fui_button, _uM("type" to "gray", "width" to "200rpx", "height" to "64rpx", "size" to 28, "onClick" to getPsw, "text" to btnWord.value, "disabled" to isCounting.value), null, 8, _uA(
                                     "text",
                                     "disabled"
                                 ))
@@ -81,21 +77,21 @@ open class GenPagesMineUserInfoChangePhoneNumberChangePhoneNumber : BasePage {
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundImage" to "none", "backgroundColor" to "#f3f3f3", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx")), "content" to utsMapOf(".container " to utsMapOf("backgroundColor" to "#ffffff", "paddingTop" to "30rpx", "paddingRight" to "30rpx", "paddingBottom" to "30rpx", "paddingLeft" to "30rpx", "borderTopLeftRadius" to "10rpx", "borderTopRightRadius" to "10rpx", "borderBottomRightRadius" to "10rpx", "borderBottomLeftRadius" to "10rpx")), "icon" to utsMapOf(".container .content " to utsMapOf("width" to "40rpx", "height" to "40rpx", "marginRight" to "10rpx")))
+                return _uM("container" to _pS(_uM("height" to "100%", "backgroundImage" to "none", "backgroundColor" to "#f3f3f3", "paddingTop" to 0, "paddingRight" to "20rpx", "paddingBottom" to 0, "paddingLeft" to "20rpx")), "content" to _uM(".container " to _uM("backgroundColor" to "#ffffff", "paddingTop" to "30rpx", "paddingRight" to "30rpx", "paddingBottom" to "30rpx", "paddingLeft" to "30rpx", "borderTopLeftRadius" to "10rpx", "borderTopRightRadius" to "10rpx", "borderBottomRightRadius" to "10rpx", "borderBottomLeftRadius" to "10rpx")), "icon" to _uM(".container .content " to _uM("width" to "40rpx", "height" to "40rpx", "marginRight" to "10rpx")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

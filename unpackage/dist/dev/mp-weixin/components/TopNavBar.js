@@ -1,27 +1,34 @@
 "use strict";
 const common_vendor = require("../common/vendor.js");
-const common_assets = require("../common/assets.js");
+if (!Array) {
+  const _easycom_fui_icon_1 = common_vendor.resolveComponent("fui-icon");
+  _easycom_fui_icon_1();
+}
+const _easycom_fui_icon = () => "../uni_modules/firstui-unix/components/fui-icon/fui-icon.js";
+if (!Math) {
+  _easycom_fui_icon();
+}
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "TopNavBar",
   props: {
-    title: new UTSJSONObject({
+    title: {
       type: String,
       default: "首页"
-    }),
-    showBack: new UTSJSONObject({
+    },
+    showBack: {
       type: Boolean,
       default: false
-    }),
-    messageCount: new UTSJSONObject({
+    },
+    messageCount: {
       type: Number,
       default: 0
-    }),
-    rightText: new UTSJSONObject({
+    },
+    rightText: {
       type: String,
       default: ""
-    })
+    }
   },
-  emits: ["back", "message", "add", "changeNav"],
+  emits: ["back", "message", "rightEvent"],
   setup(__props, _a) {
     var __emit = _a.emit;
     const props = __props;
@@ -29,21 +36,26 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const goBack = () => {
       return emits("back");
     };
-    const onAdd = () => {
-      return emits("add");
+    const rightIcon = () => {
+      return emits("rightEvent");
     };
     return (_ctx = null, _cache = null) => {
       const __returned__ = common_vendor.e(new UTSJSONObject({
         a: props.showBack
       }), props.showBack ? new UTSJSONObject({
-        b: common_vendor.o(goBack),
-        c: common_assets._imports_0$6
+        b: common_vendor.p(new UTSJSONObject({
+          name: "arrowleft",
+          size: "50"
+        }))
       }) : new UTSJSONObject({}), new UTSJSONObject({
-        d: common_vendor.o(goBack),
-        e: common_vendor.t(props.title),
-        f: common_vendor.t(props.rightText),
-        g: common_vendor.o(onAdd),
-        h: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        c: common_vendor.o(goBack),
+        d: common_vendor.t(props.title),
+        e: common_vendor.p(new UTSJSONObject({
+          name: __props.rightText,
+          size: "45"
+        })),
+        f: common_vendor.o(rightIcon),
+        g: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       }));
       return __returned__;
     };

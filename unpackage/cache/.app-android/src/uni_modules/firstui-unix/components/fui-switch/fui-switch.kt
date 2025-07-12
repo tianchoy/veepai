@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {
         onCreated(fun() {
@@ -54,9 +50,9 @@ open class GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch : VueComponent {
     override fun `$render`(): Any? {
         val _ctx = this
         val _cache = this.`$`.renderCache
-        return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+        return _cE("view", _uM("class" to _nC(_uA(
             "fui-switch__input",
-            utsArrayOf(
+            _uA(
                 "fui-switch__size-" + _ctx.type,
                 if (_ctx.scaleRatio != 1) {
                     "fui-switch__scale-" + _ctx.scaleAlign
@@ -70,39 +66,39 @@ open class GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch : VueComponent {
                     ""
                 }
             )
-        )), "style" to normalizeStyle(utsMapOf("transform" to ("scale(" + _ctx.scaleRatio + ")")))), utsArrayOf(
+        )), "style" to _nS(_uM("transform" to ("scale(" + _ctx.scaleRatio + ")")))), _uA(
             if (_ctx.type == "switch") {
-                createElementVNode("view", utsMapOf("key" to 0, "class" to normalizeClass(utsArrayOf(
+                _cE("view", _uM("key" to 0, "class" to _nC(_uA(
                     "fui-switch__input-def",
-                    utsMapOf("fui-checkbox__disabled" to _ctx.disabled, "fui-switch__checked-color" to (_ctx.styleVal && _ctx.color == ""), "fui-switch__normal-bcolor" to (!_ctx.styleVal && _ctx.borderColor == ""), "fui-switch__normal-bg" to (!_ctx.styleVal && _ctx.transitionColor == ""))
-                )), "style" to normalizeStyle(_ctx.getSwitchStyl), "onClick" to _ctx.onChange), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                    _uM("fui-checkbox__disabled" to _ctx.disabled, "fui-switch__checked-color" to (_ctx.styleVal && _ctx.color == ""), "fui-switch__normal-bcolor" to (!_ctx.styleVal && _ctx.borderColor == ""), "fui-switch__normal-bg" to (!_ctx.styleVal && _ctx.transitionColor == ""))
+                )), "style" to _nS(_ctx.getSwitchStyl), "onClick" to _ctx.onChange), _uA(
+                    _cE("view", _uM("class" to _nC(_uA(
                         "fui-switch__input-before",
-                        utsMapOf("fui-switch__input--before" to _ctx.`val`, "fui-switch__before-bg" to (!_ctx.styleVal && _ctx.normalColor == ""))
-                    )), "style" to normalizeStyle(_ctx.getBeforeBgColor)), null, 6),
-                    createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+                        _uM("fui-switch__input--before" to _ctx.`val`, "fui-switch__before-bg" to (!_ctx.styleVal && _ctx.normalColor == ""))
+                    )), "style" to _nS(_ctx.getBeforeBgColor)), null, 6),
+                    _cE("view", _uM("class" to _nC(_uA(
                         "fui-switch__input-after",
-                        utsMapOf("fui-switch__input--after" to _ctx.`val`, "fui-switch__after-bg" to ((_ctx.btnColor == "" && _ctx.styleVal) || (!_ctx.styleVal && _ctx.btnNormalColor == "")))
-                    )), "style" to normalizeStyle(_ctx.getStyle)), utsArrayOf(
+                        _uM("fui-switch__input--after" to _ctx.`val`, "fui-switch__after-bg" to ((_ctx.btnColor == "" && _ctx.styleVal) || (!_ctx.styleVal && _ctx.btnNormalColor == "")))
+                    )), "style" to _nS(_ctx.getStyle)), _uA(
                         renderSlot(_ctx.`$slots`, "default")
                     ), 6)
-                ), 14, utsArrayOf(
+                ), 14, _uA(
                     "onClick"
                 ))
             } else {
-                createElementVNode("view", utsMapOf("key" to 1, "class" to normalizeClass(utsArrayOf(
+                _cE("view", _uM("key" to 1, "class" to _nC(_uA(
                     "fui-switch__checkbox-self",
-                    utsMapOf("fui-switch__checked-color" to (_ctx.styleVal && _ctx.color == ""), "fui-switch__normal-bcolor" to (!_ctx.styleVal && _ctx.borderColor == ""), "fui-switch__circle-bg" to (!_ctx.styleVal && _ctx.normalColor == ""))
-                )), "style" to normalizeStyle(_ctx.getSwitchStyl), "onClick" to _ctx.onChange), utsArrayOf(
+                    _uM("fui-switch__checked-color" to (_ctx.styleVal && _ctx.color == ""), "fui-switch__normal-bcolor" to (!_ctx.styleVal && _ctx.borderColor == ""), "fui-switch__circle-bg" to (!_ctx.styleVal && _ctx.normalColor == ""))
+                )), "style" to _nS(_ctx.getSwitchStyl), "onClick" to _ctx.onChange), _uA(
                     if (isTrue(_ctx.`val`)) {
-                        createElementVNode("view", utsMapOf("key" to 0, "class" to normalizeClass(utsArrayOf(
+                        _cE("view", _uM("key" to 0, "class" to _nC(_uA(
                             "fui-switch__check-mark",
-                            utsMapOf("fui-switch__mark-color" to (_ctx.checkMarkColor == ""))
-                        )), "style" to normalizeStyle(_ctx.getMarkStyl)), null, 6)
+                            _uM("fui-switch__mark-color" to (_ctx.checkMarkColor == ""))
+                        )), "style" to _nS(_ctx.getMarkStyl)), null, 6)
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
-                ), 14, utsArrayOf(
+                ), 14, _uA(
                     "onClick"
                 ))
             }
@@ -133,7 +129,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch : VueComponent {
     open var getMarkStyl: Any by `$data`
     @Suppress("USELESS_CAST")
     override fun data(): Map<String, Any?> {
-        return utsMapOf("val" to false, "styleVal" to false, "isLabel" to false, "fuiLabel" to null as ComponentPublicInstance?, "fuiForm" to null as ComponentPublicInstance?, "getStyle" to computed<Any>(fun(): Any {
+        return _uM("val" to false, "styleVal" to false, "isLabel" to false, "fuiLabel" to null as ComponentPublicInstance?, "fuiForm" to null as ComponentPublicInstance?, "getStyle" to computed<Any>(fun(): Any {
             val mp: Map<String, String> = Map()
             if (this.`val`) {
                 if (this.btnColor != "") {
@@ -238,19 +234,19 @@ open class GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch : VueComponent {
     companion object {
         var name = "fui-switch"
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("fui-switch__input" to padStyleMapOf(utsMapOf("flexShrink" to 0)), "fui-switch__scale-left" to padStyleMapOf(utsMapOf("transformOrigin" to "0 center")), "fui-switch__scale-center" to padStyleMapOf(utsMapOf("transformOrigin" to "center center")), "fui-switch__scale-right" to padStyleMapOf(utsMapOf("transformOrigin" to "100% center")), "fui-switch__size-switch" to padStyleMapOf(utsMapOf("width" to 52, "height" to 32)), "fui-switch__size-checkbox" to padStyleMapOf(utsMapOf("width" to "40rpx", "height" to "40rpx")), "fui-switch__checkbox-self" to padStyleMapOf(utsMapOf("width" to "40rpx", "height" to "40rpx", "borderTopLeftRadius" to 40, "borderTopRightRadius" to 40, "borderBottomRightRadius" to 40, "borderBottomLeftRadius" to 40, "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "center", "position" to "relative", "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopWidth" to 1, "borderRightWidth" to 1, "borderBottomWidth" to 1, "borderLeftWidth" to 1, "borderTopColor" to "#CCCCCC", "borderRightColor" to "#CCCCCC", "borderBottomColor" to "#CCCCCC", "borderLeftColor" to "#CCCCCC", "boxSizing" to "border-box", "overflow" to "hidden")), "fui-switch__input-def" to padStyleMapOf(utsMapOf("position" to "relative", "width" to 52, "height" to 32, "borderTopWidth" to 1, "borderRightWidth" to 1, "borderBottomWidth" to 1, "borderLeftWidth" to 1, "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopColor" to "#CCCCCC", "borderRightColor" to "#CCCCCC", "borderBottomColor" to "#CCCCCC", "borderLeftColor" to "#CCCCCC", "borderTopLeftRadius" to 16, "borderTopRightRadius" to 16, "borderBottomRightRadius" to 16, "borderBottomLeftRadius" to 16, "boxSizing" to "border-box")), "fui-switch__normal-bg" to padStyleMapOf(utsMapOf("!backgroundImage" to "none", "!backgroundColor" to "#dfdfdf")), "fui-switch__checked-color" to padStyleMapOf(utsMapOf("!backgroundImage" to "none", "!backgroundColor" to "#465CFF", "!borderTopColor" to "#465CFF", "!borderRightColor" to "#465CFF", "!borderBottomColor" to "#465CFF", "!borderLeftColor" to "#465CFF")), "fui-switch__normal-bcolor" to padStyleMapOf(utsMapOf("!borderTopColor" to "#CCCCCC", "!borderRightColor" to "#CCCCCC", "!borderBottomColor" to "#CCCCCC", "!borderLeftColor" to "#CCCCCC")), "fui-switch__input-before" to padStyleMapOf(utsMapOf("position" to "absolute", "top" to 0, "left" to 0, "width" to 50, "height" to 30, "borderTopLeftRadius" to 15, "borderTopRightRadius" to 15, "borderBottomRightRadius" to 15, "borderBottomLeftRadius" to 15, "transitionProperty" to "transform", "transitionDuration" to "0.3s")), "fui-switch__before-bg" to padStyleMapOf(utsMapOf("!backgroundImage" to "none", "!backgroundColor" to "#FFFFFF")), "fui-switch__input-after" to padStyleMapOf(utsMapOf("position" to "absolute", "top" to 0, "left" to 0, "width" to 30, "height" to 30, "borderTopLeftRadius" to 15, "borderTopRightRadius" to 15, "borderBottomRightRadius" to 15, "borderBottomLeftRadius" to 15, "boxShadow" to "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty" to "transform", "transitionDuration" to "0.3s", "display" to "flex", "alignItems" to "center", "justifyContent" to "center", "transform" to "translateX(0)")), "fui-switch__after-bg" to padStyleMapOf(utsMapOf("!backgroundImage" to "none", "!backgroundColor" to "#FFFFFF")), "fui-switch__input--before" to padStyleMapOf(utsMapOf("transform" to "scale(0)")), "fui-switch__input--after" to padStyleMapOf(utsMapOf("transform" to "translateX(20px)")), "fui-switch__check-mark" to padStyleMapOf(utsMapOf("width" to "20rpx", "height" to "40rpx", "borderBottomStyle" to "solid", "borderBottomWidth" to 3, "borderBottomColor" to "#FFFFFF", "borderRightStyle" to "solid", "borderRightWidth" to 3, "borderRightColor" to "#FFFFFF", "transform" to "rotate(45deg) scale(0.5)", "transformOrigin" to "54% 48%", "boxSizing" to "border-box")), "fui-switch__circle-bg" to padStyleMapOf(utsMapOf("!backgroundImage" to "none", "!backgroundColor" to "#FFFFFF")), "fui-switch__checkbox-disabled" to padStyleMapOf(utsMapOf("opacity" to 0.6)), "@TRANSITION" to utsMapOf("fui-switch__input-before" to utsMapOf("property" to "transform", "duration" to "0.3s"), "fui-switch__input-after" to utsMapOf("property" to "transform", "duration" to "0.3s")))
+                return _uM("fui-switch__input" to _pS(_uM("flexShrink" to 0)), "fui-switch__scale-left" to _pS(_uM("transformOrigin" to "0 center")), "fui-switch__scale-center" to _pS(_uM("transformOrigin" to "center center")), "fui-switch__scale-right" to _pS(_uM("transformOrigin" to "100% center")), "fui-switch__size-switch" to _pS(_uM("width" to 52, "height" to 32)), "fui-switch__size-checkbox" to _pS(_uM("width" to "40rpx", "height" to "40rpx")), "fui-switch__checkbox-self" to _pS(_uM("width" to "40rpx", "height" to "40rpx", "borderTopLeftRadius" to 40, "borderTopRightRadius" to 40, "borderBottomRightRadius" to 40, "borderBottomLeftRadius" to 40, "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "center", "position" to "relative", "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopWidth" to 1, "borderRightWidth" to 1, "borderBottomWidth" to 1, "borderLeftWidth" to 1, "borderTopColor" to "#CCCCCC", "borderRightColor" to "#CCCCCC", "borderBottomColor" to "#CCCCCC", "borderLeftColor" to "#CCCCCC", "boxSizing" to "border-box", "overflow" to "hidden")), "fui-switch__input-def" to _pS(_uM("position" to "relative", "width" to 52, "height" to 32, "borderTopWidth" to 1, "borderRightWidth" to 1, "borderBottomWidth" to 1, "borderLeftWidth" to 1, "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopColor" to "#CCCCCC", "borderRightColor" to "#CCCCCC", "borderBottomColor" to "#CCCCCC", "borderLeftColor" to "#CCCCCC", "borderTopLeftRadius" to 16, "borderTopRightRadius" to 16, "borderBottomRightRadius" to 16, "borderBottomLeftRadius" to 16, "boxSizing" to "border-box")), "fui-switch__normal-bg" to _pS(_uM("!backgroundImage" to "none", "!backgroundColor" to "#dfdfdf")), "fui-switch__checked-color" to _pS(_uM("!backgroundImage" to "none", "!backgroundColor" to "#465CFF", "!borderTopColor" to "#465CFF", "!borderRightColor" to "#465CFF", "!borderBottomColor" to "#465CFF", "!borderLeftColor" to "#465CFF")), "fui-switch__normal-bcolor" to _pS(_uM("!borderTopColor" to "#CCCCCC", "!borderRightColor" to "#CCCCCC", "!borderBottomColor" to "#CCCCCC", "!borderLeftColor" to "#CCCCCC")), "fui-switch__input-before" to _pS(_uM("position" to "absolute", "top" to 0, "left" to 0, "width" to 50, "height" to 30, "borderTopLeftRadius" to 15, "borderTopRightRadius" to 15, "borderBottomRightRadius" to 15, "borderBottomLeftRadius" to 15, "transitionProperty" to "transform", "transitionDuration" to "0.3s")), "fui-switch__before-bg" to _pS(_uM("!backgroundImage" to "none", "!backgroundColor" to "#FFFFFF")), "fui-switch__input-after" to _pS(_uM("position" to "absolute", "top" to 0, "left" to 0, "width" to 30, "height" to 30, "borderTopLeftRadius" to 15, "borderTopRightRadius" to 15, "borderBottomRightRadius" to 15, "borderBottomLeftRadius" to 15, "boxShadow" to "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty" to "transform", "transitionDuration" to "0.3s", "display" to "flex", "alignItems" to "center", "justifyContent" to "center", "transform" to "translateX(0)")), "fui-switch__after-bg" to _pS(_uM("!backgroundImage" to "none", "!backgroundColor" to "#FFFFFF")), "fui-switch__input--before" to _pS(_uM("transform" to "scale(0)")), "fui-switch__input--after" to _pS(_uM("transform" to "translateX(20px)")), "fui-switch__check-mark" to _pS(_uM("width" to "20rpx", "height" to "40rpx", "borderBottomStyle" to "solid", "borderBottomWidth" to 3, "borderBottomColor" to "#FFFFFF", "borderRightStyle" to "solid", "borderRightWidth" to 3, "borderRightColor" to "#FFFFFF", "transform" to "rotate(45deg) scale(0.5)", "transformOrigin" to "54% 48%", "boxSizing" to "border-box")), "fui-switch__circle-bg" to _pS(_uM("!backgroundImage" to "none", "!backgroundColor" to "#FFFFFF")), "fui-switch__checkbox-disabled" to _pS(_uM("opacity" to 0.6)), "@TRANSITION" to _uM("fui-switch__input-before" to _uM("property" to "transform", "duration" to "0.3s"), "fui-switch__input-after" to _uM("property" to "transform", "duration" to "0.3s")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("change" to null, "update:checked" to null)
-        var props = normalizePropsOptions(utsMapOf("name" to utsMapOf("type" to "String", "default" to ""), "checked" to utsMapOf("type" to "Boolean", "default" to false), "disabled" to utsMapOf("type" to "Boolean", "default" to false), "disabledStyle" to utsMapOf("type" to "Boolean", "default" to true), "type" to utsMapOf("type" to "String", "default" to "switch"), "color" to utsMapOf("type" to "String", "default" to ""), "normalColor" to utsMapOf("type" to "String", "default" to ""), "transitionColor" to utsMapOf("type" to "String", "default" to ""), "btnColor" to utsMapOf("type" to "String", "default" to ""), "btnNormalColor" to utsMapOf("type" to "String", "default" to ""), "borderColor" to utsMapOf("type" to "String", "default" to ""), "checkMarkColor" to utsMapOf("type" to "String", "default" to ""), "scaleRatio" to utsMapOf("type" to "Number", "default" to 1), "scaleAlign" to utsMapOf("type" to "String", "default" to "center")))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("change" to null, "update:checked" to null)
+        var props = _nP(_uM("name" to _uM("type" to "String", "default" to ""), "checked" to _uM("type" to "Boolean", "default" to false), "disabled" to _uM("type" to "Boolean", "default" to false), "disabledStyle" to _uM("type" to "Boolean", "default" to true), "type" to _uM("type" to "String", "default" to "switch"), "color" to _uM("type" to "String", "default" to ""), "normalColor" to _uM("type" to "String", "default" to ""), "transitionColor" to _uM("type" to "String", "default" to ""), "btnColor" to _uM("type" to "String", "default" to ""), "btnNormalColor" to _uM("type" to "String", "default" to ""), "borderColor" to _uM("type" to "String", "default" to ""), "checkMarkColor" to _uM("type" to "String", "default" to ""), "scaleRatio" to _uM("type" to "Number", "default" to 1), "scaleAlign" to _uM("type" to "String", "default" to "center")))
+        var propsNeedCastKeys = _uA(
             "name",
             "checked",
             "disabled",
@@ -266,6 +262,6 @@ open class GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch : VueComponent {
             "scaleRatio",
             "scaleAlign"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

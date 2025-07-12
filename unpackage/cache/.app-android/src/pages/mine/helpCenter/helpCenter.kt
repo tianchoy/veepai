@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 import io.dcloud.uniapp.extapi.showToast as uni_showToast
 open class GenPagesMineHelpCenterHelpCenter : BasePage {
@@ -39,61 +35,61 @@ open class GenPagesMineHelpCenterHelpCenter : BasePage {
                 val _component_l_icon = resolveEasyComponent("l-icon", GenUniModulesLimeIconComponentsLIconLIconClass)
                 val _component_l_tab_panel = resolveEasyComponent("l-tab-panel", GenUniModulesLimeTabsComponentsLTabPanelLTabPanelClass)
                 val _component_l_tabs = resolveEasyComponent("l-tabs", GenUniModulesLimeTabsComponentsLTabsLTabsClass)
-                return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "search-bar"), utsArrayOf(
-                        createVNode(_component_l_search, utsMapOf("class" to "search", "padding" to "10rpx 5rpx 10rpx 24rpx", "modelValue" to unref(value), "onUpdate:modelValue" to fun(`$event`: String){
+                return _cE("view", _uM("class" to "container"), _uA(
+                    _cE("view", _uM("class" to "search-bar"), _uA(
+                        _cV(_component_l_search, _uM("class" to "search", "padding" to "10rpx 5rpx 10rpx 24rpx", "modelValue" to unref(value), "onUpdate:modelValue" to fun(`$event`: String){
                             trySetRefValue(value, `$event`)
                         }
-                        , "shape" to "round", "placeholder" to "请输入关键字"), utsMapOf("right-icon" to withSlotCtx(fun(): UTSArray<Any> {
-                            return utsArrayOf(
-                                createVNode(_component_l_button, utsMapOf("type" to "primary", "size" to "small", "shape" to "round", "onClick" to search), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
+                        , "shape" to "round", "placeholder" to "请输入关键字"), _uM("right-icon" to withSlotCtx(fun(): UTSArray<Any> {
+                            return _uA(
+                                _cV(_component_l_button, _uM("type" to "primary", "size" to "small", "shape" to "round", "onClick" to search), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
                                         "搜索"
                                     )
                                 }
                                 ), "_" to 1))
                             )
                         }
-                        ), "_" to 1), 8, utsArrayOf(
+                        ), "_" to 1), 8, _uA(
                             "modelValue"
                         ))
                     )),
-                    createElementVNode("view", utsMapOf("class" to "question-box"), utsArrayOf(
-                        createVNode(_component_l_tabs, utsMapOf("modelValue" to unref(tabIndex), "onUpdate:modelValue" to fun(`$event`: Number){
+                    _cE("view", _uM("class" to "question-box"), _uA(
+                        _cV(_component_l_tabs, _uM("modelValue" to unref(tabIndex), "onUpdate:modelValue" to fun(`$event`: Number){
                             trySetRefValue(tabIndex, `$event`)
                         }
-                        , "space-evenly" to false, "animated" to true), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                            return utsArrayOf(
-                                createVNode(_component_l_tab_panel, utsMapOf("value" to 0, "label" to "添加设备", "onClick" to questionDetail), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createElementVNode("view", utsMapOf("class" to "question-item"), utsArrayOf(
-                                            createElementVNode("text", null, "如何添加设备？"),
-                                            createVNode(_component_l_icon, utsMapOf("name" to "chevron-right", "size" to "28"))
+                        , "space-evenly" to false, "animated" to true), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                            return _uA(
+                                _cV(_component_l_tab_panel, _uM("value" to 0, "label" to "添加设备", "onClick" to questionDetail), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
+                                        _cE("view", _uM("class" to "question-item"), _uA(
+                                            _cE("text", null, "如何添加设备？"),
+                                            _cV(_component_l_icon, _uM("name" to "chevron-right", "size" to "28"))
                                         ))
                                     )
                                 }
                                 ), "_" to 1)),
-                                createVNode(_component_l_tab_panel, utsMapOf("value" to 1, "label" to "网络问题"), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createElementVNode("view", utsMapOf("class" to "question-item"), utsArrayOf(
-                                            createElementVNode("text", null, "网络连不上？"),
-                                            createVNode(_component_l_icon, utsMapOf("name" to "chevron-right", "size" to "28"))
+                                _cV(_component_l_tab_panel, _uM("value" to 1, "label" to "网络问题"), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
+                                        _cE("view", _uM("class" to "question-item"), _uA(
+                                            _cE("text", null, "网络连不上？"),
+                                            _cV(_component_l_icon, _uM("name" to "chevron-right", "size" to "28"))
                                         ))
                                     )
                                 }
                                 ), "_" to 1)),
-                                createVNode(_component_l_tab_panel, utsMapOf("value" to 2, "label" to "报警问题"), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createElementVNode("view", utsMapOf("class" to "question-item"), utsArrayOf(
-                                            createElementVNode("text", null, "报警文件在哪查看？"),
-                                            createVNode(_component_l_icon, utsMapOf("name" to "chevron-right", "size" to "28"))
+                                _cV(_component_l_tab_panel, _uM("value" to 2, "label" to "报警问题"), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
+                                        _cE("view", _uM("class" to "question-item"), _uA(
+                                            _cE("text", null, "报警文件在哪查看？"),
+                                            _cV(_component_l_icon, _uM("name" to "chevron-right", "size" to "28"))
                                         ))
                                     )
                                 }
                                 ), "_" to 1))
                             )
                         }
-                        ), "_" to 1), 8, utsArrayOf(
+                        ), "_" to 1), 8, _uA(
                             "modelValue"
                         ))
                     ))
@@ -101,21 +97,21 @@ open class GenPagesMineHelpCenterHelpCenter : BasePage {
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundColor" to "#f5f5f5", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "search-bar" to utsMapOf(".container " to utsMapOf("marginTop" to "30rpx", "marginRight" to 0, "marginBottom" to "30rpx", "marginLeft" to 0)), "l-tabs" to utsMapOf(".container " to utsMapOf("borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "question-item" to utsMapOf(".container " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between", "alignItems" to "center", "paddingTop" to "20rpx", "paddingRight" to 0, "paddingBottom" to "20rpx", "paddingLeft" to 0)))
+                return _uM("container" to _pS(_uM("height" to "100%", "backgroundColor" to "#f5f5f5", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "search-bar" to _uM(".container " to _uM("marginTop" to "30rpx", "marginRight" to 0, "marginBottom" to "30rpx", "marginLeft" to 0)), "l-tabs" to _uM(".container " to _uM("borderTopLeftRadius" to "20rpx", "borderTopRightRadius" to "20rpx", "borderBottomRightRadius" to "20rpx", "borderBottomLeftRadius" to "20rpx", "paddingTop" to "20rpx", "paddingRight" to "20rpx", "paddingBottom" to "20rpx", "paddingLeft" to "20rpx")), "question-item" to _uM(".container " to _uM("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between", "alignItems" to "center", "paddingTop" to "20rpx", "paddingRight" to 0, "paddingBottom" to "20rpx", "paddingLeft" to 0)))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

@@ -11,24 +11,20 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     @Suppress("UNUSED_PARAMETER", "UNUSED_VARIABLE")
     override fun `$render`(): Any? {
         val _ctx = this
         val _cache = this.`$`.renderCache
-        return createElementVNode("view", utsMapOf("class" to normalizeClass(utsArrayOf(
+        return _cE("view", _uM("class" to _nC(_uA(
             "fui-label__wrap",
-            utsMapOf("fui-label__full" to _ctx.full)
-        )), "style" to normalizeStyle(utsMapOf("padding" to _ctx.padding, "margin" to _ctx.margin)), "onClick" to withModifiers(_ctx.onclick, utsArrayOf(
+            _uM("fui-label__full" to _ctx.full)
+        )), "style" to _nS(_uM("padding" to _ctx.padding, "margin" to _ctx.margin)), "onClick" to withModifiers(_ctx.onclick, _uA(
             "stop"
-        ))), utsArrayOf(
+        ))), _uA(
             renderSlot(_ctx.`$slots`, "default")
-        ), 14, utsArrayOf(
+        ), 14, _uA(
             "onClick"
         ))
     }
@@ -38,7 +34,7 @@ open class GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel : VueComponent {
     open var childrens: UTSArray<ComponentPublicInstance> by `$data`
     @Suppress("USELESS_CAST")
     override fun data(): Map<String, Any?> {
-        return utsMapOf("childrens" to utsArrayOf<ComponentPublicInstance>())
+        return _uM("childrens" to _uA<ComponentPublicInstance>())
     }
     open var onclick = ::gen_onclick_fn
     open fun gen_onclick_fn() {
@@ -52,23 +48,23 @@ open class GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabel : VueComponent {
     companion object {
         var name = "fui-label"
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("fui-label__wrap" to padStyleMapOf(utsMapOf("boxSizing" to "border-box")), "fui-label__full" to padStyleMapOf(utsMapOf("width" to "100%")))
+                return _uM("fui-label__wrap" to _pS(_uM("boxSizing" to "border-box")), "fui-label__full" to _pS(_uM("width" to "100%")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf("padding" to utsMapOf("type" to "String", "default" to ""), "margin" to utsMapOf("type" to "String", "default" to ""), "full" to utsMapOf("type" to "Boolean", "default" to false)))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM("padding" to _uM("type" to "String", "default" to ""), "margin" to _uM("type" to "String", "default" to ""), "full" to _uM("type" to "Boolean", "default" to false)))
+        var propsNeedCastKeys = _uA(
             "padding",
             "margin",
             "full"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

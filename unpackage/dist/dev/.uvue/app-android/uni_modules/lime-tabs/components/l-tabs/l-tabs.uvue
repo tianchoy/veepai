@@ -46,7 +46,7 @@ const __sfc__ = defineComponent({
         "modelValue": { type: Number },
     }),
     emits: /*#__PURE__*/ mergeModels(['change', 'click'], ["update:modelValue"]),
-    setup(__props): any | null {
+    setup(__props) {
         const __ins = getCurrentInstance()!;
         const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
         const _cache = __ins.renderCache;
@@ -417,14 +417,14 @@ const __sfc__ = defineComponent({
         provide('LimeTabs', children);
         return (): any | null => {
             const _component_l_badge = resolveEasyComponent("l-badge", _easycom_l_badge);
-            return createElementVNode("view", utsMapOf({ class: "l-tabs" }), [
-                createElementVNode("view", utsMapOf({
+            return _cE("view", _uM({ class: "l-tabs" }), [
+                _cE("view", _uM({
                     class: "l-tabs__wrap",
-                    style: normalizeStyle([unref(styles), _ctx.lStyle])
+                    style: _nS([unref(styles), _ctx.lStyle])
                 }), [
                     renderSlot(_ctx.$slots, "left"),
-                    createElementVNode("scroll-view", utsMapOf({
-                        class: normalizeClass(["l-tabs__scroll", utsMapOf({ 'l-tabs__scroll--split': _ctx.split })]),
+                    _cE("scroll-view", _uM({
+                        class: _nC(["l-tabs__scroll", _uM({ 'l-tabs__scroll--split': _ctx.split })]),
                         ref_key: "scrollRef",
                         ref: scrollRef,
                         "scroll-left": unref(scrollLeft),
@@ -435,99 +435,99 @@ const __sfc__ = defineComponent({
                         enhanced: true,
                         onScroll: onScroll
                     }), [
-                        createElementVNode(Fragment, null, RenderHelpers.renderList(unref(tabs), (item, index, __index, _cached): any => {
-                            return createElementVNode("view", utsMapOf({
-                                class: normalizeClass(["l-tabs__item", utsMapOf({
+                        _cE(Fragment, null, RenderHelpers.renderList(unref(tabs), (item, index, __index, _cached): any => {
+                            return _cE("view", _uM({
+                                class: _nC(["l-tabs__item", _uM({
                                         'l-tabs__item--active': index == unref(currentIndex),
                                         'l-tabs__item--evenly': _ctx.spaceEvenly,
                                         'l-tabs__item--disabled': item.disabled
                                     })]),
                                 key: index,
-                                style: normalizeStyle([unref(itemStyle)]),
+                                style: _nS([unref(itemStyle)]),
                                 onClick: () => { onClick(index, item); }
                             }), [
-                                renderSlot(_ctx.$slots, "label", utsMapOf({
+                                renderSlot(_ctx.$slots, "label", _uM({
                                     item: item,
                                     active: index == unref(currentIndex),
                                     disabled: item.disabled
                                 }), (): any[] => [
                                     isTrue(item.dot == true || item.badge != null)
-                                        ? createVNode(_component_l_badge, utsMapOf({
+                                        ? _cV(_component_l_badge, _uM({
                                             key: 0,
                                             dot: item.dot,
                                             offset: item.offset,
                                             content: item.badge
-                                        }), utsMapOf({
+                                        }), _uM({
                                             default: withSlotCtx((): any[] => [
-                                                createElementVNode("text", utsMapOf({
-                                                    style: normalizeStyle([
+                                                _cE("text", _uM({
+                                                    style: _nS([
                                                         unref(textStyles),
                                                         !item.disabled && _ctx.color != null && index != unref(currentIndex) ? ('color:' + _ctx.color) : '',
                                                         !item.disabled && _ctx.activeColor != null && index == unref(currentIndex) ? 'color:' + _ctx.activeColor : '',
                                                     ]),
-                                                    class: normalizeClass(["l-tabs__item-text", [
+                                                    class: _nC(["l-tabs__item-text", [
                                                             'l-tabs__item-text--' + _ctx.size,
-                                                            utsMapOf({
+                                                            _uM({
                                                                 'l-tabs__item-text--disabled': item.disabled,
                                                                 'l-tabs__item-text--active': index == unref(currentIndex)
                                                             })
                                                         ]])
-                                                }), toDisplayString(item.label), 7 /* TEXT, CLASS, STYLE */)
+                                                }), _tD(item.label), 7 /* TEXT, CLASS, STYLE */)
                                             ]),
                                             _: 2 /* DYNAMIC */
                                         }), 1032 /* PROPS, DYNAMIC_SLOTS */, ["dot", "offset", "content"])
-                                        : createElementVNode("text", utsMapOf({
+                                        : _cE("text", _uM({
                                             key: 1,
-                                            style: normalizeStyle([
+                                            style: _nS([
                                                 unref(textStyles),
                                                 !item.disabled && _ctx.color != null && index != unref(currentIndex) ? ('color:' + _ctx.color) : '',
                                                 !item.disabled && _ctx.activeColor != null && index == unref(currentIndex) ? 'color:' + _ctx.activeColor : '',
                                             ]),
-                                            class: normalizeClass(["l-tabs__item-text", [
+                                            class: _nC(["l-tabs__item-text", [
                                                     'l-tabs__item-text--' + _ctx.size,
-                                                    utsMapOf({
+                                                    _uM({
                                                         'l-tabs__item-text--disabled': item.disabled,
                                                         'l-tabs__item-text--active': index == unref(currentIndex)
                                                     })
                                                 ]])
-                                        }), toDisplayString(item.label), 7 /* TEXT, CLASS, STYLE */)
+                                        }), _tD(item.label), 7 /* TEXT, CLASS, STYLE */)
                                 ])
                             ], 14 /* CLASS, STYLE, PROPS */, ["onClick"]);
                         }), 128 /* KEYED_FRAGMENT */),
-                        createElementVNode("view", utsMapOf({
+                        _cE("view", _uM({
                             ref_key: "trackRef",
                             ref: trackRef,
-                            style: normalizeStyle([unref(trackStyle)]),
+                            style: _nS([unref(trackStyle)]),
                             class: "l-tabs__track"
                         }), null, 4 /* STYLE */)
                     ], 42 /* CLASS, PROPS, NEED_HYDRATION */, ["scroll-left"]),
                     renderSlot(_ctx.$slots, "right")
                 ], 4 /* STYLE */),
                 _ctx.$slots['default'] != null
-                    ? createElementVNode("view", utsMapOf({
+                    ? _cE("view", _uM({
                         key: 0,
-                        class: normalizeClass(["l-tabs__content", utsMapOf({ 'l-tabs__content--animated': _ctx.animated })]),
+                        class: _nC(["l-tabs__content", _uM({ 'l-tabs__content--animated': _ctx.animated })]),
                         onTouchstart: onTouchStart,
                         onTouchmove: onTouchMove,
                         onTouchend: onTouchEnd,
                         onTouchcancel: onTouchEnd
                     }), [
-                        createElementVNode("view", utsMapOf({
+                        _cE("view", _uM({
                             class: "l-tabs__content-inner",
-                            style: normalizeStyle([innerStyle]),
+                            style: _nS([innerStyle]),
                             ref_key: "innerRef",
                             ref: innerRef
                         }), [
                             renderSlot(_ctx.$slots, "default")
                         ], 4 /* STYLE */)
                     ], 34 /* CLASS, NEED_HYDRATION */)
-                    : createCommentVNode("v-if", true)
+                    : _cC("v-if", true)
             ]);
         };
     }
 });
 export default __sfc__;
 export type LTabsComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesLimeTabsComponentsLTabsLTabsStyles = [utsMapOf([["l-tabs", padStyleMapOf(utsMapOf([["position", "relative"], ["backgroundImage", "none"], ["backgroundColor", "#FFFFFF"]]))], ["l-tabs__wrap", padStyleMapOf(utsMapOf([["flex", 1], ["backgroundImage", "none"], ["backgroundColor", "#FFFFFF"], ["flexDirection", "row"]]))], ["l-tabs__scroll", padStyleMapOf(utsMapOf([["position", "relative"], ["flex", 1], ["flexDirection", "row"]]))], ["l-tabs__scroll--split", padStyleMapOf(utsMapOf([["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#eeeeee"]]))], ["l-tabs__nav", padStyleMapOf(utsMapOf([["flexDirection", "row"], ["position", "relative"], ["flexWrap", "nowrap"], ["alignItems", "center"]]))], ["l-tabs__track", padStyleMapOf(utsMapOf([["position", "absolute"], ["zIndex", 1], ["transitionDuration", "0.3s"], ["backgroundColor", "#3283ff"], ["left", 0], ["bottom", "1rpx"], ["width", "32rpx"], ["height", "6rpx"], ["borderTopLeftRadius", "8rpx"], ["borderTopRightRadius", "8rpx"], ["borderBottomRightRadius", "8rpx"], ["borderBottomLeftRadius", "8rpx"]]))], ["l-tabs__content", padStyleMapOf(utsMapOf([["width", "100%"], ["overflow", "hidden"]]))], ["l-tabs__content-inner", utsMapOf([["", utsMapOf([["display", "flex"], ["flexDirection", "row"], ["flex", 1], ["overflow", "visible"], ["opacity", 0]])], [".l-tabs__content--animated ", utsMapOf([["position", "relative"], ["width", "100%"], ["height", "100%"], ["transitionProperty", "transform"]])]])], ["l-tabs__item", padStyleMapOf(utsMapOf([["position", "relative"], ["flex", "none"], ["alignItems", "center"], ["justifyContent", "center"], ["paddingTop", 0], ["paddingRight", "32rpx"], ["paddingBottom", 0], ["paddingLeft", "32rpx"], ["boxSizing", "border-box"], ["overflow", "hidden"], ["height", "96rpx"]]))], ["l-tabs__item-text", padStyleMapOf(utsMapOf([["fontWeight", "400"], ["fontSize", 14], ["whiteSpace", "nowrap"], ["transitionProperty", "color"], ["transitionDuration", "300ms"], ["color", "rgba(0,0,0,0.88)"]]))], ["l-tabs__item-text--large", padStyleMapOf(utsMapOf([["fontSize", 16]]))], ["l-tabs__item-text--active", padStyleMapOf(utsMapOf([["fontWeight", "700"], ["color", "#3283ff"]]))], ["l-tabs__item-text--disabled", padStyleMapOf(utsMapOf([["color", "rgba(0,0,0,0.25)"]]))], ["l-tabs__item--evenly", padStyleMapOf(utsMapOf([["flex", 1]]))], ["@TRANSITION", utsMapOf([["l-tabs__track", utsMapOf([["duration", "0.3s"]])], ["l-tabs__content-inner", utsMapOf([["property", "transform"]])], ["l-tabs__item-text", utsMapOf([["property", "color"], ["duration", "300ms"]])]])]])];
+const GenUniModulesLimeTabsComponentsLTabsLTabsStyles = [_uM([["l-tabs", _pS(_uM([["position", "relative"], ["backgroundImage", "none"], ["backgroundColor", "#FFFFFF"]]))], ["l-tabs__wrap", _pS(_uM([["flex", 1], ["backgroundImage", "none"], ["backgroundColor", "#FFFFFF"], ["flexDirection", "row"]]))], ["l-tabs__scroll", _pS(_uM([["position", "relative"], ["flex", 1], ["flexDirection", "row"]]))], ["l-tabs__scroll--split", _pS(_uM([["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#eeeeee"]]))], ["l-tabs__nav", _pS(_uM([["flexDirection", "row"], ["position", "relative"], ["flexWrap", "nowrap"], ["alignItems", "center"]]))], ["l-tabs__track", _pS(_uM([["position", "absolute"], ["zIndex", 1], ["transitionDuration", "0.3s"], ["backgroundColor", "#3283ff"], ["left", 0], ["bottom", "1rpx"], ["width", "32rpx"], ["height", "6rpx"], ["borderTopLeftRadius", "8rpx"], ["borderTopRightRadius", "8rpx"], ["borderBottomRightRadius", "8rpx"], ["borderBottomLeftRadius", "8rpx"]]))], ["l-tabs__content", _pS(_uM([["width", "100%"], ["overflow", "hidden"]]))], ["l-tabs__content-inner", _uM([["", _uM([["display", "flex"], ["flexDirection", "row"], ["flex", 1], ["overflow", "visible"], ["opacity", 0]])], [".l-tabs__content--animated ", _uM([["position", "relative"], ["width", "100%"], ["height", "100%"], ["transitionProperty", "transform"]])]])], ["l-tabs__item", _pS(_uM([["position", "relative"], ["flex", "none"], ["alignItems", "center"], ["justifyContent", "center"], ["paddingTop", 0], ["paddingRight", "32rpx"], ["paddingBottom", 0], ["paddingLeft", "32rpx"], ["boxSizing", "border-box"], ["overflow", "hidden"], ["height", "96rpx"]]))], ["l-tabs__item-text", _pS(_uM([["fontWeight", "400"], ["fontSize", 14], ["whiteSpace", "nowrap"], ["transitionProperty", "color"], ["transitionDuration", "300ms"], ["color", "rgba(0,0,0,0.88)"]]))], ["l-tabs__item-text--large", _pS(_uM([["fontSize", 16]]))], ["l-tabs__item-text--active", _pS(_uM([["fontWeight", "700"], ["color", "#3283ff"]]))], ["l-tabs__item-text--disabled", _pS(_uM([["color", "rgba(0,0,0,0.25)"]]))], ["l-tabs__item--evenly", _pS(_uM([["flex", 1]]))], ["@TRANSITION", _uM([["l-tabs__track", _uM([["duration", "0.3s"]])], ["l-tabs__content-inner", _uM([["property", "transform"]])], ["l-tabs__item-text", _uM([["property", "color"], ["duration", "300ms"]])]])]])];
 import { LTabPanelComponentPublicInstance } from "@/uni_modules/lime-tabs/components/l-tab-panel/l-tab-panel.uvue";
 //# sourceMappingURL=l-tabs.uvue.map

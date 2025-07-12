@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenComponentsTopNavBar : VueComponent {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     open var title: String by `$props`
@@ -34,44 +30,49 @@ open class GenComponentsTopNavBar : VueComponent {
             val goBack = fun(){
                 return emits("back")
             }
-            val onAdd = fun(){
-                return emits("add")
+            val rightIcon = fun(){
+                return emits("rightEvent")
             }
             return fun(): Any? {
-                return createElementVNode("view", utsMapOf("class" to "custom-nav"), utsArrayOf(
-                    createElementVNode("view", utsMapOf("class" to "nav-back", "onClick" to goBack), utsArrayOf(
+                val _component_fui_icon = resolveEasyComponent("fui-icon", GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass)
+                return _cE("view", _uM("class" to "custom-nav"), _uA(
+                    _cE("view", _uM("class" to "nav-back", "onClick" to goBack), _uA(
                         if (isTrue(props.showBack)) {
-                            createElementVNode("image", utsMapOf("key" to 0, "class" to "nav-icon", "onClick" to goBack, "src" to "/static/tabbar/back.png"))
+                            _cV(_component_fui_icon, _uM("key" to 0, "name" to "arrowleft", "size" to "50"))
                         } else {
-                            createCommentVNode("v-if", true)
+                            _cC("v-if", true)
                         }
                     )),
-                    createElementVNode("view", utsMapOf("class" to "nav-item"), utsArrayOf(
-                        createElementVNode("text", utsMapOf("class" to "nav-title"), toDisplayString(props.title), 1)
+                    _cE("view", _uM("class" to "nav-item"), _uA(
+                        _cE("text", _uM("class" to "nav-title"), _tD(props.title), 1)
                     )),
-                    createElementVNode("view", utsMapOf("class" to "nav-actions", "onClick" to onAdd), toDisplayString(props.rightText), 1)
+                    _cE("view", _uM("class" to "nav-actions", "onClick" to rightIcon), _uA(
+                        _cV(_component_fui_icon, _uM("name" to _ctx.rightText, "size" to "45"), null, 8, _uA(
+                            "name"
+                        ))
+                    ))
                 ))
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("custom-nav" to padStyleMapOf(utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "space-between", "paddingTop" to "30rpx", "paddingRight" to "25rpx", "paddingBottom" to "30rpx", "paddingLeft" to "25rpx", "backgroundColor" to "#ffffff", "marginTop" to "50rpx", "width" to "100%")), "nav-back" to padStyleMapOf(utsMapOf("width" to "32rpx", "height" to "32rpx", "display" to "flex", "alignItems" to "center", "justifyContent" to "center")), "nav-item" to padStyleMapOf(utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "flex-end", "justifyContent" to "space-around")), "nav-title" to padStyleMapOf(utsMapOf("color" to "#333333", "marginTop" to 0, "marginRight" to "20rpx", "marginBottom" to 0, "marginLeft" to "20rpx", "maxWidth" to "400rpx", "textAlign" to "center", "overflow" to "hidden", "textOverflow" to "ellipsis", "whiteSpace" to "nowrap")), "nav-actions" to padStyleMapOf(utsMapOf("display" to "flex", "flexDirection" to "row", "alignItems" to "center")), "nav-icon" to padStyleMapOf(utsMapOf("width" to "60rpx", "height" to "60rpx", "display" to "flex", "alignItems" to "center", "justifyContent" to "center", "position" to "relative", "marginLeft" to "16rpx")))
+                return _uM("custom-nav" to _pS(_uM("display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "space-between", "paddingTop" to "100rpx", "paddingRight" to "20rpx", "paddingBottom" to "30rpx", "paddingLeft" to "20rpx", "width" to "100%")), "nav-back" to _pS(_uM("width" to "45rpx", "height" to "45rpx", "display" to "flex", "alignItems" to "center", "justifyContent" to "center")), "nav-item" to _pS(_uM("display" to "flex", "flexDirection" to "row", "alignItems" to "flex-end", "justifyContent" to "space-around")), "nav-title" to _pS(_uM("color" to "#333333", "marginTop" to 0, "marginRight" to "20rpx", "marginBottom" to 0, "marginLeft" to "20rpx", "maxWidth" to "400rpx", "textAlign" to "center", "overflow" to "hidden", "textOverflow" to "ellipsis", "whiteSpace" to "nowrap")), "nav-actions" to _pS(_uM("display" to "flex", "flexDirection" to "row", "alignItems" to "center")), "nav-icon" to _pS(_uM("width" to "45rpx", "height" to "45rpx", "display" to "flex", "alignItems" to "center", "justifyContent" to "center", "position" to "relative", "marginLeft" to "16rpx")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("back" to null, "message" to null, "add" to null, "changeNav" to null)
-        var props = normalizePropsOptions(utsMapOf("title" to utsMapOf("type" to "String", "default" to "首页"), "showBack" to utsMapOf("type" to "Boolean", "default" to false), "messageCount" to utsMapOf("type" to "Number", "default" to 0), "rightText" to utsMapOf("type" to "String", "default" to "")))
-        var propsNeedCastKeys = utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("back" to null, "message" to null, "rightEvent" to null)
+        var props = _nP(_uM("title" to _uM("type" to "String", "default" to "首页"), "showBack" to _uM("type" to "Boolean", "default" to false), "messageCount" to _uM("type" to "Number", "default" to 0), "rightText" to _uM("type" to "String", "default" to "")))
+        var propsNeedCastKeys = _uA(
             "title",
             "showBack",
             "messageCount",
             "rightText"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

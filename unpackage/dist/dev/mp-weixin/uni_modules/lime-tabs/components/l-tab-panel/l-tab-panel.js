@@ -3,14 +3,14 @@ const common_vendor = require("../../../../common/vendor.js");
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "l-tab-panel",
   props: {
-    badge: new UTSJSONObject({}),
-    offset: new UTSJSONObject({}),
-    dot: new UTSJSONObject({ type: Boolean }),
-    destroyOnHide: new UTSJSONObject({ type: Boolean }),
-    disabled: new UTSJSONObject({ type: Boolean }),
-    label: new UTSJSONObject({}),
-    lazy: new UTSJSONObject({ type: Boolean }),
-    value: new UTSJSONObject({})
+    badge: {},
+    offset: {},
+    dot: { type: Boolean },
+    destroyOnHide: { type: Boolean },
+    disabled: { type: Boolean },
+    label: {},
+    lazy: { type: Boolean },
+    value: {}
   },
   setup(__props) {
     const children = common_vendor.inject("LimeTabs", null);
@@ -23,7 +23,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     common_vendor.onUnmounted(() => {
       if (children == null)
         return null;
-      children.value = children.value.filter((it) => {
+      children.value = children.value.filter((it = null) => {
         return it != instance;
       });
     });

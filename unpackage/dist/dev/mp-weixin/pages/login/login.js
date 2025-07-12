@@ -22,7 +22,7 @@ if (!Math) {
   (common_vendor.unref(TopNavBar) + _easycom_fui_icon + _easycom_fui_input + _easycom_fui_button + _easycom_fui_checkbox + _easycom_fui_label + _easycom_fui_checkbox_group + _easycom_fui_bottom_popup)();
 }
 const TopNavBar = () => "../../components/TopNavBar.js";
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "login",
   setup(__props) {
     const loginType = common_vendor.ref(true);
@@ -202,7 +202,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-27a30816"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/login/login.js.map

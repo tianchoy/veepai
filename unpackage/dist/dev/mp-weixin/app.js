@@ -22,6 +22,7 @@ if (!Math) {
   "./pages/mine/systemSetting/systemSetting.js";
   "./pages/mine/about/about.js";
   "./pages/mine/localFiles/localFiles.js";
+  "./pages/index/deviceDetail.js";
 }
 const _sfc_main = common_vendor.defineComponent(new UTSJSONObject({
   onLaunch: function() {

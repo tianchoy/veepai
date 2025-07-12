@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.showToast as uni_showToast
 open class GenPagesLoginLogin : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
@@ -92,109 +88,109 @@ open class GenPagesLoginLogin : BasePage {
                 val _component_fui_label = resolveEasyComponent("fui-label", GenUniModulesFirstuiUnixComponentsFuiLabelFuiLabelClass)
                 val _component_fui_checkbox_group = resolveEasyComponent("fui-checkbox-group", GenUniModulesFirstuiUnixComponentsFuiCheckboxGroupFuiCheckboxGroupClass)
                 val _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup", GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass)
-                return createElementVNode("view", utsMapOf("class" to "container"), utsArrayOf(
-                    createVNode(unref(GenComponentsTopNavBarClass), utsMapOf("title" to "登陆", "rightText" to "注册")),
-                    createElementVNode("image", utsMapOf("src" to default9, "class" to "longin_banner")),
-                    createElementVNode("view", utsMapOf("class" to "content"), utsArrayOf(
+                return _cE("view", _uM("class" to "container"), _uA(
+                    _cV(unref(GenComponentsTopNavBarClass), _uM("title" to "登陆", "rightText" to "注册")),
+                    _cE("image", _uM("src" to default9, "class" to "longin_banner")),
+                    _cE("view", _uM("class" to "content"), _uA(
                         if (isTrue(loginType.value)) {
-                            createElementVNode("view", utsMapOf("key" to 0), utsArrayOf(
-                                createVNode(_component_fui_input, utsMapOf("placeholder-style" to "color:#000", "backgroundColor" to "#d3a0fa", "radius" to 40, "borderBottom" to false, "placeholder" to "请输入账号"), utsMapOf("left" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createElementVNode("view", utsMapOf("style" to normalizeStyle(utsMapOf("margin-right" to "20rpx"))), utsArrayOf(
-                                            createVNode(_component_fui_icon, utsMapOf("name" to "mobile", "color" to "#1296db", "size" to 48))
+                            _cE("view", _uM("key" to 0), _uA(
+                                _cV(_component_fui_input, _uM("placeholder-style" to "color:#000", "backgroundColor" to "#d3a0fa", "radius" to 40, "borderBottom" to false, "placeholder" to "请输入账号"), _uM("left" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
+                                        _cE("view", _uM("style" to _nS(_uM("margin-right" to "20rpx"))), _uA(
+                                            _cV(_component_fui_icon, _uM("name" to "mobile", "color" to "#1296db", "size" to 48))
                                         ), 4)
                                     )
                                 }), "_" to 1)),
-                                createVNode(_component_fui_input, utsMapOf("placeholder-style" to "color:#000", "backgroundColor" to "#d3a0fa", "marginTop" to 40, "radius" to 40, "borderBottom" to false, "placeholder" to "请输入密码", "type" to "password"), utsMapOf("left" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createElementVNode("view", utsMapOf("style" to normalizeStyle(utsMapOf("margin-right" to "20rpx"))), utsArrayOf(
-                                            createVNode(_component_fui_icon, utsMapOf("name" to "captcha", "color" to "#1296db", "size" to 48))
+                                _cV(_component_fui_input, _uM("placeholder-style" to "color:#000", "backgroundColor" to "#d3a0fa", "marginTop" to 40, "radius" to 40, "borderBottom" to false, "placeholder" to "请输入密码", "type" to "password"), _uM("left" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
+                                        _cE("view", _uM("style" to _nS(_uM("margin-right" to "20rpx"))), _uA(
+                                            _cV(_component_fui_icon, _uM("name" to "captcha", "color" to "#1296db", "size" to 48))
                                         ), 4)
                                     )
                                 }), "_" to 1)),
-                                createElementVNode("view", utsMapOf("class" to "tips"), utsArrayOf(
-                                    createElementVNode("text", utsMapOf("onClick" to fun(){
+                                _cE("view", _uM("class" to "tips"), _uA(
+                                    _cE("text", _uM("onClick" to fun(){
                                         changeType(false)
-                                    }), "短信登陆", 8, utsArrayOf(
+                                    }), "短信登陆", 8, _uA(
                                         "onClick"
                                     )),
-                                    createElementVNode("text", null, "忘记密码")
+                                    _cE("text", null, "忘记密码")
                                 ))
                             ))
                         } else {
-                            createElementVNode("view", utsMapOf("key" to 1), utsArrayOf(
-                                createVNode(_component_fui_input, utsMapOf("placeholder-style" to "color:#000", "backgroundColor" to "#d3a0fa", "radius" to 40, "borderBottom" to false, "placeholder" to "请输入账号"), utsMapOf("left" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createElementVNode("view", utsMapOf("style" to normalizeStyle(utsMapOf("margin-right" to "20rpx"))), utsArrayOf(
-                                            createVNode(_component_fui_icon, utsMapOf("name" to "mobile", "color" to "#1296db", "size" to 48))
+                            _cE("view", _uM("key" to 1), _uA(
+                                _cV(_component_fui_input, _uM("placeholder-style" to "color:#000", "backgroundColor" to "#d3a0fa", "radius" to 40, "borderBottom" to false, "placeholder" to "请输入账号"), _uM("left" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
+                                        _cE("view", _uM("style" to _nS(_uM("margin-right" to "20rpx"))), _uA(
+                                            _cV(_component_fui_icon, _uM("name" to "mobile", "color" to "#1296db", "size" to 48))
                                         ), 4)
                                     )
                                 }
                                 ), "_" to 1)),
-                                createVNode(_component_fui_input, utsMapOf("padding" to "20rpx 32rpx", "backgroundColor" to "#d3a0fa", "placeholder" to "请输入验证码", "bottomLeft" to 0, "marginTop" to 40, "radius" to 40, "placeholderStyle" to "font-size: 26rpx;", "placeholder-style" to "color:#000", "borderBottom" to false), utsMapOf("left" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createElementVNode("view", utsMapOf("style" to normalizeStyle(utsMapOf("margin-right" to "20rpx"))), utsArrayOf(
-                                            createVNode(_component_fui_icon, utsMapOf("name" to "captcha", "color" to "#1296db", "size" to 48))
+                                _cV(_component_fui_input, _uM("padding" to "20rpx 32rpx", "backgroundColor" to "#d3a0fa", "placeholder" to "请输入验证码", "bottomLeft" to 0, "marginTop" to 40, "radius" to 40, "placeholderStyle" to "font-size: 26rpx;", "placeholder-style" to "color:#000", "borderBottom" to false), _uM("left" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
+                                        _cE("view", _uM("style" to _nS(_uM("margin-right" to "20rpx"))), _uA(
+                                            _cV(_component_fui_icon, _uM("name" to "captcha", "color" to "#1296db", "size" to 48))
                                         ), 4)
                                     )
                                 }
                                 ), "default" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createVNode(_component_fui_button, utsMapOf("width" to "200rpx", "height" to "64rpx", "size" to 28, "onClick" to getPsw, "text" to btnWord.value, "background" to "none", "color" to "#333", "disabled" to isCounting.value), null, 8, utsArrayOf(
+                                    return _uA(
+                                        _cV(_component_fui_button, _uM("width" to "200rpx", "height" to "64rpx", "size" to 28, "onClick" to getPsw, "text" to btnWord.value, "background" to "none", "color" to "#333", "disabled" to isCounting.value), null, 8, _uA(
                                             "text",
                                             "disabled"
                                         ))
                                     )
                                 }
                                 ), "_" to 1)),
-                                createElementVNode("view", utsMapOf("class" to "tips"), utsArrayOf(
-                                    createElementVNode("text", utsMapOf("onClick" to fun(){
+                                _cE("view", _uM("class" to "tips"), _uA(
+                                    _cE("text", _uM("onClick" to fun(){
                                         changeType(true)
                                     }
-                                    ), "密码登陆", 8, utsArrayOf(
+                                    ), "密码登陆", 8, _uA(
                                         "onClick"
                                     )),
-                                    createElementVNode("text", null, "忘记密码")
+                                    _cE("text", null, "忘记密码")
                                 ))
                             ))
                         }
                         ,
-                        createVNode(_component_fui_checkbox_group, utsMapOf("name" to "checkbox", "class" to "check-box", "onChange" to isChecked), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                            return utsArrayOf(
-                                createVNode(_component_fui_label, null, utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createVNode(_component_fui_checkbox, utsMapOf("value" to "1"))
+                        _cV(_component_fui_checkbox_group, _uM("name" to "checkbox", "class" to "check-box", "onChange" to isChecked), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                            return _uA(
+                                _cV(_component_fui_label, null, _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
+                                        _cV(_component_fui_checkbox, _uM("value" to "1"))
                                     )
                                 }
                                 ), "_" to 1)),
-                                createElementVNode("view", utsMapOf("class" to "fui-text-box"), utsArrayOf(
-                                    createElementVNode("text", null, "已阅读并同意"),
-                                    createElementVNode("text", utsMapOf("class" to "fui-text", "onClick" to showUserInfo), "《用户协议》"),
-                                    createElementVNode("text", null, "和"),
-                                    createElementVNode("text", utsMapOf("class" to "fui-text", "onClick" to priviteInfo), "《隐私政策》")
+                                _cE("view", _uM("class" to "fui-text-box"), _uA(
+                                    _cE("text", null, "已阅读并同意"),
+                                    _cE("text", _uM("class" to "fui-text", "onClick" to showUserInfo), "《用户协议》"),
+                                    _cE("text", null, "和"),
+                                    _cE("text", _uM("class" to "fui-text", "onClick" to priviteInfo), "《隐私政策》")
                                 ))
                             )
                         }
                         ), "_" to 1)),
-                        createVNode(_component_fui_button, utsMapOf("text" to "登录", "margin" to "20rpx 0 0 0", "background" to "#1296db", "color" to "#fff", "size" to 40, "onOnclick" to login))
+                        _cV(_component_fui_button, _uM("text" to "登录", "margin" to "20rpx 0 0 0", "background" to "#1296db", "color" to "#fff", "size" to 40, "onOnclick" to login))
                     )),
-                    createElementVNode("view", null, utsArrayOf(
-                        createVNode(_component_fui_bottom_popup, utsMapOf("visible" to user_info.value, "onClose" to closeUserPopup), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                            return utsArrayOf(
-                                createElementVNode("view", utsMapOf("class" to "fui-scroll__wrap"), utsArrayOf(
-                                    createElementVNode("view", utsMapOf("class" to "fui-title__pb"), utsArrayOf(
-                                        createElementVNode("text", null, toDisplayString(user_text.value["title"]), 1),
-                                        createElementVNode("view", utsMapOf("onClick" to closeUserPopup), utsArrayOf(
-                                            createVNode(_component_fui_icon, utsMapOf("name" to "close", "size" to 48))
+                    _cE("view", null, _uA(
+                        _cV(_component_fui_bottom_popup, _uM("visible" to user_info.value, "onClose" to closeUserPopup), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                            return _uA(
+                                _cE("view", _uM("class" to "fui-scroll__wrap"), _uA(
+                                    _cE("view", _uM("class" to "fui-title__pb"), _uA(
+                                        _cE("text", null, _tD(user_text.value["title"]), 1),
+                                        _cE("view", _uM("onClick" to closeUserPopup), _uA(
+                                            _cV(_component_fui_icon, _uM("name" to "close", "size" to 48))
                                         ))
                                     )),
-                                    createElementVNode("scroll-view", utsMapOf("scroll-y" to true, "show-scrollbar" to false), utsArrayOf(
-                                        createElementVNode("view", null, toDisplayString(user_text.value["content"]), 1)
+                                    _cE("scroll-view", _uM("scroll-y" to true, "show-scrollbar" to false), _uA(
+                                        _cE("view", null, _tD(user_text.value["content"]), 1)
                                     ))
                                 ))
                             )
                         }
-                        ), "_" to 1), 8, utsArrayOf(
+                        ), "_" to 1), 8, _uA(
                             "visible"
                         ))
                     ))
@@ -202,21 +198,21 @@ open class GenPagesLoginLogin : BasePage {
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
-            ), utsArrayOf(
+            ), _uA(
                 GenApp.styles
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("container" to padStyleMapOf(utsMapOf("height" to "100%", "backgroundColor" to "#ffffff", "paddingTop" to "20rpx", "paddingRight" to "40rpx", "paddingBottom" to "20rpx", "paddingLeft" to "40rpx", "display" to "flex", "flexDirection" to "column", "alignItems" to "center")), "longin_banner" to utsMapOf(".container " to utsMapOf("width" to "250rpx", "height" to "400rpx", "marginBottom" to "20rpx")), "content" to utsMapOf(".container " to utsMapOf("width" to "100%")), "check-box" to utsMapOf(".container .content " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-start", "marginTop" to "20rpx")), "fui-text-box" to utsMapOf(".container .content .check-box " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-start", "marginLeft" to "10rpx")), "fui-text" to utsMapOf(".container .content .check-box .fui-text-box " to utsMapOf("color" to "#1296db")), "tips" to utsMapOf(".container .content " to utsMapOf("marginTop" to "20rpx", "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "space-between")), "fui-scroll__wrap" to utsMapOf(".container " to utsMapOf("width" to "100%", "paddingTop" to "40rpx", "paddingRight" to "40rpx", "paddingBottom" to "40rpx", "paddingLeft" to "40rpx")), "fui-title__pb" to utsMapOf(".container .fui-scroll__wrap " to utsMapOf("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between")))
+                return _uM("container" to _pS(_uM("height" to "100%", "backgroundColor" to "#ffffff", "paddingTop" to "20rpx", "paddingRight" to "40rpx", "paddingBottom" to "20rpx", "paddingLeft" to "40rpx", "display" to "flex", "flexDirection" to "column", "alignItems" to "center")), "longin_banner" to _uM(".container " to _uM("width" to "250rpx", "height" to "400rpx", "marginBottom" to "20rpx")), "content" to _uM(".container " to _uM("width" to "100%")), "check-box" to _uM(".container .content " to _uM("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-start", "marginTop" to "20rpx")), "fui-text-box" to _uM(".container .content .check-box " to _uM("display" to "flex", "flexDirection" to "row", "justifyContent" to "flex-start", "marginLeft" to "10rpx")), "fui-text" to _uM(".container .content .check-box .fui-text-box " to _uM("color" to "#1296db")), "tips" to _uM(".container .content " to _uM("marginTop" to "20rpx", "display" to "flex", "flexDirection" to "row", "alignItems" to "center", "justifyContent" to "space-between")), "fui-scroll__wrap" to _uM(".container " to _uM("width" to "100%", "paddingTop" to "40rpx", "paddingRight" to "40rpx", "paddingBottom" to "40rpx", "paddingLeft" to "40rpx")), "fui-title__pb" to _uM(".container .fui-scroll__wrap " to _uM("display" to "flex", "flexDirection" to "row", "justifyContent" to "space-between")))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf()
-        var props = normalizePropsOptions(utsMapOf())
-        var propsNeedCastKeys: UTSArray<String> = utsArrayOf()
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM()
+        var props = _nP(_uM())
+        var propsNeedCastKeys: UTSArray<String> = _uA()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

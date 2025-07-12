@@ -91,7 +91,7 @@ const __sfc__ = defineComponent({
         },
     },
     emits: ['select', 'panelChange', 'streak'],
-    setup(__props): any | null {
+    setup(__props) {
         const __ins = getCurrentInstance()!;
         const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
         const _cache = __ins.renderCache;
@@ -163,12 +163,12 @@ const __sfc__ = defineComponent({
             }
         });
         return (): any | null => {
-            return createElementVNode("view", utsMapOf({ class: "calender" }), [
-                createElementVNode("canvas", utsMapOf({
+            return _cE("view", _uM({ class: "calender" }), [
+                _cE("canvas", _uM({
                     ref: "dailyRef",
                     id: "l-daily-punch",
                     class: "l-daily-punch",
-                    style: normalizeStyle([unref(styles)]),
+                    style: _nS([unref(styles)]),
                     onClick: onClick
                 }), null, 4 /* STYLE */)
             ]);
@@ -177,5 +177,5 @@ const __sfc__ = defineComponent({
 });
 export default __sfc__;
 export type LDailyPunchComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunchStyles = [utsMapOf([["l-daily-punch", padStyleMapOf(utsMapOf([["width", "100%"]]))], ["calender", padStyleMapOf(utsMapOf([["marginTop", 0], ["marginRight", "30rpx"], ["marginBottom", 0], ["marginLeft", "30rpx"]]))]])];
+const GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunchStyles = [_uM([["l-daily-punch", _pS(_uM([["width", "100%"]]))], ["calender", _pS(_uM([["marginTop", 0], ["marginRight", "30rpx"], ["marginBottom", 0], ["marginLeft", "30rpx"]]))]])];
 //# sourceMappingURL=l-daily-punch.uvue.map

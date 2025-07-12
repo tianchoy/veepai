@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 open class GenUniModulesLimePickerComponentsLPickerLPicker : VueComponent, PickerProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
     override var cancelBtn: String? by `$props`
@@ -52,9 +48,9 @@ open class GenUniModulesLimePickerComponentsLPickerLPicker : VueComponent, Picke
                 __ins.emit(event, *do_not_transform_spread)
             }
             val props = __props
-            val pickerItemInstanceArray = reactive(utsArrayOf<LPickerItemComponentPublicInstance>())
+            val pickerItemInstanceArray = reactive(_uA<LPickerItemComponentPublicInstance>())
             val ohosShow = ref(0)
-            val modelValue = ref<UTSArray<PickerValue>>(props.value ?: props.modelValue ?: props.defaultValue ?: utsArrayOf())
+            val modelValue = ref<UTSArray<PickerValue>>(props.value ?: props.modelValue ?: props.defaultValue ?: _uA())
             val pickerValue = computed(WritableComputedOptions(set = fun(value: UTSArray<PickerValue>) {
                 if (value.join("") == modelValue.value.join("")) {
                     return
@@ -86,9 +82,9 @@ open class GenUniModulesLimePickerComponentsLPickerLPicker : VueComponent, Picke
                 return style
             }
             )
-            val curIndexArray = ref(utsArrayOf<Number>())
+            val curIndexArray = ref(_uA<Number>())
             val curValueArray = ref(pickerValue.value.slice())
-            val curItemArray: UTSArray<PickerColumnItem> = utsArrayOf()
+            val curItemArray: UTSArray<PickerColumnItem> = _uA()
             val realColumns = computed(fun(): UTSArray<PickerColumn> {
                 val pickerColumns = pickerItemInstanceArray.map(fun(child): PickerColumn {
                     return child.options
@@ -120,8 +116,8 @@ open class GenUniModulesLimePickerComponentsLPickerLPicker : VueComponent, Picke
                 pushAt(curItemArray, column, item)
             }
             val updatePickerItems = fun(){
-                val _indexs: UTSArray<Number> = utsArrayOf()
-                val _values: UTSArray<Any> = utsArrayOf()
+                val _indexs: UTSArray<Number> = _uA()
+                val _values: UTSArray<Any> = _uA()
                 pickerItemInstanceArray.forEach(fun(child, column){
                     if (child.options.length == 0) {
                         return
@@ -229,44 +225,44 @@ open class GenUniModulesLimePickerComponentsLPickerLPicker : VueComponent, Picke
             provide("limePickerManageChildInList", manageChildInList)
             return fun(): Any? {
                 val _component_l_picker_item = resolveEasyComponent("l-picker-item", GenUniModulesLimePickerComponentsLPickerItemLPickerItemClass)
-                return createElementVNode("view", utsMapOf("class" to "l-picker", "style" to normalizeStyle(utsArrayOf(
+                return _cE("view", _uM("class" to "l-picker", "style" to _nS(_uA(
                     unref(styles)
-                )), "ref" to "pickerRef"), utsArrayOf(
+                )), "ref" to "pickerRef"), _uA(
                     if (isTrue(_ctx.cancelBtn != null || _ctx.title != null || _ctx.confirmBtn != null)) {
-                        createElementVNode("view", utsMapOf("class" to "l-picker__toolbar", "key" to unref(ohosShow)), utsArrayOf(
+                        _cE("view", _uM("class" to "l-picker__toolbar", "key" to unref(ohosShow)), _uA(
                             if (_ctx.cancelBtn != null) {
-                                createElementVNode("text", utsMapOf("class" to "l-picker__cancel", "key" to unref(ohosShow), "style" to normalizeStyle(_ctx.cancelStyle ?: ""), "onClick" to onCancel), toDisplayString(_ctx.cancelBtn), 5)
+                                _cE("text", _uM("class" to "l-picker__cancel", "key" to unref(ohosShow), "style" to _nS(_ctx.cancelStyle ?: ""), "onClick" to onCancel), _tD(_ctx.cancelBtn), 5)
                             } else {
-                                createCommentVNode("v-if", true)
+                                _cC("v-if", true)
                             },
-                            createElementVNode("text", utsMapOf("class" to "l-picker__title", "key" to unref(ohosShow), "style" to normalizeStyle(_ctx.titleStyle ?: "")), toDisplayString(_ctx.title), 5),
+                            _cE("text", _uM("class" to "l-picker__title", "key" to unref(ohosShow), "style" to _nS(_ctx.titleStyle ?: "")), _tD(_ctx.title), 5),
                             if (_ctx.confirmBtn != null) {
-                                createElementVNode("text", utsMapOf("class" to "l-picker__confirm", "key" to unref(ohosShow), "style" to normalizeStyle(_ctx.confirmStyle ?: ""), "onClick" to onConfirm), toDisplayString(_ctx.confirmBtn), 5)
+                                _cE("text", _uM("class" to "l-picker__confirm", "key" to unref(ohosShow), "style" to _nS(_ctx.confirmStyle ?: ""), "onClick" to onConfirm), _tD(_ctx.confirmBtn), 5)
                             } else {
-                                createCommentVNode("v-if", true)
+                                _cC("v-if", true)
                             }
                         ))
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
                     ,
                     renderSlot(_ctx.`$slots`, "header"),
-                    createElementVNode("view", utsMapOf("class" to "l-picker__main", "style" to normalizeStyle(utsArrayOf(
+                    _cE("view", _uM("class" to "l-picker__main", "style" to _nS(_uA(
                         if (_ctx.groupHeight != null) {
-                            utsMapOf("height" to _ctx.groupHeight)
+                            _uM("height" to _ctx.groupHeight)
                         } else {
-                            utsMapOf<String, Any?>()
+                            _uM<String, Any?>()
                         }
-                    ))), utsArrayOf(
+                    ))), _uA(
                         renderSlot(_ctx.`$slots`, "default", UTSJSONObject(), fun(): UTSArray<Any> {
-                            return utsArrayOf(
-                                createElementVNode(Fragment, null, RenderHelpers.renderList(props.columns, fun(options, i, __index, _cached): Any {
-                                    return createVNode(_component_l_picker_item, utsMapOf("options" to options, "key" to i, "column" to i, "value" to if (unref(pickerValue).length > i) {
+                            return _uA(
+                                _cE(Fragment, null, RenderHelpers.renderList(props.columns, fun(options, i, __index, _cached): Any {
+                                    return _cV(_component_l_picker_item, _uM("options" to options, "key" to i, "column" to i, "value" to if (unref(pickerValue).length > i) {
                                         unref(pickerValue)[i]
                                     } else {
                                         null
                                     }
-                                    ), null, 8, utsArrayOf(
+                                    ), null, 8, _uA(
                                         "options",
                                         "column",
                                         "value"
@@ -277,56 +273,56 @@ open class GenUniModulesLimePickerComponentsLPickerLPicker : VueComponent, Picke
                         }
                         ),
                         if (isTrue(unref(isEmpty))) {
-                            createElementVNode("view", utsMapOf("key" to 0, "class" to "l-picker__empty"), utsArrayOf(
+                            _cE("view", _uM("key" to 0, "class" to "l-picker__empty"), _uA(
                                 renderSlot(_ctx.`$slots`, "empty")
                             ))
                         } else {
-                            createCommentVNode("v-if", true)
+                            _cC("v-if", true)
                         }
                     ), 4),
                     renderSlot(_ctx.`$slots`, "footer"),
                     if (isTrue(_ctx.loading)) {
-                        createElementVNode("view", utsMapOf("key" to 1, "class" to "l-picker__loading", "ref_key" to "loadingRef", "ref" to loadingRef, "style" to normalizeStyle(utsArrayOf(
+                        _cE("view", _uM("key" to 1, "class" to "l-picker__loading", "ref_key" to "loadingRef", "ref" to loadingRef, "style" to _nS(_uA(
                             if (_ctx.loadingMaskColor != null) {
-                                utsMapOf("background" to _ctx.loadingMaskColor)
+                                _uM("background" to _ctx.loadingMaskColor)
                             } else {
-                                utsMapOf<String, Any?>()
+                                _uM<String, Any?>()
                             }
                         ))), null, 4)
                     } else {
-                        createCommentVNode("v-if", true)
+                        _cC("v-if", true)
                     }
                 ), 4)
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-picker" to padStyleMapOf(utsMapOf("position" to "relative", "backgroundColor" to "#ffffff", "borderTopLeftRadius" to "24rpx", "borderTopRightRadius" to "24rpx")), "l-picker__toolbar" to padStyleMapOf(utsMapOf("display" to "flex", "alignItems" to "center", "justifyContent" to "space-between", "overflow" to "hidden", "height" to "116rpx", "flexDirection" to "row", "position" to "relative")), "l-picker__title" to padStyleMapOf(utsMapOf("position" to "absolute", "left" to "50%", "top" to "50%", "transform" to "translateX(-50%) translateY(-50%)", "textAlign" to "center", "overflow" to "hidden", "whiteSpace" to "nowrap", "textOverflow" to "ellipsis", "color" to "rgba(0,0,0,0.88)", "lineHeight" to "52rpx", "fontWeight" to "700", "fontSize" to 18)), "l-picker__cancel" to padStyleMapOf(utsMapOf("fontSize" to 16, "lineHeight" to "116rpx", "height" to "100%", "paddingTop" to 0, "paddingRight" to "32rpx", "paddingBottom" to 0, "paddingLeft" to "32rpx", "color" to "rgba(0,0,0,0.65)")), "l-picker__confirm" to padStyleMapOf(utsMapOf("fontSize" to 16, "lineHeight" to "116rpx", "height" to "100%", "paddingTop" to 0, "paddingRight" to "32rpx", "paddingBottom" to 0, "paddingLeft" to "32rpx", "color" to "#3283ff")), "l-picker__main" to padStyleMapOf(utsMapOf("display" to "flex", "height" to "400rpx", "flexDirection" to "row", "paddingTop" to 0, "paddingRight" to "16rpx", "paddingBottom" to 0, "paddingLeft" to "16rpx")), "l-picker__empty" to padStyleMapOf(utsMapOf("pointerEvents" to "none", "justifyContent" to "center", "alignItems" to "center", "display" to "flex", "position" to "absolute", "top" to 0, "bottom" to 0, "left" to 0, "right" to 0, "zIndex" to 3)), "l-picker__loading" to padStyleMapOf(utsMapOf("zIndex" to 3, "backgroundImage" to "none", "backgroundColor" to "rgba(255,255,255,0.9)", "justifyContent" to "center", "alignItems" to "center", "display" to "flex", "position" to "absolute", "top" to 0, "bottom" to 0, "left" to 0, "right" to 0)))
+                return _uM("l-picker" to _pS(_uM("position" to "relative", "backgroundColor" to "#ffffff", "borderTopLeftRadius" to "24rpx", "borderTopRightRadius" to "24rpx")), "l-picker__toolbar" to _pS(_uM("display" to "flex", "alignItems" to "center", "justifyContent" to "space-between", "overflow" to "hidden", "height" to "116rpx", "flexDirection" to "row", "position" to "relative")), "l-picker__title" to _pS(_uM("position" to "absolute", "left" to "50%", "top" to "50%", "transform" to "translateX(-50%) translateY(-50%)", "textAlign" to "center", "overflow" to "hidden", "whiteSpace" to "nowrap", "textOverflow" to "ellipsis", "color" to "rgba(0,0,0,0.88)", "lineHeight" to "52rpx", "fontWeight" to "700", "fontSize" to 18)), "l-picker__cancel" to _pS(_uM("fontSize" to 16, "lineHeight" to "116rpx", "height" to "100%", "paddingTop" to 0, "paddingRight" to "32rpx", "paddingBottom" to 0, "paddingLeft" to "32rpx", "color" to "rgba(0,0,0,0.65)")), "l-picker__confirm" to _pS(_uM("fontSize" to 16, "lineHeight" to "116rpx", "height" to "100%", "paddingTop" to 0, "paddingRight" to "32rpx", "paddingBottom" to 0, "paddingLeft" to "32rpx", "color" to "#3283ff")), "l-picker__main" to _pS(_uM("display" to "flex", "height" to "400rpx", "flexDirection" to "row", "paddingTop" to 0, "paddingRight" to "16rpx", "paddingBottom" to 0, "paddingLeft" to "16rpx")), "l-picker__empty" to _pS(_uM("pointerEvents" to "none", "justifyContent" to "center", "alignItems" to "center", "display" to "flex", "position" to "absolute", "top" to 0, "bottom" to 0, "left" to 0, "right" to 0, "zIndex" to 3)), "l-picker__loading" to _pS(_uM("zIndex" to 3, "backgroundImage" to "none", "backgroundColor" to "rgba(255,255,255,0.9)", "justifyContent" to "center", "alignItems" to "center", "display" to "flex", "position" to "absolute", "top" to 0, "bottom" to 0, "left" to 0, "right" to 0)))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("change" to null, "cancel" to null, "pick" to null, "confirm" to null, "update:modelValue" to null, "update:value" to null)
-        var props = normalizePropsOptions(utsMapOf("cancelBtn" to utsMapOf("type" to "String", "required" to false), "cancelStyle" to utsMapOf("type" to utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("change" to null, "cancel" to null, "pick" to null, "confirm" to null, "update:modelValue" to null, "update:value" to null)
+        var props = _nP(_uM("cancelBtn" to _uM("type" to "String", "required" to false), "cancelStyle" to _uM("type" to _uA(
             "String",
             "UTSJSONObject"
-        ), "required" to false), "confirmBtn" to utsMapOf("type" to "String", "required" to false), "confirmStyle" to utsMapOf("type" to utsArrayOf(
+        ), "required" to false), "confirmBtn" to _uM("type" to "String", "required" to false), "confirmStyle" to _uM("type" to _uA(
             "String",
             "UTSJSONObject"
-        ), "required" to false), "title" to utsMapOf("type" to "String", "required" to false), "titleStyle" to utsMapOf("type" to utsArrayOf(
+        ), "required" to false), "title" to _uM("type" to "String", "required" to false), "titleStyle" to _uM("type" to _uA(
             "String",
             "UTSJSONObject"
-        ), "required" to false), "keys" to utsMapOf("type" to "UTSJSONObject", "required" to false), "columns" to utsMapOf("type" to "Array", "required" to true, "default" to utsArrayOf<PickerColumn>()), "modelValue" to utsMapOf("type" to "Array", "required" to false), "defaultValue" to utsMapOf("type" to "Array", "required" to false), "value" to utsMapOf("type" to "Array", "required" to false), "loading" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "loadingColor" to utsMapOf("type" to "String", "required" to false), "loadingMaskColor" to utsMapOf("type" to "String", "required" to false), "loadingSize" to utsMapOf("type" to "String", "required" to true, "default" to "64rpx"), "itemHeight" to utsMapOf("type" to "String", "required" to false), "itemColor" to utsMapOf("type" to "String", "required" to false), "itemFontSize" to utsMapOf("type" to "String", "required" to false), "itemActiveColor" to utsMapOf("type" to "String", "required" to false), "itemActiveFontWeight" to utsMapOf("type" to "Number", "required" to false), "indicatorStyle" to utsMapOf("type" to "String", "required" to false), "bgColor" to utsMapOf("type" to "String", "required" to false), "groupHeight" to utsMapOf("type" to "String", "required" to false), "radius" to utsMapOf("type" to "String", "required" to false), "resetIndex" to utsMapOf("type" to "Boolean", "required" to true, "default" to false)))
-        var propsNeedCastKeys = utsArrayOf(
+        ), "required" to false), "keys" to _uM("type" to "UTSJSONObject", "required" to false), "columns" to _uM("type" to "Array", "required" to true, "default" to _uA<PickerColumn>()), "modelValue" to _uM("type" to "Array", "required" to false), "defaultValue" to _uM("type" to "Array", "required" to false), "value" to _uM("type" to "Array", "required" to false), "loading" to _uM("type" to "Boolean", "required" to true, "default" to false), "loadingColor" to _uM("type" to "String", "required" to false), "loadingMaskColor" to _uM("type" to "String", "required" to false), "loadingSize" to _uM("type" to "String", "required" to true, "default" to "64rpx"), "itemHeight" to _uM("type" to "String", "required" to false), "itemColor" to _uM("type" to "String", "required" to false), "itemFontSize" to _uM("type" to "String", "required" to false), "itemActiveColor" to _uM("type" to "String", "required" to false), "itemActiveFontWeight" to _uM("type" to "Number", "required" to false), "indicatorStyle" to _uM("type" to "String", "required" to false), "bgColor" to _uM("type" to "String", "required" to false), "groupHeight" to _uM("type" to "String", "required" to false), "radius" to _uM("type" to "String", "required" to false), "resetIndex" to _uM("type" to "Boolean", "required" to true, "default" to false)))
+        var propsNeedCastKeys = _uA(
             "columns",
             "loading",
             "loadingSize",
             "resetIndex"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

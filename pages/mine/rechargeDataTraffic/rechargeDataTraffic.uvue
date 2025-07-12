@@ -140,7 +140,6 @@
 	const getValue = (e : string) => {
 		const selectedItem = radioItems.value.find(item => item.iccid == e)
 		if (selectedItem != null) {
-			console.log(selectedItem)
 			selectedItem.checked = true
 			currentDeviceInfo.value = selectedItem
 		}

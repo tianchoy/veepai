@@ -59,7 +59,7 @@ class RadioItem extends UTS.UTSType {
     delete this.__props__;
   }
 }
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "rechargeDataTraffic",
   setup(__props) {
     const totalDevice = common_vendor.ref(4);
@@ -109,7 +109,6 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
         return item.iccid == e;
       });
       if (selectedItem != null) {
-        common_vendor.index.__f__("log", "at pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue:143", selectedItem);
         selectedItem.checked = true;
         currentDeviceInfo.value = selectedItem;
       }
@@ -208,7 +207,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-2f171216"]]);
 wx.createPage(MiniProgramPage);
 //# sourceMappingURL=../../../../.sourcemap/mp-weixin/pages/mine/rechargeDataTraffic/rechargeDataTraffic.js.map

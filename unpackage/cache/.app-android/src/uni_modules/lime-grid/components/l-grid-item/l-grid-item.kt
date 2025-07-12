@@ -11,10 +11,6 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 import io.dcloud.uniapp.extapi.reLaunch as uni_reLaunch
 import io.dcloud.uniapp.extapi.redirectTo as uni_redirectTo
@@ -188,9 +184,9 @@ open class GenUniModulesLimeGridComponentsLGridItemLGridItem : VueComponent, Gri
             return fun(): Any? {
                 val _component_l_icon = resolveEasyComponent("l-icon", GenUniModulesLimeIconComponentsLIconLIconClass)
                 val _component_l_badge = resolveEasyComponent("l-badge", GenUniModulesLimeBadgeComponentsLBadgeLBadgeClass)
-                return createElementVNode("view", utsMapOf("ref" to "gridRef", "class" to normalizeClass(utsArrayOf(
+                return _cE("view", _uM("ref" to "gridRef", "class" to _nC(_uA(
                     "l-grid-item",
-                    utsArrayOf(
+                    _uA(
                         unref(classes),
                         _ctx.lClass
                     )
@@ -199,23 +195,23 @@ open class GenUniModulesLimeGridComponentsLGridItemLGridItem : VueComponent, Gri
                 } else {
                     ""
                 }
-                , "style" to normalizeStyle(utsArrayOf(
+                , "style" to _nS(_uA(
                     unref(styles),
                     _ctx.lStyle
-                ))), utsArrayOf(
+                ))), _uA(
                     renderSlot(_ctx.`$slots`, "default", UTSJSONObject(), fun(): UTSArray<Any> {
-                        return utsArrayOf(
+                        return _uA(
                             if (isTrue((_ctx.dot || _ctx.badge != null) && (_ctx.icon != null || _ctx.image != null || _ctx.`$slots`["icon"] != null))) {
-                                createVNode(_component_l_badge, utsMapOf("key" to 0, "content" to _ctx.badge, "dot" to _ctx.dot), utsMapOf("default" to withSlotCtx(fun(): UTSArray<Any> {
-                                    return utsArrayOf(
+                                _cV(_component_l_badge, _uM("key" to 0, "content" to _ctx.badge, "dot" to _ctx.dot), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                                    return _uA(
                                         renderSlot(_ctx.`$slots`, "icon", UTSJSONObject(), fun(): UTSArray<Any> {
-                                            return utsArrayOf(
+                                            return _uA(
                                                 if (_ctx.icon != null) {
-                                                    createElementVNode("view", utsMapOf("key" to 0, "class" to normalizeClass(utsArrayOf(
+                                                    _cE("view", _uM("key" to 0, "class" to _nC(_uA(
                                                         "l-grid-item__icon",
                                                         unref(imageClasses)
-                                                    ))), utsArrayOf(
-                                                        createVNode(_component_l_icon, utsMapOf("l-class" to _ctx.lClassIcon, "prefix" to _ctx.prefix, "name" to _ctx.icon, "color" to _ctx.iconColor, "size" to _ctx.iconSize), null, 8, utsArrayOf(
+                                                    ))), _uA(
+                                                        _cV(_component_l_icon, _uM("l-class" to _ctx.lClassIcon, "prefix" to _ctx.prefix, "name" to _ctx.icon, "color" to _ctx.iconColor, "size" to _ctx.iconSize), null, 8, _uA(
                                                             "l-class",
                                                             "prefix",
                                                             "name",
@@ -225,36 +221,36 @@ open class GenUniModulesLimeGridComponentsLGridItemLGridItem : VueComponent, Gri
                                                     ), 2)
                                                 } else {
                                                     if (_ctx.image != null) {
-                                                        createElementVNode("image", utsMapOf("key" to 1, "class" to normalizeClass(utsArrayOf(
+                                                        _cE("image", _uM("key" to 1, "class" to _nC(_uA(
                                                             "l-grid-item__image",
                                                             unref(imageClasses)
-                                                        )), "style" to normalizeStyle(utsArrayOf(
+                                                        )), "style" to _nS(_uA(
                                                             unref(imageStyle),
                                                             unref(innerImageStyle)
-                                                        )), "src" to _ctx.image, "mode" to "aspectFill"), null, 14, utsArrayOf(
+                                                        )), "src" to _ctx.image, "mode" to "aspectFill"), null, 14, _uA(
                                                             "src"
                                                         ))
                                                     } else {
-                                                        createCommentVNode("v-if", true)
+                                                        _cC("v-if", true)
                                                     }
                                                 }
                                             )
                                         })
                                     )
-                                }), "_" to 3), 8, utsArrayOf(
+                                }), "_" to 3), 8, _uA(
                                     "content",
                                     "dot"
                                 ))
                             } else {
                                 if (isTrue(_ctx.icon != null || _ctx.image != null || _ctx.`$slots`["icon"] != null)) {
-                                    renderSlot(_ctx.`$slots`, "icon", utsMapOf("key" to 1), fun(): UTSArray<Any> {
-                                        return utsArrayOf(
+                                    renderSlot(_ctx.`$slots`, "icon", _uM("key" to 1), fun(): UTSArray<Any> {
+                                        return _uA(
                                             if (_ctx.icon != null) {
-                                                createElementVNode("view", utsMapOf("key" to 0, "class" to normalizeClass(utsArrayOf(
+                                                _cE("view", _uM("key" to 0, "class" to _nC(_uA(
                                                     "l-grid-item__icon",
                                                     unref(imageClasses)
-                                                ))), utsArrayOf(
-                                                    createVNode(_component_l_icon, utsMapOf("l-class" to _ctx.lClassIcon, "prefix" to _ctx.prefix, "name" to _ctx.icon, "color" to _ctx.iconColor, "size" to _ctx.iconSize), null, 8, utsArrayOf(
+                                                ))), _uA(
+                                                    _cV(_component_l_icon, _uM("l-class" to _ctx.lClassIcon, "prefix" to _ctx.prefix, "name" to _ctx.icon, "color" to _ctx.iconColor, "size" to _ctx.iconSize), null, 8, _uA(
                                                         "l-class",
                                                         "prefix",
                                                         "name",
@@ -264,43 +260,43 @@ open class GenUniModulesLimeGridComponentsLGridItemLGridItem : VueComponent, Gri
                                                 ), 2)
                                             } else {
                                                 if (_ctx.image != null) {
-                                                    createElementVNode("image", utsMapOf("key" to 1, "class" to normalizeClass(utsArrayOf(
+                                                    _cE("image", _uM("key" to 1, "class" to _nC(_uA(
                                                         "l-grid-item__image",
                                                         unref(imageClasses)
-                                                    )), "style" to normalizeStyle(utsArrayOf(
+                                                    )), "style" to _nS(_uA(
                                                         unref(imageStyle),
                                                         unref(innerImageStyle)
-                                                    )), "src" to _ctx.image, "mode" to "aspectFill"), null, 14, utsArrayOf(
+                                                    )), "src" to _ctx.image, "mode" to "aspectFill"), null, 14, _uA(
                                                         "src"
                                                     ))
                                                 } else {
-                                                    createCommentVNode("v-if", true)
+                                                    _cC("v-if", true)
                                                 }
                                             }
                                         )
                                     })
                                 } else {
-                                    createCommentVNode("v-if", true)
+                                    _cC("v-if", true)
                                 }
                             }
                             ,
-                            createElementVNode("view", utsMapOf("class" to "l-grid-item__content"), utsArrayOf(
+                            _cE("view", _uM("class" to "l-grid-item__content"), _uA(
                                 renderSlot(_ctx.`$slots`, "text", UTSJSONObject(), fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createElementVNode("text", utsMapOf("class" to normalizeClass(utsArrayOf(
+                                    return _uA(
+                                        _cE("text", _uM("class" to _nC(_uA(
                                             "l-grid-item__title",
                                             unref(titleClasses)
-                                        )), "style" to normalizeStyle(utsArrayOf(
+                                        )), "style" to _nS(_uA(
                                             _ctx.lTitleStyle
-                                        ))), toDisplayString(_ctx.text), 7)
+                                        ))), _tD(_ctx.text), 7)
                                     )
                                 }
                                 ),
                                 renderSlot(_ctx.`$slots`, "description", UTSJSONObject(), fun(): UTSArray<Any> {
-                                    return utsArrayOf(
-                                        createElementVNode("text", utsMapOf("class" to "l-grid-item__description", "style" to normalizeStyle(utsArrayOf(
+                                    return _uA(
+                                        _cE("text", _uM("class" to "l-grid-item__description", "style" to _nS(_uA(
                                             _ctx.lDescriptionStyle
-                                        ))), toDisplayString(_ctx.description), 5)
+                                        ))), _tD(_ctx.description), 5)
                                     )
                                 }
                                 )
@@ -309,43 +305,43 @@ open class GenUniModulesLimeGridComponentsLGridItemLGridItem : VueComponent, Gri
                     }
                     ),
                     renderSlot(_ctx.`$slots`, "extra")
-                ), 14, utsArrayOf(
+                ), 14, _uA(
                     "hover-class"
                 ))
             }
         }
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {
-            normalizeCssStyles(utsArrayOf(
+            _nCS(_uA(
                 styles0
             ))
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return utsMapOf("l-grid-item" to padStyleMapOf(utsMapOf("alignItems" to "center", "paddingTop" to "32rpx", "paddingRight" to 0, "paddingBottom" to "24rpx", "paddingLeft" to 0, "flexDirection" to "column", "backgroundImage" to "none", "backgroundColor" to "#ffffff", "width" to "25%", "overflow" to "visible")), "l-grid-item--bordered" to padStyleMapOf(utsMapOf("borderTopWidth" to "0.5rpx", "borderRightWidth" to "0.5rpx", "borderBottomWidth" to "0.5rpx", "borderLeftWidth" to "0.5rpx", "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopColor" to "#eeeeee", "borderRightColor" to "#eeeeee", "borderBottomColor" to "#eeeeee", "borderLeftColor" to "#eeeeee")), "l-grid-item--horizontal" to padStyleMapOf(utsMapOf("paddingTop" to "32rpx", "paddingRight" to 0, "paddingBottom" to "32rpx", "paddingLeft" to 0, "flexDirection" to "row", "justifyContent" to "center")), "l-grid-item__content" to utsMapOf(".l-grid-item--horizontal " to utsMapOf("marginTop" to 0, "marginLeft" to "24rpx"), "" to utsMapOf("position" to "relative", "marginTop" to "16rpx")), "l-grid-item--hover" to padStyleMapOf(utsMapOf("backgroundColor" to "rgba(0,0,0,0.02)")), "l-grid-item__title" to utsMapOf(".l-grid-item--center " to utsMapOf("textAlign" to "center"), "" to utsMapOf("color" to "rgba(0,0,0,0.88)", "fontSize" to 14, "lineHeight" to "44rpx")), "l-grid-item__description" to utsMapOf(".l-grid-item--center " to utsMapOf("textAlign" to "center"), "" to utsMapOf("color" to "rgba(0,0,0,0.45)", "fontSize" to 12, "lineHeight" to "40rpx")), "l-grid-item__icon" to padStyleMapOf(utsMapOf("alignItems" to "center", "justifyContent" to "center", "backgroundImage" to "none", "backgroundColor" to "rgba(0,0,0,0.02)", "borderTopLeftRadius" to "12rpx", "borderTopRightRadius" to "12rpx", "borderBottomRightRadius" to "12rpx", "borderBottomLeftRadius" to "12rpx", "width" to "96rpx", "height" to "96rpx")), "l-grid-item__image" to padStyleMapOf(utsMapOf("backgroundImage" to "none", "backgroundColor" to "rgba(0,0,0,0.02)", "borderTopLeftRadius" to "12rpx", "borderTopRightRadius" to "12rpx", "borderBottomRightRadius" to "12rpx", "borderBottomLeftRadius" to "12rpx", "width" to "96rpx", "height" to "96rpx")), "l-grid-item__image--small" to padStyleMapOf(utsMapOf("width" to 32, "height" to 32)), "l-grid-item__icon--small" to padStyleMapOf(utsMapOf("width" to 32, "height" to 32)), "l-grid-item__image--middle" to padStyleMapOf(utsMapOf("width" to "80rpx", "height" to "80rpx")), "l-grid-item__icon--middle" to padStyleMapOf(utsMapOf("width" to "80rpx", "height" to "80rpx")), "l-grid-item__title--small" to padStyleMapOf(utsMapOf("fontSize" to 12)), "l-grid-item__title--middle" to padStyleMapOf(utsMapOf("fontSize" to 12)))
+                return _uM("l-grid-item" to _pS(_uM("alignItems" to "center", "paddingTop" to "32rpx", "paddingRight" to 0, "paddingBottom" to "24rpx", "paddingLeft" to 0, "flexDirection" to "column", "backgroundImage" to "none", "backgroundColor" to "#ffffff", "width" to "25%", "overflow" to "visible")), "l-grid-item--bordered" to _pS(_uM("borderTopWidth" to "0.5rpx", "borderRightWidth" to "0.5rpx", "borderBottomWidth" to "0.5rpx", "borderLeftWidth" to "0.5rpx", "borderTopStyle" to "solid", "borderRightStyle" to "solid", "borderBottomStyle" to "solid", "borderLeftStyle" to "solid", "borderTopColor" to "#eeeeee", "borderRightColor" to "#eeeeee", "borderBottomColor" to "#eeeeee", "borderLeftColor" to "#eeeeee")), "l-grid-item--horizontal" to _pS(_uM("paddingTop" to "32rpx", "paddingRight" to 0, "paddingBottom" to "32rpx", "paddingLeft" to 0, "flexDirection" to "row", "justifyContent" to "center")), "l-grid-item__content" to _uM(".l-grid-item--horizontal " to _uM("marginTop" to 0, "marginLeft" to "24rpx"), "" to _uM("position" to "relative", "marginTop" to "16rpx")), "l-grid-item--hover" to _pS(_uM("backgroundColor" to "rgba(0,0,0,0.02)")), "l-grid-item__title" to _uM(".l-grid-item--center " to _uM("textAlign" to "center"), "" to _uM("color" to "rgba(0,0,0,0.88)", "fontSize" to 14, "lineHeight" to "44rpx")), "l-grid-item__description" to _uM(".l-grid-item--center " to _uM("textAlign" to "center"), "" to _uM("color" to "rgba(0,0,0,0.45)", "fontSize" to 12, "lineHeight" to "40rpx")), "l-grid-item__icon" to _pS(_uM("alignItems" to "center", "justifyContent" to "center", "backgroundImage" to "none", "backgroundColor" to "rgba(0,0,0,0.02)", "borderTopLeftRadius" to "12rpx", "borderTopRightRadius" to "12rpx", "borderBottomRightRadius" to "12rpx", "borderBottomLeftRadius" to "12rpx", "width" to "96rpx", "height" to "96rpx")), "l-grid-item__image" to _pS(_uM("backgroundImage" to "none", "backgroundColor" to "rgba(0,0,0,0.02)", "borderTopLeftRadius" to "12rpx", "borderTopRightRadius" to "12rpx", "borderBottomRightRadius" to "12rpx", "borderBottomLeftRadius" to "12rpx", "width" to "96rpx", "height" to "96rpx")), "l-grid-item__image--small" to _pS(_uM("width" to 32, "height" to 32)), "l-grid-item__icon--small" to _pS(_uM("width" to 32, "height" to 32)), "l-grid-item__image--middle" to _pS(_uM("width" to "80rpx", "height" to "80rpx")), "l-grid-item__icon--middle" to _pS(_uM("width" to "80rpx", "height" to "80rpx")), "l-grid-item__title--small" to _pS(_uM("fontSize" to 12)), "l-grid-item__title--middle" to _pS(_uM("fontSize" to 12)))
             }
         var inheritAttrs = true
-        var inject: Map<String, Map<String, Any?>> = utsMapOf()
-        var emits: Map<String, Any?> = utsMapOf("click" to null)
-        var props = normalizePropsOptions(utsMapOf("text" to utsMapOf("type" to "String", "required" to false), "description" to utsMapOf("type" to "String", "required" to false), "url" to utsMapOf("type" to "String", "required" to false), "openType" to utsMapOf("type" to "String", "required" to true, "default" to "navigateTo"), "icon" to utsMapOf("type" to "String", "required" to false), "prefix" to utsMapOf("type" to "String", "required" to false), "image" to utsMapOf("type" to "String", "required" to false), "imageWidth" to utsMapOf("type" to "String", "required" to false), "imageHeight" to utsMapOf("type" to "String", "required" to false), "bgColor" to utsMapOf("type" to "String", "required" to false), "padding" to utsMapOf("type" to "String", "required" to false), "layout" to utsMapOf("type" to "String", "required" to true, "default" to "vertical"), "dot" to utsMapOf("type" to "Boolean", "required" to true, "default" to false), "iconSize" to utsMapOf("type" to "String", "required" to true, "default" to "48rpx"), "iconColor" to utsMapOf("type" to "String", "required" to true, "default" to "rgba(0,0,0,0.88)"), "badge" to utsMapOf("required" to false), "borderColor" to utsMapOf("type" to "String", "required" to false), "lStyle" to utsMapOf("type" to utsArrayOf(
+        var inject: Map<String, Map<String, Any?>> = _uM()
+        var emits: Map<String, Any?> = _uM("click" to null)
+        var props = _nP(_uM("text" to _uM("type" to "String", "required" to false), "description" to _uM("type" to "String", "required" to false), "url" to _uM("type" to "String", "required" to false), "openType" to _uM("type" to "String", "required" to true, "default" to "navigateTo"), "icon" to _uM("type" to "String", "required" to false), "prefix" to _uM("type" to "String", "required" to false), "image" to _uM("type" to "String", "required" to false), "imageWidth" to _uM("type" to "String", "required" to false), "imageHeight" to _uM("type" to "String", "required" to false), "bgColor" to _uM("type" to "String", "required" to false), "padding" to _uM("type" to "String", "required" to false), "layout" to _uM("type" to "String", "required" to true, "default" to "vertical"), "dot" to _uM("type" to "Boolean", "required" to true, "default" to false), "iconSize" to _uM("type" to "String", "required" to true, "default" to "48rpx"), "iconColor" to _uM("type" to "String", "required" to true, "default" to "rgba(0,0,0,0.88)"), "badge" to _uM("required" to false), "borderColor" to _uM("type" to "String", "required" to false), "lStyle" to _uM("type" to _uA(
             "String",
             "UTSJSONObject"
-        ), "required" to false), "lImageStyle" to utsMapOf("type" to utsArrayOf(
+        ), "required" to false), "lImageStyle" to _uM("type" to _uA(
             "String",
             "UTSJSONObject"
-        ), "required" to false), "lTitleStyle" to utsMapOf("type" to utsArrayOf(
+        ), "required" to false), "lTitleStyle" to _uM("type" to _uA(
             "String",
             "UTSJSONObject"
-        ), "required" to false), "lDescriptionStyle" to utsMapOf("type" to utsArrayOf(
+        ), "required" to false), "lDescriptionStyle" to _uM("type" to _uA(
             "String",
             "UTSJSONObject"
-        ), "required" to false), "lClass" to utsMapOf("type" to "String", "required" to false), "lClassIcon" to utsMapOf("type" to "String", "required" to false)))
-        var propsNeedCastKeys = utsArrayOf(
+        ), "required" to false), "lClass" to _uM("type" to "String", "required" to false), "lClassIcon" to _uM("type" to "String", "required" to false)))
+        var propsNeedCastKeys = _uA(
             "openType",
             "layout",
             "dot",
             "iconSize",
             "iconColor"
         )
-        var components: Map<String, CreateVueComponent> = utsMapOf()
+        var components: Map<String, CreateVueComponent> = _uM()
     }
 }

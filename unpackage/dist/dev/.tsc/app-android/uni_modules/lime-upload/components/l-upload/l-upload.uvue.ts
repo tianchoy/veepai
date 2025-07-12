@@ -43,7 +43,7 @@ const __sfc__ = defineComponent({
     mode: { type: String, required: true, default: 'grid' }
   },
   emits: ['fail', 'remove', 'success', 'click', 'add', 'update:modelValue'],
-  setup(__props, { expose: __expose }: SetupContext): any | null {
+  setup(__props, { expose: __expose }: SetupContext) {
 const __ins = getCurrentInstance()!;
 const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
@@ -389,24 +389,24 @@ return (): any | null => {
 const _component_l_loading = resolveEasyComponent("l-loading",_easycom_l_loading)
 const _component_l_icon = resolveEasyComponent("l-icon",_easycom_l_icon)
 
-  return createElementVNode("view", utsMapOf({
+  return _cE("view", _uM({
     class: "l-upload",
     ref_key: "uploadRef",
     ref: uploadRef,
-    style: normalizeStyle(unref(styles))
+    style: _nS(unref(styles))
   }), [
-    createElementVNode(Fragment, null, RenderHelpers.renderList(unref(customFiles), (file, index, __index, _cached): any => {
-      return createElementVNode("view", utsMapOf({
+    _cE(Fragment, null, RenderHelpers.renderList(unref(customFiles), (file, index, __index, _cached): any => {
+      return _cE("view", _uM({
         class: "l-upload__item",
-        style: normalizeStyle([unref(itemStyle)]),
+        style: _nS([unref(itemStyle)]),
         key: file.url
       }), [
-        renderSlot(_ctx.$slots, "file", utsMapOf({
+        renderSlot(_ctx.$slots, "file", _uM({
           file: file,
           index: index
         }), (): any[] => [
           file.type == 'image'
-            ? createElementVNode("image", utsMapOf({
+            ? _cE("image", _uM({
                 key: 0,
                 class: "l-upload__image",
                 src: file.url,
@@ -414,9 +414,9 @@ const _component_l_icon = resolveEasyComponent("l-icon",_easycom_l_icon)
                 mode: _ctx.imageFit,
                 onClick: () => {onProofTap(index)}
               }), null, 8 /* PROPS */, ["src", "data-file", "mode", "onClick"])
-            : createCommentVNode("v-if", true),
+            : _cC("v-if", true),
           file.type == 'video'
-            ? createElementVNode("video", utsMapOf({
+            ? _cE("video", _uM({
                 key: 1,
                 class: "l-upload__image",
                 src: file.url,
@@ -425,32 +425,32 @@ const _component_l_icon = resolveEasyComponent("l-icon",_easycom_l_icon)
                 objectFit: "contain",
                 onClick: () => {onFileClick(index)}
               }), null, 8 /* PROPS */, ["src", "data-file", "onClick"])
-            : createCommentVNode("v-if", true),
+            : _cC("v-if", true),
           isTrue(file.status != null && file.status != 'done')
-            ? createElementVNode("view", utsMapOf({
+            ? _cE("view", _uM({
                 key: 2,
                 class: "l-upload__progress-mask",
                 "data-file": file,
                 onClick: () => {onFileClick(index)}
               }), [
                 file.status == 'loading'
-                  ? createElementVNode(Fragment, utsMapOf({ key: 0 }), [
-                      createVNode(_component_l_loading, utsMapOf({
+                  ? _cE(Fragment, _uM({ key: 0 }), [
+                      _cV(_component_l_loading, _uM({
                         class: "l-upload__progress-loading",
                         size: "24px",
                         color: "white"
                       })),
                       file.percent != null
-                        ? createElementVNode("text", utsMapOf({
+                        ? _cE("text", _uM({
                             key: 0,
                             class: "l-upload__progress-text"
-                          }), toDisplayString(file.percent) + "%", 1 /* TEXT */)
-                        : createElementVNode("text", utsMapOf({
+                          }), _tD(file.percent) + "%", 1 /* TEXT */)
+                        : _cE("text", _uM({
                             key: 1,
                             class: "l-upload__progress-text"
-                          }), toDisplayString(_ctx.loadingText), 1 /* TEXT */)
+                          }), _tD(_ctx.loadingText), 1 /* TEXT */)
                     ], 64 /* STABLE_FRAGMENT */)
-                  : createVNode(_component_l_icon, utsMapOf({
+                  : _cV(_component_l_icon, _uM({
                       key: 1,
                       class: "l-upload__progress-icon",
                       name: file.status == 'reload' ? 'refresh' : 'close-circle',
@@ -458,15 +458,15 @@ const _component_l_icon = resolveEasyComponent("l-icon",_easycom_l_icon)
                       "aria-hidden": ""
                     }), null, 8 /* PROPS */, ["name"]),
                 isTrue(file.status == 'reload' || file.status == 'failed')
-                  ? createElementVNode("text", utsMapOf({
+                  ? _cE("text", _uM({
                       key: 2,
                       class: "l-upload__progress-text"
-                    }), toDisplayString(file.status == 'reload' ? _ctx.reloadText : _ctx.failedText), 1 /* TEXT */)
-                  : createCommentVNode("v-if", true)
+                    }), _tD(file.status == 'reload' ? _ctx.reloadText : _ctx.failedText), 1 /* TEXT */)
+                  : _cC("v-if", true)
               ], 8 /* PROPS */, ["data-file", "onClick"])
-            : createCommentVNode("v-if", true),
+            : _cC("v-if", true),
           isTrue(!unref(isReadonly))
-            ? createElementVNode("view", utsMapOf({
+            ? _cE("view", _uM({
                 key: 3,
                 class: "l-upload__delete-btn",
                 "aria-role": "button",
@@ -474,26 +474,26 @@ const _component_l_icon = resolveEasyComponent("l-icon",_easycom_l_icon)
                 "data-index": index,
                 onClick: () => {onDelete(index)}
               }), [
-                createVNode(_component_l_icon, utsMapOf({
+                _cV(_component_l_icon, _uM({
                   name: "close",
                   size: "16px",
                   color: "#fff"
                 }))
               ], 8 /* PROPS */, ["data-index", "onClick"])
-            : createCommentVNode("v-if", true)
+            : _cC("v-if", true)
         ])
       ], 4 /* STYLE */)
     }), 128 /* KEYED_FRAGMENT */),
     isTrue(!unref(isReadonly))
-      ? withDirectives(createElementVNode("view", utsMapOf({
+      ? withDirectives(_cE("view", _uM({
           key: 0,
-          class: normalizeClass(["l-upload__item l-upload__item--add", utsMapOf({'l-upload__item--disabled':unref(isDisabled)})]),
-          style: normalizeStyle([unref(itemStyle),  _ctx.addBgColor!=null ? utsMapOf({background: _ctx.addBgColor}): '']),
+          class: _nC(["l-upload__item l-upload__item--add", _uM({'l-upload__item--disabled':unref(isDisabled)})]),
+          style: _nS([unref(itemStyle),  _ctx.addBgColor!=null ? _uM({background: _ctx.addBgColor}): '']),
           "aria-label": "上传",
           onClick: onAddTap
         }), [
           renderSlot(_ctx.$slots, "default", {}, (): any[] => [
-            createVNode(_component_l_icon, utsMapOf({
+            _cV(_component_l_icon, _uM({
               class: "l-upload__add-icon",
               size: _ctx.uploadIconSize,
               name: _ctx.uploadIcon
@@ -502,7 +502,7 @@ const _component_l_icon = resolveEasyComponent("l-icon",_easycom_l_icon)
         ], 6 /* CLASS, STYLE */), [
           [vShow, !_ctx.multiple ? unref(customFiles).length == 0 : _ctx.max == 0 || unref(customFiles).length != _ctx.max]
         ])
-      : createCommentVNode("v-if", true)
+      : _cC("v-if", true)
   ], 4 /* STYLE */)
 }
 }
@@ -510,4 +510,4 @@ const _component_l_icon = resolveEasyComponent("l-icon",_easycom_l_icon)
 })
 export default __sfc__
 export type LUploadComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesLimeUploadComponentsLUploadLUploadStyles = [utsMapOf([["l-upload", padStyleMapOf(utsMapOf([["flex", 1], ["position", "relative"], ["flexDirection", "row"], ["flexWrap", "wrap"]]))], ["l-upload__item", padStyleMapOf(utsMapOf([["position", "relative"], ["display", "flex"], ["width", 80], ["height", 80], ["borderTopLeftRadius", "12rpx"], ["borderTopRightRadius", "12rpx"], ["borderBottomRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["overflow", "hidden"], ["alignItems", "center"], ["justifyContent", "center"]]))], ["l-upload__item--add", padStyleMapOf(utsMapOf([["backgroundImage", "none"], ["backgroundColor", "#f3f3f3"]]))], ["l-upload__item--disabled", padStyleMapOf(utsMapOf([["opacity", 0.5]]))], ["l-upload__image", padStyleMapOf(utsMapOf([["width", "100%"], ["height", "100%"]]))], ["l-upload__add-icon", padStyleMapOf(utsMapOf([["fontSize", 28], ["color", "rgba(0,0,0,0.25)"]]))], ["l-upload__delete-btn", padStyleMapOf(utsMapOf([["position", "absolute"], ["top", 0], ["right", 0], ["display", "flex"], ["alignItems", "center"], ["justifyContent", "center"], ["width", 20], ["height", 20], ["borderTopRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["backgroundColor", "rgba(0,0,0,0.65)"]]))], ["l-upload__progress-mask", padStyleMapOf(utsMapOf([["position", "absolute"], ["left", 0], ["top", 0], ["bottom", 0], ["width", "100%"], ["backgroundColor", "rgba(0,0,0,0.45)"], ["flexDirection", "column"], ["alignItems", "center"], ["justifyContent", "center"], ["borderTopLeftRadius", "12rpx"], ["borderTopRightRadius", "12rpx"], ["borderBottomRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["paddingTop", 16], ["paddingRight", 0], ["paddingBottom", 16], ["paddingLeft", 0]]))], ["l-upload__progress-text", padStyleMapOf(utsMapOf([["fontSize", 12], ["lineHeight", "20px"], ["marginTop", 4], ["color", "#FFFFFF"]]))], ["l-upload__progress-loading", padStyleMapOf(utsMapOf([["alignSelf", "center"]]))], ["l-upload__progress-icon", padStyleMapOf(utsMapOf([["color", "#FFFFFF"], ["!fontSize", 24], ["!width", 24]]))]])]
+const GenUniModulesLimeUploadComponentsLUploadLUploadStyles = [_uM([["l-upload", _pS(_uM([["flex", 1], ["position", "relative"], ["flexDirection", "row"], ["flexWrap", "wrap"]]))], ["l-upload__item", _pS(_uM([["position", "relative"], ["display", "flex"], ["width", 80], ["height", 80], ["borderTopLeftRadius", "12rpx"], ["borderTopRightRadius", "12rpx"], ["borderBottomRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["overflow", "hidden"], ["alignItems", "center"], ["justifyContent", "center"]]))], ["l-upload__item--add", _pS(_uM([["backgroundImage", "none"], ["backgroundColor", "#f3f3f3"]]))], ["l-upload__item--disabled", _pS(_uM([["opacity", 0.5]]))], ["l-upload__image", _pS(_uM([["width", "100%"], ["height", "100%"]]))], ["l-upload__add-icon", _pS(_uM([["fontSize", 28], ["color", "rgba(0,0,0,0.25)"]]))], ["l-upload__delete-btn", _pS(_uM([["position", "absolute"], ["top", 0], ["right", 0], ["display", "flex"], ["alignItems", "center"], ["justifyContent", "center"], ["width", 20], ["height", 20], ["borderTopRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["backgroundColor", "rgba(0,0,0,0.65)"]]))], ["l-upload__progress-mask", _pS(_uM([["position", "absolute"], ["left", 0], ["top", 0], ["bottom", 0], ["width", "100%"], ["backgroundColor", "rgba(0,0,0,0.45)"], ["flexDirection", "column"], ["alignItems", "center"], ["justifyContent", "center"], ["borderTopLeftRadius", "12rpx"], ["borderTopRightRadius", "12rpx"], ["borderBottomRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["paddingTop", 16], ["paddingRight", 0], ["paddingBottom", 16], ["paddingLeft", 0]]))], ["l-upload__progress-text", _pS(_uM([["fontSize", 12], ["lineHeight", "20px"], ["marginTop", 4], ["color", "#FFFFFF"]]))], ["l-upload__progress-loading", _pS(_uM([["alignSelf", "center"]]))], ["l-upload__progress-icon", _pS(_uM([["color", "#FFFFFF"], ["!fontSize", 24], ["!width", 24]]))]])]

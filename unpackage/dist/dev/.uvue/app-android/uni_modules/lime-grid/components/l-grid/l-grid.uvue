@@ -14,7 +14,7 @@ const __sfc__ = defineComponent({
         bgColor: { type: String, required: false },
         wrap: { type: Boolean, required: true, default: true }
     },
-    setup(__props): any | null {
+    setup(__props) {
         const __ins = getCurrentInstance()!;
         const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
         const _cache = __ins.renderCache;
@@ -67,8 +67,8 @@ const __sfc__ = defineComponent({
             width
         } as GridProvide);
         return (): any | null => {
-            return createElementVNode("view", utsMapOf({
-                class: normalizeClass(["l-grid", unref(clsses)]),
+            return _cE("view", _uM({
+                class: _nC(["l-grid", unref(clsses)]),
                 ref_key: "resizeRef",
                 ref: resizeRef
             }), [
@@ -79,5 +79,5 @@ const __sfc__ = defineComponent({
 });
 export default __sfc__;
 export type LGridComponentPublicInstance = InstanceType<typeof __sfc__>;
-const GenUniModulesLimeGridComponentsLGridLGridStyles = [utsMapOf([["l-grid", padStyleMapOf(utsMapOf([["position", "relative"], ["overflow", "visible"], ["flexDirection", "row"]]))], ["l-grid--wrap", padStyleMapOf(utsMapOf([["flexWrap", "wrap"]]))], ["l-grid--inset", padStyleMapOf(utsMapOf([["marginTop", 0], ["marginRight", "32rpx"], ["marginBottom", 0], ["marginLeft", "32rpx"], ["borderTopLeftRadius", "18rpx"], ["borderTopRightRadius", "18rpx"], ["borderBottomRightRadius", "18rpx"], ["borderBottomLeftRadius", "18rpx"], ["overflow", "hidden"]]))]])];
+const GenUniModulesLimeGridComponentsLGridLGridStyles = [_uM([["l-grid", _pS(_uM([["position", "relative"], ["overflow", "visible"], ["flexDirection", "row"]]))], ["l-grid--wrap", _pS(_uM([["flexWrap", "wrap"]]))], ["l-grid--inset", _pS(_uM([["marginTop", 0], ["marginRight", "32rpx"], ["marginBottom", 0], ["marginLeft", "32rpx"], ["borderTopLeftRadius", "18rpx"], ["borderTopRightRadius", "18rpx"], ["borderBottomRightRadius", "18rpx"], ["borderBottomLeftRadius", "18rpx"], ["overflow", "hidden"]]))]])];
 //# sourceMappingURL=l-grid.uvue.map

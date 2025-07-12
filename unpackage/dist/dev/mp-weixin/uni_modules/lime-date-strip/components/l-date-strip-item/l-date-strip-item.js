@@ -4,15 +4,15 @@ const common_assets = require("../../../../common/assets.js");
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "l-date-strip-item",
   props: {
-    dates: new UTSJSONObject({ default: [] }),
-    color: new UTSJSONObject({}),
-    activeBgColor: new UTSJSONObject({}),
-    activeColor: new UTSJSONObject({}),
-    bgColor: new UTSJSONObject({}),
-    radius: new UTSJSONObject({}),
-    gridWidth: new UTSJSONObject({}),
-    switchMode: new UTSJSONObject({ default: "week" }),
-    shape: new UTSJSONObject({ default: "square" })
+    dates: { default: [] },
+    color: {},
+    activeBgColor: {},
+    activeColor: {},
+    bgColor: {},
+    radius: {},
+    gridWidth: {},
+    switchMode: { default: "week" },
+    shape: { default: "square" }
   },
   emits: ["click"],
   setup(__props, _a) {

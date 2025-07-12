@@ -10,7 +10,7 @@ const _easycom_fui_button = () => "../../../../uni_modules/firstui-unix/componen
 if (!Math) {
   (_easycom_fui_input + _easycom_fui_button)();
 }
-const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObject({
+const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "changePassword",
   setup(__props) {
     const oldPassword = common_vendor.ref("");
@@ -114,6 +114,6 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent(new UTSJSONObjec
       return __returned__;
     };
   }
-}));
+});
 wx.createPage(_sfc_main);
 //# sourceMappingURL=../../../../../.sourcemap/mp-weixin/pages/mine/userInfo/changePassword/changePassword.js.map
