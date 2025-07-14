@@ -1,0 +1,1 @@
+export default "/static/u4062.png"

@@ -1,21 +1,5 @@
-<template>
-	<!-- #ifdef APP -->
-	<scroll-view style="flex:1">
-	<!-- #endif -->
-		
-	<!-- #ifdef APP -->
-	</scroll-view>
-	<!-- #endif -->
-</template>
-
-<script setup>
-		
-</script>
-
-<style>
-		
-</style>
-
+<template></template>
+<script></script>
 <!-- <template>
   <view class="video-container">
     <video 

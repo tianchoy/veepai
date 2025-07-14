@@ -17,8 +17,14 @@ const _cache = __ins.renderCache;
 		})
 	}
 
+	const goNightMode = () => {
+		uni.navigateTo({
+			url: '/pages/index/deviceSettingInfo/deviceNight',
+		})
+	}
+
 	const changeSwitch = (e: boolean) => {
-		console.log(e, " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:42")
+		console.log(e, " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:48")
 	}
 
 	const restart = () => {
@@ -29,7 +35,7 @@ const _cache = __ins.renderCache;
 			confirmText: '重启',
 			success: (res) => {
 				if (res.confirm) {
-					console.log('用户点击了确定', " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:53")
+					console.log('用户点击了确定', " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:59")
 				}
 			}
 		})
@@ -48,7 +54,10 @@ const _component_fui_badge = resolveEasyComponent("fui-badge",_easycom_fui_badge
       onBack: goBack
     })),
     _cE("view", _uM({ class: "content" }), [
-      _cE("view", _uM({ class: "list-item" }), [
+      _cE("view", _uM({
+        class: "list-item",
+        onClick: goNightMode
+      }), [
         _cE("text", null, "夜视模式"),
         _cV(_component_fui_icon, _uM({
           name: "arrowright",

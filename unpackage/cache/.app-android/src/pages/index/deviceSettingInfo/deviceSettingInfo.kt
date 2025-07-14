@@ -12,6 +12,7 @@ import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
 import io.dcloud.uniapp.extapi.navigateBack as uni_navigateBack
+import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 import io.dcloud.uniapp.extapi.showModal as uni_showModal
 open class GenPagesIndexDeviceSettingInfoDeviceSettingInfo : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
@@ -25,13 +26,16 @@ open class GenPagesIndexDeviceSettingInfoDeviceSettingInfo : BasePage {
             val goBack = fun(){
                 uni_navigateBack(NavigateBackOptions(delta = 1))
             }
+            val goNightMode = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/index/deviceSettingInfo/deviceNight"))
+            }
             val changeSwitch = fun(e: Boolean){
-                console.log(e, " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:42")
+                console.log(e, " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:48")
             }
             val restart = fun(){
                 uni_showModal(ShowModalOptions(title = "提示", content = "确认重启设备吗？", cancelText = "取消", confirmText = "重启", success = fun(res){
                     if (res.confirm) {
-                        console.log("用户点击了确定", " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:53")
+                        console.log("用户点击了确定", " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:59")
                     }
                 }
                 ))
@@ -43,7 +47,7 @@ open class GenPagesIndexDeviceSettingInfoDeviceSettingInfo : BasePage {
                 return _cE("view", _uM("class" to "container"), _uA(
                     _cV(unref(GenComponentsTopNavBarClass), _uM("title" to "设备设置", "show-back" to true, "onBack" to goBack)),
                     _cE("view", _uM("class" to "content"), _uA(
-                        _cE("view", _uM("class" to "list-item"), _uA(
+                        _cE("view", _uM("class" to "list-item", "onClick" to goNightMode), _uA(
                             _cE("text", null, "夜视模式"),
                             _cV(_component_fui_icon, _uM("name" to "arrowright", "size" to "40"))
                         )),

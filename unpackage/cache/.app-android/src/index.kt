@@ -8984,8 +8984,105 @@ val GenPagesIndexDeviceSettingInfoDeviceSettingInfoClass = CreateVueComponent(Ge
     return GenPagesIndexDeviceSettingInfoDeviceSettingInfo(instance, renderer)
 }
 )
+open class RadioItem2 (
+    @JsonNotNull
+    open var name: String,
+    @JsonNotNull
+    open var desc: String,
+    @JsonNotNull
+    open var img: String,
+    @JsonNotNull
+    open var value: String,
+    @JsonNotNull
+    open var checked: Boolean = false,
+) : UTSReactiveObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("RadioItem", "pages/index/deviceSettingInfo/deviceNight.uvue", 31, 7)
+    }
+    override fun __v_create(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): UTSReactiveObject {
+        return RadioItem2ReactiveObject(this, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+}
+open class RadioItem2ReactiveObject : RadioItem2, IUTSReactive<RadioItem2> {
+    override var __v_raw: RadioItem2
+    override var __v_isReadonly: Boolean
+    override var __v_isShallow: Boolean
+    override var __v_skip: Boolean
+    constructor(__v_raw: RadioItem2, __v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean) : super(name = __v_raw.name, desc = __v_raw.desc, img = __v_raw.img, value = __v_raw.value, checked = __v_raw.checked) {
+        this.__v_raw = __v_raw
+        this.__v_isReadonly = __v_isReadonly
+        this.__v_isShallow = __v_isShallow
+        this.__v_skip = __v_skip
+    }
+    override fun __v_clone(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): RadioItem2ReactiveObject {
+        return RadioItem2ReactiveObject(this.__v_raw, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+    override var name: String
+        get() {
+            return _tRG(__v_raw, "name", __v_raw.name, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("name")) {
+                return
+            }
+            val oldValue = __v_raw.name
+            __v_raw.name = value
+            _tRS(__v_raw, "name", oldValue, value)
+        }
+    override var desc: String
+        get() {
+            return _tRG(__v_raw, "desc", __v_raw.desc, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("desc")) {
+                return
+            }
+            val oldValue = __v_raw.desc
+            __v_raw.desc = value
+            _tRS(__v_raw, "desc", oldValue, value)
+        }
+    override var img: String
+        get() {
+            return _tRG(__v_raw, "img", __v_raw.img, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("img")) {
+                return
+            }
+            val oldValue = __v_raw.img
+            __v_raw.img = value
+            _tRS(__v_raw, "img", oldValue, value)
+        }
+    override var value: String
+        get() {
+            return _tRG(__v_raw, "value", __v_raw.value, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("value")) {
+                return
+            }
+            val oldValue = __v_raw.value
+            __v_raw.value = value
+            _tRS(__v_raw, "value", oldValue, value)
+        }
+    override var checked: Boolean
+        get() {
+            return _tRG(__v_raw, "checked", __v_raw.checked, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("checked")) {
+                return
+            }
+            val oldValue = __v_raw.checked
+            __v_raw.checked = value
+            _tRS(__v_raw, "checked", oldValue, value)
+        }
+}
 val GenPagesIndexDeviceSettingInfoDeviceNightClass = CreateVueComponent(GenPagesIndexDeviceSettingInfoDeviceNight::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexDeviceSettingInfoDeviceNight.inheritAttrs, inject = GenPagesIndexDeviceSettingInfoDeviceNight.inject, props = GenPagesIndexDeviceSettingInfoDeviceNight.props, propsNeedCastKeys = GenPagesIndexDeviceSettingInfoDeviceNight.propsNeedCastKeys, emits = GenPagesIndexDeviceSettingInfoDeviceNight.emits, components = GenPagesIndexDeviceSettingInfoDeviceNight.components, styles = GenPagesIndexDeviceSettingInfoDeviceNight.styles)
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexDeviceSettingInfoDeviceNight.inheritAttrs, inject = GenPagesIndexDeviceSettingInfoDeviceNight.inject, props = GenPagesIndexDeviceSettingInfoDeviceNight.props, propsNeedCastKeys = GenPagesIndexDeviceSettingInfoDeviceNight.propsNeedCastKeys, emits = GenPagesIndexDeviceSettingInfoDeviceNight.emits, components = GenPagesIndexDeviceSettingInfoDeviceNight.components, styles = GenPagesIndexDeviceSettingInfoDeviceNight.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesIndexDeviceSettingInfoDeviceNight.setup(props as GenPagesIndexDeviceSettingInfoDeviceNight)
+    }
+    )
 }
 , fun(instance, renderer): GenPagesIndexDeviceSettingInfoDeviceNight {
     return GenPagesIndexDeviceSettingInfoDeviceNight(instance, renderer)

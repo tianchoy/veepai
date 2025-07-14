@@ -15,8 +15,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     @Suppress("UNUSED_PARAMETER", "UNUSED_VARIABLE")
     override fun `$render`(): Any? {
-        val _cache = this.`$`.renderCache
-        return _cE("scroll-view", _uM("style" to _nS(_uM("flex" to "1"))), null, 4)
+        return null
     }
     companion object {
         val styles: Map<String, Map<String, Map<String, Any>>> by lazy {

@@ -1,17 +1,113 @@
 <template>
-	<!-- #ifdef APP -->
-	<scroll-view style="flex:1">
-	<!-- #endif -->
-		
-	<!-- #ifdef APP -->
-	</scroll-view>
-	<!-- #endif -->
+	<view class="container">
+		<TopNavBar title="夜视模式" :show-back="true" @back="goBack" />
+		<view class="content">
+			<image :src='select_img' class="night-img" mode="aspectFit" />
+			<view class="select-mode">
+				<fui-radio-group v-model="val" @change="change">
+					<fui-label v-for="(item,index) in radioItems" :key="index">
+						<fui-list-cell>
+							<view class="fui-align__center">
+								<view class="fui-text-box">
+									<text>{{item.name}}</text>
+									<fui-radio :checked="item.checked" :value="item.value" color="#FFB703"
+										borderColor="#B2B2B2">
+									</fui-radio>
+								</view>
+								<text class="fui-desc">{{item.desc}}</text>
+							</view>
+						</fui-list-cell>
+					</fui-label>
+				</fui-radio-group>
+			</view>
+		</view>
+	</view>
 </template>
 
-<script setup>
+<script setup lang="uts">
+	import {ref} from 'vue'
+	import TopNavBar from '@/components/TopNavBar.uvue'
+
+	type RadioItem = {
+		name : string;
+		desc : string;
+		img : string;
+		value : string;
+		checked : boolean;
+	}
+
+	const val = ref('1')
+	const select_img = ref('@/static/u4062.png')
+	const radioItems = ref<RadioItem[]>([{
+			name: '黑白夜视',
+			desc: '采用红外补光，隐蔽性高，图像为黑白夜视',
+			img:'@/static/u4062.png',
+			value: '1',
+			checked: true
+		},
+		{
+			name: '全彩夜视',
+			desc: '夜晚开白光灯，可做照明使用，图像为彩色',
+			img:'@/static/u4063.png',
+			value: '2',
+			checked: false
+		},
+		{
+			name: '智能夜视',
+			desc: '默认为黑白夜视，检测到画面为动态是变为全彩夜视',
+			img:'@/static/u4064.png',
+			value: '3',
+			checked: false
+		},
+		{
+			name: '星光夜视',
+			desc: '当前环境光线充足，并且不想看到灯光亮起，则选择该项',
+			img:'@/static/u4062.png',
+			value: '4',
+			checked: false
+		}
+	])
+
+	const goBack = () => {
+		uni.navigateBack({
+			delta: 1,
+		})
+	}
+
+	const change = (value : string) => {
+		console.log('change:' + value)
+	}
 		
 </script>
 
-<style>
-		
+<style lang="scss" scoped>
+	.container{
+		height: 100%;
+		background-color: #f5f5f5;
+		padding:20rpx;
+		.content{
+			background-color: #fff;
+			border-radius: 20rpx;
+			.night-img{
+				width: 100%;
+				height: 245rpx;
+			}
+			.select-mode{
+				.fui-align__center{
+					width: 100%;
+					.fui-text-box{
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+						align-items: center;
+						margin-bottom: 10rpx;
+					}
+					.fui-desc{
+						color: #999;
+						font-size: 24rpx;
+					}
+				}
+			}
+		}
+	}	
 </style>

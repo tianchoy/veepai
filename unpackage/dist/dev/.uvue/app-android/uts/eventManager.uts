@@ -1,0 +1,14 @@
+export class EventManager {
+    static addEvent(events: Array<EventMarker>, newEvent: EventMarker): Array<EventMarker> {
+        return [...events, newEvent].sort((a, b): number => a.timestamp - b.timestamp);
+    }
+    static removeEvent(events: Array<EventMarker>, timestamp: number): Array<EventMarker> {
+        return events.filter((e): boolean => Math.abs(e.timestamp - timestamp) > 5);
+    }
+}
+interface EventMarker {
+    timestamp: number;
+    type: 'alarm' | 'motion' | 'custom';
+    level: number;
+}
+//# sourceMappingURL=eventManager.uts.map

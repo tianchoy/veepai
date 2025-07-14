@@ -22,8 +22,13 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         delta: 1
       }));
     };
+    const goNightMode = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/index/deviceSettingInfo/deviceNight"
+      });
+    };
     const changeSwitch = (e) => {
-      common_vendor.index.__f__("log", "at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:42", e);
+      common_vendor.index.__f__("log", "at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:48", e);
     };
     const restart = () => {
       common_vendor.index.showModal(new UTSJSONObject({
@@ -33,7 +38,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         confirmText: "重启",
         success: (res) => {
           if (res.confirm) {
-            common_vendor.index.__f__("log", "at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:53", "用户点击了确定");
+            common_vendor.index.__f__("log", "at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:59", "用户点击了确定");
           }
         }
       }));
@@ -49,22 +54,23 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           name: "arrowright",
           size: "40"
         }),
-        d: common_vendor.o(changeSwitch),
-        e: common_vendor.p({
+        d: common_vendor.o(goNightMode),
+        e: common_vendor.o(changeSwitch),
+        f: common_vendor.p({
           scaleRatio: 0.8,
           checked: common_vendor.unref(state)
         }),
-        f: common_vendor.p({
+        g: common_vendor.p({
           value: "new",
           type: "danger",
           scaleRatio: 0.8
         }),
-        g: common_vendor.p({
+        h: common_vendor.p({
           name: "arrowright",
           size: "40"
         }),
-        h: common_vendor.o(restart),
-        i: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        i: common_vendor.o(restart),
+        j: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

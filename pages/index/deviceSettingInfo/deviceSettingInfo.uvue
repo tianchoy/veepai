@@ -2,7 +2,7 @@
 	<view class="container">
 		<TopNavBar title="设备设置" :show-back="true" @back="goBack" />
 		<view class="content">
-			<view class="list-item">
+			<view class="list-item" @click="goNightMode">
 				<text>夜视模式</text>
 				<fui-icon name="arrowright" size="40" />
 			</view>
@@ -35,6 +35,12 @@
 	const goBack = () => {
 		uni.navigateBack({
 			delta: 1,
+		})
+	}
+
+	const goNightMode = () => {
+		uni.navigateTo({
+			url: '/pages/index/deviceSettingInfo/deviceNight',
 		})
 	}
 

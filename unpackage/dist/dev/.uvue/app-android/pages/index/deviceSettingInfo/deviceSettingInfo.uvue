@@ -14,8 +14,13 @@ const __sfc__ = defineComponent({
                 delta: 1,
             });
         };
+        const goNightMode = () => {
+            uni.navigateTo({
+                url: '/pages/index/deviceSettingInfo/deviceNight',
+            });
+        };
         const changeSwitch = (e: boolean) => {
-            console.log(e, " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:42");
+            console.log(e, " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:48");
         };
         const restart = () => {
             uni.showModal({
@@ -25,7 +30,7 @@ const __sfc__ = defineComponent({
                 confirmText: '重启',
                 success: (res) => {
                     if (res.confirm) {
-                        console.log('用户点击了确定', " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:53");
+                        console.log('用户点击了确定', " at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:59");
                     }
                 }
             });
@@ -41,7 +46,10 @@ const __sfc__ = defineComponent({
                     onBack: goBack
                 })),
                 _cE("view", _uM({ class: "content" }), [
-                    _cE("view", _uM({ class: "list-item" }), [
+                    _cE("view", _uM({
+                        class: "list-item",
+                        onClick: goNightMode
+                    }), [
                         _cE("text", null, "夜视模式"),
                         _cV(_component_fui_icon, _uM({
                             name: "arrowright",
