@@ -1,0 +1,1 @@
+{"version":3,"file":"deviceNight.js","sources":["pages/index/deviceSettingInfo/deviceNight.uvue?type=page"],"sourcesContent":["import MiniProgramPage from '/Users/xyhc/Documents/veepai_uniappx/pages/index/deviceSettingInfo/deviceNight.uvue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}

@@ -115,7 +115,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
             }, index)
           };
         }),
-        k: common_assets._imports_1$1,
+        k: common_assets._imports_0$1,
         l: common_vendor.o(select),
         m: common_vendor.o(change),
         n: common_vendor.p({

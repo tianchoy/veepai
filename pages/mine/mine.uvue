@@ -178,7 +178,6 @@
 				align-items: center;
 
 				.fileIcon {
-					display: block;
 					width: 48rpx;
 					height: 48rpx;
 					margin-bottom: 15rpx;
@@ -210,7 +209,6 @@
 					align-items: center;
 					margin-left: 40rpx;
 					.item-icon {
-						display: block;
 						width: 48rpx;
 						height: 48rpx;
 					}
@@ -223,7 +221,6 @@
 				}
 
 				.right-icon {
-					display: block;
 					width: 35rpx;
 					height: 35rpx;
 				}

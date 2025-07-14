@@ -150,6 +150,37 @@
 				"navigationStyle": "custom",
 				"navigationBarTitleText" : ""
 			}
+		},
+		{
+			"path" : "pages/index/deviceSetting",
+			"style" : 
+			{
+				"navigationStyle": "custom",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/index/deviceReplay",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/index/deviceSettingInfo/deviceSettingInfo",
+			"style" : 
+			{
+				"navigationStyle": "custom",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/index/deviceSettingInfo/deviceNight",
+			"style" : 
+			{
+				"navigationStyle": "custom",
+				"navigationBarTitleText" : ""
+			}
 		}
 	],
 	"tabBar": {

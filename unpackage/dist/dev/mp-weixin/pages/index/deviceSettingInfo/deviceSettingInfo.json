@@ -1,0 +1,10 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "fui-icon": "../../../uni_modules/firstui-unix/components/fui-icon/fui-icon",
+    "fui-switch": "../../../uni_modules/firstui-unix/components/fui-switch/fui-switch",
+    "fui-badge": "../../../uni_modules/firstui-unix/components/fui-badge/fui-badge",
+    "top-nav-bar": "../../../components/TopNavBar"
+  }
+}

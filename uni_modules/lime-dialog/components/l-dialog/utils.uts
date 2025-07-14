@@ -1,0 +1,26 @@
+// @ts-nocheck
+// #ifndef UNI-APP-X
+type UTSJSONObject = Record<stirng, any>
+// #endif
+
+export const parseToObject = (obj : any | null) : UTSJSONObject | null => {
+	if (obj == null) return null
+	if (typeof obj == 'string') {
+		return {
+			content: obj as string
+		}
+	} else if (typeof obj == 'object') {
+		// #ifndef UNI-APP-X
+		return obj as UTSJSONObject
+		// #endif
+		// #ifdef UNI-APP-X
+		// #ifndef APP-ANDROID
+		return UTSJSONObject.assign({}, obj as UTSJSONObject)
+		// #endif
+		// #ifdef APP-ANDROID 
+		return obj as UTSJSONObject
+		// #endif
+		// #endif
+	}
+	return null
+}

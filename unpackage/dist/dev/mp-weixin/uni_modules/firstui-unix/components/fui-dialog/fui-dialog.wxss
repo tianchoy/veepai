@@ -1,0 +1,112 @@
+:host{display:flex;flex-direction:column}
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.fui-dialog__wrap.data-v-11b2abcd {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transition-timing-function: ease-in;
+  transition-property: visibility, opacity;
+  transition-duration: 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+}
+.fui-dialog__inner.data-v-11b2abcd {
+  width: 680rpx;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.fui-dialog__title.data-v-11b2abcd {
+  padding: 64rpx 48rpx 0;
+  font-weight: 700;
+  font-size: 34rpx;
+  text-align: center;
+}
+.fui-dialog__body.data-v-11b2abcd {
+  padding: 32rpx 48rpx;
+  margin-bottom: 32rpx;
+}
+.fui-dialog__descr.data-v-11b2abcd {
+  font-size: 30rpx;
+  font-weight: normal;
+  text-align: center;
+}
+.fui-dialog__mtop.data-v-11b2abcd {
+  margin-top: 32rpx;
+}
+.fui-dialog__footer.data-v-11b2abcd {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 112rpx;
+  border-top-width: 0.5px;
+  border-top-style: solid;
+  border-top-color: #EEEEEE;
+}
+.fui-dialog__btn.data-v-11b2abcd {
+  flex: 1;
+  height: 112rpx;
+  line-height: 112rpx;
+  font-weight: 700;
+  position: relative;
+  font-size: 34rpx;
+  border-left-width: 0.5px;
+  border-left-style: solid;
+  border-left-color: #EEEEEE;
+  text-align: center;
+}
+.fui-dialog__btn-active.data-v-11b2abcd {
+  background: rgba(0, 0, 0, 0.2);
+}
+.fui-dialog__btn-first.data-v-11b2abcd {
+  border-left-width: 0 !important;
+}
+.fui-dialog__mask-bg.data-v-11b2abcd {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+.fui-dialog__title-color.data-v-11b2abcd {
+  color: #333333 !important;
+}
+.fui-dialog__descr-color.data-v-11b2abcd {
+  color: #7F7F7F !important;
+}
+.fui-dialog__bg.data-v-11b2abcd {
+  background: #FFFFFF !important;
+}
+.fui-dialog__btn-color.data-v-11b2abcd {
+  color: #333333 !important;
+}
+.fui-dialog__color-primary.data-v-11b2abcd {
+  color: #465CFF !important;
+}

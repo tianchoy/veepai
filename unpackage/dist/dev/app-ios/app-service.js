@@ -42,9 +42,9 @@
     });
   }
   function initRuntimeSocketService() {
-    const hosts = "127.0.0.1,192.168.3.34,169.254.174.95";
+    const hosts = "127.0.0.1,192.168.3.34";
     const port = "8090";
-    const id = "app-ios_ZOJO7w";
+    const id = "app-ios_aEY8xk";
     let socketTask = null;
     __registerWebViewUniConsole(() => {
       return '!function(){"use strict";"function"==typeof SuppressedError&&SuppressedError;var e=["log","warn","error","info","debug"],n=e.reduce((function(e,n){return e[n]=console[n].bind(console),e}),{}),t=null,r=new Set,o={};function i(e){if(null!=t){var n=e.map((function(e){if("string"==typeof e)return e;var n=e&&"promise"in e&&"reason"in e,t=n?"UnhandledPromiseRejection: ":"";if(n&&(e=e.reason),e instanceof Error&&e.stack)return e.message&&!e.stack.includes(e.message)?"".concat(t).concat(e.message,"\\n").concat(e.stack):"".concat(t).concat(e.stack);if("object"==typeof e&&null!==e)try{return t+JSON.stringify(e)}catch(e){return t+String(e)}return t+String(e)})).filter(Boolean);n.length>0&&t(JSON.stringify(Object.assign({type:"error",data:n},o)))}else e.forEach((function(e){r.add(e)}))}function a(e,n){try{return{type:e,args:u(n)}}catch(e){}return{type:e,args:[]}}function u(e){return e.map((function(e){return c(e)}))}function c(e,n){if(void 0===n&&(n=0),n>=7)return{type:"object",value:"[Maximum depth reached]"};switch(typeof e){case"string":return{type:"string",value:e};case"number":return function(e){return{type:"number",value:String(e)}}(e);case"boolean":return function(e){return{type:"boolean",value:String(e)}}(e);case"object":try{return function(e,n){if(null===e)return{type:"null"};if(function(e){return e.$&&s(e.$)}(e))return function(e,n){return{type:"object",className:"ComponentPublicInstance",value:{properties:Object.entries(e.$.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(s(e))return function(e,n){return{type:"object",className:"ComponentInternalInstance",value:{properties:Object.entries(e.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return e.style&&null!=e.tagName&&null!=e.nodeName}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e).filter((function(e){var n=e[0];return["id","tagName","nodeName","dataset","offsetTop","offsetLeft","style"].includes(n)})).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return"function"==typeof e.getPropertyValue&&"function"==typeof e.setProperty&&e.$styles}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e.$styles).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(Array.isArray(e))return{type:"object",subType:"array",value:{properties:e.map((function(e,t){return function(e,n,t){var r=c(e,t);return r.name="".concat(n),r}(e,t,n+1)}))}};if(e instanceof Set)return{type:"object",subType:"set",className:"Set",description:"Set(".concat(e.size,")"),value:{entries:Array.from(e).map((function(e){return function(e,n){return{value:c(e,n)}}(e,n+1)}))}};if(e instanceof Map)return{type:"object",subType:"map",className:"Map",description:"Map(".concat(e.size,")"),value:{entries:Array.from(e.entries()).map((function(e){return function(e,n){return{key:c(e[0],n),value:c(e[1],n)}}(e,n+1)}))}};if(e instanceof Promise)return{type:"object",subType:"promise",value:{properties:[]}};if(e instanceof RegExp)return{type:"object",subType:"regexp",value:String(e),className:"Regexp"};if(e instanceof Date)return{type:"object",subType:"date",value:String(e),className:"Date"};if(e instanceof Error)return{type:"object",subType:"error",value:e.message||String(e),className:e.name||"Error"};var t=void 0,r=e.constructor;r&&r.get$UTSMetadata$&&(t=r.get$UTSMetadata$().name);var o=Object.entries(e);(function(e){return e.modifier&&e.modifier._attribute&&e.nodeContent})(e)&&(o=o.filter((function(e){var n=e[0];return"modifier"!==n&&"nodeContent"!==n})));return{type:"object",className:t,value:{properties:o.map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n)}catch(e){return{type:"object",value:{properties:[]}}}case"undefined":return{type:"undefined"};case"function":return function(e){return{type:"function",value:"function ".concat(e.name,"() {}")}}(e);case"symbol":return function(e){return{type:"symbol",value:e.description}}(e);case"bigint":return function(e){return{type:"bigint",value:String(e)}}(e)}}function s(e){return e.type&&null!=e.uid&&e.appContext}function f(e,n,t){var r=c(n,t);return r.name=e,r}var l=null,p=[],y={},g="---BEGIN:EXCEPTION---",d="---END:EXCEPTION---";function v(e){null!=l?l(JSON.stringify(Object.assign({type:"console",data:e},y))):p.push.apply(p,e)}var m=/^\\s*at\\s+[\\w/./-]+:\\d+$/;function b(){function t(e){return function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];var o=function(e,n,t){if(t||2===arguments.length)for(var r,o=0,i=n.length;o<i;o++)!r&&o in n||(r||(r=Array.prototype.slice.call(n,0,o)),r[o]=n[o]);return e.concat(r||Array.prototype.slice.call(n))}([],t,!0);if(o.length){var u=o[o.length-1];"string"==typeof u&&m.test(u)&&o.pop()}if(n[e].apply(n,o),"error"===e&&1===t.length){var c=t[0];if("string"==typeof c&&c.startsWith(g)){var s=g.length,f=c.length-d.length;return void i([c.slice(s,f)])}if(c instanceof Error)return void i([c])}v([a(e,t)])}}return function(){var e=console.log,n=Symbol();try{console.log=n}catch(e){return!1}var t=console.log===n;return console.log=e,t}()?(e.forEach((function(e){console[e]=t(e)})),function(){e.forEach((function(e){console[e]=n[e]}))}):function(){}}function _(e){var n={type:"WEB_INVOKE_APPSERVICE",args:{data:{name:"console",arg:e}}};return window.__uniapp_x_postMessageToService?window.__uniapp_x_postMessageToService(n):window.__uniapp_x_.postMessageToService(JSON.stringify(n))}!function(){if(!window.__UNI_CONSOLE_WEBVIEW__){window.__UNI_CONSOLE_WEBVIEW__=!0;var e="[web-view]".concat(window.__UNI_PAGE_ROUTE__?"[".concat(window.__UNI_PAGE_ROUTE__,"]"):"");b(),function(e,n){if(void 0===n&&(n={}),l=e,Object.assign(y,n),null!=e&&p.length>0){var t=p.slice();p.length=0,v(t)}}((function(e){_(e)}),{channel:e}),function(e,n){if(void 0===n&&(n={}),t=e,Object.assign(o,n),null!=e&&r.size>0){var a=Array.from(r);r.clear(),i(a)}}((function(e){_(e)}),{channel:e}),window.addEventListener("error",(function(e){i([e.error])})),window.addEventListener("unhandledrejection",(function(e){i([e])}))}}()}();';
@@ -74,7 +74,7 @@
   const pauseIcon = "/static/video/pause.png";
   const addIcon = "/static/tabbar/add.png";
   const videoSrc$1 = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$P = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$Y = /* @__PURE__ */ vue.defineComponent({
     __name: "index",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -141,7 +141,7 @@
       return __returned__;
     }
   });
-  const _style_0$N = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
+  const _style_0$U = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
   const _export_sfc = (sfc, props) => {
     const target = sfc.__vccOpts || sfc;
     for (const [key, val] of props) {
@@ -149,7 +149,7 @@
     }
     return target;
   };
-  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$X(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", {
@@ -220,8 +220,8 @@
       ])
     ]);
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["styles", [_style_0$N]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
-  const _sfc_main$O = /* @__PURE__ */ vue.defineComponent({
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["styles", [_style_0$U]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
+  const _sfc_main$X = /* @__PURE__ */ vue.defineComponent({
     __name: "l-date-strip-item",
     props: {
       dates: { type: Array, required: true, default: [] },
@@ -256,9 +256,9 @@
       return __returned__;
     }
   });
-  const _imports_0$8 = "/static/dot1.png";
-  const _style_0$M = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
-  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
+  const _imports_0$9 = "/static/dot1.png";
+  const _style_0$T = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
+  function _sfc_render$W(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -334,7 +334,7 @@
                     item.suffix == "true" ? (vue.openBlock(), vue.createElementBlock("view", { key: 0 }, [
                       vue.createElementVNode("image", {
                         style: { "width": "16rpx", "height": "16rpx" },
-                        src: _imports_0$8
+                        src: _imports_0$9
                       })
                     ])) : (vue.openBlock(), vue.createElementBlock("view", { key: 1 }, [
                       vue.createElementVNode("text", { style: { "width": "16rpx", "height": "16rpx" } })
@@ -354,7 +354,7 @@
       /* CLASS */
     );
   }
-  const __easycom_0$a = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["styles", [_style_0$M]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip-item/l-date-strip-item.uvue"]]);
+  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["styles", [_style_0$T]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip-item/l-date-strip-item.uvue"]]);
   function resolveEasycom(component, easycom2) {
     return typeof component === "string" ? easycom2 : component;
   }
@@ -437,7 +437,7 @@
     }
     return 0;
   }
-  const _sfc_main$N = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$W = /* @__PURE__ */ vue.defineComponent({
     __name: "l-date-strip",
     props: {
       firstDayOfWeek: { type: Number, required: true, default: 1 },
@@ -588,9 +588,9 @@
       return __returned__;
     }
   });
-  const _style_0$L = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
-  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_date_strip_item = resolveEasycom(vue.resolveDynamicComponent("l-date-strip-item"), __easycom_0$a);
+  const _style_0$S = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
+  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_date_strip_item = resolveEasycom(vue.resolveDynamicComponent("l-date-strip-item"), __easycom_0$9);
     return $props.switchMode == "none" ? (vue.openBlock(), vue.createElementBlock("scroll-view", {
       key: 0,
       class: "l-date-strip l-date-strip__scroll",
@@ -643,7 +643,7 @@
       ))
     ], 44, ["current", "circular"]));
   }
-  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["styles", [_style_0$L]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip/l-date-strip.uvue"]]);
+  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["styles", [_style_0$S]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip/l-date-strip.uvue"]]);
   function isDef(value) {
     return value != null;
   }
@@ -674,7 +674,7 @@
   }
   const name$4 = "l-icon";
   const IconifyURL = "https://api.iconify.design/";
-  const _sfc_main$M = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$V = /* @__PURE__ */ vue.defineComponent({
     __name: "l-icon",
     props: {
       name: {
@@ -805,8 +805,8 @@
       return __returned__;
     }
   });
-  const _style_0$K = { "l-icon--font": { "": { "fontFamily": "l", "textAlign": "center" } }, "@FONT-FACE": [{ "fontFamily": "l", "src": 'url("/assets/t3.9658ea31.ttf")' }] };
-  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$R = { "l-icon--font": { "": { "fontFamily": "l", "textAlign": "center" } }, "@FONT-FACE": [{ "fontFamily": "l", "src": 'url("/assets/t3.9658ea31.ttf")' }] };
+  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -835,7 +835,7 @@
       /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
     );
   }
-  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["styles", [_style_0$K]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-icon/components/l-icon/l-icon.uvue"]]);
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["styles", [_style_0$R]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-icon/components/l-icon/l-icon.uvue"]]);
   function __awaiter(thisArg, _arguments, P2, generator) {
     function adopt(value) {
       return value instanceof P2 ? value : new P2(function(resolve) {
@@ -1401,7 +1401,7 @@
       }
     }
   }
-  const _sfc_main$L = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$U = /* @__PURE__ */ vue.defineComponent({
     __name: "l-daily-punch",
     props: {
       canSupplement: {
@@ -1572,8 +1572,8 @@
       return __returned__;
     }
   });
-  const _style_0$J = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
-  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$Q = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
+  function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "calender" }, [
       vue.createElementVNode(
         "canvas",
@@ -1590,8 +1590,8 @@
       )
     ]);
   }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["styles", [_style_0$J]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
-  const _sfc_main$K = vue.defineComponent({
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$U, [["render", _sfc_render$T], ["styles", [_style_0$Q]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
+  const _sfc_main$T = vue.defineComponent({
     name: "fui-bottom-popup",
     emits: ["close", "update:visible"],
     props: {
@@ -1722,8 +1722,8 @@
       }
     }
   });
-  const _style_0$I = { "fui-bottom__popup-wrap": { "": { "position": "fixed", "left": 0, "right": 0, "top": 0, "bottom": 0, "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "center", "transitionProperty": "opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "visibility": "hidden", "borderBottomWidth": 0, "overflow": "hidden", "opacity": 0 } }, "fui-bottom__popup": { "": { "width": "100%", "transitionProperty": "transform,opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "minHeight": "20rpx", "overflow": "hidden", "transform": "translateY(100%)", "display": "flex", "flexDirection": "row", "position": "relative" } }, "fui-bp__safe-weex": { "": { "paddingBottom": 34 } }, "@TRANSITION": { "fui-bottom__popup-wrap": { "property": "opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" }, "fui-bottom__popup": { "property": "transform,opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" } } };
-  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$P = { "fui-bottom__popup-wrap": { "": { "position": "fixed", "left": 0, "right": 0, "top": 0, "bottom": 0, "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "center", "transitionProperty": "opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "visibility": "hidden", "borderBottomWidth": 0, "overflow": "hidden", "opacity": 0 } }, "fui-bottom__popup": { "": { "width": "100%", "transitionProperty": "transform,opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "minHeight": "20rpx", "overflow": "hidden", "transform": "translateY(100%)", "display": "flex", "flexDirection": "row", "position": "relative" } }, "fui-bp__safe-weex": { "": { "paddingBottom": 34 } }, "@TRANSITION": { "fui-bottom__popup-wrap": { "property": "opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" }, "fui-bottom__popup": { "property": "transform,opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" } } };
+  function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -1752,7 +1752,7 @@
       /* STYLE */
     );
   }
-  const __easycom_4$3 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["styles", [_style_0$I]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue"]]);
+  const __easycom_4$3 = /* @__PURE__ */ _export_sfc(_sfc_main$T, [["render", _sfc_render$S], ["styles", [_style_0$P]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue"]]);
   const icons = new UTSJSONObject({
     "addressbook": "",
     "addfriends-fill": "",
@@ -1918,7 +1918,7 @@
     "goods": "",
     "goods-fill": ""
   });
-  const _sfc_main$J = vue.defineComponent({
+  const _sfc_main$S = vue.defineComponent({
     name: "fui-icon",
     emits: ["onclick"],
     props: {
@@ -2003,8 +2003,8 @@
       }
     }
   });
-  const _style_0$H = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
-  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$O = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
+  function _sfc_render$R(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -2017,8 +2017,8 @@
       /* TEXT, CLASS, STYLE */
     );
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["styles", [_style_0$H]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
-  const _sfc_main$I = vue.defineComponent({
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$S, [["render", _sfc_render$R], ["styles", [_style_0$O]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
+  const _sfc_main$R = vue.defineComponent({
     name: "fui-radio",
     props: {
       value: {
@@ -2183,8 +2183,8 @@
       }
     }
   });
-  const _style_0$G = { "fui-radio__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "display": "flex", "boxSizing": "border-box", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-radio__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-radio__scale-center": { "": { "transformOrigin": "center center" } }, "fui-radio__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-radio__active-bgcolor": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-radio__color": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-radio__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-radio__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-radio__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-check__mark-circle": { "": { "width": "16rpx", "height": "16rpx", "borderTopLeftRadius": "16rpx", "borderTopRightRadius": "16rpx", "borderBottomRightRadius": "16rpx", "borderBottomLeftRadius": "16rpx" } }, "fui-radio__disabled": { "": { "opacity": 0.6 } } };
-  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$N = { "fui-radio__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "display": "flex", "boxSizing": "border-box", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-radio__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-radio__scale-center": { "": { "transformOrigin": "center center" } }, "fui-radio__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-radio__active-bgcolor": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-radio__color": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-radio__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-radio__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-radio__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-check__mark-circle": { "": { "width": "16rpx", "height": "16rpx", "borderTopLeftRadius": "16rpx", "borderTopRightRadius": "16rpx", "borderBottomRightRadius": "16rpx", "borderBottomLeftRadius": "16rpx" } }, "fui-radio__disabled": { "": { "opacity": 0.6 } } };
+  function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2220,8 +2220,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["styles", [_style_0$G]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio/fui-radio.uvue"]]);
-  const _sfc_main$H = vue.defineComponent({
+  const __easycom_3$4 = /* @__PURE__ */ _export_sfc(_sfc_main$R, [["render", _sfc_render$Q], ["styles", [_style_0$N]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio/fui-radio.uvue"]]);
+  const _sfc_main$Q = vue.defineComponent({
     name: "fui-list-cell",
     emits: ["onclick"],
     props: {
@@ -2326,8 +2326,8 @@
       }
     }
   });
-  const _style_0$F = { "fui-list__cell": { "": { "position": "relative", "width": "100%", "display": "flex", "flexDirection": "row", "boxSizing": "border-box" } }, "fui-list__cell-inner": { "": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "boxSizing": "border-box" } }, "fui-cell__arrow": { "": { "height": "40rpx", "width": "40rpx", "borderTopWidth": 3, "borderRightWidth": 3, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "transform": "rotate(45deg) scale(0.5)", "borderTopLeftRadius": "4rpx", "borderTopRightRadius": "4rpx", "borderBottomRightRadius": "4rpx", "borderBottomLeftRadius": "4rpx", "flexShrink": 0, "marginLeft": "auto", "boxSizing": "border-box", "transformOrigin": "center center", "marginRight": "-5.8579rpx" } }, "fui-cell__border-top": { "": { "position": "absolute", "top": 0, "height": 0.5, "zIndex": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "pointerEvents": "none" } }, "fui-cell__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-cell__border-color": { "": { "!backgroundColor": "#EEEEEE" } }, "fui-list__cell-background": { "": { "!backgroundColor": "#FFFFFF" } }, "fui-list__cell-highlight": { "": { "!backgroundColor": "rgba(0,0,0,0.2)" } }, "fui-list__cell-padding": { "": { "!paddingTop": "32rpx", "!paddingRight": "32rpx", "!paddingBottom": "32rpx", "!paddingLeft": "32rpx" } }, "fui-list__cell-arrowcolor": { "": { "!borderTopColor": "#B2B2B2", "!borderRightColor": "#B2B2B2", "!borderBottomColor": "#B2B2B2", "!borderLeftColor": "#B2B2B2" } }, "fui-list__cell-bleft": { "": { "!left": "32rpx" } } };
-  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$M = { "fui-list__cell": { "": { "position": "relative", "width": "100%", "display": "flex", "flexDirection": "row", "boxSizing": "border-box" } }, "fui-list__cell-inner": { "": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "boxSizing": "border-box" } }, "fui-cell__arrow": { "": { "height": "40rpx", "width": "40rpx", "borderTopWidth": 3, "borderRightWidth": 3, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "transform": "rotate(45deg) scale(0.5)", "borderTopLeftRadius": "4rpx", "borderTopRightRadius": "4rpx", "borderBottomRightRadius": "4rpx", "borderBottomLeftRadius": "4rpx", "flexShrink": 0, "marginLeft": "auto", "boxSizing": "border-box", "transformOrigin": "center center", "marginRight": "-5.8579rpx" } }, "fui-cell__border-top": { "": { "position": "absolute", "top": 0, "height": 0.5, "zIndex": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "pointerEvents": "none" } }, "fui-cell__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-cell__border-color": { "": { "!backgroundColor": "#EEEEEE" } }, "fui-list__cell-background": { "": { "!backgroundColor": "#FFFFFF" } }, "fui-list__cell-highlight": { "": { "!backgroundColor": "rgba(0,0,0,0.2)" } }, "fui-list__cell-padding": { "": { "!paddingTop": "32rpx", "!paddingRight": "32rpx", "!paddingBottom": "32rpx", "!paddingLeft": "32rpx" } }, "fui-list__cell-arrowcolor": { "": { "!borderTopColor": "#B2B2B2", "!borderRightColor": "#B2B2B2", "!borderBottomColor": "#B2B2B2", "!borderLeftColor": "#B2B2B2" } }, "fui-list__cell-bleft": { "": { "!left": "32rpx" } } };
+  function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["fui-list__cell", { "fui-list__cell-background": $props.background == "" }]),
       "hover-class": $props.highlight ? "fui-list__cell-highlight" : "",
@@ -2383,8 +2383,8 @@
       )) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class"]);
   }
-  const __easycom_4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["styles", [_style_0$F]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell.uvue"]]);
-  const _sfc_main$G = vue.defineComponent({
+  const __easycom_4$2 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["styles", [_style_0$M]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell.uvue"]]);
+  const _sfc_main$P = vue.defineComponent({
     name: "fui-label",
     props: {
       //padding值：'20rpx 32rpx'
@@ -2417,8 +2417,8 @@
       }
     }
   });
-  const _style_0$E = { "fui-label__wrap": { "": { "boxSizing": "border-box" } }, "fui-label__full": { "": { "width": "100%" } } };
-  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$L = { "fui-label__wrap": { "": { "boxSizing": "border-box" } }, "fui-label__full": { "": { "width": "100%" } } };
+  function _sfc_render$O(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2433,8 +2433,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["styles", [_style_0$E]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-label/fui-label.uvue"]]);
-  const _sfc_main$F = vue.defineComponent({
+  const __easycom_4$1 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["styles", [_style_0$L]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-label/fui-label.uvue"]]);
+  const _sfc_main$O = vue.defineComponent({
     name: "fui-radio-group",
     emits: ["change", "update:modelValue"],
     props: {
@@ -2518,7 +2518,7 @@
       }
     }
   });
-  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_radio_group = vue.resolveComponent("radio-group");
     return vue.openBlock(), vue.createBlock(_component_radio_group, { name: $props.name }, {
       default: vue.withCtx(() => [
@@ -2528,7 +2528,7 @@
       /* FORWARDED */
     }, 8, ["name"]);
   }
-  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.uvue"]]);
+  const __easycom_6 = /* @__PURE__ */ _export_sfc(_sfc_main$O, [["render", _sfc_render$N], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.uvue"]]);
   class DayutsConfig extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -3683,7 +3683,7 @@
       delete this.__props__;
     }
   };
-  const _sfc_main$E = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$N = /* @__PURE__ */ vue.defineComponent({
     __name: "message",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -3805,19 +3805,19 @@
       return __returned__;
     }
   });
-  const _imports_0$7 = "/static/down.png";
-  const _imports_1$3 = "/static/notice.png";
-  const _imports_1$2 = "/static/vedio.png";
+  const _imports_0$8 = "/static/down.png";
+  const _imports_1$2 = "/static/notice.png";
+  const _imports_0$7 = "/static/vedio.png";
   const _imports_3$2 = "/static/people.png";
   const _imports_4$1 = "/static/mobile.png";
-  const _style_0$D = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "data-strip": { ".container ": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "backgroundColor": "#ffffff", "paddingRight": "20rpx" } }, "rili": { ".container .data-strip ": { "flex": 3, "height": "95rpx" } }, "down": { ".container .data-strip ": { "width": "32rpx", "height": "32rpx" }, ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "width": "140rpx" } }, "notice": { ".container .content-box .sub-nav .select ": { "width": "48rpx", "height": "48rpx" } }, "tab-content": { ".container .content-box ": { "width": "100%", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "item-content": { ".container .content-box .tab-content ": { "width": "100%", "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginTop": "30rpx" } }, "title-box": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "30rpx" } }, "title": { ".container .content-box .tab-content .item-content .title-box ": { "fontSize": "30rpx", "color": "#333333", "fontWeight": "bold" } }, "more": { ".container .content-box .tab-content .item-content .title-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-detail": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { ".container .content-box .tab-content .item-content .item-detail ": { "display": "flex", "flexDirection": "row" } }, "device-img": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "width": "200rpx", "height": "100rpx", "marginRight": "20rpx" } }, "item-info": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "space-between" } }, "item-icon": { ".container .content-box .tab-content .item-content .item-detail ": { "width": "50rpx", "height": "50rpx" } }, "calendar-box": { ".container ": { "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
-  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_date_strip = resolveEasycom(vue.resolveDynamicComponent("l-date-strip"), __easycom_0$9);
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
-    const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$7);
+  const _style_0$K = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "data-strip": { ".container ": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "backgroundColor": "#ffffff", "paddingRight": "20rpx" } }, "rili": { ".container .data-strip ": { "flex": 3, "height": "95rpx" } }, "down": { ".container .data-strip ": { "width": "32rpx", "height": "32rpx" }, ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "width": "140rpx" } }, "notice": { ".container .content-box .sub-nav .select ": { "width": "48rpx", "height": "48rpx" } }, "tab-content": { ".container .content-box ": { "width": "100%", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "item-content": { ".container .content-box .tab-content ": { "width": "100%", "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginTop": "30rpx" } }, "title-box": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "30rpx" } }, "title": { ".container .content-box .tab-content .item-content .title-box ": { "fontSize": "30rpx", "color": "#333333", "fontWeight": "bold" } }, "more": { ".container .content-box .tab-content .item-content .title-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-detail": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { ".container .content-box .tab-content .item-content .item-detail ": { "display": "flex", "flexDirection": "row" } }, "device-img": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "width": "200rpx", "height": "100rpx", "marginRight": "20rpx" } }, "item-info": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "space-between" } }, "item-icon": { ".container .content-box .tab-content .item-content .item-detail ": { "width": "50rpx", "height": "50rpx" } }, "calendar-box": { ".container ": { "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
+  function _sfc_render$M(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_date_strip = resolveEasycom(vue.resolveDynamicComponent("l-date-strip"), __easycom_0$8);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$6);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$3);
-    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_3$3);
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$5);
+    const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_3$4);
     const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_4$2);
     const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_4$1);
     const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_6);
@@ -3837,7 +3837,7 @@
         vue.createElementVNode("image", {
           class: "down",
           onClick: $setup.ShowCalendar,
-          src: _imports_0$7
+          src: _imports_0$8
         })
       ]),
       vue.createElementVNode("view", { class: "content-box" }, [
@@ -3849,13 +3849,13 @@
             vue.createElementVNode("text", null, "设备编号"),
             vue.createElementVNode("image", {
               class: "down",
-              src: _imports_0$7
+              src: _imports_0$8
             })
           ]),
           vue.createElementVNode("view", { class: "select" }, [
             vue.createElementVNode("image", {
               class: "notice",
-              src: _imports_1$3,
+              src: _imports_1$2,
               onClick: $setup.msgSystem
             })
           ])
@@ -3879,7 +3879,7 @@
               vue.createElementVNode("view", { class: "item-left" }, [
                 vue.createElementVNode("image", {
                   class: "device-img",
-                  src: _imports_1$2
+                  src: _imports_0$7
                 }),
                 vue.createElementVNode("view", { class: "item-info" }, [
                   vue.createElementVNode("text", null, "人形侦测"),
@@ -3908,7 +3908,7 @@
               vue.createElementVNode("view", { class: "item-left" }, [
                 vue.createElementVNode("image", {
                   class: "device-img",
-                  src: _imports_1$2
+                  src: _imports_0$7
                 }),
                 vue.createElementVNode("view", { class: "item-info" }, [
                   vue.createElementVNode("text", null, "移动侦测"),
@@ -4018,8 +4018,8 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["styles", [_style_0$D]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
-  const _sfc_main$D = /* @__PURE__ */ vue.defineComponent({
+  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$N, [["render", _sfc_render$M], ["styles", [_style_0$K]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
+  const _sfc_main$M = /* @__PURE__ */ vue.defineComponent({
     __name: "mine",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -4086,8 +4086,8 @@
   const _imports_9$1 = "/static/mine/advice.png";
   const _imports_10$1 = "/static/mine/setting.png";
   const _imports_11$1 = "/static/mine/about.png";
-  const _style_0$C = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
-  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$J = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
+  function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "files" }, [
         vue.createElementVNode("view", {
@@ -4282,8 +4282,8 @@
       ])
     ]);
   }
-  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["styles", [_style_0$C]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
-  const _sfc_main$C = vue.defineComponent({
+  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$M, [["render", _sfc_render$L], ["styles", [_style_0$J]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
+  const _sfc_main$L = vue.defineComponent({
     name: "fui-switch",
     emits: ["change", "update:checked"],
     props: {
@@ -4467,8 +4467,8 @@
       }
     }
   });
-  const _style_0$B = { "fui-switch__input": { "": { "flexShrink": 0 } }, "fui-switch__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-switch__scale-center": { "": { "transformOrigin": "center center" } }, "fui-switch__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-switch__size-switch": { "": { "width": 52, "height": 32 } }, "fui-switch__size-checkbox": { "": { "width": "40rpx", "height": "40rpx" } }, "fui-switch__checkbox-self": { "": { "width": "40rpx", "height": "40rpx", "borderTopLeftRadius": 40, "borderTopRightRadius": 40, "borderBottomRightRadius": 40, "borderBottomLeftRadius": 40, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-switch__input-def": { "": { "position": "relative", "width": 52, "height": 32, "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "boxSizing": "border-box" } }, "fui-switch__normal-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#dfdfdf" } }, "fui-switch__checked-color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-switch__normal-bcolor": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-switch__input-before": { "": { "position": "absolute", "top": 0, "left": 0, "width": 50, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "transitionProperty": "transform", "transitionDuration": "0.3s" } }, "fui-switch__before-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input-after": { "": { "position": "absolute", "top": 0, "left": 0, "width": 30, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "boxShadow": "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty": "transform", "transitionDuration": "0.3s", "display": "flex", "alignItems": "center", "justifyContent": "center", "transform": "translateX(0)" } }, "fui-switch__after-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input--before": { "": { "transform": "scale(0)" } }, "fui-switch__input--after": { "": { "transform": "translateX(20px)" } }, "fui-switch__check-mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%", "boxSizing": "border-box" } }, "fui-switch__circle-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__checkbox-disabled": { "": { "opacity": 0.6 } }, "@TRANSITION": { "fui-switch__input-before": { "property": "transform", "duration": "0.3s" }, "fui-switch__input-after": { "property": "transform", "duration": "0.3s" } } };
-  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$I = { "fui-switch__input": { "": { "flexShrink": 0 } }, "fui-switch__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-switch__scale-center": { "": { "transformOrigin": "center center" } }, "fui-switch__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-switch__size-switch": { "": { "width": 52, "height": 32 } }, "fui-switch__size-checkbox": { "": { "width": "40rpx", "height": "40rpx" } }, "fui-switch__checkbox-self": { "": { "width": "40rpx", "height": "40rpx", "borderTopLeftRadius": 40, "borderTopRightRadius": 40, "borderBottomRightRadius": 40, "borderBottomLeftRadius": 40, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-switch__input-def": { "": { "position": "relative", "width": 52, "height": 32, "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "boxSizing": "border-box" } }, "fui-switch__normal-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#dfdfdf" } }, "fui-switch__checked-color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-switch__normal-bcolor": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-switch__input-before": { "": { "position": "absolute", "top": 0, "left": 0, "width": 50, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "transitionProperty": "transform", "transitionDuration": "0.3s" } }, "fui-switch__before-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input-after": { "": { "position": "absolute", "top": 0, "left": 0, "width": 30, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "boxShadow": "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty": "transform", "transitionDuration": "0.3s", "display": "flex", "alignItems": "center", "justifyContent": "center", "transform": "translateX(0)" } }, "fui-switch__after-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input--before": { "": { "transform": "scale(0)" } }, "fui-switch__input--after": { "": { "transform": "translateX(20px)" } }, "fui-switch__check-mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%", "boxSizing": "border-box" } }, "fui-switch__circle-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__checkbox-disabled": { "": { "opacity": 0.6 } }, "@TRANSITION": { "fui-switch__input-before": { "property": "transform", "duration": "0.3s" }, "fui-switch__input-after": { "property": "transform", "duration": "0.3s" } } };
+  function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4539,8 +4539,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["styles", [_style_0$B]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
-  const _sfc_main$B = vue.defineComponent({
+  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["styles", [_style_0$I]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
+  const _sfc_main$K = vue.defineComponent({
     name: "fui-button",
     emits: ["onclick"],
     props: {
@@ -4808,8 +4808,8 @@
       }
     }
   });
-  const _style_0$A = { "fui-button__wrap": { "": { "position": "relative", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-button__flex-1": { "": { "width": "100%" } }, "fui-button__opacity": { "": { "opacity": 0.5 } }, "fui-button__hover": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "backgroundColor": "rgba(0,0,0,0.2)", "zIndex": 2, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "visibility": "hidden", "pointerEvents": "none" } }, "fui-button__spin": { "": { "width": "32rpx", "height": "32rpx", "borderTopWidth": 2, "borderRightWidth": 2, "borderBottomWidth": 2, "borderLeftWidth": 2, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "transitionDuration": "600ms", "transitionProperty": "transform", "transitionTimingFunction": "linear", "transform": "rotate(0deg)", "boxSizing": "border-box", "marginRight": "8rpx", "position": "relative" } }, "fui-button__spin-dot": { "": { "position": "absolute", "width": "12rpx", "height": "12rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx", "left": 0, "top": 0 } }, "fui-button__text": { "": { "textAlign": "center" } }, "fui-text__bold": { "": { "fontWeight": "bold" } }, "fui-button__link": { "": { "!borderTopColor": "rgba(0,0,0,0)", "!borderRightColor": "rgba(0,0,0,0)", "!borderBottomColor": "rgba(0,0,0,0)", "!borderLeftColor": "rgba(0,0,0,0)", "!backgroundColor": "rgba(0,0,0,0)" } }, "fui-button__primary": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF", "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-button__success": { "": { "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F", "!backgroundImage": "none", "!backgroundColor": "#09BE4F" } }, "fui-button__warning": { "": { "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703", "!backgroundImage": "none", "!backgroundColor": "#FFB703" } }, "fui-button__danger": { "": { "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B", "!backgroundImage": "none", "!backgroundColor": "#FF2B2B" } }, "fui-button__purple": { "": { "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF", "!backgroundImage": "none", "!backgroundColor": "#6831FF" } }, "fui-button__gray": { "": { "!borderTopColor": "#F8F8F8", "!borderRightColor": "#F8F8F8", "!borderBottomColor": "#F8F8F8", "!borderLeftColor": "#F8F8F8", "!backgroundImage": "none", "!backgroundColor": "#F8F8F8" } }, "fui-btn__gray-color": { "": { "!color": "#465CFF" } }, "fui-button__height": { "": { "!height": "96rpx" } }, "fui-button__height-text": { "": { "!height": "96rpx", "!lineHeight": "96rpx" } }, "fui-button__size": { "": { "!fontSize": "32rpx" } }, "fui-button__radius": { "": { "!borderTopLeftRadius": "16rpx", "!borderTopRightRadius": "16rpx", "!borderBottomRightRadius": "16rpx", "!borderBottomLeftRadius": "16rpx" } }, "@TRANSITION": { "fui-button__spin": { "duration": "600ms", "property": "transform", "timingFunction": "linear" } } };
-  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$H = { "fui-button__wrap": { "": { "position": "relative", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-button__flex-1": { "": { "width": "100%" } }, "fui-button__opacity": { "": { "opacity": 0.5 } }, "fui-button__hover": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "backgroundColor": "rgba(0,0,0,0.2)", "zIndex": 2, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "visibility": "hidden", "pointerEvents": "none" } }, "fui-button__spin": { "": { "width": "32rpx", "height": "32rpx", "borderTopWidth": 2, "borderRightWidth": 2, "borderBottomWidth": 2, "borderLeftWidth": 2, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "transitionDuration": "600ms", "transitionProperty": "transform", "transitionTimingFunction": "linear", "transform": "rotate(0deg)", "boxSizing": "border-box", "marginRight": "8rpx", "position": "relative" } }, "fui-button__spin-dot": { "": { "position": "absolute", "width": "12rpx", "height": "12rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx", "left": 0, "top": 0 } }, "fui-button__text": { "": { "textAlign": "center" } }, "fui-text__bold": { "": { "fontWeight": "bold" } }, "fui-button__link": { "": { "!borderTopColor": "rgba(0,0,0,0)", "!borderRightColor": "rgba(0,0,0,0)", "!borderBottomColor": "rgba(0,0,0,0)", "!borderLeftColor": "rgba(0,0,0,0)", "!backgroundColor": "rgba(0,0,0,0)" } }, "fui-button__primary": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF", "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-button__success": { "": { "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F", "!backgroundImage": "none", "!backgroundColor": "#09BE4F" } }, "fui-button__warning": { "": { "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703", "!backgroundImage": "none", "!backgroundColor": "#FFB703" } }, "fui-button__danger": { "": { "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B", "!backgroundImage": "none", "!backgroundColor": "#FF2B2B" } }, "fui-button__purple": { "": { "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF", "!backgroundImage": "none", "!backgroundColor": "#6831FF" } }, "fui-button__gray": { "": { "!borderTopColor": "#F8F8F8", "!borderRightColor": "#F8F8F8", "!borderBottomColor": "#F8F8F8", "!borderLeftColor": "#F8F8F8", "!backgroundImage": "none", "!backgroundColor": "#F8F8F8" } }, "fui-btn__gray-color": { "": { "!color": "#465CFF" } }, "fui-button__height": { "": { "!height": "96rpx" } }, "fui-button__height-text": { "": { "!height": "96rpx", "!lineHeight": "96rpx" } }, "fui-button__size": { "": { "!fontSize": "32rpx" } }, "fui-button__radius": { "": { "!borderTopLeftRadius": "16rpx", "!borderTopRightRadius": "16rpx", "!borderBottomRightRadius": "16rpx", "!borderBottomLeftRadius": "16rpx" } }, "@TRANSITION": { "fui-button__spin": { "duration": "600ms", "property": "transform", "timingFunction": "linear" } } };
+  function _sfc_render$J(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4874,8 +4874,8 @@
       /* CLASS, STYLE, NEED_HYDRATION */
     );
   }
-  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["styles", [_style_0$A]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
-  const _sfc_main$A = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["styles", [_style_0$H]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
+  const _sfc_main$J = /* @__PURE__ */ vue.defineComponent({
     __name: "userInfo",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -4964,10 +4964,10 @@
       return __returned__;
     }
   });
-  const _style_0$z = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
-  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_0$5);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
+  const _style_0$G = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
+  function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_1$6);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "title" }, [
         vue.createElementVNode("text", null, "个人信息")
@@ -5051,8 +5051,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoUserInfo = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["styles", [_style_0$z]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/userInfo.uvue"]]);
-  const _sfc_main$z = /* @__PURE__ */ vue.defineComponent({
+  const PagesMineUserInfoUserInfo = /* @__PURE__ */ _export_sfc(_sfc_main$J, [["render", _sfc_render$I], ["styles", [_style_0$G]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/userInfo.uvue"]]);
+  const _sfc_main$I = /* @__PURE__ */ vue.defineComponent({
     __name: "CancelAnAccount",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -5070,9 +5070,9 @@
     }
   });
   const _imports_0$4 = "/static/error_big.png";
-  const _style_0$y = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
-  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
+  const _style_0$F = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
+  function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("image", {
         src: _imports_0$4,
@@ -5104,8 +5104,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoCancelAnAccountCancelAnAccount = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["styles", [_style_0$y]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue"]]);
-  const _sfc_main$y = vue.defineComponent({
+  const PagesMineUserInfoCancelAnAccountCancelAnAccount = /* @__PURE__ */ _export_sfc(_sfc_main$I, [["render", _sfc_render$H], ["styles", [_style_0$F]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/CancelAnAccount/CancelAnAccount.uvue"]]);
+  const _sfc_main$H = vue.defineComponent({
     name: "fui-input",
     emits: ["input", "update:modelValue", "focus", "blur", "confirm", "onclick", "keyboardheightchange"],
     props: {
@@ -5490,8 +5490,8 @@
       }
     }
   });
-  const _style_0$x = { "fui-input__wrap": { "": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "position": "relative", "boxSizing": "border-box", "overflow": "visible" } }, "fui-input__border-uvue": { "": { "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "fui-input__border-color": { "": { "!borderTopColor": "#EEEEEE", "!borderRightColor": "#EEEEEE", "!borderBottomColor": "#EEEEEE", "!borderLeftColor": "#EEEEEE" } }, "fui-input__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#EEEEEE" } }, "fui-input__border-top": { "": { "position": "absolute", "top": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__required": { "": { "position": "absolute", "left": "12rpx", "height": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "fui-input__asterisk-text": { "": { "fontSize": "32rpx", "height": "32rpx", "lineHeight": "32rpx" } }, "fui-input__asterisk-color": { "": { "!color": "#FF2B2B" } }, "fui-input__label": { "": { "paddingRight": "12rpx", "flexShrink": 0 } }, "fui-input__label-size": { "": { "!fontSize": "32rpx", "!lineHeight": "32rpx" } }, "fui-input__self": { "": { "flex": 1, "paddingRight": "12rpx", "overflow": "visible", "backgroundColor": "rgba(0,0,0,0)", "boxSizing": "border-box" } }, "fui-input__size": { "": { "!fontSize": "32rpx" } }, "fui-input__clear-wrap": { "": { "width": "32rpx", "height": "32rpx", "transform": "rotate(45deg) scale(1.1)", "position": "relative", "flexShrink": 0, "borderTopLeftRadius": "32rpx", "borderTopRightRadius": "32rpx", "borderBottomRightRadius": "32rpx", "borderBottomLeftRadius": "32rpx" } }, "fui-input__clear": { "": { "width": "32rpx", "height": "32rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "absolute", "left": 0, "top": 0, "transform": "scale(0.5)" } }, "fui-input__clear-a": { "": { "width": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__clear-b": { "": { "height": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__placeholder": { "": { "color": "#CCCCCC", "overflow": "visible" } }, "fui-input__disabled": { "": { "pointerEvents": "none" } }, "fui-input__disabled-styl": { "": { "opacity": 0.6 } } };
-  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$E = { "fui-input__wrap": { "": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "position": "relative", "boxSizing": "border-box", "overflow": "visible" } }, "fui-input__border-uvue": { "": { "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "fui-input__border-color": { "": { "!borderTopColor": "#EEEEEE", "!borderRightColor": "#EEEEEE", "!borderBottomColor": "#EEEEEE", "!borderLeftColor": "#EEEEEE" } }, "fui-input__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#EEEEEE" } }, "fui-input__border-top": { "": { "position": "absolute", "top": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-input__required": { "": { "position": "absolute", "left": "12rpx", "height": "100%", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "fui-input__asterisk-text": { "": { "fontSize": "32rpx", "height": "32rpx", "lineHeight": "32rpx" } }, "fui-input__asterisk-color": { "": { "!color": "#FF2B2B" } }, "fui-input__label": { "": { "paddingRight": "12rpx", "flexShrink": 0 } }, "fui-input__label-size": { "": { "!fontSize": "32rpx", "!lineHeight": "32rpx" } }, "fui-input__self": { "": { "flex": 1, "paddingRight": "12rpx", "overflow": "visible", "backgroundColor": "rgba(0,0,0,0)", "boxSizing": "border-box" } }, "fui-input__size": { "": { "!fontSize": "32rpx" } }, "fui-input__clear-wrap": { "": { "width": "32rpx", "height": "32rpx", "transform": "rotate(45deg) scale(1.1)", "position": "relative", "flexShrink": 0, "borderTopLeftRadius": "32rpx", "borderTopRightRadius": "32rpx", "borderBottomRightRadius": "32rpx", "borderBottomLeftRadius": "32rpx" } }, "fui-input__clear": { "": { "width": "32rpx", "height": "32rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "absolute", "left": 0, "top": 0, "transform": "scale(0.5)" } }, "fui-input__clear-a": { "": { "width": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__clear-b": { "": { "height": "32rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff", "backgroundColor": "#ffffff", "boxSizing": "border-box" } }, "fui-input__placeholder": { "": { "color": "#CCCCCC", "overflow": "visible" } }, "fui-input__disabled": { "": { "pointerEvents": "none" } }, "fui-input__disabled-styl": { "": { "opacity": 0.6 } } };
+  function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -5611,8 +5611,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["styles", [_style_0$x]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
-  const _sfc_main$x = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["styles", [_style_0$E]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
+  const _sfc_main$G = /* @__PURE__ */ vue.defineComponent({
     __name: "changePhoneNumber",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -5642,11 +5642,11 @@
       return __returned__;
     }
   });
-  const _style_0$w = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "icon": { ".container .content ": { "width": "40rpx", "height": "40rpx", "marginRight": "10rpx" } } };
-  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$2);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
+  const _style_0$D = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "icon": { ".container .content ": { "width": "40rpx", "height": "40rpx", "marginRight": "10rpx" } } };
+  function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$5);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createVNode(_component_fui_input, {
@@ -5699,8 +5699,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoChangePhoneNumberChangePhoneNumber = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["styles", [_style_0$w]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue"]]);
-  const _sfc_main$w = /* @__PURE__ */ vue.defineComponent({
+  const PagesMineUserInfoChangePhoneNumberChangePhoneNumber = /* @__PURE__ */ _export_sfc(_sfc_main$G, [["render", _sfc_render$F], ["styles", [_style_0$D]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePhoneNumber/changePhoneNumber.uvue"]]);
+  const _sfc_main$F = /* @__PURE__ */ vue.defineComponent({
     __name: "changePassword",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -5771,10 +5771,10 @@
       return __returned__;
     }
   });
-  const _style_0$v = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } }, "error-msg": { ".container ": { "marginTop": "10rpx", "color": "#e64340", "fontSize": "24rpx" } } };
-  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$2);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
+  const _style_0$C = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } }, "error-msg": { ".container ": { "marginTop": "10rpx", "color": "#e64340", "fontSize": "24rpx" } } };
+  function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createVNode(_component_fui_input, {
@@ -5823,8 +5823,8 @@
       ])
     ]);
   }
-  const PagesMineUserInfoChangePasswordChangePassword = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["styles", [_style_0$v]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePassword/changePassword.uvue"]]);
-  const _sfc_main$v = /* @__PURE__ */ vue.defineComponent({
+  const PagesMineUserInfoChangePasswordChangePassword = /* @__PURE__ */ _export_sfc(_sfc_main$F, [["render", _sfc_render$E], ["styles", [_style_0$C]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/userInfo/changePassword/changePassword.uvue"]]);
+  const _sfc_main$E = /* @__PURE__ */ vue.defineComponent({
     __name: "l-progress",
     props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
       showInfo: { type: Boolean, required: true, default: false },
@@ -5917,8 +5917,8 @@
       return __returned__;
     }
   });
-  const _style_0$u = { "l-progress": { "": { "flexDirection": "row" } }, "l-progress-bg": { "": { "height": 4, "position": "relative", "backgroundColor": "#3283ff", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "transitionProperty": "width", "transitionDuration": "300ms", "transitionTimingFunction": "cubic-bezier(0,0,0.15,1)", "justifyContent": "center" }, ".l-progress--inner ": { "height": 20 } }, "l-progress__inner-text": { ".l-progress-bg ": { "paddingTop": 0, "paddingRight": "8rpx", "paddingBottom": 0, "paddingLeft": "8rpx", "color": "#FFFFFF", "fontSize": 10, "whiteSpace": "nowrap" } }, "l-progress__inner": { "": { "flex": 1, "alignSelf": "center", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "backgroundColor": "rgba(0,0,0,0.06)" } }, "@TRANSITION": { "l-progress-bg": { "property": "width", "duration": "300ms", "timingFunction": "cubic-bezier(0,0,0.15,1)" } } };
-  function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$B = { "l-progress": { "": { "flexDirection": "row" } }, "l-progress-bg": { "": { "height": 4, "position": "relative", "backgroundColor": "#3283ff", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "transitionProperty": "width", "transitionDuration": "300ms", "transitionTimingFunction": "cubic-bezier(0,0,0.15,1)", "justifyContent": "center" }, ".l-progress--inner ": { "height": 20 } }, "l-progress__inner-text": { ".l-progress-bg ": { "paddingTop": 0, "paddingRight": "8rpx", "paddingBottom": 0, "paddingLeft": "8rpx", "color": "#FFFFFF", "fontSize": 10, "whiteSpace": "nowrap" } }, "l-progress__inner": { "": { "flex": 1, "alignSelf": "center", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "backgroundColor": "rgba(0,0,0,0.06)" } }, "@TRANSITION": { "l-progress-bg": { "property": "width", "duration": "300ms", "timingFunction": "cubic-bezier(0,0,0.15,1)" } } };
+  function _sfc_render$D(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -5987,7 +5987,7 @@
       /* CLASS */
     );
   }
-  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["styles", [_style_0$u]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-progress/components/l-progress/l-progress.uvue"]]);
+  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["styles", [_style_0$B]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-progress/components/l-progress/l-progress.uvue"]]);
   const { registerUTSInterface, initUTSProxyClass, initUTSProxyFunction, initUTSPackageName, initUTSIndexClassName, initUTSClassName } = uni;
   const name$3 = "limeClipboard";
   const moduleName = "lime-clipboard 剪贴板";
@@ -6032,7 +6032,7 @@
       delete this.__props__;
     }
   }
-  const _sfc_main$u = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$D = /* @__PURE__ */ vue.defineComponent({
     __name: "rechargeDataTraffic",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -6130,12 +6130,12 @@
       return __returned__;
     }
   });
-  const _style_0$t = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "device-total": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } }, "device-total-title": { ".container .device-total ": { "display": "flex", "flexDirection": "row", "justifyContent": "center", "alignItems": "center" } }, "device-total-title-color": { ".container .device-total .device-total-title ": { "color": "#999999" } }, "device-info-box": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "30rpx", "paddingRight": "40rpx", "paddingBottom": "30rpx", "paddingLeft": "40rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0, "display": "flex", "flexDirection": "column" } }, "device-title": { ".container .device-info-box ": { "fontSize": "35rpx" } }, "device-info-item": { ".container .device-info-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "marginTop": "20rpx" } }, "iccid-info": { ".container .device-info-box .device-info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "add-style": { ".container .device-info-box ": { "paddingBottom": "60rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#999999", "marginBottom": "60rpx" } }, "progess": { ".container .device-info-box ": { "marginTop": "10rpx", "marginRight": 0, "marginBottom": "10rpx", "marginLeft": 0 } }, "btn-box": { ".container ": { "marginTop": "60rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
-  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_l_progress = resolveEasycom(vue.resolveDynamicComponent("l-progress"), __easycom_1$4);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
-    const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_3$3);
+  const _style_0$A = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "device-total": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } }, "device-total-title": { ".container .device-total ": { "display": "flex", "flexDirection": "row", "justifyContent": "center", "alignItems": "center" } }, "device-total-title-color": { ".container .device-total .device-total-title ": { "color": "#999999" } }, "device-info-box": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "30rpx", "paddingRight": "40rpx", "paddingBottom": "30rpx", "paddingLeft": "40rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0, "display": "flex", "flexDirection": "column" } }, "device-title": { ".container .device-info-box ": { "fontSize": "35rpx" } }, "device-info-item": { ".container .device-info-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "marginTop": "20rpx" } }, "iccid-info": { ".container .device-info-box .device-info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "add-style": { ".container .device-info-box ": { "paddingBottom": "60rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#999999", "marginBottom": "60rpx" } }, "progess": { ".container .device-info-box ": { "marginTop": "10rpx", "marginRight": 0, "marginBottom": "10rpx", "marginLeft": 0 } }, "btn-box": { ".container ": { "marginTop": "60rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
+  function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$5);
+    const _component_l_progress = resolveEasycom(vue.resolveDynamicComponent("l-progress"), __easycom_1$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_3$4);
     const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_4$2);
     const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_4$1);
     const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_6);
@@ -6313,7 +6313,7 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMineRechargeDataTrafficRechargeDataTraffic = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["styles", [_style_0$t]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue"]]);
+  const PagesMineRechargeDataTrafficRechargeDataTraffic = /* @__PURE__ */ _export_sfc(_sfc_main$D, [["render", _sfc_render$C], ["styles", [_style_0$A]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue"]]);
   class RGB extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -8109,7 +8109,7 @@
     return state;
   }
   const name$2 = "l-loading";
-  const _sfc_main$t = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$C = /* @__PURE__ */ vue.defineComponent({
     __name: "l-loading",
     props: {
       color: { type: String, required: false },
@@ -8176,8 +8176,8 @@
       return __returned__;
     }
   });
-  const _style_0$s = { "l-loading": { "": { "display": "flex", "position": "relative", "flexDirection": "row", "alignItems": "center", "borderLeftColor": "#3283ff", "borderLeftWidth": 0 }, ".is-vertical": { "flexDirection": "column" } }, "l-loading__text": { "": { "marginLeft": "16rpx", "color": "rgba(0,0,0,0.45)", "fontSize": 14 }, ".l-loading.is-vertical ": { "marginTop": "8rpx", "marginRight": 0, "marginBottom": 0, "marginLeft": 0 } }, "l-loading__ball": { "": { "width": "40rpx", "height": "40rpx" } }, "l-loading__circular": { "": { "width": "40rpx", "height": "40rpx" } }, "l-loading__spinner": { "": { "width": "40rpx", "height": "40rpx" } } };
-  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$z = { "l-loading": { "": { "display": "flex", "position": "relative", "flexDirection": "row", "alignItems": "center", "borderLeftColor": "#3283ff", "borderLeftWidth": 0 }, ".is-vertical": { "flexDirection": "column" } }, "l-loading__text": { "": { "marginLeft": "16rpx", "color": "rgba(0,0,0,0.45)", "fontSize": 14 }, ".l-loading.is-vertical ": { "marginTop": "8rpx", "marginRight": 0, "marginBottom": 0, "marginLeft": 0 } }, "l-loading__ball": { "": { "width": "40rpx", "height": "40rpx" } }, "l-loading__circular": { "": { "width": "40rpx", "height": "40rpx" } }, "l-loading__spinner": { "": { "width": "40rpx", "height": "40rpx" } } };
+  function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -8219,8 +8219,8 @@
       /* CLASS */
     );
   }
-  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["styles", [_style_0$s]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-loading/components/l-loading/l-loading.uvue"]]);
-  const _sfc_main$s = /* @__PURE__ */ vue.defineComponent(Object.assign({
+  const __easycom_0$4 = /* @__PURE__ */ _export_sfc(_sfc_main$C, [["render", _sfc_render$B], ["styles", [_style_0$z]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-loading/components/l-loading/l-loading.uvue"]]);
+  const _sfc_main$B = /* @__PURE__ */ vue.defineComponent(Object.assign({
     behaviors: ["wx://form-field-button"]
   }, { __name: "l-button", props: {
     ariaLabel: { type: String, required: false },
@@ -8371,11 +8371,11 @@
     Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
     return __returned__;
   } }));
-  const _style_0$r = { "l-button--mini": { "": { "paddingTop": 0, "paddingRight": "16rpx", "paddingBottom": 0, "paddingLeft": "16rpx", "height": "56rpx" }, ".l-button--square": { "width": "56rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "56rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button__content": { ".l-button--mini ": { "fontSize": 12 }, ".l-button--small ": { "fontSize": 14 }, ".l-button--medium ": { "fontSize": 16 }, ".l-button--large ": { "fontSize": 16 }, ".l-button--default ": { "color": "rgba(0,0,0,0.88)" }, ".l-button--primary ": { "color": "#3283ff" }, ".l-button--danger ": { "color": "#FF4D4F" }, ".l-button--info ": { "color": "#3283ff" }, ".l-button--warning ": { "color": "#ffb400" }, ".l-button--success ": { "color": "#34c471" }, ".l-button--solid ": { "color": "#FFFFFF" } }, "l-button--small": { "": { "paddingTop": 0, "paddingRight": "24rpx", "paddingBottom": 0, "paddingLeft": "24rpx", "height": "64rpx" }, ".l-button--square": { "width": "64rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "64rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button--medium": { "": { "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "height": "80rpx" }, ".l-button--square": { "width": "80rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "80rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button--large": { "": { "paddingTop": 0, "paddingRight": "48rpx", "paddingBottom": 0, "paddingLeft": "48rpx", "height": "96rpx" }, ".l-button--square": { "width": "96rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "96rpx", "paddingLeft": 0, "paddingRight": 0 } }, "hover": { ".l-button--default": { "backgroundColor": "#eeeeee" }, ".l-button--default.l-button--solid": { "backgroundColor": "#000000" }, ".l-button--default.l-button--light": { "backgroundColor": "#e7e7e7" }, ".l-button--primary": { "backgroundColor": "#F0F8FF" }, ".l-button--primary.l-button--solid": { "backgroundColor": "#2164d9" }, ".l-button--primary.l-button--light": { "backgroundColor": "#d6ecff" }, ".l-button--danger": { "backgroundColor": "#fff2f0" }, ".l-button--danger.l-button--solid": { "backgroundColor": "#d9363e" }, ".l-button--danger.l-button--light": { "backgroundColor": "#ffccc7" }, ".l-button--info": { "backgroundColor": "#d6ecff" }, ".l-button--info.l-button--solid": { "backgroundColor": "#2164d9" }, ".l-button--info.l-button--light": { "backgroundColor": "#add6ff" }, ".l-button--warning": { "backgroundColor": "#fffce6" }, ".l-button--warning.l-button--solid": { "backgroundColor": "#d99100" }, ".l-button--warning.l-button--light": { "backgroundColor": "#fff0a3" }, ".l-button--success": { "backgroundColor": "#f0fff4" }, ".l-button--success.l-button--solid": { "backgroundColor": "#239e5a" }, ".l-button--success.l-button--light": { "backgroundColor": "#e1f7e7" } }, "l-button--default": { ".l-button--solid": { "backgroundColor": "rgba(0,0,0,0.88)" }, ".l-button--outline": { "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" }, ".l-button--dashed": { "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" }, ".l-button--light": { "backgroundColor": "#eeeeee" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" } }, "l-button--primary": { ".l-button--solid": { "backgroundColor": "#3283ff" }, ".l-button--outline": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--dashed": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--light": { "backgroundColor": "#F0F8FF" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } }, "l-button--danger": { ".l-button--solid": { "backgroundColor": "#FF4D4F" }, ".l-button--outline": { "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" }, ".l-button--dashed": { "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" }, ".l-button--light": { "backgroundColor": "#fff2f0" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" } }, "l-button--info": { ".l-button--solid": { "backgroundColor": "#3283ff" }, ".l-button--outline": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--dashed": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--light": { "backgroundColor": "#d6ecff" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } }, "l-button--warning": { ".l-button--solid": { "backgroundColor": "#ffb400" }, ".l-button--outline": { "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" }, ".l-button--dashed": { "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" }, ".l-button--light": { "backgroundColor": "#fffce6" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" } }, "l-button--success": { ".l-button--solid": { "backgroundColor": "#34c471" }, ".l-button--outline": { "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" }, ".l-button--dashed": { "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" }, ".l-button--light": { "backgroundColor": "#f0fff4" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" } }, "l-button": { "": { "opacity": 1, "position": "relative", "alignItems": "center", "justifyContent": "center", "flexDirection": "row", "transitionDuration": "200ms", "transitionProperty": "backgroundColor,opacity,borderColor,width,height", "borderTopLeftRadius": "6rpx", "borderTopRightRadius": "6rpx", "borderBottomRightRadius": "6rpx", "borderBottomLeftRadius": "6rpx" }, ".l-button--disabled": { "opacity": 0.6 } }, "l-button__button": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "borderTopWidth": "medium", "borderRightWidth": "medium", "borderBottomWidth": "medium", "borderLeftWidth": "medium", "borderTopStyle": "none", "borderRightStyle": "none", "borderBottomStyle": "none", "borderLeftStyle": "none", "borderTopColor": "#000000", "borderRightColor": "#000000", "borderBottomColor": "#000000", "borderLeftColor": "#000000", "backgroundColor": "rgba(0,0,0,0)" } }, "l-button--block": { "": { "width": "100%", "alignSelf": "auto" } }, "l-button__icon": { ".l-button--solid ": { "color": "#FFFFFF" }, "": { "alignSelf": "center" } }, "l-button--outline": { "": { "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 0.71, "borderRightWidth": 0.71, "borderBottomWidth": 0.71, "borderLeftWidth": 0.71 } }, "l-button--dashed": { "": { "borderTopStyle": "dashed", "borderRightStyle": "dashed", "borderBottomStyle": "dashed", "borderLeftStyle": "dashed", "borderTopWidth": 0.71, "borderRightWidth": 0.71, "borderBottomWidth": 0.71, "borderLeftWidth": 0.71 } }, "l-button__loading": { "": { "alignSelf": "center" } }, "l-button--round": { "": { "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999 } }, "l-button--circle": { "": { "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999 } }, "gap": { ".l-button ": { "marginLeft": 4 } }, "@TRANSITION": { "l-button": { "duration": "200ms", "property": "backgroundColor,opacity,borderColor,width,height" } } };
-  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$y = { "l-button--mini": { "": { "paddingTop": 0, "paddingRight": "16rpx", "paddingBottom": 0, "paddingLeft": "16rpx", "height": "56rpx" }, ".l-button--square": { "width": "56rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "56rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button__content": { ".l-button--mini ": { "fontSize": 12 }, ".l-button--small ": { "fontSize": 14 }, ".l-button--medium ": { "fontSize": 16 }, ".l-button--large ": { "fontSize": 16 }, ".l-button--default ": { "color": "rgba(0,0,0,0.88)" }, ".l-button--primary ": { "color": "#3283ff" }, ".l-button--danger ": { "color": "#FF4D4F" }, ".l-button--info ": { "color": "#3283ff" }, ".l-button--warning ": { "color": "#ffb400" }, ".l-button--success ": { "color": "#34c471" }, ".l-button--solid ": { "color": "#FFFFFF" } }, "l-button--small": { "": { "paddingTop": 0, "paddingRight": "24rpx", "paddingBottom": 0, "paddingLeft": "24rpx", "height": "64rpx" }, ".l-button--square": { "width": "64rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "64rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button--medium": { "": { "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "height": "80rpx" }, ".l-button--square": { "width": "80rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "80rpx", "paddingLeft": 0, "paddingRight": 0 } }, "l-button--large": { "": { "paddingTop": 0, "paddingRight": "48rpx", "paddingBottom": 0, "paddingLeft": "48rpx", "height": "96rpx" }, ".l-button--square": { "width": "96rpx", "paddingLeft": 0, "paddingRight": 0 }, ".l-button--circle": { "width": "96rpx", "paddingLeft": 0, "paddingRight": 0 } }, "hover": { ".l-button--default": { "backgroundColor": "#eeeeee" }, ".l-button--default.l-button--solid": { "backgroundColor": "#000000" }, ".l-button--default.l-button--light": { "backgroundColor": "#e7e7e7" }, ".l-button--primary": { "backgroundColor": "#F0F8FF" }, ".l-button--primary.l-button--solid": { "backgroundColor": "#2164d9" }, ".l-button--primary.l-button--light": { "backgroundColor": "#d6ecff" }, ".l-button--danger": { "backgroundColor": "#fff2f0" }, ".l-button--danger.l-button--solid": { "backgroundColor": "#d9363e" }, ".l-button--danger.l-button--light": { "backgroundColor": "#ffccc7" }, ".l-button--info": { "backgroundColor": "#d6ecff" }, ".l-button--info.l-button--solid": { "backgroundColor": "#2164d9" }, ".l-button--info.l-button--light": { "backgroundColor": "#add6ff" }, ".l-button--warning": { "backgroundColor": "#fffce6" }, ".l-button--warning.l-button--solid": { "backgroundColor": "#d99100" }, ".l-button--warning.l-button--light": { "backgroundColor": "#fff0a3" }, ".l-button--success": { "backgroundColor": "#f0fff4" }, ".l-button--success.l-button--solid": { "backgroundColor": "#239e5a" }, ".l-button--success.l-button--light": { "backgroundColor": "#e1f7e7" } }, "l-button--default": { ".l-button--solid": { "backgroundColor": "rgba(0,0,0,0.88)" }, ".l-button--outline": { "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" }, ".l-button--dashed": { "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" }, ".l-button--light": { "backgroundColor": "#eeeeee" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#c5c5c5", "borderRightColor": "#c5c5c5", "borderBottomColor": "#c5c5c5", "borderLeftColor": "#c5c5c5" } }, "l-button--primary": { ".l-button--solid": { "backgroundColor": "#3283ff" }, ".l-button--outline": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--dashed": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--light": { "backgroundColor": "#F0F8FF" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } }, "l-button--danger": { ".l-button--solid": { "backgroundColor": "#FF4D4F" }, ".l-button--outline": { "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" }, ".l-button--dashed": { "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" }, ".l-button--light": { "backgroundColor": "#fff2f0" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#FF4D4F", "borderRightColor": "#FF4D4F", "borderBottomColor": "#FF4D4F", "borderLeftColor": "#FF4D4F" } }, "l-button--info": { ".l-button--solid": { "backgroundColor": "#3283ff" }, ".l-button--outline": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--dashed": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" }, ".l-button--light": { "backgroundColor": "#d6ecff" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } }, "l-button--warning": { ".l-button--solid": { "backgroundColor": "#ffb400" }, ".l-button--outline": { "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" }, ".l-button--dashed": { "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" }, ".l-button--light": { "backgroundColor": "#fffce6" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#ffb400", "borderRightColor": "#ffb400", "borderBottomColor": "#ffb400", "borderLeftColor": "#ffb400" } }, "l-button--success": { ".l-button--solid": { "backgroundColor": "#34c471" }, ".l-button--outline": { "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" }, ".l-button--dashed": { "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" }, ".l-button--light": { "backgroundColor": "#f0fff4" }, ".l-button--ghost": { "backgroundColor": "rgba(0,0,0,0)", "borderTopColor": "#34c471", "borderRightColor": "#34c471", "borderBottomColor": "#34c471", "borderLeftColor": "#34c471" } }, "l-button": { "": { "opacity": 1, "position": "relative", "alignItems": "center", "justifyContent": "center", "flexDirection": "row", "transitionDuration": "200ms", "transitionProperty": "backgroundColor,opacity,borderColor,width,height", "borderTopLeftRadius": "6rpx", "borderTopRightRadius": "6rpx", "borderBottomRightRadius": "6rpx", "borderBottomLeftRadius": "6rpx" }, ".l-button--disabled": { "opacity": 0.6 } }, "l-button__button": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "borderTopWidth": "medium", "borderRightWidth": "medium", "borderBottomWidth": "medium", "borderLeftWidth": "medium", "borderTopStyle": "none", "borderRightStyle": "none", "borderBottomStyle": "none", "borderLeftStyle": "none", "borderTopColor": "#000000", "borderRightColor": "#000000", "borderBottomColor": "#000000", "borderLeftColor": "#000000", "backgroundColor": "rgba(0,0,0,0)" } }, "l-button--block": { "": { "width": "100%", "alignSelf": "auto" } }, "l-button__icon": { ".l-button--solid ": { "color": "#FFFFFF" }, "": { "alignSelf": "center" } }, "l-button--outline": { "": { "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 0.71, "borderRightWidth": 0.71, "borderBottomWidth": 0.71, "borderLeftWidth": 0.71 } }, "l-button--dashed": { "": { "borderTopStyle": "dashed", "borderRightStyle": "dashed", "borderBottomStyle": "dashed", "borderLeftStyle": "dashed", "borderTopWidth": 0.71, "borderRightWidth": 0.71, "borderBottomWidth": 0.71, "borderLeftWidth": 0.71 } }, "l-button__loading": { "": { "alignSelf": "center" } }, "l-button--round": { "": { "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999 } }, "l-button--circle": { "": { "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999 } }, "gap": { ".l-button ": { "marginLeft": 4 } }, "@TRANSITION": { "l-button": { "duration": "200ms", "property": "backgroundColor,opacity,borderColor,width,height" } } };
+  function _sfc_render$A(_ctx, _cache, $props, $setup, $data, $options) {
     var _a;
     const _component_l_loading = resolveEasycom(vue.resolveDynamicComponent("l-loading"), __easycom_0$4);
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["l-button", $setup.classes]),
       ref: "rootRef",
@@ -8428,7 +8428,7 @@
       }, null, 40, ["disabled", "form-type", "open-type"])) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class", "hover-start-time", "hover-stay-time", "data-disabled"]);
   }
-  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["styles", [_style_0$r]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-button/components/l-button/l-button.uvue"]]);
+  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$B, [["render", _sfc_render$A], ["styles", [_style_0$y]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-button/components/l-button/l-button.uvue"]]);
   function characterLimit(type, char, max) {
     const str = "".concat(char);
     if (str.length == 0) {
@@ -8471,7 +8471,7 @@
       characters: str
     };
   }
-  const _sfc_main$r = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$A = /* @__PURE__ */ vue.defineComponent({
     __name: "l-search",
     props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
       action: { type: String, required: false },
@@ -8599,10 +8599,10 @@
       return __returned__;
     }
   });
-  const _style_0$q = { "l-search": { "": { "width": "100%", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "l-search__content": { "": { "flex": 1, "alignItems": "center", "flexDirection": "row", "boxSizing": "border-box", "height": "80rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "rgba(0,0,0,0.04)", "borderRightColor": "rgba(0,0,0,0.04)", "borderBottomColor": "rgba(0,0,0,0.04)", "borderLeftColor": "rgba(0,0,0,0.04)", "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.04)", "paddingTop": "16rpx", "paddingRight": "24rpx", "paddingBottom": "16rpx", "paddingLeft": "24rpx" } }, "l-search__content--focused": { "": { "borderTopColor": "rgba(0,0,0,0.04)", "borderRightColor": "rgba(0,0,0,0.04)", "borderBottomColor": "rgba(0,0,0,0.04)", "borderLeftColor": "rgba(0,0,0,0.04)" } }, "l-search__content--round": { "": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 } }, "l-search__content--square": { "": { "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx" } }, "l-search__keyword": { "": { "flex": 1, "color": "rgba(0,0,0,0.88)", "fontSize": 16, "paddingLeft": "10rpx" } }, "l-search__placeholder": { "": { "color": "rgba(0,0,0,0.45)" } }, "l-search__placeholder--center": { "": { "textAlign": "center" } }, "l-search__icon": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-search__clear": { "": { "position": "relative", "marginLeft": 10 } }, "l-search__clear-icon": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-search__clear--right": { "": { "marginRight": 10 } }, "l-search__action": { "": { "marginLeft": "30rpx", "fontSize": 16, "color": "#3283ff" } } };
-  function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$x = { "l-search": { "": { "width": "100%", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "l-search__content": { "": { "flex": 1, "alignItems": "center", "flexDirection": "row", "boxSizing": "border-box", "height": "80rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "rgba(0,0,0,0.04)", "borderRightColor": "rgba(0,0,0,0.04)", "borderBottomColor": "rgba(0,0,0,0.04)", "borderLeftColor": "rgba(0,0,0,0.04)", "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.04)", "paddingTop": "16rpx", "paddingRight": "24rpx", "paddingBottom": "16rpx", "paddingLeft": "24rpx" } }, "l-search__content--focused": { "": { "borderTopColor": "rgba(0,0,0,0.04)", "borderRightColor": "rgba(0,0,0,0.04)", "borderBottomColor": "rgba(0,0,0,0.04)", "borderLeftColor": "rgba(0,0,0,0.04)" } }, "l-search__content--round": { "": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 } }, "l-search__content--square": { "": { "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx" } }, "l-search__keyword": { "": { "flex": 1, "color": "rgba(0,0,0,0.88)", "fontSize": 16, "paddingLeft": "10rpx" } }, "l-search__placeholder": { "": { "color": "rgba(0,0,0,0.45)" } }, "l-search__placeholder--center": { "": { "textAlign": "center" } }, "l-search__icon": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-search__clear": { "": { "position": "relative", "marginLeft": 10 } }, "l-search__clear-icon": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-search__clear--right": { "": { "marginRight": 10 } }, "l-search__action": { "": { "marginLeft": "30rpx", "fontSize": 16, "color": "#3283ff" } } };
+  function _sfc_render$z(_ctx, _cache, $props, $setup, $data, $options) {
     var _a;
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -8701,8 +8701,8 @@
       /* STYLE */
     );
   }
-  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["styles", [_style_0$q]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-search/components/l-search/l-search.uvue"]]);
-  const _sfc_main$q = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_1$3 = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", _sfc_render$z], ["styles", [_style_0$x]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-search/components/l-search/l-search.uvue"]]);
+  const _sfc_main$z = /* @__PURE__ */ vue.defineComponent({
     __name: "l-tab-panel",
     props: {
       badge: { type: null, required: false },
@@ -8737,8 +8737,8 @@
       return __returned__;
     }
   });
-  const _style_0$p = { "l-tab__panel": { "": { "width": "100%", "flex": 1, "flexShrink": 0, "boxSizing": "border-box" } } };
-  function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$w = { "l-tab__panel": { "": { "width": "100%", "flex": 1, "flexShrink": 0, "boxSizing": "border-box" } } };
+  function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: "l-tab__panel",
       "aria-role": "tabpanel"
@@ -8746,7 +8746,7 @@
       vue.renderSlot(_ctx.$slots, "default")
     ]);
   }
-  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["styles", [_style_0$p]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-tabs/components/l-tab-panel/l-tab-panel.uvue"]]);
+  const __easycom_1$2 = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", _sfc_render$y], ["styles", [_style_0$w]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-tabs/components/l-tab-panel/l-tab-panel.uvue"]]);
   function toBoolean(value) {
     return value != null && value != void 0;
   }
@@ -8754,7 +8754,7 @@
     return val.startsWith("-") ? val.replace("-", "") : "-".concat(val);
   }
   const name$1 = "l-badge";
-  const _sfc_main$p = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$y = /* @__PURE__ */ vue.defineComponent({
     __name: "l-badge",
     props: {
       color: { type: String, required: false },
@@ -8838,8 +8838,8 @@
       return __returned__;
     }
   });
-  const _style_0$o = { "l-badge": { "": { "boxSizing": "border-box", "paddingTop": 0, "paddingRight": "8rpx", "paddingBottom": 0, "paddingLeft": "8rpx", "color": "#FFFFFF", "fontWeight": "bold", "fontSize": 12, "fontFamily": "-apple-system-font, helvetica neue, arial, sans-serif", "lineHeight": 1.2, "textAlign": "center", "backgroundColor": "#FF4D4F", "borderTopWidth": "1rpx", "borderRightWidth": "1rpx", "borderBottomWidth": "1rpx", "borderLeftWidth": "1rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#FFFFFF", "borderRightColor": "#FFFFFF", "borderBottomColor": "#FFFFFF", "borderLeftColor": "#FFFFFF", "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999, "overflow": "visible" } }, "l-badge--fixed": { "": { "position": "absolute", "transformOrigin": "100%" }, ".l-badge--offscreen": { "position": "fixed", "opacity": 0.13, "top": -1e10 } }, "l-badge--top-left": { "": { "top": 0, "left": 0, "transform": "translate(-50%, -50%)" } }, "l-badge--top-right": { "": { "top": 0, "right": 0, "transform": "translate(50%, -50%)" } }, "l-badge--bottom-left": { "": { "bottom": 0, "left": 0, "transform": "translate(-50%, 50%)" } }, "l-badge--bottom-right": { "": { "bottom": 0, "right": 0, "transform": "translate(50%, 50%)" } }, "l-badge--dot": { "": { "width": "16rpx", "minWidth": 0, "height": "16rpx", "backgroundImage": "none", "backgroundColor": "#FF4D4F", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0, "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "overflow": "visible" } }, "l-badge__wrapper": { "": { "position": "relative", "overflow": "visible" } } };
-  function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$v = { "l-badge": { "": { "boxSizing": "border-box", "paddingTop": 0, "paddingRight": "8rpx", "paddingBottom": 0, "paddingLeft": "8rpx", "color": "#FFFFFF", "fontWeight": "bold", "fontSize": 12, "fontFamily": "-apple-system-font, helvetica neue, arial, sans-serif", "lineHeight": 1.2, "textAlign": "center", "backgroundColor": "#FF4D4F", "borderTopWidth": "1rpx", "borderRightWidth": "1rpx", "borderBottomWidth": "1rpx", "borderLeftWidth": "1rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#FFFFFF", "borderRightColor": "#FFFFFF", "borderBottomColor": "#FFFFFF", "borderLeftColor": "#FFFFFF", "borderTopLeftRadius": 999, "borderTopRightRadius": 999, "borderBottomRightRadius": 999, "borderBottomLeftRadius": 999, "overflow": "visible" } }, "l-badge--fixed": { "": { "position": "absolute", "transformOrigin": "100%" }, ".l-badge--offscreen": { "position": "fixed", "opacity": 0.13, "top": -1e10 } }, "l-badge--top-left": { "": { "top": 0, "left": 0, "transform": "translate(-50%, -50%)" } }, "l-badge--top-right": { "": { "top": 0, "right": 0, "transform": "translate(50%, -50%)" } }, "l-badge--bottom-left": { "": { "bottom": 0, "left": 0, "transform": "translate(-50%, 50%)" } }, "l-badge--bottom-right": { "": { "bottom": 0, "right": 0, "transform": "translate(50%, 50%)" } }, "l-badge--dot": { "": { "width": "16rpx", "minWidth": 0, "height": "16rpx", "backgroundImage": "none", "backgroundColor": "#FF4D4F", "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99, "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0, "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "overflow": "visible" } }, "l-badge__wrapper": { "": { "position": "relative", "overflow": "visible" } } };
+  function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
     return _ctx.$slots["default"] != null ? (vue.openBlock(), vue.createElementBlock("view", {
       key: 0,
       class: "l-badge__wrapper"
@@ -8905,7 +8905,7 @@
       /* CLASS, STYLE */
     )) : vue.createCommentVNode("v-if", true);
   }
-  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["styles", [_style_0$o]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-badge/components/l-badge/l-badge.uvue"]]);
+  const __easycom_1$1 = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", _sfc_render$x], ["styles", [_style_0$v]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-badge/components/l-badge/l-badge.uvue"]]);
   function calcScrollOffset(containerWidth, targetLeft, targetWidth, offset) {
     return offset + targetLeft - 1 / 2 * containerWidth + targetWidth / 2;
   }
@@ -8987,7 +8987,7 @@
       isTap
     };
   }
-  const _sfc_main$o = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$x = /* @__PURE__ */ vue.defineComponent({
     __name: "l-tabs",
     props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
       list: { type: Array, required: false },
@@ -9349,8 +9349,8 @@
       return __returned__;
     }
   });
-  const _style_0$n = { "l-tabs": { "": { "position": "relative", "backgroundImage": "none", "backgroundColor": "#FFFFFF" } }, "l-tabs__wrap": { "": { "flex": 1, "backgroundImage": "none", "backgroundColor": "#FFFFFF", "flexDirection": "row" } }, "l-tabs__scroll": { "": { "position": "relative", "flex": 1, "flexDirection": "row" } }, "l-tabs__scroll--split": { "": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#eeeeee" } }, "l-tabs__nav": { "": { "flexDirection": "row", "position": "relative", "flexWrap": "nowrap", "alignItems": "center" } }, "l-tabs__track": { "": { "position": "absolute", "zIndex": 1, "transitionDuration": "0.3s", "backgroundColor": "#3283ff", "left": 0, "bottom": "1rpx", "width": "32rpx", "height": "6rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx" } }, "l-tabs__content": { "": { "width": "100%", "overflow": "hidden" } }, "l-tabs__content-inner": { "": { "display": "flex", "flexDirection": "row", "flex": 1, "overflow": "visible", "opacity": 0 }, ".l-tabs__content--animated ": { "position": "relative", "width": "100%", "height": "100%", "transitionProperty": "transform" } }, "l-tabs__item": { "": { "position": "relative", "flex": "none", "alignItems": "center", "justifyContent": "center", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "boxSizing": "border-box", "overflow": "hidden", "height": "96rpx" } }, "l-tabs__item-text": { "": { "fontWeight": "400", "fontSize": 14, "whiteSpace": "nowrap", "transitionProperty": "color", "transitionDuration": "300ms", "color": "rgba(0,0,0,0.88)" } }, "l-tabs__item-text--large": { "": { "fontSize": 16 } }, "l-tabs__item-text--active": { "": { "fontWeight": "700", "color": "#3283ff" } }, "l-tabs__item-text--disabled": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-tabs__item--evenly": { "": { "flex": 1 } }, "@TRANSITION": { "l-tabs__track": { "duration": "0.3s" }, "l-tabs__content-inner": { "property": "transform" }, "l-tabs__item-text": { "property": "color", "duration": "300ms" } } };
-  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$u = { "l-tabs": { "": { "position": "relative", "backgroundImage": "none", "backgroundColor": "#FFFFFF" } }, "l-tabs__wrap": { "": { "flex": 1, "backgroundImage": "none", "backgroundColor": "#FFFFFF", "flexDirection": "row" } }, "l-tabs__scroll": { "": { "position": "relative", "flex": 1, "flexDirection": "row" } }, "l-tabs__scroll--split": { "": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#eeeeee" } }, "l-tabs__nav": { "": { "flexDirection": "row", "position": "relative", "flexWrap": "nowrap", "alignItems": "center" } }, "l-tabs__track": { "": { "position": "absolute", "zIndex": 1, "transitionDuration": "0.3s", "backgroundColor": "#3283ff", "left": 0, "bottom": "1rpx", "width": "32rpx", "height": "6rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx" } }, "l-tabs__content": { "": { "width": "100%", "overflow": "hidden" } }, "l-tabs__content-inner": { "": { "display": "flex", "flexDirection": "row", "flex": 1, "overflow": "visible", "opacity": 0 }, ".l-tabs__content--animated ": { "position": "relative", "width": "100%", "height": "100%", "transitionProperty": "transform" } }, "l-tabs__item": { "": { "position": "relative", "flex": "none", "alignItems": "center", "justifyContent": "center", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "boxSizing": "border-box", "overflow": "hidden", "height": "96rpx" } }, "l-tabs__item-text": { "": { "fontWeight": "400", "fontSize": 14, "whiteSpace": "nowrap", "transitionProperty": "color", "transitionDuration": "300ms", "color": "rgba(0,0,0,0.88)" } }, "l-tabs__item-text--large": { "": { "fontSize": 16 } }, "l-tabs__item-text--active": { "": { "fontWeight": "700", "color": "#3283ff" } }, "l-tabs__item-text--disabled": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-tabs__item--evenly": { "": { "flex": 1 } }, "@TRANSITION": { "l-tabs__track": { "duration": "0.3s" }, "l-tabs__content-inner": { "property": "transform" }, "l-tabs__item-text": { "property": "color", "duration": "300ms" } } };
+  function _sfc_render$w(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_badge = resolveEasycom(vue.resolveDynamicComponent("l-badge"), __easycom_1$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "l-tabs" }, [
       vue.createElementVNode(
@@ -9495,8 +9495,8 @@
       )) : vue.createCommentVNode("v-if", true)
     ]);
   }
-  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["styles", [_style_0$n]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-tabs/components/l-tabs/l-tabs.uvue"]]);
-  const _sfc_main$n = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_2$3 = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", _sfc_render$w], ["styles", [_style_0$u]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-tabs/components/l-tabs/l-tabs.uvue"]]);
+  const _sfc_main$w = /* @__PURE__ */ vue.defineComponent({
     __name: "helpCenter",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -9518,13 +9518,13 @@
       return __returned__;
     }
   });
-  const _style_0$m = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "search-bar": { ".container ": { "marginTop": "30rpx", "marginRight": 0, "marginBottom": "30rpx", "marginLeft": 0 } }, "l-tabs": { ".container ": { "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "question-item": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } } };
-  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_button = resolveEasycom(vue.resolveDynamicComponent("l-button"), __easycom_0$3);
+  const _style_0$t = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "search-bar": { ".container ": { "marginTop": "30rpx", "marginRight": 0, "marginBottom": "30rpx", "marginLeft": 0 } }, "l-tabs": { ".container ": { "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "question-item": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } } };
+  function _sfc_render$v(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_button = resolveEasycom(vue.resolveDynamicComponent("l-button"), __easycom_1$4);
     const _component_l_search = resolveEasycom(vue.resolveDynamicComponent("l-search"), __easycom_1$3);
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
     const _component_l_tab_panel = resolveEasycom(vue.resolveDynamicComponent("l-tab-panel"), __easycom_1$2);
-    const _component_l_tabs = resolveEasycom(vue.resolveDynamicComponent("l-tabs"), __easycom_2$1);
+    const _component_l_tabs = resolveEasycom(vue.resolveDynamicComponent("l-tabs"), __easycom_2$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "search-bar" }, [
         vue.createVNode(_component_l_search, {
@@ -9617,10 +9617,10 @@
       ])
     ]);
   }
-  const PagesMineHelpCenterHelpCenter = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["styles", [_style_0$m]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/helpCenter/helpCenter.uvue"]]);
-  const _style_0$l = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "title": { ".container .content ": { "fontSize": "36rpx", "fontWeight": "bold", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "desc": { ".container .content ": { "fontSize": "28rpx", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } } };
-  const _sfc_main$m = {};
-  function _sfc_render$l(_ctx, _cache) {
+  const PagesMineHelpCenterHelpCenter = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", _sfc_render$v], ["styles", [_style_0$t]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/helpCenter/helpCenter.uvue"]]);
+  const _style_0$s = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "title": { ".container .content ": { "fontSize": "36rpx", "fontWeight": "bold", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "desc": { ".container .content ": { "fontSize": "28rpx", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } } };
+  const _sfc_main$v = {};
+  function _sfc_render$u(_ctx, _cache) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", { class: "title" }, " 如何添加设备？ "),
@@ -9628,8 +9628,8 @@
       ])
     ]);
   }
-  const PagesMineHelpCenterQuestionDetailQuestionDetail = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["styles", [_style_0$l]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/helpCenter/questionDetail/questionDetail.uvue"]]);
-  const _sfc_main$l = /* @__PURE__ */ vue.defineComponent({
+  const PagesMineHelpCenterQuestionDetailQuestionDetail = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", _sfc_render$u], ["styles", [_style_0$s]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/helpCenter/questionDetail/questionDetail.uvue"]]);
+  const _sfc_main$u = /* @__PURE__ */ vue.defineComponent({
     __name: "messageDetail",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -9643,8 +9643,8 @@
       return __returned__;
     }
   });
-  const _style_0$k = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "title": { ".container .content ": { "fontSize": "36rpx", "fontWeight": "bold", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "desc": { ".container .content ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } } };
-  function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$r = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "title": { ".container .content ": { "fontSize": "36rpx", "fontWeight": "bold", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "desc": { ".container .content ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } } };
+  function _sfc_render$t(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", { class: "title" }, "标题"),
@@ -9654,7 +9654,7 @@
       ])
     ]);
   }
-  const PagesMessageMessageDetailMessageDetail = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["styles", [_style_0$k]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageDetail/messageDetail.uvue"]]);
+  const PagesMessageMessageDetailMessageDetail = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", _sfc_render$t], ["styles", [_style_0$r]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageDetail/messageDetail.uvue"]]);
   /*!
   * type：组件内props属性参数、事件回调参数、方法参数类型
   * fui-types - v1.0.0 (2023/11/11, 11:07:14 AM)
@@ -10106,7 +10106,7 @@
       delete this.__props__;
     }
   }
-  const _sfc_main$k = vue.defineComponent({
+  const _sfc_main$t = vue.defineComponent({
     name: "fui-checkbox",
     emits: ["change"],
     props: {
@@ -10261,8 +10261,8 @@
       }
     }
   });
-  const _style_0$j = { "fui-checkbox__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "boxSizing": "border-box", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "flexShrink": 0, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-checkbox__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-checkbox__scale-center": { "": { "transformOrigin": "center center" } }, "fui-checkbox__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-checkbox__color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-checkbox__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-checkbox__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-checkbox__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-checkbox__disabled": { "": { "opacity": 0.6 } } };
-  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$q = { "fui-checkbox__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "boxSizing": "border-box", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "flexShrink": 0, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-checkbox__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-checkbox__scale-center": { "": { "transformOrigin": "center center" } }, "fui-checkbox__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-checkbox__color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-checkbox__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-checkbox__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-checkbox__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-checkbox__disabled": { "": { "opacity": 0.6 } } };
+  function _sfc_render$s(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -10287,8 +10287,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["styles", [_style_0$j]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-checkbox/fui-checkbox.uvue"]]);
-  const _sfc_main$j = vue.defineComponent({
+  const __easycom_3$3 = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", _sfc_render$s], ["styles", [_style_0$q]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-checkbox/fui-checkbox.uvue"]]);
+  const _sfc_main$s = vue.defineComponent({
     name: "fui-checkbox-group",
     emits: ["change", "update:modelValue"],
     props: {
@@ -10378,7 +10378,7 @@
       }
     }
   });
-  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$r(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_checkbox_group = vue.resolveComponent("checkbox-group");
     return vue.openBlock(), vue.createBlock(_component_checkbox_group, { name: $props.name }, {
       default: vue.withCtx(() => [
@@ -10388,8 +10388,8 @@
       /* FORWARDED */
     }, 8, ["name"]);
   }
-  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-checkbox-group/fui-checkbox-group.uvue"]]);
-  const _sfc_main$i = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_5 = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", _sfc_render$r], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-checkbox-group/fui-checkbox-group.uvue"]]);
+  const _sfc_main$r = /* @__PURE__ */ vue.defineComponent({
     __name: "TopNavBar",
     props: {
       title: {
@@ -10429,9 +10429,9 @@
       return __returned__;
     }
   });
-  const _style_0$i = { "custom-nav": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "100rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx", "width": "100%" } }, "nav-back": { "": { "width": "45rpx", "height": "45rpx", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "nav-item": { "": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-around" } }, "nav-title": { "": { "color": "#333333", "marginTop": 0, "marginRight": "20rpx", "marginBottom": 0, "marginLeft": "20rpx", "maxWidth": "400rpx", "textAlign": "center", "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap" } }, "nav-actions": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "nav-icon": { "": { "width": "45rpx", "height": "45rpx", "display": "flex", "alignItems": "center", "justifyContent": "center", "position": "relative", "marginLeft": "16rpx" } } };
-  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
+  const _style_0$p = { "custom-nav": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "100rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx", "width": "100%" } }, "nav-back": { "": { "width": "45rpx", "height": "45rpx", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "nav-item": { "": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-around" } }, "nav-title": { "": { "color": "#333333", "marginTop": 0, "marginRight": "20rpx", "marginBottom": 0, "marginLeft": "20rpx", "maxWidth": "400rpx", "textAlign": "center", "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap" } }, "nav-actions": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "nav-icon": { "": { "width": "45rpx", "height": "45rpx", "display": "flex", "alignItems": "center", "justifyContent": "center", "position": "relative", "marginLeft": "16rpx" } } };
+  function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "custom-nav" }, [
       vue.createElementVNode("view", {
         class: "nav-back",
@@ -10463,8 +10463,8 @@
       ])
     ]);
   }
-  const TopNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["styles", [_style_0$i]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/components/TopNavBar.uvue"]]);
-  const _sfc_main$h = /* @__PURE__ */ vue.defineComponent({
+  const TopNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", _sfc_render$q], ["styles", [_style_0$p]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/components/TopNavBar.uvue"]]);
+  const _sfc_main$q = /* @__PURE__ */ vue.defineComponent({
     __name: "login",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -10540,12 +10540,12 @@
     }
   });
   const _imports_0$3 = "/static/login_banner.png";
-  const _style_0$h = { "container": { "": { "height": "100%", "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "longin_banner": { ".container ": { "width": "250rpx", "height": "400rpx", "marginBottom": "20rpx" } }, "content": { ".container ": { "width": "100%" } }, "check-box": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginTop": "20rpx" } }, "fui-text-box": { ".container .content .check-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginLeft": "10rpx" } }, "fui-text": { ".container .content .check-box .fui-text-box ": { "color": "#1296db" } }, "tips": { ".container .content ": { "marginTop": "20rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "40rpx", "paddingRight": "40rpx", "paddingBottom": "40rpx", "paddingLeft": "40rpx" } }, "fui-title__pb": { ".container .fui-scroll__wrap ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } } };
-  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$2);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
-    const _component_fui_checkbox = resolveEasycom(vue.resolveDynamicComponent("fui-checkbox"), __easycom_3$2);
+  const _style_0$o = { "container": { "": { "height": "100%", "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "longin_banner": { ".container ": { "width": "250rpx", "height": "400rpx", "marginBottom": "20rpx" } }, "content": { ".container ": { "width": "100%" } }, "check-box": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginTop": "20rpx" } }, "fui-text-box": { ".container .content .check-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginLeft": "10rpx" } }, "fui-text": { ".container .content .check-box .fui-text-box ": { "color": "#1296db" } }, "tips": { ".container .content ": { "marginTop": "20rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "40rpx", "paddingRight": "40rpx", "paddingBottom": "40rpx", "paddingLeft": "40rpx" } }, "fui-title__pb": { ".container .fui-scroll__wrap ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } } };
+  function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$5);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_checkbox = resolveEasycom(vue.resolveDynamicComponent("fui-checkbox"), __easycom_3$3);
     const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_4$1);
     const _component_fui_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("fui-checkbox-group"), __easycom_5);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$3);
@@ -10748,9 +10748,9 @@
       ])
     ]);
   }
-  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["styles", [_style_0$h]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/login/login.uvue"]]);
+  const PagesLoginLogin = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", _sfc_render$p], ["styles", [_style_0$o]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/login/login.uvue"]]);
   const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$g = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$p = /* @__PURE__ */ vue.defineComponent({
     __name: "messageDeviceDetail",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -10832,9 +10832,9 @@
       return __returned__;
     }
   });
-  const _style_0$g = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
-  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$7);
+  const _style_0$n = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "vedio-box": { ".container ": { "width": "100%" } }, "video": { ".container .vedio-box ": { "width": "100%" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "select": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "10rpx" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "width": "120rpx" } }, "down": { ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "select-item": { ".container .content-box .sub-nav .select ": { "flex": 1, "backgroundColor": "#ffffff", "color": "#333333", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "5rpx", "borderTopRightRadius": "5rpx", "borderBottomRightRadius": "5rpx", "borderBottomLeftRadius": "5rpx", "marginTop": 0, "marginRight": "5rpx", "marginBottom": 0, "marginLeft": "5rpx" } }, "active": { ".container .content-box .sub-nav .select ": { "color": "#ffffff", "backgroundColor": "#1296db" } }, "tab-content": { ".container .content-box ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "20rpx" } }, "tab-pane": { ".container .content-box .tab-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "width": "100%", "marginBottom": "30rpx" } }, "item-content": { ".container .content-box .tab-content .tab-pane ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "item-icon": { ".container .content-box .tab-content .tab-pane .item-content ": { "width": "60rpx", "height": "60rpx" } }, "info": { ".container .content-box .tab-content .tab-pane .item-content ": { "marginLeft": "20rpx" } }, "item-img": { ".container .content-box .tab-content .tab-pane ": { "width": "100rpx", "height": "60rpx" } }, "calendar-box": { ".container ": { "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
+  function _sfc_render$o(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$6);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "vedio-box" }, [
@@ -10870,7 +10870,7 @@
             ),
             vue.createElementVNode("image", {
               class: "down",
-              src: _imports_0$7
+              src: _imports_0$8
             }),
             vue.createElementVNode("text", null, " | ")
           ]),
@@ -10926,7 +10926,7 @@
                 vue.createElementVNode("image", {
                   class: "item-img",
                   mode: "aspectFit",
-                  src: _imports_1$2
+                  src: _imports_0$7
                 })
               ], 8, ["onClick"]);
             }),
@@ -10958,8 +10958,8 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMessageMessageDeviceDetailMessageDeviceDetail = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["styles", [_style_0$g]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageDeviceDetail/messageDeviceDetail.uvue"]]);
-  const _sfc_main$f = vue.defineComponent({
+  const PagesMessageMessageDeviceDetailMessageDeviceDetail = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", _sfc_render$o], ["styles", [_style_0$n]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageDeviceDetail/messageDeviceDetail.uvue"]]);
+  const _sfc_main$o = vue.defineComponent({
     name: "fui-tag",
     emits: ["onclick"],
     props: {
@@ -11049,8 +11049,8 @@
       }
     }
   });
-  const _style_0$f = { "fui-tag__wrap": { "": { "display": "flex", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "rgba(0,0,0,0)", "borderRightColor": "rgba(0,0,0,0)", "borderBottomColor": "rgba(0,0,0,0)", "borderLeftColor": "rgba(0,0,0,0)", "overflow": "hidden", "boxSizing": "border-box" } }, "fui-tag__no-border": { "": { "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0 } }, "fui-tag__text": { "": { "lines": 1, "overflow": "hidden", "textOverflow": "ellipsis" } }, "fui-tag__primary-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-tag_primary-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_success-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_warning-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_danger-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_purple-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag__success-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#09BE4F", "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F" } }, "fui-tag__warning-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFB703", "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703" } }, "fui-tag__danger-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#FF2B2B", "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B" } }, "fui-tag__purple-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#6831FF", "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF" } }, "fui-tag__primary-light": { "": { "!backgroundImage": "none", "!backgroundColor": "#F1F4FA", "!borderTopColor": "#F1F4FA", "!borderRightColor": "#F1F4FA", "!borderBottomColor": "#F1F4FA", "!borderLeftColor": "#F1F4FA" } }, "fui-tag_primary-light": { "": { "!color": "#465CFF" } }, "fui-tag_primary-plain": { "": { "!color": "#465CFF" } }, "fui-tag__success-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(9,190,79,0.05)", "!borderTopColor": "rgba(9,190,79,0.05)", "!borderRightColor": "rgba(9,190,79,0.05)", "!borderBottomColor": "rgba(9,190,79,0.05)", "!borderLeftColor": "rgba(9,190,79,0.05)" } }, "fui-tag_success-light": { "": { "!color": "#09BE4F" } }, "fui-tag_success-plain": { "": { "!color": "#09BE4F" } }, "fui-tag__warning-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(255,183,3,0.1)", "!borderTopColor": "rgba(255,183,3,0.1)", "!borderRightColor": "rgba(255,183,3,0.1)", "!borderBottomColor": "rgba(255,183,3,0.1)", "!borderLeftColor": "rgba(255,183,3,0.1)" } }, "fui-tag_warning-light": { "": { "!color": "#FFB703" } }, "fui-tag_warning-plain": { "": { "!color": "#FFB703" } }, "fui-tag__danger-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(255,43,43,0.05)", "!borderTopColor": "rgba(255,43,43,0.05)", "!borderRightColor": "rgba(255,43,43,0.05)", "!borderBottomColor": "rgba(255,43,43,0.05)", "!borderLeftColor": "rgba(255,43,43,0.05)" } }, "fui-tag_danger-light": { "": { "!color": "#FF2B2B" } }, "fui-tag_danger-plain": { "": { "!color": "#FF2B2B" } }, "fui-tag__purple-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(104,49,255,0.05)", "!borderTopColor": "rgba(104,49,255,0.05)", "!borderRightColor": "rgba(104,49,255,0.05)", "!borderBottomColor": "rgba(104,49,255,0.05)", "!borderLeftColor": "rgba(104,49,255,0.05)" } }, "fui-tag_purple-light": { "": { "!color": "#6831FF" } }, "fui-tag_purple-plain": { "": { "!color": "#6831FF" } }, "fui-tag__primary-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-tag__success-plain": { "": { "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F" } }, "fui-tag__warning-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703" } }, "fui-tag__danger-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B" } }, "fui-tag__purple-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF" } }, "fui-tag__origin-left": { "": { "transformOrigin": "0 center" } }, "fui-tag__origin-right": { "": { "transformOrigin": "100% center" } }, "fui-tag__opacity-active": { "": { "opacity": 0.5 } } };
-  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$m = { "fui-tag__wrap": { "": { "display": "flex", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "rgba(0,0,0,0)", "borderRightColor": "rgba(0,0,0,0)", "borderBottomColor": "rgba(0,0,0,0)", "borderLeftColor": "rgba(0,0,0,0)", "overflow": "hidden", "boxSizing": "border-box" } }, "fui-tag__no-border": { "": { "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0 } }, "fui-tag__text": { "": { "lines": 1, "overflow": "hidden", "textOverflow": "ellipsis" } }, "fui-tag__primary-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-tag_primary-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_success-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_warning-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_danger-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag_purple-dark": { "": { "!color": "#FFFFFF" } }, "fui-tag__success-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#09BE4F", "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F" } }, "fui-tag__warning-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFB703", "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703" } }, "fui-tag__danger-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#FF2B2B", "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B" } }, "fui-tag__purple-dark": { "": { "!backgroundImage": "none", "!backgroundColor": "#6831FF", "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF" } }, "fui-tag__primary-light": { "": { "!backgroundImage": "none", "!backgroundColor": "#F1F4FA", "!borderTopColor": "#F1F4FA", "!borderRightColor": "#F1F4FA", "!borderBottomColor": "#F1F4FA", "!borderLeftColor": "#F1F4FA" } }, "fui-tag_primary-light": { "": { "!color": "#465CFF" } }, "fui-tag_primary-plain": { "": { "!color": "#465CFF" } }, "fui-tag__success-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(9,190,79,0.05)", "!borderTopColor": "rgba(9,190,79,0.05)", "!borderRightColor": "rgba(9,190,79,0.05)", "!borderBottomColor": "rgba(9,190,79,0.05)", "!borderLeftColor": "rgba(9,190,79,0.05)" } }, "fui-tag_success-light": { "": { "!color": "#09BE4F" } }, "fui-tag_success-plain": { "": { "!color": "#09BE4F" } }, "fui-tag__warning-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(255,183,3,0.1)", "!borderTopColor": "rgba(255,183,3,0.1)", "!borderRightColor": "rgba(255,183,3,0.1)", "!borderBottomColor": "rgba(255,183,3,0.1)", "!borderLeftColor": "rgba(255,183,3,0.1)" } }, "fui-tag_warning-light": { "": { "!color": "#FFB703" } }, "fui-tag_warning-plain": { "": { "!color": "#FFB703" } }, "fui-tag__danger-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(255,43,43,0.05)", "!borderTopColor": "rgba(255,43,43,0.05)", "!borderRightColor": "rgba(255,43,43,0.05)", "!borderBottomColor": "rgba(255,43,43,0.05)", "!borderLeftColor": "rgba(255,43,43,0.05)" } }, "fui-tag_danger-light": { "": { "!color": "#FF2B2B" } }, "fui-tag_danger-plain": { "": { "!color": "#FF2B2B" } }, "fui-tag__purple-light": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(104,49,255,0.05)", "!borderTopColor": "rgba(104,49,255,0.05)", "!borderRightColor": "rgba(104,49,255,0.05)", "!borderBottomColor": "rgba(104,49,255,0.05)", "!borderLeftColor": "rgba(104,49,255,0.05)" } }, "fui-tag_purple-light": { "": { "!color": "#6831FF" } }, "fui-tag_purple-plain": { "": { "!color": "#6831FF" } }, "fui-tag__primary-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-tag__success-plain": { "": { "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F" } }, "fui-tag__warning-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703" } }, "fui-tag__danger-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B" } }, "fui-tag__purple-plain": { "": { "!backgroundImage": "none", "!backgroundColor": "rgba(0,0,0,0)", "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF" } }, "fui-tag__origin-left": { "": { "transformOrigin": "0 center" } }, "fui-tag__origin-right": { "": { "transformOrigin": "100% center" } }, "fui-tag__opacity-active": { "": { "opacity": 0.5 } } };
+  function _sfc_render$n(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["fui-tag__wrap", [$props.originLeft ? "fui-tag__origin-left" : "", $props.originRight ? "fui-tag__origin-right" : "", $props.background == "" ? "fui-tag__".concat($props.type, "-").concat($props.theme) : "", $props.background != "" && $props.borderColor == "" || !$props.isBorder ? "fui-tag__no-border" : ""]]),
       style: vue.normalizeStyle({ background: $props.background, borderColor: $props.borderColor, transform: "scale(".concat($props.scaleRatio, ")"), borderRadius: "".concat($props.radius, "rpx"), padding: $props.padding, marginTop: "".concat($props.marginTop, "rpx"), marginRight: "".concat($props.marginRight, "rpx"), marginBottom: "".concat($props.marginBottom, "rpx"), marginLeft: "".concat($props.marginLeft, "rpx") }),
@@ -11072,7 +11072,7 @@
       vue.renderSlot(_ctx.$slots, "default")
     ], 14, ["hover-class"]);
   }
-  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["styles", [_style_0$f]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-tag/fui-tag.uvue"]]);
+  const __easycom_0$3 = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", _sfc_render$n], ["styles", [_style_0$m]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-tag/fui-tag.uvue"]]);
   class msgType extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -11100,7 +11100,7 @@
       delete this.__props__;
     }
   }
-  const _sfc_main$e = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$n = /* @__PURE__ */ vue.defineComponent({
     __name: "messageSystem",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -11144,10 +11144,10 @@
       return __returned__;
     }
   });
-  const _style_0$e = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#f5f5f5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row" } }, "unread": { ".container .content .item ": { "width": "20rpx", "height": "20rpx", "marginRight": "10rpx" } }, "item-content": { ".container .content .item ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1", "paddingBottom": "20rpx", "marginBottom": "20rpx", "flex": 1 } }, "item-content-bottom": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "tag-time": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "fui-tag__wrap": { ".container .content .item .item-content .tag-time ": { "!width": "70rpx", "!height": "40rpx", "!paddingTop": "5rpx", "!paddingRight": "10rpx", "!paddingBottom": "5rpx", "!paddingLeft": "10rpx", "!marginBottom": 0 } }, "fui-tag__text": { ".container .content .item .item-content .tag-time .fui-tag__wrap ": { "!fontSize": "22rpx" } } };
-  function _sfc_render$d(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_tag = resolveEasycom(vue.resolveDynamicComponent("fui-tag"), __easycom_0$2);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
+  const _style_0$l = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#f5f5f5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row" } }, "unread": { ".container .content .item ": { "width": "20rpx", "height": "20rpx", "marginRight": "10rpx" } }, "item-content": { ".container .content .item ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1", "paddingBottom": "20rpx", "marginBottom": "20rpx", "flex": 1 } }, "item-content-bottom": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "tag-time": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "fui-tag__wrap": { ".container .content .item .item-content .tag-time ": { "!width": "70rpx", "!height": "40rpx", "!paddingTop": "5rpx", "!paddingRight": "10rpx", "!paddingBottom": "5rpx", "!paddingLeft": "10rpx", "!marginBottom": 0 } }, "fui-tag__text": { ".container .content .item .item-content .tag-time .fui-tag__wrap ": { "!fontSize": "22rpx" } } };
+  function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_tag = resolveEasycom(vue.resolveDynamicComponent("fui-tag"), __easycom_0$3);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         (vue.openBlock(true), vue.createElementBlock(
@@ -11212,7 +11212,7 @@
       ])
     ]);
   }
-  const PagesMessageMessageSystemMessageSystem = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["styles", [_style_0$e]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageSystem/messageSystem.uvue"]]);
+  const PagesMessageMessageSystemMessageSystem = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", _sfc_render$m], ["styles", [_style_0$l]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/messageSystem/messageSystem.uvue"]]);
   class tabItem extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -11267,7 +11267,7 @@
       delete this.__props__;
     }
   }
-  const _sfc_main$d = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$m = /* @__PURE__ */ vue.defineComponent({
     __name: "myOrders",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -11365,11 +11365,11 @@
       return __returned__;
     }
   });
-  const _style_0$d = { "container": { "": { "width": "100%", "height": "100%", "backgroundColor": "#F5F5F5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "l-tabs": { ".container ": { "!backgroundColor": "rgba(0,0,0,0)" } }, "list-item": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "marginTop": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "title-state": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "date-price": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "device-type": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "title-style": { ".container .list-item .title-state ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .date-price ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .device-type ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" } }, "state-style": { ".container .list-item .title-state ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .date-price ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .device-type ": { "fontSize": "24rpx", "color": "#FF5722" } }, "price": { ".container .list-item .date-price ": { "fontSize": "38rpx" } }, "btn": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } } };
-  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
+  const _style_0$k = { "container": { "": { "width": "100%", "height": "100%", "backgroundColor": "#F5F5F5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "l-tabs": { ".container ": { "!backgroundColor": "rgba(0,0,0,0)" } }, "list-item": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "marginTop": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "title-state": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "date-price": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "device-type": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "title-style": { ".container .list-item .title-state ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .date-price ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .device-type ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" } }, "state-style": { ".container .list-item .title-state ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .date-price ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .device-type ": { "fontSize": "24rpx", "color": "#FF5722" } }, "price": { ".container .list-item .date-price ": { "fontSize": "38rpx" } }, "btn": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } } };
+  function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
     const _component_l_tab_panel = resolveEasycom(vue.resolveDynamicComponent("l-tab-panel"), __easycom_1$2);
-    const _component_l_tabs = resolveEasycom(vue.resolveDynamicComponent("l-tabs"), __easycom_2$1);
+    const _component_l_tabs = resolveEasycom(vue.resolveDynamicComponent("l-tabs"), __easycom_2$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createVNode(_component_l_tabs, {
         value: $setup.tabVal,
@@ -11475,8 +11475,8 @@
       }, 8, ["value"])
     ]);
   }
-  const PagesMineMyOrdersMyOrders = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["styles", [_style_0$d]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/myOrders/myOrders.uvue"]]);
-  const _sfc_main$c = /* @__PURE__ */ vue.defineComponent({
+  const PagesMineMyOrdersMyOrders = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", _sfc_render$l], ["styles", [_style_0$k]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/myOrders/myOrders.uvue"]]);
+  const _sfc_main$l = /* @__PURE__ */ vue.defineComponent({
     __name: "orderDetail",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -11490,8 +11490,8 @@
       return __returned__;
     }
   });
-  const _style_0$c = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#F5F5F5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } }, "price": { ".container .content .item ": { "fontSize": "38rpx", "color": "#555555", "fontWeight": "bold" } }, "underline": { ".container .content ": { "borderBottomWidth": "2rpx", "borderBottomStyle": "solid", "borderBottomColor": "#F1f1f1" } } };
-  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$j = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#F5F5F5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } }, "price": { ".container .content .item ": { "fontSize": "38rpx", "color": "#555555", "fontWeight": "bold" } }, "underline": { ".container .content ": { "borderBottomWidth": "2rpx", "borderBottomStyle": "solid", "borderBottomColor": "#F1f1f1" } } };
+  function _sfc_render$k(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", { class: "item" }, [
@@ -11529,7 +11529,7 @@
       ])
     ]);
   }
-  const PagesMineMyOrdersOrderDetailOrderDetail = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["styles", [_style_0$c]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/myOrders/orderDetail/orderDetail.uvue"]]);
+  const PagesMineMyOrdersOrderDetailOrderDetail = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", _sfc_render$k], ["styles", [_style_0$j]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/myOrders/orderDetail/orderDetail.uvue"]]);
   class DrawBorderOptions extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -11686,7 +11686,7 @@
       color
     });
   }
-  const _sfc_main$b = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$k = /* @__PURE__ */ vue.defineComponent({
     __name: "l-textarea",
     props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
       adjustPosition: { type: Boolean, required: true, default: true },
@@ -11851,8 +11851,8 @@
       return __returned__;
     }
   });
-  const _style_0$b = { "l-textarea": { "": { "boxSizing": "border-box", "paddingTop": "32rpx", "paddingRight": "32rpx", "paddingBottom": "32rpx", "paddingLeft": "32rpx", "backgroundColor": "#ffffff" } }, "l-textarea--horizontal": { "": { "flexDirection": "row" } }, "l-textarea__label": { "": { "color": "rgba(0,0,0,0.88)", "flexShrink": 0, "lineHeight": "36px", "overflow": "hidden", "whiteSpace": "nowrap", "textOverflow": "ellipsis" } }, "l-textarea__label--vertical": { "": { "fontSize": 14, "paddingBottom": "16rpx" } }, "l-textarea__label--horizontal": { "": { "fontSize": 16, "marginRight": "32rpx" } }, "l-textarea__wrapper": { "": { "flex": 1, "overflow": "hidden" } }, "l-textarea__wrapper-inner": { "": { "flex": "1 1 auto", "width": "100%", "boxSizing": "border-box", "minWidth": 0, "minHeight": 20, "marginTop": 0, "marginRight": 0, "marginBottom": 0, "marginLeft": 0, "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "textAlign": "left", "backgroundColor": "rgba(0,0,0,0)", "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "none", "borderRightStyle": "none", "borderBottomStyle": "none", "borderLeftStyle": "none", "borderTopColor": "#000000", "borderRightColor": "#000000", "borderBottomColor": "#000000", "borderLeftColor": "#000000", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "lineHeight": "48rpx" } }, "l-textarea__placeholder": { "": { "color": "rgba(0,0,0,0.45)", "fontSize": 16, "lineHeight": "48rpx" } }, "l-textarea__indicator": { "": { "flexShrink": 0, "color": "rgba(0,0,0,0.45)", "fontSize": "24rpx", "textAlign": "right", "lineHeight": "40rpx", "paddingTop": "16rpx" } }, "l-textarea--border": { "": { "position": "relative" } }, "l-textarea--border-focused": { "": { "borderBottomColor": "#3283ff" } }, "is-disabled": { ".l-textarea ": { "color": "rgba(0,0,0,0.25)" } }, "l-textarea--classic": { "": { "paddingTop": 12, "paddingRight": 16, "paddingBottom": 12, "paddingLeft": 16, "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#eeeeee", "borderRightColor": "#eeeeee", "borderBottomColor": "#eeeeee", "borderLeftColor": "#eeeeee" } }, "l-textarea--classic-focused": { "": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } } };
-  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$i = { "l-textarea": { "": { "boxSizing": "border-box", "paddingTop": "32rpx", "paddingRight": "32rpx", "paddingBottom": "32rpx", "paddingLeft": "32rpx", "backgroundColor": "#ffffff" } }, "l-textarea--horizontal": { "": { "flexDirection": "row" } }, "l-textarea__label": { "": { "color": "rgba(0,0,0,0.88)", "flexShrink": 0, "lineHeight": "36px", "overflow": "hidden", "whiteSpace": "nowrap", "textOverflow": "ellipsis" } }, "l-textarea__label--vertical": { "": { "fontSize": 14, "paddingBottom": "16rpx" } }, "l-textarea__label--horizontal": { "": { "fontSize": 16, "marginRight": "32rpx" } }, "l-textarea__wrapper": { "": { "flex": 1, "overflow": "hidden" } }, "l-textarea__wrapper-inner": { "": { "flex": "1 1 auto", "width": "100%", "boxSizing": "border-box", "minWidth": 0, "minHeight": 20, "marginTop": 0, "marginRight": 0, "marginBottom": 0, "marginLeft": 0, "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "textAlign": "left", "backgroundColor": "rgba(0,0,0,0)", "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "none", "borderRightStyle": "none", "borderBottomStyle": "none", "borderLeftStyle": "none", "borderTopColor": "#000000", "borderRightColor": "#000000", "borderBottomColor": "#000000", "borderLeftColor": "#000000", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "lineHeight": "48rpx" } }, "l-textarea__placeholder": { "": { "color": "rgba(0,0,0,0.45)", "fontSize": 16, "lineHeight": "48rpx" } }, "l-textarea__indicator": { "": { "flexShrink": 0, "color": "rgba(0,0,0,0.45)", "fontSize": "24rpx", "textAlign": "right", "lineHeight": "40rpx", "paddingTop": "16rpx" } }, "l-textarea--border": { "": { "position": "relative" } }, "l-textarea--border-focused": { "": { "borderBottomColor": "#3283ff" } }, "is-disabled": { ".l-textarea ": { "color": "rgba(0,0,0,0.25)" } }, "l-textarea--classic": { "": { "paddingTop": 12, "paddingRight": 16, "paddingBottom": 12, "paddingLeft": 16, "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#eeeeee", "borderRightColor": "#eeeeee", "borderBottomColor": "#eeeeee", "borderLeftColor": "#eeeeee" } }, "l-textarea--classic-focused": { "": { "borderTopColor": "#3283ff", "borderRightColor": "#3283ff", "borderBottomColor": "#3283ff", "borderLeftColor": "#3283ff" } } };
+  function _sfc_render$j(_ctx, _cache, $props, $setup, $data, $options) {
     var _a, _b;
     return vue.openBlock(), vue.createElementBlock(
       "view",
@@ -11940,7 +11940,7 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["styles", [_style_0$b]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-textarea/components/l-textarea/l-textarea.uvue"]]);
+  const __easycom_2$2 = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", _sfc_render$j], ["styles", [_style_0$i]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-textarea/components/l-textarea/l-textarea.uvue"]]);
   function getFileType(tempFilePath, fileType) {
     if (fileType != null)
       return fileType.replace(/\/.+/, "");
@@ -12249,6 +12249,33 @@
     }),
     new UTSJSONObject({
       path: "pages/index/deviceDetail",
+      style: new UTSJSONObject({
+        navigationStyle: "custom",
+        navigationBarTitleText: ""
+      })
+    }),
+    new UTSJSONObject({
+      path: "pages/index/deviceSetting",
+      style: new UTSJSONObject({
+        navigationStyle: "custom",
+        navigationBarTitleText: ""
+      })
+    }),
+    new UTSJSONObject({
+      path: "pages/index/deviceReplay",
+      style: new UTSJSONObject({
+        navigationBarTitleText: ""
+      })
+    }),
+    new UTSJSONObject({
+      path: "pages/index/deviceSettingInfo/deviceSettingInfo",
+      style: new UTSJSONObject({
+        navigationStyle: "custom",
+        navigationBarTitleText: ""
+      })
+    }),
+    new UTSJSONObject({
+      path: "pages/index/deviceSettingInfo/deviceNight",
       style: new UTSJSONObject({
         navigationStyle: "custom",
         navigationBarTitleText: ""
@@ -15249,7 +15276,7 @@
       e3.uniCloud = er, e3.UniCloudError = ee;
     }
   })();
-  const _sfc_main$a = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$j = /* @__PURE__ */ vue.defineComponent({
     __name: "l-upload",
     props: {
       name: { type: String, required: false },
@@ -15524,10 +15551,10 @@
       return __returned__;
     }
   });
-  const _style_0$a = { "l-upload": { "": { "flex": 1, "position": "relative", "flexDirection": "row", "flexWrap": "wrap" } }, "l-upload__item": { "": { "position": "relative", "display": "flex", "width": 80, "height": 80, "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "overflow": "hidden", "alignItems": "center", "justifyContent": "center" } }, "l-upload__item--add": { "": { "backgroundImage": "none", "backgroundColor": "#f3f3f3" } }, "l-upload__item--disabled": { "": { "opacity": 0.5 } }, "l-upload__image": { "": { "width": "100%", "height": "100%" } }, "l-upload__add-icon": { "": { "fontSize": 28, "color": "rgba(0,0,0,0.25)" } }, "l-upload__delete-btn": { "": { "position": "absolute", "top": 0, "right": 0, "display": "flex", "alignItems": "center", "justifyContent": "center", "width": 20, "height": 20, "borderTopRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "backgroundColor": "rgba(0,0,0,0.65)" } }, "l-upload__progress-mask": { "": { "position": "absolute", "left": 0, "top": 0, "bottom": 0, "width": "100%", "backgroundColor": "rgba(0,0,0,0.45)", "flexDirection": "column", "alignItems": "center", "justifyContent": "center", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "paddingTop": 16, "paddingRight": 0, "paddingBottom": 16, "paddingLeft": 0 } }, "l-upload__progress-text": { "": { "fontSize": 12, "lineHeight": "20px", "marginTop": 4, "color": "#FFFFFF" } }, "l-upload__progress-loading": { "": { "alignSelf": "center" } }, "l-upload__progress-icon": { "": { "color": "#FFFFFF", "!fontSize": 24, "!width": 24 } } };
-  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$h = { "l-upload": { "": { "flex": 1, "position": "relative", "flexDirection": "row", "flexWrap": "wrap" } }, "l-upload__item": { "": { "position": "relative", "display": "flex", "width": 80, "height": 80, "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "overflow": "hidden", "alignItems": "center", "justifyContent": "center" } }, "l-upload__item--add": { "": { "backgroundImage": "none", "backgroundColor": "#f3f3f3" } }, "l-upload__item--disabled": { "": { "opacity": 0.5 } }, "l-upload__image": { "": { "width": "100%", "height": "100%" } }, "l-upload__add-icon": { "": { "fontSize": 28, "color": "rgba(0,0,0,0.25)" } }, "l-upload__delete-btn": { "": { "position": "absolute", "top": 0, "right": 0, "display": "flex", "alignItems": "center", "justifyContent": "center", "width": 20, "height": 20, "borderTopRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "backgroundColor": "rgba(0,0,0,0.65)" } }, "l-upload__progress-mask": { "": { "position": "absolute", "left": 0, "top": 0, "bottom": 0, "width": "100%", "backgroundColor": "rgba(0,0,0,0.45)", "flexDirection": "column", "alignItems": "center", "justifyContent": "center", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "paddingTop": 16, "paddingRight": 0, "paddingBottom": 16, "paddingLeft": 0 } }, "l-upload__progress-text": { "": { "fontSize": 12, "lineHeight": "20px", "marginTop": 4, "color": "#FFFFFF" } }, "l-upload__progress-loading": { "": { "alignSelf": "center" } }, "l-upload__progress-icon": { "": { "color": "#FFFFFF", "!fontSize": 24, "!width": 24 } } };
+  function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_loading = resolveEasycom(vue.resolveDynamicComponent("l-loading"), __easycom_0$4);
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -15675,8 +15702,8 @@
       /* STYLE */
     );
   }
-  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["styles", [_style_0$a]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-upload/components/l-upload/l-upload.uvue"]]);
-  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_3$2 = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", _sfc_render$i], ["styles", [_style_0$h]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-upload/components/l-upload/l-upload.uvue"]]);
+  const _sfc_main$i = /* @__PURE__ */ vue.defineComponent({
     __name: "l-picker-item",
     props: {
       options: { type: Array, required: true, default: [] },
@@ -15808,8 +15835,8 @@
       return __returned__;
     }
   });
-  const _style_0$9 = { "l-picker-item__group": { "": { "flex": 1 } }, "l-picker-item__group-item": { "": { "height": 50, "lineHeight": "50px", "textAlign": "center", "transitionDuration": "100ms", "transitionProperty": "fontWeight,color", "transitionTimingFunction": "linear", "fontWeight": "400", "color": "rgba(0,0,0,0.88)", "fontSize": 16, "whiteSpace": "nowrap" } }, "l-picker-item__group-item--active": { "": { "color": "rgba(0,0,0,0.88)", "fontWeight": "700" } }, "l-picker-item__indicator": { "": { "left": "0rpx", "right": "0rpx", "width": "auto", "height": 50, "pointerEvents": "none", "backgroundColor": "rgba(0,0,0,0.02)" } }, "@TRANSITION": { "l-picker-item__group-item": { "duration": "100ms", "property": "fontWeight,color", "timingFunction": "linear" } } };
-  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$g = { "l-picker-item__group": { "": { "flex": 1 } }, "l-picker-item__group-item": { "": { "height": 50, "lineHeight": "50px", "textAlign": "center", "transitionDuration": "100ms", "transitionProperty": "fontWeight,color", "transitionTimingFunction": "linear", "fontWeight": "400", "color": "rgba(0,0,0,0.88)", "fontSize": 16, "whiteSpace": "nowrap" } }, "l-picker-item__group-item--active": { "": { "color": "rgba(0,0,0,0.88)", "fontWeight": "700" } }, "l-picker-item__indicator": { "": { "left": "0rpx", "right": "0rpx", "width": "auto", "height": 50, "pointerEvents": "none", "backgroundColor": "rgba(0,0,0,0.02)" } }, "@TRANSITION": { "l-picker-item__group-item": { "duration": "100ms", "property": "fontWeight,color", "timingFunction": "linear" } } };
+  function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_picker_view_column = vue.resolveComponent("picker-view-column");
     const _component_picker_view = vue.resolveComponent("picker-view");
     return vue.openBlock(), vue.createBlock(_component_picker_view, {
@@ -15851,11 +15878,11 @@
       /* STABLE */
     }, 8, ["style", "indicator-style", "value"]);
   }
-  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["styles", [_style_0$9]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-picker/components/l-picker-item/l-picker-item.uvue"]]);
+  const __easycom_0$2 = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", _sfc_render$h], ["styles", [_style_0$g]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-picker/components/l-picker-item/l-picker-item.uvue"]]);
   function pushAt(arr, index, value) {
     arr[index] = value;
   }
-  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$h = /* @__PURE__ */ vue.defineComponent({
     __name: "l-picker",
     props: {
       cancelBtn: { type: String, required: false },
@@ -16051,10 +16078,10 @@
       return __returned__;
     }
   });
-  const _style_0$8 = { "l-picker": { "": { "position": "relative", "backgroundColor": "#ffffff", "borderTopLeftRadius": "24rpx", "borderTopRightRadius": "24rpx" } }, "l-picker__toolbar": { "": { "display": "flex", "alignItems": "center", "justifyContent": "space-between", "overflow": "hidden", "height": "116rpx", "flexDirection": "row", "position": "relative" } }, "l-picker__title": { "": { "position": "absolute", "left": "50%", "top": "50%", "transform": "translateX(-50%) translateY(-50%)", "textAlign": "center", "overflow": "hidden", "whiteSpace": "nowrap", "textOverflow": "ellipsis", "color": "rgba(0,0,0,0.88)", "lineHeight": "52rpx", "fontWeight": "700", "fontSize": 18 } }, "l-picker__cancel": { "": { "fontSize": 16, "lineHeight": "116rpx", "height": "100%", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "color": "rgba(0,0,0,0.65)" } }, "l-picker__confirm": { "": { "fontSize": 16, "lineHeight": "116rpx", "height": "100%", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "color": "#3283ff" } }, "l-picker__main": { "": { "display": "flex", "height": "400rpx", "flexDirection": "row", "paddingTop": 0, "paddingRight": "16rpx", "paddingBottom": 0, "paddingLeft": "16rpx" } }, "l-picker__empty": { "": { "pointerEvents": "none", "justifyContent": "center", "alignItems": "center", "display": "flex", "position": "absolute", "top": 0, "bottom": 0, "left": 0, "right": 0, "zIndex": 3 } }, "l-picker__loading": { "": { "zIndex": 3, "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.9)", "justifyContent": "center", "alignItems": "center", "display": "flex", "position": "absolute", "top": 0, "bottom": 0, "left": 0, "right": 0 } } };
-  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$f = { "l-picker": { "": { "position": "relative", "backgroundColor": "#ffffff", "borderTopLeftRadius": "24rpx", "borderTopRightRadius": "24rpx" } }, "l-picker__toolbar": { "": { "display": "flex", "alignItems": "center", "justifyContent": "space-between", "overflow": "hidden", "height": "116rpx", "flexDirection": "row", "position": "relative" } }, "l-picker__title": { "": { "position": "absolute", "left": "50%", "top": "50%", "transform": "translateX(-50%) translateY(-50%)", "textAlign": "center", "overflow": "hidden", "whiteSpace": "nowrap", "textOverflow": "ellipsis", "color": "rgba(0,0,0,0.88)", "lineHeight": "52rpx", "fontWeight": "700", "fontSize": 18 } }, "l-picker__cancel": { "": { "fontSize": 16, "lineHeight": "116rpx", "height": "100%", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "color": "rgba(0,0,0,0.65)" } }, "l-picker__confirm": { "": { "fontSize": 16, "lineHeight": "116rpx", "height": "100%", "paddingTop": 0, "paddingRight": "32rpx", "paddingBottom": 0, "paddingLeft": "32rpx", "color": "#3283ff" } }, "l-picker__main": { "": { "display": "flex", "height": "400rpx", "flexDirection": "row", "paddingTop": 0, "paddingRight": "16rpx", "paddingBottom": 0, "paddingLeft": "16rpx" } }, "l-picker__empty": { "": { "pointerEvents": "none", "justifyContent": "center", "alignItems": "center", "display": "flex", "position": "absolute", "top": 0, "bottom": 0, "left": 0, "right": 0, "zIndex": 3 } }, "l-picker__loading": { "": { "zIndex": 3, "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.9)", "justifyContent": "center", "alignItems": "center", "display": "flex", "position": "absolute", "top": 0, "bottom": 0, "left": 0, "right": 0 } } };
+  function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
     var _a, _b, _c;
-    const _component_l_picker_item = resolveEasycom(vue.resolveDynamicComponent("l-picker-item"), __easycom_0$1);
+    const _component_l_picker_item = resolveEasycom(vue.resolveDynamicComponent("l-picker-item"), __easycom_0$2);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -16155,8 +16182,8 @@
       /* STYLE */
     );
   }
-  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["styles", [_style_0$8]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-picker/components/l-picker/l-picker.uvue"]]);
-  const _sfc_main$7 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_3$1 = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["render", _sfc_render$g], ["styles", [_style_0$f]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-picker/components/l-picker/l-picker.uvue"]]);
+  const _sfc_main$g = /* @__PURE__ */ vue.defineComponent({
     __name: "feeback",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -16206,14 +16233,14 @@
     }
   });
   const _imports_0$2 = "/static/required_ios.png";
-  const _style_0$7 = { "container": { "": { "height": "100%", "backgroundColor": "#F5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "item-label": { ".container .content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginTop": "30rpx" } }, "little-title": { ".container .content .item-label ": { "color": "#999999", "fontSize": "20rpx", "marginLeft": "10rpx" } }, "btn-box": { ".container ": { "marginTop": "50rpx" } }, "l-picker": { ".container ": { "width": "100%" } } };
-  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$2);
-    const _component_l_textarea = resolveEasycom(vue.resolveDynamicComponent("l-textarea"), __easycom_2);
-    const _component_l_upload = resolveEasycom(vue.resolveDynamicComponent("l-upload"), __easycom_3$1);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_4);
-    const _component_l_picker = resolveEasycom(vue.resolveDynamicComponent("l-picker"), __easycom_3);
+  const _style_0$e = { "container": { "": { "height": "100%", "backgroundColor": "#F5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "item-label": { ".container .content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginTop": "30rpx" } }, "little-title": { ".container .content .item-label ": { "color": "#999999", "fontSize": "20rpx", "marginLeft": "10rpx" } }, "btn-box": { ".container ": { "marginTop": "50rpx" } }, "l-picker": { ".container ": { "width": "100%" } } };
+  function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$5);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
+    const _component_l_textarea = resolveEasycom(vue.resolveDynamicComponent("l-textarea"), __easycom_2$2);
+    const _component_l_upload = resolveEasycom(vue.resolveDynamicComponent("l-upload"), __easycom_3$2);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_l_picker = resolveEasycom(vue.resolveDynamicComponent("l-picker"), __easycom_3$1);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
@@ -16332,7 +16359,7 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMineFeebackFeeback = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["styles", [_style_0$7]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/feeback/feeback.uvue"]]);
+  const PagesMineFeebackFeeback = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["render", _sfc_render$f], ["styles", [_style_0$e]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/feeback/feeback.uvue"]]);
   class AuthType extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -16377,7 +16404,7 @@
       delete this.__props__;
     }
   }
-  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$f = /* @__PURE__ */ vue.defineComponent({
     __name: "systemSetting",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -16506,12 +16533,12 @@
       return __returned__;
     }
   });
-  const _style_0$6 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginBottom": "20rpx" } }, "items": { ".container .content ": { "display": "flex", "flexDirection": "column", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "fui-input__wrap": { ".container .content .items ": { "!paddingTop": "20rpx", "!paddingRight": 0, "!paddingBottom": "20rpx", "!paddingLeft": 0 } }, "offline": { ".container .content .items ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingBottom": "10rpx" } }, "tips": { ".container .content .items ": { "color": "#999999", "fontSize": "24rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5" } }, "l-picker": { ".container ": { "width": "100%" } } };
-  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_0$5);
-    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$2);
-    const _component_l_picker = resolveEasycom(vue.resolveDynamicComponent("l-picker"), __easycom_3);
+  const _style_0$d = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginBottom": "20rpx" } }, "items": { ".container .content ": { "display": "flex", "flexDirection": "column", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "fui-input__wrap": { ".container .content .items ": { "!paddingTop": "20rpx", "!paddingRight": 0, "!paddingBottom": "20rpx", "!paddingLeft": 0 } }, "offline": { ".container .content .items ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingBottom": "10rpx" } }, "tips": { ".container .content .items ": { "color": "#999999", "fontSize": "24rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5" } }, "l-picker": { ".container ": { "width": "100%" } } };
+  function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_1$6);
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$5);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
+    const _component_l_picker = resolveEasycom(vue.resolveDynamicComponent("l-picker"), __easycom_3$1);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
@@ -16599,12 +16626,12 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMineSystemSettingSystemSetting = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["styles", [_style_0$6]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/systemSetting/systemSetting.uvue"]]);
+  const PagesMineSystemSettingSystemSetting = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", _sfc_render$e], ["styles", [_style_0$d]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/systemSetting/systemSetting.uvue"]]);
   const _imports_0$1 = "/static/logo.png";
-  const _style_0$5 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "appinfo": { ".container ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "logo": { ".container ": { "width": "150rpx", "height": "150rpx", "marginTop": "100rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "title": { ".container ": { "fontSize": "30rpx", "fontWeight": "bold", "marginBottom": "50rpx" } }, "version": { ".container ": { "fontSize": "20rpx", "color": "#999999", "marginBottom": "50rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "copyright": { ".container ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "200rpx" } }, "txt": { ".container .copyright ": { "fontSize": "15rpx", "color": "#999999" } } };
-  const _sfc_main$5 = {};
-  function _sfc_render$4(_ctx, _cache) {
-    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
+  const _style_0$c = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "appinfo": { ".container ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "logo": { ".container ": { "width": "150rpx", "height": "150rpx", "marginTop": "100rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "title": { ".container ": { "fontSize": "30rpx", "fontWeight": "bold", "marginBottom": "50rpx" } }, "version": { ".container ": { "fontSize": "20rpx", "color": "#999999", "marginBottom": "50rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "copyright": { ".container ": { "display": "flex", "flexDirection": "column", "alignItems": "center", "marginTop": "200rpx" } }, "txt": { ".container .copyright ": { "fontSize": "15rpx", "color": "#999999" } } };
+  const _sfc_main$e = {};
+  function _sfc_render$d(_ctx, _cache) {
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "appinfo" }, [
         vue.createElementVNode("image", {
@@ -16670,9 +16697,9 @@
       ])
     ]);
   }
-  const PagesMineAboutAbout = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["styles", [_style_0$5]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/about/about.uvue"]]);
+  const PagesMineAboutAbout = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", _sfc_render$d], ["styles", [_style_0$c]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/about/about.uvue"]]);
   const name = "l-grid-item";
-  const _sfc_main$4 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$d = /* @__PURE__ */ vue.defineComponent({
     __name: "l-grid-item",
     props: {
       text: { type: String, required: false },
@@ -16830,9 +16857,9 @@
       return __returned__;
     }
   });
-  const _style_0$4 = { "l-grid-item": { "": { "alignItems": "center", "paddingTop": "32rpx", "paddingRight": 0, "paddingBottom": "24rpx", "paddingLeft": 0, "flexDirection": "column", "backgroundImage": "none", "backgroundColor": "#ffffff", "width": "25%", "overflow": "visible" } }, "l-grid-item--bordered": { "": { "borderTopWidth": "0.5rpx", "borderRightWidth": "0.5rpx", "borderBottomWidth": "0.5rpx", "borderLeftWidth": "0.5rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#eeeeee", "borderRightColor": "#eeeeee", "borderBottomColor": "#eeeeee", "borderLeftColor": "#eeeeee" } }, "l-grid-item--horizontal": { "": { "paddingTop": "32rpx", "paddingRight": 0, "paddingBottom": "32rpx", "paddingLeft": 0, "flexDirection": "row", "justifyContent": "center" } }, "l-grid-item__content": { ".l-grid-item--horizontal ": { "marginTop": 0, "marginLeft": "24rpx" }, "": { "position": "relative", "marginTop": "16rpx" } }, "l-grid-item--hover": { "": { "backgroundColor": "rgba(0,0,0,0.02)" } }, "l-grid-item__title": { ".l-grid-item--center ": { "textAlign": "center" }, "": { "color": "rgba(0,0,0,0.88)", "fontSize": 14, "lineHeight": "44rpx" } }, "l-grid-item__description": { ".l-grid-item--center ": { "textAlign": "center" }, "": { "color": "rgba(0,0,0,0.45)", "fontSize": 12, "lineHeight": "40rpx" } }, "l-grid-item__icon": { "": { "alignItems": "center", "justifyContent": "center", "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.02)", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "width": "96rpx", "height": "96rpx" } }, "l-grid-item__image": { "": { "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.02)", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "width": "96rpx", "height": "96rpx" } }, "l-grid-item__image--small": { "": { "width": 32, "height": 32 } }, "l-grid-item__icon--small": { "": { "width": 32, "height": 32 } }, "l-grid-item__image--middle": { "": { "width": "80rpx", "height": "80rpx" } }, "l-grid-item__icon--middle": { "": { "width": "80rpx", "height": "80rpx" } }, "l-grid-item__title--small": { "": { "fontSize": 12 } }, "l-grid-item__title--middle": { "": { "fontSize": 12 } } };
-  function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
+  const _style_0$b = { "l-grid-item": { "": { "alignItems": "center", "paddingTop": "32rpx", "paddingRight": 0, "paddingBottom": "24rpx", "paddingLeft": 0, "flexDirection": "column", "backgroundImage": "none", "backgroundColor": "#ffffff", "width": "25%", "overflow": "visible" } }, "l-grid-item--bordered": { "": { "borderTopWidth": "0.5rpx", "borderRightWidth": "0.5rpx", "borderBottomWidth": "0.5rpx", "borderLeftWidth": "0.5rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#eeeeee", "borderRightColor": "#eeeeee", "borderBottomColor": "#eeeeee", "borderLeftColor": "#eeeeee" } }, "l-grid-item--horizontal": { "": { "paddingTop": "32rpx", "paddingRight": 0, "paddingBottom": "32rpx", "paddingLeft": 0, "flexDirection": "row", "justifyContent": "center" } }, "l-grid-item__content": { ".l-grid-item--horizontal ": { "marginTop": 0, "marginLeft": "24rpx" }, "": { "position": "relative", "marginTop": "16rpx" } }, "l-grid-item--hover": { "": { "backgroundColor": "rgba(0,0,0,0.02)" } }, "l-grid-item__title": { ".l-grid-item--center ": { "textAlign": "center" }, "": { "color": "rgba(0,0,0,0.88)", "fontSize": 14, "lineHeight": "44rpx" } }, "l-grid-item__description": { ".l-grid-item--center ": { "textAlign": "center" }, "": { "color": "rgba(0,0,0,0.45)", "fontSize": 12, "lineHeight": "40rpx" } }, "l-grid-item__icon": { "": { "alignItems": "center", "justifyContent": "center", "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.02)", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "width": "96rpx", "height": "96rpx" } }, "l-grid-item__image": { "": { "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.02)", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "width": "96rpx", "height": "96rpx" } }, "l-grid-item__image--small": { "": { "width": 32, "height": 32 } }, "l-grid-item__icon--small": { "": { "width": 32, "height": 32 } }, "l-grid-item__image--middle": { "": { "width": "80rpx", "height": "80rpx" } }, "l-grid-item__icon--middle": { "": { "width": "80rpx", "height": "80rpx" } }, "l-grid-item__title--small": { "": { "fontSize": 12 } }, "l-grid-item__title--middle": { "": { "fontSize": 12 } } };
+  function _sfc_render$c(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
     const _component_l_badge = resolveEasycom(vue.resolveDynamicComponent("l-badge"), __easycom_1$1);
     return vue.openBlock(), vue.createElementBlock("view", {
       ref: "gridRef",
@@ -16934,8 +16961,8 @@
       vue.renderSlot(_ctx.$slots, "extra")
     ], 14, ["hover-class"]);
   }
-  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["styles", [_style_0$4]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-grid/components/l-grid-item/l-grid-item.uvue"]]);
-  const _sfc_main$3 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_0$1 = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", _sfc_render$c], ["styles", [_style_0$b]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-grid/components/l-grid-item/l-grid-item.uvue"]]);
+  const _sfc_main$c = /* @__PURE__ */ vue.defineComponent({
     __name: "l-grid",
     props: {
       align: { type: String, required: true, default: "center" },
@@ -16992,8 +17019,8 @@
       return __returned__;
     }
   });
-  const _style_0$3 = { "l-grid": { "": { "position": "relative", "overflow": "visible", "flexDirection": "row" } }, "l-grid--wrap": { "": { "flexWrap": "wrap" } }, "l-grid--inset": { "": { "marginTop": 0, "marginRight": "32rpx", "marginBottom": 0, "marginLeft": "32rpx", "borderTopLeftRadius": "18rpx", "borderTopRightRadius": "18rpx", "borderBottomRightRadius": "18rpx", "borderBottomLeftRadius": "18rpx", "overflow": "hidden" } } };
-  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$a = { "l-grid": { "": { "position": "relative", "overflow": "visible", "flexDirection": "row" } }, "l-grid--wrap": { "": { "flexWrap": "wrap" } }, "l-grid--inset": { "": { "marginTop": 0, "marginRight": "32rpx", "marginBottom": 0, "marginLeft": "32rpx", "borderTopLeftRadius": "18rpx", "borderTopRightRadius": "18rpx", "borderBottomRightRadius": "18rpx", "borderBottomLeftRadius": "18rpx", "overflow": "hidden" } } };
+  function _sfc_render$b(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -17007,8 +17034,8 @@
       /* CLASS */
     );
   }
-  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["styles", [_style_0$3]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-grid/components/l-grid/l-grid.uvue"]]);
-  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_1 = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", _sfc_render$b], ["styles", [_style_0$a]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-grid/components/l-grid/l-grid.uvue"]]);
+  const _sfc_main$b = /* @__PURE__ */ vue.defineComponent({
     __name: "localFiles",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -17018,9 +17045,9 @@
       return __returned__;
     }
   });
-  const _style_0$2 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5" } } };
-  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_grid_item = resolveEasycom(vue.resolveDynamicComponent("l-grid-item"), __easycom_0);
+  const _style_0$9 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5" } } };
+  function _sfc_render$a(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_grid_item = resolveEasycom(vue.resolveDynamicComponent("l-grid-item"), __easycom_0$1);
     const _component_l_grid = resolveEasycom(vue.resolveDynamicComponent("l-grid"), __easycom_1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createVNode(_component_l_grid, {
@@ -17071,28 +17098,37 @@
       })
     ]);
   }
-  const PagesMineLocalFilesLocalFiles = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["styles", [_style_0$2]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/localFiles/localFiles.uvue"]]);
-  const _sfc_main$1 = /* @__PURE__ */ vue.defineComponent({
+  const PagesMineLocalFilesLocalFiles = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", _sfc_render$a], ["styles", [_style_0$9]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/localFiles/localFiles.uvue"]]);
+  const _sfc_main$a = /* @__PURE__ */ vue.defineComponent({
     __name: "deviceDetail",
     setup(__props, _a) {
       var __expose = _a.expose;
       __expose();
       const videoSrc2 = vue.ref("https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4");
+      const goBack = () => {
+        uni.navigateBack(new UTSJSONObject({
+          delta: 1
+        }));
+      };
       const deviceSetting = () => {
-        uni.showToast({
-          title: "设备设置",
-          icon: "none"
+        uni.navigateTo({
+          url: "/pages/index/deviceSetting"
         });
       };
-      const __returned__ = { videoSrc: videoSrc2, deviceSetting, get TopNavBar() {
+      const replay = () => {
+        uni.navigateTo({
+          url: "/pages/index/deviceReplay"
+        });
+      };
+      const __returned__ = { videoSrc: videoSrc2, goBack, deviceSetting, replay, get TopNavBar() {
         return TopNavBar;
       } };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   });
-  const _imports_0 = "/static/Camera.png";
-  const _imports_1 = "/static/vedio_icon.png";
+  const _imports_0 = "/static/device/camera.png";
+  const _imports_1 = "/static/device/vedio.png";
   const _imports_2 = "/static/device/volume_1.png";
   const _imports_3 = "/static/device/voice_1.png";
   const _imports_4 = "/static/device/hd.png";
@@ -17105,14 +17141,15 @@
   const _imports_11 = "/static/device/redblue_1.png";
   const _imports_12 = "/static/device/replay.png";
   const _imports_13 = "/static/device/share.png";
-  const _style_0$1 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5" } }, "video": { ".container ": { "width": "100%" } }, "control-big": { ".container ": { "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx", "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "big-item": { ".container .control-big ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "40rpx", "paddingRight": "40rpx", "paddingBottom": "40rpx", "paddingLeft": "40rpx" } }, "big-item-icon": { ".container .control-big .big-item ": { "width": "70rpx", "height": "70rpx" } }, "control-more": { ".container ": { "marginTop": "20rpx", "marginRight": "20rpx", "marginBottom": "20rpx", "marginLeft": "20rpx", "display": "flex", "flexDirection": "row", "flexWrap": "wrap", "justifyContent": "flex-start", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } }, "small-item": { ".container .control-more ": { "width": "20%", "display": "flex", "flexDirection": "column", "alignItems": "center", "justifyContent": "center", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "small-item-icon": { ".container .control-more .small-item ": { "width": "45rpx", "height": "45rpx", "marginBottom": "10rpx" } }, "small-item-text": { ".container .control-more .small-item ": { "fontSize": "24rpx", "color": "#333333" } } };
-  function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$8 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5" } }, "video": { ".container ": { "width": "100%" } }, "control-big": { ".container ": { "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx", "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "big-item": { ".container .control-big ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "40rpx", "paddingRight": "40rpx", "paddingBottom": "40rpx", "paddingLeft": "40rpx" } }, "big-item-icon": { ".container .control-big .big-item ": { "width": "70rpx", "height": "70rpx" } }, "control-more": { ".container ": { "marginTop": "20rpx", "marginRight": "20rpx", "marginBottom": "20rpx", "marginLeft": "20rpx", "display": "flex", "flexDirection": "row", "flexWrap": "wrap", "justifyContent": "flex-start", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0 } }, "small-item": { ".container .control-more ": { "width": "20%", "display": "flex", "flexDirection": "column", "alignItems": "center", "justifyContent": "center", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "small-item-icon": { ".container .control-more .small-item ": { "width": "45rpx", "height": "45rpx", "marginBottom": "10rpx" } }, "small-item-text": { ".container .control-more .small-item ": { "fontSize": "24rpx", "color": "#333333" } } };
+  function _sfc_render$9(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createVNode($setup["TopNavBar"], {
         title: "设备详情",
         showBack: true,
         rightText: "setup",
-        onRightEvent: $setup.deviceSetting
+        onRightEvent: $setup.deviceSetting,
+        onBack: $setup.goBack
       }),
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("video", {
@@ -17212,7 +17249,10 @@
           }),
           vue.createElementVNode("text", { class: "small-item-text" }, "红蓝灯")
         ]),
-        vue.createElementVNode("view", { class: "small-item" }, [
+        vue.createElementVNode("view", {
+          class: "small-item",
+          onClick: $setup.replay
+        }, [
           vue.createElementVNode("image", {
             class: "small-item-icon",
             src: _imports_12
@@ -17229,7 +17269,1759 @@
       ])
     ]);
   }
-  const PagesIndexDeviceDetail = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["styles", [_style_0$1]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/deviceDetail.uvue"]]);
+  const PagesIndexDeviceDetail = /* @__PURE__ */ _export_sfc(_sfc_main$a, [["render", _sfc_render$9], ["styles", [_style_0$8]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/deviceDetail.uvue"]]);
+  const _sfc_main$9 = /* @__PURE__ */ vue.defineComponent(Object.assign({
+    behaviors: ["wx://form-field"]
+  }, { __name: "l-input", props: {
+    adjustPosition: { type: Boolean, required: true, default: true },
+    align: { type: String, required: true, default: "left" },
+    alwaysEmbed: { type: Boolean, required: true, default: false },
+    autoFocus: { type: Boolean, required: true, default: false },
+    bordered: { type: Boolean, required: true, default: true },
+    clearTrigger: { type: String, required: true, default: "focus" },
+    clearable: { type: Boolean, required: true, default: false },
+    confirmHold: { type: Boolean, required: true, default: false },
+    confirmType: { type: String, required: true, default: "done" },
+    cursor: { type: Number, required: true, default: 0 },
+    cursorColor: { type: String, required: true, default: "" },
+    cursorSpacing: { type: Number, required: true, default: 0 },
+    disabled: { type: Boolean, required: true, default: false },
+    focus: { type: Boolean, required: true, default: false },
+    holdKeyboard: { type: Boolean, required: true, default: false },
+    label: { type: String, required: false },
+    layout: { type: String, required: true, default: "horizontal" },
+    maxcharacter: { type: Number, required: false },
+    maxlength: { type: Number, required: true, default: -1 },
+    placeholder: { type: String, required: true, default: "" },
+    placeholderStyle: { type: String, required: true, default: "" },
+    placeholderClass: { type: String, required: false },
+    readonly: { type: Boolean, required: true, default: false },
+    safePasswordCertPath: { type: String, required: true, default: "" },
+    safePasswordCustomHash: { type: String, required: true, default: "" },
+    safePasswordLength: { type: Number, required: false },
+    safePasswordNonce: { type: String, required: true, default: "" },
+    safePasswordSalt: { type: String, required: true, default: "" },
+    safePasswordTimeStamp: { type: Number, required: false },
+    selectionEnd: { type: Number, required: true, default: -1 },
+    selectionStart: { type: Number, required: true, default: -1 },
+    status: { type: String, required: true, default: "default" },
+    prefixIcon: { type: String, required: false },
+    prefixIconColor: { type: String, required: false },
+    suffix: { type: String, required: false },
+    suffixIcon: { type: String, required: false },
+    suffixIconColor: { type: String, required: false },
+    tips: { type: String, required: false },
+    type: { type: String, required: true, default: "text" },
+    value: { type: [String, Number], required: false },
+    modelValue: { type: [String, Number], required: false },
+    lStyle: { type: String, required: false },
+    lableStyle: { type: String, required: false },
+    tipsStyle: { type: String, required: false },
+    inputStyle: { type: String, required: false },
+    borderColor: { type: String, required: false },
+    classic: { type: Boolean, required: true, default: false },
+    focused: { type: Boolean, required: true, default: false },
+    focusedBorderColor: { type: String, required: false },
+    prefixIconSize: { type: String, required: false },
+    suffixIconSize: { type: String, required: false },
+    clearIconSize: { type: String, required: false }
+  }, emits: ["change", "update:modelValue", "focus", "blur", "confirm", "clear", "keyboardheightchange", "nicknamereview", "click-icon"], setup(__props, _a) {
+    var __expose = _a.expose, __emit = _a.emit;
+    __expose();
+    const emit = __emit;
+    const props = __props;
+    const formItemBlur = vue.inject("formItemBlur", null);
+    const formDisabled = vue.inject("formDisabled", null);
+    const formReadonly = vue.inject("formReadonly", null);
+    const calculateValue = (value) => {
+      props.maxlength;
+      const maxcharacter = props.maxcharacter;
+      if (maxcharacter != null && maxcharacter > 0) {
+        return characterLimit("maxcharacter", "".concat(value), maxcharacter);
+      }
+      return {
+        characters: "".concat(value),
+        length: "".concat(value).length
+      };
+    };
+    let _innerValue = vue.ref("");
+    const innerFocused = vue.ref(props.focus || props.focused);
+    const innerValue = vue.computed({
+      set(value) {
+        _innerValue.value = value;
+        emit("change", value);
+        emit("update:modelValue", value);
+      },
+      get() {
+        var _a2;
+        const _value = (_a2 = props.value) !== null && _a2 !== void 0 ? _a2 : props.modelValue;
+        if (_innerValue.value != _value && props.type != "number") {
+          const characters = calculateValue("".concat(_value !== null && _value !== void 0 ? _value : _innerValue.value)).characters;
+          return characters;
+        }
+        return _value !== null && _value !== void 0 ? _value : _innerValue.value;
+      }
+    });
+    const isDisabled = vue.computed(() => {
+      var _a2;
+      return props.disabled || ((_a2 = formDisabled === null || formDisabled === void 0 ? null : formDisabled.value) !== null && _a2 !== void 0 ? _a2 : false);
+    });
+    const isReadonly = vue.computed(() => {
+      var _a2;
+      return props.readonly || ((_a2 = formReadonly === null || formReadonly === void 0 ? null : formReadonly.value) !== null && _a2 !== void 0 ? _a2 : false);
+    });
+    const styles = vue.computed(() => {
+      const style = /* @__PURE__ */ new Map();
+      return style;
+    });
+    const showClearIcon = vue.computed(() => {
+      const clearTrigger = props.clearTrigger, disabled = props.disabled, readonly = props.readonly;
+      if (disabled || readonly) {
+        return false;
+      }
+      return "".concat(innerValue.value).length > 0 || clearTrigger == "always";
+    });
+    const onInput = (e2) => {
+      const _a2 = e2.detail, value = _a2.value;
+      _a2.cursor;
+      _a2.keyCode;
+      if (props.type == "number") {
+        const _v = parseFloat("".concat(value));
+        innerValue.value = isNaN(_v) ? "" : _v;
+      } else {
+        const characters = calculateValue(value).characters;
+        innerValue.value = characters;
+      }
+    };
+    const onFocus = (event) => {
+      innerFocused.value = true;
+      emit("focus", event);
+    };
+    const onBlur = (event) => {
+      innerFocused.value = false;
+      emit("blur", event);
+      formItemBlur === null || formItemBlur === void 0 ? null : formItemBlur();
+    };
+    const onConfirm = (event) => {
+      emit("confirm", event);
+    };
+    const onKeyboardHeightChange = (event) => {
+      emit("keyboardheightchange", event);
+    };
+    const onNickNameReview = (event = null) => {
+      emit("nicknamereview", event);
+    };
+    const clearInput = () => {
+      innerValue.value = "";
+      emit("clear");
+    };
+    const onSuffixClick = () => {
+      emit("click-icon", new UTSJSONObject({ trigger: "suffix" }));
+    };
+    const onSuffixIconClick = () => {
+      emit("click-icon", new UTSJSONObject({ trigger: "suffix-icon" }));
+    };
+    vue.watchEffect(() => {
+      innerFocused.value = props.focus || props.focused;
+    });
+    const rootRef = vue.ref(null);
+    const _b = useDrawBorder(rootRef, new DrawBorderOptions({
+      direction: "bottom",
+      watchSize: true,
+      startOffset: 16,
+      immediate: false,
+      color: props.borderColor
+    })), clearBorder = _b.clearBorder, color = _b.color, renderBorder = _b.renderBorder;
+    vue.onMounted(() => {
+      vue.watchEffect(() => {
+        var _a2, _b2;
+        if (!props.classic) {
+          if (props.borderColor != null && !innerFocused.value) {
+            (_a2 = rootRef.value) === null || _a2 === void 0 ? null : _a2.style.setProperty("border-color", props.borderColor);
+          }
+          if (props.focusedBorderColor != null && innerFocused.value) {
+            (_b2 = rootRef.value) === null || _b2 === void 0 ? null : _b2.style.setProperty("border-color", props.focusedBorderColor);
+          }
+        }
+        if (!props.bordered || props.classic) {
+          clearBorder();
+          return null;
+        }
+        if (props.borderColor != null) {
+          color.value = props.borderColor;
+        }
+        renderBorder();
+      });
+    });
+    const __returned__ = { emit, props, formItemBlur, formDisabled, formReadonly, calculateValue, get _innerValue() {
+      return _innerValue;
+    }, set _innerValue(v2) {
+      _innerValue = v2;
+    }, innerFocused, innerValue, isDisabled, isReadonly, styles, showClearIcon, onInput, onFocus, onBlur, onConfirm, onKeyboardHeightChange, onNickNameReview, clearInput, onSuffixClick, onSuffixIconClick, rootRef, clearBorder, color, renderBorder };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  } }));
+  const _style_0$7 = { "l-input": { "": { "backgroundColor": "var(--l-input-bg-color, #fff)", "alignItems": "center", "width": "100%", "paddingTop": "var(--l-input-padding-y, 16px)", "paddingRight": "var(--l-input-padding-x, 16px)", "paddingBottom": "var(--l-input-padding-y, 16px)", "paddingLeft": "var(--l-input-padding-x, 16px)" } }, "l-input--horizontal": { "": { "flexDirection": "row" } }, "l-input--vertical": { "": { "alignItems": "stretch" } }, "l-input--border": { "": { "position": "relative" } }, "l-input--classic": { "": { "paddingTop": "var(--l-input-classic-padding-y, 12px)", "paddingRight": "var(--l-input-classic-padding-x, 16px)", "paddingBottom": "var(--l-input-classic-padding-y, 12px)", "paddingLeft": "var(--l-input-classic-padding-x, 16px)", "borderTopLeftRadius": "var(--l-input-border-radius, 12rpx)", "borderTopRightRadius": "var(--l-input-border-radius, 12rpx)", "borderBottomRightRadius": "var(--l-input-border-radius, 12rpx)", "borderBottomLeftRadius": "var(--l-input-border-radius, 12rpx)", "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "l-input--classic-default": { "": { "borderTopColor": "var(--l-input-border-color,#e7e7e7)", "borderRightColor": "var(--l-input-border-color,#e7e7e7)", "borderBottomColor": "var(--l-input-border-color,#e7e7e7)", "borderLeftColor": "var(--l-input-border-color,#e7e7e7)" } }, "l-input--classic-error": { "": { "borderTopColor": "var(--l-input-error-tips-color,#FF4D4F)", "borderRightColor": "var(--l-input-error-tips-color,#FF4D4F)", "borderBottomColor": "var(--l-input-error-tips-color,#FF4D4F)", "borderLeftColor": "var(--l-input-error-tips-color,#FF4D4F)" } }, "l-input--classic-success": { "": { "borderTopColor": "var(--l-input-success-tips-color,#34c471)", "borderRightColor": "var(--l-input-success-tips-color,#34c471)", "borderBottomColor": "var(--l-input-success-tips-color,#34c471)", "borderLeftColor": "var(--l-input-success-tips-color,#34c471)" } }, "l-input--classic-warning": { "": { "borderTopColor": "var(--l-input-warning-tips-color,#ffb400)", "borderRightColor": "var(--l-input-warning-tips-color,#ffb400)", "borderBottomColor": "var(--l-input-warning-tips-color,#ffb400)", "borderLeftColor": "var(--l-input-warning-tips-color,#ffb400)" } }, "l-input--classic-disabled": { "": { "backgroundColor": "var(--l-input-disabled-bg-color, rgba(0, 0, 0, 0.04))" } }, "l-input__wrap--prefix": { "": { "flexDirection": "row", "alignItems": "center" } }, "l-input__icon--prefix": { "": { "fontSize": "44rpx", "color": "var(--l-input-prefix-icon-color, rgba(0, 0, 0, 0.88))" } }, "l-input__label": { "": { "minWidth": "var(--l-input-label-min-width, 64rpx)", "fontSize": 16, "lineHeight": "48rpx", "color": "var(--l-input-label-text-color, rgba(0, 0, 0, 0.88))", "marginRight": "32rpx" }, ".l-input--horizontal ": { "maxWidth": "var(--l-input-label-max-width, 160rpx)" }, ".l-input--vertical ": { "fontSize": 14, "paddingBottom": "8rpx" } }, "l-input__label--gap": { "": { "marginLeft": "8rpx" } }, "l-input__wrap": { "": { "justifyContent": "center", "flex": 1 } }, "l-input__content": { ".l-input__wrap ": { "flexDirection": "row", "width": "100%", "alignItems": "center" } }, "l-input__wrap--clearable-icon": { "": { "flex": "0 0 auto", "paddingLeft": "24rpx", "boxSizing": "content-box", "!fontSize": "var(--l-input-suffix-icon-size, 22px)", "!color": "var(--l-input-suffix-icon-color, rgba(0, 0, 0, 0.45))" } }, "l-input__wrap--suffix-icon": { "": { "flex": "0 0 auto", "paddingLeft": "24rpx", "boxSizing": "content-box", "!fontSize": "var(--l-input-suffix-icon-size, 22px)", "!color": "var(--l-input-suffix-icon-color, rgba(0, 0, 0, 0.45))" } }, "l-input__wrap--suffix": { "": { "flex": "0 0 auto", "paddingLeft": "24rpx", "boxSizing": "content-box" } }, "l-input__wrap--suffix-text": { "": { "fontSize": 16, "color": "var(--l-input-suffix-text-color, rgba(0, 0, 0, 0.88))" } }, "l-input__control": { "": { "flex": 1, "boxSizing": "border-box", "minWidth": 0, "minHeight": "48rpx", "marginTop": 0, "marginRight": 0, "marginBottom": 0, "marginLeft": 0, "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "color": "var(--l-input-text-color, rgba(0, 0, 0, 0.88))", "backgroundColor": "rgba(0,0,0,0)", "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "none", "borderRightStyle": "none", "borderBottomStyle": "none", "borderLeftStyle": "none", "borderTopColor": "#000000", "borderRightColor": "#000000", "borderBottomColor": "#000000", "borderLeftColor": "#000000", "fontSize": 16 } }, "l-input__control--disabled": { "": { "color": "var(--l-input-disabled-text-color, rgba(0, 0, 0, 0.25))", "opacity": 1 } }, "l-input--left": { "": { "textAlign": "left" } }, "l-input--right": { "": { "textAlign": "right" } }, "l-input--center": { "": { "textAlign": "center" } }, "l-input__placeholder": { "": { "color": "var(--l-input-placeholder-text-color, rgba(0, 0, 0, 0.45))", "fontSize": "var(--l-input-placeholder-text-font-size, 16px)" } }, "l-input__placeholder--disabled": { "": { "fontSize": "var(--l-input-placeholder-text-font-size, 16px)", "color": "var(--l-input-disabled-text-color, rgba(0, 0, 0, 0.25))" } }, "l-input__tips": { "": { "fontSize": 12, "lineHeight": "40rpx", "paddingTop": "8rpx" } }, "l-input__tips--default": { "": { "color": "var(--l-input-tips-color, rgba(0, 0, 0, 0.45))" } }, "l-input__tips--success": { "": { "color": "var(--l-input-success-tips-color, #34c471)" } }, "l-input__tips--warning": { "": { "color": "var(--l-input-warning-tips-color, #ffb400)" } }, "l-input__tips--error": { "": { "color": "var(--l-input-error-tips-color, #FF4D4F)" } } };
+  function _sfc_render$8(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass(["l-input", [
+          "l-input--" + $props.layout,
+          $props.classic ? "l-input--classic-" + $props.status : "",
+          { "l-input--classic": $props.classic },
+          { "l-input--classic-disabled": $props.classic && $props.disabled },
+          { "l-input--classic-focused": $props.classic && !$props.disabled && $setup.innerFocused },
+          { "l-input--border": $props.bordered && !$props.classic }
+        ]]),
+        style: vue.normalizeStyle([$setup.styles, $props.lStyle]),
+        ref: "rootRef"
+      },
+      [
+        $props.label != null || _ctx.$slots["label"] != null || _ctx.$slots["prefix-icon"] != null || $props.prefixIcon != null ? (vue.openBlock(), vue.createElementBlock("view", {
+          key: 0,
+          class: "l-input__wrap--prefix"
+        }, [
+          vue.renderSlot(_ctx.$slots, "prefix-icon", {}, () => [
+            $props.prefixIcon != null ? (vue.openBlock(), vue.createBlock(_component_l_icon, {
+              key: 0,
+              class: "l-input__icon--prefix",
+              name: $props.prefixIcon,
+              color: $props.prefixIconColor,
+              size: $props.prefixIconSize
+            }, null, 8, ["name", "color", "size"])) : vue.createCommentVNode("v-if", true)
+          ]),
+          $props.label != null || _ctx.$slots["label"] != null ? (vue.openBlock(), vue.createElementBlock(
+            "text",
+            {
+              key: 0,
+              class: vue.normalizeClass(["l-input__label", { "l-input__label--gap": $props.prefixIcon != null || _ctx.$slots["prefix-icon"] != null }]),
+              style: vue.normalizeStyle([$props.lableStyle])
+            },
+            [
+              vue.renderSlot(_ctx.$slots, "label", {}, () => [
+                vue.createTextVNode(
+                  vue.toDisplayString($props.label),
+                  1
+                  /* TEXT */
+                )
+              ])
+            ],
+            6
+            /* CLASS, STYLE */
+          )) : vue.createCommentVNode("v-if", true)
+        ])) : vue.createCommentVNode("v-if", true),
+        vue.createElementVNode("view", { class: "l-input__wrap" }, [
+          vue.createElementVNode("view", { class: "l-input__content" }, [
+            vue.createElementVNode("input", {
+              class: vue.normalizeClass(["l-input__control", [
+                "l-input--" + $props.align,
+                {
+                  "l-input__control--disabled": $setup.isDisabled,
+                  "l-input__control--read-only": $setup.isReadonly
+                }
+              ]]),
+              style: vue.normalizeStyle([$props.inputStyle]),
+              maxlength: $props.maxlength,
+              disabled: $setup.isDisabled || $setup.isReadonly,
+              placeholder: $props.placeholder,
+              "placeholder-style": $props.placeholderStyle,
+              "placeholder-class": $props.placeholderStyle == "" ? $setup.isDisabled || $setup.isReadonly ? "l-input__placeholder--disabled" : "l-input__placeholder" : "",
+              value: $setup.innerValue,
+              type: $props.type == "password" ? "text" : $props.type,
+              password: $props.type == "password",
+              focus: $props.focus,
+              "confirm-type": $props.confirmType,
+              "confirm-hold": $props.confirmHold,
+              cursor: $props.cursor,
+              "cursor-color": $props.cursorColor,
+              "cursor-spacing": $props.cursorSpacing,
+              "adjust-position": $props.adjustPosition,
+              "auto-focus": $props.autoFocus,
+              "always-embed": $props.alwaysEmbed,
+              "selection-start": $props.selectionStart,
+              "selection-end": $props.selectionEnd,
+              "hold-keyboard": $props.holdKeyboard,
+              "safe-password-cert-path": $props.safePasswordCertPath,
+              "safe-password-length": $props.safePasswordLength,
+              "safe-password-time-stamp": $props.safePasswordTimeStamp,
+              "safe-password-nonce": $props.safePasswordNonce,
+              "safe-password-salt": $props.safePasswordSalt,
+              "safe-password-custom-hash": $props.safePasswordCustomHash,
+              "aria-label": $props.label,
+              "aria-roledescription": $props.label,
+              onInput: $setup.onInput,
+              onFocus: $setup.onFocus,
+              onBlur: $setup.onBlur,
+              onConfirm: $setup.onConfirm,
+              onKeyboardheightchange: $setup.onKeyboardHeightChange,
+              onNicknamereview: $setup.onNickNameReview
+            }, null, 46, ["maxlength", "disabled", "placeholder", "placeholder-style", "placeholder-class", "value", "type", "password", "focus", "confirm-type", "confirm-hold", "cursor", "cursor-color", "cursor-spacing", "adjust-position", "auto-focus", "always-embed", "selection-start", "selection-end", "hold-keyboard", "safe-password-cert-path", "safe-password-length", "safe-password-time-stamp", "safe-password-nonce", "safe-password-salt", "safe-password-custom-hash", "aria-label", "aria-roledescription"]),
+            $props.clearable ? vue.withDirectives((vue.openBlock(), vue.createElementBlock(
+              "view",
+              {
+                key: 0,
+                onClick: $setup.clearInput
+              },
+              [
+                vue.createVNode(_component_l_icon, {
+                  class: "l-input__wrap--clearable-icon",
+                  name: "close-circle-filled",
+                  size: $props.clearIconSize
+                }, null, 8, ["size"])
+              ],
+              512
+              /* NEED_PATCH */
+            )), [
+              [vue.vShow, $setup.showClearIcon]
+            ]) : vue.createCommentVNode("v-if", true),
+            vue.createCommentVNode(' <l-icon class="l-input__wrap--clearable-icon" name="close-circle-filled" size="44rpx" @click="clearInput"  v-if="clearable" v-show="showClearIcon"></l-icon> '),
+            $props.suffix != null || _ctx.$slots["suffix"] != null ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 1,
+              class: "l-input__wrap--suffix",
+              onClick: $setup.onSuffixClick
+            }, [
+              vue.renderSlot(_ctx.$slots, "suffix", {}, () => [
+                vue.createElementVNode(
+                  "text",
+                  { class: "l-input__wrap--suffix-text" },
+                  vue.toDisplayString($props.suffix),
+                  1
+                  /* TEXT */
+                )
+              ])
+            ])) : vue.createCommentVNode("v-if", true),
+            vue.renderSlot(_ctx.$slots, "suffix-icon", {}, () => [
+              $props.suffixIcon != null ? (vue.openBlock(), vue.createBlock(_component_l_icon, {
+                key: 0,
+                class: "l-input__wrap--suffix-icon",
+                name: $props.suffixIcon,
+                size: $props.suffixIconSize,
+                color: $props.suffixIconColor
+              }, null, 8, ["name", "size", "color"])) : vue.createCommentVNode("v-if", true)
+            ])
+          ]),
+          $props.tips != null && $props.tips.length > 0 || _ctx.$slots["tips"] != null ? (vue.openBlock(), vue.createElementBlock(
+            "text",
+            {
+              key: 0,
+              class: vue.normalizeClass(["l-input__tips", ["l-input__tips--" + $props.status]]),
+              style: vue.normalizeStyle([$props.tipsStyle])
+            },
+            [
+              vue.renderSlot(_ctx.$slots, "tips", {}, () => [
+                vue.createTextVNode(
+                  vue.toDisplayString($props.tips),
+                  1
+                  /* TEXT */
+                )
+              ])
+            ],
+            6
+            /* CLASS, STYLE */
+          )) : vue.createCommentVNode("v-if", true)
+        ])
+      ],
+      6
+      /* CLASS, STYLE */
+    );
+  }
+  const __easycom_3 = /* @__PURE__ */ _export_sfc(_sfc_main$9, [["render", _sfc_render$8], ["styles", [_style_0$7]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-input/components/l-input/l-input.uvue"]]);
+  function raf(fn = null) {
+    if (typeof fn == "UniAnimationFrameCallback") {
+      return requestAnimationFrame(fn);
+    } else {
+      return requestAnimationFrame(fn);
+    }
+  }
+  function useTransition(options) {
+    var _a, _b, _c, _d, _e2, _f, _g, _h, _j;
+    const state = vue.ref(false);
+    const display = vue.ref(false);
+    const inited = vue.ref(false);
+    const classes = vue.ref("");
+    const name2 = vue.ref((_a = options.defaultName) !== null && _a !== void 0 ? _a : "fade");
+    const enterClass = (_b = options.enterClass) !== null && _b !== void 0 ? _b : "";
+    const enterActiveClass = (_c = options.enterActiveClass) !== null && _c !== void 0 ? _c : "";
+    const enterToClass = (_d = options.enterToClass) !== null && _d !== void 0 ? _d : "";
+    const leaveActiveClass = (_e2 = options.leaveActiveClass) !== null && _e2 !== void 0 ? _e2 : "";
+    const leaveToClass = (_f = options.leaveToClass) !== null && _f !== void 0 ? _f : "";
+    const leaveClass = (_g = options.leaveClass) !== null && _g !== void 0 ? _g : "";
+    const appear = (_h = options.appear) !== null && _h !== void 0 ? _h : false;
+    const duration = (_j = options.duration) !== null && _j !== void 0 ? _j : 300;
+    let status = "";
+    let isTransitionEnd = false;
+    let isTransitioning = false;
+    let timeoutId = -1;
+    const emitEvent = (event) => {
+      var _a2;
+      (_a2 = options.emits) === null || _a2 === void 0 ? void 0 : _a2.call(options, event);
+    };
+    const finished = () => {
+      if (isTransitionEnd)
+        return;
+      isTransitionEnd = true;
+      emitEvent("after-".concat(status));
+      if (display.value && !state.value) {
+        display.value = false;
+      }
+    };
+    const sleep = () => {
+      return new Promise((resolve) => {
+        vue.nextTick(() => {
+          raf(() => {
+            var _a2, _b2, _c2, _d2;
+            if (((_a2 = options.element) === null || _a2 === void 0 ? void 0 : _a2.value) != null) {
+              (_d2 = (_c2 = (_b2 = options.element) === null || _b2 === void 0 ? void 0 : _b2.value) === null || _c2 === void 0 ? void 0 : _c2.getBoundingClientRectAsync()) === null || _d2 === void 0 ? void 0 : _d2.then((res) => {
+                resolve();
+              });
+            } else {
+              resolve();
+            }
+          });
+        });
+      });
+    };
+    const getClassNames = (name3) => {
+      return /* @__PURE__ */ new Map([
+        ["enter", "l-".concat(name3, "-enter l-").concat(name3, "-enter-active ").concat(enterClass, " ").concat(enterActiveClass)],
+        ["enter-to", "l-".concat(name3, "-enter-to l-").concat(name3, "-enter-active ").concat(enterToClass, " ").concat(enterActiveClass)],
+        ["leave", "l-".concat(name3, "-leave l-").concat(name3, "-leave-active ").concat(leaveClass, " ").concat(leaveActiveClass)],
+        ["leave-to", "l-".concat(name3, "-leave-to l-").concat(name3, "-leave-active ").concat(leaveToClass, " ").concat(leaveActiveClass)]
+      ]);
+    };
+    const transitionQueue = vue.ref([]);
+    const performTransition = (newStatus, eventName) => {
+      return __awaiter(this, void 0, void 0, function* () {
+        var _a2;
+        if (status == newStatus)
+          return;
+        transitionQueue.value.push(newStatus);
+        if (isTransitioning)
+          return;
+        isTransitioning = true;
+        isTransitionEnd = true;
+        while (transitionQueue.value.length > 0) {
+          const currentStatus = transitionQueue.value.shift();
+          status = currentStatus;
+          emitEvent("before-".concat(eventName));
+          yield sleep();
+          yield sleep();
+          if (status != currentStatus)
+            continue;
+          const classNames = getClassNames(name2.value);
+          inited.value = true;
+          display.value = true;
+          classes.value = classNames.get(eventName);
+          emitEvent(eventName);
+          const executeAfterTick = (_a2 = options.onNextTick) === null || _a2 === void 0 ? void 0 : _a2.call(options, eventName);
+          if (executeAfterTick != null) {
+            yield executeAfterTick;
+          }
+          yield sleep();
+          if (status != currentStatus)
+            continue;
+          classes.value = classNames.get("".concat(eventName, "-to"));
+          if (status == "leave") {
+            setTimeout(() => {
+              finished();
+            }, duration);
+          }
+        }
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          if (transitionQueue.value.length == 0 && status == newStatus) {
+            isTransitionEnd = false;
+          }
+        }, duration * 0.8);
+        isTransitioning = false;
+      });
+    };
+    const enter = () => {
+      performTransition("enter", "enter");
+    };
+    const leave = () => {
+      performTransition("leave", "leave");
+    };
+    let init = false;
+    vue.watchEffect(() => {
+      if (options.visible == null)
+        return;
+      state.value = options.visible();
+      if (!appear && !init) {
+        init = true;
+        return;
+      }
+      if (state.value) {
+        enter();
+      } else {
+        leave();
+      }
+    });
+    vue.watchEffect(() => {
+      if (options.name == null)
+        return;
+      name2.value = options.name();
+    });
+    const toggle = (v2) => {
+      state.value = v2;
+      if (v2) {
+        enter();
+      } else {
+        leave();
+      }
+    };
+    return {
+      state,
+      inited,
+      display,
+      classes,
+      name: name2,
+      finished,
+      toggle
+    };
+  }
+  const _sfc_main$8 = /* @__PURE__ */ vue.defineComponent(Object.assign({
+    name: "l-overlay"
+  }, { __name: "l-overlay", props: {
+    ariaLabel: { type: String, required: true, default: "关闭" },
+    ariaRole: { type: String, required: true, default: "button" },
+    lClass: { type: String, required: false },
+    bgColor: { type: String, required: false },
+    lStyle: { type: String, required: false },
+    duration: { type: Number, required: true, default: 300 },
+    preventScrollThrough: { type: Boolean, required: true, default: true },
+    visible: { type: Boolean, required: true, default: false },
+    zIndex: { type: Number, required: true, default: 998 }
+  }, emits: ["click", "before-enter", "enter", "after-enter", "before-leave", "leave", "after-leave"], setup(__props, _a) {
+    var __expose = _a.expose, __emit = _a.emit;
+    __expose();
+    const props = __props;
+    const emit = __emit;
+    const _b = useTransition({
+      defaultName: "fade",
+      appear: props.visible,
+      emits: (name2) => {
+        emit(name2);
+      },
+      visible: () => {
+        return props.visible;
+      },
+      duration: props.duration
+    }), inited = _b.inited, display = _b.display, classes = _b.classes, finished = _b.finished;
+    const styles = vue.computed(() => {
+      const style = /* @__PURE__ */ new Map();
+      if (props.bgColor != null) {
+        style.set("background", props.bgColor);
+      }
+      if (props.zIndex > 0) {
+        style.set("z-index", props.zIndex);
+      }
+      return style;
+    });
+    const noop = () => {
+    };
+    const onClick = (event) => {
+      emit("click", !props.visible);
+    };
+    const overlayRef = vue.ref(null);
+    vue.watchEffect(() => {
+      var _a2, _b2, _c;
+      (_a2 = overlayRef.value) === null || _a2 === void 0 ? null : _a2.style.setProperty("transition-duration", "".concat(props.duration, "ms"));
+      if (!display.value) {
+        (_b2 = overlayRef.value) === null || _b2 === void 0 ? null : _b2.style.setProperty("display", "none");
+      } else {
+        (_c = overlayRef.value) === null || _c === void 0 ? null : _c.style.setProperty("display", "flex");
+      }
+    });
+    const __returned__ = { props, emit, inited, display, classes, finished, styles, noop, onClick, overlayRef };
+    Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+    return __returned__;
+  } }));
+  const _style_0$6 = { "l-overlay": { "": { "position": "fixed", "top": 0, "left": 0, "width": "100%", "bottom": 0, "backgroundColor": "rgba(0,0,0,0.6)", "transitionDuration": "300ms", "transitionProperty": "opacity", "transitionTimingFunction": "ease", "zIndex": 998, "opacity": 1 } }, "l-fade-enter": { "": { "opacity": 0 } }, "l-fade-leave-to": { "": { "opacity": 0 } }, "@TRANSITION": { "l-overlay": { "duration": "300ms", "property": "opacity", "timingFunction": "ease" } } };
+  function _sfc_render$7(_ctx, _cache, $props, $setup, $data, $options) {
+    return $setup.inited ? (vue.openBlock(), vue.createElementBlock("view", {
+      key: 0,
+      class: vue.normalizeClass(["l-overlay", [$props.lClass, $setup.classes]]),
+      ref: "overlayRef",
+      style: vue.normalizeStyle([$setup.styles, $props.lStyle]),
+      onClick: vue.withModifiers($setup.onClick, ["stop"]),
+      onTouchmove: vue.withModifiers($setup.noop, ["stop"]),
+      onTransitionend: _cache[0] || (_cache[0] = (...args) => $setup.finished && $setup.finished(...args)),
+      "aria-role": $props.ariaRole,
+      "aria-label": $props.ariaLabel
+    }, [
+      vue.renderSlot(_ctx.$slots, "default")
+    ], 46, ["aria-role", "aria-label"])) : vue.createCommentVNode("v-if", true);
+  }
+  const __easycom_0 = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$7], ["styles", [_style_0$6]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-overlay/components/l-overlay/l-overlay.uvue"]]);
+  function convertRadius(radius) {
+    var _a;
+    if (Array.isArray(radius)) {
+      const values = radius.map((item) => {
+        return addUnit(item);
+      });
+      if (values.length == 1) {
+        return [values[0], values[0], values[0], values[0]];
+      }
+      if (values.length == 2) {
+        return [values[0], values[1], values[0], values[1]];
+      }
+      if (values.length == 3) {
+        return [values[0], values[1], values[2], values[1]];
+      }
+      if (values.length == 4) {
+        return [values[0], values[1], values[2], values[3]];
+      }
+      return ["0", "0", "0", "0"];
+    }
+    const value = (_a = addUnit(radius)) !== null && _a !== void 0 ? _a : "0";
+    return [value, value, value, value];
+  }
+  const _sfc_main$7 = /* @__PURE__ */ vue.defineComponent({
+    __name: "l-popup",
+    props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
+      closeable: { type: Boolean, required: true, default: false },
+      closeOnClickOverlay: { type: Boolean, required: true, default: true },
+      destroyOnClose: { type: Boolean, required: true, default: false },
+      overlayStyle: { type: null, required: false },
+      position: { type: String, required: true, default: "center" },
+      preventScrollThrough: { type: Boolean, required: true, default: true },
+      overlay: { type: Boolean, required: true, default: true },
+      transitionName: { type: String, required: false },
+      visible: { type: Boolean, required: false },
+      zIndex: { type: Number, required: true, default: 999 },
+      duration: { type: Number, required: true, default: 300 },
+      bgColor: { type: String, required: false },
+      closeIcon: { type: String, required: true, default: "close" },
+      iconColor: { type: String, required: false },
+      lStyle: { type: null, required: false },
+      safeAreaInsetBottom: { type: Boolean, required: true, default: true },
+      safeAreaInsetTop: { type: Boolean, required: true, default: false },
+      radius: { type: [String, Number, Array], required: false }
+    }), new UTSJSONObject({
+      "modelValue": { type: Boolean },
+      "modelModifiers": {}
+    })),
+    emits: /* @__PURE__ */ vue.mergeModels(["change", "click-overlay", "click-close", "open", "opened", "close", "closed", "before-enter", "enter", "after-enter", "before-leave", "leave", "after-leave"], ["update:modelValue"]),
+    setup(__props, _a) {
+      var _b;
+      var __expose = _a.expose, __emit = _a.emit;
+      __expose();
+      const emit = __emit;
+      const props = __props;
+      const modelValue = vue.useModel(__props, "modelValue");
+      const innerValue = vue.computed({
+        set(value) {
+          modelValue.value = value;
+          emit("change", value);
+        },
+        get() {
+          return props.visible || modelValue.value;
+        }
+      });
+      const status = vue.ref("before-enter");
+      const _c = useTransition({
+        defaultName: (_b = props.transitionName) !== null && _b !== void 0 ? _b : "popup-fade",
+        appear: innerValue.value,
+        emits: (name2) => {
+          status.value = name2;
+          if (name2 == "before-enter") {
+            emit("open");
+          } else if (name2 == "after-enter") {
+            emit("opened");
+          } else if (name2 == "before-leave") {
+            emit("close");
+          } else if (name2 == "after-leave") {
+            emit("closed");
+          }
+          emit(name2);
+        },
+        visible: () => {
+          return innerValue.value;
+        },
+        duration: props.duration
+      }), inited = _c.inited, display = _c.display, classes = _c.classes, finished = _c.finished;
+      const overlayZIndex = vue.computed(() => {
+        return props.zIndex > 0 ? props.zIndex - 1 : 998;
+      });
+      const rootClass = vue.computed(() => {
+        const safe = props.safeAreaInsetTop && props.position == "top" ? "l-popup--safe-top" : props.safeAreaInsetBottom && props.position == "bottom" ? "l-popup--safe-bottom" : "";
+        return "l-popup--".concat(props.position, " ").concat(safe, " ").concat(classes.value);
+      });
+      const safeAreaInsets = uni.getWindowInfo().safeAreaInsets;
+      const styles = vue.computed(() => {
+        const style = /* @__PURE__ */ new Map();
+        style.set("transition-duration", (["after-leave", "before-enter"].includes(status.value) ? 0 : props.duration) + "ms");
+        if (props.bgColor != null) {
+          style.set("background", props.bgColor);
+        }
+        if (props.zIndex > 0) {
+          style.set("z-index", props.zIndex);
+        }
+        if (props.safeAreaInsetBottom && props.position == "bottom") {
+          style.set("padding-bottom", safeAreaInsets.bottom + "px");
+        }
+        if (props.safeAreaInsetTop && props.position == "top") {
+          style.set("padding-top", safeAreaInsets.top + "px");
+        }
+        if (props.radius != null) {
+          const values = convertRadius(props.radius);
+          style.set("border-top-left-radius", values[0]);
+          style.set("border-top-right-radius", values[1]);
+          style.set("border-bottom-right-radius", values[2]);
+          style.set("border-bottom-left-radius", values[3]);
+        }
+        return style;
+      });
+      const handleOverlayClick = () => {
+        if (props.closeOnClickOverlay) {
+          innerValue.value = false;
+          emit("click-overlay");
+        }
+      };
+      const handleClose = () => {
+        innerValue.value = false;
+        emit("click-close");
+      };
+      const popupRef = vue.ref(null);
+      vue.watchEffect(() => {
+        var _a2, _b2;
+        if (!display.value) {
+          (_a2 = popupRef.value) === null || _a2 === void 0 ? null : _a2.style.setProperty("display", "none");
+        } else {
+          (_b2 = popupRef.value) === null || _b2 === void 0 ? null : _b2.style.setProperty("display", "flex");
+        }
+      });
+      const __returned__ = { emit, props, modelValue, innerValue, status, inited, display, classes, finished, overlayZIndex, rootClass, safeAreaInsets, styles, handleOverlayClick, handleClose, popupRef };
+      Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+      return __returned__;
+    }
+  });
+  const _style_0$5 = { "l-popup": { "": { "position": "fixed", "transitionDuration": "300ms", "transitionProperty": "transform,opacity", "transitionTimingFunction": "ease", "backgroundColor": "#ffffff", "overflow": "visible", "opacity": 1 }, ".l-popup-fade-enter": { "opacity": 0 }, ".l-popup-fade-leave-to": { "opacity": 0 }, ".l-popup-fade-enter.l-popup--top": { "transform": "scale(1) translate(0, -100%)" }, ".l-popup-fade-leave-to.l-popup--top": { "transform": "scale(1) translate(0, -100%)" }, ".l-popup-fade-enter.l-popup--bottom": { "transform": "scale(1) translate(0, 100%)" }, ".l-popup-fade-leave-to.l-popup--bottom": { "transform": "scale(1) translate(0, 100%)" }, ".l-popup-fade-enter.l-popup--left": { "transform": "scale(1) translate(-100%, 0)" }, ".l-popup-fade-leave-to.l-popup--left": { "transform": "scale(1) translate(-100%, 0)" }, ".l-popup-fade-enter.l-popup--right": { "transform": "scale(1) translate(100%, 0)" }, ".l-popup-fade-leave-to.l-popup--right": { "transform": "scale(1) translate(100%, 0)" }, ".l-popup-fade-enter.l-popup--center": { "transform": "translate(-50%, -50%)", "opacity": 0 }, ".l-popup-fade-leave-to.l-popup--center": { "transform": "translate(-50%, -50%)", "opacity": 0 }, ".l-dialog-enter.l-popup--center": { "transform": "scale(0.6) translate(-50%, -50%)", "opacity": 0 }, ".l-dialog-leave-to.l-popup--center": { "transform": "scale(0.6) translate(-50%, -50%)", "opacity": 0 } }, "l-popup__close": { "": { "position": "absolute", "top": 0, "right": 0, "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "l-popup__close-icon": { "": { "color": "rgba(0,0,0,0.6)" } }, "l-popup--top": { "": { "top": 0, "left": 0, "right": 0, "borderBottomLeftRadius": "18rpx", "borderBottomRightRadius": "18rpx", "transform": "scale(1) translate(0, 0)" } }, "l-popup--bottom": { "": { "bottom": 0, "left": 0, "right": 0, "borderTopLeftRadius": "18rpx", "borderTopRightRadius": "18rpx", "transform": "scale(1) translate(0, 0)" } }, "l-popup--left": { "": { "top": 0, "left": 0, "bottom": 0, "transform": "scale(1) translate(0, 0)" } }, "l-popup--right": { "": { "top": 0, "right": 0, "bottom": 0, "transform": "scale(1) translate(0, 0)" } }, "l-popup--center": { "": { "top": "50%", "left": "50%", "transform": "translate(-50%, -50%)", "transformOrigin": "50% 50%", "borderTopLeftRadius": "18rpx", "borderTopRightRadius": "18rpx", "borderBottomRightRadius": "18rpx", "borderBottomLeftRadius": "18rpx" } }, "@TRANSITION": { "l-popup": { "duration": "300ms", "property": "transform,opacity", "timingFunction": "ease" } } };
+  function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_overlay = resolveEasycom(vue.resolveDynamicComponent("l-overlay"), __easycom_0);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    return vue.openBlock(), vue.createElementBlock(
+      vue.Fragment,
+      null,
+      [
+        ($props.destroyOnClose ? $setup.display && $props.overlay : $props.overlay) ? (vue.openBlock(), vue.createBlock(_component_l_overlay, {
+          key: 0,
+          visible: $setup.innerValue,
+          zIndex: $setup.overlayZIndex,
+          appear: true,
+          preventScrollThrough: $props.preventScrollThrough,
+          "l-style": $props.overlayStyle,
+          onClick: $setup.handleOverlayClick
+        }, null, 8, ["visible", "zIndex", "preventScrollThrough", "l-style"])) : vue.createCommentVNode("v-if", true),
+        ($props.destroyOnClose ? $setup.display : $setup.inited) ? (vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            key: 1,
+            class: vue.normalizeClass(["l-popup", $setup.rootClass]),
+            ref: "popupRef",
+            style: vue.normalizeStyle([$setup.styles, $props.lStyle]),
+            onTransitionend: _cache[0] || (_cache[0] = (...args) => $setup.finished && $setup.finished(...args))
+          },
+          [
+            vue.renderSlot(_ctx.$slots, "default"),
+            $props.closeable ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 0,
+              class: "l-popup__close",
+              onClick: $setup.handleClose
+            }, [
+              vue.renderSlot(_ctx.$slots, "close-btn", {}, () => [
+                vue.createVNode(_component_l_icon, {
+                  class: "l-popup__close-icon",
+                  name: $props.closeIcon,
+                  size: "27px",
+                  color: $props.iconColor
+                }, null, 8, ["name", "color"])
+              ])
+            ])) : vue.createCommentVNode("v-if", true)
+          ],
+          38
+          /* CLASS, STYLE, NEED_HYDRATION */
+        )) : vue.createCommentVNode("v-if", true)
+      ],
+      64
+      /* STABLE_FRAGMENT */
+    );
+  }
+  const __easycom_2$1 = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$6], ["styles", [_style_0$5]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-popup/components/l-popup/l-popup.uvue"]]);
+  const parseToObject = (obj = null) => {
+    if (obj == null)
+      return null;
+    if (typeof obj == "string") {
+      return new UTSJSONObject({
+        content: obj
+      });
+    } else if (typeof obj == "object") {
+      return UTSJSONObject.assign(new UTSJSONObject({}), obj);
+    }
+    return null;
+  };
+  const _sfc_main$6 = /* @__PURE__ */ vue.defineComponent({
+    __name: "l-dialog",
+    props: /* @__PURE__ */ vue.mergeModels(new UTSJSONObject({
+      actions: { type: Array, required: false },
+      buttonLayout: { type: String, required: true, default: "horizontal" },
+      cancelBtn: { type: null, required: false },
+      closeBtn: { type: Boolean, required: false },
+      closeOnClickOverlay: { type: Boolean, required: true, default: true },
+      confirmBtn: { type: null, required: false },
+      content: { type: String, required: false },
+      overlayStyle: { type: String, required: false },
+      preventScrollThrough: { type: Boolean, required: true, default: true },
+      overlay: { type: Boolean, required: true, default: true },
+      title: { type: String, required: false },
+      visible: { type: Boolean, required: false },
+      zIndex: { type: Number, required: false },
+      lStyle: { type: String, required: false }
+    }), new UTSJSONObject({
+      "modelValue": { type: Boolean, default: false },
+      "modelModifiers": {}
+    })),
+    emits: /* @__PURE__ */ vue.mergeModels(["action", "confirm", "cancel", "click", "agreeprivacyauthorization", "chooseavatar", "getuserinfo", "contact", "getphonenumber", "error", "opensetting", "launchapp"], ["update:modelValue"]),
+    setup(__props, _a) {
+      var __expose = _a.expose, __emit = _a.emit;
+      const emit = __emit;
+      const props = __props;
+      const dialogCallbacks = vue.reactive({
+        beforeClose: null,
+        onAction: null,
+        onConfirm: null,
+        onCancel: null
+      });
+      const innerOptions = vue.reactive({
+        actions: props.actions,
+        buttonLayout: props.buttonLayout,
+        cancelBtn: props.cancelBtn,
+        closeBtn: props.closeBtn,
+        closeOnClickOverlay: props.closeOnClickOverlay,
+        confirmBtn: props.confirmBtn,
+        content: props.content,
+        overlayStyle: props.overlayStyle,
+        preventScrollThrough: props.preventScrollThrough,
+        overlay: props.overlay,
+        title: props.title,
+        visible: props.visible,
+        zIndex: props.zIndex
+      });
+      const modelValue = vue.useModel(__props, "modelValue");
+      const innerValue = vue.computed({
+        set(value) {
+          modelValue.value = value;
+          if (!value) {
+            dialogCallbacks.beforeClose = null;
+            dialogCallbacks.onConfirm = null;
+            dialogCallbacks.onCancel = null;
+          }
+        },
+        get() {
+          var _a2;
+          return ((_a2 = props.visible) !== null && _a2 !== void 0 ? _a2 : false) || modelValue.value;
+        }
+      });
+      const closeBtnProps = vue.computed(() => {
+        var _a2, _b;
+        return (_b = (_a2 = innerOptions.closeBtn) !== null && _a2 !== void 0 ? _a2 : props.closeBtn) !== null && _b !== void 0 ? _b : false;
+      });
+      const cancelBtnProps = vue.computed(() => {
+        var _a2;
+        return parseToObject((_a2 = props.cancelBtn) !== null && _a2 !== void 0 ? _a2 : innerOptions.cancelBtn);
+      });
+      const confirmBtnProps = vue.computed(() => {
+        var _a2;
+        return parseToObject((_a2 = props.confirmBtn) !== null && _a2 !== void 0 ? _a2 : innerOptions.confirmBtn);
+      });
+      const innerTitle = vue.computed(() => {
+        var _a2;
+        return (_a2 = props.title) !== null && _a2 !== void 0 ? _a2 : innerOptions.title;
+      });
+      const innerButtonLayout = vue.computed(() => {
+        var _a2;
+        return (_a2 = innerOptions.buttonLayout) !== null && _a2 !== void 0 ? _a2 : props.buttonLayout;
+      });
+      const innerActions = vue.computed(() => {
+        var _a2;
+        return (_a2 = props.actions) !== null && _a2 !== void 0 ? _a2 : innerOptions.actions;
+      });
+      const buttonVariant = vue.computed(() => {
+        var _a2;
+        const res1 = [confirmBtnProps.value, cancelBtnProps.value].some((item = null) => {
+          return (item === null || item === void 0 ? null : item["variant"]) == "text";
+        });
+        const res2 = (_a2 = innerActions.value) === null || _a2 === void 0 ? null : _a2.some((item) => {
+          return item["variant"] == "text";
+        });
+        return res1 || (res2 !== null && res2 !== void 0 ? res2 : false);
+      });
+      const buttonStyle = vue.computed(() => {
+        const style = /* @__PURE__ */ new Map();
+        if (innerButtonLayout.value == "horizontal") {
+          style.set("flex-grow", 1);
+        } else {
+          style.set("flex-grow", 0);
+        }
+        style.set("padding", 0);
+        if (buttonVariant.value) {
+          style.set("border-top", "1px solid #e7e7e7");
+          style.set("border-radius", "0");
+          style.set("border-left", "1px solid #e7e7e7");
+        }
+        return style;
+      });
+      const onClose = (type) => {
+        if (dialogCallbacks.beforeClose != null) {
+          dialogCallbacks.beforeClose(type).then((res) => {
+            innerValue.value = false;
+          });
+          return null;
+        }
+        innerValue.value = false;
+      };
+      const onTplButtonTap = (type, extra = null) => {
+        if (type == "confirm") {
+          emit("confirm");
+          if (dialogCallbacks.onConfirm != null) {
+            dialogCallbacks.onConfirm(null);
+            onClose("confirm");
+          }
+        } else if (type == "cancel") {
+          emit("cancel");
+          if (dialogCallbacks.onCancel != null) {
+            dialogCallbacks.onCancel(true);
+            onClose("cancel");
+          }
+        } else if (type == "action" && extra != null) {
+          emit("action", extra);
+          if (dialogCallbacks.onAction != null) {
+            dialogCallbacks.onAction(extra);
+            onClose("action");
+          }
+        }
+      };
+      const getuserinfo = (e2) => {
+        emit("getuserinfo", e2);
+      };
+      const contact = (e2) => {
+        emit("contact", e2);
+      };
+      const getphonenumber = (e2) => {
+        emit("getphonenumber", e2);
+      };
+      const error = (e2) => {
+        emit("error", e2);
+      };
+      const opensetting = (e2) => {
+        emit("opensetting", e2);
+      };
+      const launchapp = (e2) => {
+        emit("launchapp", e2);
+      };
+      const chooseavatar = (e2) => {
+        emit("chooseavatar", e2);
+      };
+      const agreeprivacyauthorization = (e2) => {
+        emit("agreeprivacyauthorization", e2);
+      };
+      const overlayClick = () => {
+        if (props.closeOnClickOverlay) {
+          onClose("cancel");
+        }
+      };
+      const _updateOptions = (options) => {
+        var _a2, _b, _c, _d, _e2, _f, _g, _h, _j, _k, _l, _m;
+        innerOptions.actions = (_a2 = options.getArray("actions")) !== null && _a2 !== void 0 ? _a2 : props.actions;
+        innerOptions.buttonLayout = (_b = options.getString("buttonLayout")) !== null && _b !== void 0 ? _b : props.buttonLayout;
+        const maxLengthSuggestion = innerOptions.buttonLayout == "vertical" ? 7 : 3;
+        if (innerOptions.actions != null && (innerOptions.actions.length == 0 || innerOptions.actions.length > maxLengthSuggestion)) {
+          uni.__log__("warn", "at uni_modules/lime-dialog/components/l-dialog/l-dialog.uvue:390", "action 数量建议控制在1至".concat(maxLengthSuggestion, "个"));
+        }
+        innerOptions.cancelBtn = (_c = options["cancelBtn"]) !== null && _c !== void 0 ? _c : props.cancelBtn;
+        innerOptions.closeBtn = (_d = options.getBoolean("closeBtn")) !== null && _d !== void 0 ? _d : props.closeBtn;
+        innerOptions.closeOnClickOverlay = (_e2 = options.getBoolean("closeOnClickOverlay")) !== null && _e2 !== void 0 ? _e2 : props.closeOnClickOverlay;
+        innerOptions.confirmBtn = (_f = options.get("confirmBtn")) !== null && _f !== void 0 ? _f : props.confirmBtn;
+        innerOptions.content = (_g = options.getString("content")) !== null && _g !== void 0 ? _g : props.content;
+        innerOptions.overlayStyle = (_h = options.getString("overlayStyle")) !== null && _h !== void 0 ? _h : props.overlayStyle;
+        innerOptions.preventScrollThrough = (_j = options.getBoolean("preventScrollThrough")) !== null && _j !== void 0 ? _j : props.preventScrollThrough;
+        innerOptions.overlay = (_k = options.getBoolean("overlay")) !== null && _k !== void 0 ? _k : props.overlay;
+        innerOptions.title = (_l = options.getString("title")) !== null && _l !== void 0 ? _l : props.title;
+        innerOptions.zIndex = (_m = options.getNumber("zIndex")) !== null && _m !== void 0 ? _m : props.zIndex;
+      };
+      const _show = (options) => {
+        _updateOptions(options);
+        innerValue.value = true;
+        try {
+          const beforeClose = options["beforeClose"];
+          if (typeof beforeClose == "function") {
+            dialogCallbacks.beforeClose = beforeClose;
+          }
+        } catch (err) {
+          uni.__log__("warn", "at uni_modules/lime-dialog/components/l-dialog/l-dialog.uvue:416", err);
+        }
+        return new Promise((resolve, reject) => {
+          dialogCallbacks.onConfirm = resolve;
+          dialogCallbacks.onAction = resolve;
+          dialogCallbacks.onCancel = reject;
+        });
+      };
+      const _close = () => {
+        innerValue.value = false;
+      };
+      __expose(new UTSJSONObject({
+        // dialogCallbacks,
+        // alert: _alert,
+        close: _close,
+        // action: _action,
+        // confirm: _confirm,
+        show: _show
+      }));
+      const __returned__ = { emit, props, dialogCallbacks, innerOptions, modelValue, innerValue, closeBtnProps, cancelBtnProps, confirmBtnProps, innerTitle, innerButtonLayout, innerActions, buttonVariant, buttonStyle, onClose, onTplButtonTap, getuserinfo, contact, getphonenumber, error, opensetting, launchapp, chooseavatar, agreeprivacyauthorization, overlayClick, _updateOptions, _show, _close };
+      Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+      return __returned__;
+    }
+  });
+  const _style_0$4 = { "l-dialog": { "": { "overflow": "hidden", "width": "642rpx", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "backgroundColor": "#ffffff" } }, "l-dialog__close": { "": { "position": "absolute", "top": "16rpx", "right": "16rpx", "zIndex": 1 } }, "l-dialog__close-icon": { "": { "color": "rgba(0,0,0,0.45)" } }, "l-dialog__content": { "": { "paddingTop": "64rpx", "paddingRight": "48rpx", "paddingBottom": 0, "paddingLeft": "48rpx", "maxHeight": "912rpx", "boxSizing": "border-box", "display": "flex", "flexDirection": "column", "justifyContent": "center" } }, "l-dialog__header": { "": { "textAlign": "center", "fontWeight": "bold", "fontSize": "36rpx", "lineHeight": "52rpx", "color": "rgba(0,0,0,0.88)" } }, "l-dialog__body-text": { "": { "textAlign": "center", "fontSize": "32rpx", "color": "rgba(0,0,0,0.65)", "lineHeight": "48rpx" } }, "l-dialog__body--left": { "": { "textAlign": "left" } }, "l-dialog__body--right": { "": { "textAlign": "right" } }, "l-dialog__body--gap": { "": { "marginTop": "16rpx" } }, "l-dialog__footer": { "": { "display": "flex", "paddingTop": "48rpx", "paddingRight": "48rpx", "paddingBottom": "48rpx", "paddingLeft": "48rpx" } }, "l-dialog__footer--horizontal": { "": { "flexDirection": "row", "flexWrap": "nowrap" } }, "l-dialog__footer--vertical": { "": { "flexDirection": "column-reverse", "flexWrap": "nowrap" } }, "l-dialog__button": { ".l-dialog__footer--vertical ": { "width": "100%" }, "": { "position": "relative", "flex": 1, "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap" } }, "l-dialog__footer--full": { "": { "paddingTop": "64rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0 } }, "l-dialog__button--horizontal": { ".l-dialog__button--horizontal+": { "marginLeft": "24rpx" } }, "l-dialog__button--vertical": { ".l-dialog__button--vertical+": { "marginBottom": "24rpx" } }, "l-dialog__button--text": { "": { "flex": 1, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "borderTopWidth": 1, "borderTopStyle": "solid", "borderTopColor": "#e7e7e7", "borderLeftWidth": 1, "borderLeftStyle": "solid", "borderLeftColor": "#e7e7e7" } } };
+  function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
+    var _a, _b, _c, _d;
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_button = resolveEasycom(vue.resolveDynamicComponent("l-button"), __easycom_1$4);
+    const _component_l_popup = resolveEasycom(vue.resolveDynamicComponent("l-popup"), __easycom_2$1);
+    return vue.openBlock(), vue.createBlock(_component_l_popup, {
+      visible: $setup.innerValue,
+      overlay: (_a = $setup.innerOptions.overlay) != null ? _a : $props.overlay,
+      "bg-color": "transparent",
+      closeOnClickOverlay: (_b = $setup.innerOptions.closeOnClickOverlay) != null ? _b : $props.closeOnClickOverlay,
+      preventScrollThrough: (_c = $setup.innerOptions.preventScrollThrough) != null ? _c : $props.preventScrollThrough,
+      zIndex: (_d = $props.zIndex) != null ? _d : $setup.innerOptions.zIndex,
+      onChange: $setup.overlayClick,
+      position: "center"
+    }, {
+      default: vue.withCtx(() => [
+        vue.createElementVNode("view", { class: "l-dialog" }, [
+          vue.renderSlot(_ctx.$slots, "top"),
+          $setup.closeBtnProps ? (vue.openBlock(), vue.createElementBlock("view", {
+            key: 0,
+            class: "l-dialog__close",
+            onClick: _cache[0] || (_cache[0] = ($event) => $setup.onClose("close"))
+          }, [
+            vue.createVNode(_component_l_icon, {
+              class: "l-dialog__close-icon",
+              name: "close",
+              size: "44rpx"
+            })
+          ])) : vue.createCommentVNode("v-if", true),
+          vue.createElementVNode("view", { class: "l-dialog__content" }, [
+            vue.renderSlot(_ctx.$slots, "title", {}, () => {
+              var _a2;
+              return [
+                $setup.innerTitle != null ? (vue.openBlock(), vue.createElementBlock(
+                  "text",
+                  {
+                    key: 0,
+                    class: "l-dialog__header"
+                  },
+                  vue.toDisplayString((_a2 = $props.title) != null ? _a2 : $setup.innerOptions.title),
+                  1
+                  /* TEXT */
+                )) : vue.createCommentVNode("v-if", true)
+              ];
+            }),
+            vue.createElementVNode(
+              "view",
+              {
+                class: vue.normalizeClass(["l-dialog__body", { "l-dialog__body--gap": $setup.innerTitle != null || _ctx.$slots["title"] != null }])
+              },
+              [
+                vue.renderSlot(_ctx.$slots, "default", {}, () => {
+                  var _a2;
+                  return [
+                    vue.createElementVNode(
+                      "text",
+                      { class: "l-dialog__body-text" },
+                      vue.toDisplayString((_a2 = $setup.innerOptions.content) != null ? _a2 : $props.content),
+                      1
+                      /* TEXT */
+                    )
+                  ];
+                })
+              ],
+              2
+              /* CLASS */
+            )
+          ]),
+          vue.renderSlot(_ctx.$slots, "middle"),
+          vue.createElementVNode(
+            "view",
+            {
+              class: vue.normalizeClass(["l-dialog__footer", [
+                "l-dialog__footer--" + $setup.innerButtonLayout,
+                {
+                  "l-dialog__footer--column": $setup.innerButtonLayout == "vertical",
+                  "l-dialog__footer--full": $setup.buttonVariant
+                }
+              ]])
+            },
+            [
+              vue.renderSlot(_ctx.$slots, "actions", {}, () => [
+                $setup.innerActions != null ? (vue.openBlock(true), vue.createElementBlock(
+                  vue.Fragment,
+                  { key: 0 },
+                  vue.renderList($setup.innerActions, (action, index) => {
+                    var _a2, _b2, _c2, _d2, _e2, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s2, _t2;
+                    return vue.openBlock(), vue.createBlock(_component_l_button, {
+                      class: vue.normalizeClass(["l-dialog__button", [
+                        "l-dialog__button--" + $setup.innerButtonLayout,
+                        {
+                          "l-dialog__button--text": $setup.buttonVariant
+                        }
+                      ]]),
+                      key: index,
+                      style: vue.normalizeStyle([
+                        $setup.buttonStyle,
+                        {
+                          "margin-left": $setup.innerButtonLayout == "horizontal" && !$setup.buttonVariant && index > 0 ? "20rpx" : "0",
+                          "margin-bottom": $setup.innerButtonLayout == "vertical" && !$setup.buttonVariant && index > 0 ? "20rpx" : "0"
+                        }
+                      ]),
+                      block: (_a2 = action.getBoolean("block")) != null ? _a2 : false,
+                      disabled: (_b2 = action.getBoolean("disabled")) != null ? _b2 : false,
+                      "data-extra": index,
+                      content: (_c2 = action.getString("content")) != null ? _c2 : "",
+                      icon: (_d2 = action.getString("icon")) != null ? _d2 : "",
+                      loading: (_e2 = action.getBoolean("loading")) != null ? _e2 : false,
+                      type: (_f = action.getString("type")) != null ? _f : "primary",
+                      ghost: (_g = action.getBoolean("loading")) != null ? _g : false,
+                      shape: (_h = action.getString("shape")) != null ? _h : "rectangle",
+                      size: (_i = action.getString("size")) != null ? _i : "medium",
+                      variant: action.getString("variant"),
+                      "open-type": (_j = action.getString("openType")) != null ? _j : "",
+                      color: action.getString("color"),
+                      textColor: action.getString("textColor"),
+                      fontSize: action.getString("fontSize"),
+                      "hover-stop-propagation": (_k = action.getBoolean("hoverStopPropagation")) != null ? _k : false,
+                      "hover-start-time": (_l = action.getNumber("hoverStartTime")) != null ? _l : 20,
+                      "hover-stay-time": (_m = action.getNumber("hoverStayTime")) != null ? _m : 70,
+                      lang: (_n = action.getString("lang")) != null ? _n : "en",
+                      "session-from": (_o = action.getString("sessionFrom")) != null ? _o : "",
+                      "send-message-title": (_p = action.getString("sendMessageTitle")) != null ? _p : "",
+                      "send-message-path": (_q = action.getString("sendMessagePath")) != null ? _q : "",
+                      "send-message-img": (_r = action.getString("sendMessageImg")) != null ? _r : "",
+                      "app-parameter": (_s2 = action.getString("appParameter")) != null ? _s2 : "",
+                      "show-message-card": (_t2 = action.getBoolean("showMessageCard")) != null ? _t2 : false,
+                      onClick: ($event) => $setup.onTplButtonTap("action", index),
+                      onGetuserinfo: $setup.getuserinfo,
+                      onContact: $setup.contact,
+                      onGetphonenumber: $setup.getphonenumber,
+                      onError: $setup.error,
+                      onOpensetting: $setup.opensetting,
+                      onLaunchapp: $setup.launchapp,
+                      onAgreeprivacyauthorization: $setup.agreeprivacyauthorization
+                    }, {
+                      default: vue.withCtx(() => [
+                        vue.createTextVNode(
+                          vue.toDisplayString(action["content"]),
+                          1
+                          /* TEXT */
+                        )
+                      ]),
+                      _: 2
+                      /* DYNAMIC */
+                    }, 1032, ["class", "style", "block", "disabled", "data-extra", "content", "icon", "loading", "type", "ghost", "shape", "size", "variant", "open-type", "color", "textColor", "fontSize", "hover-stop-propagation", "hover-start-time", "hover-stay-time", "lang", "session-from", "send-message-title", "send-message-path", "send-message-img", "app-parameter", "show-message-card", "onClick"]);
+                  }),
+                  128
+                  /* KEYED_FRAGMENT */
+                )) : vue.createCommentVNode("v-if", true)
+              ]),
+              vue.renderSlot(_ctx.$slots, "cancel-btn", {}, () => {
+                var _a2, _b2, _c2, _d2, _e2, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s2, _t2, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M, _N, _O, _P, _Q, _R;
+                return [
+                  $setup.cancelBtnProps != null ? (vue.openBlock(), vue.createBlock(_component_l_button, {
+                    key: 0,
+                    class: vue.normalizeClass(["l-dialog__button", [
+                      "l-dialog__button--" + $setup.innerButtonLayout,
+                      {
+                        "l-dialog__button--text": $setup.buttonVariant
+                      }
+                    ]]),
+                    style: vue.normalizeStyle([$setup.buttonStyle]),
+                    block: (_b2 = (_a2 = $setup.cancelBtnProps) == null ? void 0 : _a2.getBoolean("block")) != null ? _b2 : false,
+                    disabled: (_d2 = (_c2 = $setup.cancelBtnProps) == null ? void 0 : _c2.getBoolean("disabled")) != null ? _d2 : false,
+                    content: (_f = (_e2 = $setup.cancelBtnProps) == null ? void 0 : _e2.getString("content")) != null ? _f : "",
+                    icon: (_h = (_g = $setup.cancelBtnProps) == null ? void 0 : _g.getString("icon")) != null ? _h : "",
+                    loading: (_j = (_i = $setup.cancelBtnProps) == null ? void 0 : _i.getBoolean("loading")) != null ? _j : false,
+                    type: (_l = (_k = $setup.cancelBtnProps) == null ? void 0 : _k.getString("type")) != null ? _l : "primary",
+                    ghost: (_n = (_m = $setup.cancelBtnProps) == null ? void 0 : _m.getBoolean("loading")) != null ? _n : false,
+                    shape: (_p = (_o = $setup.cancelBtnProps) == null ? void 0 : _o.getString("shape")) != null ? _p : "rectangle",
+                    size: (_r = (_q = $setup.cancelBtnProps) == null ? void 0 : _q.getString("size")) != null ? _r : "medium",
+                    variant: (_t2 = (_s2 = $setup.cancelBtnProps) == null ? void 0 : _s2.getString("variant")) != null ? _t2 : "light",
+                    "open-type": (_u = $setup.cancelBtnProps) == null ? void 0 : _u.getString("openType"),
+                    color: (_v = $setup.cancelBtnProps) == null ? void 0 : _v.getString("color"),
+                    textColor: (_w = $setup.cancelBtnProps) == null ? void 0 : _w.getString("textColor"),
+                    fontSize: (_x = $setup.cancelBtnProps) == null ? void 0 : _x.getString("fontSize"),
+                    "hover-stop-propagation": (_z = (_y = $setup.cancelBtnProps) == null ? void 0 : _y.getBoolean("hoverStopPropagation")) != null ? _z : false,
+                    "hover-start-time": (_B = (_A = $setup.cancelBtnProps) == null ? void 0 : _A.getNumber("hoverStartTime")) != null ? _B : 20,
+                    "hover-stay-time": (_D = (_C = $setup.cancelBtnProps) == null ? void 0 : _C.getNumber("hoverStayTime")) != null ? _D : 70,
+                    lang: (_F = (_E = $setup.cancelBtnProps) == null ? void 0 : _E.getString("lang")) != null ? _F : "en",
+                    "session-from": (_H = (_G = $setup.cancelBtnProps) == null ? void 0 : _G.getString("sessionFrom")) != null ? _H : "",
+                    "send-message-title": (_J = (_I = $setup.cancelBtnProps) == null ? void 0 : _I.getString("sendMessageTitle")) != null ? _J : "",
+                    "send-message-path": (_L = (_K = $setup.cancelBtnProps) == null ? void 0 : _K.getString("sendMessagePath")) != null ? _L : "",
+                    "send-message-img": (_N = (_M = $setup.cancelBtnProps) == null ? void 0 : _M.getString("sendMessageImg")) != null ? _N : "",
+                    "app-parameter": (_P = (_O = $setup.cancelBtnProps) == null ? void 0 : _O.getString("appParameter")) != null ? _P : "",
+                    "show-message-card": (_R = (_Q = $setup.cancelBtnProps) == null ? void 0 : _Q.getBoolean("showMessageCard")) != null ? _R : false,
+                    onClick: _cache[1] || (_cache[1] = ($event) => $setup.onTplButtonTap("cancel", null)),
+                    onGetuserinfo: $setup.getuserinfo,
+                    onContact: $setup.contact,
+                    onGetphonenumber: $setup.getphonenumber,
+                    onError: $setup.error,
+                    onOpensetting: $setup.opensetting,
+                    onLaunchapp: $setup.launchapp,
+                    onAgreeprivacyauthorization: $setup.agreeprivacyauthorization
+                  }, {
+                    default: vue.withCtx(() => {
+                      var _a3;
+                      return [
+                        vue.createTextVNode(
+                          vue.toDisplayString((_a3 = $setup.cancelBtnProps) == null ? void 0 : _a3.getString("content")),
+                          1
+                          /* TEXT */
+                        )
+                      ];
+                    }),
+                    _: 1
+                    /* STABLE */
+                  }, 8, ["style", "class", "block", "disabled", "content", "icon", "loading", "type", "ghost", "shape", "size", "variant", "open-type", "color", "textColor", "fontSize", "hover-stop-propagation", "hover-start-time", "hover-stay-time", "lang", "session-from", "send-message-title", "send-message-path", "send-message-img", "app-parameter", "show-message-card"])) : vue.createCommentVNode("v-if", true)
+                ];
+              }),
+              vue.renderSlot(_ctx.$slots, "confirm-btn", {}, () => {
+                var _a2, _b2, _c2, _d2, _e2, _f, _g, _h, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s2, _t2, _u, _v, _w, _x, _y, _z, _A, _B, _C, _D, _E, _F, _G, _H, _I, _J, _K, _L, _M, _N, _O, _P, _Q, _R;
+                return [
+                  $setup.confirmBtnProps != null ? (vue.openBlock(), vue.createBlock(_component_l_button, {
+                    key: 0,
+                    class: vue.normalizeClass(["l-dialog__button", [
+                      "l-dialog__button--" + $setup.innerButtonLayout,
+                      {
+                        "l-dialog__button--text": $setup.buttonVariant
+                      }
+                    ]]),
+                    style: vue.normalizeStyle([
+                      $setup.buttonStyle,
+                      {
+                        "margin-left": $setup.cancelBtnProps != null && $setup.innerButtonLayout == "horizontal" && !$setup.buttonVariant ? "24rpx" : "0",
+                        "margin-bottom": $setup.cancelBtnProps != null && $setup.innerButtonLayout == "vertical" && !$setup.buttonVariant ? "24rpx" : "0"
+                      }
+                    ]),
+                    "data-type": "confirm",
+                    block: (_b2 = (_a2 = $setup.confirmBtnProps) == null ? void 0 : _a2.getBoolean("block")) != null ? _b2 : false,
+                    disabled: (_d2 = (_c2 = $setup.confirmBtnProps) == null ? void 0 : _c2.getBoolean("disabled")) != null ? _d2 : false,
+                    content: (_f = (_e2 = $setup.confirmBtnProps) == null ? void 0 : _e2.getString("content")) != null ? _f : "",
+                    icon: (_h = (_g = $setup.confirmBtnProps) == null ? void 0 : _g.getString("icon")) != null ? _h : "",
+                    loading: (_j = (_i = $setup.confirmBtnProps) == null ? void 0 : _i.getBoolean("loading")) != null ? _j : false,
+                    type: (_l = (_k = $setup.confirmBtnProps) == null ? void 0 : _k.getString("type")) != null ? _l : "primary",
+                    ghost: (_n = (_m = $setup.confirmBtnProps) == null ? void 0 : _m.getBoolean("loading")) != null ? _n : false,
+                    shape: (_p = (_o = $setup.confirmBtnProps) == null ? void 0 : _o.getString("shape")) != null ? _p : "rectangle",
+                    size: (_r = (_q = $setup.confirmBtnProps) == null ? void 0 : _q.getString("size")) != null ? _r : "medium",
+                    variant: (_t2 = (_s2 = $setup.confirmBtnProps) == null ? void 0 : _s2.getString("variant")) != null ? _t2 : "solid",
+                    "open-type": (_u = $setup.confirmBtnProps) == null ? void 0 : _u.getString("openType"),
+                    color: (_v = $setup.confirmBtnProps) == null ? void 0 : _v.getString("color"),
+                    textColor: (_w = $setup.confirmBtnProps) == null ? void 0 : _w.getString("textColor"),
+                    fontSize: (_x = $setup.confirmBtnProps) == null ? void 0 : _x.getString("fontSize"),
+                    "hover-stop-propagation": (_z = (_y = $setup.confirmBtnProps) == null ? void 0 : _y.getBoolean("hoverStopPropagation")) != null ? _z : false,
+                    "hover-start-time": (_B = (_A = $setup.confirmBtnProps) == null ? void 0 : _A.getNumber("hoverStartTime")) != null ? _B : 20,
+                    "hover-stay-time": (_D = (_C = $setup.confirmBtnProps) == null ? void 0 : _C.getNumber("hoverStayTime")) != null ? _D : 70,
+                    lang: (_F = (_E = $setup.confirmBtnProps) == null ? void 0 : _E.getString("lang")) != null ? _F : "en",
+                    "session-from": (_H = (_G = $setup.confirmBtnProps) == null ? void 0 : _G.getString("sessionFrom")) != null ? _H : "",
+                    "send-message-title": (_J = (_I = $setup.confirmBtnProps) == null ? void 0 : _I.getString("sendMessageTitle")) != null ? _J : "",
+                    "send-message-path": (_L = (_K = $setup.confirmBtnProps) == null ? void 0 : _K.getString("sendMessagePath")) != null ? _L : "",
+                    "send-message-img": (_N = (_M = $setup.confirmBtnProps) == null ? void 0 : _M.getString("sendMessageImg")) != null ? _N : "",
+                    "app-parameter": (_P = (_O = $setup.confirmBtnProps) == null ? void 0 : _O.getString("appParameter")) != null ? _P : "",
+                    "show-message-card": (_R = (_Q = $setup.confirmBtnProps) == null ? void 0 : _Q.getBoolean("showMessageCard")) != null ? _R : false,
+                    onClick: _cache[2] || (_cache[2] = ($event) => $setup.onTplButtonTap("confirm", null)),
+                    onGetuserinfo: $setup.getuserinfo,
+                    onContact: $setup.contact,
+                    onGetphonenumber: $setup.getphonenumber,
+                    onError: $setup.error,
+                    onOpensetting: $setup.opensetting,
+                    onLaunchapp: $setup.launchapp,
+                    onAgreeprivacyauthorization: $setup.agreeprivacyauthorization
+                  }, {
+                    default: vue.withCtx(() => {
+                      var _a3;
+                      return [
+                        vue.createTextVNode(
+                          vue.toDisplayString((_a3 = $setup.confirmBtnProps) == null ? void 0 : _a3.getString("content")),
+                          1
+                          /* TEXT */
+                        )
+                      ];
+                    }),
+                    _: 1
+                    /* STABLE */
+                  }, 8, ["class", "style", "block", "disabled", "content", "icon", "loading", "type", "ghost", "shape", "size", "variant", "open-type", "color", "textColor", "fontSize", "hover-stop-propagation", "hover-start-time", "hover-stay-time", "lang", "session-from", "send-message-title", "send-message-path", "send-message-img", "app-parameter", "show-message-card"])) : vue.createCommentVNode("v-if", true)
+                ];
+              })
+            ],
+            2
+            /* CLASS */
+          )
+        ])
+      ]),
+      _: 3
+      /* FORWARDED */
+    }, 8, ["visible", "overlay", "closeOnClickOverlay", "preventScrollThrough", "zIndex"]);
+  }
+  const __easycom_4 = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$5], ["styles", [_style_0$4]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-dialog/components/l-dialog/l-dialog.uvue"]]);
+  const _sfc_main$5 = /* @__PURE__ */ vue.defineComponent({
+    __name: "deviceSetting",
+    setup(__props, _a) {
+      var __expose = _a.expose;
+      __expose();
+      const showEditName = vue.ref(false);
+      const newName = vue.ref("");
+      const goBack = () => {
+        uni.navigateBack(new UTSJSONObject({
+          delta: 1
+        }));
+      };
+      const editName = () => {
+        showEditName.value = true;
+      };
+      const changeName = () => {
+        uni.showToast({
+          title: newName.value
+        });
+        showEditName.value = false;
+      };
+      const onClose = () => {
+        showEditName.value = false;
+      };
+      const copyUid = () => {
+        uni.setClipboardData({
+          data: "123456",
+          success: function() {
+            uni.showToast({
+              "title": "复制成功"
+            });
+          }
+        });
+      };
+      const goDeviceSettingInfo = () => {
+        uni.navigateTo({
+          url: "/pages/index/deviceSettingInfo/deviceSettingInfo"
+        });
+      };
+      const deleteDevice = () => {
+        uni.showModal(new UTSJSONObject({
+          title: "提示",
+          content: "确认删除设备吗？",
+          cancelText: "取消",
+          confirmText: "删除",
+          success: (res) => {
+            if (res.confirm) {
+              uni.__log__("log", "at pages/index/deviceSetting.uvue:127", "用户点击了确定");
+            }
+          }
+        }));
+      };
+      const __returned__ = { showEditName, newName, goBack, editName, changeName, onClose, copyUid, goDeviceSettingInfo, deleteDevice, get TopNavBar() {
+        return TopNavBar;
+      } };
+      Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+      return __returned__;
+    }
+  });
+  const _style_0$3 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "device-box": { ".container ": { "marginTop": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "display": "flex", "flexDirection": "row", "justifyContent": "flex-start" } }, "device-img": { ".container .device-box ": { "width": "200rpx", "height": "200rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginRight": "20rpx" } }, "device-info": { ".container .device-box ": { "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "space-between" } }, "device-name-box": { ".container .device-box .device-info ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "model-uid": { ".container .device-box .device-info ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "5rpx", "paddingRight": 0, "paddingBottom": "5rpx", "paddingLeft": 0 } }, "model-uid-text": { ".container .device-box .device-info .model-uid ": { "marginLeft": "30rpx", "marginRight": "10rpx" } }, "network": { ".container .device-box .device-info ": { "color": "#999999" } }, "device-list-box": { ".container ": { "marginTop": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .device-list-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" }, ".container .device-list-box .traffic ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "traffic": { ".container .device-list-box ": { "display": "flex", "flexDirection": "column", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "date": { ".container .device-list-box .traffic ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "word": { ".container .device-list-box .traffic .date ": { "color": "#999999" } }, "nounderline": { ".container .device-list-box ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "80rpx" } } };
+  function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_l_input = resolveEasycom(vue.resolveDynamicComponent("l-input"), __easycom_3);
+    const _component_l_dialog = resolveEasycom(vue.resolveDynamicComponent("l-dialog"), __easycom_4);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
+      vue.createVNode($setup["TopNavBar"], {
+        showBack: true,
+        title: "设备设置",
+        onBack: $setup.goBack
+      }),
+      vue.createElementVNode("view", { class: "device-box" }, [
+        vue.createElementVNode("image", {
+          class: "device-img",
+          src: _imports_0$7,
+          mode: "aspectFill"
+        }),
+        vue.createElementVNode("view", { class: "device-info" }, [
+          vue.createElementVNode("view", { class: "device-name-box" }, [
+            vue.createElementVNode("text", null, "设备名称"),
+            vue.createVNode(_component_l_icon, {
+              name: "round-filled",
+              color: "#e8782eff",
+              size: "18"
+            }),
+            vue.createVNode(_component_l_icon, {
+              style: { "margin-left": "50rpx" },
+              name: "edit",
+              color: "#333",
+              size: "18",
+              onClick: $setup.editName
+            })
+          ]),
+          vue.createElementVNode("view", null, [
+            vue.createElementVNode("view", { class: "model-uid" }, [
+              vue.createElementVNode("text", null, "型号"),
+              vue.createElementVNode("text", { class: "model-uid-text" }, "YY-1234567")
+            ]),
+            vue.createElementVNode("view", { class: "model-uid" }, [
+              vue.createElementVNode("text", null, "UID"),
+              vue.createElementVNode("view", { class: "model-uid" }, [
+                vue.createElementVNode("text", { class: "model-uid-text" }, "YY-1234567"),
+                vue.createVNode(_component_l_icon, {
+                  name: "file-copy",
+                  color: "#999",
+                  size: "16",
+                  onClick: $setup.copyUid
+                })
+              ])
+            ])
+          ]),
+          vue.createElementVNode("text", { class: "network" }, "网络 中国电信")
+        ])
+      ]),
+      vue.createElementVNode("view", { class: "device-list-box" }, [
+        vue.createElementVNode("view", {
+          class: "item",
+          onClick: $setup.goDeviceSettingInfo
+        }, [
+          vue.createElementVNode("text", null, "设备设置"),
+          vue.createVNode(_component_fui_icon, {
+            name: "arrowright",
+            color: "#111",
+            size: "40"
+          })
+        ]),
+        vue.createElementVNode("view", { class: "traffic" }, [
+          vue.createElementVNode("view", { class: "item" }, [
+            vue.createElementVNode("text", null, "流量充值"),
+            vue.createVNode(_component_fui_icon, {
+              name: "arrowright",
+              color: "#111",
+              size: "40"
+            })
+          ]),
+          vue.createElementVNode("view", { class: "date" }, [
+            vue.createElementVNode("text", { class: "word" }, "已用80G(80%)"),
+            vue.createElementVNode("text", { class: "word" }, "2025-8-10到期")
+          ])
+        ]),
+        vue.createElementVNode("view", { class: "item" }, [
+          vue.createElementVNode("text", null, "智能侦测"),
+          vue.createVNode(_component_fui_icon, {
+            name: "arrowright",
+            color: "#111",
+            size: "40"
+          })
+        ]),
+        vue.createElementVNode("view", { class: "item" }, [
+          vue.createElementVNode("text", null, "TF卡设置"),
+          vue.createVNode(_component_fui_icon, {
+            name: "arrowright",
+            color: "#111",
+            size: "40"
+          })
+        ]),
+        vue.createElementVNode("view", { class: "item" }, [
+          vue.createElementVNode("text", null, "云存储设置"),
+          vue.createVNode(_component_fui_icon, {
+            name: "arrowright",
+            color: "#111",
+            size: "40"
+          })
+        ]),
+        vue.createElementVNode("view", { class: "item nounderline" }, [
+          vue.createElementVNode("text", null, "存储管理"),
+          vue.createVNode(_component_fui_icon, {
+            name: "arrowright",
+            color: "#111",
+            size: "40"
+          })
+        ])
+      ]),
+      vue.createElementVNode("view", { class: "btn-box" }, [
+        vue.createVNode(_component_fui_button, {
+          text: "删除设备",
+          height: "80rpx",
+          background: "#fff",
+          color: "red",
+          onClick: $setup.deleteDevice
+        })
+      ]),
+      vue.createVNode(_component_l_dialog, {
+        modelValue: $setup.showEditName,
+        "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $setup.showEditName = $event),
+        title: "修改设备名称",
+        "cancel-btn": { content: "取消", variant: "text", size: "large", type: "default" },
+        "confirm-btn": { content: "确认", variant: "text", size: "large" },
+        onConfirm: $setup.changeName,
+        onCancel: _cache[2] || (_cache[2] = ($event) => $setup.showEditName = false)
+      }, {
+        default: vue.withCtx(() => [
+          vue.createVNode(_component_l_input, {
+            placeholder: "请输入设备新名称",
+            modelValue: $setup.newName,
+            "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $setup.newName = $event),
+            "l-style": "background: #f3f3f3; margin-top:16px; padding-top:12px;padding:12px"
+          }, null, 8, ["modelValue"])
+        ]),
+        _: 1
+        /* STABLE */
+      }, 8, ["modelValue"])
+    ]);
+  }
+  const PagesIndexDeviceSetting = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$4], ["styles", [_style_0$3]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/deviceSetting.uvue"]]);
+  const _sfc_main$4 = {};
+  function _sfc_render$3(_ctx, _cache) {
+    return vue.openBlock(), vue.createElementBlock("scroll-view", { style: { "flex": "1" } });
+  }
+  const PagesIndexDeviceReplay = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$3], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/deviceReplay.uvue"]]);
+  const _sfc_main$3 = vue.defineComponent({
+    name: "fui-badge",
+    emits: ["onclick"],
+    props: {
+      value: {
+        type: [Object, String, Number],
+        default: ""
+      },
+      max: {
+        type: Number,
+        default: -1
+      },
+      type: {
+        type: String,
+        default: "primary"
+      },
+      background: {
+        type: String,
+        default: ""
+      },
+      color: {
+        type: String,
+        default: "#FFFFFF"
+      },
+      dot: {
+        type: Boolean,
+        default: false
+      },
+      marginTop: {
+        type: Number,
+        default: 0
+      },
+      marginLeft: {
+        type: Number,
+        default: 0
+      },
+      marginRight: {
+        type: Number,
+        default: 0
+      },
+      absolute: {
+        type: Boolean,
+        default: false
+      },
+      top: {
+        type: String,
+        default: "-8rpx"
+      },
+      right: {
+        type: String,
+        default: "-18rpx"
+      },
+      scaleRatio: {
+        type: Number,
+        default: 1
+      }
+    },
+    data() {
+      return {
+        width: "0",
+        showValue: ""
+      };
+    },
+    watch: {
+      value() {
+        this.getWidth();
+      }
+    },
+    mounted() {
+      this.getWidth();
+    },
+    methods: {
+      rpx2px(rpx) {
+        let px;
+        const sys = uni.getSystemInfoSync();
+        px = sys.windowWidth / 750 * rpx;
+        return px;
+      },
+      _getTextWidth(text) {
+        let sum = 0;
+        for (let i2 = 0, len = text.length; i2 < len; i2++) {
+          const code = text.charCodeAt(i2);
+          if (code <= 255)
+            sum = sum + 1;
+          else
+            sum = sum + 2;
+        }
+        const rpx = text.length > 1 ? 32 : 24;
+        const px = this.rpx2px(rpx);
+        const strCode = text.charCodeAt(0);
+        let multiplier = 12;
+        if (strCode >= 65 && strCode <= 90) {
+          multiplier = 15;
+        }
+        return "".concat(sum / 2 * multiplier + px, "px");
+      },
+      getWidth() {
+        let max = this.max;
+        let value;
+        if (typeof this.value == "string") {
+          value = this.value;
+        } else {
+          if (typeof this.value == "number") {
+            const val_num = this.value;
+            if (max == -1) {
+              value = val_num.toString();
+            } else {
+              value = val_num > max ? "".concat(max, "+") : val_num.toString();
+            }
+          } else {
+            if (max == -1) {
+              value = this.value.toString();
+            } else {
+              value = parseFloat(this.value.toString()) > max ? "".concat(max, "+") : "".concat(this.value);
+            }
+          }
+        }
+        this.showValue = value;
+        this.width = this.dot ? "8px" : this._getTextWidth(value);
+      },
+      handleClick() {
+        this.$emit("onclick");
+      }
+    }
+  });
+  const _style_0$2 = { "fui-badge__wrap": { "": { "height": "36rpx", "color": "#FFFFFF", "fontSize": "24rpx", "lineHeight": "36rpx", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "minWidth": "36rpx", "boxSizing": "border-box", "textAlign": "center", "zIndex": 10 } }, "fui-badge__dot": { "": { "!height": 8, "!width": 8, "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "zIndex": 10 } }, "fui-badge__bg-primary": { "": { "!backgroundColor": "#465CFF" } }, "fui-badge__bg-success": { "": { "!backgroundColor": "#09BE4F" } }, "fui-badge__bg-warning": { "": { "!backgroundColor": "#FFB703" } }, "fui-badge__bg-danger": { "": { "!backgroundColor": "#FF2B2B" } }, "fui-badge__bg-purple": { "": { "!backgroundColor": "#6831FF" } }, "fui-badge__bg-white": { "": { "!backgroundColor": "#FFFFFF" } }, "fui-badge__text-color": { "": { "!color": "#FF2B2B" } }, "fui-badge__trans-origin": { "": { "transformOrigin": "center center" } }, "fui-badge__absolute": { "": { "position": "absolute" } } };
+  function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
+    return $data.showValue != "" || $props.dot ? (vue.openBlock(), vue.createElementBlock(
+      "text",
+      {
+        key: 0,
+        class: vue.normalizeClass([$props.dot ? "fui-badge__dot" : "fui-badge__wrap", $props.background != "" ? "" : "fui-badge__bg-" + $props.type, $props.absolute ? "fui-badge__absolute" : "", $props.scaleRatio != 1 ? "fui-badge__trans-origin" : "", $props.background == "" && $props.type == "white" ? "fui-badge__text-color" : ""]),
+        style: vue.normalizeStyle({ top: $props.absolute ? $props.top : "auto", right: $props.absolute ? $props.right : "auto", transform: "scale(".concat($props.scaleRatio, ")"), marginTop: "".concat($props.marginTop, "rpx"), marginLeft: "".concat($props.marginLeft, "rpx"), marginRight: "".concat($props.marginRight, "rpx"), width: $data.width, color: $props.color, background: $props.background }),
+        onClick: _cache[0] || (_cache[0] = (...args) => $options.handleClick && $options.handleClick(...args))
+      },
+      vue.toDisplayString($props.dot ? "" : $data.showValue),
+      7
+      /* TEXT, CLASS, STYLE */
+    )) : vue.createCommentVNode("v-if", true);
+  }
+  const __easycom_2 = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$2], ["styles", [_style_0$2]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-badge/fui-badge.uvue"]]);
+  const _sfc_main$2 = /* @__PURE__ */ vue.defineComponent({
+    __name: "deviceSettingInfo",
+    setup(__props, _a) {
+      var __expose = _a.expose;
+      __expose();
+      const state = vue.ref(false);
+      const goBack = () => {
+        uni.navigateBack(new UTSJSONObject({
+          delta: 1
+        }));
+      };
+      const changeSwitch = (e2) => {
+        uni.__log__("log", "at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:42", e2);
+      };
+      const restart = () => {
+        uni.showModal(new UTSJSONObject({
+          title: "提示",
+          content: "确认重启设备吗？",
+          cancelText: "取消",
+          confirmText: "重启",
+          success: (res) => {
+            if (res.confirm) {
+              uni.__log__("log", "at pages/index/deviceSettingInfo/deviceSettingInfo.uvue:53", "用户点击了确定");
+            }
+          }
+        }));
+      };
+      const __returned__ = { state, goBack, changeSwitch, restart, get TopNavBar() {
+        return TopNavBar;
+      } };
+      Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+      return __returned__;
+    }
+  });
+  const _style_0$1 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "list-item": { ".container .content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "firmware-box": { ".container .content .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "firmware-version": { ".container .content .list-item .firmware-box ": { "marginLeft": "10rpx" } } };
+  function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$5);
+    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_1$6);
+    const _component_fui_badge = resolveEasycom(vue.resolveDynamicComponent("fui-badge"), __easycom_2);
+    return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
+      vue.createVNode($setup["TopNavBar"], {
+        title: "设备设置",
+        "show-back": true,
+        onBack: $setup.goBack
+      }),
+      vue.createElementVNode("view", { class: "content" }, [
+        vue.createElementVNode("view", { class: "list-item" }, [
+          vue.createElementVNode("text", null, "夜视模式"),
+          vue.createVNode(_component_fui_icon, {
+            name: "arrowright",
+            size: "40"
+          })
+        ]),
+        vue.createElementVNode("view", { class: "list-item" }, [
+          vue.createElementVNode("text", null, "翻转设置"),
+          vue.createVNode(_component_fui_switch, {
+            scaleRatio: 0.8,
+            checked: $setup.state,
+            onChange: $setup.changeSwitch
+          }, null, 8, ["checked"])
+        ]),
+        vue.createElementVNode("view", { class: "list-item" }, [
+          vue.createElementVNode("text", null, "固件"),
+          vue.createElementVNode("view", { class: "firmware-box" }, [
+            vue.createVNode(_component_fui_badge, {
+              value: "new",
+              type: "danger",
+              scaleRatio: 0.8
+            }),
+            vue.createElementVNode("text", { class: "firmware-version" }, "1.1.1")
+          ])
+        ]),
+        vue.createElementVNode("view", { class: "list-item" }, [
+          vue.createElementVNode("text", null, "Mac地址"),
+          vue.createElementVNode("text", { class: "firmware-version" }, "1.1.1")
+        ]),
+        vue.createElementVNode("view", {
+          class: "list-item",
+          onClick: $setup.restart
+        }, [
+          vue.createElementVNode("text", null, "重启"),
+          vue.createVNode(_component_fui_icon, {
+            name: "arrowright",
+            size: "40"
+          })
+        ])
+      ])
+    ]);
+  }
+  const PagesIndexDeviceSettingInfoDeviceSettingInfo = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$1], ["styles", [_style_0$1]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/deviceSettingInfo/deviceSettingInfo.uvue"]]);
+  const _sfc_main$1 = {};
+  function _sfc_render(_ctx, _cache) {
+    return vue.openBlock(), vue.createElementBlock("scroll-view", { style: { "flex": "1" } });
+  }
+  const PagesIndexDeviceSettingInfoDeviceNight = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/deviceSettingInfo/deviceNight.uvue"]]);
   __definePage("pages/index/index", PagesIndexIndex);
   __definePage("pages/message/message", PagesMessageMessage);
   __definePage("pages/mine/mine", PagesMineMine);
@@ -17251,6 +19043,10 @@
   __definePage("pages/mine/about/about", PagesMineAboutAbout);
   __definePage("pages/mine/localFiles/localFiles", PagesMineLocalFilesLocalFiles);
   __definePage("pages/index/deviceDetail", PagesIndexDeviceDetail);
+  __definePage("pages/index/deviceSetting", PagesIndexDeviceSetting);
+  __definePage("pages/index/deviceReplay", PagesIndexDeviceReplay);
+  __definePage("pages/index/deviceSettingInfo/deviceSettingInfo", PagesIndexDeviceSettingInfoDeviceSettingInfo);
+  __definePage("pages/index/deviceSettingInfo/deviceNight", PagesIndexDeviceSettingInfoDeviceNight);
   const _sfc_main = vue.defineComponent(new UTSJSONObject({
     onLaunch: function() {
       uni.__log__("log", "at App.uvue:5", "App Launch");

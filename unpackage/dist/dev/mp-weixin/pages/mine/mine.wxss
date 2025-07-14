@@ -51,7 +51,6 @@
   align-items: center;
 }
 .container .files .file .fileIcon.data-v-284ae985 {
-  display: block;
   width: 48rpx;
   height: 48rpx;
   margin-bottom: 15rpx;
@@ -81,7 +80,6 @@
   margin-left: 40rpx;
 }
 .container .tools-list .item .info .item-icon.data-v-284ae985 {
-  display: block;
   width: 48rpx;
   height: 48rpx;
 }
@@ -91,7 +89,6 @@
   margin-left: 20rpx;
 }
 .container .tools-list .item .right-icon.data-v-284ae985 {
-  display: block;
   width: 35rpx;
   height: 35rpx;
 }

@@ -1,0 +1,235 @@
+<template>
+	<view class="demo-block">
+		<text class="demo-block__title-text ultra">Dialog 对话框</text>
+		<text class="demo-block__desc-text">一种打断当前操作的模态视图，用于显示重要提示或请求用户进行重要操作</text>
+		<view class="demo-block__body">
+			<view class="demo-block card">
+				<!-- <text class="demo-block__title-text">基础用法</text> -->
+				<view class="demo-block__body">
+					<l-dialog 
+						v-model="visible" 
+						title="对话框标题" 
+						content="告知当前状态、信息等内容。描述文案尽可能控制在三行内"
+						confirm-btn="知道了"
+						@confirm="visible = false">
+					</l-dialog>
+					<button @click="visible = true">基础使用</button>
+				</view>
+			</view>
+			
+			<view class="demo-block card">
+				<!-- <text class="demo-block__title-text">内容超长</text> -->
+				<view class="demo-block__body">
+					<l-dialog  
+						v-model="visible2" 
+						confirm-btn="知道了"
+						@confirm="visible2 = false">
+						<scroll-view type="list" scroll-y direction="vertical" class="long-content" style="height: 476rpx;">
+						    <text class="content-container"
+						      >这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						      这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案，这里是辅助内容文案
+						    </text>
+						  </scroll-view>
+					</l-dialog>
+					<button @click="visible2 = true">内容超长</button>
+				</view>	
+			</view>	
+			<view class="demo-block card">
+				<!-- <text class="demo-block__title-text">确认弹窗</text> -->
+				<view class="demo-block__body">
+					<l-dialog  
+						v-model="visible3"
+						title="对话框标题"
+						content="告知当前状态、信息和解决方法，等内容。描述文案尽可能控制在三行内"
+						cancel-btn="取消"
+						confirm-btn="确认"
+						@confirm="visible3= false"
+						@cancel="visible3 = false">
+					</l-dialog>
+					<button @click="visible3 = true">确认弹窗</button>
+				</view>	
+			</view>	
+			<view class="demo-block card">
+				<!-- <text class="demo-block__title-text">文字按钮</text> -->
+				<view class="demo-block__body">
+					<l-dialog  
+						v-model="visible4"
+						title="对话框标题"
+						:cancel-btn="{ content: '取消', variant: 'text', size: 'large', type: 'default'}"
+						:confirm-btn="{ content: '确认', variant: 'text', size: 'large'}"
+						@confirm="visible4= false"
+						@cancel="visible4 = false">
+						<l-input placeholder="请输入文字" l-style="background: #f3f3f3; margin-top:16px; padding-top:12px;padding:12px"></l-input>
+					</l-dialog>
+					<button @click="visible4 = true">文字按钮</button>
+				</view>	
+			</view>	
+			<view class="demo-block card">
+				<!-- <text class="demo-block__title-text">图片置顶</text> -->
+				<view class="demo-block__body">
+					<l-dialog  
+						v-model="visible5"
+						title="对话框标题"
+						content="告知当前状态、信息和解决方法"
+						cancel-btn="取消"
+						confirm-btn="确认"
+						@confirm="visible5= false"
+						@cancel="visible5 = false">
+						    <template #top>
+						      <image class="image" style="width: 100%;" mode="widthFix" src="https://img10.360buyimg.com/jdcms/s480x480_jfs/t1/82873/23/26885/46288/66d01461Fa1aee81d/5839828a45277ef8.jpg"></image>
+						    </template>
+					</l-dialog>
+					<button @click="visible5 = true">图片置顶</button>
+				</view>	
+			</view>	
+			<view class="demo-block card">
+				<!-- <text class="demo-block__title-text">垂直按钮</text> -->
+				<view class="demo-block__body">
+					<l-dialog  
+						  v-model="visible6"
+						  title="对话框标题"
+						  content="告知当前状态、信息和解决方法"
+						  cancel-btn="取消"
+						  confirm-btn="确认"
+						  button-layout="vertical"
+						  @confirm="visible6= false"
+						  @cancel="visible6 = false">
+						
+					</l-dialog>
+					<button @click="visible6 = true">垂直按钮</button>
+				</view>	
+			</view>	
+			<view class="demo-block card">
+				<!-- <text class="demo-block__title-text">命令调用</text> -->
+				<view class="demo-block__body">
+					<l-dialog ref="dialogRef"></l-dialog>
+					<button @click="showDialog">命令调用</button>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script setup>
+	const visible = ref(false);
+	const visible2 = ref(false);
+	const visible3 = ref(false);
+	const visible4 = ref(false);
+	const visible5 = ref(false);
+	const visible6 = ref(false);
+	const actions = [
+		{ content: '次要按钮', type: 'primary', variant: 'light' },
+		{ content: '次要按钮', type: 'primary', variant: 'light' },
+		{ content: '主要按钮', type: 'primary' },
+	];
+	const dialogRef = ref<LDialogComponentPublicInstance|null>(null)
+
+	const showDialog = () => {
+		if(dialogRef.value == null) return
+		dialogRef.value!.show({
+			title: '弹窗标题',
+			actions,
+			closeOnClickOverlay: true,
+			buttonLayout: 'vertical',
+			content: '告知当前状态、信息和解决方法等内容。',
+			// confirmBtn: '确定',
+			// cancelBtn: '取消',
+			beforeClose: (action: string): Promise<boolean> => {
+				console.log('action', action)
+				return new Promise((resolve) => {
+					setTimeout(() => {
+						if (action == 'cancel') {
+							resolve(true);
+						} else {
+							// 拦截取消操作
+							resolve(false);
+						}
+					}, 1000);
+				})
+			}
+		}).then((index)=>{
+			console.log('点击了确定', index)
+		}).catch(()=>{
+			console.log('点击了取消')
+		})
+	}
+
+	const onConfirm = () => { }
+	const onCancel = () => { }
+</script>
+
+<style lang="scss">
+	.btn {
+		margin-bottom: 20rpx;
+		margin-right: 20rpx;
+		align-self: center;
+	}
+
+	.demo-block {
+		margin: 32px 16px 0;
+
+		// overflow: visible;
+		&.card {
+			background-color: white;
+			padding: 0 30rpx;
+			// margin-bottom: 20rpx !important;
+		}
+
+		&__title {
+			margin: 0;
+			margin-top: 8px;
+
+			&-text {
+				color: rgba(0, 0, 0, 0.6);
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 16px;
+				display: flex;
+				// margin-left: 20px;
+
+				&.large {
+					color: rgba(0, 0, 0, 0.9);
+					font-size: 18px;
+					font-weight: 700;
+					line-height: 26px;
+					margin-left: 20px;
+				}
+
+				&.ultra {
+					color: rgba(0, 0, 0, 0.9);
+					font-size: 24px;
+					font-weight: 700;
+					line-height: 32px;
+				}
+			}
+		}
+
+		&__desc-text {
+			color: rgba(0, 0, 0, 0.6);
+			margin: 8px 16px 0 0;
+			font-size: 14px;
+			line-height: 22px;
+			// margin-left: 20px;
+		}
+
+		&__body {
+			margin: 26px 0 0px;
+			overflow: visible;
+
+			.demo-block {
+				// margin-top: 0px;
+				margin: 0;
+			}
+		}
+	}
+</style>

@@ -20,7 +20,11 @@
     "pages/mine/systemSetting/systemSetting",
     "pages/mine/about/about",
     "pages/mine/localFiles/localFiles",
-    "pages/index/deviceDetail"
+    "pages/index/deviceDetail",
+    "pages/index/deviceSetting",
+    "pages/index/deviceReplay",
+    "pages/index/deviceSettingInfo/deviceSettingInfo",
+    "pages/index/deviceSettingInfo/deviceNight"
   ],
   "window": {
     "navigationBarTextStyle": "black",

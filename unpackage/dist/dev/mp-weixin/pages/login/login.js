@@ -94,7 +94,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           title: "登陆",
           rightText: "注册"
         })),
-        b: common_assets._imports_0$4,
+        b: common_assets._imports_0$5,
         c: loginType.value
       }), loginType.value ? new UTSJSONObject({
         d: common_vendor.p(new UTSJSONObject({

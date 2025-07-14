@@ -200,13 +200,13 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           size: "20"
         }),
         j: common_vendor.o(deviceDetail),
-        k: common_assets._imports_1$1,
+        k: common_assets._imports_0$1,
         l: common_assets._imports_3,
         m: common_vendor.p({
           name: "chevron-right",
           size: "20"
         }),
-        n: common_assets._imports_1$1,
+        n: common_assets._imports_0$1,
         o: common_assets._imports_4,
         p: common_vendor.o(select),
         q: common_vendor.o(change),

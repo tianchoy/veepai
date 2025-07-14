@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-        <TopNavBar title="设备详情" :showBack="true" rightText="setup" @rightEvent="deviceSetting" />
+        <TopNavBar title="设备详情" :showBack="true" rightText="setup" @rightEvent="deviceSetting" @back="goBack" />
         <view class="content">
             <video class="video" id="myVideo" title="deviceTitle" :src="videoSrc" ref="videoRef" :controls="true" :show-play-btn="true"
 				:show-center-play-btn="true" :enable-progress-gesture="true" :show-fullscreen-btn="true"
@@ -53,7 +53,7 @@
                 <image class="small-item-icon" src="/static/device/redblue_1.png" />
                 <text class="small-item-text">红蓝灯</text>
             </view>
-            <view class="small-item">
+            <view class="small-item" @click="replay">
                 <image class="small-item-icon" src="/static/device/replay.png" />
                 <text class="small-item-text">回放</text>
             </view>
@@ -71,10 +71,21 @@
 	const videoSrc = ref('https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4')
 
 
+    const goBack = () =>{
+        uni.navigateBack({
+            delta: 1,
+        })
+    }
+
     const deviceSetting = () =>{
-        uni.showToast({
-            title: '设备设置',
-            icon: 'none'
+        uni.navigateTo({
+            url: '/pages/index/deviceSetting',
+        })
+    }
+
+    const replay = () => {
+        uni.navigateTo({
+            url: '/pages/index/deviceReplay',
         })
     }
 

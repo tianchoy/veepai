@@ -1,0 +1,442 @@
+<template>
+	<l-popup 
+		:visible="innerValue"
+		:overlay="innerOptions.overlay ?? overlay"
+		bg-color="transparent"
+		:closeOnClickOverlay="innerOptions.closeOnClickOverlay ?? closeOnClickOverlay"
+		:preventScrollThrough="innerOptions.preventScrollThrough ?? preventScrollThrough"
+		:zIndex="zIndex ?? innerOptions.zIndex"
+		@change="overlayClick"
+		position="center">
+		<view class="l-dialog">
+			<slot name="top"></slot>
+			<view class="l-dialog__close" v-if="closeBtnProps" @click="onClose('close')">
+				<l-icon class="l-dialog__close-icon" name="close" size="44rpx"></l-icon>
+			</view>
+			<view class="l-dialog__content">
+				<slot name="title">
+					<text v-if="innerTitle != null" class="l-dialog__header">{{title ?? innerOptions.title}}</text>
+				</slot>
+				<view class="l-dialog__body" :class="{'l-dialog__body--gap': innerTitle != null || $slots['title'] != null}">
+					<slot>
+						<text class="l-dialog__body-text">{{innerOptions.content ?? content}}</text>
+					</slot>
+				</view>
+			</view>
+			<slot name="middle"></slot>
+			<view class="l-dialog__footer" :class="[
+				'l-dialog__footer--' + innerButtonLayout, {
+				'l-dialog__footer--column': innerButtonLayout == 'vertical',
+				'l-dialog__footer--full': buttonVariant,
+			}]">
+				<slot name="actions">
+					<template v-if="innerActions != null">
+						<l-button 
+							class="l-dialog__button"
+							:class="[
+								'l-dialog__button--' + innerButtonLayout,{
+									'l-dialog__button--text': buttonVariant,
+								}
+							]"
+							v-for="(action, index) in innerActions!" :key="index"
+							:style="[
+								buttonStyle,
+								{
+									'margin-left': innerButtonLayout == 'horizontal' && !buttonVariant && index > 0? '20rpx': '0',
+									'margin-bottom': innerButtonLayout == 'vertical' && !buttonVariant && index > 0 ?'20rpx': '0',
+								}
+							]"
+							:block="action.getBoolean('block') ?? false"
+							:disabled="action.getBoolean('disabled') ?? false"
+							:data-extra="index"
+							:content="action.getString('content') ?? ''"
+							:icon="action.getString('icon') ?? ''"
+							:loading="action.getBoolean('loading') ?? false"
+							:type="action.getString('type') ?? 'primary'"
+							:ghost="action.getBoolean('loading') ?? false"
+							:shape="action.getString('shape') ?? 'rectangle'"
+							:size="action.getString('size') ?? 'medium'"
+							:variant="action.getString('variant')"
+							:open-type="action.getString('openType') ?? ''"
+							:color="action.getString('color')"
+							:textColor="action.getString('textColor')"
+							:fontSize="action.getString('fontSize')"
+							
+							:hover-stop-propagation="action.getBoolean('hoverStopPropagation') ?? false"
+							:hover-start-time="action.getNumber('hoverStartTime') ?? 20"
+							:hover-stay-time="action.getNumber('hoverStayTime') ?? 70"
+							:lang="action.getString('lang') ?? 'en'"
+							:session-from="action.getString('sessionFrom') ?? ''"
+							:send-message-title="action.getString('sendMessageTitle') ?? ''"
+							:send-message-path="action.getString('sendMessagePath') ?? ''"
+							:send-message-img="action.getString('sendMessageImg') ?? ''"
+							:app-parameter="action.getString('appParameter') ?? ''"
+							:show-message-card="action.getBoolean('showMessageCard') ?? false"
+							@click="onTplButtonTap('action', index)"
+							@getuserinfo="getuserinfo"
+							@contact="contact" 
+							@getphonenumber="getphonenumber"
+							@error="error" 
+							@opensetting="opensetting" 
+							@launchapp="launchapp" 
+							@agreeprivacyauthorization="agreeprivacyauthorization">
+							{{action['content']}}
+						</l-button>
+					</template>
+				</slot>
+				<slot name="cancel-btn">
+					<l-button 
+						class="l-dialog__button"
+						:style="[buttonStyle]"
+						:class="[
+							'l-dialog__button--' + innerButtonLayout,
+							{
+								'l-dialog__button--text': buttonVariant
+							}
+						]"
+						v-if="cancelBtnProps != null"
+						:block="cancelBtnProps?.getBoolean('block') ?? false"
+						:disabled="cancelBtnProps?.getBoolean('disabled') ?? false"
+						:content="cancelBtnProps?.getString('content') ?? ''"
+						:icon="cancelBtnProps?.getString('icon') ?? ''"
+						:loading="cancelBtnProps?.getBoolean('loading') ?? false"
+						:type="cancelBtnProps?.getString('type') ?? 'primary'"
+						:ghost="cancelBtnProps?.getBoolean('loading') ?? false"
+						:shape="cancelBtnProps?.getString('shape') ?? 'rectangle'"
+						:size="cancelBtnProps?.getString('size') ?? 'medium'"
+						:variant="cancelBtnProps?.getString('variant') ?? 'light'"
+						:open-type="cancelBtnProps?.getString('openType')"
+						:color="cancelBtnProps?.getString('color')"
+						:textColor="cancelBtnProps?.getString('textColor')"
+						:fontSize="cancelBtnProps?.getString('fontSize')"
+						
+						:hover-stop-propagation="cancelBtnProps?.getBoolean('hoverStopPropagation') ?? false"
+						:hover-start-time="cancelBtnProps?.getNumber('hoverStartTime') ?? 20"
+						:hover-stay-time="cancelBtnProps?.getNumber('hoverStayTime') ?? 70"
+						:lang="cancelBtnProps?.getString('lang') ?? 'en'"
+						:session-from="cancelBtnProps?.getString('sessionFrom') ?? ''"
+						:send-message-title="cancelBtnProps?.getString('sendMessageTitle') ?? ''"
+						:send-message-path="cancelBtnProps?.getString('sendMessagePath') ?? ''"
+						:send-message-img="cancelBtnProps?.getString('sendMessageImg') ?? ''"
+						:app-parameter="cancelBtnProps?.getString('appParameter') ?? ''"
+						:show-message-card="cancelBtnProps?.getBoolean('showMessageCard') ?? false"
+						@click="onTplButtonTap('cancel', null)"
+						@getuserinfo="getuserinfo"
+						@contact="contact" 
+						@getphonenumber="getphonenumber"
+						@error="error" 
+						@opensetting="opensetting" 
+						@launchapp="launchapp" 
+						@agreeprivacyauthorization="agreeprivacyauthorization"
+						>{{cancelBtnProps?.getString('content')}}</l-button> 
+				</slot>
+				<slot name="confirm-btn">
+					<l-button 
+						class="l-dialog__button"
+						:class="[
+							'l-dialog__button--' + innerButtonLayout,
+							{
+								'l-dialog__button--text': buttonVariant
+							}
+						]"
+						:style="[
+							buttonStyle,
+							{
+								'margin-left': (cancelBtnProps != null) && innerButtonLayout == 'horizontal' && !buttonVariant ? '24rpx': '0',
+								'margin-bottom': (cancelBtnProps != null) && innerButtonLayout == 'vertical' && !buttonVariant ? '24rpx': '0',
+							}
+						]"
+						data-type="confirm" 
+						v-if="confirmBtnProps != null"
+						:block="confirmBtnProps?.getBoolean('block') ?? false"
+						:disabled="confirmBtnProps?.getBoolean('disabled') ?? false"
+						:content="confirmBtnProps?.getString('content') ?? ''"
+						:icon="confirmBtnProps?.getString('icon') ?? ''"
+						:loading="confirmBtnProps?.getBoolean('loading') ?? false"
+						:type="confirmBtnProps?.getString('type') ?? 'primary'"
+						:ghost="confirmBtnProps?.getBoolean('loading') ?? false"
+						:shape="confirmBtnProps?.getString('shape') ?? 'rectangle'"
+						:size="confirmBtnProps?.getString('size') ?? 'medium'"
+						:variant="confirmBtnProps?.getString('variant') ?? 'solid'"
+						:open-type="confirmBtnProps?.getString('openType')"
+						:color="confirmBtnProps?.getString('color')"
+						:textColor="confirmBtnProps?.getString('textColor')"
+						:fontSize="confirmBtnProps?.getString('fontSize')"
+						
+						:hover-stop-propagation="confirmBtnProps?.getBoolean('hoverStopPropagation') ?? false"
+						:hover-start-time="confirmBtnProps?.getNumber('hoverStartTime') ?? 20"
+						:hover-stay-time="confirmBtnProps?.getNumber('hoverStayTime') ?? 70"
+						:lang="confirmBtnProps?.getString('lang') ?? 'en'"
+						:session-from="confirmBtnProps?.getString('sessionFrom') ?? ''"
+						:send-message-title="confirmBtnProps?.getString('sendMessageTitle') ?? ''"
+						:send-message-path="confirmBtnProps?.getString('sendMessagePath') ?? ''"
+						:send-message-img="confirmBtnProps?.getString('sendMessageImg') ?? ''"
+						:app-parameter="confirmBtnProps?.getString('appParameter') ?? ''"
+						:show-message-card="confirmBtnProps?.getBoolean('showMessageCard') ?? false"
+						@click="onTplButtonTap('confirm', null)"
+						@getuserinfo="getuserinfo"
+						@contact="contact" 
+						@getphonenumber="getphonenumber"
+						@error="error" 
+						@opensetting="opensetting" 
+						@launchapp="launchapp" 
+						@agreeprivacyauthorization="agreeprivacyauthorization"
+						>{{confirmBtnProps?.getString('content')}}</l-button> 
+				</slot>
+			</view>
+		</view>
+	</l-popup>
+</template>
+<script lang="uts" setup>
+	/**
+	 * Dialog 弹窗组件
+	 * @description 用于显示模态对话框的通用组件
+	 * <br> 插件类型：LDialogComponentPublicInstance 
+	 * @tutorial https://ext.dcloud.net.cn/plugin?name=lime-dialog
+	 * 
+	 * @property {UTSJSONObject[]} actions 操作按钮列表（最多显示6个）
+	 * @property {'horizontal'|'vertical'} buttonLayout [buttonLayout=horizontal] 按钮排列方式
+	 * @value horizontal 水平排列
+	 * @value vertical 垂直排列
+	 * @property {string|Object} cancelBtn 取消按钮配置（null隐藏/string文本/Object按钮属性）
+	 * @property {boolean} closeBtn 是否显示关闭按钮
+	 * @property {boolean} closeOnClickOverlay 点击蒙层关闭
+	 * @property {string|Object} confirmBtn 确认按钮配置（null隐藏/string文本/Object按钮属性）
+	 * @property {string} content 弹窗内容（支持HTML）
+	 * @property {string}  overlayStyle 遮罩层样式（支持CSS字符串）
+	 * @property {boolean} preventScrollThrough 防止滚动穿透
+	 * @property {boolean} overlay 是否显示遮罩
+	 * @property {string} title 弹窗标题
+	 * @property {boolean} visible 控制显示状态
+	 * @property {number} zIndex 层级设置
+	 * @property {string} lStyle 自定义根节点样式
+	 * @event {Function} action 操作按钮点击时触发
+	 * @param {number} index 点击的按钮索引
+	 * @event {Function} confirm 确认按钮点击时触发
+	 * @event {Function} cancel 取消/关闭按钮点击时触发
+	 * @event {Function} click 通用点击事件（透传底层点击）
+	 * @event {Function} agreeprivacyauthorization 用户同意隐私协议时触发（需配置隐私协议）
+	 * @event {Function} chooseavatar 用户选择头像时触发（需启用头像选择功能）
+	 * @event {Function} getuserinfo 用户授权信息回调
+	 * @event {Function} contact 客服消息回调
+	 * @event {Function} getphonenumber 获取用户手机号回调
+	 * @event {Function} error 发生错误时触发
+	 * @param {Object} detail 错误详细信息
+	 * @event {Function} opensetting 用户打开系统设置时触发
+	 * @event {Function} launchapp 从小程序唤醒App时触发
+	 */
+	
+	import { DialogProps, DialogOptions, DialogExpose, BeforeClose } from './type';
+	import { parseToObject } from './utils';
+	import { isPromise } from '@/uni_modules/lime-shared/isPromise'
+	
+	const emit = defineEmits(['action', 'confirm', 'cancel', 'click','agreeprivacyauthorization', 'chooseavatar', 'getuserinfo','contact', 'getphonenumber', 'error', 'opensetting', 'launchapp'])
+	const props = withDefaults(defineProps<DialogProps>(),{
+		buttonLayout: 'horizontal',
+		closeOnClickOverlay: true,
+		preventScrollThrough: true,
+		overlay: true
+	})
+	const dialogCallbacks = reactive({
+		beforeClose: null,
+		onAction: null,
+		onConfirm: null,
+		onCancel: null,
+	} as DialogExpose)
+	const innerOptions = reactive<DialogOptions>({
+		actions: props.actions,
+		buttonLayout: props.buttonLayout,
+		cancelBtn: props.cancelBtn,
+		closeBtn: props.closeBtn,
+		closeOnClickOverlay: props.closeOnClickOverlay,
+		confirmBtn: props.confirmBtn,
+		content: props.content,
+		overlayStyle: props.overlayStyle,
+		preventScrollThrough: props.preventScrollThrough,
+		overlay: props.overlay,
+		title: props.title,
+		visible: props.visible,
+		zIndex: props.zIndex,
+	})
+	
+	
+	const modelValue = defineModel({type: Boolean, default: false});
+	const innerValue = computed({
+		set(value: boolean) {
+			modelValue.value = value;
+			if(!value) {
+				dialogCallbacks.beforeClose = null;
+				dialogCallbacks.onConfirm = null;
+				dialogCallbacks.onCancel = null;
+			}
+		},
+		get(): boolean {
+			return (props.visible ?? false) || modelValue.value
+		},
+	} as WritableComputedOptions<boolean>);
+	
+	const closeBtnProps = computed((): boolean=>{
+		return innerOptions.closeBtn ?? props.closeBtn ??  false
+	})
+	const cancelBtnProps = computed(():UTSJSONObject | null => {
+		return parseToObject(props.cancelBtn ?? innerOptions.cancelBtn)
+	})
+	const confirmBtnProps = computed(():UTSJSONObject | null => {
+		return parseToObject(props.confirmBtn ?? innerOptions.confirmBtn)
+	})
+	
+	const innerTitle = computed(():string|null => props.title ?? innerOptions.title)
+	const innerButtonLayout = computed(():string => innerOptions.buttonLayout ?? props.buttonLayout)
+	const innerActions = computed(():UTSJSONObject[]|null => {
+		return props.actions ?? innerOptions.actions
+	})
+	const buttonVariant = computed(():boolean=> {
+		const res1 = [confirmBtnProps.value, cancelBtnProps.value].some((item):boolean => {
+			return item?.['variant'] == 'text'
+		})
+		const res2 = innerActions.value?.some((item):boolean => {
+			return item['variant'] == 'text'
+		})
+		
+		return res1 || (res2 ?? false)
+	})
+	
+	const buttonStyle = computed(():Map<string, any> => {
+		const style = new Map<string, any>();
+		if(innerButtonLayout.value == 'horizontal') {
+			style.set('flex-grow', 1)
+			// style.set('flex', 1)
+		} else {
+			style.set('flex-grow', 0)
+		}
+		style.set('padding', 0);
+		if(buttonVariant.value) {
+			//$border-color-2
+			style.set('border-top', `1px solid #e7e7e7`)
+			style.set('border-radius', '0')
+			style.set('border-left', `1px solid #e7e7e7`)
+		}
+		return style
+	})
+	
+	const onClose = (type: string) => {
+		if(dialogCallbacks.beforeClose != null) {
+			dialogCallbacks.beforeClose!(type).then((res)=>{
+				innerValue.value = false;
+			})
+			return
+		}
+		innerValue.value = false
+	}
+	const onTplButtonTap = (type: string, extra:number|null) => {
+		if(type == 'confirm') {
+			emit('confirm')
+			if(dialogCallbacks.onConfirm!= null) {
+				dialogCallbacks.onConfirm!(null)
+				onClose('confirm')
+			}
+		} else if(type == 'cancel') {
+			emit('cancel')
+			if(dialogCallbacks.onCancel!= null) {
+				dialogCallbacks.onCancel!(true)
+				onClose('cancel')
+			}
+		} else if(type == 'action' && extra != null) {
+			emit('action', extra)
+			if(dialogCallbacks.onAction != null) {
+				// dialogCallbacks.onAction!(extra)
+				dialogCallbacks.onAction!(extra)
+				onClose('action')
+			}
+		}
+	}
+	
+	const getuserinfo = (e: UniEvent) => {
+		emit('getuserinfo', e);
+	}
+	const contact = (e: UniEvent) => {
+		emit('contact', e);
+	}
+	const getphonenumber = (e: UniEvent) => {
+		emit('getphonenumber', e);
+	}
+	const error = (e: UniEvent) => {
+		emit('error', e);
+	}
+	const opensetting = (e: UniEvent) => {
+		emit('opensetting', e);
+	}
+	const launchapp = (e: UniEvent) => {
+		emit('launchapp', e);
+	}
+	const chooseavatar = (e: UniEvent) => {
+		emit('chooseavatar', e);
+	}
+	const agreeprivacyauthorization = (e: UniEvent) => {
+		emit('agreeprivacyauthorization', e);
+	}
+	
+	const overlayClick = () => {
+		if(props.closeOnClickOverlay) {
+			onClose('cancel')
+		}
+	}
+	
+	const _updateOptions = (options: UTSJSONObject) => {
+		innerOptions.actions = options.getArray<UTSJSONObject>('actions') ?? props.actions
+		innerOptions.buttonLayout = options.getString('buttonLayout') ?? props.buttonLayout
+		const maxLengthSuggestion = innerOptions.buttonLayout == 'vertical' ? 7 : 3;
+		if(innerOptions.actions != null && (innerOptions.actions!.length == 0 || innerOptions.actions!.length > maxLengthSuggestion)) {
+			console.warn(`action 数量建议控制在1至${maxLengthSuggestion}个`);
+		}
+		innerOptions.cancelBtn =  options['cancelBtn'] ?? props.cancelBtn
+		innerOptions.closeBtn = options.getBoolean('closeBtn') ?? props.closeBtn
+		innerOptions.closeOnClickOverlay =  options.getBoolean('closeOnClickOverlay') ?? props.closeOnClickOverlay
+		innerOptions.confirmBtn = options.get('confirmBtn') ?? props.confirmBtn
+		innerOptions.content = options.getString('content') ?? props.content
+		innerOptions.overlayStyle = options.getString('overlayStyle') ?? props.overlayStyle
+		innerOptions.preventScrollThrough =  options.getBoolean('preventScrollThrough') ?? props.preventScrollThrough
+		innerOptions.overlay = options.getBoolean('overlay') ?? props.overlay
+		innerOptions.title = options.getString('title') ?? props.title
+		// innerOptions.visible = options..visible
+		innerOptions.zIndex = options.getNumber('zIndex') ?? props.zIndex
+	}
+	// const _alert = (options: UTSJSONObject) => {}
+	// const _confirm = (options: UTSJSONObject) => {}
+	const _show = (options: UTSJSONObject):Promise<number|null> => {
+		_updateOptions(options)
+		innerValue.value = true;
+		try {
+			const beforeClose = options['beforeClose']
+			if(typeof beforeClose == 'function') {
+				dialogCallbacks.beforeClose = beforeClose as BeforeClose
+			}
+			
+		} catch(err) {
+			console.warn(err)
+		}
+		
+		return new Promise((resolve, reject) => {
+			dialogCallbacks.onConfirm = resolve;
+			dialogCallbacks.onAction = resolve;
+			dialogCallbacks.onCancel = reject;
+		})
+	}
+	const _close = () => {
+		innerValue.value = false
+	}
+	// const _action = (options: UTSJSONObject) => {}
+	
+	
+	defineExpose({
+		// dialogCallbacks,
+		// alert: _alert,
+		close: _close,
+		// action: _action,
+		// confirm: _confirm,
+		show: _show,
+	})
+</script>
+<style lang="scss">
+	@import './index';
+</style>

@@ -1,0 +1,449 @@
+<template>
+	<!-- #ifdef APP -->
+	<scroll-view style="flex:1">
+	<!-- #endif -->
+		
+	<!-- #ifdef APP -->
+	</scroll-view>
+	<!-- #endif -->
+</template>
+
+<script setup>
+		
+</script>
+
+<style>
+		
+</style>
+
+<!-- <template>
+  <view class="video-container">
+    <video 
+      id="myVideo"
+      class="video-player"
+      :src="videoSrc"
+      :controls="false"
+      @timeupdate="onTimeUpdate"
+      @play="onPlay"
+      @pause="onPause"
+      @ended="onEnded"
+      @loadedmetadata="onLoadedMetadata"
+    ></video>
+    
+    <view class="video-controls">
+      <button @tap="togglePlay">{{ isPlaying ? '暂停' : '播放' }}</button>
+      <view class="time-display">{{ formatTime(currentTime) }} / {{ formatTime(duration) }}</view>
+      <button @tap="addPlaybackMarker">添加标记</button>
+    </view>
+    
+    <view 
+      class="waveform-container"
+      @touchstart="onTouchStart"
+      @touchmove="onTouchMove"
+      @touchend="onTouchEnd"
+      @click="onWaveformClick"
+    >
+      <view class="waveform-background">
+        <view 
+          v-for="(wave, index) in waveformData" 
+          :key="'bg-'+index"
+          class="wave-bar bg-wave"
+          :style="{
+            height: `${wave.height}px`,
+            left: `${wave.position}%`
+          }"
+        ></view>
+      </view>
+      
+      <view class="waveform-foreground" :style="{ width: `${playbackProgress}%` }">
+        <view 
+          v-for="(wave, index) in waveformData" 
+          :key="'fg-'+index"
+          class="wave-bar fg-wave"
+          :style="{
+            height: `${wave.height}px`,
+            left: `${wave.position}%`
+          }"
+        ></view>
+      </view>
+      
+      <view 
+        class="playhead"
+        :style="{ left: `${playbackProgress}%` }"
+      ></view>
+      
+      <view 
+        v-for="(marker, index) in playbackMarkers"
+        :key="'marker-'+index"
+        class="playback-marker"
+        :style="{ left: `${(marker.time / duration) * 100}%` }"
+        @tap.stop="jumpToMarker(marker.time)"
+      >
+        <view class="marker-tooltip">{{ formatTime(marker.time) }}</view>
+      </view>
+    </view>
+    
+    <view class="playback-controls">
+      <button @tap="startPlayback" :disabled="playbackMarkers.length === 0">开始回放</button>
+      <button @tap="stopPlayback">停止回放</button>
+      <button @tap="clearMarkers">清除标记</button>
+    </view>
+  </view>
+</template>
+
+<script setup lang="uts">
+import { ref, onMounted } from 'vue'
+import { onReady } from '@dcloudio/uni-app'
+
+interface WaveformPoint {
+  height: number
+  position: number
+  time: number
+}
+
+interface PlaybackMarker {
+  time: number
+}
+
+const videoSrc = ref("https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4")
+
+const isPlaying = ref(false)
+const currentTime = ref(0)
+const duration = ref(0)
+const playbackProgress = ref(0)
+
+const isDragging = ref(false)
+const wasPlayingBeforeDrag = ref(false)
+
+const waveformData = ref<Array<WaveformPoint>>(new Array<WaveformPoint>())
+
+const playbackMarkers = ref<Array<PlaybackMarker>>(new Array<PlaybackMarker>())
+
+let videoContext = uni.createVideoContext('myVideo')
+let waveformContainer = uni.createSelectorQuery().in(this).select('.waveform-container')
+
+const generateWaveform = () => {
+  const waves = new Array<WaveformPoint>()
+  const pointCount = 150 
+  
+  const totalDuration = duration.value > 0 ? duration.value : 120
+  
+  for (let i = 0; i <= pointCount; i++) {
+    const position = (i / pointCount) * 100
+    const time = (i / pointCount) * totalDuration
+    
+    const baseHeight = 8 + Math.sin(i / 8) * 8
+    const randomFactor = 1 + Math.random() * 0.5
+    const height = baseHeight * randomFactor
+    
+    waves.push({
+      height: height,
+      position: position,
+      time: time
+    } as WaveformPoint)
+  }
+  
+  waveformData.value = waves
+}
+
+const onLoadedMetadata = (e: UniVideoTimeUpdateEvent) => {
+  duration.value = e.detail.duration
+	generateWaveform()
+  
+}
+
+const formatTime = (time: number): string => {
+  const minutes = Math.floor(time / 60)
+  const seconds = Math.floor(time % 60)
+  return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
+}
+
+const onTimeUpdate = (e: UniVideoTimeUpdateEvent) => {
+  if (!isDragging.value) {
+    currentTime.value = e.detail.currentTime
+    duration.value = e.detail.duration
+    playbackProgress.value = (currentTime.value / duration.value) * 100
+  }
+}
+
+const updateCurrentTime = (e: UniTouchEvent) => {
+  if (e.touches.length === 0) return
+  
+  waveformContainer?.boundingClientRect((rect: UniApp.BoundingClientRect) => {
+    if (!rect?.width) return
+    
+    const touchX = Math.max(0, Math.min(e.touches[0]?.clientX - rect.left, rect.width))
+    const percent = touchX / rect.width
+    currentTime.value = percent * duration.value
+    playbackProgress.value = percent * 100
+  }).exec()
+}
+
+const onTouchStart = (e: UniTouchEvent) => {
+  isDragging.value = true
+  wasPlayingBeforeDrag.value = isPlaying.value
+  if (isPlaying.value) {
+    videoContext?.pause()
+  }
+  updateCurrentTime(e)
+}
+
+const onTouchMove = (e: UniTouchEvent) => {
+  if (!isDragging.value) return
+  e.stopPropagation()
+  e.preventDefault()
+  updateCurrentTime(e)
+}
+
+const onTouchEnd = (e: UniTouchEvent) => {
+  if (!isDragging.value) return
+  e.stopPropagation()
+  e.preventDefault()
+  
+  updateCurrentTime(e)
+  videoContext?.seek(currentTime.value)
+  
+  setTimeout(() => {
+    if (wasPlayingBeforeDrag.value) {
+      videoContext?.play()
+    }
+    isDragging.value = false
+  }, 50)
+}
+
+const onWaveformClick = (e: UniTouchEvent) => {
+  updateCurrentTime(e)
+  videoContext?.seek(currentTime.value)
+}
+
+const togglePlay = () => {
+  if (isPlaying.value) {
+    videoContext?.pause()
+  } else {
+    videoContext?.play()
+  }
+}
+
+const onPlay = () => {
+  isPlaying.value = true
+}
+
+const onPause = () => {
+  isPlaying.value = false
+}
+
+const onEnded = () => {
+  isPlaying.value = false
+  currentTime.value = 0
+  playbackProgress.value = 0
+}
+
+const addPlaybackMarker = () => {
+  if (duration.value <= 0) return
+  
+  const existingMarker = playbackMarkers.value.find(
+    marker => Math.abs(marker.time - currentTime.value) < 0.5
+  )
+  
+  if (!existingMarker) {
+    playbackMarkers.value.push({
+      time: currentTime.value
+    } as PlaybackMarker)
+  }
+}
+
+const jumpToMarker = (time: number) => {
+  videoContext?.seek(time)
+  currentTime.value = time
+  playbackProgress.value = (time / duration.value) * 100
+}
+
+const startPlayback = () => {
+  if (playbackMarkers.value.length === 0) return
+  
+  playbackMarkers.value.sort((a, b) => a.time - b.time)
+  
+  let nextMarkerIndex = playbackMarkers.value.findIndex(marker => marker.time > currentTime.value)
+  if (nextMarkerIndex === -1) nextMarkerIndex = 0
+  
+  const playToMarker = (index: number) => {
+    if (index >= playbackMarkers.value.length) {
+      videoContext?.pause()
+      return
+    }
+    
+    const marker = playbackMarkers.value[index]
+    videoContext?.seek(marker.time)
+    videoContext?.play()
+    
+    setTimeout(() => {
+      videoContext?.pause()
+      currentTime.value = marker.time
+      playbackProgress.value = (marker.time / duration.value) * 100
+      
+      playToMarker(index + 1)
+    }, (marker.time - currentTime.value) * 1000)
+  }
+  
+  playToMarker(nextMarkerIndex)
+}
+
+const stopPlayback = () => {
+  videoContext?.pause()
+}
+
+const clearMarkers = () => {
+  playbackMarkers.value = new Array<PlaybackMarker>()
+}
+onMounted(() => {
+  onReady(() => {
+    videoContext = uni.createVideoContext('myVideo')
+    waveformContainer = uni.createSelectorQuery().in(this).select('.waveform-container')
+    generateWaveform()
+  })
+})
+</script>
+
+<style>
+.video-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.video-player {
+  width: 100%;
+  height: 300rpx;
+  background-color: #000;
+  border-radius: 8px;
+}
+
+.video-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  margin-top: 8px;
+}
+
+.video-controls button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}
+
+.time-display {
+  font-size: 14px;
+  color: #333;
+  font-family: monospace;
+}
+
+.waveform-container {
+  position: relative;
+  height: 80px;
+  margin-top: 15px;
+  touch-action: none;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.waveform-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.waveform-foreground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.wave-bar {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  min-height: 1px;
+  border-radius: 1px;
+  transform: translateX(-50%);
+}
+
+.bg-wave {
+  background-color: #d1d1d1;
+}
+
+.fg-wave {
+  background-color: #FF5500;
+}
+
+.playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #FF0000;
+  transform: translateX(-50%);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.playback-marker {
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #FF5500;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 15;
+  border: 2px solid white;
+}
+
+.marker-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.playback-marker:hover .marker-tooltip {
+  opacity: 1;
+}
+
+.playback-controls {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.playback-controls button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #FF5500;
+  color: white;
+  border: none;
+}
+
+.playback-controls button:disabled {
+  background-color: #ccc;
+  opacity: 0.7;
+}
+</style> -->

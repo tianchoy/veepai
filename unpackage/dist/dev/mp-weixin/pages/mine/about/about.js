@@ -12,7 +12,7 @@ if (!Math) {
 }
 function _sfc_render(_ctx, _cache) {
   return {
-    a: common_assets._imports_0$5,
+    a: common_assets._imports_0$6,
     b: common_vendor.p({
       name: "arrowright",
       color: "#333",

@@ -43,6 +43,10 @@ import GenPagesMineSystemSettingSystemSettingClass from './pages/mine/systemSett
 import GenPagesMineAboutAboutClass from './pages/mine/about/about.uvue'
 import GenPagesMineLocalFilesLocalFilesClass from './pages/mine/localFiles/localFiles.uvue'
 import GenPagesIndexDeviceDetailClass from './pages/index/deviceDetail.uvue'
+import GenPagesIndexDeviceSettingClass from './pages/index/deviceSetting.uvue'
+import GenPagesIndexDeviceReplayClass from './pages/index/deviceReplay.uvue'
+import GenPagesIndexDeviceSettingInfoDeviceSettingInfoClass from './pages/index/deviceSettingInfo/deviceSettingInfo.uvue'
+import GenPagesIndexDeviceSettingInfoDeviceNightClass from './pages/index/deviceSettingInfo/deviceNight.uvue'
 function definePageRoutes() {
 __uniRoutes.push({ path: "pages/index/index", component: GenPagesIndexIndexClass, meta: { isQuit: true } as UniPageMeta, style: _uM([["navigationBarTitleText","首页"],["enableVideo",true]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/message/message", component: GenPagesMessageMessageClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","消息"]]) } as UniPageRoute)
@@ -65,6 +69,10 @@ __uniRoutes.push({ path: "pages/mine/systemSetting/systemSetting", component: Ge
 __uniRoutes.push({ path: "pages/mine/about/about", component: GenPagesMineAboutAboutClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","关于"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/mine/localFiles/localFiles", component: GenPagesMineLocalFilesLocalFilesClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","本地文件"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/index/deviceDetail", component: GenPagesIndexDeviceDetailClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationStyle","custom"],["navigationBarTitleText",""]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/deviceSetting", component: GenPagesIndexDeviceSettingClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationStyle","custom"],["navigationBarTitleText",""]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/deviceReplay", component: GenPagesIndexDeviceReplayClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText",""]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/deviceSettingInfo/deviceSettingInfo", component: GenPagesIndexDeviceSettingInfoDeviceSettingInfoClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationStyle","custom"],["navigationBarTitleText",""]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/deviceSettingInfo/deviceNight", component: GenPagesIndexDeviceSettingInfoDeviceNightClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationStyle","custom"],["navigationBarTitleText",""]]) } as UniPageRoute)
 }
 const __uniTabBar: Map<string, any | null> | null = _uM([["list",[_uM([["pagePath","pages/index/index"],["iconPath","./static/tabbar/home.png"],["selectedIconPath","./static/tabbar/home1.png"],["text","首页"]]),_uM([["pagePath","pages/message/message"],["iconPath","./static/tabbar/message.png"],["selectedIconPath","./static/tabbar/message1.png"],["text","消息"]]),_uM([["pagePath","pages/mine/mine"],["iconPath","./static/tabbar/userCenter.png"],["selectedIconPath","./static/tabbar/userCenter1.png"],["text","我的"]])]]])
 const __uniLaunchPage: Map<string, any | null> = _uM([["url","pages/index/index"],["style",_uM([["navigationBarTitleText","首页"],["enableVideo",true]])]])

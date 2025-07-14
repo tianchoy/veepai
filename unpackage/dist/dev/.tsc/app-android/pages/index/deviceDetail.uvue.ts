@@ -11,10 +11,21 @@ const _cache = __ins.renderCache;
     const videoSrc = ref('https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4')
 
 
+    const goBack = () =>{
+        uni.navigateBack({
+            delta: 1,
+        })
+    }
+
     const deviceSetting = () =>{
-        uni.showToast({
-            title: '设备设置',
-            icon: 'none'
+        uni.navigateTo({
+            url: '/pages/index/deviceSetting',
+        })
+    }
+
+    const replay = () => {
+        uni.navigateTo({
+            url: '/pages/index/deviceReplay',
         })
     }
 
@@ -26,7 +37,8 @@ return (): any | null => {
       title: "设备详情",
       showBack: true,
       rightText: "setup",
-      onRightEvent: deviceSetting
+      onRightEvent: deviceSetting,
+      onBack: goBack
     })),
     _cE("view", _uM({ class: "content" }), [
       _cE("video", _uM({
@@ -126,7 +138,10 @@ return (): any | null => {
         })),
         _cE("text", _uM({ class: "small-item-text" }), "红蓝灯")
       ]),
-      _cE("view", _uM({ class: "small-item" }), [
+      _cE("view", _uM({
+        class: "small-item",
+        onClick: replay
+      }), [
         _cE("image", _uM({
           class: "small-item-icon",
           src: "/static/device/replay.png"

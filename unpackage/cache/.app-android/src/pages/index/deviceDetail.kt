@@ -11,7 +11,8 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import io.dcloud.uniapp.extapi.showToast as uni_showToast
+import io.dcloud.uniapp.extapi.navigateBack as uni_navigateBack
+import io.dcloud.uniapp.extapi.navigateTo as uni_navigateTo
 open class GenPagesIndexDeviceDetail : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
     companion object {
@@ -21,12 +22,18 @@ open class GenPagesIndexDeviceDetail : BasePage {
             val _ctx = __ins.proxy as GenPagesIndexDeviceDetail
             val _cache = __ins.renderCache
             val videoSrc = ref("https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4")
+            val goBack = fun(){
+                uni_navigateBack(NavigateBackOptions(delta = 1))
+            }
             val deviceSetting = fun(){
-                uni_showToast(ShowToastOptions(title = "设备设置", icon = "none"))
+                uni_navigateTo(NavigateToOptions(url = "/pages/index/deviceSetting"))
+            }
+            val replay = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/index/deviceReplay"))
             }
             return fun(): Any? {
                 return _cE("view", _uM("class" to "container"), _uA(
-                    _cV(unref(GenComponentsTopNavBarClass), _uM("title" to "设备详情", "showBack" to true, "rightText" to "setup", "onRightEvent" to deviceSetting)),
+                    _cV(unref(GenComponentsTopNavBarClass), _uM("title" to "设备详情", "showBack" to true, "rightText" to "setup", "onRightEvent" to deviceSetting, "onBack" to goBack)),
                     _cE("view", _uM("class" to "content"), _uA(
                         _cE("video", _uM("class" to "video", "id" to "myVideo", "title" to "deviceTitle", "src" to videoSrc.value, "ref" to "videoRef", "controls" to true, "show-play-btn" to true, "show-center-play-btn" to true, "enable-progress-gesture" to true, "show-fullscreen-btn" to true, "show-mute-btn" to true), null, 8, _uA(
                             "src"
@@ -79,7 +86,7 @@ open class GenPagesIndexDeviceDetail : BasePage {
                             _cE("image", _uM("class" to "small-item-icon", "src" to "/static/device/redblue_1.png")),
                             _cE("text", _uM("class" to "small-item-text"), "红蓝灯")
                         )),
-                        _cE("view", _uM("class" to "small-item"), _uA(
+                        _cE("view", _uM("class" to "small-item", "onClick" to replay), _uA(
                             _cE("image", _uM("class" to "small-item-icon", "src" to "/static/device/replay.png")),
                             _cE("text", _uM("class" to "small-item-text"), "回放")
                         )),

@@ -95,11 +95,11 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: common_assets._imports_0$2,
+        a: common_assets._imports_0$3,
         b: common_vendor.o(changePhoneNumber),
-        c: common_assets._imports_0$2,
+        c: common_assets._imports_0$3,
         d: common_vendor.o(editPassword),
-        e: common_assets._imports_0$2,
+        e: common_assets._imports_0$3,
         f: common_vendor.o(cancelAnAccount),
         g: common_vendor.t(switchVal.value ? "已绑定" : "未绑定"),
         h: common_vendor.o(change),

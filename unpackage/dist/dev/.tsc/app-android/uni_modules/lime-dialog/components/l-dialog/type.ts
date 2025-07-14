@@ -1,0 +1,138 @@
+// @ts-nocheck
+export interface DialogProps {
+	/**
+	 * 操作栏
+	 */
+	actions?: UTSJSONObject[];
+	/**
+	 * 多按钮排列方式
+	 */
+	buttonLayout: 'horizontal' | 'vertical';
+	/**
+	 * 取消按钮，可自定义。值为 null 则不显示取消按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 Slot 自定义按钮时，需自行控制取消事件
+	 */
+	cancelBtn?: any;
+	// cancelBtnProps?: UTSJSONObject;
+	/**
+	 * 是否展示关闭按钮，值为 `true` 显示默认关闭按钮；值为 `false` 则不显示关闭按钮；使用 Object 时透传至图标组件
+	 */
+	closeBtn?: boolean;
+	// closeColor?: string;
+	// closeSize?: string;
+	 /**
+	   * 点击蒙层时是否触发关闭事件
+	   */
+	closeOnClickOverlay: boolean;
+	/**
+	   * 确认按钮。值为 null 则不显示确认按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 Slot 自定义按钮时，需自行控制确认事件
+	   */
+	confirmBtn?: any;
+	// confirmBtnProps?: UTSJSONObject;
+	/**
+	   * 内容
+	   */
+	content?: string;
+	/**
+	   * 透传至 Overlay 组件
+	   */
+	// overlayProps?: UTSJSONObject;
+	overlayStyle?: string;
+	 /**
+	   * 防止滚动穿透
+	   */
+	preventScrollThrough: boolean;
+	/**
+	   * 是否显示遮罩层
+	   */
+	overlay: boolean;
+	/**
+	   * 标题
+	   */
+	title?: string;
+	 /**
+	   * 控制对话框是否显示
+	   */
+	visible ?: boolean;
+	/**
+	   * 对话框层级，Web 侧样式默认为 998
+	   */
+	zIndex?: number;
+	/**
+	   * 自定义组件样式
+	   */
+	lStyle?: string;
+}
+
+export type DialogOptions = {
+	/**
+	 * 操作栏
+	 */
+	actions?: UTSJSONObject[];
+	/**
+	 * 多按钮排列方式
+	 */
+	buttonLayout?: 'horizontal' | 'vertical';
+	/**
+	 * 取消按钮，可自定义。值为 null 则不显示取消按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 Slot 自定义按钮时，需自行控制取消事件
+	 */
+	cancelBtn?: any;
+	// cancelBtnProps?: UTSJSONObject;
+	/**
+	 * 是否展示关闭按钮，值为 `true` 显示默认关闭按钮；值为 `false` 则不显示关闭按钮；使用 Object 时透传至图标组件
+	 */
+	closeBtn?: boolean;
+	// closeColor?: string;
+	// closeSize?: string;
+	 /**
+	   * 点击蒙层时是否触发关闭事件
+	   */
+	closeOnClickOverlay?: boolean;
+	/**
+	   * 确认按钮。值为 null 则不显示确认按钮。值类型为字符串，则表示自定义按钮文本，值类型为 Object 则表示透传 Button 组件属性。使用 Slot 自定义按钮时，需自行控制确认事件
+	   */
+	confirmBtn?: any;
+	// confirmBtnProps?: UTSJSONObject;
+	/**
+	   * 内容
+	   */
+	content?: string;
+	/**
+	   * 透传至 Overlay 组件
+	   */
+	// overlayProps?: UTSJSONObject;
+	overlayStyle?: string;
+	 /**
+	   * 防止滚动穿透
+	   */
+	preventScrollThrough?: boolean;
+	/**
+	   * 是否显示遮罩层
+	   */
+	overlay?: boolean;
+	/**
+	   * 标题
+	   */
+	title?: string;
+	 /**
+	   * 控制对话框是否显示
+	   */
+	visible ?: boolean;
+	/**
+	   * 对话框层级，Web 侧样式默认为 998
+	   */
+	zIndex?: number;
+	/**
+	   * 自定义组件样式
+	   */
+	lStyle?: string;
+}
+
+export type BeforeClose = (action: string) => Promise<boolean>
+export type DialogExpose = {
+	beforeClose: BeforeClose | null,
+	// onConfirm: ((value: any | null) => void)|null,
+	onAction: ((index:number) => void)|null,
+	onConfirm: ((value:number|null) => void)|null,
+	// onCancel: ((reason?: any) => void)|null,
+	onCancel: ((reason: any) => void)|null,
+}

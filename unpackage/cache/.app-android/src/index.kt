@@ -76,7 +76,7 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
     val hosts: String = "127.0.0.1,192.168.3.34"
     val port: String = "8090"
-    val id: String = "app-android_fCzUmf"
+    val id: String = "app-android_2z2FYM"
     if (hosts == "" || port == "" || id == "") {
         return UTSPromise.resolve(false)
     }
@@ -8306,6 +8306,691 @@ val GenPagesIndexDeviceDetailClass = CreateVueComponent(GenPagesIndexDeviceDetai
     return GenPagesIndexDeviceDetail(instance, renderer)
 }
 )
+interface InputProps {
+    var adjustPosition: Boolean
+    var align: String
+    var alwaysEmbed: Boolean
+    var autoFocus: Boolean
+    var bordered: Boolean
+    var clearTrigger: String
+    var clearable: Boolean
+    var confirmHold: Boolean
+    var confirmType: String
+    var cursor: Number
+    var cursorColor: String
+    var cursorSpacing: Number
+    var disabled: Boolean
+    var focus: Boolean
+    var holdKeyboard: Boolean
+    var label: String?
+    var layout: String
+    var maxcharacter: Number?
+    var maxlength: Number
+    var placeholder: String
+    var placeholderStyle: String
+    var placeholderClass: String?
+    var readonly: Boolean
+    var safePasswordCertPath: String
+    var safePasswordCustomHash: String
+    var safePasswordLength: Number?
+    var safePasswordNonce: String
+    var safePasswordSalt: String
+    var safePasswordTimeStamp: Number?
+    var selectionEnd: Number
+    var selectionStart: Number
+    var status: String
+    var prefixIcon: String?
+    var prefixIconColor: String?
+    var suffix: String?
+    var suffixIcon: String?
+    var suffixIconColor: String?
+    var tips: String?
+    var type: String
+    var value: Any?
+    var modelValue: Any?
+    var lStyle: String?
+    var lableStyle: String?
+    var tipsStyle: String?
+    var inputStyle: String?
+    var borderColor: String?
+    var classic: Boolean
+    var focused: Boolean
+    var focusedBorderColor: String?
+    var prefixIconSize: String?
+    var suffixIconSize: String?
+    var clearIconSize: String?
+}
+val GenUniModulesLimeInputComponentsLInputLInputClass = CreateVueComponent(GenUniModulesLimeInputComponentsLInputLInput::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeInputComponentsLInputLInput.inheritAttrs, inject = GenUniModulesLimeInputComponentsLInputLInput.inject, props = GenUniModulesLimeInputComponentsLInputLInput.props, propsNeedCastKeys = GenUniModulesLimeInputComponentsLInputLInput.propsNeedCastKeys, emits = GenUniModulesLimeInputComponentsLInputLInput.emits, components = GenUniModulesLimeInputComponentsLInputLInput.components, styles = GenUniModulesLimeInputComponentsLInputLInput.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenUniModulesLimeInputComponentsLInputLInput.setup(props as GenUniModulesLimeInputComponentsLInputLInput)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimeInputComponentsLInputLInput {
+    return GenUniModulesLimeInputComponentsLInputLInput(instance)
+}
+)
+typealias TransitionEmitStatus = String
+typealias TransitionStatus = String
+open class UseTransitionOptions1 (
+    open var element: Ref<UniElement?>? = null,
+    open var enterClass: String? = null,
+    open var enterActiveClass: String? = null,
+    open var enterToClass: String? = null,
+    open var leaveClass: String? = null,
+    open var leaveActiveClass: String? = null,
+    open var leaveToClass: String? = null,
+    open var appear: Boolean? = null,
+    open var defaultName: String? = null,
+    open var name: (() -> String)? = null,
+    open var visible: (() -> Boolean)? = null,
+    open var emits: ((name: TransitionEmitStatus) -> Unit)? = null,
+    open var onNextTick: ((name: TransitionEmitStatus) -> UTSPromise<Unit>)? = null,
+    open var duration: Number? = null,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("UseTransitionOptions", "uni_modules/lime-transition/index.uts", 5, 13)
+    }
+}
+typealias ClassNameMap = Map<String, String>
+open class UseTransitionReturn (
+    @JsonNotNull
+    open var state: Ref<Boolean>,
+    @JsonNotNull
+    open var display: Ref<Boolean>,
+    @JsonNotNull
+    open var inited: Ref<Boolean>,
+    @JsonNotNull
+    open var classes: Ref<String>,
+    @JsonNotNull
+    open var name: Ref<String>,
+    open var finished: () -> Unit,
+    open var toggle: (v: Boolean) -> Unit,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("UseTransitionReturn", "uni_modules/lime-transition/index.uts", 22, 13)
+    }
+}
+fun useTransition1(options: UseTransitionOptions1): UseTransitionReturn {
+    val state = ref(false)
+    val display = ref(false)
+    val inited = ref(false)
+    val classes = ref("")
+    val name = ref(options.defaultName ?: "fade")
+    val enterClass = options.enterClass ?: ""
+    val enterActiveClass = options.enterActiveClass ?: ""
+    val enterToClass = options.enterToClass ?: ""
+    val leaveActiveClass = options.leaveActiveClass ?: ""
+    val leaveToClass = options.leaveToClass ?: ""
+    val leaveClass = options.leaveClass ?: ""
+    val appear = options.appear ?: false
+    val duration = options.duration ?: 300
+    var status: TransitionStatus = ""
+    var isTransitionEnd = false
+    var isTransitioning = false
+    var timeoutId: Number = -1
+    val emitEvent = fun(event: TransitionEmitStatus){
+        options.emits?.invoke(event)
+    }
+    val finished = fun(){
+        if (isTransitionEnd) {
+            return
+        }
+        isTransitionEnd = true
+        emitEvent("after-" + status)
+        if (display.value && !state.value) {
+            display.value = false
+        }
+    }
+    val sleep = fun(): UTSPromise<Unit> {
+        return UTSPromise(fun(resolve, _reject){
+            nextTick(fun(){
+                raf(fun(){
+                    if (options.element?.value != null) {
+                        options.element?.value?.getBoundingClientRectAsync()?.then(fun(res){
+                            resolve(Unit)
+                        })
+                    } else {
+                        resolve(Unit)
+                    }
+                }
+                )
+            }
+            )
+        }
+        )
+    }
+    val getClassNames = fun(name: String): ClassNameMap {
+        return Map<String, String>(_uA(
+            _uA(
+                "enter",
+                "l-" + name + "-enter l-" + name + "-enter-active " + enterClass + " " + enterActiveClass
+            ),
+            _uA(
+                "enter-to",
+                "l-" + name + "-enter-to l-" + name + "-enter-active " + enterToClass + " " + enterActiveClass
+            ),
+            _uA(
+                "leave",
+                "l-" + name + "-leave l-" + name + "-leave-active " + leaveClass + " " + leaveActiveClass
+            ),
+            _uA(
+                "leave-to",
+                "l-" + name + "-leave-to l-" + name + "-leave-active " + leaveToClass + " " + leaveActiveClass
+            )
+        ))
+    }
+    val transitionQueue = ref(_uA<TransitionStatus>())
+    val performTransition = fun(newStatus: TransitionStatus, eventName: TransitionStatus): UTSPromise<Unit> {
+        return wrapUTSPromise(suspend w@{
+                if (status == newStatus) {
+                    return@w
+                }
+                transitionQueue.value.push(newStatus)
+                if (isTransitioning) {
+                    return@w
+                }
+                isTransitioning = true
+                isTransitionEnd = true
+                while(transitionQueue.value.length > 0){
+                    val currentStatus = transitionQueue.value.shift()!!
+                    status = currentStatus
+                    emitEvent("before-" + eventName)
+                    await(sleep())
+                    await(sleep())
+                    if (status != currentStatus) {
+                        continue
+                    }
+                    val classNames = getClassNames(name.value)
+                    inited.value = true
+                    display.value = true
+                    classes.value = classNames.get(eventName)!!
+                    emitEvent(eventName)
+                    val executeAfterTick = options.onNextTick?.invoke(eventName)
+                    if (executeAfterTick != null) {
+                        await(executeAfterTick)
+                    }
+                    await(sleep())
+                    if (status != currentStatus) {
+                        continue
+                    }
+                    classes.value = classNames.get("" + eventName + "-to")!!
+                    if (status == "leave") {
+                        setTimeout(fun(){
+                            finished()
+                        }
+                        , duration)
+                    }
+                }
+                clearTimeout(timeoutId)
+                timeoutId = setTimeout(fun(){
+                    if (transitionQueue.value.length == 0 && status == newStatus) {
+                        isTransitionEnd = false
+                    }
+                }
+                , duration * 0.8)
+                isTransitioning = false
+        })
+    }
+    val enter = fun(){
+        performTransition("enter", "enter")
+    }
+    val leave = fun(){
+        performTransition("leave", "leave")
+    }
+    var init = false
+    watchEffect(fun(){
+        if (options.visible == null) {
+            return
+        }
+        state.value = options.visible!!()
+        if (!appear && !init) {
+            init = true
+            return
+        }
+        if (state.value) {
+            enter()
+        } else {
+            leave()
+        }
+    }
+    )
+    watchEffect(fun(){
+        if (options.name == null) {
+            return
+        }
+        name.value = options.name!!()
+    }
+    )
+    val toggle = fun(v: Boolean){
+        state.value = v
+        if (v) {
+            enter()
+        } else {
+            leave()
+        }
+    }
+    return UseTransitionReturn(state = state, inited = inited, display = display, classes = classes, name = name, finished = finished, toggle = toggle)
+}
+interface OverlayProps {
+    var ariaLabel: String
+    var ariaRole: String
+    var lClass: String?
+    var bgColor: String?
+    var lStyle: String?
+    var duration: Number
+    var preventScrollThrough: Boolean
+    var visible: Boolean
+    var zIndex: Number
+}
+val GenUniModulesLimeOverlayComponentsLOverlayLOverlayClass = CreateVueComponent(GenUniModulesLimeOverlayComponentsLOverlayLOverlay::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesLimeOverlayComponentsLOverlayLOverlay.name, inheritAttrs = GenUniModulesLimeOverlayComponentsLOverlayLOverlay.inheritAttrs, inject = GenUniModulesLimeOverlayComponentsLOverlayLOverlay.inject, props = GenUniModulesLimeOverlayComponentsLOverlayLOverlay.props, propsNeedCastKeys = GenUniModulesLimeOverlayComponentsLOverlayLOverlay.propsNeedCastKeys, emits = GenUniModulesLimeOverlayComponentsLOverlayLOverlay.emits, components = GenUniModulesLimeOverlayComponentsLOverlayLOverlay.components, styles = GenUniModulesLimeOverlayComponentsLOverlayLOverlay.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenUniModulesLimeOverlayComponentsLOverlayLOverlay.setup(props as GenUniModulesLimeOverlayComponentsLOverlayLOverlay)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimeOverlayComponentsLOverlayLOverlay {
+    return GenUniModulesLimeOverlayComponentsLOverlayLOverlay(instance)
+}
+)
+fun convertRadius(radius: Any): UTSArray<String> {
+    if (UTSArray.isArray(radius)) {
+        val values = (radius as UTSArray<Any>).map(fun(item): String? {
+            return addUnit(item)
+        }
+        )
+        if (values.length == 1) {
+            return _uA(
+                values[0]!!,
+                values[0]!!,
+                values[0]!!,
+                values[0]!!
+            )
+        }
+        if (values.length == 2) {
+            return _uA(
+                values[0]!!,
+                values[1]!!,
+                values[0]!!,
+                values[1]!!
+            )
+        }
+        if (values.length == 3) {
+            return _uA(
+                values[0]!!,
+                values[1]!!,
+                values[2]!!,
+                values[1]!!
+            )
+        }
+        if (values.length == 4) {
+            return _uA(
+                values[0]!!,
+                values[1]!!,
+                values[2]!!,
+                values[3]!!
+            )
+        }
+        return _uA(
+            "0",
+            "0",
+            "0",
+            "0"
+        )
+    }
+    val value = addUnit(radius) ?: "0"
+    return _uA(
+        value,
+        value,
+        value,
+        value
+    )
+}
+interface PopupProps {
+    var closeable: Boolean
+    var closeOnClickOverlay: Boolean
+    var destroyOnClose: Boolean
+    var overlayStyle: Any?
+    var position: String
+    var preventScrollThrough: Boolean
+    var overlay: Boolean
+    var transitionName: String?
+    var visible: Boolean?
+    var zIndex: Number
+    var duration: Number
+    var bgColor: String?
+    var closeIcon: String
+    var iconColor: String?
+    var lStyle: Any?
+    var safeAreaInsetBottom: Boolean
+    var safeAreaInsetTop: Boolean
+    var radius: Any?
+}
+val GenUniModulesLimePopupComponentsLPopupLPopupClass = CreateVueComponent(GenUniModulesLimePopupComponentsLPopupLPopup::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimePopupComponentsLPopupLPopup.inheritAttrs, inject = GenUniModulesLimePopupComponentsLPopupLPopup.inject, props = GenUniModulesLimePopupComponentsLPopupLPopup.props, propsNeedCastKeys = GenUniModulesLimePopupComponentsLPopupLPopup.propsNeedCastKeys, emits = GenUniModulesLimePopupComponentsLPopupLPopup.emits, components = GenUniModulesLimePopupComponentsLPopupLPopup.components, styles = GenUniModulesLimePopupComponentsLPopupLPopup.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenUniModulesLimePopupComponentsLPopupLPopup.setup(props as GenUniModulesLimePopupComponentsLPopupLPopup)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimePopupComponentsLPopupLPopup {
+    return GenUniModulesLimePopupComponentsLPopupLPopup(instance)
+}
+)
+interface DialogProps {
+    var actions: UTSArray<UTSJSONObject>?
+    var buttonLayout: String
+    var cancelBtn: Any?
+    var closeBtn: Boolean?
+    var closeOnClickOverlay: Boolean
+    var confirmBtn: Any?
+    var content: String?
+    var overlayStyle: String?
+    var preventScrollThrough: Boolean
+    var overlay: Boolean
+    var title: String?
+    var visible: Boolean?
+    var zIndex: Number?
+    var lStyle: String?
+}
+open class DialogOptions (
+    open var actions: UTSArray<UTSJSONObject>? = null,
+    open var buttonLayout: String? = null,
+    open var cancelBtn: Any? = null,
+    open var closeBtn: Boolean? = null,
+    open var closeOnClickOverlay: Boolean? = null,
+    open var confirmBtn: Any? = null,
+    open var content: String? = null,
+    open var overlayStyle: String? = null,
+    open var preventScrollThrough: Boolean? = null,
+    open var overlay: Boolean? = null,
+    open var title: String? = null,
+    open var visible: Boolean? = null,
+    open var zIndex: Number? = null,
+    open var lStyle: String? = null,
+) : UTSReactiveObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("DialogOptions", "uni_modules/lime-dialog/components/l-dialog/type.uts", 65, 13)
+    }
+    override fun __v_create(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): UTSReactiveObject {
+        return DialogOptionsReactiveObject(this, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+}
+open class DialogOptionsReactiveObject : DialogOptions, IUTSReactive<DialogOptions> {
+    override var __v_raw: DialogOptions
+    override var __v_isReadonly: Boolean
+    override var __v_isShallow: Boolean
+    override var __v_skip: Boolean
+    constructor(__v_raw: DialogOptions, __v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean) : super(actions = __v_raw.actions, buttonLayout = __v_raw.buttonLayout, cancelBtn = __v_raw.cancelBtn, closeBtn = __v_raw.closeBtn, closeOnClickOverlay = __v_raw.closeOnClickOverlay, confirmBtn = __v_raw.confirmBtn, content = __v_raw.content, overlayStyle = __v_raw.overlayStyle, preventScrollThrough = __v_raw.preventScrollThrough, overlay = __v_raw.overlay, title = __v_raw.title, visible = __v_raw.visible, zIndex = __v_raw.zIndex, lStyle = __v_raw.lStyle) {
+        this.__v_raw = __v_raw
+        this.__v_isReadonly = __v_isReadonly
+        this.__v_isShallow = __v_isShallow
+        this.__v_skip = __v_skip
+    }
+    override fun __v_clone(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): DialogOptionsReactiveObject {
+        return DialogOptionsReactiveObject(this.__v_raw, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+    override var actions: UTSArray<UTSJSONObject>?
+        get() {
+            return _tRG(__v_raw, "actions", __v_raw.actions, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("actions")) {
+                return
+            }
+            val oldValue = __v_raw.actions
+            __v_raw.actions = value
+            _tRS(__v_raw, "actions", oldValue, value)
+        }
+    override var buttonLayout: String?
+        get() {
+            return _tRG(__v_raw, "buttonLayout", __v_raw.buttonLayout, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("buttonLayout")) {
+                return
+            }
+            val oldValue = __v_raw.buttonLayout
+            __v_raw.buttonLayout = value
+            _tRS(__v_raw, "buttonLayout", oldValue, value)
+        }
+    override var cancelBtn: Any?
+        get() {
+            return _tRG(__v_raw, "cancelBtn", __v_raw.cancelBtn, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("cancelBtn")) {
+                return
+            }
+            val oldValue = __v_raw.cancelBtn
+            __v_raw.cancelBtn = value
+            _tRS(__v_raw, "cancelBtn", oldValue, value)
+        }
+    override var closeBtn: Boolean?
+        get() {
+            return _tRG(__v_raw, "closeBtn", __v_raw.closeBtn, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("closeBtn")) {
+                return
+            }
+            val oldValue = __v_raw.closeBtn
+            __v_raw.closeBtn = value
+            _tRS(__v_raw, "closeBtn", oldValue, value)
+        }
+    override var closeOnClickOverlay: Boolean?
+        get() {
+            return _tRG(__v_raw, "closeOnClickOverlay", __v_raw.closeOnClickOverlay, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("closeOnClickOverlay")) {
+                return
+            }
+            val oldValue = __v_raw.closeOnClickOverlay
+            __v_raw.closeOnClickOverlay = value
+            _tRS(__v_raw, "closeOnClickOverlay", oldValue, value)
+        }
+    override var confirmBtn: Any?
+        get() {
+            return _tRG(__v_raw, "confirmBtn", __v_raw.confirmBtn, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("confirmBtn")) {
+                return
+            }
+            val oldValue = __v_raw.confirmBtn
+            __v_raw.confirmBtn = value
+            _tRS(__v_raw, "confirmBtn", oldValue, value)
+        }
+    override var content: String?
+        get() {
+            return _tRG(__v_raw, "content", __v_raw.content, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("content")) {
+                return
+            }
+            val oldValue = __v_raw.content
+            __v_raw.content = value
+            _tRS(__v_raw, "content", oldValue, value)
+        }
+    override var overlayStyle: String?
+        get() {
+            return _tRG(__v_raw, "overlayStyle", __v_raw.overlayStyle, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("overlayStyle")) {
+                return
+            }
+            val oldValue = __v_raw.overlayStyle
+            __v_raw.overlayStyle = value
+            _tRS(__v_raw, "overlayStyle", oldValue, value)
+        }
+    override var preventScrollThrough: Boolean?
+        get() {
+            return _tRG(__v_raw, "preventScrollThrough", __v_raw.preventScrollThrough, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("preventScrollThrough")) {
+                return
+            }
+            val oldValue = __v_raw.preventScrollThrough
+            __v_raw.preventScrollThrough = value
+            _tRS(__v_raw, "preventScrollThrough", oldValue, value)
+        }
+    override var overlay: Boolean?
+        get() {
+            return _tRG(__v_raw, "overlay", __v_raw.overlay, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("overlay")) {
+                return
+            }
+            val oldValue = __v_raw.overlay
+            __v_raw.overlay = value
+            _tRS(__v_raw, "overlay", oldValue, value)
+        }
+    override var title: String?
+        get() {
+            return _tRG(__v_raw, "title", __v_raw.title, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("title")) {
+                return
+            }
+            val oldValue = __v_raw.title
+            __v_raw.title = value
+            _tRS(__v_raw, "title", oldValue, value)
+        }
+    override var visible: Boolean?
+        get() {
+            return _tRG(__v_raw, "visible", __v_raw.visible, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("visible")) {
+                return
+            }
+            val oldValue = __v_raw.visible
+            __v_raw.visible = value
+            _tRS(__v_raw, "visible", oldValue, value)
+        }
+    override var zIndex: Number?
+        get() {
+            return _tRG(__v_raw, "zIndex", __v_raw.zIndex, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("zIndex")) {
+                return
+            }
+            val oldValue = __v_raw.zIndex
+            __v_raw.zIndex = value
+            _tRS(__v_raw, "zIndex", oldValue, value)
+        }
+    override var lStyle: String?
+        get() {
+            return _tRG(__v_raw, "lStyle", __v_raw.lStyle, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("lStyle")) {
+                return
+            }
+            val oldValue = __v_raw.lStyle
+            __v_raw.lStyle = value
+            _tRS(__v_raw, "lStyle", oldValue, value)
+        }
+}
+typealias BeforeClose = (action: String) -> UTSPromise<Boolean>
+open class DialogExpose (
+    open var beforeClose: BeforeClose? = null,
+    open var onAction: ((index: Number) -> Unit)? = null,
+    open var onConfirm: ((value: Number?) -> Unit)? = null,
+    open var onCancel: ((reason: Any) -> Unit)? = null,
+) : UTSReactiveObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("DialogExpose", "uni_modules/lime-dialog/components/l-dialog/type.uts", 129, 13)
+    }
+    override fun __v_create(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): UTSReactiveObject {
+        return DialogExposeReactiveObject(this, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+}
+open class DialogExposeReactiveObject : DialogExpose, IUTSReactive<DialogExpose> {
+    override var __v_raw: DialogExpose
+    override var __v_isReadonly: Boolean
+    override var __v_isShallow: Boolean
+    override var __v_skip: Boolean
+    constructor(__v_raw: DialogExpose, __v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean) : super(beforeClose = __v_raw.beforeClose, onAction = __v_raw.onAction, onConfirm = __v_raw.onConfirm, onCancel = __v_raw.onCancel) {
+        this.__v_raw = __v_raw
+        this.__v_isReadonly = __v_isReadonly
+        this.__v_isShallow = __v_isShallow
+        this.__v_skip = __v_skip
+    }
+    override fun __v_clone(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): DialogExposeReactiveObject {
+        return DialogExposeReactiveObject(this.__v_raw, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+}
+val parseToObject = fun(obj: Any?): UTSJSONObject? {
+    if (obj == null) {
+        return null
+    }
+    if (UTSAndroid.`typeof`(obj) == "string") {
+        return object : UTSJSONObject() {
+            var content = obj as String
+        }
+    } else if (UTSAndroid.`typeof`(obj) == "object") {
+        return obj as UTSJSONObject
+    }
+    return null
+}
+val GenUniModulesLimeDialogComponentsLDialogLDialogClass = CreateVueComponent(GenUniModulesLimeDialogComponentsLDialogLDialog::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeDialogComponentsLDialogLDialog.inheritAttrs, inject = GenUniModulesLimeDialogComponentsLDialogLDialog.inject, props = GenUniModulesLimeDialogComponentsLDialogLDialog.props, propsNeedCastKeys = GenUniModulesLimeDialogComponentsLDialogLDialog.propsNeedCastKeys, emits = GenUniModulesLimeDialogComponentsLDialogLDialog.emits, components = GenUniModulesLimeDialogComponentsLDialogLDialog.components, styles = GenUniModulesLimeDialogComponentsLDialogLDialog.styles, setup = fun(props: ComponentPublicInstance, ctx: SetupContext): Any? {
+        return GenUniModulesLimeDialogComponentsLDialogLDialog.setup(props as GenUniModulesLimeDialogComponentsLDialogLDialog, ctx)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimeDialogComponentsLDialogLDialog {
+    return GenUniModulesLimeDialogComponentsLDialogLDialog(instance)
+}
+)
+val GenPagesIndexDeviceSettingClass = CreateVueComponent(GenPagesIndexDeviceSetting::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexDeviceSetting.inheritAttrs, inject = GenPagesIndexDeviceSetting.inject, props = GenPagesIndexDeviceSetting.props, propsNeedCastKeys = GenPagesIndexDeviceSetting.propsNeedCastKeys, emits = GenPagesIndexDeviceSetting.emits, components = GenPagesIndexDeviceSetting.components, styles = GenPagesIndexDeviceSetting.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesIndexDeviceSetting.setup(props as GenPagesIndexDeviceSetting)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesIndexDeviceSetting {
+    return GenPagesIndexDeviceSetting(instance, renderer)
+}
+)
+val GenPagesIndexDeviceReplayClass = CreateVueComponent(GenPagesIndexDeviceReplay::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexDeviceReplay.inheritAttrs, inject = GenPagesIndexDeviceReplay.inject, props = GenPagesIndexDeviceReplay.props, propsNeedCastKeys = GenPagesIndexDeviceReplay.propsNeedCastKeys, emits = GenPagesIndexDeviceReplay.emits, components = GenPagesIndexDeviceReplay.components, styles = GenPagesIndexDeviceReplay.styles)
+}
+, fun(instance, renderer): GenPagesIndexDeviceReplay {
+    return GenPagesIndexDeviceReplay(instance, renderer)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadgeClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge.inject, props = GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge.emits, components = GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge.components, styles = GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge {
+    return GenUniModulesFirstuiUnixComponentsFuiBadgeFuiBadge(instance)
+}
+)
+val GenPagesIndexDeviceSettingInfoDeviceSettingInfoClass = CreateVueComponent(GenPagesIndexDeviceSettingInfoDeviceSettingInfo::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexDeviceSettingInfoDeviceSettingInfo.inheritAttrs, inject = GenPagesIndexDeviceSettingInfoDeviceSettingInfo.inject, props = GenPagesIndexDeviceSettingInfoDeviceSettingInfo.props, propsNeedCastKeys = GenPagesIndexDeviceSettingInfoDeviceSettingInfo.propsNeedCastKeys, emits = GenPagesIndexDeviceSettingInfoDeviceSettingInfo.emits, components = GenPagesIndexDeviceSettingInfoDeviceSettingInfo.components, styles = GenPagesIndexDeviceSettingInfoDeviceSettingInfo.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesIndexDeviceSettingInfoDeviceSettingInfo.setup(props as GenPagesIndexDeviceSettingInfoDeviceSettingInfo)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesIndexDeviceSettingInfoDeviceSettingInfo {
+    return GenPagesIndexDeviceSettingInfoDeviceSettingInfo(instance, renderer)
+}
+)
+val GenPagesIndexDeviceSettingInfoDeviceNightClass = CreateVueComponent(GenPagesIndexDeviceSettingInfoDeviceNight::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexDeviceSettingInfoDeviceNight.inheritAttrs, inject = GenPagesIndexDeviceSettingInfoDeviceNight.inject, props = GenPagesIndexDeviceSettingInfoDeviceNight.props, propsNeedCastKeys = GenPagesIndexDeviceSettingInfoDeviceNight.propsNeedCastKeys, emits = GenPagesIndexDeviceSettingInfoDeviceNight.emits, components = GenPagesIndexDeviceSettingInfoDeviceNight.components, styles = GenPagesIndexDeviceSettingInfoDeviceNight.styles)
+}
+, fun(instance, renderer): GenPagesIndexDeviceSettingInfoDeviceNight {
+    return GenPagesIndexDeviceSettingInfoDeviceNight(instance, renderer)
+}
+)
 fun createApp(): UTSJSONObject {
     val app = createSSRApp(GenAppClass)
     return _uO("app" to app)
@@ -8345,6 +9030,10 @@ fun definePageRoutes() {
     __uniRoutes.push(UniPageRoute(path = "pages/mine/about/about", component = GenPagesMineAboutAboutClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "关于")))
     __uniRoutes.push(UniPageRoute(path = "pages/mine/localFiles/localFiles", component = GenPagesMineLocalFilesLocalFilesClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "本地文件")))
     __uniRoutes.push(UniPageRoute(path = "pages/index/deviceDetail", component = GenPagesIndexDeviceDetailClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationStyle" to "custom", "navigationBarTitleText" to "")))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/deviceSetting", component = GenPagesIndexDeviceSettingClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationStyle" to "custom", "navigationBarTitleText" to "")))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/deviceReplay", component = GenPagesIndexDeviceReplayClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "")))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/deviceSettingInfo/deviceSettingInfo", component = GenPagesIndexDeviceSettingInfoDeviceSettingInfoClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationStyle" to "custom", "navigationBarTitleText" to "")))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/deviceSettingInfo/deviceNight", component = GenPagesIndexDeviceSettingInfoDeviceNightClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationStyle" to "custom", "navigationBarTitleText" to "")))
 }
 val __uniTabBar: Map<String, Any?>? = _uM("list" to _uA(
     _uM("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),

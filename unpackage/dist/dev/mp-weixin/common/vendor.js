@@ -8021,7 +8021,7 @@ function isConsoleWritable() {
 function initRuntimeSocketService() {
   const hosts = "127.0.0.1,192.168.3.34";
   const port = "8090";
-  const id = "mp-weixin_yp2rzI";
+  const id = "mp-weixin_R7MLxc";
   const lazy = typeof swan !== "undefined";
   let restoreError = lazy ? () => {
   } : initOnError();
@@ -9833,6 +9833,33 @@ const pages = [
   }),
   new UTSJSONObject({
     path: "pages/index/deviceDetail",
+    style: new UTSJSONObject({
+      navigationStyle: "custom",
+      navigationBarTitleText: ""
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/deviceSetting",
+    style: new UTSJSONObject({
+      navigationStyle: "custom",
+      navigationBarTitleText: ""
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/deviceReplay",
+    style: new UTSJSONObject({
+      navigationBarTitleText: ""
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/deviceSettingInfo/deviceSettingInfo",
+    style: new UTSJSONObject({
+      navigationStyle: "custom",
+      navigationBarTitleText: ""
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/deviceSettingInfo/deviceNight",
     style: new UTSJSONObject({
       navigationStyle: "custom",
       navigationBarTitleText: ""
