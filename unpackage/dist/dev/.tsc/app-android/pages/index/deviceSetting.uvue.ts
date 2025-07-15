@@ -55,6 +55,30 @@ const _cache = __ins.renderCache;
 		})
 	}
 
+	const goTrafficRecharge = () => {
+		uni.navigateTo({
+			url: '/pages/mine/rechargeDataTraffic/rechargeDataTraffic',
+		})
+	}
+
+	const goIntelligentWatch = () => {
+		uni.navigateTo({
+			url: '/pages/index/intelligentWatch',
+		})
+	}
+
+	const goTfCardSetting = () => {
+		uni.navigateTo({
+			url: '/pages/index/TFCardSetting',
+		})
+	}
+
+	const goCloudStorageSetting = () => {
+		uni.navigateTo({
+			url: '/pages/index/cloudStorageSetting',
+		})
+	}
+
 	const deleteDevice = () => {
 		uni.showModal({
 			title: '提示',
@@ -63,7 +87,7 @@ const _cache = __ins.renderCache;
 			confirmText: '删除',
 			success: (res) => {
 				if (res.confirm) {
-					console.log('用户点击了确定', " at pages/index/deviceSetting.uvue:127")
+					console.log('用户点击了确定', " at pages/index/deviceSetting.uvue:151")
 				}
 			}
 		})
@@ -139,7 +163,10 @@ const _component_l_dialog = resolveEasyComponent("l-dialog",_easycom_l_dialog)
           size: "40"
         }))
       ]),
-      _cE("view", _uM({ class: "traffic" }), [
+      _cE("view", _uM({
+        class: "traffic",
+        onClick: goTrafficRecharge
+      }), [
         _cE("view", _uM({ class: "item" }), [
           _cE("text", null, "流量充值"),
           _cV(_component_fui_icon, _uM({
@@ -153,7 +180,10 @@ const _component_l_dialog = resolveEasyComponent("l-dialog",_easycom_l_dialog)
           _cE("text", _uM({ class: "word" }), "2025-8-10到期")
         ])
       ]),
-      _cE("view", _uM({ class: "item" }), [
+      _cE("view", _uM({
+        class: "item",
+        onClick: goIntelligentWatch
+      }), [
         _cE("text", null, "智能侦测"),
         _cV(_component_fui_icon, _uM({
           name: "arrowright",
@@ -161,7 +191,10 @@ const _component_l_dialog = resolveEasyComponent("l-dialog",_easycom_l_dialog)
           size: "40"
         }))
       ]),
-      _cE("view", _uM({ class: "item" }), [
+      _cE("view", _uM({
+        class: "item",
+        onClick: goTfCardSetting
+      }), [
         _cE("text", null, "TF卡设置"),
         _cV(_component_fui_icon, _uM({
           name: "arrowright",
@@ -169,7 +202,10 @@ const _component_l_dialog = resolveEasyComponent("l-dialog",_easycom_l_dialog)
           size: "40"
         }))
       ]),
-      _cE("view", _uM({ class: "item" }), [
+      _cE("view", _uM({
+        class: "item",
+        onClick: goCloudStorageSetting
+      }), [
         _cE("text", null, "云存储设置"),
         _cV(_component_fui_icon, _uM({
           name: "arrowright",

@@ -31,10 +31,11 @@
   padding: 0 20rpx;
 }
 .container .title {
-  font-size: 30rpx;
-  font-weight: 500;
-  color: #333;
   padding: 50rpx 0 10rpx 20rpx;
+}
+.container .title .title-text {
+  font-size: 30rpx;
+  color: #333;
 }
 .container .info {
   background: #fff;

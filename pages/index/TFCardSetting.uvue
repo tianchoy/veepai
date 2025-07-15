@@ -1,0 +1,203 @@
+<template>
+	<view class="container">
+		<view class="content">
+			<view class="list-box">
+				<view class="title">
+					<text>存储空间</text>
+					<l-button type="primary" size="mini">存储管理</l-button>
+				</view>
+				<l-progress :percent="percent" info-align="end" :show-info="true"></l-progress>
+				<view class="title">
+					<text>已用80G</text>
+					<text>可用 20G/共100G</text>
+				</view>
+			</view>
+			<view class="list" @click="vedioMode">
+				<text>录像模式</text>
+				<view class="right">
+					<text>{{vedioModeType}}</text>
+					<fui-icon name="arrowright" size="50" />
+				</view>
+			</view>
+			<view class="list" @click="pictureQuality">
+				<text>录像画质</text>
+				<view class="right">
+					<text>{{pictureQualityType}}</text>
+					<fui-icon name="arrowright" size="50" />
+				</view>
+			</view>
+			<view class="list nobottom" @click="vedioTime">
+				<text>录像时间</text>
+				<view class="right">
+					<text>{{startTime}}至{{endTime}}</text>
+					<fui-icon name="arrowright" size="50" />
+				</view>
+			</view>
+		</view>
+		<l-popup v-model="showPicker" position="bottom">
+			<l-picker 
+				v-if="types"
+				cancel-btn="取消" 
+				confirm-btn="确定" 
+				:columns="pickerOptions"
+				@cancel="showPicker = false" 
+				@confirm="pickerFun">
+			</l-picker>
+			<view class="time-picker" v-else>
+				<view class="time-picker-title">
+					<l-button type="default" size="mini" @click="showPicker = false" >取消</l-button>
+					<text>选择时间</text>
+					<l-button type="primary" size="mini" @click="getVedioTime" >确定</l-button>
+				</view>
+				<view class="time-picker-content">
+					<l-date-time-picker v-model="startTime" @change="startTimeChange" :mode="8|16"></l-date-time-picker>
+					<text>至</text>
+					<l-date-time-picker v-model="endTime" @change="endTimeChange" :mode="8|16"></l-date-time-picker>
+				</view>
+			</view>
+		</l-popup>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import { ref } from 'vue'
+	import { PickerColumn,PickerConfirmEvent } from '@/uni_modules/lime-picker';
+
+	const types = ref<boolean>(true)
+	const pickerOptions = ref<PickerColumn[]>([])
+	const percent = ref<number | string>(80)
+	const showPicker = ref<boolean>(false)
+	const vedioModeType = ref<string>('事件录像')
+	const pictureQualityType = ref<string>('高清')
+	const startTime = ref<string>('00:00')
+	const endTime = ref<string>('23:59')
+	
+	let currentCallback: ((value: string) => void) | null = null
+	
+	const vedioModeOptions = [
+		[
+			{
+				label: '一直录像',
+				value: '一直录像'
+			},
+			{
+				label: '事件录像',
+				value: '事件录像'
+			},
+		]
+	] as PickerColumn[]
+
+	const pictureQualityOptions = [
+		[
+			{
+				label: '高清',
+				value: '高清'
+			},
+			{
+				label: '超清',
+				value: '超清'
+			},
+		]
+	] as PickerColumn[]
+
+	const vedioMode = () => {
+		types.value = true
+		pickerOptions.value = vedioModeOptions
+		currentCallback = (value: string) => {
+			vedioModeType.value = value
+		}
+		showPicker.value = true
+	}
+
+	const pictureQuality = () => {
+		types.value = true
+		pickerOptions.value = pictureQualityOptions
+		currentCallback = (value: string) => {
+			pictureQualityType.value = value
+		}
+		showPicker.value = true
+	}
+
+	const pickerFun = (e:PickerConfirmEvent) => {
+		const selectedValue = e.values[0].toString()
+		currentCallback?.(selectedValue)
+		showPicker.value = false
+		currentCallback = null
+	}
+
+	const vedioTime = () => {
+		types.value = false
+		showPicker.value = true
+	}
+
+	const startTimeChange = (value: string) => {
+		startTime.value = value
+	}
+
+	const endTimeChange = (value: string) => {
+		endTime.value = value
+	}
+
+	const getVedioTime = () => {
+		showPicker.value = false
+	}
+
+</script>
+
+<style scoped lang="scss">
+	.container{
+		height: 100%;
+		background-color: #f5f5f5;
+		padding: 20rpx;
+		.content{
+			background-color: #fff;
+			padding: 20rpx;
+			border-radius: 20rpx;
+			.list-box{
+				border-bottom: 1rpx solid #f1f1f1;
+				.title{
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+					padding: 20rpx;
+				}
+			}
+			.list{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				padding: 20rpx;
+				border-bottom: 1rpx solid #f1f1f1;
+				.right{
+					@extend .list;
+					padding:0;
+					border-bottom: none;
+				}
+			}
+			.nobottom{
+				border-bottom: none;
+			}
+		}
+		.time-picker{
+			padding: 20rpx;
+			.time-picker-title{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 20rpx;
+			}
+			.time-picker-content{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				.l-picker{
+					width: 45%;
+				}
+			}
+		}
+	}	
+</style>

@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<view class="title">
-			<text>个人信息</text>
+			<text class="title-text">个人信息</text>
 		</view>
 		<view class="info">
 			<view class="info-item">
@@ -147,10 +147,11 @@
 		padding: 0 20rpx;
 
 		.title {
-			font-size: 30rpx;
-			font-weight: 500;
-			color: #333;
 			padding: 50rpx 0 10rpx 20rpx;
+			.title-text{
+				font-size: 30rpx;
+				color: #333;
+			}
 		}
 
 		.info {

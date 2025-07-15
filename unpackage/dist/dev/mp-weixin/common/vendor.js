@@ -8019,9 +8019,9 @@ function isConsoleWritable() {
   return isWritable;
 }
 function initRuntimeSocketService() {
-  const hosts = "127.0.0.1,192.168.3.34";
+  const hosts = "127.0.0.1,192.168.3.34,169.254.87.124";
   const port = "8090";
-  const id = "mp-weixin_R7MLxc";
+  const id = "mp-weixin_mS18vv";
   const lazy = typeof swan !== "undefined";
   let restoreError = lazy ? () => {
   } : initOnError();
@@ -9677,6 +9677,33 @@ const onLoad = /* @__PURE__ */ createLifeCycleHook(
   /* HookFlags.PAGE */
 );
 const onPageShow = onShow;
+function __awaiter(thisArg, _arguments, P2, generator) {
+  function adopt(value) {
+    return value instanceof P2 ? value : new P2(function(resolve2) {
+      resolve2(value);
+    });
+  }
+  return new (P2 || (P2 = Promise))(function(resolve2, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e2) {
+        reject(e2);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e2) {
+        reject(e2);
+      }
+    }
+    function step(result) {
+      result.done ? resolve2(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+}
 function __read(o2, n2) {
   var m2 = typeof Symbol === "function" && o2[Symbol.iterator];
   if (!m2)
@@ -9863,6 +9890,24 @@ const pages = [
     style: new UTSJSONObject({
       navigationStyle: "custom",
       navigationBarTitleText: ""
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/intelligentWatch",
+    style: new UTSJSONObject({
+      navigationBarTitleText: "智能侦测"
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/TFCardSetting",
+    style: new UTSJSONObject({
+      navigationBarTitleText: "TF卡设置"
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/cloudStorageSetting",
+    style: new UTSJSONObject({
+      navigationBarTitleText: "云存储设置"
     })
   })
 ];
@@ -13154,6 +13199,7 @@ exports.er = new class {
   } }), Ls(exports.er), exports.er.addInterceptor = q, exports.er.removeInterceptor = F, exports.er.interceptObject = B, "web" === A)
     ;
 })();
+exports.__awaiter = __awaiter;
 exports.__read = __read;
 exports._export_sfc = _export_sfc;
 exports.computed = computed;

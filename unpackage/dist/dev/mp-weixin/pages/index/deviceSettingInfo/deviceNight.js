@@ -50,25 +50,25 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const radioItems = common_vendor.ref([new RadioItem({
       name: "黑白夜视",
       desc: "采用红外补光，隐蔽性高，图像为黑白夜视",
-      img: "@/static/u4062.png",
+      img: "../../../static/u4062.png",
       value: "1",
       checked: true
     }), new RadioItem({
       name: "全彩夜视",
       desc: "夜晚开白光灯，可做照明使用，图像为彩色",
-      img: "@/static/u4063.png",
+      img: "../../../static/u4063.png",
       value: "2",
       checked: false
     }), new RadioItem({
       name: "智能夜视",
       desc: "默认为黑白夜视，检测到画面为动态是变为全彩夜视",
-      img: "@/static/u4064.png",
+      img: "../../../static/u4064.png",
       value: "3",
       checked: false
     }), new RadioItem({
       name: "星光夜视",
       desc: "当前环境光线充足，并且不想看到灯光亮起，则选择该项",
-      img: "@/static/u4062.png",
+      img: "../../../static/u4062.png",
       value: "4",
       checked: false
     })]);
@@ -78,7 +78,8 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       }));
     };
     const change = (value) => {
-      common_vendor.index.__f__("log", "at pages/index/deviceSettingInfo/deviceNight.uvue:78", "change:" + value);
+      val.value = value.value;
+      select_img.value = value.img;
     };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
@@ -99,19 +100,21 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
               borderColor: "#B2B2B2"
             }),
             d: common_vendor.t(item.desc),
-            e: "05994398-3-" + i0 + "," + ("05994398-2-" + i0),
-            f: index,
-            g: "05994398-2-" + i0 + ",05994398-1"
+            e: common_vendor.o(($event = null) => {
+              return change(item);
+            }, index),
+            f: "05994398-3-" + i0 + "," + ("05994398-2-" + i0),
+            g: index,
+            h: "05994398-2-" + i0 + ",05994398-1"
           };
         }),
-        e: common_vendor.o(change),
-        f: common_vendor.o(($event = null) => {
+        e: common_vendor.o(($event = null) => {
           return val.value = $event;
         }),
-        g: common_vendor.p({
+        f: common_vendor.p({
           modelValue: val.value
         }),
-        h: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        g: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

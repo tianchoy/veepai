@@ -1,0 +1,274 @@
+<template>
+	<view class="container">
+		<view class="content">
+			<view class="list">
+				<text>人形侦测</text>
+				<fui-switch :scaleRatio="0.8" :checked="peopleWatch" @change="peopleWatchFun"></fui-switch>
+			</view>
+			<view class="list" v-if="peopleWatch" @click="peopeWatchChange">
+				<text>侦测灵敏度</text>
+				<view class="level">
+					<text>{{peopleWatchLevel}}</text>
+					<fui-icon name="arrowright" color="#333" size="60" />
+				</view>
+			</view>
+			<view class="list" v-if="peopleWatch" @click="timeWatchChange">
+				<text>侦测时间段</text>
+				<view class="level">
+					<text>{{timeWatchLevel}}</text>
+					<fui-icon name="arrowright" color="#333" size="60" />
+				</view>
+			</view>
+			<view class="list nounderline" v-if="peopleWatch">
+				<text>侦测范围</text>
+				<view class="level">
+					<text>全部</text>
+					<fui-icon name="arrowright" color="#333" size="60" />
+				</view>
+			</view>
+		</view>
+		<view class="content">
+			<view class="list">
+				<text>移动侦测</text>
+				<fui-switch :scaleRatio="0.8" :checked="mobileWatch" @change="mobileWatchFun"></fui-switch>
+			</view>
+			<view class="list" v-if="mobileWatch" @click="mobileWatchChange">
+				<text>侦测灵敏度</text>
+				<view class="level">
+					<text>{{mobileWatchLevel}}</text>
+					<fui-icon name="arrowright" color="#333" size="60" />
+				</view>
+			</view>
+			<view class="list" v-if="mobileWatch" @click="mTimeWatchChange">
+				<text>侦测时间段</text>
+				<view class="level">
+					<text>{{mobileTimeWatchLevel}}</text>
+					<fui-icon name="arrowright" color="#333" size="60" />
+				</view>
+			</view>
+			<view class="list nounderline" v-if="mobileWatch">
+				<text>侦测范围</text>
+				<view class="level">
+					<text>全部</text>
+					<fui-icon name="arrowright" color="#333" size="60" />
+				</view>
+			</view>
+		</view>
+		<view class="content">
+			<view class="list">
+				<text>闪光灯</text>
+				<fui-switch :scaleRatio="0.8" :checked="flashlight" @change="flashlightFun"></fui-switch>
+			</view>
+			<view class="list">
+				<text>红蓝警灯</text>
+				<fui-switch :scaleRatio="0.8" :checked="redBlueWatch" @change="redBlueWatchFun"></fui-switch>
+			</view>
+			<view class="list">
+				<text>报警声</text>
+				<fui-switch :scaleRatio="0.8" :checked="policeWatch" @change="policeWatchFun"></fui-switch>
+			</view>
+		</view>
+		<view class="content">
+			<view class="list-box">
+				<view class="list nounderline">
+					<view class="text-box">
+						<text>人形框定</text>
+						<fui-icon name="help" size="30"></fui-icon>
+					</view>
+					<fui-switch :scaleRatio="0.8" :checked="peopleSelectWatch" @change="peopleSelectWatchFun"></fui-switch>
+				</view>
+				<text class="tips"></text>
+			</view>
+			<view class="list-box nounderline">
+				<view class="list nounderline">
+					<view class="text-box">
+						<text>人形追踪</text>
+						<fui-icon name="help" size="30"></fui-icon>
+					</view>
+					<fui-switch :scaleRatio="0.8" :checked="peopleFindWatch" @change="peopleFindWatchFun"></fui-switch>
+				</view>
+				<text class="tips"></text>
+			</view>
+		</view>
+		<l-popup v-model="showPicker" position="bottom">
+			<l-picker 
+				cancel-btn="取消" 
+				confirm-btn="确定" 
+				:columns="pickerOptions"
+				@cancel="showPicker = false" 
+				@confirm="pickerFun">
+			</l-picker>
+		</l-popup>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import {ref} from 'vue'
+	import { PickerColumn,PickerConfirmEvent } from '@/uni_modules/lime-picker';
+
+	const peopleWatch = ref<boolean>(true)
+	const mobileWatch = ref<boolean>(true)
+	const flashlight = ref<boolean>(true)
+	const redBlueWatch = ref<boolean>(true)
+	const policeWatch = ref<boolean>(true)
+	const peopleSelectWatch = ref<boolean>(true)
+	const peopleFindWatch = ref<boolean>(true)
+	const showPicker = ref<boolean>(false)
+	const peopleWatchLevel = ref<string>('中')
+	const timeWatchLevel = ref<string>('全天')
+	const pickerOptions = ref<PickerColumn[]>([])
+	const PickerModeOptions = ref<PickerColumn[]>([])
+	const mobileWatchLevel = ref<string>('高')
+	const mobileTimeWatchLevel = ref<string>('全天')
+
+	let currentCallback: ((value: string) => void) | null = null
+
+	const peopeWatchOptions = [
+		[
+			{
+				label: '高',
+				value: '高',
+			},
+			{
+				label: '中',
+				value: '中',
+			},
+			{
+				label: '低',
+				value: '低',
+			}
+		]
+	]  as PickerColumn[]
+
+	const typeModeWatchOptions = [
+		[
+			{
+				label: '全天模式',
+				value: '全天',
+			},
+			{
+				label: '白天模式',
+				value: '白天模式',
+			},
+			{
+				label: '夜晚模式',
+				value: '夜晚模式',
+			}
+		]
+	] as PickerColumn[]
+
+
+	const peopleWatchFun = (e:boolean) => {
+		peopleWatch.value = e
+	}
+
+	const peopeWatchChange = () => {
+		pickerOptions.value = peopeWatchOptions
+		currentCallback = (value: string) => {
+			peopleWatchLevel.value = value
+		}
+		showPicker.value = true
+	}
+
+	const timeWatchChange = () => {
+		pickerOptions.value = typeModeWatchOptions
+		currentCallback = (value: string) => {
+			timeWatchLevel.value = value
+		}
+		showPicker.value = true
+	}
+
+	const pickerFun = (e:PickerConfirmEvent) => {
+		const selectedValue = e.values[0].toString()
+		currentCallback?.(selectedValue)
+		showPicker.value = false
+		currentCallback = null
+	}
+
+	const mobileWatchChange = () => {
+		pickerOptions.value = peopeWatchOptions
+		currentCallback = (value: string) => {
+			mobileWatchLevel.value = value
+		}
+		showPicker.value = true
+	}
+
+	const mTimeWatchChange = () => {
+		pickerOptions.value = typeModeWatchOptions
+		currentCallback = (value: string) => {
+			mobileTimeWatchLevel.value = value
+		}
+		showPicker.value = true
+	}
+
+
+	const mobileWatchFun = (e:boolean) => {
+		mobileWatch.value = e
+	}
+
+	const flashlightFun = (e:boolean) => {
+		flashlight.value = e
+	}
+
+	const redBlueWatchFun = (e:boolean) => {
+		redBlueWatch.value = e
+	}
+
+	const policeWatchFun = (e:boolean) => {
+		policeWatch.value = e
+	}
+
+	const peopleSelectWatchFun = (e:boolean) => {
+		peopleSelectWatch.value = e
+	}
+
+	const peopleFindWatchFun = (e:boolean) => {
+		peopleFindWatch.value = e
+	}
+
+</script>
+
+<style lang="scss" scoped>
+	.container{
+		padding: 20rpx;
+		height: 100%;
+		background-color: #f5f5f5;
+		.content{
+			background-color: #fff;
+			border-radius: 20rpx;
+			padding: 0 20rpx;
+			margin-bottom: 50rpx;
+			.list{
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				border-bottom: 1rpx solid #f1f1f1;
+				padding: 20rpx;
+				.level{
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-between;;
+				}
+			}
+			.nounderline{
+				border-bottom: none;
+			}
+			.list-box{
+				display: flex;
+				flex-direction: column;
+				border-bottom: 1rpx solid #f1f1f1;
+				.text-box{
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+				}
+				.tips{
+					color: #999;
+					font-size: 24rpx;
+				}
+			}
+		}
+	}
+</style>

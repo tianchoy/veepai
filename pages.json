@@ -181,6 +181,27 @@
 				"navigationStyle": "custom",
 				"navigationBarTitleText" : ""
 			}
+		},
+		{
+			"path" : "pages/index/intelligentWatch",
+			"style" : 
+			{
+				"navigationBarTitleText" : "智能侦测"
+			}
+		},
+		{
+			"path" : "pages/index/TFCardSetting",
+			"style" : 
+			{
+				"navigationBarTitleText" : "TF卡设置"
+			}
+		},
+		{
+			"path" : "pages/index/cloudStorageSetting",
+			"style" : 
+			{
+				"navigationBarTitleText" : "云存储设置"
+			}
 		}
 	],
 	"tabBar": {

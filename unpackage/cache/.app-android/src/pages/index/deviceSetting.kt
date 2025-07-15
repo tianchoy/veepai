@@ -45,10 +45,22 @@ open class GenPagesIndexDeviceSetting : BasePage {
             val goDeviceSettingInfo = fun(){
                 uni_navigateTo(NavigateToOptions(url = "/pages/index/deviceSettingInfo/deviceSettingInfo"))
             }
+            val goTrafficRecharge = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/mine/rechargeDataTraffic/rechargeDataTraffic"))
+            }
+            val goIntelligentWatch = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/index/intelligentWatch"))
+            }
+            val goTfCardSetting = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/index/TFCardSetting"))
+            }
+            val goCloudStorageSetting = fun(){
+                uni_navigateTo(NavigateToOptions(url = "/pages/index/cloudStorageSetting"))
+            }
             val deleteDevice = fun(){
                 uni_showModal(ShowModalOptions(title = "提示", content = "确认删除设备吗？", cancelText = "取消", confirmText = "删除", success = fun(res){
                     if (res.confirm) {
-                        console.log("用户点击了确定", " at pages/index/deviceSetting.uvue:127")
+                        console.log("用户点击了确定", " at pages/index/deviceSetting.uvue:151")
                     }
                 }
                 ))
@@ -92,7 +104,7 @@ open class GenPagesIndexDeviceSetting : BasePage {
                             _cE("text", null, "设备设置"),
                             _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#111", "size" to "40"))
                         )),
-                        _cE("view", _uM("class" to "traffic"), _uA(
+                        _cE("view", _uM("class" to "traffic", "onClick" to goTrafficRecharge), _uA(
                             _cE("view", _uM("class" to "item"), _uA(
                                 _cE("text", null, "流量充值"),
                                 _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#111", "size" to "40"))
@@ -102,15 +114,15 @@ open class GenPagesIndexDeviceSetting : BasePage {
                                 _cE("text", _uM("class" to "word"), "2025-8-10到期")
                             ))
                         )),
-                        _cE("view", _uM("class" to "item"), _uA(
+                        _cE("view", _uM("class" to "item", "onClick" to goIntelligentWatch), _uA(
                             _cE("text", null, "智能侦测"),
                             _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#111", "size" to "40"))
                         )),
-                        _cE("view", _uM("class" to "item"), _uA(
+                        _cE("view", _uM("class" to "item", "onClick" to goTfCardSetting), _uA(
                             _cE("text", null, "TF卡设置"),
                             _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#111", "size" to "40"))
                         )),
-                        _cE("view", _uM("class" to "item"), _uA(
+                        _cE("view", _uM("class" to "item", "onClick" to goCloudStorageSetting), _uA(
                             _cE("text", null, "云存储设置"),
                             _cV(_component_fui_icon, _uM("name" to "arrowright", "color" to "#111", "size" to "40"))
                         )),

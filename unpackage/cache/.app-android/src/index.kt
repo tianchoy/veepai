@@ -74,7 +74,7 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
     )
 }
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
-    val hosts: String = "127.0.0.1,192.168.3.34"
+    val hosts: String = "127.0.0.1,192.168.3.34,169.254.87.124"
     val port: String = "8090"
     val id: String = "app-android_N6M8r5"
     if (hosts == "" || port == "" || id == "") {
@@ -8070,6 +8070,7 @@ interface PickerItemProps {
     var column: Number
     var name: Any?
 }
+typealias PickerValue1 = Any
 val GenPagesMineFeebackFeebackClass = CreateVueComponent(GenPagesMineFeebackFeeback::class.java, fun(): VueComponentOptions {
     return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesMineFeebackFeeback.inheritAttrs, inject = GenPagesMineFeebackFeeback.inject, props = GenPagesMineFeebackFeeback.props, propsNeedCastKeys = GenPagesMineFeebackFeeback.propsNeedCastKeys, emits = GenPagesMineFeebackFeeback.emits, components = GenPagesMineFeebackFeeback.components, styles = GenPagesMineFeebackFeeback.styles, setup = fun(props: ComponentPublicInstance): Any? {
         return GenPagesMineFeebackFeeback.setup(props as GenPagesMineFeebackFeeback)
@@ -9088,6 +9089,250 @@ val GenPagesIndexDeviceSettingInfoDeviceNightClass = CreateVueComponent(GenPages
     return GenPagesIndexDeviceSettingInfoDeviceNight(instance, renderer)
 }
 )
+val GenPagesIndexIntelligentWatchClass = CreateVueComponent(GenPagesIndexIntelligentWatch::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexIntelligentWatch.inheritAttrs, inject = GenPagesIndexIntelligentWatch.inject, props = GenPagesIndexIntelligentWatch.props, propsNeedCastKeys = GenPagesIndexIntelligentWatch.propsNeedCastKeys, emits = GenPagesIndexIntelligentWatch.emits, components = GenPagesIndexIntelligentWatch.components, styles = GenPagesIndexIntelligentWatch.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesIndexIntelligentWatch.setup(props as GenPagesIndexIntelligentWatch)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesIndexIntelligentWatch {
+    return GenPagesIndexIntelligentWatch(instance, renderer)
+}
+)
+typealias TimeModeValues = String
+typealias DateValue = Any
+typealias DateTimePickerColumn = PickerColumn
+typealias DateTimePickerColumnItem = PickerColumnItem
+interface DateTimePickerProps {
+    var cancelBtn: String?
+    var cancelStyle: String?
+    var confirmBtn: String?
+    var confirmStyle: String?
+    var customLocale: String?
+    var end: DateValue?
+    var start: DateValue?
+    var steps: UTSJSONObject?
+    var title: String?
+    var titleStyle: String?
+    var value: DateValue?
+    var defaultValue: DateValue?
+    var modelValue: DateValue?
+    var format: String
+    var mode: Any
+    var customFilter: ((type: TimeModeValues, columns: DateTimePickerColumn) -> DateTimePickerColumn)?
+    var renderLabel: ((type: String, value: String) -> String)?
+    var showUnit: Boolean
+    var itemHeight: String?
+    var itemColor: String?
+    var itemFontSize: String?
+    var itemActiveColor: String?
+    var indicatorStyle: String?
+    var bgColor: String?
+    var groupHeight: String?
+    var radius: String?
+    var resetIndex: Boolean
+    var minHour: Number
+    var maxHour: Number
+    var minMinute: Number
+    var maxMinute: Number
+}
+val MODE_YEAR: Number = 1
+val MODE_MONTH: Number = 2
+val MODE_DATE: Number = 4
+val MODE_HOUR: Number = 8
+val MODE_MINUTE: Number = 16
+val MODE_SECOND: Number = 32
+val MODE_MAP = Map<String, Number>(_uA(
+    _uA(
+        "年",
+        MODE_YEAR
+    ),
+    _uA(
+        "月",
+        MODE_MONTH
+    ),
+    _uA(
+        "日",
+        MODE_DATE
+    ),
+    _uA(
+        "时",
+        MODE_HOUR
+    ),
+    _uA(
+        "分",
+        MODE_MINUTE
+    ),
+    _uA(
+        "秒",
+        MODE_SECOND
+    ),
+    _uA(
+        "year",
+        MODE_YEAR
+    ),
+    _uA(
+        "month",
+        MODE_MONTH
+    ),
+    _uA(
+        "date",
+        MODE_DATE
+    ),
+    _uA(
+        "hour",
+        MODE_HOUR
+    ),
+    _uA(
+        "minute",
+        MODE_MINUTE
+    ),
+    _uA(
+        "second",
+        MODE_SECOND
+    )
+))
+val FORMAT_MAP = Map<String, String>(_uA(
+    _uA(
+        "year",
+        "YYYY"
+    ),
+    _uA(
+        "month",
+        "MM"
+    ),
+    _uA(
+        "date",
+        "DD"
+    ),
+    _uA(
+        "hour",
+        "HH"
+    ),
+    _uA(
+        "minute",
+        "mm"
+    ),
+    _uA(
+        "second",
+        "ss"
+    )
+))
+val UNIT_MAP = Map<String, String>(_uA(
+    _uA(
+        "year",
+        "年"
+    ),
+    _uA(
+        "month",
+        "月"
+    ),
+    _uA(
+        "date",
+        "日"
+    ),
+    _uA(
+        "hour",
+        "时"
+    ),
+    _uA(
+        "minute",
+        "分"
+    ),
+    _uA(
+        "second",
+        "秒"
+    )
+))
+val MODE_NAMES = _uA(
+    "year",
+    "month",
+    "date",
+    "hour",
+    "minute",
+    "second"
+) as UTSArray<TimeModeValues>
+val DEFAULT_FORMAT = "YYYY-MM-DD HH:mm:ss"
+fun getMeaningColumn(mode: Any): UTSArray<TimeModeValues> {
+    val res: UTSArray<TimeModeValues> = _uA()
+    var _mode: Number = 0
+    if (UTSAndroid.`typeof`(mode) == "string") {
+        MODE_MAP.forEach(fun(value, key){
+            if ((mode as String).includes(key)) {
+                _mode = _mode or value
+            }
+        })
+    } else if (UTSAndroid.`typeof`(mode) == "number") {
+        _mode = mode as Number
+    }
+    if (_mode <= 0) {
+        return res
+    }
+    val modeBitmasks = _uA(
+        MODE_YEAR,
+        MODE_MONTH,
+        MODE_DATE,
+        MODE_HOUR,
+        MODE_MINUTE,
+        MODE_SECOND
+    )
+    val activeBitmasks = modeBitmasks.filter(fun(bitmask): Boolean {
+        return (_mode and bitmask) != 0
+    }
+    )
+    if (activeBitmasks.length == 0) {
+        return _uA()
+    }
+    var longestSequence: UTSArray<Number> = _uA()
+    var currentSequence: UTSArray<Number> = _uA()
+    activeBitmasks.forEach(fun(bitmask){
+        if (currentSequence.length == 0 || bitmask == currentSequence[currentSequence.length - 1] * 2) {
+            currentSequence.push(bitmask)
+        } else {
+            if (currentSequence.length > longestSequence.length) {
+                longestSequence = currentSequence
+            }
+            currentSequence = _uA(
+                bitmask
+            )
+        }
+    }
+    )
+    if (currentSequence.length > longestSequence.length) {
+        longestSequence = currentSequence
+    }
+    return longestSequence.map(fun(bitmask): String {
+        return MODE_NAMES[modeBitmasks.indexOf(bitmask)]
+    }
+    )
+}
+val GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePickerClass = CreateVueComponent(GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker.inheritAttrs, inject = GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker.inject, props = GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker.props, propsNeedCastKeys = GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker.propsNeedCastKeys, emits = GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker.emits, components = GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker.components, styles = GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker.setup(props as GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker {
+    return GenUniModulesLimeDateTimePickerComponentsLDateTimePickerLDateTimePicker(instance)
+}
+)
+val GenPagesIndexTFCardSettingClass = CreateVueComponent(GenPagesIndexTFCardSetting::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexTFCardSetting.inheritAttrs, inject = GenPagesIndexTFCardSetting.inject, props = GenPagesIndexTFCardSetting.props, propsNeedCastKeys = GenPagesIndexTFCardSetting.propsNeedCastKeys, emits = GenPagesIndexTFCardSetting.emits, components = GenPagesIndexTFCardSetting.components, styles = GenPagesIndexTFCardSetting.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenPagesIndexTFCardSetting.setup(props as GenPagesIndexTFCardSetting)
+    }
+    )
+}
+, fun(instance, renderer): GenPagesIndexTFCardSetting {
+    return GenPagesIndexTFCardSetting(instance, renderer)
+}
+)
+val GenPagesIndexCloudStorageSettingClass = CreateVueComponent(GenPagesIndexCloudStorageSetting::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "page", name = "", inheritAttrs = GenPagesIndexCloudStorageSetting.inheritAttrs, inject = GenPagesIndexCloudStorageSetting.inject, props = GenPagesIndexCloudStorageSetting.props, propsNeedCastKeys = GenPagesIndexCloudStorageSetting.propsNeedCastKeys, emits = GenPagesIndexCloudStorageSetting.emits, components = GenPagesIndexCloudStorageSetting.components, styles = GenPagesIndexCloudStorageSetting.styles)
+}
+, fun(instance, renderer): GenPagesIndexCloudStorageSetting {
+    return GenPagesIndexCloudStorageSetting(instance, renderer)
+}
+)
 fun createApp(): UTSJSONObject {
     val app = createSSRApp(GenAppClass)
     return _uO("app" to app)
@@ -9131,6 +9376,9 @@ fun definePageRoutes() {
     __uniRoutes.push(UniPageRoute(path = "pages/index/deviceReplay", component = GenPagesIndexDeviceReplayClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "")))
     __uniRoutes.push(UniPageRoute(path = "pages/index/deviceSettingInfo/deviceSettingInfo", component = GenPagesIndexDeviceSettingInfoDeviceSettingInfoClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationStyle" to "custom", "navigationBarTitleText" to "")))
     __uniRoutes.push(UniPageRoute(path = "pages/index/deviceSettingInfo/deviceNight", component = GenPagesIndexDeviceSettingInfoDeviceNightClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationStyle" to "custom", "navigationBarTitleText" to "")))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/intelligentWatch", component = GenPagesIndexIntelligentWatchClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "智能侦测")))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/TFCardSetting", component = GenPagesIndexTFCardSettingClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "TF卡设置")))
+    __uniRoutes.push(UniPageRoute(path = "pages/index/cloudStorageSetting", component = GenPagesIndexCloudStorageSettingClass, meta = UniPageMeta(isQuit = false), style = _uM("navigationBarTitleText" to "云存储设置")))
 }
 val __uniTabBar: Map<String, Any?>? = _uM("list" to _uA(
     _uM("pagePath" to "pages/index/index", "iconPath" to "./static/tabbar/home.png", "selectedIconPath" to "./static/tabbar/home1.png", "text" to "首页"),

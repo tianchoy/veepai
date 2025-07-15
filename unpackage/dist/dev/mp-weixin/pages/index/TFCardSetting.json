@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "TF卡设置",
+  "usingComponents": {
+    "l-button": "../../uni_modules/lime-button/components/l-button/l-button",
+    "l-progress": "../../uni_modules/lime-progress/components/l-progress/l-progress",
+    "fui-icon": "../../uni_modules/firstui-unix/components/fui-icon/fui-icon",
+    "l-picker": "../../uni_modules/lime-picker/components/l-picker/l-picker",
+    "l-date-time-picker": "../../uni_modules/lime-date-time-picker/components/l-date-time-picker/l-date-time-picker",
+    "l-popup": "../../uni_modules/lime-popup/components/l-popup/l-popup"
+  }
+}

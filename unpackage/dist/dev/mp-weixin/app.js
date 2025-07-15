@@ -27,6 +27,9 @@ if (!Math) {
   "./pages/index/deviceReplay.js";
   "./pages/index/deviceSettingInfo/deviceSettingInfo.js";
   "./pages/index/deviceSettingInfo/deviceNight.js";
+  "./pages/index/intelligentWatch.js";
+  "./pages/index/TFCardSetting.js";
+  "./pages/index/cloudStorageSetting.js";
 }
 const _sfc_main = common_vendor.defineComponent(new UTSJSONObject({
   onLaunch: function() {

@@ -1,0 +1,10 @@
+const __sfc__ = defineComponent({})
+export default __sfc__
+function GenPagesIndexCloudStorageSettingRender(this: InstanceType<typeof __sfc__>): any | null {
+const _ctx = this
+const _cache = this.$.renderCache
+  return _cE("view", _uM({ class: "container" }), [
+    _cE("view", _uM({ class: "content" }))
+  ])
+}
+const GenPagesIndexCloudStorageSettingStyles = [_uM([["container", _pS(_uM([["height", "100%"], ["backgroundColor", "#f5f5f5"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]]))], ["content", _uM([[".container ", _uM([["backgroundColor", "#ffffff"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]])]])]])]

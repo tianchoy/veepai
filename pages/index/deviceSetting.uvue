@@ -30,7 +30,7 @@
 				<text>设备设置</text>
 				<fui-icon name="arrowright" color="#111" size="40" />
 			</view>
-			<view class="traffic">
+			<view class="traffic" @click="goTrafficRecharge">
 				<view class="item">
 					<text>流量充值</text>
 					<fui-icon name="arrowright" color="#111" size="40" />
@@ -40,15 +40,15 @@
 					<text class="word">2025-8-10到期</text>
 				</view>
 			</view>
-			<view class="item">
+			<view class="item" @click="goIntelligentWatch">
 				<text>智能侦测</text>
 				<fui-icon name="arrowright" color="#111" size="40" />
 			</view>
-			<view class="item">
+			<view class="item" @click="goTfCardSetting">
 				<text>TF卡设置</text>
 				<fui-icon name="arrowright" color="#111" size="40" />
 			</view>
-			<view class="item">
+			<view class="item" @click="goCloudStorageSetting">
 				<text>云存储设置</text>
 				<fui-icon name="arrowright" color="#111" size="40" />
 			</view>
@@ -113,6 +113,30 @@
 	const goDeviceSettingInfo = () => {
 		uni.navigateTo({
 			url: '/pages/index/deviceSettingInfo/deviceSettingInfo',
+		})
+	}
+
+	const goTrafficRecharge = () => {
+		uni.navigateTo({
+			url: '/pages/mine/rechargeDataTraffic/rechargeDataTraffic',
+		})
+	}
+
+	const goIntelligentWatch = () => {
+		uni.navigateTo({
+			url: '/pages/index/intelligentWatch',
+		})
+	}
+
+	const goTfCardSetting = () => {
+		uni.navigateTo({
+			url: '/pages/index/TFCardSetting',
+		})
+	}
+
+	const goCloudStorageSetting = () => {
+		uni.navigateTo({
+			url: '/pages/index/cloudStorageSetting',
 		})
 	}
 

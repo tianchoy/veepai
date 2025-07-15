@@ -1,9 +1,8 @@
 "use strict";
 const common_vendor = require("../../../common/vendor.js");
-const uni_modules_limeClipboard_utssdk_index = require("../../../uni_modules/lime-clipboard/utssdk/index.js");
-const uni_modules_limeClipboard_utssdk_interface = require("../../../uni_modules/lime-clipboard/utssdk/interface.js");
 if (!Array) {
   const _easycom_fui_icon_1 = common_vendor.resolveComponent("fui-icon");
+  const _easycom_l_icon_1 = common_vendor.resolveComponent("l-icon");
   const _easycom_l_progress_1 = common_vendor.resolveComponent("l-progress");
   const _easycom_fui_button_1 = common_vendor.resolveComponent("fui-button");
   const _easycom_fui_radio_1 = common_vendor.resolveComponent("fui-radio");
@@ -11,9 +10,10 @@ if (!Array) {
   const _easycom_fui_label_1 = common_vendor.resolveComponent("fui-label");
   const _easycom_fui_radio_group_1 = common_vendor.resolveComponent("fui-radio-group");
   const _easycom_fui_bottom_popup_1 = common_vendor.resolveComponent("fui-bottom-popup");
-  (_easycom_fui_icon_1 + _easycom_l_progress_1 + _easycom_fui_button_1 + _easycom_fui_radio_1 + _easycom_fui_list_cell_1 + _easycom_fui_label_1 + _easycom_fui_radio_group_1 + _easycom_fui_bottom_popup_1)();
+  (_easycom_fui_icon_1 + _easycom_l_icon_1 + _easycom_l_progress_1 + _easycom_fui_button_1 + _easycom_fui_radio_1 + _easycom_fui_list_cell_1 + _easycom_fui_label_1 + _easycom_fui_radio_group_1 + _easycom_fui_bottom_popup_1)();
 }
 const _easycom_fui_icon = () => "../../../uni_modules/firstui-unix/components/fui-icon/fui-icon.js";
+const _easycom_l_icon = () => "../../../uni_modules/lime-icon/components/l-icon/l-icon.js";
 const _easycom_l_progress = () => "../../../uni_modules/lime-progress/components/l-progress/l-progress.js";
 const _easycom_fui_button = () => "../../../uni_modules/firstui-unix/components/fui-button/fui-button.js";
 const _easycom_fui_radio = () => "../../../uni_modules/firstui-unix/components/fui-radio/fui-radio.js";
@@ -22,7 +22,7 @@ const _easycom_fui_label = () => "../../../uni_modules/firstui-unix/components/f
 const _easycom_fui_radio_group = () => "../../../uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.js";
 const _easycom_fui_bottom_popup = () => "../../../uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.js";
 if (!Math) {
-  (_easycom_fui_icon + _easycom_l_progress + _easycom_fui_button + _easycom_fui_radio + _easycom_fui_list_cell + _easycom_fui_label + _easycom_fui_radio_group + _easycom_fui_bottom_popup)();
+  (_easycom_fui_icon + _easycom_l_icon + _easycom_l_progress + _easycom_fui_button + _easycom_fui_radio + _easycom_fui_list_cell + _easycom_fui_label + _easycom_fui_radio_group + _easycom_fui_bottom_popup)();
 }
 class RadioItem extends UTS.UTSType {
   static get$UTSMetadata$() {
@@ -137,7 +137,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       });
     };
     const copyRight = () => {
-      uni_modules_limeClipboard_utssdk_index.setClipboardData(new uni_modules_limeClipboard_utssdk_interface.SetClipboardDataOption({
+      common_vendor.index.setClipboardData({
         data: currentDeviceInfo.value.iccid,
         success: function() {
           common_vendor.index.showToast({
@@ -145,7 +145,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
             icon: "none"
           });
         }
-      }));
+      });
     };
     common_vendor.onMounted(() => {
       currentInfo();
@@ -161,8 +161,9 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         d: common_vendor.t(currentDeviceInfo.value.iccid),
         e: common_vendor.o(copyRight),
         f: common_vendor.p({
-          name: "info",
-          size: 40
+          name: "file-copy",
+          color: "#666",
+          size: "16"
         }),
         g: common_vendor.t(currentDeviceInfo.value.cardid),
         h: common_vendor.t(currentDeviceInfo.value.cardState),

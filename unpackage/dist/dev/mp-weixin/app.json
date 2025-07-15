@@ -24,7 +24,10 @@
     "pages/index/deviceSetting",
     "pages/index/deviceReplay",
     "pages/index/deviceSettingInfo/deviceSettingInfo",
-    "pages/index/deviceSettingInfo/deviceNight"
+    "pages/index/deviceSettingInfo/deviceNight",
+    "pages/index/intelligentWatch",
+    "pages/index/TFCardSetting",
+    "pages/index/cloudStorageSetting"
   ],
   "window": {
     "navigationBarTextStyle": "black",
