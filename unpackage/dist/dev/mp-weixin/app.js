@@ -30,6 +30,7 @@ if (!Math) {
   "./pages/index/intelligentWatch.js";
   "./pages/index/TFCardSetting.js";
   "./pages/index/cloudStorageSetting.js";
+  "./pages/index/deviceRechargeData.js";
 }
 const _sfc_main = common_vendor.defineComponent(new UTSJSONObject({
   onLaunch: function() {

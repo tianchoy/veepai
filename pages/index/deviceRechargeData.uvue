@@ -1,0 +1,67 @@
+<template>
+	<view class="container">
+		<TopNavBar title="流量充值" @back="goBack" @rightEvent="rightIcon" :showBack="true" rightText="order"></TopNavBar>
+		<view class="content">
+			<view class="list">
+				<text>ICCID</text>
+				<view class="right-item">
+					<text>8986112223504991234</text>
+					<l-icon style="margin-left: 10rpx;" name="file-copy" size="20" @click="copyiccid"></l-icon>
+				</view>
+			</view>
+			<view class="list">
+				<text>卡号</text>
+				<view class="right-item">
+					<text>8986112223504991234</text>
+					<text style="color: #FF4D4F;">[停用]</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import { ref } from 'vue'
+	import TopNavBar from '@/components/TopNavBar.uvue'
+
+	const goBack = () => {
+		uni.navigateBack({
+			delta: 1,
+		})
+	}
+
+	const rightIcon = () => {
+		uni.navigateTo({
+			url: '/pages/index/deviceRechargeOrder',
+		})
+	}
+
+
+	const copyiccid = () => {
+		uni.setClipboardData({
+			data: '8986000000000000',
+		})
+	}
+</script>
+
+<style lang="scss" scoped>
+	.container{
+		height: 100%;
+		background-color: #f5f5f5;
+		padding: 20rpx;
+		.content{
+			background-color: #fff;
+			padding: 20rpx;
+			border-radius: 20rpx;
+			.list{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				.right-item{
+					@extend .list;
+				}
+			}
+		}
+	}	
+</style>

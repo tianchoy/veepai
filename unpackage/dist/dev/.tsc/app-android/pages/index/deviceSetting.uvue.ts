@@ -57,7 +57,7 @@ const _cache = __ins.renderCache;
 
 	const goTrafficRecharge = () => {
 		uni.navigateTo({
-			url: '/pages/mine/rechargeDataTraffic/rechargeDataTraffic',
+			url: '/pages/index/deviceRechargeData',
 		})
 	}
 

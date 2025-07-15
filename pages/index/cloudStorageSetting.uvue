@@ -1,7 +1,22 @@
 <template>
 	<view class="container">
 		<view class="content">
-
+			<view class="list">
+				<text>当前套餐</text>
+				<text>7天滚动云存储 - 月卡</text>
+			</view>
+			<view class="list">
+				<text>到期时间</text>
+				<text>2025-10-29</text>
+			</view>
+			<view class="list">
+				<text>自动续费</text>
+				<text>否</text>
+			</view>
+			<view class="btn-box">
+				<fui-button width="45%" height="80rpx" text="存储管理"></fui-button>
+				<fui-button width="45%" height="80rpx" text="立即续费"></fui-button>
+			</view>
 		</view>
 	</view>
 </template>
@@ -19,6 +34,18 @@
 			background-color: #fff;
 			border-radius: 20rpx;
 			padding: 20rpx;
+			.list{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				padding: 20rpx;
+				border-bottom: 1rpx solid #f1f1f1;
+			}
+			.btn-box{
+				@extend .list;
+				border-bottom: 0;
+				margin-top: 50rpx;
+			}
 		}
 	}	
 </style>

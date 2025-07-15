@@ -202,6 +202,14 @@
 			{
 				"navigationBarTitleText" : "云存储设置"
 			}
+		},
+		{
+			"path" : "pages/index/deviceRechargeData",
+			"style" : 
+			{
+				"navigationStyle": "custom",
+				"navigationBarTitleText" : ""
+			}
 		}
 	],
 	"tabBar": {

@@ -27,7 +27,8 @@
     "pages/index/deviceSettingInfo/deviceNight",
     "pages/index/intelligentWatch",
     "pages/index/TFCardSetting",
-    "pages/index/cloudStorageSetting"
+    "pages/index/cloudStorageSetting",
+    "pages/index/deviceRechargeData"
   ],
   "window": {
     "navigationBarTextStyle": "black",

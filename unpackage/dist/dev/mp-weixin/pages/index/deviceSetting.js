@@ -54,7 +54,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     };
     const goTrafficRecharge = () => {
       common_vendor.index.navigateTo({
-        url: "/pages/mine/rechargeDataTraffic/rechargeDataTraffic"
+        url: "/pages/index/deviceRechargeData"
       });
     };
     const goIntelligentWatch = () => {

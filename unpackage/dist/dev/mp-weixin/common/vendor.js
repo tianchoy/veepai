@@ -9909,6 +9909,13 @@ const pages = [
     style: new UTSJSONObject({
       navigationBarTitleText: "云存储设置"
     })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/deviceRechargeData",
+    style: new UTSJSONObject({
+      navigationStyle: "custom",
+      navigationBarTitleText: ""
+    })
   })
 ];
 const tabBar = new UTSJSONObject({
