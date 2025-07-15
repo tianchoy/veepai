@@ -1,4 +1,5 @@
 import _easycom_fui_icon from '@/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue'
+import _easycom_l_icon from '@/uni_modules/lime-icon/components/l-icon/l-icon.uvue'
 import _easycom_l_progress from '@/uni_modules/lime-progress/components/l-progress/l-progress.uvue'
 import _easycom_fui_button from '@/uni_modules/firstui-unix/components/fui-button/fui-button.uvue'
 import _easycom_fui_radio from '@/uni_modules/firstui-unix/components/fui-radio/fui-radio.uvue'
@@ -7,9 +8,8 @@ import _easycom_fui_label from '@/uni_modules/firstui-unix/components/fui-label/
 import _easycom_fui_radio_group from '@/uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.uvue'
 import _easycom_fui_bottom_popup from '@/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue'
 import { ref, onMounted } from 'vue'
-	import { setClipboardData, getClipboardData, SetClipboardDataOption, GetClipboardDataOption, GetClipboardDataSuccessCallbackOption } from '@/uni_modules/lime-clipboard'
 
-	type RadioItem = { __$originalPosition?: UTSSourceMapPosition<"RadioItem", "pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue", 79, 7>;
+	type RadioItem = { __$originalPosition?: UTSSourceMapPosition<"RadioItem", "pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue", 78, 7>;
 		deviceTitle : string;
 		iccid : string;
 		cardid : string;
@@ -116,7 +116,7 @@ const _cache = __ins.renderCache;
 	}
 
 	const copyRight = () => {
-		setClipboardData({
+		uni.setClipboardData({
 			data: currentDeviceInfo.value.iccid,
 			success: function () {
 				uni.showToast({
@@ -134,6 +134,7 @@ const _cache = __ins.renderCache;
 return (): any | null => {
 
 const _component_fui_icon = resolveEasyComponent("fui-icon",_easycom_fui_icon)
+const _component_l_icon = resolveEasyComponent("l-icon",_easycom_l_icon)
 const _component_l_progress = resolveEasyComponent("l-progress",_easycom_l_progress)
 const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_button)
 const _component_fui_radio = resolveEasyComponent("fui-radio",_easycom_fui_radio)
@@ -161,11 +162,14 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
       _cE("view", _uM({ class: "device-info-item" }), [
         _cE("text", null, "ICCID"),
         _cE("view", _uM({ class: "iccid-info" }), [
-          _cE("text", null, _tD(currentDeviceInfo.value.iccid), 1 /* TEXT */),
-          _cV(_component_fui_icon, _uM({
-            name: "info",
-            size: 40,
-            onOnclick: copyRight
+          _cE("text", _uM({
+            style: _nS(_uM({"margin-right":"10rpx"}))
+          }), _tD(currentDeviceInfo.value.iccid), 5 /* TEXT, STYLE */),
+          _cV(_component_l_icon, _uM({
+            name: "file-copy",
+            color: "#666",
+            size: "16",
+            onClick: copyRight
           }))
         ])
       ]),

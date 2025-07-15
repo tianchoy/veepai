@@ -15,8 +15,8 @@
 			<view class="device-info-item">
 				<text>ICCID</text>
 				<view class="iccid-info">
-					<text>{{currentDeviceInfo.iccid}}</text>
-					<fui-icon name="info" :size="40" @onclick="copyRight"></fui-icon>
+					<text style="margin-right:10rpx">{{currentDeviceInfo.iccid}}</text>
+					<l-icon name="file-copy" color="#666" size="16" @click="copyRight" />
 				</view>
 			</view>
 			<view class="device-info-item">
@@ -74,7 +74,6 @@
 
 <script setup lang="uts">
 	import { ref, onMounted } from 'vue'
-	import { setClipboardData, getClipboardData, SetClipboardDataOption, GetClipboardDataOption, GetClipboardDataSuccessCallbackOption } from '@/uni_modules/lime-clipboard'
 
 	type RadioItem = {
 		deviceTitle : string;
@@ -175,7 +174,7 @@
 	}
 
 	const copyRight = () => {
-		setClipboardData({
+		uni.setClipboardData({
 			data: currentDeviceInfo.value.iccid,
 			success: function () {
 				uni.showToast({

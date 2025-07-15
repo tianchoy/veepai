@@ -19,29 +19,29 @@ const __sfc__ = defineComponent({
         const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
         const _cache = __ins.renderCache;
         const val = ref('1');
-        const select_img = ref('@/static/u4062.png');
+        const select_img = ref('../../../static/u4062.png');
         const radioItems = ref<RadioItem[]>([{
                 name: '黑白夜视',
                 desc: '采用红外补光，隐蔽性高，图像为黑白夜视',
-                img: '@/static/u4062.png',
+                img: '../../../static/u4062.png',
                 value: '1',
                 checked: true
             } as RadioItem, {
                 name: '全彩夜视',
                 desc: '夜晚开白光灯，可做照明使用，图像为彩色',
-                img: '@/static/u4063.png',
+                img: '../../../static/u4063.png',
                 value: '2',
                 checked: false
             } as RadioItem, {
                 name: '智能夜视',
                 desc: '默认为黑白夜视，检测到画面为动态是变为全彩夜视',
-                img: '@/static/u4064.png',
+                img: '../../../static/u4064.png',
                 value: '3',
                 checked: false
             } as RadioItem, {
                 name: '星光夜视',
                 desc: '当前环境光线充足，并且不想看到灯光亮起，则选择该项',
-                img: '@/static/u4062.png',
+                img: '../../../static/u4062.png',
                 value: '4',
                 checked: false
             } as RadioItem]);
@@ -50,8 +50,9 @@ const __sfc__ = defineComponent({
                 delta: 1,
             });
         };
-        const change = (value: string) => {
-            console.log('change:' + value, " at pages/index/deviceSettingInfo/deviceNight.uvue:78");
+        const change = (value: RadioItem) => {
+            val.value = value.value;
+            select_img.value = value.img;
         };
         return (): any | null => {
             const _component_fui_radio = resolveEasyComponent("fui-radio", _easycom_fui_radio);
@@ -73,8 +74,7 @@ const __sfc__ = defineComponent({
                     _cE("view", _uM({ class: "select-mode" }), [
                         _cV(_component_fui_radio_group, _uM({
                             modelValue: val.value,
-                            "onUpdate:modelValue": ($event: string) => { (val).value = $event; },
-                            onChange: change
+                            "onUpdate:modelValue": ($event: string) => { (val).value = $event; }
                         }), _uM({
                             default: withSlotCtx((): any[] => [
                                 _cE(Fragment, null, RenderHelpers.renderList(radioItems.value, (item, index, __index, _cached): any => {
@@ -82,7 +82,10 @@ const __sfc__ = defineComponent({
                                         default: withSlotCtx((): any[] => [
                                             _cV(_component_fui_list_cell, null, _uM({
                                                 default: withSlotCtx((): any[] => [
-                                                    _cE("view", _uM({ class: "fui-align__center" }), [
+                                                    _cE("view", _uM({
+                                                        class: "fui-align__center",
+                                                        onClick: () => { change(item); }
+                                                    }), [
                                                         _cE("view", _uM({ class: "fui-text-box" }), [
                                                             _cE("text", null, _tD(item.name), 1 /* TEXT */),
                                                             _cV(_component_fui_radio, _uM({
@@ -93,7 +96,7 @@ const __sfc__ = defineComponent({
                                                             }), null, 8 /* PROPS */, ["checked", "value"])
                                                         ]),
                                                         _cE("text", _uM({ class: "fui-desc" }), _tD(item.desc), 1 /* TEXT */)
-                                                    ])
+                                                    ], 8 /* PROPS */, ["onClick"])
                                                 ]),
                                                 _: 2 /* DYNAMIC */
                                             }), 1024 /* DYNAMIC_SLOTS */)

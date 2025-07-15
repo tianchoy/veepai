@@ -42,9 +42,9 @@
     });
   }
   function initRuntimeSocketService() {
-    const hosts = "127.0.0.1,192.168.3.34,169.254.62.122";
+    const hosts = "127.0.0.1,192.168.3.34";
     const port = "8090";
-    const id = "app-ios_aEY8xk";
+    const id = "app-ios_Eeyzi3";
     let socketTask = null;
     __registerWebViewUniConsole(() => {
       return '!function(){"use strict";"function"==typeof SuppressedError&&SuppressedError;var e=["log","warn","error","info","debug"],n=e.reduce((function(e,n){return e[n]=console[n].bind(console),e}),{}),t=null,r=new Set,o={};function i(e){if(null!=t){var n=e.map((function(e){if("string"==typeof e)return e;var n=e&&"promise"in e&&"reason"in e,t=n?"UnhandledPromiseRejection: ":"";if(n&&(e=e.reason),e instanceof Error&&e.stack)return e.message&&!e.stack.includes(e.message)?"".concat(t).concat(e.message,"\\n").concat(e.stack):"".concat(t).concat(e.stack);if("object"==typeof e&&null!==e)try{return t+JSON.stringify(e)}catch(e){return t+String(e)}return t+String(e)})).filter(Boolean);n.length>0&&t(JSON.stringify(Object.assign({type:"error",data:n},o)))}else e.forEach((function(e){r.add(e)}))}function a(e,n){try{return{type:e,args:u(n)}}catch(e){}return{type:e,args:[]}}function u(e){return e.map((function(e){return c(e)}))}function c(e,n){if(void 0===n&&(n=0),n>=7)return{type:"object",value:"[Maximum depth reached]"};switch(typeof e){case"string":return{type:"string",value:e};case"number":return function(e){return{type:"number",value:String(e)}}(e);case"boolean":return function(e){return{type:"boolean",value:String(e)}}(e);case"object":try{return function(e,n){if(null===e)return{type:"null"};if(function(e){return e.$&&s(e.$)}(e))return function(e,n){return{type:"object",className:"ComponentPublicInstance",value:{properties:Object.entries(e.$.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(s(e))return function(e,n){return{type:"object",className:"ComponentInternalInstance",value:{properties:Object.entries(e.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return e.style&&null!=e.tagName&&null!=e.nodeName}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e).filter((function(e){var n=e[0];return["id","tagName","nodeName","dataset","offsetTop","offsetLeft","style"].includes(n)})).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return"function"==typeof e.getPropertyValue&&"function"==typeof e.setProperty&&e.$styles}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e.$styles).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(Array.isArray(e))return{type:"object",subType:"array",value:{properties:e.map((function(e,t){return function(e,n,t){var r=c(e,t);return r.name="".concat(n),r}(e,t,n+1)}))}};if(e instanceof Set)return{type:"object",subType:"set",className:"Set",description:"Set(".concat(e.size,")"),value:{entries:Array.from(e).map((function(e){return function(e,n){return{value:c(e,n)}}(e,n+1)}))}};if(e instanceof Map)return{type:"object",subType:"map",className:"Map",description:"Map(".concat(e.size,")"),value:{entries:Array.from(e.entries()).map((function(e){return function(e,n){return{key:c(e[0],n),value:c(e[1],n)}}(e,n+1)}))}};if(e instanceof Promise)return{type:"object",subType:"promise",value:{properties:[]}};if(e instanceof RegExp)return{type:"object",subType:"regexp",value:String(e),className:"Regexp"};if(e instanceof Date)return{type:"object",subType:"date",value:String(e),className:"Date"};if(e instanceof Error)return{type:"object",subType:"error",value:e.message||String(e),className:e.name||"Error"};var t=void 0,r=e.constructor;r&&r.get$UTSMetadata$&&(t=r.get$UTSMetadata$().name);var o=Object.entries(e);(function(e){return e.modifier&&e.modifier._attribute&&e.nodeContent})(e)&&(o=o.filter((function(e){var n=e[0];return"modifier"!==n&&"nodeContent"!==n})));return{type:"object",className:t,value:{properties:o.map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n)}catch(e){return{type:"object",value:{properties:[]}}}case"undefined":return{type:"undefined"};case"function":return function(e){return{type:"function",value:"function ".concat(e.name,"() {}")}}(e);case"symbol":return function(e){return{type:"symbol",value:e.description}}(e);case"bigint":return function(e){return{type:"bigint",value:String(e)}}(e)}}function s(e){return e.type&&null!=e.uid&&e.appContext}function f(e,n,t){var r=c(n,t);return r.name=e,r}var l=null,p=[],y={},g="---BEGIN:EXCEPTION---",d="---END:EXCEPTION---";function v(e){null!=l?l(JSON.stringify(Object.assign({type:"console",data:e},y))):p.push.apply(p,e)}var m=/^\\s*at\\s+[\\w/./-]+:\\d+$/;function b(){function t(e){return function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];var o=function(e,n,t){if(t||2===arguments.length)for(var r,o=0,i=n.length;o<i;o++)!r&&o in n||(r||(r=Array.prototype.slice.call(n,0,o)),r[o]=n[o]);return e.concat(r||Array.prototype.slice.call(n))}([],t,!0);if(o.length){var u=o[o.length-1];"string"==typeof u&&m.test(u)&&o.pop()}if(n[e].apply(n,o),"error"===e&&1===t.length){var c=t[0];if("string"==typeof c&&c.startsWith(g)){var s=g.length,f=c.length-d.length;return void i([c.slice(s,f)])}if(c instanceof Error)return void i([c])}v([a(e,t)])}}return function(){var e=console.log,n=Symbol();try{console.log=n}catch(e){return!1}var t=console.log===n;return console.log=e,t}()?(e.forEach((function(e){console[e]=t(e)})),function(){e.forEach((function(e){console[e]=n[e]}))}):function(){}}function _(e){var n={type:"WEB_INVOKE_APPSERVICE",args:{data:{name:"console",arg:e}}};return window.__uniapp_x_postMessageToService?window.__uniapp_x_postMessageToService(n):window.__uniapp_x_.postMessageToService(JSON.stringify(n))}!function(){if(!window.__UNI_CONSOLE_WEBVIEW__){window.__UNI_CONSOLE_WEBVIEW__=!0;var e="[web-view]".concat(window.__UNI_PAGE_ROUTE__?"[".concat(window.__UNI_PAGE_ROUTE__,"]"):"");b(),function(e,n){if(void 0===n&&(n={}),l=e,Object.assign(y,n),null!=e&&p.length>0){var t=p.slice();p.length=0,v(t)}}((function(e){_(e)}),{channel:e}),function(e,n){if(void 0===n&&(n={}),t=e,Object.assign(o,n),null!=e&&r.size>0){var a=Array.from(r);r.clear(),i(a)}}((function(e){_(e)}),{channel:e}),window.addEventListener("error",(function(e){i([e.error])})),window.addEventListener("unhandledrejection",(function(e){i([e])}))}}()}();';
@@ -672,7 +672,7 @@
       }
     });
   }
-  const name$4 = "l-icon";
+  const name$3 = "l-icon";
   const IconifyURL = "https://api.iconify.design/";
   const _sfc_main$V = /* @__PURE__ */ vue.defineComponent({
     __name: "l-icon",
@@ -745,12 +745,12 @@
         return /\.svg$/i.test(innerName.value) || innerName.value.startsWith("data:image/svg+xml") || innerName.value.startsWith("<svg");
       });
       const classes = vue.computed(() => {
-        const cls2 = /* @__PURE__ */ new Map();
-        cls2.set("".concat(name$4, "--font"), !isImage.value && !isIconify.value && !isSVG.value);
-        cls2.set("".concat(name$4, "--image"), isImage.value || isIconify.value || isSVG.value);
-        cls2.set(props.prefix, props.prefix.length > 0);
-        cls2.set(props.lClass, props.lClass.length > 0);
-        return cls2;
+        const cls = /* @__PURE__ */ new Map();
+        cls.set("".concat(name$3, "--font"), !isImage.value && !isIconify.value && !isSVG.value);
+        cls.set("".concat(name$3, "--image"), isImage.value || isIconify.value || isSVG.value);
+        cls.set(props.prefix, props.prefix.length > 0);
+        cls.set(props.lClass, props.lClass.length > 0);
+        return cls;
       });
       const styles = vue.computed(() => {
         var _a2;
@@ -800,7 +800,7 @@
       const imageload = () => {
         isError.value = false;
       };
-      const __returned__ = { name: name$4, IconifyURL, $iconsHost, props, emits, $iconCollection, innerName, collectionIcon, webviewRef, hasHost, isIconify, isImage, isSVG, classes, styles, iconCode, isError, cacheMap, iconUrl, imageError, imageload };
+      const __returned__ = { name: name$3, IconifyURL, $iconsHost, props, emits, $iconCollection, innerName, collectionIcon, webviewRef, hasHost, isIconify, isImage, isSVG, classes, styles, iconCode, isError, cacheMap, iconUrl, imageError, imageload };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
@@ -2383,7 +2383,7 @@
       )) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class"]);
   }
-  const __easycom_1$7 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["styles", [_style_0$N]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell.uvue"]]);
+  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$Q, [["render", _sfc_render$P], ["styles", [_style_0$N]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell.uvue"]]);
   const _sfc_main$P = vue.defineComponent({
     name: "fui-label",
     props: {
@@ -2433,7 +2433,7 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$6 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["styles", [_style_0$M]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-label/fui-label.uvue"]]);
+  const __easycom_2$7 = /* @__PURE__ */ _export_sfc(_sfc_main$P, [["render", _sfc_render$O], ["styles", [_style_0$M]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-label/fui-label.uvue"]]);
   const _sfc_main$O = vue.defineComponent({
     name: "fui-radio-group",
     emits: ["change", "update:modelValue"],
@@ -3818,8 +3818,8 @@
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$1);
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
     const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_0$5);
-    const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_1$7);
-    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$6);
+    const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_1$6);
+    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$7);
     const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "data-strip" }, [
@@ -4539,7 +4539,7 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["styles", [_style_0$J]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
+  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$L, [["render", _sfc_render$K], ["styles", [_style_0$J]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
   const _sfc_main$K = vue.defineComponent({
     name: "fui-button",
     emits: ["onclick"],
@@ -4874,7 +4874,7 @@
       /* CLASS, STYLE, NEED_HYDRATION */
     );
   }
-  const __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["styles", [_style_0$I]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
+  const __easycom_2$6 = /* @__PURE__ */ _export_sfc(_sfc_main$K, [["render", _sfc_render$J], ["styles", [_style_0$I]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
   const _sfc_main$J = /* @__PURE__ */ vue.defineComponent({
     __name: "userInfo",
     setup(__props, _a) {
@@ -4966,8 +4966,8 @@
   });
   const _style_0$H = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "fontSize": "30rpx", "color": "#333333", "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
   function _sfc_render$I(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_1$6);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_1$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "title" }, [
         vue.createElementVNode("text", null, "个人信息")
@@ -5072,7 +5072,7 @@
   const _imports_0$4 = "/static/error_big.png";
   const _style_0$G = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
   function _sfc_render$H(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("image", {
         src: _imports_0$4,
@@ -5611,7 +5611,7 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["styles", [_style_0$F]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
+  const __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$H, [["render", _sfc_render$G], ["styles", [_style_0$F]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-input/fui-input.uvue"]]);
   const _sfc_main$G = /* @__PURE__ */ vue.defineComponent({
     __name: "changePhoneNumber",
     setup(__props, _a) {
@@ -5645,8 +5645,8 @@
   const _style_0$E = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "icon": { ".container .content ": { "width": "40rpx", "height": "40rpx", "marginRight": "10rpx" } } };
   function _sfc_render$F(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createVNode(_component_fui_input, {
@@ -5773,8 +5773,8 @@
   });
   const _style_0$D = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } }, "error-msg": { ".container ": { "marginTop": "10rpx", "color": "#e64340", "fontSize": "24rpx" } } };
   function _sfc_render$E(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createVNode(_component_fui_input, {
@@ -5987,16 +5987,7 @@
       /* CLASS */
     );
   }
-  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["styles", [_style_0$C]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-progress/components/l-progress/l-progress.uvue"]]);
-  const { registerUTSInterface, initUTSProxyClass, initUTSProxyFunction, initUTSPackageName, initUTSIndexClassName, initUTSClassName } = uni;
-  const name$3 = "limeClipboard";
-  const moduleName = "lime-clipboard 剪贴板";
-  const moduleType = "";
-  const errMsg = "";
-  const is_uni_modules = true;
-  const pkg = /* @__PURE__ */ initUTSPackageName(name$3, is_uni_modules);
-  const cls = /* @__PURE__ */ initUTSIndexClassName(name$3, is_uni_modules);
-  const setClipboardData = /* @__PURE__ */ initUTSProxyFunction(false, { moduleName, moduleType, errMsg, main: true, package: pkg, class: cls, name: "setClipboardDataByJs", keepAlive: false, params: [{ "name": "options", "type": "UTSSDKModulesLimeClipboardSetClipboardDataOptionJSONObject" }], return: "" });
+  const __easycom_2$4 = /* @__PURE__ */ _export_sfc(_sfc_main$E, [["render", _sfc_render$D], ["styles", [_style_0$C]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-progress/components/l-progress/l-progress.uvue"]]);
   let RadioItem$1 = class RadioItem2 extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -6112,7 +6103,7 @@
         });
       };
       const copyRight = () => {
-        setClipboardData(new UTSJSONObject({
+        uni.setClipboardData({
           data: currentDeviceInfo.value.iccid,
           success: function() {
             uni.showToast({
@@ -6120,7 +6111,7 @@
               icon: "none"
             });
           }
-        }));
+        });
       };
       vue.onMounted(() => {
         currentInfo();
@@ -6133,11 +6124,12 @@
   const _style_0$B = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "device-total": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } }, "device-total-title": { ".container .device-total ": { "display": "flex", "flexDirection": "row", "justifyContent": "center", "alignItems": "center" } }, "device-total-title-color": { ".container .device-total .device-total-title ": { "color": "#999999" } }, "device-info-box": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "30rpx", "paddingRight": "40rpx", "paddingBottom": "30rpx", "paddingLeft": "40rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0, "display": "flex", "flexDirection": "column" } }, "device-title": { ".container .device-info-box ": { "fontSize": "35rpx" } }, "device-info-item": { ".container .device-info-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "marginTop": "20rpx" } }, "iccid-info": { ".container .device-info-box .device-info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "add-style": { ".container .device-info-box ": { "paddingBottom": "60rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#999999", "marginBottom": "60rpx" } }, "progess": { ".container .device-info-box ": { "marginTop": "10rpx", "marginRight": 0, "marginBottom": "10rpx", "marginLeft": 0 } }, "btn-box": { ".container ": { "marginTop": "60rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
   function _sfc_render$C(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_l_progress = resolveEasycom(vue.resolveDynamicComponent("l-progress"), __easycom_1$5);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
+    const _component_l_progress = resolveEasycom(vue.resolveDynamicComponent("l-progress"), __easycom_2$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$6);
     const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_0$5);
-    const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_1$7);
-    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$6);
+    const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_1$6);
+    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$7);
     const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$4);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -6167,15 +6159,16 @@
           vue.createElementVNode("view", { class: "iccid-info" }, [
             vue.createElementVNode(
               "text",
-              null,
+              { style: { "margin-right": "10rpx" } },
               vue.toDisplayString($setup.currentDeviceInfo.iccid),
               1
               /* TEXT */
             ),
-            vue.createVNode(_component_fui_icon, {
-              name: "info",
-              size: 40,
-              onOnclick: $setup.copyRight
+            vue.createVNode(_component_l_icon, {
+              name: "file-copy",
+              color: "#666",
+              size: "16",
+              onClick: $setup.copyRight
             })
           ])
         ]),
@@ -8127,14 +8120,14 @@
       __expose();
       const props = __props;
       const classes = vue.computed(() => {
-        const cls2 = /* @__PURE__ */ new Map();
-        cls2.set(name$2 + "--" + props.type, true);
+        const cls = /* @__PURE__ */ new Map();
+        cls.set(name$2 + "--" + props.type, true);
         if (props.vertical) {
-          cls2.set("is-vertical", props.vertical);
+          cls.set("is-vertical", props.vertical);
         } else {
-          cls2.set("is-horizontal", !props.vertical);
+          cls.set("is-horizontal", !props.vertical);
         }
-        return cls2;
+        return cls;
       });
       const spinnerStyle = vue.computed(() => {
         const style = /* @__PURE__ */ new Map();
@@ -8273,17 +8266,17 @@
       return (_a2 = props.variant) !== null && _a2 !== void 0 ? _a2 : props.color != null ? "solid" : props.type == "default" ? "outline" : "solid";
     });
     const classes = vue.computed(() => {
-      const cls2 = /* @__PURE__ */ new Map();
+      const cls = /* @__PURE__ */ new Map();
       const name2 = "l-button";
-      cls2.set("".concat(name2, "--").concat(props.size), true);
-      cls2.set("".concat(name2, "--").concat(props.type), true);
-      cls2.set("".concat(name2, "--").concat(variant.value), true);
-      cls2.set("".concat(name2, "--").concat(props.shape), true);
-      cls2.set("".concat(name2, "--disabled"), props.disabled);
-      cls2.set("".concat(name2, "--loading"), props.loading);
-      cls2.set("".concat(name2, "--ghost"), props.ghost);
-      cls2.set("".concat(name2, "--block"), props.block);
-      return cls2;
+      cls.set("".concat(name2, "--").concat(props.size), true);
+      cls.set("".concat(name2, "--").concat(props.type), true);
+      cls.set("".concat(name2, "--").concat(variant.value), true);
+      cls.set("".concat(name2, "--").concat(props.shape), true);
+      cls.set("".concat(name2, "--disabled"), props.disabled);
+      cls.set("".concat(name2, "--loading"), props.loading);
+      cls.set("".concat(name2, "--ghost"), props.ghost);
+      cls.set("".concat(name2, "--block"), props.block);
+      return cls;
     });
     const styles = vue.computed(() => {
       const style = /* @__PURE__ */ new Map();
@@ -8530,11 +8523,11 @@
         }
       });
       const contentClass = vue.computed(() => {
-        const cls2 = /* @__PURE__ */ new Map();
-        cls2.set("l-search__content--focused", focused.value);
-        cls2.set("l-search__content--center", props.center);
-        cls2.set("l-search__content--" + props.shape, true);
-        return cls2;
+        const cls = /* @__PURE__ */ new Map();
+        cls.set("l-search__content--focused", focused.value);
+        cls.set("l-search__content--center", props.center);
+        cls.set("l-search__content--" + props.shape, true);
+        return cls;
       });
       const contextStyle = vue.computed(() => {
         const style = /* @__PURE__ */ new Map();
@@ -8773,11 +8766,11 @@
       const props = __props;
       const context = vue.getCurrentInstance();
       const classes = vue.computed(() => {
-        const cls2 = /* @__PURE__ */ new Map();
-        cls2.set("".concat(name$1, "--fixed"), toBoolean(context.slots["default"]));
-        cls2.set("".concat(name$1, "--dot"), props.dot);
-        cls2.set("".concat(name$1, "--").concat(props.position), context.slots["default"] != null);
-        return cls2;
+        const cls = /* @__PURE__ */ new Map();
+        cls.set("".concat(name$1, "--fixed"), toBoolean(context.slots["default"]));
+        cls.set("".concat(name$1, "--dot"), props.dot);
+        cls.set("".concat(name$1, "--").concat(props.position), context.slots["default"] != null);
+        return cls;
       });
       const styles = vue.computed(() => {
         const style = /* @__PURE__ */ new Map();
@@ -10543,10 +10536,10 @@
   const _style_0$p = { "container": { "": { "height": "100%", "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "40rpx", "paddingBottom": "20rpx", "paddingLeft": "40rpx", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "longin_banner": { ".container ": { "width": "250rpx", "height": "400rpx", "marginBottom": "20rpx" } }, "content": { ".container ": { "width": "100%" } }, "check-box": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginTop": "20rpx" } }, "fui-text-box": { ".container .content .check-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "marginLeft": "10rpx" } }, "fui-text": { ".container .content .check-box .fui-text-box ": { "color": "#1296db" } }, "tips": { ".container .content ": { "marginTop": "20rpx", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "40rpx", "paddingRight": "40rpx", "paddingBottom": "40rpx", "paddingLeft": "40rpx" } }, "fui-title__pb": { ".container .fui-scroll__wrap ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } } };
   function _sfc_render$p(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$6);
     const _component_fui_checkbox = resolveEasycom(vue.resolveDynamicComponent("fui-checkbox"), __easycom_3$3);
-    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$6);
+    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$7);
     const _component_fui_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("fui-checkbox-group"), __easycom_5);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -11147,7 +11140,7 @@
   const _style_0$m = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#f5f5f5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row" } }, "unread": { ".container .content .item ": { "width": "20rpx", "height": "20rpx", "marginRight": "10rpx" } }, "item-content": { ".container .content .item ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1", "paddingBottom": "20rpx", "marginBottom": "20rpx", "flex": 1 } }, "item-content-bottom": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "tag-time": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "fui-tag__wrap": { ".container .content .item .item-content .tag-time ": { "!width": "70rpx", "!height": "40rpx", "!paddingTop": "5rpx", "!paddingRight": "10rpx", "!paddingBottom": "5rpx", "!paddingLeft": "10rpx", "!marginBottom": 0 } }, "fui-tag__text": { ".container .content .item .item-content .tag-time .fui-tag__wrap ": { "!fontSize": "22rpx" } } };
   function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_tag = resolveEasycom(vue.resolveDynamicComponent("fui-tag"), __easycom_0$3);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         (vue.openBlock(true), vue.createElementBlock(
@@ -11367,7 +11360,7 @@
   });
   const _style_0$l = { "container": { "": { "width": "100%", "height": "100%", "backgroundColor": "#F5F5F5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "l-tabs": { ".container ": { "!backgroundColor": "rgba(0,0,0,0)" } }, "list-item": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "marginTop": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "title-state": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "date-price": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "device-type": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "title-style": { ".container .list-item .title-state ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .date-price ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .device-type ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" } }, "state-style": { ".container .list-item .title-state ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .date-price ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .device-type ": { "fontSize": "24rpx", "color": "#FF5722" } }, "price": { ".container .list-item .date-price ": { "fontSize": "38rpx" } }, "btn": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } } };
   function _sfc_render$l(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$6);
     const _component_l_tab_panel = resolveEasycom(vue.resolveDynamicComponent("l-tab-panel"), __easycom_1$2);
     const _component_l_tabs = resolveEasycom(vue.resolveDynamicComponent("l-tabs"), __easycom_2$3);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -16236,10 +16229,10 @@
   const _style_0$f = { "container": { "": { "height": "100%", "backgroundColor": "#F5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "item-label": { ".container .content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginTop": "30rpx" } }, "little-title": { ".container .content .item-label ": { "color": "#999999", "fontSize": "20rpx", "marginLeft": "10rpx" } }, "btn-box": { ".container ": { "marginTop": "50rpx" } }, "l-picker": { ".container ": { "width": "100%" } } };
   function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$5);
     const _component_l_textarea = resolveEasycom(vue.resolveDynamicComponent("l-textarea"), __easycom_2$2);
     const _component_l_upload = resolveEasycom(vue.resolveDynamicComponent("l-upload"), __easycom_3$2);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$6);
     const _component_l_picker = resolveEasycom(vue.resolveDynamicComponent("l-picker"), __easycom_3$1);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -16535,9 +16528,9 @@
   });
   const _style_0$e = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginBottom": "20rpx" } }, "items": { ".container .content ": { "display": "flex", "flexDirection": "column", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "fui-input__wrap": { ".container .content .items ": { "!paddingTop": "20rpx", "!paddingRight": 0, "!paddingBottom": "20rpx", "!paddingLeft": 0 } }, "offline": { ".container .content .items ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingBottom": "10rpx" } }, "tips": { ".container .content .items ": { "color": "#999999", "fontSize": "24rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5" } }, "l-picker": { ".container ": { "width": "100%" } } };
   function _sfc_render$e(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_1$6);
+    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_1$5);
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
+    const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$5);
     const _component_l_picker = resolveEasycom(vue.resolveDynamicComponent("l-picker"), __easycom_3$1);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -16756,11 +16749,11 @@
       });
       const classes = vue.computed(() => {
         var _a2, _b;
-        const cls2 = /* @__PURE__ */ new Map();
-        cls2.set("".concat(name, "--").concat(props.layout), true);
-        cls2.set("".concat(name, "--").concat((_a2 = parent === null || parent === void 0 ? null : parent.props.align) !== null && _a2 !== void 0 ? _a2 : "center"), true);
-        cls2.set("".concat(name, "--bordered"), (_b = parent === null || parent === void 0 ? null : parent.props.border) !== null && _b !== void 0 ? _b : false);
-        return cls2;
+        const cls = /* @__PURE__ */ new Map();
+        cls.set("".concat(name, "--").concat(props.layout), true);
+        cls.set("".concat(name, "--").concat((_a2 = parent === null || parent === void 0 ? null : parent.props.align) !== null && _a2 !== void 0 ? _a2 : "center"), true);
+        cls.set("".concat(name, "--bordered"), (_b = parent === null || parent === void 0 ? null : parent.props.border) !== null && _b !== void 0 ? _b : false);
+        return cls;
       });
       const size = vue.computed(() => {
         if (column.value > 4 || column.value == 0)
@@ -16768,14 +16761,14 @@
         return column.value < 4 ? "large" : "middle";
       });
       const imageClasses = vue.computed(() => {
-        const cls2 = /* @__PURE__ */ new Map();
-        cls2.set("".concat(name, "__image--").concat(size.value), true);
-        return cls2;
+        const cls = /* @__PURE__ */ new Map();
+        cls.set("".concat(name, "__image--").concat(size.value), true);
+        return cls;
       });
       const titleClasses = vue.computed(() => {
-        const cls2 = /* @__PURE__ */ new Map();
-        cls2.set("".concat(name, "__title--").concat(size.value), true);
-        return cls2;
+        const cls = /* @__PURE__ */ new Map();
+        cls.set("".concat(name, "__title--").concat(size.value), true);
+        return cls;
       });
       const innerImageStyle = vue.ref("");
       const styles = vue.computed(() => {
@@ -16981,11 +16974,11 @@
       __expose();
       const props = __props;
       const clsses = vue.computed(() => {
-        const cls2 = /* @__PURE__ */ new Map();
-        cls2.set("l-grid--wrap", props.wrap);
-        cls2.set("l-grid--inset", props.inset);
-        cls2.set("l-grid--bordered", props.border && props.gutter == 0);
-        return cls2;
+        const cls = /* @__PURE__ */ new Map();
+        cls.set("l-grid--wrap", props.wrap);
+        cls.set("l-grid--inset", props.inset);
+        cls.set("l-grid--bordered", props.border && props.gutter == 0);
+        return cls;
       });
       const resizeRef = vue.ref(null);
       const width = vue.ref(0);
@@ -18638,7 +18631,7 @@
   function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$8);
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$5);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_2$6);
     const _component_l_input = resolveEasycom(vue.resolveDynamicComponent("l-input"), __easycom_3);
     const _component_l_dialog = resolveEasycom(vue.resolveDynamicComponent("l-dialog"), __easycom_4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -18969,7 +18962,7 @@
   const _style_0$2 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "list-item": { ".container .content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "firmware-box": { ".container .content .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "firmware-version": { ".container .content .list-item .firmware-box ": { "marginLeft": "10rpx" } } };
   function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_0$6);
-    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_1$6);
+    const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_1$5);
     const _component_fui_badge = resolveEasycom(vue.resolveDynamicComponent("fui-badge"), __easycom_2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createVNode($setup["TopNavBar"], {
@@ -19058,29 +19051,29 @@
       var __expose = _a.expose;
       __expose();
       const val = vue.ref("1");
-      const select_img = vue.ref("@/static/u4062.png");
+      const select_img = vue.ref("../../../static/u4062.png");
       const radioItems = vue.ref([new RadioItem({
         name: "黑白夜视",
         desc: "采用红外补光，隐蔽性高，图像为黑白夜视",
-        img: "@/static/u4062.png",
+        img: "../../../static/u4062.png",
         value: "1",
         checked: true
       }), new RadioItem({
         name: "全彩夜视",
         desc: "夜晚开白光灯，可做照明使用，图像为彩色",
-        img: "@/static/u4063.png",
+        img: "../../../static/u4063.png",
         value: "2",
         checked: false
       }), new RadioItem({
         name: "智能夜视",
         desc: "默认为黑白夜视，检测到画面为动态是变为全彩夜视",
-        img: "@/static/u4064.png",
+        img: "../../../static/u4064.png",
         value: "3",
         checked: false
       }), new RadioItem({
         name: "星光夜视",
         desc: "当前环境光线充足，并且不想看到灯光亮起，则选择该项",
-        img: "@/static/u4062.png",
+        img: "../../../static/u4062.png",
         value: "4",
         checked: false
       })]);
@@ -19090,7 +19083,8 @@
         }));
       };
       const change = (value) => {
-        uni.__log__("log", "at pages/index/deviceSettingInfo/deviceNight.uvue:78", "change:" + value);
+        val.value = value.value;
+        select_img.value = value.img;
       };
       const __returned__ = { val, select_img, radioItems, goBack, change, get TopNavBar() {
         return TopNavBar;
@@ -19102,8 +19096,8 @@
   const _style_0$1 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "night-img": { ".container .content ": { "width": "100%", "height": "245rpx" } }, "fui-align__center": { ".container .content .select-mode ": { "width": "100%" } }, "fui-text-box": { ".container .content .select-mode .fui-align__center ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "marginBottom": "10rpx" } }, "fui-desc": { ".container .content .select-mode .fui-align__center ": { "color": "#999999", "fontSize": "24rpx" } } };
   function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_0$5);
-    const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_1$7);
-    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$6);
+    const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_1$6);
+    const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$7);
     const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createVNode($setup["TopNavBar"], {
@@ -19120,8 +19114,7 @@
         vue.createElementVNode("view", { class: "select-mode" }, [
           vue.createVNode(_component_fui_radio_group, {
             modelValue: $setup.val,
-            "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $setup.val = $event),
-            onChange: $setup.change
+            "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $setup.val = $event)
           }, {
             default: vue.withCtx(() => [
               (vue.openBlock(true), vue.createElementBlock(
@@ -19138,7 +19131,10 @@
                           null,
                           {
                             default: vue.withCtx(() => [
-                              vue.createElementVNode("view", { class: "fui-align__center" }, [
+                              vue.createElementVNode("view", {
+                                class: "fui-align__center",
+                                onClick: ($event) => $setup.change(item)
+                              }, [
                                 vue.createElementVNode("view", { class: "fui-text-box" }, [
                                   vue.createElementVNode(
                                     "text",
@@ -19161,7 +19157,7 @@
                                   1
                                   /* TEXT */
                                 )
-                              ])
+                              ], 8, ["onClick"])
                             ]),
                             _: 2
                             /* DYNAMIC */

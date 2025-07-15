@@ -11,12 +11,7 @@ import io.dcloud.uts.*
 import io.dcloud.uts.Map
 import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
-import uts.sdk.modules.limeClipboard.SetClipboardDataOption as SetClipboardDataOption_1
-import uts.sdk.modules.limeClipboard.setClipboardData
-import uts.sdk.modules.limeClipboard.getClipboardData
-import uts.sdk.modules.limeClipboard.SetClipboardDataOption
-import uts.sdk.modules.limeClipboard.GetClipboardDataOption
-import uts.sdk.modules.limeClipboard.GetClipboardDataSuccessCallbackOption
+import io.dcloud.uniapp.extapi.setClipboardData as uni_setClipboardData
 import io.dcloud.uniapp.extapi.showToast as uni_showToast
 open class GenPagesMineRechargeDataTrafficRechargeDataTraffic : BasePage {
     constructor(__ins: ComponentInternalInstance, __renderer: String?) : super(__ins, __renderer) {}
@@ -60,7 +55,7 @@ open class GenPagesMineRechargeDataTrafficRechargeDataTraffic : BasePage {
                 uni_showToast(ShowToastOptions(title = "去充值", icon = "none"))
             }
             val copyRight = fun(){
-                setClipboardData(SetClipboardDataOption_1(data = currentDeviceInfo.value.iccid, success = fun(_res) {
+                uni_setClipboardData(SetClipboardDataOptions(data = currentDeviceInfo.value.iccid, success = fun(_) {
                     uni_showToast(ShowToastOptions(title = "复制成功", icon = "none"))
                 }
                 ))
@@ -71,6 +66,7 @@ open class GenPagesMineRechargeDataTrafficRechargeDataTraffic : BasePage {
             )
             return fun(): Any? {
                 val _component_fui_icon = resolveEasyComponent("fui-icon", GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass)
+                val _component_l_icon = resolveEasyComponent("l-icon", GenUniModulesLimeIconComponentsLIconLIconClass)
                 val _component_l_progress = resolveEasyComponent("l-progress", GenUniModulesLimeProgressComponentsLProgressLProgressClass)
                 val _component_fui_button = resolveEasyComponent("fui-button", GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass)
                 val _component_fui_radio = resolveEasyComponent("fui-radio", GenUniModulesFirstuiUnixComponentsFuiRadioFuiRadioClass)
@@ -94,8 +90,8 @@ open class GenPagesMineRechargeDataTrafficRechargeDataTraffic : BasePage {
                         _cE("view", _uM("class" to "device-info-item"), _uA(
                             _cE("text", null, "ICCID"),
                             _cE("view", _uM("class" to "iccid-info"), _uA(
-                                _cE("text", null, _tD(currentDeviceInfo.value.iccid), 1),
-                                _cV(_component_fui_icon, _uM("name" to "info", "size" to 40, "onOnclick" to copyRight))
+                                _cE("text", _uM("style" to _nS(_uM("margin-right" to "10rpx"))), _tD(currentDeviceInfo.value.iccid), 5),
+                                _cV(_component_l_icon, _uM("name" to "file-copy", "color" to "#666", "size" to "16", "onClick" to copyRight))
                             ))
                         )),
                         _cE("view", _uM("class" to "device-info-item"), _uA(

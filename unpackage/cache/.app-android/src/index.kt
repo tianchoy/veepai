@@ -76,7 +76,7 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
     val hosts: String = "127.0.0.1,192.168.3.34"
     val port: String = "8090"
-    val id: String = "app-android_2z2FYM"
+    val id: String = "app-android_N6M8r5"
     if (hosts == "" || port == "" || id == "") {
         return UTSPromise.resolve(false)
     }
@@ -4184,7 +4184,7 @@ open class RadioItem1 (
     open var checked: Boolean? = null,
 ) : UTSReactiveObject(), IUTSSourceMap {
     override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("RadioItem", "pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue", 79, 7)
+        return UTSSourceMapPosition("RadioItem", "pages/mine/rechargeDataTraffic/rechargeDataTraffic.uvue", 78, 7)
     }
     override fun __v_create(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): UTSReactiveObject {
         return RadioItem1ReactiveObject(this, __v_isReadonly, __v_isShallow, __v_skip)

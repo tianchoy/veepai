@@ -21,13 +21,14 @@ open class GenPagesIndexDeviceSettingInfoDeviceNight : BasePage {
             val _ctx = __ins.proxy as GenPagesIndexDeviceSettingInfoDeviceNight
             val _cache = __ins.renderCache
             val kVal = ref("1")
-            val select_img = ref("@/static/u4062.png")
-            val radioItems = ref(_uA<RadioItem2>(RadioItem2(name = "黑白夜视", desc = "采用红外补光，隐蔽性高，图像为黑白夜视", img = "@/static/u4062.png", value = "1", checked = true), RadioItem2(name = "全彩夜视", desc = "夜晚开白光灯，可做照明使用，图像为彩色", img = "@/static/u4063.png", value = "2", checked = false), RadioItem2(name = "智能夜视", desc = "默认为黑白夜视，检测到画面为动态是变为全彩夜视", img = "@/static/u4064.png", value = "3", checked = false), RadioItem2(name = "星光夜视", desc = "当前环境光线充足，并且不想看到灯光亮起，则选择该项", img = "@/static/u4062.png", value = "4", checked = false)))
+            val select_img = ref("../../../static/u4062.png")
+            val radioItems = ref(_uA<RadioItem2>(RadioItem2(name = "黑白夜视", desc = "采用红外补光，隐蔽性高，图像为黑白夜视", img = "../../../static/u4062.png", value = "1", checked = true), RadioItem2(name = "全彩夜视", desc = "夜晚开白光灯，可做照明使用，图像为彩色", img = "../../../static/u4063.png", value = "2", checked = false), RadioItem2(name = "智能夜视", desc = "默认为黑白夜视，检测到画面为动态是变为全彩夜视", img = "../../../static/u4064.png", value = "3", checked = false), RadioItem2(name = "星光夜视", desc = "当前环境光线充足，并且不想看到灯光亮起，则选择该项", img = "../../../static/u4062.png", value = "4", checked = false)))
             val goBack = fun(){
                 uni_navigateBack(NavigateBackOptions(delta = 1))
             }
-            val change = fun(value: String){
-                console.log("change:" + value, " at pages/index/deviceSettingInfo/deviceNight.uvue:78")
+            val change = fun(value: RadioItem2){
+                kVal.value = value.value
+                select_img.value = value.img
             }
             return fun(): Any? {
                 val _component_fui_radio = resolveEasyComponent("fui-radio", GenUniModulesFirstuiUnixComponentsFuiRadioFuiRadioClass)
@@ -44,14 +45,17 @@ open class GenPagesIndexDeviceSettingInfoDeviceNight : BasePage {
                             _cV(_component_fui_radio_group, _uM("modelValue" to kVal.value, "onUpdate:modelValue" to fun(`$event`: String){
                                 kVal.value = `$event`
                             }
-                            , "onChange" to change), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                            ), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
                                 return _uA(
                                     _cE(Fragment, null, RenderHelpers.renderList(radioItems.value, fun(item, index, __index, _cached): Any {
                                         return _cV(_component_fui_label, _uM("key" to index), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
                                             return _uA(
                                                 _cV(_component_fui_list_cell, null, _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
                                                     return _uA(
-                                                        _cE("view", _uM("class" to "fui-align__center"), _uA(
+                                                        _cE("view", _uM("class" to "fui-align__center", "onClick" to fun(){
+                                                            change(item)
+                                                        }
+                                                        ), _uA(
                                                             _cE("view", _uM("class" to "fui-text-box"), _uA(
                                                                 _cE("text", null, _tD(item.name), 1),
                                                                 _cV(_component_fui_radio, _uM("checked" to item.checked, "value" to item.value, "color" to "#FFB703", "borderColor" to "#B2B2B2"), null, 8, _uA(
@@ -60,6 +64,8 @@ open class GenPagesIndexDeviceSettingInfoDeviceNight : BasePage {
                                                                 ))
                                                             )),
                                                             _cE("text", _uM("class" to "fui-desc"), _tD(item.desc), 1)
+                                                        ), 8, _uA(
+                                                            "onClick"
                                                         ))
                                                     )
                                                 }

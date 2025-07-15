@@ -4,10 +4,10 @@
 		<view class="content">
 			<image :src='select_img' class="night-img" mode="aspectFit" />
 			<view class="select-mode">
-				<fui-radio-group v-model="val" @change="change">
+				<fui-radio-group v-model="val">
 					<fui-label v-for="(item,index) in radioItems" :key="index">
 						<fui-list-cell>
-							<view class="fui-align__center">
+							<view class="fui-align__center" @click="change(item)">
 								<view class="fui-text-box">
 									<text>{{item.name}}</text>
 									<fui-radio :checked="item.checked" :value="item.value" color="#FFB703"
@@ -37,32 +37,32 @@
 	}
 
 	const val = ref('1')
-	const select_img = ref('@/static/u4062.png')
+	const select_img = ref('../../../static/u4062.png')
 	const radioItems = ref<RadioItem[]>([{
 			name: '黑白夜视',
 			desc: '采用红外补光，隐蔽性高，图像为黑白夜视',
-			img:'@/static/u4062.png',
+			img:'../../../static/u4062.png',
 			value: '1',
 			checked: true
 		},
 		{
 			name: '全彩夜视',
 			desc: '夜晚开白光灯，可做照明使用，图像为彩色',
-			img:'@/static/u4063.png',
+			img:'../../../static/u4063.png',
 			value: '2',
 			checked: false
 		},
 		{
 			name: '智能夜视',
 			desc: '默认为黑白夜视，检测到画面为动态是变为全彩夜视',
-			img:'@/static/u4064.png',
+			img:'../../../static/u4064.png',
 			value: '3',
 			checked: false
 		},
 		{
 			name: '星光夜视',
 			desc: '当前环境光线充足，并且不想看到灯光亮起，则选择该项',
-			img:'@/static/u4062.png',
+			img:'../../../static/u4062.png',
 			value: '4',
 			checked: false
 		}
@@ -74,8 +74,9 @@
 		})
 	}
 
-	const change = (value : string) => {
-		console.log('change:' + value)
+	const change = (value:RadioItem) => {
+		val.value = value.value
+		select_img.value = value.img
 	}
 		
 </script>

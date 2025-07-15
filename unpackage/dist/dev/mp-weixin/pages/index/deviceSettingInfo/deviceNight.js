@@ -46,7 +46,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "deviceNight",
   setup(__props) {
     const val = common_vendor.ref("1");
-    const select_img = common_vendor.ref("@/static/u4062.png");
+    const select_img = common_vendor.ref("../../../static/u4062.png");
     const radioItems = common_vendor.ref([new RadioItem({
       name: "黑白夜视",
       desc: "采用红外补光，隐蔽性高，图像为黑白夜视",
