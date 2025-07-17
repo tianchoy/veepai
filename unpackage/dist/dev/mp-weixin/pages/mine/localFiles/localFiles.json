@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "本地文件",
-  "usingComponents": {
-    "l-grid-item": "../../../uni_modules/lime-grid/components/l-grid-item/l-grid-item",
-    "l-grid": "../../../uni_modules/lime-grid/components/l-grid/l-grid"
-  }
-}

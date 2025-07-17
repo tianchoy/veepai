@@ -1,1 +1,0 @@
-<view aria-role="tabpanel" id="{{a}}" change:eS="{{uV.sS}}" eS="{{$eS[a]}}" change:eA="{{uV.sA}}" eA="{{$eA[a]}}" class="{{['l-tab__panel', virtualHostClass]}}" style="{{virtualHostStyle}}" hidden="{{virtualHostHidden || false}}"><slot/></view><wxs src="/common/uniView.wxs" module="uV"/>

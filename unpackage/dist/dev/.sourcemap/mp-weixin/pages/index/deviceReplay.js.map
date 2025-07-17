@@ -1,1 +1,0 @@
-{"version":3,"file":"deviceReplay.js","sources":["pages/index/deviceReplay.uvue?type=page"],"sourcesContent":["import MiniProgramPage from '/Users/xyhc/Documents/veepai_uniappx/pages/index/deviceReplay.uvue'\nwx.createPage(MiniProgramPage)"],"names":[],"mappings":";;;;;;;AACA,GAAG,WAAW,eAAe;"}

@@ -1,4 +1,0 @@
-const __sfc__ = defineComponent({})
-export default __sfc__
-function GenPagesIndexDeviceReplayRender(this: InstanceType<typeof __sfc__>): any | null { return null }
-const GenPagesIndexDeviceReplayStyles = []

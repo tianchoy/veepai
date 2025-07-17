@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "修改手机号",
-  "usingComponents": {
-    "fui-icon": "../../../../uni_modules/firstui-unix/components/fui-icon/fui-icon",
-    "fui-input": "../../../../uni_modules/firstui-unix/components/fui-input/fui-input",
-    "fui-button": "../../../../uni_modules/firstui-unix/components/fui-button/fui-button"
-  }
-}

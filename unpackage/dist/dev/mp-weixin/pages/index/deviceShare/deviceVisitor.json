@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "访客管理",
-  "usingComponents": {
-    "l-icon": "../../../uni_modules/lime-icon/components/l-icon/l-icon"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "系统消息",
-  "usingComponents": {
-    "fui-tag": "../../../uni_modules/firstui-unix/components/fui-tag/fui-tag",
-    "fui-button": "../../../uni_modules/firstui-unix/components/fui-button/fui-button"
-  }
-}

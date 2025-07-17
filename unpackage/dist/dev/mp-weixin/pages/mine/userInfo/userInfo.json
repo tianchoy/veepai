@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "个人信息",
-  "usingComponents": {
-    "fui-switch": "../../../uni_modules/firstui-unix/components/fui-switch/fui-switch",
-    "fui-button": "../../../uni_modules/firstui-unix/components/fui-button/fui-button"
-  }
-}
