@@ -31,6 +31,10 @@ if (!Math) {
   "./pages/index/TFCardSetting.js";
   "./pages/index/cloudStorageSetting.js";
   "./pages/index/deviceRechargeData.js";
+  "./pages/index/deviceShare/deviceShare.js";
+  "./pages/index/deviceShare/deviceVisitor.js";
+  "./pages/index/deviceShare/visitorDetail.js";
+  "./pages/index/addNewDevice/addNewDevice.js";
 }
 const _sfc_main = common_vendor.defineComponent(new UTSJSONObject({
   onLaunch: function() {

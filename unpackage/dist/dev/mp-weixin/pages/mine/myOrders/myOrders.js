@@ -133,6 +133,15 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         state: "已退款",
         iccid: "89862235957372384387465",
         isPay: "4"
+      }),
+      new ContentType({
+        id: "1115",
+        title: "五年畅想套餐",
+        date: "2025-07-09 15:00:00",
+        price: "¥300",
+        state: "已退款",
+        iccid: "89862235957372384387465",
+        isPay: "4"
       })
     ]);
     const getFilteredEvents = () => {

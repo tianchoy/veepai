@@ -1,4 +1,5 @@
 import { ref } from 'vue'
+	import TopNavBar from '@/components/TopNavBar.uvue'
 
 	
 const __sfc__ = defineComponent({
@@ -86,9 +87,21 @@ const _cache = __ins.renderCache;
 		})
 	}
 
+
+	const addNewDevice = () => {
+		uni.navigateTo({
+			url:'/pages/index/addNewDevice/addNewDevice'
+		})
+	}
+
 return (): any | null => {
 
   return _cE("view", _uM({ class: "container" }), [
+    _cV(unref(TopNavBar), _uM({
+      title: "首页",
+      rightText: "plussign",
+      onRightEvent: addNewDevice
+    })),
     _cE("view", _uM({ class: "content" }), [
       _cE("view", _uM({
         class: "video-container",

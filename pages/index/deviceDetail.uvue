@@ -20,6 +20,7 @@
                 <image class="big-item-icon" src="/static/device/voice_1.png" />
             </view>
         </view>
+
         <view class="control-more">
             <view class="small-item">
                 <image class="small-item-icon" src="/static/device/hd.png" />
@@ -57,7 +58,7 @@
                 <image class="small-item-icon" src="/static/device/replay.png" />
                 <text class="small-item-text">回放</text>
             </view>
-            <view class="small-item">
+            <view class="small-item" @click="share">
                 <image class="small-item-icon" src="/static/device/share.png" />
                 <text class="small-item-text">分享</text>
             </view>
@@ -86,6 +87,12 @@
     const replay = () => {
         uni.navigateTo({
             url: '/pages/index/deviceReplay',
+        })
+    }
+
+    const share = () => {
+        uni.navigateTo({
+            url: '/pages/index/deviceShare/deviceShare',
         })
     }
 

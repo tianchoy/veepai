@@ -22,6 +22,11 @@ const __sfc__ = defineComponent({
                 url: '/pages/index/deviceReplay',
             });
         };
+        const share = () => {
+            uni.navigateTo({
+                url: '/pages/index/deviceShare/deviceShare',
+            });
+        };
         return (): any | null => {
             return _cE("view", _uM({ class: "container" }), [
                 _cV(unref(TopNavBar), _uM({
@@ -139,7 +144,10 @@ const __sfc__ = defineComponent({
                         })),
                         _cE("text", _uM({ class: "small-item-text" }), "回放")
                     ]),
-                    _cE("view", _uM({ class: "small-item" }), [
+                    _cE("view", _uM({
+                        class: "small-item",
+                        onClick: share
+                    }), [
                         _cE("image", _uM({
                             class: "small-item-icon",
                             src: "/static/device/share.png"

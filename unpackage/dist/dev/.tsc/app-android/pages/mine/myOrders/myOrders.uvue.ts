@@ -5,7 +5,7 @@ import { ref } from 'vue'
 	type tabItem = { __$originalPosition?: UTSSourceMapPosition<"tabItem", "pages/mine/myOrders/myOrders.uvue", 33, 7>;
 		id : string;
 		title : string;
-		content : Array<Object>
+		content : Array<ContentType>
 	}
 
 	type ContentType = { __$originalPosition?: UTSSourceMapPosition<"ContentType", "pages/mine/myOrders/myOrders.uvue", 39, 7>;
@@ -86,6 +86,15 @@ const _cache = __ins.renderCache;
 		},
 		{
 			id:'1114',
+			title:'五年畅想套餐',
+			date:'2025-07-09 15:00:00',
+			price:'¥300',
+			state:'已退款',
+			iccid:'89862235957372384387465',
+			isPay:'4',
+		},
+		{
+			id:'1115',
 			title:'五年畅想套餐',
 			date:'2025-07-09 15:00:00',
 			price:'¥300',

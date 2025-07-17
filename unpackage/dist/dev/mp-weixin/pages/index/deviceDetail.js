@@ -24,6 +24,11 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         url: "/pages/index/deviceReplay"
       });
     };
+    const share = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/index/deviceShare/deviceShare"
+      });
+    };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
         a: common_vendor.o(deviceSetting),
@@ -50,7 +55,8 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         r: common_assets._imports_12,
         s: common_vendor.o(replay),
         t: common_assets._imports_13,
-        v: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        v: common_vendor.o(share),
+        w: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

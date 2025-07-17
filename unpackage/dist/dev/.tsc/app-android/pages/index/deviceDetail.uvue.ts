@@ -29,6 +29,12 @@ const _cache = __ins.renderCache;
         })
     }
 
+    const share = () => {
+        uni.navigateTo({
+            url: '/pages/index/deviceShare/deviceShare',
+        })
+    }
+
 
 return (): any | null => {
 
@@ -148,7 +154,10 @@ return (): any | null => {
         })),
         _cE("text", _uM({ class: "small-item-text" }), "回放")
       ]),
-      _cE("view", _uM({ class: "small-item" }), [
+      _cE("view", _uM({
+        class: "small-item",
+        onClick: share
+      }), [
         _cE("image", _uM({
           class: "small-item-icon",
           src: "/static/device/share.png"

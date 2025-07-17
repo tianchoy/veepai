@@ -1,5 +1,9 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+if (!Math) {
+  common_vendor.unref(TopNavBar)();
+}
+const TopNavBar = () => "../../components/TopNavBar.js";
 const forward = "/static/video/forward.png";
 const errIcon = "/static/video/error.png";
 const transfer = "/static/video/transfer.png";
@@ -52,26 +56,36 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         icon: "none"
       });
     };
+    const addNewDevice = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/index/addNewDevice/addNewDevice"
+      });
+    };
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: common_vendor.sei("myVideo", "video", videoRef, {
+        a: common_vendor.o(addNewDevice),
+        b: common_vendor.p({
+          title: "首页",
+          rightText: "plussign"
+        }),
+        c: common_vendor.sei("myVideo", "video", videoRef, {
           "k": "videoRef"
         }),
-        b: deviceTitle.value,
-        c: videoSrc,
-        d: common_vendor.o(clickVdedio),
-        e: common_vendor.t(deviceTitle.value),
-        f: forward,
-        g: common_vendor.o(toDeviceDetail),
-        h: errIcon,
-        i: common_vendor.o(errClick),
-        j: transfer,
-        k: common_vendor.o(transferClick),
-        l: replayIcon,
-        m: common_vendor.o(replay),
-        n: common_vendor.o(pauseClick),
-        o: pauseIcon,
-        p: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        d: deviceTitle.value,
+        e: videoSrc,
+        f: common_vendor.o(clickVdedio),
+        g: common_vendor.t(deviceTitle.value),
+        h: forward,
+        i: common_vendor.o(toDeviceDetail),
+        j: errIcon,
+        k: common_vendor.o(errClick),
+        l: transfer,
+        m: common_vendor.o(transferClick),
+        n: replayIcon,
+        o: common_vendor.o(replay),
+        p: common_vendor.o(pauseClick),
+        q: pauseIcon,
+        r: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

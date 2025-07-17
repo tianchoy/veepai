@@ -10,6 +10,7 @@
 		{
 			"path": "pages/index/index",
 			"style": {
+				"navigationStyle": "custom",
 				"navigationBarTitleText": "首页",
 				"enableVideo": true
 			}
@@ -205,6 +206,35 @@
 		},
 		{
 			"path" : "pages/index/deviceRechargeData",
+			"style" : 
+			{
+				"navigationStyle": "custom",
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/index/deviceShare/deviceShare",
+			"style" : 
+			{
+				"navigationBarTitleText" : "分享管理"
+			}
+		},
+		{
+			"path" : "pages/index/deviceShare/deviceVisitor",
+			"style" : 
+			{
+				"navigationBarTitleText" : "访客管理"
+			}
+		},
+		{
+			"path" : "pages/index/deviceShare/visitorDetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "访客信息"
+			}
+		},
+		{
+			"path" : "pages/index/addNewDevice/addNewDevice",
 			"style" : 
 			{
 				"navigationStyle": "custom",

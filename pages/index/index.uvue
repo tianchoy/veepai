@@ -1,5 +1,6 @@
 <template>
 	<view class="container">
+		<TopNavBar title="首页" rightText="plussign" @rightEvent="addNewDevice" />
 		<view class="content">
 			<view class="video-container" style="border-radius: 15rpx; overflow: hidden;">
 				<video class="video" id="myVideo" :title="deviceTitle" :src="videoSrc" ref="videoRef" :controls="true" :show-play-btn="true"
@@ -33,6 +34,7 @@
 
 <script setup lang="uts">
 	import { ref } from 'vue'
+	import TopNavBar from '@/components/TopNavBar.uvue'
 
 	const deviceTitle = ref('设备名称')
 	const forward = '/static/video/forward.png'
@@ -109,6 +111,13 @@
 		uni.showToast({
 			title:'sss',
 			icon: 'none'
+		})
+	}
+
+
+	const addNewDevice = () => {
+		uni.navigateTo({
+			url:'/pages/index/addNewDevice/addNewDevice'
 		})
 	}
 </script>

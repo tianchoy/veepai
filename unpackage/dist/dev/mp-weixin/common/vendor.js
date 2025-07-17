@@ -5933,6 +5933,10 @@ function findScopedSlotInvoker(vueId, instance) {
     parent = parent.parent;
   }
 }
+function setRef(ref2, id, opts = {}) {
+  const { $templateRefs } = getCurrentInstance();
+  $templateRefs.push({ i: id, r: ref2, k: opts.k, f: opts.f });
+}
 function setUniElementId(id, options, ref2, refOpts) {
   const ins = getCurrentInstance();
   if (ins) {
@@ -6034,6 +6038,7 @@ const e$1 = (target, ...sources) => extend(target, ...sources);
 const n$1 = (value) => normalizeClass(value);
 const t$1 = (val) => toDisplayString(val);
 const p$1 = (props) => renderProps(props);
+const sr = (ref2, id, opts) => setRef(ref2, id, opts);
 const sei = setUniElementId;
 const gei = genUniElementId;
 function createApp$1(rootComponent, rootProps = null) {
@@ -8019,9 +8024,9 @@ function isConsoleWritable() {
   return isWritable;
 }
 function initRuntimeSocketService() {
-  const hosts = "127.0.0.1,192.168.3.34,169.254.87.124";
+  const hosts = "127.0.0.1,192.168.3.34";
   const port = "8090";
-  const id = "mp-weixin_mS18vv";
+  const id = "mp-weixin_glNntd";
   const lazy = typeof swan !== "undefined";
   let restoreError = lazy ? () => {
   } : initOnError();
@@ -9739,6 +9744,7 @@ const pages = [
   new UTSJSONObject({
     path: "pages/index/index",
     style: new UTSJSONObject({
+      navigationStyle: "custom",
       navigationBarTitleText: "首页",
       enableVideo: true
     })
@@ -9912,6 +9918,31 @@ const pages = [
   }),
   new UTSJSONObject({
     path: "pages/index/deviceRechargeData",
+    style: new UTSJSONObject({
+      navigationStyle: "custom",
+      navigationBarTitleText: ""
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/deviceShare/deviceShare",
+    style: new UTSJSONObject({
+      navigationBarTitleText: "分享管理"
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/deviceShare/deviceVisitor",
+    style: new UTSJSONObject({
+      navigationBarTitleText: "访客管理"
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/deviceShare/visitorDetail",
+    style: new UTSJSONObject({
+      navigationBarTitleText: "访客信息"
+    })
+  }),
+  new UTSJSONObject({
+    path: "pages/index/addNewDevice/addNewDevice",
     style: new UTSJSONObject({
       navigationStyle: "custom",
       navigationBarTitleText: ""
@@ -13237,6 +13268,7 @@ exports.ref = ref;
 exports.resolveComponent = resolveComponent;
 exports.s = s$1;
 exports.sei = sei;
+exports.sr = sr;
 exports.t = t$1;
 exports.toRaw = toRaw;
 exports.unref = unref;

@@ -1,0 +1,11 @@
+framework module unimoduleUniWifi {
+  umbrella header "unimoduleUniWifi.h"
+  export *
+
+  module * { export * }
+}
+
+module unimoduleUniWifi.Swift {
+  header "unimoduleUniWifi-Swift.h"
+  requires objc
+}

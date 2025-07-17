@@ -18,6 +18,10 @@ const __sfc__ = defineComponent({
 		rightText:{
 			type:String,
 			default:''
+		},
+		isText:{
+			type:Boolean,
+			default:false
 		}
 	},
   emits: ['back', 'message', 'rightEvent'],
@@ -64,10 +68,13 @@ const _component_fui_icon = resolveEasyComponent("fui-icon",_easycom_fui_icon)
       class: "nav-actions",
       onClick: rightIcon
     }), [
-      _cV(_component_fui_icon, _uM({
-        name: _ctx.rightText,
-        size: "45"
-      }), null, 8 /* PROPS */, ["name"])
+      isTrue(_ctx.isText)
+        ? _cE("text", _uM({ key: 0 }), _tD(_ctx.rightText), 1 /* TEXT */)
+        : _cV(_component_fui_icon, _uM({
+            key: 1,
+            name: _ctx.rightText,
+            size: "45"
+          }), null, 8 /* PROPS */, ["name"])
     ])
   ])
 }

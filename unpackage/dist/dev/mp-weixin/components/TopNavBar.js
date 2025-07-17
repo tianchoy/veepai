@@ -26,6 +26,10 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     rightText: {
       type: String,
       default: ""
+    },
+    isText: {
+      type: Boolean,
+      default: false
     }
   },
   emits: ["back", "message", "rightEvent"],
@@ -50,12 +54,17 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       }) : new UTSJSONObject({}), new UTSJSONObject({
         c: common_vendor.o(goBack),
         d: common_vendor.t(props.title),
-        e: common_vendor.p(new UTSJSONObject({
+        e: __props.isText
+      }), __props.isText ? new UTSJSONObject({
+        f: common_vendor.t(__props.rightText)
+      }) : new UTSJSONObject({
+        g: common_vendor.p(new UTSJSONObject({
           name: __props.rightText,
           size: "45"
-        })),
-        f: common_vendor.o(rightIcon),
-        g: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        }))
+      }), new UTSJSONObject({
+        h: common_vendor.o(rightIcon),
+        i: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       }));
       return __returned__;
     };

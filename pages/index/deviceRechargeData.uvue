@@ -9,13 +9,61 @@
 					<l-icon style="margin-left: 10rpx;" name="file-copy" size="20" @click="copyiccid"></l-icon>
 				</view>
 			</view>
-			<view class="list">
+			<view class="list underline">
 				<text>卡号</text>
 				<view class="right-item">
 					<text>8986112223504991234</text>
 					<text style="color: #FF4D4F;">[停用]</text>
 				</view>
 			</view>
+			<view class="list">
+				<text>当前套餐</text>
+				<view class="right-item">
+					<text>店长推荐</text>
+					<text>[终身流量]</text>
+				</view>
+			</view>
+			<view class="list underline">
+				<text>生效日期</text>
+				<text>套餐将于 2025-5-13 到期</text>
+			</view>
+			<view class="list">
+				<text>流量 - 异常</text>
+				<fui-icon name="right" size="50"></fui-icon>
+			</view>
+			<view  class="progress">
+				<l-progress :percent="percent" info-align="end" :show-info="true"></l-progress>
+			</view>
+			<view class="list">
+				<text>已用 60G (60%)</text>
+				<text>可用 20G/共100G</text>
+			</view>
+		</view>
+		<view class="package-box">
+			<l-tabs :value="tabVal" @click="changeTab" :spaceEvenly="false" bgColor="transparent" color="#000" activeColor="#FF5722">
+				<l-tab-panel v-for="(item,index) in tabsVal" :key="index" :value="index" :label="item.title">
+					<view class="product-container">
+						<view class="list-item" :class="{'selected-item': selectedPackage?.id === it.id}" v-for="(it,index) in getFilteredEvents()" :key="index" @click="selectPackge(it)">
+							<text class="product-name">{{it.title}}</text>
+							<text class="product-date">{{it.date}}</text>
+							<text class="product-price">¥{{it.price}}</text>
+						</view>
+					</view>
+					<view v-if="getFilteredEvents().length == 0">
+						<fui-empty color="#999" :size="25" title="暂无套餐"></fui-empty>
+					</view>
+				</l-tab-panel>
+			</l-tabs>
+		</view>
+		<view class="btn-box" v-if="selectedPackage">
+			<view class="price">
+				<text class="price-title">金额</text>
+				<text class="price-text">¥{{selectedPackage?.price}}</text>
+			</view>
+			<view class="btn">
+				<l-button type="primary">流量充值</l-button>
+			</view>
+			
 		</view>
 	</view>
 </template>
@@ -23,6 +71,74 @@
 <script setup lang="uts">
 	import { ref } from 'vue'
 	import TopNavBar from '@/components/TopNavBar.uvue'
+	const tabVal = ref<number>(0)
+	const percent = ref<number | string>(60)
+	const selectedPackage = ref<ContentType | null>(null)
+	
+	type tabItem = {
+	id : string;
+	title : string;
+	content : Array<ContentType>
+	}
+
+	type ContentType = {
+		id : string;
+		title : string;
+		date : string;
+		price : string;
+		category: string;
+	}
+
+	const tabsVal = ref<tabItem[]>([
+		{
+			id:'0',
+			title:'订购套餐',
+			content:[] as ContentType[]
+		},
+		{
+			id:'1',
+			title:'订购加油包',
+			content:[] as ContentType[]
+		}
+	])
+
+	const content  = ref<ContentType[]>([
+		{
+			id:'1111',
+			title:'五年畅想套餐',
+			date:'',
+			price:'100',
+			category:'0',
+		},
+		{
+			id:'1113',
+			title:'五年畅想套餐',
+			date:'',
+			price:'102',
+			category:'0',
+		},
+		{
+			id:'1112',
+			title:'五年畅想套餐111',
+			date:'2025-07-09',
+			price:'230',
+			category:'1',
+		},
+		{
+			id:'1114',
+			title:'五年畅想套餐111',
+			date:'2025-07-09',
+			price:'205',
+			category:'1',
+		},
+		{
+			id:'1115',
+			title:'五年畅想套餐111',
+			date:'2025-07-09',
+			price:'150',
+			category:'0',
+		}
+	])
 
 	const goBack = () => {
 		uni.navigateBack({
@@ -36,16 +152,34 @@
 		})
 	}
 
-
 	const copyiccid = () => {
 		uni.setClipboardData({
-			data: '8986000000000000',
+			data: '8986112223504991234',
+			success: () => {
+				uni.showToast({
+					title: '复制成功',
+				})
+			}
 		})
+	}
+
+	const getFilteredEvents = (): ContentType[] => {
+		const selectedType = tabsVal.value[tabVal.value].id;
+		return content.value.filter(event => event.category == selectedType);
+	}
+
+	const changeTab = (val: number) => {
+		tabVal.value = val
+	}
+
+	const selectPackge = (item:ContentType) => {
+		selectedPackage.value = item
 	}
 </script>
 
 <style lang="scss" scoped>
 	.container{
+		position: relative;
 		height: 100%;
 		background-color: #f5f5f5;
 		padding: 20rpx;
@@ -58,8 +192,95 @@
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
+				padding:20rpx;
+				
 				.right-item{
 					@extend .list;
+					padding:0;
+					border-bottom: none;
+				}
+			}
+			.progress{
+				padding: 0 20rpx;
+			}
+			.underline{
+				border-bottom: 1rpx solid #f1f1f1;
+			}
+		}
+		.package-box{
+			margin-top: 50rpx;
+			.product-container {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-between;
+				padding: 20rpx;
+				.list-item {
+					width: 48%;
+					margin-bottom: 30rpx;
+					padding:  40rpx;
+					box-sizing: border-box;
+					background: #fff;
+					border-radius: 10rpx;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					border: 2rpx solid #fff;
+					&.selected-item {
+						border: 2rpx solid #FF5722;
+					}
+					.product-name{
+						font-size: 30rpx;
+					}
+					.product-date{
+						font-size: 20rpx;
+						color: #999;
+						height: 50rpx;
+						line-height: 50rpx;
+					}
+					.product-price{
+						font-size: 30rpx;
+						color: #FF5722;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+		.l-tabs{
+			background-color: transparent !important;
+		}
+		.btn-box{
+			position: fixed;
+			width: 100%;
+			left: 0;
+			bottom: 0;
+			height: 100rpx;
+			display: flex;
+			flex-direction: row;
+			.price{
+				flex: 1;
+				height: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				background-color: #fff;
+				gap: 10rpx;
+				.price-title{
+					font-size: 20rpx;
+				}
+				.price-text{
+					font-size: 40rpx;
+					color: #FF5722;
+					font-weight: bold;
+					margin-left: 15rpx;
+				}
+			}
+			.btn{
+				flex: 1;
+				height: 100%;
+				.l-button{
+					height: 100%;
 				}
 			}
 		}

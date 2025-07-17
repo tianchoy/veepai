@@ -51,8 +51,12 @@ import GenPagesIndexIntelligentWatchClass from './pages/index/intelligentWatch.u
 import GenPagesIndexTFCardSettingClass from './pages/index/TFCardSetting.uvue'
 import GenPagesIndexCloudStorageSettingClass from './pages/index/cloudStorageSetting.uvue'
 import GenPagesIndexDeviceRechargeDataClass from './pages/index/deviceRechargeData.uvue'
+import GenPagesIndexDeviceShareDeviceShareClass from './pages/index/deviceShare/deviceShare.uvue'
+import GenPagesIndexDeviceShareDeviceVisitorClass from './pages/index/deviceShare/deviceVisitor.uvue'
+import GenPagesIndexDeviceShareVisitorDetailClass from './pages/index/deviceShare/visitorDetail.uvue'
+import GenPagesIndexAddNewDeviceAddNewDeviceClass from './pages/index/addNewDevice/addNewDevice.uvue'
 function definePageRoutes() {
-__uniRoutes.push({ path: "pages/index/index", component: GenPagesIndexIndexClass, meta: { isQuit: true } as UniPageMeta, style: _uM([["navigationBarTitleText","首页"],["enableVideo",true]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/index", component: GenPagesIndexIndexClass, meta: { isQuit: true } as UniPageMeta, style: _uM([["navigationStyle","custom"],["navigationBarTitleText","首页"],["enableVideo",true]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/message/message", component: GenPagesMessageMessageClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","消息"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/mine/mine", component: GenPagesMineMineClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","我的"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/mine/userInfo/userInfo", component: GenPagesMineUserInfoUserInfoClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","个人信息"]]) } as UniPageRoute)
@@ -81,9 +85,13 @@ __uniRoutes.push({ path: "pages/index/intelligentWatch", component: GenPagesInde
 __uniRoutes.push({ path: "pages/index/TFCardSetting", component: GenPagesIndexTFCardSettingClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","TF卡设置"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/index/cloudStorageSetting", component: GenPagesIndexCloudStorageSettingClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","云存储设置"]]) } as UniPageRoute)
 __uniRoutes.push({ path: "pages/index/deviceRechargeData", component: GenPagesIndexDeviceRechargeDataClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationStyle","custom"],["navigationBarTitleText",""]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/deviceShare/deviceShare", component: GenPagesIndexDeviceShareDeviceShareClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","分享管理"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/deviceShare/deviceVisitor", component: GenPagesIndexDeviceShareDeviceVisitorClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","访客管理"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/deviceShare/visitorDetail", component: GenPagesIndexDeviceShareVisitorDetailClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationBarTitleText","访客信息"]]) } as UniPageRoute)
+__uniRoutes.push({ path: "pages/index/addNewDevice/addNewDevice", component: GenPagesIndexAddNewDeviceAddNewDeviceClass, meta: { isQuit: false } as UniPageMeta, style: _uM([["navigationStyle","custom"],["navigationBarTitleText",""]]) } as UniPageRoute)
 }
 const __uniTabBar: Map<string, any | null> | null = _uM([["list",[_uM([["pagePath","pages/index/index"],["iconPath","./static/tabbar/home.png"],["selectedIconPath","./static/tabbar/home1.png"],["text","首页"]]),_uM([["pagePath","pages/message/message"],["iconPath","./static/tabbar/message.png"],["selectedIconPath","./static/tabbar/message1.png"],["text","消息"]]),_uM([["pagePath","pages/mine/mine"],["iconPath","./static/tabbar/userCenter.png"],["selectedIconPath","./static/tabbar/userCenter1.png"],["text","我的"]])]]])
-const __uniLaunchPage: Map<string, any | null> = _uM([["url","pages/index/index"],["style",_uM([["navigationBarTitleText","首页"],["enableVideo",true]])]])
+const __uniLaunchPage: Map<string, any | null> = _uM([["url","pages/index/index"],["style",_uM([["navigationStyle","custom"],["navigationBarTitleText","首页"],["enableVideo",true]])]])
 function defineAppConfig(){
   __uniConfig.entryPagePath = '/pages/index/index'
   __uniConfig.globalStyle = _uM([["navigationBarTextStyle","black"],["navigationBarTitleText","uniappX"],["navigationBarBackgroundColor","#F8F8F8"],["backgroundColor","#F8F8F8"]])

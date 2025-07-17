@@ -1,0 +1,180 @@
+<template>
+	<view class="container">
+		<view class="content">
+			<text class="share-title">设备的名称</text>
+			<view class="list" @click="goVisitor">
+				<view class="shared-title">
+					<text>已分享</text>
+					<text class="shared-count">{{sharedCount}}</text>
+				</view>
+				<l-icon name="chevron-right" size="30"></l-icon>
+			</view>
+		</view>
+		<view class="content">
+			<text class="title">分享方式</text>
+			<view class="share-type">
+				<fui-radio-group name="radio" @change="change" :modelValue="shareType">
+					<view class="fui-list__item">
+						<fui-label>
+							<view class="fui-align__center">
+								<fui-radio value="1" :scaleRatio="0.9"></fui-radio>
+								<text class="fui-text">夜精灵用户</text>
+							</view>
+						</fui-label>
+						<fui-label margin="0 0 0 40rpx">
+							<view class="fui-align__center">
+								<fui-radio value="2" :scaleRatio="0.9"></fui-radio>
+								<text class="fui-text">二维码</text>
+							</view>
+						</fui-label>
+						<fui-label margin="0 0 0 40rpx">
+							<view class="fui-align__center">
+								<fui-radio value="3" :scaleRatio="0.9"></fui-radio>
+								<text class="fui-text">微信</text>
+							</view>
+						</fui-label>
+					</view>
+				</fui-radio-group>
+			</view>
+			<view class="share-content" v-if="shareType == '1'">
+				<text>用户名</text>
+				<l-input placeholder="请输入文字"></l-input>
+			</view>
+			<view class="visitor-box">
+				<view class="vistor-title">
+					<text class="title">设置访客权限</text>
+					<text @click="checkAll">全选</text>
+				</view>
+				<l-checkbox-group ref="checkboxGroupRef" iconSize="35rpx" fontSize="30rpx" @change="onChange" direction="horizontal">
+					<l-checkbox value="1" label="视频预览" />
+					<l-checkbox value="2" label="视频回放" />
+					<l-checkbox value="3" label="云台控制" />
+					<l-checkbox value="4" label="对讲" />
+					<l-checkbox value="5" label="声音" />
+					<l-checkbox value="6" label="推送" />
+					<l-checkbox value="7" label="设备管理" />
+				</l-checkbox-group>
+			</view>
+		</view>
+		<view class="btn">
+			<l-button type="primary" block>分享</l-button>
+		</view>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import { ref } from 'vue'
+	const checkboxGroupRef = ref<LCheckboxGroupComponentPublicInstance|null>(null);
+
+	const sharedCount = ref<string>('2')
+	const shareType = ref<string>('1')
+
+	const goVisitor = () => {
+		uni.navigateTo({
+			url: '/pages/index/deviceShare/deviceVisitor',
+		})
+	}
+
+	const change = (value : string) => {
+		shareType.value = value
+	}
+
+	const onChange = (e: string[]) => {
+		console.log('onChange', e)
+	}
+	const checkAll = () => {
+		if(checkboxGroupRef.value == null) return
+		checkboxGroupRef.value!.toggleAll(true)
+	}
+</script>
+
+<style lang="scss" scoped>
+	.container{
+		height: 100%;
+		background-color: #f5f5f5;
+		padding: 20rpx;
+		.content{
+			background-color: #fff;
+			padding: 20rpx;
+			border-radius: 20rpx;
+			margin-bottom: 50rpx;
+			.share-title{
+				padding:0 20rpx;
+			}
+			.list{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				padding:20rpx 20rpx 0;
+				
+				.shared-title{
+					@extend .list;
+					padding:0;
+					.shared-count{
+						margin-left: 20rpx;
+						color: #9d2ddf;
+						font-weight: bold;
+					}
+				}
+			}
+			.title{
+				padding:0 20rpx;
+				font-weight: bold;
+			}
+			.share-type{
+				padding:30rpx;
+				.fui-list__item{
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-start;
+					align-items: center;
+					.fui-align__center{
+						@extend .fui-list__item;
+						.fui-text{
+							margin-left: 10rpx;
+						}
+					}
+				}
+			}
+			.share-content{
+				display: flex;
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: center;
+				padding: 10rpx 30rpx;
+				width: 100%;
+				.l-input {
+					flex: 1;
+					border: 1rpx solid #ccc;
+					padding: 10rpx 20rpx;
+					border-radius: 10rpx;
+					margin-left: 20rpx;
+				}
+			}
+			.visitor-box{
+				padding: 30rpx 0;
+				.vistor-title{
+					padding: 20rpx 20rpx 30rpx 0;
+					display: flex;
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+				}
+				.l-checkbox-group {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					padding: 0 20rpx;
+					.l-checkbox {
+						margin:0 30rpx 30rpx 0;
+					}
+				}
+			}
+			
+		}
+		.btn{
+			margin-top: 100rpx;
+		}
+	}	
+</style>

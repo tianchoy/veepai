@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "分享管理",
+  "usingComponents": {
+    "l-icon": "../../../uni_modules/lime-icon/components/l-icon/l-icon",
+    "fui-radio": "../../../uni_modules/firstui-unix/components/fui-radio/fui-radio",
+    "fui-label": "../../../uni_modules/firstui-unix/components/fui-label/fui-label",
+    "fui-radio-group": "../../../uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group",
+    "l-input": "../../../uni_modules/lime-input/components/l-input/l-input",
+    "l-checkbox": "../../../uni_modules/lime-checkbox/components/l-checkbox/l-checkbox",
+    "l-checkbox-group": "../../../uni_modules/lime-checkbox/components/l-checkbox-group/l-checkbox-group",
+    "l-button": "../../../uni_modules/lime-button/components/l-button/l-button"
+  }
+}

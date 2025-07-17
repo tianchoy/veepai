@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "访客信息",
+  "usingComponents": {
+    "l-icon": "../../../uni_modules/lime-icon/components/l-icon/l-icon",
+    "l-checkbox": "../../../uni_modules/lime-checkbox/components/l-checkbox/l-checkbox",
+    "l-checkbox-group": "../../../uni_modules/lime-checkbox/components/l-checkbox-group/l-checkbox-group",
+    "fui-button": "../../../uni_modules/firstui-unix/components/fui-button/fui-button"
+  }
+}

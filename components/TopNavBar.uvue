@@ -9,7 +9,10 @@
 			</text>
 		</view>
 		<view class="nav-actions"  @click="rightIcon">
-			<fui-icon :name="rightText" size="45" />
+			<text v-if="isText">
+				{{ rightText }}
+			</text>
+			<fui-icon v-else :name="rightText" size="45" />
 		</view>
 	</view>
 </template>
@@ -32,6 +35,10 @@
 		rightText:{
 			type:String,
 			default:''
+		},
+		isText:{
+			type:Boolean,
+			default:false
 		}
 	})
 

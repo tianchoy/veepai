@@ -1,0 +1,96 @@
+<template>
+	<view class="container">
+		<text>访客信息</text>
+		<view class="content">
+			<view class="list">
+				<text>访客姓名</text>
+				<text>张三</text>
+			</view>
+			<view class="list nounderline">
+				<text>分享时间</text>
+				<text>2023-12-12 12:12:12</text>
+			</view>
+		</view>
+		<view class="content-title">
+			<text>访客权限</text>
+			<l-icon name="task-checked"  @click="checkAll" size="20"></l-icon>
+		</view>
+		<view class="content">
+			<l-checkbox-group ref="checkboxGroupRef" v-model="checked" @change="onChange" fontSize="28rpx" iconSize="20" direction="vertical">
+				<l-checkbox value="1" label="视频预览" />
+				<l-checkbox value="2" label="视频回放" />
+				<l-checkbox value="3" label="云台控制" />
+				<l-checkbox value="4" label="对讲" />
+				<l-checkbox value="5" label="声音" />
+				<l-checkbox value="6" label="推送" />
+				<l-checkbox value="7" label="设备管理" />
+			</l-checkbox-group>
+		</view>
+		<view class="btn-box">
+			<fui-button type="default" borderColor="#6831ff" color="#6831ff" width="40%" text="删除访客" />
+			<fui-button type="primary" width="40%" text="保存" />
+		</view>
+	</view>
+</template>
+
+<script setup lang="uts">
+	import { ref } from 'vue'
+	const checkboxGroupRef = ref<LCheckboxGroupComponentPublicInstance|null>(null);
+	const checked = ref<string[]>(['1','3','7'])
+
+
+	const onChange = (e: string[]) => {
+		console.log('onChange', e)
+		checked.value = e
+	}
+	const checkAll = () => {
+		if(checkboxGroupRef.value == null) return
+		checkboxGroupRef.value!.toggleAll(true)
+	}
+</script>
+
+<style lang="scss" scoped>
+	.container{
+		height: 100%;
+		background-color: #f5f5f5;
+		padding: 20rpx;
+		.content{
+			background-color: #fff;
+			padding: 20rpx 30rpx;
+			border-radius: 20rpx;
+			margin: 20rpx 0 50rpx 0;
+			.list{
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				padding: 20rpx 0;
+				border-bottom: 1rpx solid #f5f5f5;
+			}
+			.nounderline{
+				border-bottom: 0;
+			}
+			.l-checkbox {
+				width: 100%;
+				display: flex;
+				flex-direction: row-reverse;
+				justify-content: space-between;
+				padding: 30rpx 0;
+				border-bottom: 1rpx solid #f5f5f5;
+			}
+		}
+		.content-title{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			padding-right: 30rpx;
+		}
+		.btn-box{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}	
+</style>

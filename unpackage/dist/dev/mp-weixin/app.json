@@ -28,7 +28,11 @@
     "pages/index/intelligentWatch",
     "pages/index/TFCardSetting",
     "pages/index/cloudStorageSetting",
-    "pages/index/deviceRechargeData"
+    "pages/index/deviceRechargeData",
+    "pages/index/deviceShare/deviceShare",
+    "pages/index/deviceShare/deviceVisitor",
+    "pages/index/deviceShare/visitorDetail",
+    "pages/index/addNewDevice/addNewDevice"
   ],
   "window": {
     "navigationBarTextStyle": "black",
