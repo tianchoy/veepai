@@ -21,12 +21,22 @@ open class GenPagesIndexDeviceReplay : BasePage {
             val __ins = getCurrentInstance()!!
             val _ctx = __ins.proxy as GenPagesIndexDeviceReplay
             val _cache = __ins.renderCache
+            open class EventType {
+                open var date: String
+                open var time: String
+                open var type: String
+                constructor(date: String, time: String, type: String){
+                    this.date = date
+                    this.time = time
+                    this.type = type
+                }
+            }
             val currentDate = ref("2024-10-21")
             val currentTime = ref("00:00:00")
             val activeDate = ref("10-21")
             val activeFilter = ref("all")
             val videoSrc = ref("https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4")
-            val videoContext = ref(null)
+            val videoContext = ref<VideoContext?>(null)
             val isSeeking = ref(false)
             val timeScrollLeft = ref(0)
             val dateScrollLeft = ref(0)
@@ -38,6 +48,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
             val startScrollLeft = ref(0)
             val lastDragTime = ref(0)
             val manualScrollPosition = ref(0)
+            val draggedTimeInSeconds = ref(0)
             val instance = getCurrentInstance()
             val dateList = _uA(
                 "10-21",
@@ -74,37 +85,12 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 var label = "全部"
                 var value = "all"
             })
-            val events = ref(_uA(
-                object : UTSJSONObject() {
-                    var date = "10-21"
-                    var time = "00:15"
-                    var type = "alarm"
-                },
-                object : UTSJSONObject() {
-                    var date = "10-21"
-                    var time = "00:30"
-                    var type = "motion"
-                },
-                object : UTSJSONObject() {
-                    var date = "10-21"
-                    var time = "01:45"
-                    var type = "human"
-                },
-                object : UTSJSONObject() {
-                    var date = "10-21"
-                    var time = "01:20"
-                    var type = "alarm"
-                }
-            ))
+            val events = ref(_uA<EventType>(EventType(date = "10-21", time = "00:15", type = "alarm"), EventType(date = "10-21", time = "00:30", type = "motion"), EventType(date = "10-21", time = "01:45", type = "human"), EventType(date = "10-21", time = "01:20", type = "alarm")))
             val rulerWidth = computed(fun(): Number {
                 return 2880
             }
             )
-            val filteredEvents = computed(fun(): UTSArray<{
-                var date: String
-                var time: String
-                var type: String
-            }> {
+            val filteredEvents = computed<UTSArray<EventType>>(fun(): UTSArray<EventType> {
                 if (activeFilter.value === "all") {
                     return events.value
                 }
@@ -115,22 +101,25 @@ open class GenPagesIndexDeviceReplay : BasePage {
             }
             )
             val initVideoContext = fun(){
-                videoContext.value = uni_createVideoContext("myVideo", instance)
+                try {
+                    videoContext.value = uni_createVideoContext("myVideo", null)
+                    console.log("视频上下文初始化成功", videoContext.value, " at pages/index/deviceReplay.uvue:176")
+                }
+                 catch (error: Throwable) {
+                    console.error("创建视频上下文失败:", error, " at pages/index/deviceReplay.uvue:178")
+                }
             }
-            val selectDate = fun(date){
+            val loadVideoData = fun(date: String){
+                console.log("加载日期数据:", date, " at pages/index/deviceReplay.uvue:183")
+            }
+            val selectDate = fun(date: String){
                 activeDate.value = date
                 currentDate.value = "2024-" + date
                 loadVideoData(date)
                 val index = dateList.indexOf(date)
                 dateScrollLeft.value = index * 80
             }
-            val loadVideoData = fun(date){
-                console.log("加载日期数据:", date, " at pages/index/deviceReplay.uvue:177")
-            }
-            val onVideoLoaded = fun(e){
-                videoDuration.value = e.detail.duration
-            }
-            val onTimeUpdate = fun(e){
+            val onTimeUpdate = fun(e: UniVideoTimeUpdateEvent){
                 if (isSeeking.value || isDragging.value) {
                     return
                 }
@@ -200,6 +189,8 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 val now = Date.now()
                 if (now - lastDragTime.value > 100) {
                     if (videoContext.value) {
+                        console.log("尝试跳转视频到:", timeInSeconds, "秒", " at pages/index/deviceReplay.uvue:299")
+                        draggedTimeInSeconds.value = timeInSeconds
                         videoContext.value!!.seek(timeInSeconds)
                     }
                     lastDragTime.value = now
@@ -212,10 +203,14 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 val systemInfo = uni_getSystemInfoSync()
                 val scrollViewWidth = systemInfo.windowWidth || 375
                 val timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / 2
+                if (videoContext.value) {
+                    console.log("尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒", " at pages/index/deviceReplay.uvue:319")
+                    videoContext.value!!.seek(draggedTimeInSeconds.value)
+                    videoContext.value!!.play()
+                }
                 playheadPosition.value = timeInSeconds * 2
+                currentTime.value = formatTime(timeInSeconds)
                 manualScrollPosition.value = timeInSeconds * 2
-                console.log(currentTime.value, " at pages/index/deviceReplay.uvue:304")
-                videoContext.value.seek(currentTime.value)
                 isDragging.value = false
                 isSeeking.value = false
             }
@@ -267,13 +262,16 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 return "" + hrs.toString(10).padStart(2, "0") + ":" + mins.toString(10).padStart(2, "0") + ":" + secs.toString(10).padStart(2, "0")
             }
             val onPlay = fun(){
-                console.log("视频开始播放", " at pages/index/deviceReplay.uvue:365")
+                console.log("视频开始播放", " at pages/index/deviceReplay.uvue:385")
             }
             val onPause = fun(){
-                console.log("视频暂停", " at pages/index/deviceReplay.uvue:369")
+                console.log("视频暂停", " at pages/index/deviceReplay.uvue:389")
             }
             onMounted(fun(){
                 initVideoContext()
+                if (!videoContext.value) {
+                    console.error("视频上下文初始化失败，请检查", " at pages/index/deviceReplay.uvue:396")
+                }
             }
             )
             return fun(): Any? {
@@ -305,7 +303,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
                         "scroll-left"
                     )),
                     _cE("view", _uM("class" to "video-container"), _uA(
-                        _cE("video", _uM("id" to "myVideo", "src" to videoSrc.value, "controls" to true, "class" to "video-player", "onTimeupdate" to onTimeUpdate, "onPlay" to onPlay, "onPause" to onPause, "onLoadedmetadata" to onVideoLoaded, "onSeeked" to onSeeked), null, 40, _uA(
+                        _cE("video", _uM("id" to "myVideo", "src" to videoSrc.value, "controls" to true, "class" to "video-player", "onTimeupdate" to onTimeUpdate, "onPlay" to onPlay, "onPause" to onPause, "onSeeked" to onSeeked), null, 40, _uA(
                             "src"
                         ))
                     )),

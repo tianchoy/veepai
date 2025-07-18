@@ -18903,6 +18903,13 @@
     setup(__props, _a) {
       var __expose = _a.expose;
       __expose();
+      class EventType {
+        constructor(date, time, type) {
+          this.date = date;
+          this.time = time;
+          this.type = type;
+        }
+      }
       const currentDate = vue.ref("2024-10-21");
       const currentTime = vue.ref("00:00:00");
       const activeDate = vue.ref("10-21");
@@ -18920,6 +18927,7 @@
       const startScrollLeft = vue.ref(0);
       const lastDragTime = vue.ref(0);
       const manualScrollPosition = vue.ref(0);
+      const draggedTimeInSeconds = vue.ref(0);
       const instance = vue.getCurrentInstance();
       const dateList = ["10-21", "10-22", "10-23", "10-24", "10-25", "10-26"];
       const minuteMarks = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
@@ -18930,10 +18938,10 @@
         new UTSJSONObject({ label: "全部", value: "all" })
       ];
       const events = vue.ref([
-        new UTSJSONObject({ date: "10-21", time: "00:15", type: "alarm" }),
-        new UTSJSONObject({ date: "10-21", time: "00:30", type: "motion" }),
-        new UTSJSONObject({ date: "10-21", time: "01:45", type: "human" }),
-        new UTSJSONObject({ date: "10-21", time: "01:20", type: "alarm" })
+        { date: "10-21", time: "00:15", type: "alarm" },
+        { date: "10-21", time: "00:30", type: "motion" },
+        { date: "10-21", time: "01:45", type: "human" },
+        { date: "10-21", time: "01:20", type: "alarm" }
       ]);
       const rulerWidth = vue.computed(() => {
         return 24 * 120;
@@ -18946,22 +18954,24 @@
         });
       });
       const initVideoContext = () => {
-        videoContext.value = uni.createVideoContext("myVideo", instance);
+        try {
+          videoContext.value = uni.createVideoContext("myVideo");
+          uni.__log__("log", "at pages/index/deviceReplay.uvue:176", "视频上下文初始化成功", videoContext.value);
+        } catch (error) {
+          uni.__log__("error", "at pages/index/deviceReplay.uvue:178", "创建视频上下文失败:", error);
+        }
       };
-      const selectDate = (date = null) => {
+      const loadVideoData = (date) => {
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:183", "加载日期数据:", date);
+      };
+      const selectDate = (date) => {
         activeDate.value = date;
         currentDate.value = "2024-".concat(date);
         loadVideoData(date);
         const index = dateList.indexOf(date);
         dateScrollLeft.value = index * 80;
       };
-      const loadVideoData = (date = null) => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:177", "加载日期数据:", date);
-      };
-      const onVideoLoaded = (e2 = null) => {
-        videoDuration.value = e2.detail.duration;
-      };
-      const onTimeUpdate = (e2 = null) => {
+      const onTimeUpdate = (e2) => {
         if (isSeeking.value || isDragging.value)
           return null;
         const currentTimeInSeconds = e2.detail.currentTime;
@@ -19028,6 +19038,8 @@
         const now = Date.now();
         if (now - lastDragTime.value > 100) {
           if (videoContext.value) {
+            uni.__log__("log", "at pages/index/deviceReplay.uvue:299", "尝试跳转视频到:", timeInSeconds, "秒");
+            draggedTimeInSeconds.value = timeInSeconds;
             videoContext.value.seek(timeInSeconds);
           }
           lastDragTime.value = now;
@@ -19039,10 +19051,14 @@
         const systemInfo = uni.getSystemInfoSync();
         const scrollViewWidth = systemInfo.windowWidth || 375;
         const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / 2;
+        if (videoContext.value) {
+          uni.__log__("log", "at pages/index/deviceReplay.uvue:319", "尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒");
+          videoContext.value.seek(draggedTimeInSeconds.value);
+          videoContext.value.play();
+        }
         playheadPosition.value = timeInSeconds * 2;
+        currentTime.value = formatTime(timeInSeconds);
         manualScrollPosition.value = timeInSeconds * 2;
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:304", currentTime.value);
-        videoContext.value.seek(currentTime.value);
         isDragging.value = false;
         isSeeking.value = false;
       };
@@ -19086,15 +19102,18 @@
         return "".concat(hrs.toString().padStart(2, "0"), ":").concat(mins.toString().padStart(2, "0"), ":").concat(secs.toString().padStart(2, "0"));
       };
       const onPlay = () => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:365", "视频开始播放");
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:385", "视频开始播放");
       };
       const onPause = () => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:369", "视频暂停");
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:389", "视频暂停");
       };
       vue.onMounted(() => {
         initVideoContext();
+        if (!videoContext.value) {
+          uni.__log__("error", "at pages/index/deviceReplay.uvue:396", "视频上下文初始化失败，请检查");
+        }
       });
-      const __returned__ = { currentDate, currentTime, activeDate, activeFilter, videoSrc: videoSrc2, videoContext, isSeeking, timeScrollLeft, dateScrollLeft, playheadPosition, videoDuration, lastSyncTime, isDragging, startX, startScrollLeft, lastDragTime, manualScrollPosition, instance, dateList, minuteMarks, filters, events, rulerWidth, filteredEvents, initVideoContext, selectDate, loadVideoData, onVideoLoaded, onTimeUpdate, updatePlayheadPosition, seekToTime, seekToSeconds, onSeeked, onTouchStart, onTouchMove, onTouchEnd, onTimeScroll, selectFilter, hasEvent, getEventType, formatHour, formatTime, onPlay, onPause };
+      const __returned__ = { EventType, currentDate, currentTime, activeDate, activeFilter, videoSrc: videoSrc2, videoContext, isSeeking, timeScrollLeft, dateScrollLeft, playheadPosition, videoDuration, lastSyncTime, isDragging, startX, startScrollLeft, lastDragTime, manualScrollPosition, draggedTimeInSeconds, instance, dateList, minuteMarks, filters, events, rulerWidth, filteredEvents, initVideoContext, loadVideoData, selectDate, onTimeUpdate, updatePlayheadPosition, seekToTime, seekToSeconds, onSeeked, onTouchStart, onTouchMove, onTouchEnd, onTimeScroll, selectFilter, hasEvent, getEventType, formatHour, formatTime, onPlay, onPause };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
@@ -19145,7 +19164,6 @@
           onTimeupdate: $setup.onTimeUpdate,
           onPlay: $setup.onPlay,
           onPause: $setup.onPause,
-          onLoadedmetadata: $setup.onVideoLoaded,
           onSeeked: $setup.onSeeked
         }, null, 40, ["src"])
       ]),

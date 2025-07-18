@@ -13,7 +13,7 @@ import io.dcloud.uts.Set
 import io.dcloud.uts.UTSAndroid
 open class GenUniModulesLimePickerComponentsLPickerItemLPickerItem : VueComponent, PickerItemProps {
     constructor(__ins: ComponentInternalInstance) : super(__ins) {}
-    override var options: UTSArray<PickerColumnItem> by `$props`
+    override var options: UTSArray<PickerColumnItem1> by `$props`
     override var value: Any? by `$props`
     override var column: Number by `$props`
     override var name: Any? by `$props`
@@ -211,10 +211,10 @@ open class GenUniModulesLimePickerComponentsLPickerItemLPickerItem : VueComponen
                 nextTick(updateItemStyle)
             }
             )
-            val stop = watch(fun(): UTSArray<PickerColumnItem> {
+            val stop = watch(fun(): UTSArray<PickerColumnItem1> {
                 return props.options
             }
-            , fun(v: UTSArray<PickerColumnItem>, o: UTSArray<PickerColumnItem>){
+            , fun(v: UTSArray<PickerColumnItem1>, o: UTSArray<PickerColumnItem1>){
                 nextTick(updateItemStyle)
             }
             )
@@ -277,7 +277,7 @@ open class GenUniModulesLimePickerComponentsLPickerItemLPickerItem : VueComponen
         var inheritAttrs = true
         var inject: Map<String, Map<String, Any?>> = _uM()
         var emits: Map<String, Any?> = _uM()
-        var props = _nP(_uM("options" to _uM("type" to "Array", "required" to true, "default" to _uA<PickerColumnItem>()), "value" to _uM("required" to false), "column" to _uM("type" to "Number", "required" to true, "default" to -1), "name" to _uM("type" to _uA(
+        var props = _nP(_uM("options" to _uM("type" to "Array", "required" to true, "default" to _uA<PickerColumnItem1>()), "value" to _uM("required" to false), "column" to _uM("type" to "Number", "required" to true, "default" to -1), "name" to _uM("type" to _uA(
             "String",
             "Number"
         ), "required" to false)))

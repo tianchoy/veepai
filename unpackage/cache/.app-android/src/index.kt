@@ -7275,150 +7275,6 @@ val GenPagesMineMyOrdersOrderDetailOrderDetailClass = CreateVueComponent(GenPage
     return GenPagesMineMyOrdersOrderDetailOrderDetail(instance, renderer)
 }
 )
-typealias PickerValue = Any
-open class PickerColumnItem (
-    open var id: Any? = null,
-    @JsonNotNull
-    open var label: String,
-    open var disabled: Boolean? = null,
-    @JsonNotNull
-    open var value: String,
-    open var children: PickerColumn? = null,
-) : UTSReactiveObject(), IUTSSourceMap {
-    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("PickerColumnItem", "uni_modules/lime-picker/components/l-picker/type.uts", 3, 13)
-    }
-    override fun __v_create(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): UTSReactiveObject {
-        return PickerColumnItemReactiveObject(this, __v_isReadonly, __v_isShallow, __v_skip)
-    }
-}
-open class PickerColumnItemReactiveObject : PickerColumnItem, IUTSReactive<PickerColumnItem> {
-    override var __v_raw: PickerColumnItem
-    override var __v_isReadonly: Boolean
-    override var __v_isShallow: Boolean
-    override var __v_skip: Boolean
-    constructor(__v_raw: PickerColumnItem, __v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean) : super(id = __v_raw.id, label = __v_raw.label, disabled = __v_raw.disabled, value = __v_raw.value, children = __v_raw.children) {
-        this.__v_raw = __v_raw
-        this.__v_isReadonly = __v_isReadonly
-        this.__v_isShallow = __v_isShallow
-        this.__v_skip = __v_skip
-    }
-    override fun __v_clone(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): PickerColumnItemReactiveObject {
-        return PickerColumnItemReactiveObject(this.__v_raw, __v_isReadonly, __v_isShallow, __v_skip)
-    }
-    override var id: Any?
-        get() {
-            return _tRG(__v_raw, "id", __v_raw.id, __v_isReadonly, __v_isShallow)
-        }
-        set(value) {
-            if (!__v_canSet("id")) {
-                return
-            }
-            val oldValue = __v_raw.id
-            __v_raw.id = value
-            _tRS(__v_raw, "id", oldValue, value)
-        }
-    override var label: String
-        get() {
-            return _tRG(__v_raw, "label", __v_raw.label, __v_isReadonly, __v_isShallow)
-        }
-        set(value) {
-            if (!__v_canSet("label")) {
-                return
-            }
-            val oldValue = __v_raw.label
-            __v_raw.label = value
-            _tRS(__v_raw, "label", oldValue, value)
-        }
-    override var disabled: Boolean?
-        get() {
-            return _tRG(__v_raw, "disabled", __v_raw.disabled, __v_isReadonly, __v_isShallow)
-        }
-        set(value) {
-            if (!__v_canSet("disabled")) {
-                return
-            }
-            val oldValue = __v_raw.disabled
-            __v_raw.disabled = value
-            _tRS(__v_raw, "disabled", oldValue, value)
-        }
-    override var value: String
-        get() {
-            return _tRG(__v_raw, "value", __v_raw.value, __v_isReadonly, __v_isShallow)
-        }
-        set(value) {
-            if (!__v_canSet("value")) {
-                return
-            }
-            val oldValue = __v_raw.value
-            __v_raw.value = value
-            _tRS(__v_raw, "value", oldValue, value)
-        }
-    override var children: PickerColumn?
-        get() {
-            return _tRG(__v_raw, "children", __v_raw.children, __v_isReadonly, __v_isShallow)
-        }
-        set(value) {
-            if (!__v_canSet("children")) {
-                return
-            }
-            val oldValue = __v_raw.children
-            __v_raw.children = value
-            _tRS(__v_raw, "children", oldValue, value)
-        }
-}
-typealias PickerColumn = UTSArray<PickerColumnItem>
-open class PickerPickEvent (
-    @JsonNotNull
-    open var values: UTSArray<PickerValue>,
-    @JsonNotNull
-    open var column: Number,
-    @JsonNotNull
-    open var index: Number,
-) : UTSObject(), IUTSSourceMap {
-    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("PickerPickEvent", "uni_modules/lime-picker/components/l-picker/type.uts", 11, 13)
-    }
-}
-open class PickerConfirmEvent (
-    @JsonNotNull
-    open var values: UTSArray<PickerValue>,
-    @JsonNotNull
-    open var indexs: UTSArray<Number>,
-    @JsonNotNull
-    open var items: UTSArray<PickerColumnItem>,
-) : UTSObject(), IUTSSourceMap {
-    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("PickerConfirmEvent", "uni_modules/lime-picker/components/l-picker/type.uts", 16, 13)
-    }
-}
-interface PickerProps {
-    var cancelBtn: String?
-    var cancelStyle: Any?
-    var confirmBtn: String?
-    var confirmStyle: Any?
-    var title: String?
-    var titleStyle: Any?
-    var keys: UTSJSONObject?
-    var columns: UTSArray<PickerColumn>
-    var modelValue: UTSArray<PickerValue>?
-    var defaultValue: UTSArray<PickerValue>?
-    var value: UTSArray<PickerValue>?
-    var loading: Boolean
-    var loadingColor: String?
-    var loadingMaskColor: String?
-    var loadingSize: String
-    var itemHeight: String?
-    var itemColor: String?
-    var itemFontSize: String?
-    var itemActiveColor: String?
-    var itemActiveFontWeight: Number?
-    var indicatorStyle: String?
-    var bgColor: String?
-    var groupHeight: String?
-    var radius: String?
-    var resetIndex: Boolean
-}
 interface TextareaProps {
     var adjustPosition: Boolean
     var autofocus: Boolean
@@ -8032,6 +7888,150 @@ val GenUniModulesLimeUploadComponentsLUploadLUploadClass = CreateVueComponent(Ge
     return GenUniModulesLimeUploadComponentsLUploadLUpload(instance)
 }
 )
+typealias PickerValue = Any
+open class PickerColumnItem1 (
+    open var id: Any? = null,
+    @JsonNotNull
+    open var label: String,
+    open var disabled: Boolean? = null,
+    @JsonNotNull
+    open var value: String,
+    open var children: PickerColumn? = null,
+) : UTSReactiveObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("PickerColumnItem", "uni_modules/lime-picker/components/l-picker/type.uts", 3, 13)
+    }
+    override fun __v_create(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): UTSReactiveObject {
+        return PickerColumnItem1ReactiveObject(this, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+}
+open class PickerColumnItem1ReactiveObject : PickerColumnItem1, IUTSReactive<PickerColumnItem1> {
+    override var __v_raw: PickerColumnItem1
+    override var __v_isReadonly: Boolean
+    override var __v_isShallow: Boolean
+    override var __v_skip: Boolean
+    constructor(__v_raw: PickerColumnItem1, __v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean) : super(id = __v_raw.id, label = __v_raw.label, disabled = __v_raw.disabled, value = __v_raw.value, children = __v_raw.children) {
+        this.__v_raw = __v_raw
+        this.__v_isReadonly = __v_isReadonly
+        this.__v_isShallow = __v_isShallow
+        this.__v_skip = __v_skip
+    }
+    override fun __v_clone(__v_isReadonly: Boolean, __v_isShallow: Boolean, __v_skip: Boolean): PickerColumnItem1ReactiveObject {
+        return PickerColumnItem1ReactiveObject(this.__v_raw, __v_isReadonly, __v_isShallow, __v_skip)
+    }
+    override var id: Any?
+        get() {
+            return _tRG(__v_raw, "id", __v_raw.id, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("id")) {
+                return
+            }
+            val oldValue = __v_raw.id
+            __v_raw.id = value
+            _tRS(__v_raw, "id", oldValue, value)
+        }
+    override var label: String
+        get() {
+            return _tRG(__v_raw, "label", __v_raw.label, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("label")) {
+                return
+            }
+            val oldValue = __v_raw.label
+            __v_raw.label = value
+            _tRS(__v_raw, "label", oldValue, value)
+        }
+    override var disabled: Boolean?
+        get() {
+            return _tRG(__v_raw, "disabled", __v_raw.disabled, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("disabled")) {
+                return
+            }
+            val oldValue = __v_raw.disabled
+            __v_raw.disabled = value
+            _tRS(__v_raw, "disabled", oldValue, value)
+        }
+    override var value: String
+        get() {
+            return _tRG(__v_raw, "value", __v_raw.value, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("value")) {
+                return
+            }
+            val oldValue = __v_raw.value
+            __v_raw.value = value
+            _tRS(__v_raw, "value", oldValue, value)
+        }
+    override var children: PickerColumn?
+        get() {
+            return _tRG(__v_raw, "children", __v_raw.children, __v_isReadonly, __v_isShallow)
+        }
+        set(value) {
+            if (!__v_canSet("children")) {
+                return
+            }
+            val oldValue = __v_raw.children
+            __v_raw.children = value
+            _tRS(__v_raw, "children", oldValue, value)
+        }
+}
+typealias PickerColumn = UTSArray<PickerColumnItem1>
+open class PickerPickEvent (
+    @JsonNotNull
+    open var values: UTSArray<PickerValue>,
+    @JsonNotNull
+    open var column: Number,
+    @JsonNotNull
+    open var index: Number,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("PickerPickEvent", "uni_modules/lime-picker/components/l-picker/type.uts", 11, 13)
+    }
+}
+open class PickerConfirmEvent (
+    @JsonNotNull
+    open var values: UTSArray<PickerValue>,
+    @JsonNotNull
+    open var indexs: UTSArray<Number>,
+    @JsonNotNull
+    open var items: UTSArray<PickerColumnItem1>,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("PickerConfirmEvent", "uni_modules/lime-picker/components/l-picker/type.uts", 16, 13)
+    }
+}
+interface PickerProps {
+    var cancelBtn: String?
+    var cancelStyle: Any?
+    var confirmBtn: String?
+    var confirmStyle: Any?
+    var title: String?
+    var titleStyle: Any?
+    var keys: UTSJSONObject?
+    var columns: UTSArray<PickerColumn>
+    var modelValue: UTSArray<PickerValue>?
+    var defaultValue: UTSArray<PickerValue>?
+    var value: UTSArray<PickerValue>?
+    var loading: Boolean
+    var loadingColor: String?
+    var loadingMaskColor: String?
+    var loadingSize: String
+    var itemHeight: String?
+    var itemColor: String?
+    var itemFontSize: String?
+    var itemActiveColor: String?
+    var itemActiveFontWeight: Number?
+    var indicatorStyle: String?
+    var bgColor: String?
+    var groupHeight: String?
+    var radius: String?
+    var resetIndex: Boolean
+}
 fun <T> pushAt(arr: UTSArray<T>, index: Number, value: T) {
     if (index < arr.length) {
         arr[index] = value
@@ -8065,7 +8065,7 @@ typealias LPickerItemComponentPublicInstance = GenUniModulesLimePickerComponents
 typealias OnPick = (value: PickerValue, index: Number, column: Number) -> Unit
 typealias UpdateItems = (value: PickerValue, index: Number, column: Number) -> Unit
 interface PickerItemProps {
-    var options: UTSArray<PickerColumnItem>
+    var options: UTSArray<PickerColumnItem1>
     var value: PickerValue?
     var column: Number
     var name: Any?
@@ -9105,7 +9105,7 @@ val GenPagesIndexIntelligentWatchClass = CreateVueComponent(GenPagesIndexIntelli
 typealias TimeModeValues = String
 typealias DateValue = Any
 typealias DateTimePickerColumn = PickerColumn
-typealias DateTimePickerColumnItem = PickerColumnItem
+typealias DateTimePickerColumnItem = PickerColumnItem1
 interface DateTimePickerProps {
     var cancelBtn: String?
     var cancelStyle: String?

@@ -1,6 +1,5 @@
 import { ref, computed, onMounted, getCurrentInstance } from 'vue'
 
-// 响应式状态
 
 const __sfc__ = defineComponent({
   __name: 'deviceReplay',
@@ -9,12 +8,24 @@ const __ins = getCurrentInstance()!;
 const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
 const _cache = __ins.renderCache;
 
+class EventType {
+  date: string;
+  time: string;
+  type: string;
+
+  constructor(date: string, time: string, type: string) {
+    this.date = date;
+    this.time = time;
+    this.type = type;
+  }
+}
+// 响应式状态
 const currentDate = ref('2024-10-21')
 const currentTime = ref('00:00:00')
 const activeDate = ref('10-21')
 const activeFilter = ref('all')
 const videoSrc = ref('https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4')
-const videoContext = ref(null)
+const videoContext = ref<VideoContext | null>(null)
 const isSeeking = ref(false)
 const timeScrollLeft = ref(0)
 const dateScrollLeft = ref(0)
@@ -26,6 +37,7 @@ const startX = ref(0)
 const startScrollLeft = ref(0)
 const lastDragTime = ref(0)
 const manualScrollPosition = ref(0)
+const draggedTimeInSeconds = ref(0)
 
 // 获取当前组件实例
 const instance = getCurrentInstance()
@@ -41,7 +53,7 @@ const filters = [
 ]
 
 // 模拟事件数据
-const events = ref([
+const events = ref<EventType[]>([
   { date: '10-21', time: '00:15', type: 'alarm' },
   { date: '10-21', time: '00:30', type: 'motion' },
   { date: '10-21', time: '01:45', type: 'human' },
@@ -50,18 +62,28 @@ const events = ref([
 
 // 计算属性
 const rulerWidth = computed(() => 24 * 120) // 24小时 * 每小时120px
-const filteredEvents = computed(() => {
+const filteredEvents = computed<EventType[]>(() => {
   if (activeFilter.value === 'all') return events.value
   return events.value.filter((e) => e.type === activeFilter.value)
 })
 
 // 初始化视频上下文
 const initVideoContext = () => {
-  videoContext.value = uni.createVideoContext('myVideo', instance)
+  try {
+    videoContext.value = uni.createVideoContext('myVideo');
+    console.log('视频上下文初始化成功', videoContext.value, " at pages/index/deviceReplay.uvue:176");
+  } catch (error) {
+    console.error('创建视频上下文失败:', error, " at pages/index/deviceReplay.uvue:178");
+  }
+}
+// 加载视频数据
+const loadVideoData = (date:String) => {
+  console.log('加载日期数据:', date, " at pages/index/deviceReplay.uvue:183")
 }
 
+
 // 选择日期
-const selectDate = (date) => {
+const selectDate = (date:String) => {
   activeDate.value = date
   currentDate.value = `2024-${date}`
   loadVideoData(date)
@@ -70,18 +92,16 @@ const selectDate = (date) => {
   dateScrollLeft.value = index * 80
 }
 
-// 加载视频数据
-const loadVideoData = (date) => {
-  console.log('加载日期数据:', date, " at pages/index/deviceReplay.uvue:177")
-}
+
 
 // 视频元数据加载完成
-const onVideoLoaded = (e) => {
-  videoDuration.value = e.detail.duration
-}
+// const onVideoLoaded = (e:UniVideoLoadedMetadataEvent) => {
+//   videoDuration.value = e.detail.duration;
+//   console.log('视频元数据加载完成，视频时长:', videoDuration.value, '秒');
+// }
 
-// 视频时间更新
-const onTimeUpdate = (e) => {
+// 视频时间更新 
+const onTimeUpdate = (e:UniVideoTimeUpdateEvent) => {
   if (isSeeking.value || isDragging.value) return
   
   const currentTimeInSeconds = e.detail.currentTime
@@ -164,7 +184,7 @@ const onTouchMove = (e) => {
   const touchX = e.touches[0].pageX
   const rulerStartX = touchX - startX.value + startScrollLeft.value
   const timeInSeconds = rulerStartX / 2
-
+  
   // 更新显示
   currentTime.value = formatTime(timeInSeconds)
   playheadPosition.value = timeInSeconds * 2
@@ -174,6 +194,8 @@ const onTouchMove = (e) => {
   const now = Date.now()
   if (now - lastDragTime.value > 100) {
     if (videoContext.value) {
+      console.log('尝试跳转视频到:', timeInSeconds, '秒', " at pages/index/deviceReplay.uvue:299");
+      draggedTimeInSeconds.value = timeInSeconds
       videoContext.value.seek(timeInSeconds)
     }
     lastDragTime.value = now
@@ -189,19 +211,17 @@ const onTouchEnd = () => {
   const scrollViewWidth = systemInfo.windowWidth || 375
   const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / 2
 
+
   // 精确跳转
-  // if (videoContext.value) {
-  //   videoContext.value.seek(timeInSeconds)
-  //   videoContext.value.play()
-  // }
+  if (videoContext.value) {
+    console.log('尝试跳转视频到最终时间:', draggedTimeInSeconds.value, '秒', " at pages/index/deviceReplay.uvue:319");
+    videoContext.value.seek(draggedTimeInSeconds.value)
+    videoContext.value.play()
+  }
   
   playheadPosition.value = timeInSeconds * 2
-  // currentTime.value = formatTime(timeInSeconds)
+  currentTime.value = formatTime(timeInSeconds)
   manualScrollPosition.value = timeInSeconds * 2
-
-  console.log(currentTime.value, " at pages/index/deviceReplay.uvue:304")
-
-    videoContext.value.seek(currentTime.value)
   
   isDragging.value = false
   isSeeking.value = false
@@ -260,17 +280,20 @@ const formatTime = (seconds) => {
 
 // 播放/暂停事件
 const onPlay = () => {
-  console.log('视频开始播放', " at pages/index/deviceReplay.uvue:365")
+  console.log('视频开始播放', " at pages/index/deviceReplay.uvue:385")
 }
 
 const onPause = () => {
-  console.log('视频暂停', " at pages/index/deviceReplay.uvue:369")
+  console.log('视频暂停', " at pages/index/deviceReplay.uvue:389")
 }
 
 // 组件生命周期
 onMounted(() => {
-  initVideoContext()
-})
+  initVideoContext();
+  if (!videoContext.value) {
+    console.error('视频上下文初始化失败，请检查', " at pages/index/deviceReplay.uvue:396");
+  }
+});
 
 return (): any | null => {
 
@@ -303,7 +326,6 @@ return (): any | null => {
         onTimeupdate: onTimeUpdate,
         onPlay: onPlay,
         onPause: onPause,
-        onLoadedmetadata: onVideoLoaded,
         onSeeked: onSeeked
       }), null, 40 /* PROPS, NEED_HYDRATION */, ["src"])
     ]),
