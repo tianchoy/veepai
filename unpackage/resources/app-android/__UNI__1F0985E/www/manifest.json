@@ -1,0 +1,50 @@
+{
+  "id": "__UNI__1F0985E",
+  "name": "veepai",
+  "description": "",
+  "version": {
+    "name": "1.0.0",
+    "code": "100"
+  },
+  "uni-app-x": {
+    "compilerVersion": "4.75"
+  },
+  "app": {
+    "distribute": {
+      "icons": {
+        "android": {
+          "hdpi": "",
+          "xhdpi": "",
+          "xxhdpi": "",
+          "xxxhdpi": ""
+        }
+      }
+    }
+  },
+  "app-android": {
+    "distribute": {
+      "modules": {
+        "uni-getAppAuthorizeSetting": {},
+        "uni-scanCode": {},
+        "uni-rpx2px": {},
+        "uni-exit": {},
+        "uni-network": {},
+        "uni-getDeviceInfo": {},
+        "uni-canvas": {},
+        "uni-video": {},
+        "uni-prompt": {},
+        "uni-clipboard": {},
+        "uni-media": {},
+        "uni-chooseMedia": {},
+        "uni-previewImage": {},
+        "uni-openAppAuthorizeSetting": {},
+        "uni-storage": {},
+        "uni-getSystemInfo": {},
+        "uni-fileSystemManager": {},
+        "uni-getSystemSetting": {},
+        "uni-cloud-client": {},
+        "uni-camera": {}
+      }
+    }
+  }
+}

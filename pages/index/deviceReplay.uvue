@@ -1,434 +1,619 @@
-
-<template></template>
-<script></script>
-<!-- <template>
-  <view class="video-container">
-    <video 
-      id="myVideo"
-      class="video-player"
-      :src="videoSrc"
-      :controls="false"
-      @timeupdate="onTimeUpdate"
-      @play="onPlay"
-      @pause="onPause"
-      @ended="onEnded"
-      @loadedmetadata="onLoadedMetadata"
-    ></video>
-    
-    <view class="video-controls">
-      <button @tap="togglePlay">{{ isPlaying ? '暂停' : '播放' }}</button>
-      <view class="time-display">{{ formatTime(currentTime) }} / {{ formatTime(duration) }}</view>
-      <button @tap="addPlaybackMarker">添加标记</button>
+<template>
+  <view class="container">
+    <!-- 顶部标题栏 -->
+    <view class="header">
+      <text class="title">监控视频回放</text>
+      <text class="current-time">{{ currentDate }} {{ currentTime }}</text>
     </view>
     
-    <view 
-      class="waveform-container"
-      @touchstart="onTouchStart"
-      @touchmove="onTouchMove"
-      @touchend="onTouchEnd"
-      @click="onWaveformClick"
-    >
-      <view class="waveform-background">
+    <!-- 日期选择滚动条 -->
+    <scroll-view class="date-scroll" scroll-x :scroll-left="dateScrollLeft">
+      <view class="date-list">
         <view 
-          v-for="(wave, index) in waveformData" 
-          :key="'bg-'+index"
-          class="wave-bar bg-wave"
-          :style="{
-            height: `${wave.height}px`,
-            left: `${wave.position}%`
-          }"
-        ></view>
+          v-for="(date, index) in dateList" 
+          :key="index"
+          :class="['date-item', activeDate === date ? 'active' : '']"
+          @tap="selectDate(date)"
+        >
+          {{ date }}
+        </view>
       </view>
-      
-      <view class="waveform-foreground" :style="{ width: `${playbackProgress}%` }">
-        <view 
-          v-for="(wave, index) in waveformData" 
-          :key="'fg-'+index"
-          class="wave-bar fg-wave"
-          :style="{
-            height: `${wave.height}px`,
-            left: `${wave.position}%`
-          }"
-        ></view>
-      </view>
-      
-      <view 
-        class="playhead"
-        :style="{ left: `${playbackProgress}%` }"
-      ></view>
-      
-      <view 
-        v-for="(marker, index) in playbackMarkers"
-        :key="'marker-'+index"
-        class="playback-marker"
-        :style="{ left: `${(marker.time / duration) * 100}%` }"
-        @tap.stop="jumpToMarker(marker.time)"
+    </scroll-view>
+    
+    <!-- 视频播放区域 -->
+    <view class="video-container">
+      <video 
+        id="myVideo"
+        :src="videoSrc" 
+        :controls="true"
+        class="video-player"
+        @timeupdate="onTimeUpdate"
+        @play="onPlay"
+        @pause="onPause"
+        @loadedmetadata="onVideoLoaded"
+        @seeked="onSeeked"
+      ></video>
+    </view>
+    
+    <!-- 可拖动时间轴 -->
+    <view class="time-ruler-container">
+      <scroll-view 
+        class="time-ruler-scroll" 
+        scroll-x
+        :scroll-left="timeScrollLeft"
+        scroll-with-animation
+        @scroll="onTimeScroll"
       >
-        <view class="marker-tooltip">{{ formatTime(marker.time) }}</view>
-      </view>
+        <view 
+          class="time-ruler" 
+          :style="{ width: rulerWidth + 'px' }"
+          @touchstart="onTouchStart"
+          @touchmove="onTouchMove"
+          @touchend="onTouchEnd"
+        >
+          <!-- 时间刻度 -->
+          <view 
+            v-for="hour in 24" 
+            :key="'hour-' + hour"
+            class="hour-section"
+          >
+            <view class="hour-mark">{{ formatHour(hour - 1) }}</view>
+            <view class="minute-marks">
+              <view 
+                v-for="minute in minuteMarks" 
+                :key="'min-' + hour + '-' + minute"
+                class="minute-mark"
+                @tap="seekToTime(hour - 1, minute)"
+              >
+                <!-- 事件标记点 -->
+                <view 
+                  v-if="hasEvent(hour - 1, minute)"
+                  :class="['event-dot', getEventType(hour - 1, minute)]"
+                ></view>
+                <!-- 分钟标签 -->
+                <text v-if="minute % 15 === 0" class="minute-label">{{ minute }}</text>
+              </view>
+            </view>
+          </view>
+          
+          <!-- 播放头指示器 -->
+          <view 
+            class="playhead" 
+            :style="{ left: playheadPosition + 'px' }"
+          ></view>
+          
+          <!-- 当前时间指示器 -->
+          <view 
+            class="time-indicator" 
+            :style="{ left: playheadPosition + 'px' }"
+          >
+            {{ currentTime.split(':').slice(0, 2).join(':') }}
+          </view>
+        </view>
+      </scroll-view>
     </view>
     
-    <view class="playback-controls">
-      <button @tap="startPlayback" :disabled="playbackMarkers.length === 0">开始回放</button>
-      <button @tap="stopPlayback">停止回放</button>
-      <button @tap="clearMarkers">清除标记</button>
+    <!-- 事件筛选工具栏 -->
+    <view class="filter-bar">
+      <view 
+        v-for="filter in filters" 
+        :key="filter.value"
+        :class="['filter-item', activeFilter === filter.value ? 'active' : '']"
+        @tap="selectFilter(filter.value)"
+      >
+        {{ filter.label }}
+      </view>
     </view>
   </view>
 </template>
 
-<script setup lang="uts">
-import { ref, onMounted } from 'vue'
-import { onReady } from '@dcloudio/uni-app'
+<script setup>
+import { ref, computed, onMounted, getCurrentInstance } from 'vue'
 
-interface WaveformPoint {
-  height: number
-  position: number
-  time: number
-}
-
-interface PlaybackMarker {
-  time: number
-}
-
-const videoSrc = ref("https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4")
-
-const isPlaying = ref(false)
-const currentTime = ref(0)
-const duration = ref(0)
-const playbackProgress = ref(0)
-
+// 响应式状态
+const currentDate = ref('2024-10-21')
+const currentTime = ref('00:00:00')
+const activeDate = ref('10-21')
+const activeFilter = ref('all')
+const videoSrc = ref('https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4')
+const videoContext = ref(null)
+const isSeeking = ref(false)
+const timeScrollLeft = ref(0)
+const dateScrollLeft = ref(0)
+const playheadPosition = ref(0)
+const videoDuration = ref(0)
+const lastSyncTime = ref(0)
 const isDragging = ref(false)
-const wasPlayingBeforeDrag = ref(false)
+const startX = ref(0)
+const startScrollLeft = ref(0)
+const lastDragTime = ref(0)
+const manualScrollPosition = ref(0)
 
-const waveformData = ref<Array<WaveformPoint>>(new Array<WaveformPoint>())
+// 获取当前组件实例
+const instance = getCurrentInstance()
 
-const playbackMarkers = ref<Array<PlaybackMarker>>(new Array<PlaybackMarker>())
+// 常量配置
+const dateList = ['10-21', '10-22', '10-23', '10-24', '10-25', '10-26']
+const minuteMarks = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]
+const filters = [
+  { label: '只看报警', value: 'alarm' },
+  { label: '移动侦测', value: 'motion' },
+  { label: '人形侦测', value: 'human' },
+  { label: '全部', value: 'all' }
+]
 
-let videoContext = uni.createVideoContext('myVideo')
-let waveformContainer = uni.createSelectorQuery().in(this).select('.waveform-container')
+// 模拟事件数据
+const events = ref([
+  { date: '10-21', time: '00:15', type: 'alarm' },
+  { date: '10-21', time: '00:30', type: 'motion' },
+  { date: '10-21', time: '01:45', type: 'human' },
+  { date: '10-21', time: '01:20', type: 'alarm' }
+])
 
-const generateWaveform = () => {
-  const waves = new Array<WaveformPoint>()
-  const pointCount = 150 
+// 计算属性
+const rulerWidth = computed(() => 24 * 120) // 24小时 * 每小时120px
+const filteredEvents = computed(() => {
+  if (activeFilter.value === 'all') return events.value
+  return events.value.filter((e) => e.type === activeFilter.value)
+})
+
+// 初始化视频上下文
+const initVideoContext = () => {
+  videoContext.value = uni.createVideoContext('myVideo', instance)
+}
+
+// 选择日期
+const selectDate = (date) => {
+  activeDate.value = date
+  currentDate.value = `2024-${date}`
+  loadVideoData(date)
   
-  const totalDuration = duration.value > 0 ? duration.value : 120
+  const index = dateList.indexOf(date)
+  dateScrollLeft.value = index * 80
+}
+
+// 加载视频数据
+const loadVideoData = (date) => {
+  console.log('加载日期数据:', date)
+}
+
+// 视频元数据加载完成
+const onVideoLoaded = (e) => {
+  videoDuration.value = e.detail.duration
+}
+
+// 视频时间更新
+const onTimeUpdate = (e) => {
+  if (isSeeking.value || isDragging.value) return
   
-  for (let i = 0; i <= pointCount; i++) {
-    const position = (i / pointCount) * 100
-    const time = (i / pointCount) * totalDuration
+  const currentTimeInSeconds = e.detail.currentTime
+  currentTime.value = formatTime(currentTimeInSeconds)
+  
+  // 节流处理
+  const now = Date.now()
+  if (now - lastSyncTime.value < 200) return
+  lastSyncTime.value = now
+  
+  updatePlayheadPosition(currentTimeInSeconds)
+}
+
+// 更新播放头位置
+const updatePlayheadPosition = (currentTimeInSeconds) => {
+  const newPosition = currentTimeInSeconds * 2
+  playheadPosition.value = newPosition
+  
+  // 只在非手动滚动时自动滚动时间轴
+  if (Math.abs(manualScrollPosition.value - newPosition) > 60) {
+    const systemInfo = uni.getSystemInfoSync()
+    const scrollViewWidth = systemInfo.windowWidth || 375
+    const halfWidth = scrollViewWidth / 2
+    const targetScrollLeft = newPosition - halfWidth
     
-    const baseHeight = 8 + Math.sin(i / 8) * 8
-    const randomFactor = 1 + Math.random() * 0.5
-    const height = baseHeight * randomFactor
-    
-    waves.push({
-      height: height,
-      position: position,
-      time: time
-    } as WaveformPoint)
+    const maxScrollLeft = rulerWidth.value - scrollViewWidth
+    timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft))
+  }
+}
+
+// 跳转到指定时间
+const seekToTime = (hour, minute) => {
+  const timeInSeconds = hour * 3600 + minute * 60
+  seekToSeconds(timeInSeconds)
+}
+
+const seekToSeconds = (timeInSeconds) => {
+  isSeeking.value = true
+  manualScrollPosition.value = timeInSeconds * 2
+  
+  if (videoContext.value) {
+    videoContext.value.seek(timeInSeconds)
   }
   
-  waveformData.value = waves
+  playheadPosition.value = timeInSeconds * 2
+  currentTime.value = formatTime(timeInSeconds)
 }
 
-const onLoadedMetadata = (e: UniVideoTimeUpdateEvent) => {
-  duration.value = e.detail.duration
-	generateWaveform()
-  
+// 跳转完成
+const onSeeked = () => {
+  isSeeking.value = false
 }
 
-const formatTime = (time: number): string => {
-  const minutes = Math.floor(time / 60)
-  const seconds = Math.floor(time % 60)
-  return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
-}
-
-const onTimeUpdate = (e: UniVideoTimeUpdateEvent) => {
-  if (!isDragging.value) {
-    currentTime.value = e.detail.currentTime
-    duration.value = e.detail.duration
-    playbackProgress.value = (currentTime.value / duration.value) * 100
-  }
-}
-
-const updateCurrentTime = (e: UniTouchEvent) => {
-  if (e.touches.length === 0) return
-  
-  waveformContainer?.boundingClientRect((rect: UniApp.BoundingClientRect) => {
-    if (!rect?.width) return
-    
-    const touchX = Math.max(0, Math.min(e.touches[0]?.clientX - rect.left, rect.width))
-    const percent = touchX / rect.width
-    currentTime.value = percent * duration.value
-    playbackProgress.value = percent * 100
-  }).exec()
-}
-
-const onTouchStart = (e: UniTouchEvent) => {
+// 时间轴触摸开始
+const onTouchStart = (e) => {
   isDragging.value = true
-  wasPlayingBeforeDrag.value = isPlaying.value
-  if (isPlaying.value) {
-    videoContext?.pause()
+  startX.value = e.touches[0].pageX
+  startScrollLeft.value = timeScrollLeft.value
+  lastDragTime.value = Date.now()
+  
+  isSeeking.value = true
+  if (videoContext.value) {
+    videoContext.value.pause()
   }
-  updateCurrentTime(e)
 }
 
-const onTouchMove = (e: UniTouchEvent) => {
+// 时间轴触摸移动
+const onTouchMove = (e) => {
   if (!isDragging.value) return
-  e.stopPropagation()
-  e.preventDefault()
-  updateCurrentTime(e)
-}
+  
+  const deltaX = e.touches[0].pageX - startX.value
+  const newScrollLeft = startScrollLeft.value - deltaX
+  
+  const systemInfo = uni.getSystemInfoSync()
+  const scrollViewWidth = systemInfo.windowWidth || 375
+  const maxScrollLeft = rulerWidth.value - scrollViewWidth
+  timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, newScrollLeft))
+  
+  // 计算当前时间位置（基于触摸点位置）
+  const touchX = e.touches[0].pageX
+  const rulerStartX = touchX - startX.value + startScrollLeft.value
+  const timeInSeconds = rulerStartX / 2
 
-const onTouchEnd = (e: UniTouchEvent) => {
-  if (!isDragging.value) return
-  e.stopPropagation()
-  e.preventDefault()
+  // 更新显示
+  currentTime.value = formatTime(timeInSeconds)
+  playheadPosition.value = timeInSeconds * 2
+  manualScrollPosition.value = timeInSeconds * 2
   
-  updateCurrentTime(e)
-  videoContext?.seek(currentTime.value)
-  
-  setTimeout(() => {
-    if (wasPlayingBeforeDrag.value) {
-      videoContext?.play()
+  // 实时跳转视频(节流处理)
+  const now = Date.now()
+  if (now - lastDragTime.value > 100) {
+    if (videoContext.value) {
+      videoContext.value.seek(timeInSeconds)
     }
-    isDragging.value = false
-  }, 50)
-}
-
-const onWaveformClick = (e: UniTouchEvent) => {
-  updateCurrentTime(e)
-  videoContext?.seek(currentTime.value)
-}
-
-const togglePlay = () => {
-  if (isPlaying.value) {
-    videoContext?.pause()
-  } else {
-    videoContext?.play()
+    lastDragTime.value = now
   }
 }
 
+// 时间轴触摸结束
+const onTouchEnd = () => {
+  if (!isDragging.value) return
+  
+  // 计算最终时间位置
+  const systemInfo = uni.getSystemInfoSync()
+  const scrollViewWidth = systemInfo.windowWidth || 375
+  const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / 2
+
+  // 精确跳转
+  // if (videoContext.value) {
+  //   videoContext.value.seek(timeInSeconds)
+  //   videoContext.value.play()
+  // }
+  
+  playheadPosition.value = timeInSeconds * 2
+  // currentTime.value = formatTime(timeInSeconds)
+  manualScrollPosition.value = timeInSeconds * 2
+
+  console.log(currentTime.value)
+
+    videoContext.value.seek(currentTime.value)
+  
+  isDragging.value = false
+  isSeeking.value = false
+}
+
+// 时间轴滚动事件
+const onTimeScroll = (e) => {
+  if (!isDragging.value) {
+    timeScrollLeft.value = e.detail.scrollLeft
+  }
+}
+
+// 选择筛选条件
+const selectFilter = (filter) => {
+  activeFilter.value = filter
+}
+
+// 检查指定时间是否有事件
+const hasEvent = (hour, minute) => {
+  const timeStr = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
+  const events = filteredEvents.value
+  for (let i = 0; i < events.length; i++) {
+    const event = events[i]
+    if (event.date === activeDate.value && event.time.startsWith(timeStr)) {
+      return true
+    }
+  }
+  return false
+}
+
+// 获取事件类型
+const getEventType = (hour, minute) => {
+  const timeStr = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
+  const eventsList = events.value
+  for (let i = 0; i < eventsList.length; i++) {
+    const event = eventsList[i]
+    if (event.date === activeDate.value && event.time.startsWith(timeStr)) {
+      return event.type
+    }
+  }
+  return ''
+}
+
+// 格式化小时显示
+const formatHour = (hour) => {
+  return `${hour.toString().padStart(2, '0')}:00`
+}
+
+// 格式化时间显示
+const formatTime = (seconds) => {
+  const hrs = Math.floor(seconds / 3600)
+  const mins = Math.floor((seconds % 3600) / 60)
+  const secs = Math.floor(seconds % 60)
+  return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
+}
+
+// 播放/暂停事件
 const onPlay = () => {
-  isPlaying.value = true
+  console.log('视频开始播放')
 }
 
 const onPause = () => {
-  isPlaying.value = false
+  console.log('视频暂停')
 }
 
-const onEnded = () => {
-  isPlaying.value = false
-  currentTime.value = 0
-  playbackProgress.value = 0
-}
-
-const addPlaybackMarker = () => {
-  if (duration.value <= 0) return
-  
-  const existingMarker = playbackMarkers.value.find(
-    marker => Math.abs(marker.time - currentTime.value) < 0.5
-  )
-  
-  if (!existingMarker) {
-    playbackMarkers.value.push({
-      time: currentTime.value
-    } as PlaybackMarker)
-  }
-}
-
-const jumpToMarker = (time: number) => {
-  videoContext?.seek(time)
-  currentTime.value = time
-  playbackProgress.value = (time / duration.value) * 100
-}
-
-const startPlayback = () => {
-  if (playbackMarkers.value.length === 0) return
-  
-  playbackMarkers.value.sort((a, b) => a.time - b.time)
-  
-  let nextMarkerIndex = playbackMarkers.value.findIndex(marker => marker.time > currentTime.value)
-  if (nextMarkerIndex === -1) nextMarkerIndex = 0
-  
-  const playToMarker = (index: number) => {
-    if (index >= playbackMarkers.value.length) {
-      videoContext?.pause()
-      return
-    }
-    
-    const marker = playbackMarkers.value[index]
-    videoContext?.seek(marker.time)
-    videoContext?.play()
-    
-    setTimeout(() => {
-      videoContext?.pause()
-      currentTime.value = marker.time
-      playbackProgress.value = (marker.time / duration.value) * 100
-      
-      playToMarker(index + 1)
-    }, (marker.time - currentTime.value) * 1000)
-  }
-  
-  playToMarker(nextMarkerIndex)
-}
-
-const stopPlayback = () => {
-  videoContext?.pause()
-}
-
-const clearMarkers = () => {
-  playbackMarkers.value = new Array<PlaybackMarker>()
-}
+// 组件生命周期
 onMounted(() => {
-  onReady(() => {
-    videoContext = uni.createVideoContext('myVideo')
-    waveformContainer = uni.createSelectorQuery().in(this).select('.waveform-container')
-    generateWaveform()
-  })
+  initVideoContext()
 })
 </script>
 
 <style>
-.video-container {
+.container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.header {
+  padding: 15px;
+  background-color: #007aff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.current-time {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.date-scroll {
   width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
+  white-space: nowrap;
+  background-color: #333;
+  padding: 8px 0;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.date-list {
+  display: inline-flex;
+  padding: 0 10px;
+}
+
+.date-item {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border-radius: 16px;
+  background-color: #555;
+  color: white;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.date-item.active {
+  background-color: #007aff;
+  font-weight: bold;
+  transform: scale(1.05);
+}
+
+.video-container {
+  width: 100%;
+  height: 250px;
+  background-color: #000;
+  position: relative;
 }
 
 .video-player {
   width: 100%;
-  height: 300rpx;
-  background-color: #000;
-  border-radius: 8px;
+  height: 100%;
 }
 
-.video-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.time-ruler-container {
+  width: 100%;
   padding: 10px 0;
-  margin-top: 8px;
-}
-
-.video-controls button {
-  padding: 6px 12px;
-  font-size: 14px;
-  border-radius: 4px;
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-}
-
-.time-display {
-  font-size: 14px;
-  color: #333;
-  font-family: monospace;
-}
-
-.waveform-container {
+  background-color: #333;
   position: relative;
-  height: 80px;
-  margin-top: 15px;
+  z-index: 5;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+.time-ruler-scroll {
+  width: 100%;
+  height: 70px;
+  white-space: nowrap;
+}
+
+.time-ruler {
+  display: inline-flex;
+  height: 100%;
+  padding-left: 10px;
+  position: relative;
   touch-action: none;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.waveform-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  user-select: none;
 }
 
-.waveform-foreground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  overflow: hidden;
+.hour-section {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+  border-right: 1px solid #444;
+  position: relative;
 }
 
-.wave-bar {
+.hour-mark {
+  color: white;
+  font-size: 12px;
+  padding: 4px 8px;
+  background-color: #444;
+  border-radius: 4px;
+  margin: 2px;
+  text-align: center;
+}
+
+.minute-marks {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+.minute-mark {
+  flex: 1;
+  position: relative;
+  border-right: 1px solid #444;
+}
+
+.minute-label {
   position: absolute;
-  bottom: 0;
-  width: 2px;
-  min-height: 1px;
-  border-radius: 1px;
+  bottom: 5px;
+  left: 2px;
+  color: #aaa;
+  font-size: 10px;
+}
+
+.event-dot {
+  position: absolute;
+  top: 8px;
+  left: 50%;
   transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  z-index: 2;
 }
 
-.bg-wave {
-  background-color: #d1d1d1;
+.event-dot.alarm {
+  background-color: #ff3b30;
+  box-shadow: 0 0 5px #ff3b30;
 }
 
-.fg-wave {
-  background-color: #FF5500;
+.event-dot.motion {
+  background-color: #ff9500;
+  box-shadow: 0 0 5px #ff9500;
+}
+
+.event-dot.human {
+  background-color: #34c759;
+  box-shadow: 0 0 5px #34c759;
 }
 
 .playhead {
   position: absolute;
   top: 0;
-  bottom: 0;
   width: 2px;
-  background-color: #FF0000;
-  transform: translateX(-50%);
-  z-index: 20;
+  height: 100%;
+  background-color: #007aff;
+  z-index: 10;
   pointer-events: none;
 }
 
-.playback-marker {
+.playhead::after {
+  content: '';
   position: absolute;
   top: 0;
-  width: 10px;
-  height: 10px;
+  left: -6px;
+  width: 14px;
+  height: 14px;
+  background-color: #007aff;
   border-radius: 50%;
-  background-color: #FF5500;
-  transform: translateX(-50%) translateY(-50%);
-  z-index: 15;
   border: 2px solid white;
+  box-sizing: border-box;
 }
 
-.marker-tooltip {
+.time-indicator {
   position: absolute;
-  bottom: 100%;
-  left: 50%;
+  top: -25px;
+  left: 0;
   transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #007aff;
   color: white;
-  padding: 4px 8px;
+  padding: 3px 8px;
   border-radius: 4px;
   font-size: 12px;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.2s;
+  z-index: 11;
   pointer-events: none;
+  white-space: nowrap;
 }
 
-.playback-marker:hover .marker-tooltip {
-  opacity: 1;
+.time-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #007aff;
 }
 
-.playback-controls {
+.filter-bar {
   display: flex;
   justify-content: space-around;
-  margin-top: 15px;
+  padding: 12px 5px;
+  background-color: #333;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
 }
 
-.playback-controls button {
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 14px;
-  background-color: #FF5500;
+.filter-item {
+  padding: 8px 12px;
+  border-radius: 16px;
+  background-color: #555;
   color: white;
-  border: none;
+  font-size: 12px;
+  transition: all 0.2s;
+  flex: 1;
+  margin: 0 5px;
+  text-align: center;
 }
 
-.playback-controls button:disabled {
-  background-color: #ccc;
-  opacity: 0.7;
+.filter-item.active {
+  background-color: #007aff;
+  font-weight: bold;
+  transform: scale(1.05);
 }
-</style> -->
+</style>

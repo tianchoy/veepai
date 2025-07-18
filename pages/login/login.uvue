@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<TopNavBar title="登陆" rightText="注册" />
+		<TopNavBar title="登陆" :isText="true" rightText="注册" />
 		<image src="@/static/login_banner.png" class="longin_banner" />
 		<view class="content">
 			<view v-if="loginType">

@@ -1,0 +1,193 @@
+import _easycom_l_icon from '@/uni_modules/lime-icon/components/l-icon/l-icon.uvue'
+import _easycom_fui_radio from '@/uni_modules/firstui-unix/components/fui-radio/fui-radio.uvue'
+import _easycom_fui_label from '@/uni_modules/firstui-unix/components/fui-label/fui-label.uvue'
+import _easycom_fui_radio_group from '@/uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.uvue'
+import _easycom_l_input from '@/uni_modules/lime-input/components/l-input/l-input.uvue'
+import _easycom_l_checkbox from '@/uni_modules/lime-checkbox/components/l-checkbox/l-checkbox.uvue'
+import _easycom_l_checkbox_group from '@/uni_modules/lime-checkbox/components/l-checkbox-group/l-checkbox-group.uvue'
+import _easycom_l_button from '@/uni_modules/lime-button/components/l-button/l-button.uvue'
+import { ref } from 'vue'
+	
+const __sfc__ = defineComponent({
+  __name: 'deviceShare',
+  setup(__props) {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+const _cache = __ins.renderCache;
+
+	const checkboxGroupRef = ref<LCheckboxGroupComponentPublicInstance|null>(null);
+
+	const sharedCount = ref<string>('2')
+	const shareType = ref<string>('1')
+
+	const goVisitor = () => {
+		uni.navigateTo({
+			url: '/pages/index/deviceShare/deviceVisitor',
+		})
+	}
+
+	const change = (value : string) => {
+		shareType.value = value
+	}
+
+	const onChange = (e: string[]) => {
+		console.log('onChange', e)
+	}
+	const checkAll = () => {
+		if(checkboxGroupRef.value == null) return
+		checkboxGroupRef.value!.toggleAll(true)
+	}
+
+return (): any | null => {
+
+const _component_l_icon = resolveEasyComponent("l-icon",_easycom_l_icon)
+const _component_fui_radio = resolveEasyComponent("fui-radio",_easycom_fui_radio)
+const _component_fui_label = resolveEasyComponent("fui-label",_easycom_fui_label)
+const _component_fui_radio_group = resolveEasyComponent("fui-radio-group",_easycom_fui_radio_group)
+const _component_l_input = resolveEasyComponent("l-input",_easycom_l_input)
+const _component_l_checkbox = resolveEasyComponent("l-checkbox",_easycom_l_checkbox)
+const _component_l_checkbox_group = resolveEasyComponent("l-checkbox-group",_easycom_l_checkbox_group)
+const _component_l_button = resolveEasyComponent("l-button",_easycom_l_button)
+
+  return _cE("view", _uM({ class: "container" }), [
+    _cE("view", _uM({ class: "content" }), [
+      _cE("text", _uM({ class: "share-title" }), "设备的名称"),
+      _cE("view", _uM({
+        class: "list",
+        onClick: goVisitor
+      }), [
+        _cE("view", _uM({ class: "shared-title" }), [
+          _cE("text", null, "已分享"),
+          _cE("text", _uM({ class: "shared-count" }), _tD(sharedCount.value), 1 /* TEXT */)
+        ]),
+        _cV(_component_l_icon, _uM({
+          name: "chevron-right",
+          size: "30"
+        }))
+      ])
+    ]),
+    _cE("view", _uM({ class: "content" }), [
+      _cE("text", _uM({ class: "title" }), "分享方式"),
+      _cE("view", _uM({ class: "share-type" }), [
+        _cV(_component_fui_radio_group, _uM({
+          name: "radio",
+          onChange: change,
+          modelValue: shareType.value
+        }), _uM({
+          default: withSlotCtx((): any[] => [
+            _cE("view", _uM({ class: "fui-list__item" }), [
+              _cV(_component_fui_label, null, _uM({
+                default: withSlotCtx((): any[] => [
+                  _cE("view", _uM({ class: "fui-align__center" }), [
+                    _cV(_component_fui_radio, _uM({
+                      value: "1",
+                      scaleRatio: 0.9
+                    })),
+                    _cE("text", _uM({ class: "fui-text" }), "夜精灵用户")
+                  ])
+                ]),
+                _: 1 /* STABLE */
+              })),
+              _cV(_component_fui_label, _uM({ margin: "0 0 0 40rpx" }), _uM({
+                default: withSlotCtx((): any[] => [
+                  _cE("view", _uM({ class: "fui-align__center" }), [
+                    _cV(_component_fui_radio, _uM({
+                      value: "2",
+                      scaleRatio: 0.9
+                    })),
+                    _cE("text", _uM({ class: "fui-text" }), "二维码")
+                  ])
+                ]),
+                _: 1 /* STABLE */
+              })),
+              _cV(_component_fui_label, _uM({ margin: "0 0 0 40rpx" }), _uM({
+                default: withSlotCtx((): any[] => [
+                  _cE("view", _uM({ class: "fui-align__center" }), [
+                    _cV(_component_fui_radio, _uM({
+                      value: "3",
+                      scaleRatio: 0.9
+                    })),
+                    _cE("text", _uM({ class: "fui-text" }), "微信")
+                  ])
+                ]),
+                _: 1 /* STABLE */
+              }))
+            ])
+          ]),
+          _: 1 /* STABLE */
+        }), 8 /* PROPS */, ["modelValue"])
+      ]),
+      shareType.value == '1'
+        ? _cE("view", _uM({
+            key: 0,
+            class: "share-content"
+          }), [
+            _cE("text", null, "用户名"),
+            _cV(_component_l_input, _uM({ placeholder: "请输入文字" }))
+          ])
+        : _cC("v-if", true),
+      _cE("view", _uM({ class: "visitor-box" }), [
+        _cE("view", _uM({ class: "vistor-title" }), [
+          _cE("text", _uM({ class: "title" }), "设置访客权限"),
+          _cE("text", _uM({ onClick: checkAll }), "全选")
+        ]),
+        _cV(_component_l_checkbox_group, _uM({
+          ref_key: "checkboxGroupRef",
+          ref: checkboxGroupRef,
+          iconSize: "35rpx",
+          fontSize: "30rpx",
+          onChange: onChange,
+          direction: "horizontal"
+        }), _uM({
+          default: withSlotCtx((): any[] => [
+            _cV(_component_l_checkbox, _uM({
+              value: "1",
+              label: "视频预览"
+            })),
+            _cV(_component_l_checkbox, _uM({
+              value: "2",
+              label: "视频回放"
+            })),
+            _cV(_component_l_checkbox, _uM({
+              value: "3",
+              label: "云台控制"
+            })),
+            _cV(_component_l_checkbox, _uM({
+              value: "4",
+              label: "对讲"
+            })),
+            _cV(_component_l_checkbox, _uM({
+              value: "5",
+              label: "声音"
+            })),
+            _cV(_component_l_checkbox, _uM({
+              value: "6",
+              label: "推送"
+            })),
+            _cV(_component_l_checkbox, _uM({
+              value: "7",
+              label: "设备管理"
+            }))
+          ]),
+          _: 1 /* STABLE */
+        }), 512 /* NEED_PATCH */)
+      ])
+    ]),
+    _cE("view", _uM({ class: "btn" }), [
+      _cV(_component_l_button, _uM({
+        type: "primary",
+        block: ""
+      }), _uM({
+        default: withSlotCtx((): any[] => ["分享"]),
+        _: 1 /* STABLE */
+      }))
+    ])
+  ])
+}
+}
+
+})
+export default __sfc__
+const GenPagesIndexDeviceShareDeviceShareStyles = [_uM([["container", _pS(_uM([["height", "100%"], ["backgroundColor", "#f5f5f5"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]]))], ["content", _uM([[".container ", _uM([["backgroundColor", "#ffffff"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["marginBottom", "50rpx"]])]])], ["share-title", _uM([[".container .content ", _uM([["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"]])]])], ["list", _uM([[".container .content ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"]])]])], ["shared-title", _uM([[".container .content .list ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"], ["paddingTop", 0], ["paddingRight", 0], ["paddingBottom", 0], ["paddingLeft", 0]])]])], ["shared-count", _uM([[".container .content .list .shared-title ", _uM([["marginLeft", "20rpx"], ["color", "#9d2ddf"], ["fontWeight", "bold"]])]])], ["title", _uM([[".container .content ", _uM([["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"], ["fontWeight", "bold"]])]])], ["share-type", _uM([[".container .content ", _uM([["paddingTop", "30rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "30rpx"], ["paddingLeft", "30rpx"]])]])], ["fui-list__item", _uM([[".container .content .share-type ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-start"], ["alignItems", "center"]])]])], ["fui-align__center", _uM([[".container .content .share-type .fui-list__item ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-start"], ["alignItems", "center"]])]])], ["fui-text", _uM([[".container .content .share-type .fui-list__item .fui-align__center ", _uM([["marginLeft", "10rpx"]])]])], ["share-content", _uM([[".container .content ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-start"], ["alignItems", "center"], ["paddingTop", "10rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "30rpx"], ["width", "100%"]])]])], ["l-input", _uM([[".container .content .share-content ", _uM([["flex", 1], ["borderTopWidth", "1rpx"], ["borderRightWidth", "1rpx"], ["borderBottomWidth", "1rpx"], ["borderLeftWidth", "1rpx"], ["borderTopStyle", "solid"], ["borderRightStyle", "solid"], ["borderBottomStyle", "solid"], ["borderLeftStyle", "solid"], ["borderTopColor", "#cccccc"], ["borderRightColor", "#cccccc"], ["borderBottomColor", "#cccccc"], ["borderLeftColor", "#cccccc"], ["paddingTop", "10rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "10rpx"], ["paddingLeft", "20rpx"], ["borderTopLeftRadius", "10rpx"], ["borderTopRightRadius", "10rpx"], ["borderBottomRightRadius", "10rpx"], ["borderBottomLeftRadius", "10rpx"], ["marginLeft", "20rpx"]])]])], ["visitor-box", _uM([[".container .content ", _uM([["paddingTop", "30rpx"], ["paddingRight", 0], ["paddingBottom", "30rpx"], ["paddingLeft", 0]])]])], ["vistor-title", _uM([[".container .content .visitor-box ", _uM([["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "30rpx"], ["paddingLeft", 0], ["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"]])]])], ["l-checkbox-group", _uM([[".container .content .visitor-box ", _uM([["display", "flex"], ["flexDirection", "row"], ["flexWrap", "wrap"], ["paddingTop", 0], ["paddingRight", "20rpx"], ["paddingBottom", 0], ["paddingLeft", "20rpx"]])]])], ["l-checkbox", _uM([[".container .content .visitor-box .l-checkbox-group ", _uM([["marginTop", 0], ["marginRight", "30rpx"], ["marginBottom", "30rpx"], ["marginLeft", 0]])]])], ["btn", _uM([[".container ", _uM([["marginTop", "100rpx"]])]])]])]
+
+import { LCheckboxGroupComponentPublicInstance  } from "@/uni_modules/lime-checkbox/components/l-checkbox-group/l-checkbox-group.uvue"

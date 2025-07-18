@@ -1,0 +1,143 @@
+
+	/**
+	 * Tag 标签
+	 * @description Tag 标签，用于标记或分类，外层容器需要设置flex-direction: row，否则长度将铺满而非自适应。
+	 * @tutorial https://unix.firstui.cn/
+	 * @property {String} text {String} 标签显示文本
+	 * @property {String} type {String}	标签类型，可选值：primary，success，warning，danger，purple
+	 * @property {String} theme {String} 标签主题，可选值：dark、light、plain。background为空时生效
+	 * @property {String} background {String} 标签背景色。如果设置背景则type、theme失效
+	 * @property {Boolean} isBorder {Boolean} 是否需要边框
+	 * @property {String} borderColor {String} 标签边框颜色
+	 * @property {String} color {String} 标签字体颜色
+	 * @property {Number} size {Number} 标签字体大小，单位rpx
+	 * @property {String} borderColor {String} 标签边框颜色
+	 * @property {String} color {String} 标签字体颜色
+	 * @property {Number} size {Number} 标签字体大小，单位rpx
+	 * @property {Number} scaleRatio {Number} 标签缩放比例
+	 * @property {Boolean} originLeft {Boolean} 缩放后，是否设置元素的基点位置为：0 center
+	 * @property {Boolean} originRight {Boolean} 缩放后，是否设置元素的基点位置为：100% center
+	 * @property {Boolean} highlight {Boolean} 是否有点击效果
+	 * @property {Number} radius {Number} 标签圆角值，单位rpx
+	 * @property {String} padding {String} padding值，格式同css
+	 * @property {Number} marginTop {Number} margin-top值
+	 * @property {Number} marginBottom {Number} margin-bottom值
+	 * @property {Number} marginLeft {Number} margin-left值
+	 * @property {Number} marginRight {Number} margin-right值
+	 * @property {Number} index {Number} 列表中的索引值，点击事件回传
+	 * @event {Function} onclick 点击标签时触发，(event=>number) => void
+	 */
+	const __sfc__ = defineComponent({
+		name: "fui-tag",
+		emits: ['onclick'],
+		props: {
+			text: {
+				type: String,
+				default: ''
+			},
+			type: {
+				type: String,
+				default: 'primary'
+			},
+			theme: {
+				type: String,
+				default: 'dark'
+			},
+			background: {
+				type: String,
+				default: ''
+			},
+			isBorder: {
+				type: Boolean,
+				default: true
+			},
+			borderColor: {
+				type: String,
+				default: ''
+			},
+			color: {
+				type: String,
+				default: ''
+			},
+			size: {
+				type: Number,
+				default: 24
+			},
+			scaleRatio: {
+				type: Number,
+				default: 1
+			},
+			originLeft: {
+				type: Boolean,
+				default: false
+			},
+			originRight: {
+				type: Boolean,
+				default: false
+			},
+			highlight: {
+				type: Boolean,
+				default: false
+			},
+			radius: {
+				type: Number,
+				default: 8
+			},
+			padding: {
+				type: String,
+				default: '16rpx 32rpx'
+			},
+			marginTop: {
+				type: Number,
+				default: 0
+			},
+			marginBottom: {
+				type: Number,
+				default: 0
+			},
+			marginLeft: {
+				type: Number,
+				default: 0
+			},
+			marginRight: {
+				type: Number,
+				default: 0
+			},
+			index: {
+				type: Number,
+				default: 0
+			}
+		},
+		data() {
+			return {}
+		},
+		methods: {
+			handleClick() {
+				this.$emit('onclick', this.index)
+			}
+		}
+	})
+
+export default __sfc__
+function GenUniModulesFirstuiUnixComponentsFuiTagFuiTagRender(this: InstanceType<typeof __sfc__>): any | null {
+const _ctx = this
+const _cache = this.$.renderCache
+  return _cE("view", _uM({
+    class: _nC(["fui-tag__wrap", [_ctx.originLeft?'fui-tag__origin-left':'',_ctx.originRight?'fui-tag__origin-right':'',_ctx.background==''?`fui-tag__${_ctx.type}-${_ctx.theme}`:'',(_ctx.background!='' && _ctx.borderColor=='') || !_ctx.isBorder?'fui-tag__no-border':'']]),
+    style: _nS(_uM({background:_ctx.background,borderColor:_ctx.borderColor,transform: `scale(${_ctx.scaleRatio})`,borderRadius:`${_ctx.radius}rpx`,padding:_ctx.padding,marginTop:`${_ctx.marginTop}rpx`,marginRight:`${_ctx.marginRight}rpx`,marginBottom:`${_ctx.marginBottom}rpx`,marginLeft:`${_ctx.marginLeft}rpx`})),
+    onClick: _ctx.handleClick,
+    "hover-stay-time": 120,
+    "hover-class": _ctx.highlight?'fui-tag__opacity-active':''
+  }), [
+    _ctx.text!=''
+      ? _cE("text", _uM({
+          key: 0,
+          class: _nC(["fui-tag__text", [_ctx.background==''?`fui-tag_${_ctx.type}-${_ctx.theme}`:'']]),
+          style: _nS(_uM({fontSize:`${_ctx.size}rpx`,lineHeight:`${_ctx.size}rpx`,color:_ctx.color}))
+        }), _tD(_ctx.text), 7 /* TEXT, CLASS, STYLE */)
+      : _cC("v-if", true),
+    renderSlot(_ctx.$slots, "default")
+  ], 14 /* CLASS, STYLE, PROPS */, ["onClick", "hover-class"])
+}
+export type FuiTagComponentPublicInstance = InstanceType<typeof __sfc__>;
+const GenUniModulesFirstuiUnixComponentsFuiTagFuiTagStyles = [_uM([["fui-tag__wrap", _pS(_uM([["display", "flex"], ["flexShrink", 0], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "center"], ["position", "relative"], ["borderTopWidth", 0.5], ["borderRightWidth", 0.5], ["borderBottomWidth", 0.5], ["borderLeftWidth", 0.5], ["borderTopStyle", "solid"], ["borderRightStyle", "solid"], ["borderBottomStyle", "solid"], ["borderLeftStyle", "solid"], ["borderTopColor", "rgba(0,0,0,0)"], ["borderRightColor", "rgba(0,0,0,0)"], ["borderBottomColor", "rgba(0,0,0,0)"], ["borderLeftColor", "rgba(0,0,0,0)"], ["overflow", "hidden"], ["boxSizing", "border-box"]]))], ["fui-tag__no-border", _pS(_uM([["borderTopWidth", 0], ["borderRightWidth", 0], ["borderBottomWidth", 0], ["borderLeftWidth", 0]]))], ["fui-tag__text", _pS(_uM([["lines", 1], ["overflow", "hidden"], ["textOverflow", "ellipsis"]]))], ["fui-tag__primary-dark", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "#465CFF"], ["!borderTopColor", "#465CFF"], ["!borderRightColor", "#465CFF"], ["!borderBottomColor", "#465CFF"], ["!borderLeftColor", "#465CFF"]]))], ["fui-tag_primary-dark", _pS(_uM([["!color", "#FFFFFF"]]))], ["fui-tag_success-dark", _pS(_uM([["!color", "#FFFFFF"]]))], ["fui-tag_warning-dark", _pS(_uM([["!color", "#FFFFFF"]]))], ["fui-tag_danger-dark", _pS(_uM([["!color", "#FFFFFF"]]))], ["fui-tag_purple-dark", _pS(_uM([["!color", "#FFFFFF"]]))], ["fui-tag__success-dark", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "#09BE4F"], ["!borderTopColor", "#09BE4F"], ["!borderRightColor", "#09BE4F"], ["!borderBottomColor", "#09BE4F"], ["!borderLeftColor", "#09BE4F"]]))], ["fui-tag__warning-dark", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "#FFB703"], ["!borderTopColor", "#FFB703"], ["!borderRightColor", "#FFB703"], ["!borderBottomColor", "#FFB703"], ["!borderLeftColor", "#FFB703"]]))], ["fui-tag__danger-dark", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "#FF2B2B"], ["!borderTopColor", "#FF2B2B"], ["!borderRightColor", "#FF2B2B"], ["!borderBottomColor", "#FF2B2B"], ["!borderLeftColor", "#FF2B2B"]]))], ["fui-tag__purple-dark", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "#6831FF"], ["!borderTopColor", "#6831FF"], ["!borderRightColor", "#6831FF"], ["!borderBottomColor", "#6831FF"], ["!borderLeftColor", "#6831FF"]]))], ["fui-tag__primary-light", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "#F1F4FA"], ["!borderTopColor", "#F1F4FA"], ["!borderRightColor", "#F1F4FA"], ["!borderBottomColor", "#F1F4FA"], ["!borderLeftColor", "#F1F4FA"]]))], ["fui-tag_primary-light", _pS(_uM([["!color", "#465CFF"]]))], ["fui-tag_primary-plain", _pS(_uM([["!color", "#465CFF"]]))], ["fui-tag__success-light", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "rgba(9,190,79,0.05)"], ["!borderTopColor", "rgba(9,190,79,0.05)"], ["!borderRightColor", "rgba(9,190,79,0.05)"], ["!borderBottomColor", "rgba(9,190,79,0.05)"], ["!borderLeftColor", "rgba(9,190,79,0.05)"]]))], ["fui-tag_success-light", _pS(_uM([["!color", "#09BE4F"]]))], ["fui-tag_success-plain", _pS(_uM([["!color", "#09BE4F"]]))], ["fui-tag__warning-light", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "rgba(255,183,3,0.1)"], ["!borderTopColor", "rgba(255,183,3,0.1)"], ["!borderRightColor", "rgba(255,183,3,0.1)"], ["!borderBottomColor", "rgba(255,183,3,0.1)"], ["!borderLeftColor", "rgba(255,183,3,0.1)"]]))], ["fui-tag_warning-light", _pS(_uM([["!color", "#FFB703"]]))], ["fui-tag_warning-plain", _pS(_uM([["!color", "#FFB703"]]))], ["fui-tag__danger-light", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "rgba(255,43,43,0.05)"], ["!borderTopColor", "rgba(255,43,43,0.05)"], ["!borderRightColor", "rgba(255,43,43,0.05)"], ["!borderBottomColor", "rgba(255,43,43,0.05)"], ["!borderLeftColor", "rgba(255,43,43,0.05)"]]))], ["fui-tag_danger-light", _pS(_uM([["!color", "#FF2B2B"]]))], ["fui-tag_danger-plain", _pS(_uM([["!color", "#FF2B2B"]]))], ["fui-tag__purple-light", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "rgba(104,49,255,0.05)"], ["!borderTopColor", "rgba(104,49,255,0.05)"], ["!borderRightColor", "rgba(104,49,255,0.05)"], ["!borderBottomColor", "rgba(104,49,255,0.05)"], ["!borderLeftColor", "rgba(104,49,255,0.05)"]]))], ["fui-tag_purple-light", _pS(_uM([["!color", "#6831FF"]]))], ["fui-tag_purple-plain", _pS(_uM([["!color", "#6831FF"]]))], ["fui-tag__primary-plain", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "rgba(0,0,0,0)"], ["!borderTopColor", "#465CFF"], ["!borderRightColor", "#465CFF"], ["!borderBottomColor", "#465CFF"], ["!borderLeftColor", "#465CFF"]]))], ["fui-tag__success-plain", _pS(_uM([["!backgroundColor", "rgba(0,0,0,0)"], ["!borderTopColor", "#09BE4F"], ["!borderRightColor", "#09BE4F"], ["!borderBottomColor", "#09BE4F"], ["!borderLeftColor", "#09BE4F"]]))], ["fui-tag__warning-plain", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "rgba(0,0,0,0)"], ["!borderTopColor", "#FFB703"], ["!borderRightColor", "#FFB703"], ["!borderBottomColor", "#FFB703"], ["!borderLeftColor", "#FFB703"]]))], ["fui-tag__danger-plain", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "rgba(0,0,0,0)"], ["!borderTopColor", "#FF2B2B"], ["!borderRightColor", "#FF2B2B"], ["!borderBottomColor", "#FF2B2B"], ["!borderLeftColor", "#FF2B2B"]]))], ["fui-tag__purple-plain", _pS(_uM([["!backgroundImage", "none"], ["!backgroundColor", "rgba(0,0,0,0)"], ["!borderTopColor", "#6831FF"], ["!borderRightColor", "#6831FF"], ["!borderBottomColor", "#6831FF"], ["!borderLeftColor", "#6831FF"]]))], ["fui-tag__origin-left", _pS(_uM([["transformOrigin", "0 center"]]))], ["fui-tag__origin-right", _pS(_uM([["transformOrigin", "100% center"]]))], ["fui-tag__opacity-active", _pS(_uM([["opacity", 0.5]]))]])]

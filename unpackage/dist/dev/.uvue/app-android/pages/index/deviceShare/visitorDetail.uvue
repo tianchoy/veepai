@@ -1,0 +1,113 @@
+import _easycom_l_icon from '@/uni_modules/lime-icon/components/l-icon/l-icon.uvue';
+import _easycom_l_checkbox from '@/uni_modules/lime-checkbox/components/l-checkbox/l-checkbox.uvue';
+import _easycom_l_checkbox_group from '@/uni_modules/lime-checkbox/components/l-checkbox-group/l-checkbox-group.uvue';
+import _easycom_fui_button from '@/uni_modules/firstui-unix/components/fui-button/fui-button.uvue';
+import { ref } from 'vue';
+const __sfc__ = defineComponent({
+    __name: 'visitorDetail',
+    setup(__props) {
+        const __ins = getCurrentInstance()!;
+        const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+        const _cache = __ins.renderCache;
+        const checkboxGroupRef = ref<LCheckboxGroupComponentPublicInstance | null>(null);
+        const checked = ref<string[]>(['1', '3', '7']);
+        const onChange = (e: string[]) => {
+            console.log('onChange', e, " at pages/index/deviceShare/visitorDetail.uvue:43");
+            checked.value = e;
+        };
+        const checkAll = () => {
+            if (checkboxGroupRef.value == null)
+                return;
+            checkboxGroupRef.value!.toggleAll(true);
+        };
+        return (): any | null => {
+            const _component_l_icon = resolveEasyComponent("l-icon", _easycom_l_icon);
+            const _component_l_checkbox = resolveEasyComponent("l-checkbox", _easycom_l_checkbox);
+            const _component_l_checkbox_group = resolveEasyComponent("l-checkbox-group", _easycom_l_checkbox_group);
+            const _component_fui_button = resolveEasyComponent("fui-button", _easycom_fui_button);
+            return _cE("view", _uM({ class: "container" }), [
+                _cE("text", null, "访客信息"),
+                _cE("view", _uM({ class: "content" }), [
+                    _cE("view", _uM({ class: "list" }), [
+                        _cE("text", null, "访客姓名"),
+                        _cE("text", null, "张三")
+                    ]),
+                    _cE("view", _uM({ class: "list nounderline" }), [
+                        _cE("text", null, "分享时间"),
+                        _cE("text", null, "2023-12-12 12:12:12")
+                    ])
+                ]),
+                _cE("view", _uM({ class: "content-title" }), [
+                    _cE("text", null, "访客权限"),
+                    _cV(_component_l_icon, _uM({
+                        name: "task-checked",
+                        onClick: checkAll,
+                        size: "20"
+                    }))
+                ]),
+                _cE("view", _uM({ class: "content" }), [
+                    _cV(_component_l_checkbox_group, _uM({
+                        ref_key: "checkboxGroupRef",
+                        ref: checkboxGroupRef,
+                        modelValue: checked.value,
+                        "onUpdate:modelValue": ($event: string[]) => { (checked).value = $event; },
+                        onChange: onChange,
+                        fontSize: "28rpx",
+                        iconSize: "20",
+                        direction: "vertical"
+                    }), _uM({
+                        default: withSlotCtx((): any[] => [
+                            _cV(_component_l_checkbox, _uM({
+                                value: "1",
+                                label: "视频预览"
+                            })),
+                            _cV(_component_l_checkbox, _uM({
+                                value: "2",
+                                label: "视频回放"
+                            })),
+                            _cV(_component_l_checkbox, _uM({
+                                value: "3",
+                                label: "云台控制"
+                            })),
+                            _cV(_component_l_checkbox, _uM({
+                                value: "4",
+                                label: "对讲"
+                            })),
+                            _cV(_component_l_checkbox, _uM({
+                                value: "5",
+                                label: "声音"
+                            })),
+                            _cV(_component_l_checkbox, _uM({
+                                value: "6",
+                                label: "推送"
+                            })),
+                            _cV(_component_l_checkbox, _uM({
+                                value: "7",
+                                label: "设备管理"
+                            }))
+                        ]),
+                        _: 1 /* STABLE */
+                    }), 8 /* PROPS */, ["modelValue", "onUpdate:modelValue"])
+                ]),
+                _cE("view", _uM({ class: "btn-box" }), [
+                    _cV(_component_fui_button, _uM({
+                        type: "default",
+                        borderColor: "#6831ff",
+                        color: "#6831ff",
+                        width: "40%",
+                        text: "删除访客"
+                    })),
+                    _cV(_component_fui_button, _uM({
+                        type: "primary",
+                        width: "40%",
+                        text: "保存"
+                    }))
+                ])
+            ]);
+        };
+    }
+});
+export default __sfc__;
+const GenPagesIndexDeviceShareVisitorDetailStyles = [_uM([["container", _pS(_uM([["height", "100%"], ["backgroundColor", "#f5f5f5"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]]))], ["content", _uM([[".container ", _uM([["backgroundColor", "#ffffff"], ["paddingTop", "20rpx"], ["paddingRight", "30rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "30rpx"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"], ["marginTop", "20rpx"], ["marginRight", 0], ["marginBottom", "50rpx"], ["marginLeft", 0]])]])], ["list", _uM([[".container .content ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"], ["paddingTop", "20rpx"], ["paddingRight", 0], ["paddingBottom", "20rpx"], ["paddingLeft", 0], ["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#f5f5f5"]])]])], ["nounderline", _uM([[".container .content ", _uM([["borderBottomWidth", 0], ["borderBottomStyle", "none"], ["borderBottomColor", "#000000"]])]])], ["l-checkbox", _uM([[".container .content ", _uM([["width", "100%"], ["display", "flex"], ["flexDirection", "row-reverse"], ["justifyContent", "space-between"], ["paddingTop", "30rpx"], ["paddingRight", 0], ["paddingBottom", "30rpx"], ["paddingLeft", 0], ["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#f5f5f5"]])]])], ["content-title", _uM([[".container ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"], ["paddingRight", "30rpx"]])]])], ["btn-box", _uM([[".container ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"]])]])]])];
+import { LCheckboxGroupComponentPublicInstance } from "@/uni_modules/lime-checkbox/components/l-checkbox-group/l-checkbox-group.uvue";
+//# sourceMappingURL=visitorDetail.uvue.map

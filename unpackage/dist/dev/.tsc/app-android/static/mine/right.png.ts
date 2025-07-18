@@ -1,0 +1,1 @@
+export default "/static/mine/right.png"

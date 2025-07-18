@@ -1,0 +1,13 @@
+export type UploadFile = {
+	url : string;
+	path ?: string;
+	name ?: string;
+	thumb ?: string;
+	size ?: number;
+	width ?: number;
+	height ?: number;
+	duration ?: number;
+	type ?: 'image' | 'video';
+	percent ?: number;
+	status ?: 'loading' | 'reload' | 'failed' | 'done';
+}

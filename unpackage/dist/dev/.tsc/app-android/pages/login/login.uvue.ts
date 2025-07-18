@@ -1,0 +1,298 @@
+import _easycom_fui_icon from '@/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue'
+import _easycom_fui_input from '@/uni_modules/firstui-unix/components/fui-input/fui-input.uvue'
+import _easycom_fui_button from '@/uni_modules/firstui-unix/components/fui-button/fui-button.uvue'
+import _easycom_fui_checkbox from '@/uni_modules/firstui-unix/components/fui-checkbox/fui-checkbox.uvue'
+import _easycom_fui_label from '@/uni_modules/firstui-unix/components/fui-label/fui-label.uvue'
+import _easycom_fui_checkbox_group from '@/uni_modules/firstui-unix/components/fui-checkbox-group/fui-checkbox-group.uvue'
+import _easycom_fui_bottom_popup from '@/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue'
+import _imports_0 from '@/static/login_banner.png'
+import { ref } from 'vue'
+	import TopNavBar from '../../components/TopNavBar.uvue'
+    
+const __sfc__ = defineComponent({
+  __name: 'login',
+  setup(__props) {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+const _cache = __ins.renderCache;
+
+	const loginType = ref<boolean>(true)
+    const isCheck = ref<string>('')
+	const btnWord = ref<string>('获取验证码')
+	const isCounting = ref<boolean>(false)
+    const user_info = ref<boolean>(false)
+    const user_text = ref<UTSJSONObject>({
+        title:'',
+        content:''
+    })
+
+    const changeType = (bool:boolean) => {
+        loginType.value = bool
+    }
+
+    const closeUserPopup = () => {
+        user_info.value = false
+    }
+
+    const showUserInfo = () =>{
+        user_info.value = true
+        user_text.value = {
+            title:'用户协议',
+            content:'用户协议内容'
+        }
+    }
+
+    const priviteInfo = () =>{
+		user_info.value = true
+        user_text.value = {
+            title:'隐私政策',
+            content:'隐私政策内容'
+        }
+    }
+
+    const isChecked = (e: string[]) =>{
+        isCheck.value = e.join(',')
+    }
+
+	function countDown(seconds : number) {
+		if (seconds <= 0) {
+			btnWord.value = '获取验证码'
+			isCounting.value = false
+			return
+		}
+
+		btnWord.value = `${seconds}秒后重发`
+
+		setTimeout(() => {
+			countDown(seconds - 1)
+		}, 1000)
+	}
+
+	const getPsw = () => {
+		if (isCounting.value) return
+
+		console.log('发送验证码请求...', " at pages/login/login.uvue:146")
+		isCounting.value = true
+
+		countDown(90)
+	}
+	const login = () => {
+		if(isCheck.value == ''){
+            uni.showToast({
+                title:'请先同意用户协议和隐私政策',
+                icon:'none'
+            })
+        }else{
+            uni.showToast({
+                title:'登录成功',
+                icon:'none'
+            })
+        }
+	}
+
+return (): any | null => {
+
+const _component_fui_icon = resolveEasyComponent("fui-icon",_easycom_fui_icon)
+const _component_fui_input = resolveEasyComponent("fui-input",_easycom_fui_input)
+const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_button)
+const _component_fui_checkbox = resolveEasyComponent("fui-checkbox",_easycom_fui_checkbox)
+const _component_fui_label = resolveEasyComponent("fui-label",_easycom_fui_label)
+const _component_fui_checkbox_group = resolveEasyComponent("fui-checkbox-group",_easycom_fui_checkbox_group)
+const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_easycom_fui_bottom_popup)
+
+  return _cE("view", _uM({ class: "container" }), [
+    _cV(unref(TopNavBar), _uM({
+      title: "登陆",
+      isText: true,
+      rightText: "注册"
+    })),
+    _cE("image", _uM({
+      src: _imports_0,
+      class: "longin_banner"
+    })),
+    _cE("view", _uM({ class: "content" }), [
+      isTrue(loginType.value)
+        ? _cE("view", _uM({ key: 0 }), [
+            _cV(_component_fui_input, _uM({
+              "placeholder-style": "color:#000",
+              backgroundColor: "#d3a0fa",
+              radius: 40,
+              borderBottom: false,
+              placeholder: "请输入账号"
+            }), _uM({
+              left: withSlotCtx((): any[] => [
+                _cE("view", _uM({
+                  style: _nS(_uM({"margin-right":"20rpx"}))
+                }), [
+                  _cV(_component_fui_icon, _uM({
+                    name: "mobile",
+                    color: "#1296db",
+                    size: 48
+                  }))
+                ], 4 /* STYLE */)
+              ]),
+              _: 1 /* STABLE */
+            })),
+            _cV(_component_fui_input, _uM({
+              "placeholder-style": "color:#000",
+              backgroundColor: "#d3a0fa",
+              marginTop: 40,
+              radius: 40,
+              borderBottom: false,
+              placeholder: "请输入密码",
+              type: "password"
+            }), _uM({
+              left: withSlotCtx((): any[] => [
+                _cE("view", _uM({
+                  style: _nS(_uM({"margin-right":"20rpx"}))
+                }), [
+                  _cV(_component_fui_icon, _uM({
+                    name: "captcha",
+                    color: "#1296db",
+                    size: 48
+                  }))
+                ], 4 /* STYLE */)
+              ]),
+              _: 1 /* STABLE */
+            })),
+            _cE("view", _uM({ class: "tips" }), [
+              _cE("text", _uM({
+                onClick: () => {changeType(false)}
+              }), "短信登陆", 8 /* PROPS */, ["onClick"]),
+              _cE("text", null, "忘记密码")
+            ])
+          ])
+        : _cE("view", _uM({ key: 1 }), [
+            _cV(_component_fui_input, _uM({
+              "placeholder-style": "color:#000",
+              backgroundColor: "#d3a0fa",
+              radius: 40,
+              borderBottom: false,
+              placeholder: "请输入账号"
+            }), _uM({
+              left: withSlotCtx((): any[] => [
+                _cE("view", _uM({
+                  style: _nS(_uM({"margin-right":"20rpx"}))
+                }), [
+                  _cV(_component_fui_icon, _uM({
+                    name: "mobile",
+                    color: "#1296db",
+                    size: 48
+                  }))
+                ], 4 /* STYLE */)
+              ]),
+              _: 1 /* STABLE */
+            })),
+            _cV(_component_fui_input, _uM({
+              padding: "20rpx 32rpx",
+              backgroundColor: "#d3a0fa",
+              placeholder: "请输入验证码",
+              bottomLeft: 0,
+              marginTop: 40,
+              radius: 40,
+              placeholderStyle: "font-size: 26rpx;",
+              "placeholder-style": "color:#000",
+              borderBottom: false
+            }), _uM({
+              left: withSlotCtx((): any[] => [
+                _cE("view", _uM({
+                  style: _nS(_uM({"margin-right":"20rpx"}))
+                }), [
+                  _cV(_component_fui_icon, _uM({
+                    name: "captcha",
+                    color: "#1296db",
+                    size: 48
+                  }))
+                ], 4 /* STYLE */)
+              ]),
+              default: withSlotCtx((): any[] => [
+                _cV(_component_fui_button, _uM({
+                  width: "200rpx",
+                  height: "64rpx",
+                  size: 28,
+                  onClick: getPsw,
+                  text: btnWord.value,
+                  background: "none",
+                  color: "#333",
+                  disabled: isCounting.value
+                }), null, 8 /* PROPS */, ["text", "disabled"])
+              ]),
+              _: 1 /* STABLE */
+            })),
+            _cE("view", _uM({ class: "tips" }), [
+              _cE("text", _uM({
+                onClick: () => {changeType(true)}
+              }), "密码登陆", 8 /* PROPS */, ["onClick"]),
+              _cE("text", null, "忘记密码")
+            ])
+          ]),
+      _cV(_component_fui_checkbox_group, _uM({
+        name: "checkbox",
+        class: "check-box",
+        onChange: isChecked
+      }), _uM({
+        default: withSlotCtx((): any[] => [
+          _cV(_component_fui_label, null, _uM({
+            default: withSlotCtx((): any[] => [
+              _cV(_component_fui_checkbox, _uM({ value: "1" }))
+            ]),
+            _: 1 /* STABLE */
+          })),
+          _cE("view", _uM({ class: "fui-text-box" }), [
+            _cE("text", null, "已阅读并同意"),
+            _cE("text", _uM({
+              class: "fui-text",
+              onClick: showUserInfo
+            }), "《用户协议》"),
+            _cE("text", null, "和"),
+            _cE("text", _uM({
+              class: "fui-text",
+              onClick: priviteInfo
+            }), "《隐私政策》")
+          ])
+        ]),
+        _: 1 /* STABLE */
+      })),
+      _cV(_component_fui_button, _uM({
+        text: "登录",
+        margin: "20rpx 0 0 0",
+        background: "#1296db",
+        color: "#fff",
+        size: 40,
+        onOnclick: login
+      }))
+    ]),
+    _cE("view", null, [
+      _cV(_component_fui_bottom_popup, _uM({
+        visible: user_info.value,
+        onClose: closeUserPopup
+      }), _uM({
+        default: withSlotCtx((): any[] => [
+          _cE("view", _uM({ class: "fui-scroll__wrap" }), [
+            _cE("view", _uM({ class: "fui-title__pb" }), [
+              _cE("text", null, _tD(user_text.value.title), 1 /* TEXT */),
+              _cE("view", _uM({ onClick: closeUserPopup }), [
+                _cV(_component_fui_icon, _uM({
+                  name: "close",
+                  size: 48
+                }))
+              ])
+            ]),
+            _cE("scroll-view", _uM({
+              "scroll-y": true,
+              "show-scrollbar": false
+            }), [
+              _cE("view", null, _tD(user_text.value.content), 1 /* TEXT */)
+            ])
+          ])
+        ]),
+        _: 1 /* STABLE */
+      }), 8 /* PROPS */, ["visible"])
+    ])
+  ])
+}
+}
+
+})
+export default __sfc__
+const GenPagesLoginLoginStyles = [_uM([["container", _pS(_uM([["height", "100%"], ["backgroundColor", "#ffffff"], ["paddingTop", "20rpx"], ["paddingRight", "40rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "40rpx"], ["display", "flex"], ["flexDirection", "column"], ["alignItems", "center"]]))], ["longin_banner", _uM([[".container ", _uM([["width", "250rpx"], ["height", "400rpx"], ["marginBottom", "20rpx"]])]])], ["content", _uM([[".container ", _uM([["width", "100%"]])]])], ["check-box", _uM([[".container .content ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-start"], ["marginTop", "20rpx"]])]])], ["fui-text-box", _uM([[".container .content .check-box ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "flex-start"], ["marginLeft", "10rpx"]])]])], ["fui-text", _uM([[".container .content .check-box .fui-text-box ", _uM([["color", "#1296db"]])]])], ["tips", _uM([[".container .content ", _uM([["marginTop", "20rpx"], ["display", "flex"], ["flexDirection", "row"], ["alignItems", "center"], ["justifyContent", "space-between"]])]])], ["fui-scroll__wrap", _uM([[".container ", _uM([["width", "100%"], ["paddingTop", "40rpx"], ["paddingRight", "40rpx"], ["paddingBottom", "40rpx"], ["paddingLeft", "40rpx"]])]])], ["fui-title__pb", _uM([[".container .fui-scroll__wrap ", _uM([["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"]])]])]])]

@@ -1,0 +1,212 @@
+import { Calendar} from './calender'
+	import { PropType } from 'vue'
+	import { unitConvert } from '@/uni_modules/lime-shared/unitConvert';
+	import { LDay,  LOptions, LYearMonth } from '../../index';
+	
+const __sfc__ = defineComponent({
+  __name: 'l-daily-punch',
+  props: {
+		canSupplement: {
+			type: Boolean,
+			default: true
+		},
+		isFullCalendar: {
+			type: Boolean,
+			default: true
+		},
+		yearMonth: {
+			type: String,
+			default: () : string => {
+				const date = new Date();
+				const year = date.getFullYear();
+				const month = (date.getMonth() + 1).toString().padStart(2, '0'); // 确保月份是两位数
+				return `${year}-${month}`;
+			}
+		},
+		signedDates: {
+			type: Array as PropType<string[]>,
+			default: () : string[] => {
+				return [] as string[];
+			},
+			validator: (value : string[]):boolean => {
+				// 简单的验证函数，确保每个元素都是有效的日期字符串
+				return value.every((date : string) : boolean => /^\d{4}-\d{2}-\d{2}$/.test(date));
+			}
+		},
+
+		dayHeight: {
+			type: Object,
+			default: 76
+		},
+
+
+
+
+
+
+
+		week: {
+			type: Array as PropType<string[]>,
+			default: () : string[] => ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+		},
+		weekStartsOn: {
+			type: Number,
+			default: 6,
+			validator: (value:number):boolean => value <= 6
+		},
+		weekColor: {
+			type: String,
+			default: '#BDC0C3'
+		},
+		weekFontSize: {
+			type: Number,
+			default: 14
+		},
+		weekHeight: {
+			type: Number,
+			default: 30
+		},
+		selectedDayBgColor: {
+			type: String,
+			default: 'rgba(0,0,0,0.06)'
+		},
+		dayFontSize: {
+			type: Number,
+			default: 16
+		},
+		textColor: {
+			type: String,
+			default: '#1A1F24'
+		},
+		disabledColor: {
+			type: String,
+			default: '#BDC0C3'
+		},
+		monthTitleHeight: {
+			type: Number,
+			default: 50
+		},
+		monthTitleFontSize: {
+			type: Number,
+			default: 20
+		},
+		color: {
+			type: String,
+			default: '#3B87F6'
+		},
+		unsignedColor: {
+			type: String,
+			default: '#F1A33A'
+		},
+	},
+  emits: ['select', 'panelChange', 'streak'],
+  setup(__props) {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+const _cache = __ins.renderCache;
+
+	function emits(event: string, ...do_not_transform_spread: Array<any | null>) {
+__ins.emit(event, ...do_not_transform_spread)
+}
+	const props = __props
+	let drawRef = ref<UniCanvasElement|null>(null)
+	let calender:Calendar|null = null
+	
+	
+	const styles = computed(():Map<string, any> => {
+		const style = new Map<string, any>()
+		style.set('height', `${6 * unitConvert(props.dayHeight) + props.weekHeight + props.monthTitleHeight}px`)
+		
+		return style
+	})
+	
+	const onClick = (e: UniPointerEvent) => {
+		calender?.touch(e)
+	}
+	
+	const setOpt = () => {
+		const opt:LOptions = {
+			canSupplement: props.canSupplement,
+			isFullCalendar: props.isFullCalendar,
+			yearMonth: props.yearMonth,
+			signedDates: [...props.signedDates],
+			dayHeight: unitConvert(props.dayHeight),
+			week: props.week as string[],
+			weekStartsOn: props.weekStartsOn,
+			weekColor: props.weekColor,
+			weekFontSize: props.weekFontSize,
+			weekHeight: props.weekHeight,
+			selectedDayBgColor: props.selectedDayBgColor,
+			dayFontSize: props.dayFontSize,
+			textColor: props.textColor,
+			disabledColor: props.disabledColor,
+			monthTitleHeight: props.monthTitleHeight,
+			monthTitleFontSize: props.monthTitleFontSize,
+			color:props.color,
+			unsignedColor: props.unsignedColor,
+			select: (e: LDay) => {
+				emits('select', e)
+			},
+			panelChange: (e: LYearMonth) => {
+				emits('panelChange', e)
+			}
+		}
+		if(calender == null) return
+		calender!.setOptions(opt)
+	}
+	watchEffect(() => {
+		setOpt()
+		if(calender == null) return
+		calender!.render()
+		emits('streak', calender!.checkinDays)
+	})
+	const instance = getCurrentInstance()!.proxy!
+	
+
+	// 异步调用方式, 跨平台写法
+	uni.createCanvasContextAsync({
+		id: 'l-daily-punch',
+		component: instance,
+		success: (context : CanvasContext) => {
+			const canvasContext = context.getContext('2d')!;
+			const canvas = canvasContext.canvas;
+			calender = new Calendar()
+			setOpt()
+			calender!.setCanvas(canvas)
+			calender!.render()
+			emits('streak', calender!.checkinDays)
+		}
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return (): any | null => {
+
+  return _cE("view", _uM({ class: "calender" }), [
+    _cE("canvas", _uM({
+      ref: "dailyRef",
+      id: "l-daily-punch",
+      class: "l-daily-punch",
+      style: _nS([unref(styles)]),
+      onClick: onClick
+    }), null, 4 /* STYLE */)
+  ])
+}
+}
+
+})
+export default __sfc__
+export type LDailyPunchComponentPublicInstance = InstanceType<typeof __sfc__>;
+const GenUniModulesLimeDailyPunchComponentsLDailyPunchLDailyPunchStyles = [_uM([["l-daily-punch", _pS(_uM([["width", "100%"]]))], ["calender", _pS(_uM([["marginTop", 0], ["marginRight", "30rpx"], ["marginBottom", 0], ["marginLeft", "30rpx"]]))]])]

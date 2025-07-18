@@ -1,0 +1,319 @@
+import { TextareaProps } from './type';
+	import { characterLimit, type CharacterLengthResult } from '@/uni_modules/lime-shared/characterLimit';
+	
+
+	import { useDrawBorder, DrawBorderOptions } from '@/uni_modules/lime-style/hairline'
+
+	
+	
+const __sfc__ = defineComponent({
+  __name: 'l-textarea',
+  __props: TextareaProps,
+  props: /*#__PURE__*/mergeModels({
+    adjustPosition: { type: Boolean, required: true, default: true },
+    autofocus: { type: Boolean, required: true, default: false },
+    autosize: { type: Boolean, required: true, default: false },
+    bordered: { type: Boolean, required: true, default: true },
+    confirmHold: { type: Boolean, required: true, default: false },
+    confirmType: { type: String, required: true, default: 'return' },
+    cursor: { type: Number, required: true, default: -1 },
+    cursorSpacing: { type: Number, required: true, default: 0 },
+    disableDefaultPadding: { type: Boolean, required: true, default: false },
+    disabled: { type: Boolean, required: true, default: false },
+    readonly: { type: Boolean, required: true, default: false },
+    fixed: { type: Boolean, required: true, default: false },
+    defaultFixed: { type: Boolean, required: true, default: false },
+    focus: { type: Boolean, required: true, default: false },
+    holdKeyboard: { type: Boolean, required: true, default: false },
+    indicator: { type: Boolean, required: true, default: false },
+    label: { type: String, required: false },
+    maxcharacter: { type: Number, required: false },
+    maxlength: { type: Number, required: true, default: -1 },
+    placeholder: { type: String, required: true, default: '' },
+    selectionEnd: { type: Number, required: true, default: -1 },
+    selectionStart: { type: Number, required: true, default: -1 },
+    showConfirmBar: { type: Boolean, required: true, default: true },
+    value: { type: String, required: false },
+    layout: { type: String, required: true, default: 'horizontal' },
+    placeholderStyle: { type: String, required: true, default: '' },
+    lStyle: { type: String, required: false },
+    labelStyle: { type: String, required: false },
+    indicatorStyle: { type: String, required: false },
+    innerStyle: { type: String, required: false },
+    classic: { type: Boolean, required: true, default: false },
+    borderColor: { type: String, required: false },
+    focusedBorderColor: { type: String, required: false },
+    focused: { type: Boolean, required: true, default: false }
+  }, {
+    "modelValue": {type: String, default: ''},
+  }),
+  emits: /*#__PURE__*/mergeModels(['change', 'focus', 'blur', 'confirm', 'linechange', 'keyboardheightchange'], ["update:modelValue"]),
+  setup(__props) {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+const _cache = __ins.renderCache;
+
+	/**
+	 * Textarea 多行输入框组件
+	 * @description 用于多行文本输入场景，支持自适应高度和多种键盘控制选项
+	 * <br>插件类型：LTextareaComponentPublicInstance 
+	 * @tutorial https://ext.dcloud.net.cn/plugin?name=lime-textarea
+	 * 
+	 * @property {boolean} adjustPosition 键盘弹起自动上推页面（默认：true）
+	 * @property {boolean} autofocus 自动聚焦（默认：false）
+	 * @property {boolean} autosize 自动调整高度（默认：false）
+	 * @property {boolean} bordered 显示外边框（默认：true）
+	 * @property {boolean} confirmHold 点击确认保持键盘不收起（默认：false）
+	 * @property {'return' | 'send' | 'search' | 'next' | 'go' | 'done'} confirmType 键盘确认按钮类型（默认："done"）
+	 * @value return
+	 * @value send
+	 * @value search
+	 * @value next
+	 * @value go
+	 * @value done
+	 * @property {number} cursor 聚焦时初始光标位置
+	 * @property {number} cursorSpacing 键盘与输入框间距（单位px，默认：0）
+	 * @property {boolean} disableDefaultPadding 禁用iOS默认内边距（默认：false）
+	 * @property {boolean} disabled 禁用状态（默认：false）
+	 * @property {boolean} readonly 只读（默认：false）
+	 * @property {boolean} classic 经典边框（默认：false）
+	 * @property {boolean} fixed 在fixed定位区域使用（默认：false）
+	 * @property {boolean} defaultFixed 默认fixed模式（兼容旧版）
+	 * @property {boolean} focus 自动聚焦（默认：false）
+	 * @property {boolean} focused 是否显示获焦样式，用于结合自定义键盘使用时显示高亮效果
+	 * @property {boolean} holdKeyboard 点击页面不收起键盘（默认：false）
+	 * @property {boolean} indicator 显示字数统计（默认：false）
+	 * @property {string} label 左侧标签文本
+	 * @property {number} maxcharacter 最大字符长度（中文算2个）
+	 * @property {number} maxlength 最大输入长度（默认：-1不限制）
+	 * @property {string} placeholder 占位文字
+	 * @property {number} selectionEnd 光标结束位置（需搭配selectionStart）
+	 * @property {number} selectionStart 光标起始位置（需搭配selectionEnd）
+	 * @property {boolean} showConfirmBar 显示键盘完成栏（默认：true）
+	 * @property {string} value 输入值（支持v-model）
+	 * @property {'vertical' | 'horizontal'} layout 标签布局方式（默认："horizontal"）
+	 * @value vertical
+	 * @value horizontal
+	 * @property {string} placeholderStyle 占位文字样式（仅支持color/font-size/font-weight）
+	 * @property {string} lStyle 自定义组件样式（CSS字符串）
+	 * @property {string} labelStyle 标签样式（CSS字符串）
+	 * @property {string} indicatorStyle 字数统计样式（CSS字符串）
+	 * @property {string} innerStyle 输入区域样式（CSS字符串）
+	 * @property {string} borderColor 边框颜色
+	 * @property {string} focusedBorderColor 聚焦时边框颜色
+	 * @event {Function} focus 聚焦时触发
+	 * @event {Function} blur 失焦时触发
+	 * @event {Function} confirm 点击完成按钮触发
+	 * @event {Function} linechange 行数变化时触发
+	 * @event {Function} change 
+	 * @event {Function} keyboardheightchange 
+	 */
+
+
+	function emit(event: string, ...do_not_transform_spread: Array<any | null>) {
+__ins.emit(event, ...do_not_transform_spread)
+}
+	const props = __props
+	
+	const formItemBlur = inject<(() => void)|null>('formItemBlur', null);
+	const formDisabled = inject<Ref<boolean|null>|null>('formDisabled', null)
+	const formReadonly = inject<Ref<boolean|null>|null>('formReadonly', null)
+	
+	const count = ref(0);
+	const innerFocused = ref(props.focus || props.focused);
+	
+	const calculateValue = (value: string):CharacterLengthResult => {
+		const { maxlength, maxcharacter } = props;
+		if(maxcharacter != null && maxcharacter > 0) {
+			return characterLimit('maxcharacter', value, maxcharacter)
+		} else if(maxlength > 0) {
+			return characterLimit('maxlength', value, maxlength)
+		}
+		return {
+			characters: value,
+			length: value.length
+		} as CharacterLengthResult
+	}
+	let _innerValue = ''
+	const modelValue = useModel<String>(__ins.props, "modelValue")
+	const innerValue = computed({
+		set(v: string) {
+			_innerValue = v;
+			modelValue.value = v;
+			emit('change', v)
+		},
+		get():string {
+			const _value = props.value ?? modelValue.value
+			if(_innerValue != _value) {
+				const {characters, length} = calculateValue(props.value ?? modelValue.value);
+				count.value = length;
+				return characters
+			}
+			return _value
+		},
+	} as WritableComputedOptions<string>)
+	
+	const isReadonly= computed(():boolean=>{
+		if (props.readonly) return props.readonly;
+		return formReadonly?.value ?? false;
+	})
+	const isDisabled= computed(():boolean=>{
+		if (props.disabled) return props.disabled;
+		return formDisabled?.value ?? false;
+	})
+	
+	
+	const styles = computed(():Map<string, string>=> {
+		const style = new Map<string, string>()
+
+
+
+
+
+
+
+
+		return style
+	})
+	
+	const onInput = (event: UniInputEvent) => {
+		let { value, cursor } = event.detail;
+		const {characters, length} = calculateValue(value);
+		count.value = length;
+		innerValue.value = characters;
+	}
+	const onFocus = (event: UniTextareaFocusEvent) => {
+		innerFocused.value = true;
+		emit('focus', event)
+	}
+	const onBlur = (event: UniTextareaBlurEvent) => {
+		innerFocused.value = false;
+		emit('blur', event)
+		formItemBlur?.()
+	}
+	const onConfirm = (event: UniInputConfirmEvent) => {
+		emit('confirm', event)
+	}
+	const onLineChange = (event: UniTextareaLineChangeEvent) => {
+		emit('linechange', event)
+	}
+	const onKeyboardHeightChange = (event: UniInputKeyboardHeightChangeEvent) => {
+		emit('keyboardheightchange', event)
+	}
+	
+	watchEffect(()=> {
+		innerFocused.value = props.focus || props.focused;
+	})
+	
+	
+
+	const textareaRef = ref<UniElement|null>(null);
+	const { clearBorder, color, renderBorder } = useDrawBorder(textareaRef, 
+		{  
+			direction: 'bottom',
+			watchSize: true,
+			startOffset: 16,
+			immediate: false,
+			color: props.borderColor 
+		} as DrawBorderOptions)
+		
+	onMounted(()=>{
+		watchEffect(()=>{
+			
+			if(!props.classic) {
+				if(props.borderColor != null && !innerFocused.value) {
+					textareaRef.value?.style.setProperty('border-color', props.borderColor)
+				}
+				if(props.focusedBorderColor != null && innerFocused.value) {
+					textareaRef.value?.style.setProperty('border-color', props.focusedBorderColor)
+				}
+			}
+			
+			
+			if(!props.bordered || props.classic) {
+				clearBorder()
+				return
+			}
+			if(props.borderColor != null && !innerFocused.value) {
+				color.value = props.borderColor!
+			}
+			renderBorder()
+		})
+	})
+
+	
+
+return (): any | null => {
+
+  return _cE("view", _uM({
+    class: _nC(["l-textarea", [
+			'l-textarea--' + _ctx.layout,
+			// classic ? 'l-textarea--classic-' + status : '',
+			_uM({
+				'l-textarea--classic': _ctx.classic,
+				'l-textarea--classic-disabled':  _ctx.classic && unref(isDisabled),
+				'l-textarea--classic-focused':  _ctx.classic && !unref(isDisabled) && unref(innerFocused),
+				'l-textarea--border': _ctx.bordered && !_ctx.classic
+			})]]),
+    ref_key: "textareaRef",
+    ref: textareaRef,
+    style: _nS([unref(styles), _ctx.lStyle])
+  }), [
+    isTrue(_ctx.label != null || _ctx.$slots['label'] != null)
+      ? _cE("text", _uM({
+          key: 0,
+          class: _nC(["l-textarea__label", [
+				'l-textarea__label--' + _ctx.layout,
+			]]),
+          style: _nS([_ctx.labelStyle])
+        }), [
+          renderSlot(_ctx.$slots, "default", {}, (): any[] => [_tD(_ctx.label)])
+        ], 6 /* CLASS, STYLE */)
+      : _cC("v-if", true),
+    _cE("view", _uM({ class: "l-textarea__wrapper" }), [
+      _cE("textarea", _uM({
+        class: _nC(["l-textarea__wrapper-inner", _uM({'is-disabled': unref(isDisabled)})]),
+        style: _nS([_ctx.innerStyle]),
+        maxlength: _ctx.maxlength,
+        disabled: unref(isDisabled) || unref(isReadonly),
+        placeholder: _ctx.placeholder,
+        "placeholder-class": "l-textarea__placeholder",
+        "placeholder-style": _ctx.placeholderStyle,
+        value: unref(innerValue),
+        "auto-height": _ctx.autosize,
+        "auto-focus": _ctx.autofocus,
+        fixed: _ctx.fixed,
+        focus: _ctx.focus,
+        cursor: _ctx.cursor,
+        "cursor-spacing": _ctx.cursorSpacing,
+        "adjust-position": _ctx.adjustPosition,
+        "confirm-type": _ctx.confirmType,
+        "confirm-hold": _ctx.confirmHold,
+        "disable-default-padding": _ctx.disableDefaultPadding,
+        "show-confirm-bar": _ctx.showConfirmBar,
+        "selection-start": _ctx.selectionStart,
+        "selection-end": _ctx.selectionEnd,
+        "hold-keyboard": _ctx.holdKeyboard,
+        onInput: onInput,
+        onFocus: onFocus,
+        onBlur: onBlur,
+        onConfirm: onConfirm,
+        onLinechange: onLineChange,
+        onKeyboardheightchange: onKeyboardHeightChange
+      }), null, 46 /* CLASS, STYLE, PROPS, NEED_HYDRATION */, ["maxlength", "disabled", "placeholder", "placeholder-style", "value", "auto-height", "auto-focus", "fixed", "focus", "cursor", "cursor-spacing", "adjust-position", "confirm-type", "confirm-hold", "disable-default-padding", "show-confirm-bar", "selection-start", "selection-end", "hold-keyboard"]),
+      isTrue(_ctx.indicator && ((_ctx.maxcharacter ?? _ctx.maxlength) > 0 ))
+        ? _cE("text", _uM({
+            key: 0,
+            class: "l-textarea__indicator",
+            style: _nS([_ctx.indicatorStyle])
+          }), _tD(unref(count)) + " / " + _tD(_ctx.maxcharacter ?? _ctx.maxlength), 5 /* TEXT, STYLE */)
+        : _cC("v-if", true)
+    ])
+  ], 6 /* CLASS, STYLE */)
+}
+}
+
+})
+export default __sfc__
+export type LTextareaComponentPublicInstance = InstanceType<typeof __sfc__>;
+const GenUniModulesLimeTextareaComponentsLTextareaLTextareaStyles = [_uM([["l-textarea", _pS(_uM([["boxSizing", "border-box"], ["paddingTop", "32rpx"], ["paddingRight", "32rpx"], ["paddingBottom", "32rpx"], ["paddingLeft", "32rpx"], ["backgroundColor", "#ffffff"]]))], ["l-textarea--horizontal", _pS(_uM([["flexDirection", "row"]]))], ["l-textarea__label", _pS(_uM([["color", "rgba(0,0,0,0.88)"], ["flexShrink", 0], ["lineHeight", "44rpx"], ["overflow", "hidden"], ["whiteSpace", "nowrap"], ["textOverflow", "ellipsis"]]))], ["l-textarea__label--vertical", _pS(_uM([["fontSize", 14], ["paddingBottom", "16rpx"]]))], ["l-textarea__label--horizontal", _pS(_uM([["fontSize", 16], ["marginRight", "32rpx"]]))], ["l-textarea__wrapper", _pS(_uM([["flex", 1], ["overflow", "hidden"]]))], ["l-textarea__wrapper-inner", _pS(_uM([["flex", "1 1 auto"], ["width", "100%"], ["boxSizing", "border-box"], ["minWidth", 0], ["minHeight", 20], ["marginTop", 0], ["marginRight", 0], ["marginBottom", 0], ["marginLeft", 0], ["paddingTop", 0], ["paddingRight", 0], ["paddingBottom", 0], ["paddingLeft", 0], ["textAlign", "left"], ["backgroundColor", "rgba(0,0,0,0)"], ["borderTopWidth", 0], ["borderRightWidth", 0], ["borderBottomWidth", 0], ["borderLeftWidth", 0], ["borderTopStyle", "none"], ["borderRightStyle", "none"], ["borderBottomStyle", "none"], ["borderLeftStyle", "none"], ["borderTopColor", "#000000"], ["borderRightColor", "#000000"], ["borderBottomColor", "#000000"], ["borderLeftColor", "#000000"], ["fontSize", 16], ["color", "rgba(0,0,0,0.88)"], ["lineHeight", "48rpx"]]))], ["l-textarea__placeholder", _pS(_uM([["color", "rgba(0,0,0,0.45)"], ["fontSize", 16], ["lineHeight", "48rpx"]]))], ["l-textarea__indicator", _pS(_uM([["flexShrink", 0], ["color", "rgba(0,0,0,0.45)"], ["fontSize", "24rpx"], ["textAlign", "right"], ["lineHeight", "40rpx"], ["paddingTop", "16rpx"]]))], ["l-textarea--border", _pS(_uM([["position", "relative"]]))], ["l-textarea--border-focused", _pS(_uM([["borderBottomColor", "#3283ff"]]))], ["is-disabled", _uM([[".l-textarea ", _uM([["color", "rgba(0,0,0,0.25)"]])]])], ["l-textarea--classic", _pS(_uM([["paddingTop", 12], ["paddingRight", 16], ["paddingBottom", 12], ["paddingLeft", 16], ["borderTopLeftRadius", "12rpx"], ["borderTopRightRadius", "12rpx"], ["borderBottomRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"], ["borderTopWidth", 0.5], ["borderRightWidth", 0.5], ["borderBottomWidth", 0.5], ["borderLeftWidth", 0.5], ["borderTopStyle", "solid"], ["borderRightStyle", "solid"], ["borderBottomStyle", "solid"], ["borderLeftStyle", "solid"], ["borderTopColor", "#eeeeee"], ["borderRightColor", "#eeeeee"], ["borderBottomColor", "#eeeeee"], ["borderLeftColor", "#eeeeee"]]))], ["l-textarea--classic-focused", _pS(_uM([["borderTopColor", "#3283ff"], ["borderRightColor", "#3283ff"], ["borderBottomColor", "#3283ff"], ["borderLeftColor", "#3283ff"]]))]])]

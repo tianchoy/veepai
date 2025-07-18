@@ -1,0 +1,227 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.1.2 effective-5.10 (swiftlang-6.1.2.1.2 clang-1700.0.13.5)
+// swift-module-flags: -target arm64-apple-ios9-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name unimoduleUniWifi
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -interface-compiler-version 6.1.2
+import SystemConfiguration.CaptiveNetwork
+import CoreFoundation
+import CoreLocation
+import DCloudUTSFoundation
+import DCloudUniappRuntime
+import Foundation
+import Swift
+import SystemConfiguration
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+@_exported import unimoduleUniWifi
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiWifiOption) @objcMembers public class WifiOption : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var success: ((_ res: unimoduleUniWifi.UniWifiResult) -> Swift.Void)?
+  @objc public var fail: ((_ res: DCloudUTSFoundation.UniError) -> Swift.Void)?
+  @objc public var complete: ((_ res: Any) -> Swift.Void)?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiWifiConnectOption) @objcMembers public class WifiConnectOption : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var SSID: Swift.String?
+  @objc public var BSSID: Swift.String?
+  @objc public var password: Swift.String?
+  @objc public var maunal: Swift.Bool
+  @objc public var partialInfo: Swift.Bool
+  @objc public var success: ((_ res: unimoduleUniWifi.UniWifiResult) -> Swift.Void)?
+  @objc public var fail: ((_ res: DCloudUTSFoundation.UniError) -> Swift.Void)?
+  @objc public var complete: ((_ res: Any) -> Swift.Void)?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiGetConnectedWifiOptions) @objcMembers public class GetConnectedWifiOptions : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var partialInfo: Swift.Bool
+  @objc public var success: ((_ res: unimoduleUniWifi.UniWifiResult) -> Swift.Void)?
+  @objc public var fail: ((_ res: DCloudUTSFoundation.UniError) -> Swift.Void)?
+  @objc public var complete: ((_ res: Any) -> Swift.Void)?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiUniWifiInfo) @objcMembers public class UniWifiInfo : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var SSID: Swift.String!
+  @objc public var BSSID: Swift.String?
+  @objc public var secure: Swift.Bool
+  @objc public var signalStrength: Foundation.NSNumber?
+  @objc public var frequency: Foundation.NSNumber?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiUniWifiInfoWithPartialInfo) @objcMembers public class UniWifiInfoWithPartialInfo : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var SSID: Swift.String!
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiUniWifiResult) @objcMembers public class UniWifiResult : ObjectiveC.NSObject, DCloudUTSFoundation.UTSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public var errCode: Foundation.NSNumber!
+  @objc public var errSubject: Swift.String!
+  @objc public var errMsg: Swift.String!
+  @objc public var wifi: unimoduleUniWifi.UniWifiInfo?
+  @objc public subscript(key: Swift.String) -> Any? {
+    @objc get
+    @objc set
+  }
+  @objc override dynamic public init()
+  @objc public init(_ obj: DCloudUTSFoundation.UTSJSONObject)
+  public typealias Element = Swift.String
+  public typealias Iterator = DCloudUTSFoundation.DCUniIterator
+  @objc deinit
+}
+public typealias UniWifiCallback = () -> Swift.Void
+public typealias UniGetWifiListCallback = (_ wifiInfo: DCloudUTSFoundation.UTSJSONObject) -> Swift.Void
+public typealias UniWifiResultCallback = (_ wifiInfo: unimoduleUniWifi.UniWifiResult) -> Swift.Void
+public typealias UniWifiResultCallbackWithPartialInfo = (_ wifiInfo: unimoduleUniWifi.UniWifiInfoWithPartialInfo) -> Swift.Void
+public typealias StartWifi = (_ option: unimoduleUniWifi.WifiOption) -> Swift.Void
+public typealias StopWifi = (_ option: unimoduleUniWifi.WifiOption) -> Swift.Void
+public typealias GetWifiList = (_ option: unimoduleUniWifi.WifiOption) -> Swift.Void
+public typealias OnGetWifiList = (_ callback: @escaping unimoduleUniWifi.UniGetWifiListCallback) -> Swift.Void
+public typealias OffGetWifiList = (_ callback: @escaping unimoduleUniWifi.UniWifiCallback) -> Swift.Void
+public typealias GetConnectedWifi = (_ option: unimoduleUniWifi.GetConnectedWifiOptions) -> Swift.Void
+public typealias ConnectWifi = (_ option: unimoduleUniWifi.WifiConnectOption) -> Swift.Void
+public typealias OnWifiConnected = (_ callback: @escaping unimoduleUniWifi.UniWifiResultCallback) -> Swift.Void
+public typealias OnWifiConnectedWithPartialInfo = (_ callback: @escaping unimoduleUniWifi.UniWifiResultCallbackWithPartialInfo) -> Swift.Void
+public typealias OffWifiConnected = (_ callback: unimoduleUniWifi.UniWifiCallback?) -> Swift.Void
+public typealias OffWifiConnectedWithPartialInfo = (_ callback: unimoduleUniWifi.UniWifiResultCallbackWithPartialInfo?) -> Swift.Void
+public typealias SetWifiList = (_ option: unimoduleUniWifi.WifiOption) -> Swift.Void
+public typealias WifiErrorCode = Foundation.NSNumber
+public protocol WifiFail : DCloudUTSFoundation.IUniError {
+  var errCode: unimoduleUniWifi.WifiErrorCode { get set }
+}
+public var UniErrorSubject: Swift.String
+public var WifiUniErrors: [unimoduleUniWifi.WifiErrorCode : Swift.String]
+public func getErrcode(_ errCode: Foundation.NSNumber) -> unimoduleUniWifi.WifiErrorCode
+@objc(UTSSDKModulesUniWifiWifiFailImpl) @objcMembers @_objcRuntimeName(UTSSDKModulesUniWifiWifiFailImpl) public class WifiFailImpl : DCloudUTSFoundation.UniError, unimoduleUniWifi.WifiFail {
+  @objc public init(_ errCode: unimoduleUniWifi.WifiErrorCode)
+  @objc deinit
+}
+@objc(UTSSDKModulesUniWifiLocationPromiseService) @objcMembers public class LocationPromiseService : ObjectiveC.NSObject, CoreLocation.CLLocationManagerDelegate, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  public static var promiseCompletionHandler: [(_ res: Swift.Bool) -> Swift.Void]
+  @objc public var manager: CoreLocation.CLLocationManager?
+  @objc public init(_ manager: CoreLocation.CLLocationManager?)
+  @objc public func initlizeManager() -> Swift.Bool
+  @objc public func locationManager(_ manager: CoreLocation.CLLocationManager, didChangeAuthorization status: CoreLocation.CLAuthorizationStatus)
+  @objc public func requestPromise(_ completion: @escaping (_ res: Swift.Bool) -> Swift.Void)
+  @objc deinit
+}
+public var locationPromiseService: unimoduleUniWifi.LocationPromiseService
+public func requestLocationPromise(_ completion: @escaping (_ res: Swift.Bool) -> Swift.Void)
+public func fetchConnectedWifiWithLocationPromise(_ option: unimoduleUniWifi.GetConnectedWifiOptions)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiUniWiFiModuleGloabInfo) @objcMembers public class UniWiFiModuleGloabInfo : ObjectiveC.NSObject, DCloudUTSFoundation.IUTSSourceMap {
+  @objc public func __$getOriginalPosition() -> DCloudUTSFoundation.UTSSourceMapPosition?
+  @objc public static var alreadyStartWifi: Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+public var startWifi: (_ option: unimoduleUniWifi.WifiOption) -> Swift.Void
+public var stopWifi: (_ option: unimoduleUniWifi.WifiOption) -> Swift.Void
+public var getWifiList: (_ option: unimoduleUniWifi.WifiOption) -> Swift.Void
+public var onGetWifiList: (_ callback: @escaping unimoduleUniWifi.UniGetWifiListCallback) -> Swift.Void
+public var offGetWifiList: (_ callback: @escaping unimoduleUniWifi.UniWifiCallback) -> Swift.Void
+public var getConnectedWifi: (_ option: unimoduleUniWifi.GetConnectedWifiOptions) -> Swift.Void
+public var connectWifi: (_ option: unimoduleUniWifi.WifiConnectOption) -> Swift.Void
+public var onWifiConnected: (_ callback: @escaping unimoduleUniWifi.UniWifiResultCallback) -> Swift.Void
+public var onWifiConnectedWithPartialInfo: (_ callback: @escaping unimoduleUniWifi.UniWifiResultCallbackWithPartialInfo) -> Swift.Void
+public var offWifiConnected: (_ callback: unimoduleUniWifi.UniWifiCallback?) -> Swift.Void
+public var offWifiConnectedWithPartialInfo: (_ callback: unimoduleUniWifi.UniWifiResultCallbackWithPartialInfo?) -> Swift.Void
+public var setWifiList: (_ option: unimoduleUniWifi.WifiOption) -> Swift.Void
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiWifiOptionJSONObject) @objcMembers public class WifiOptionJSONObject : ObjectiveC.NSObject {
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiWifiConnectOptionJSONObject) @objcMembers public class WifiConnectOptionJSONObject : ObjectiveC.NSObject {
+  @objc public var SSID: Swift.String?
+  @objc public var BSSID: Swift.String?
+  @objc public var password: Swift.String?
+  @objc public var maunal: Swift.Bool
+  @objc public var partialInfo: Swift.Bool
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiGetConnectedWifiOptionsJSONObject) @objcMembers public class GetConnectedWifiOptionsJSONObject : ObjectiveC.NSObject {
+  @objc public var partialInfo: Swift.Bool
+  @objc public var success: DCloudUTSFoundation.UTSCallback?
+  @objc public var fail: DCloudUTSFoundation.UTSCallback?
+  @objc public var complete: DCloudUTSFoundation.UTSCallback?
+  @objc override dynamic public init()
+  @objc deinit
+}
+public func startWifiByJs(_ option: unimoduleUniWifi.WifiOptionJSONObject)
+public func stopWifiByJs(_ option: unimoduleUniWifi.WifiOptionJSONObject)
+public func getWifiListByJs(_ option: unimoduleUniWifi.WifiOptionJSONObject)
+public func onGetWifiListByJs(_ callback: DCloudUTSFoundation.UTSCallback)
+public func offGetWifiListByJs(_ callback: DCloudUTSFoundation.UTSCallback)
+public func getConnectedWifiByJs(_ option: unimoduleUniWifi.GetConnectedWifiOptionsJSONObject)
+public func connectWifiByJs(_ option: unimoduleUniWifi.WifiConnectOptionJSONObject)
+public func onWifiConnectedByJs(_ callback: DCloudUTSFoundation.UTSCallback)
+public func onWifiConnectedWithPartialInfoByJs(_ callback: DCloudUTSFoundation.UTSCallback)
+public func offWifiConnectedByJs(_ callback: DCloudUTSFoundation.UTSCallback?)
+public func offWifiConnectedWithPartialInfoByJs(_ callback: DCloudUTSFoundation.UTSCallback?)
+public func setWifiListByJs(_ option: unimoduleUniWifi.WifiOptionJSONObject)
+@_inheritsConvenienceInitializers @objc(UTSSDKModulesUniWifiIndexSwift) @objcMembers public class UTSSDKModulesUniWifiIndexSwift : ObjectiveC.NSObject {
+  @objc public static func s_startWifiByJs(_ option: unimoduleUniWifi.WifiOptionJSONObject)
+  @objc public static func s_stopWifiByJs(_ option: unimoduleUniWifi.WifiOptionJSONObject)
+  @objc public static func s_getWifiListByJs(_ option: unimoduleUniWifi.WifiOptionJSONObject)
+  @objc public static func s_onGetWifiListByJs(_ callback: DCloudUTSFoundation.UTSCallback)
+  @objc public static func s_offGetWifiListByJs(_ callback: DCloudUTSFoundation.UTSCallback)
+  @objc public static func s_getConnectedWifiByJs(_ option: unimoduleUniWifi.GetConnectedWifiOptionsJSONObject)
+  @objc public static func s_connectWifiByJs(_ option: unimoduleUniWifi.WifiConnectOptionJSONObject)
+  @objc public static func s_onWifiConnectedByJs(_ callback: DCloudUTSFoundation.UTSCallback)
+  @objc public static func s_onWifiConnectedWithPartialInfoByJs(_ callback: DCloudUTSFoundation.UTSCallback)
+  @objc public static func s_offWifiConnectedByJs(_ callback: DCloudUTSFoundation.UTSCallback?)
+  @objc public static func s_offWifiConnectedWithPartialInfoByJs(_ callback: DCloudUTSFoundation.UTSCallback?)
+  @objc public static func s_setWifiListByJs(_ option: unimoduleUniWifi.WifiOptionJSONObject)
+  @objc override dynamic public init()
+  @objc deinit
+}

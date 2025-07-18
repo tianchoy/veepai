@@ -1,0 +1,220 @@
+import _easycom_l_icon from '@/uni_modules/lime-icon/components/l-icon/l-icon.uvue';
+import { SearchProps } from './type';
+import { characterLimit } from '@/uni_modules/lime-shared/characterLimit';
+const __sfc__ = defineComponent({
+    __name: 'l-search',
+    __props: SearchProps,
+    props: /*#__PURE__*/ mergeModels({
+        action: { type: String, required: false },
+        adjustPosition: { type: Boolean, required: true, default: true },
+        alwaysEmbed: { type: Boolean, required: true, default: false },
+        center: { type: Boolean, required: true, default: false },
+        clearable: { type: Boolean, required: true, default: true },
+        confirmHold: { type: Boolean, required: true, default: false },
+        confirmType: { type: String, required: true, default: 'search' },
+        cursor: { type: Number, required: false },
+        cursorSpacing: { type: Number, required: true, default: 0 },
+        disabled: { type: Boolean, required: true, default: false },
+        focus: { type: Boolean, required: true, default: false },
+        holdKeyboard: { type: Boolean, required: true, default: false },
+        leftIcon: { type: String, required: true, default: 'search' },
+        maxcharacter: { type: Number, required: false },
+        maxlength: { type: Number, required: true, default: -1 },
+        placeholder: { type: String, required: true },
+        placeholderClass: { type: String, required: false },
+        placeholderStyle: { type: String, required: false },
+        selectionEnd: { type: Number, required: true, default: -1 },
+        selectionStart: { type: Number, required: true, default: -1 },
+        shape: { type: String, required: true, default: 'square' },
+        type: { type: String, required: true, default: 'text' },
+        value: { type: String, required: false },
+        lStyle: { type: String, required: false },
+        cursorColor: { type: String, required: false },
+        padding: { type: String, required: false },
+        radius: { type: String, required: false },
+        height: { type: String, required: false },
+        bgColor: { type: String, required: false },
+        fontSize: { type: String, required: false },
+        textColor: { type: String, required: false },
+        iconColor: { type: String, required: false },
+        clearIconColor: { type: String, required: false }
+    }, {
+        "modelValue": { type: String, default: '' },
+    }),
+    emits: /*#__PURE__*/ mergeModels(['change', 'blur', 'clear', 'focus', 'submit', 'action-click'], ["update:modelValue"]),
+    setup(__props) {
+        const __ins = getCurrentInstance()!;
+        const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+        const _cache = __ins.renderCache;
+        function emit(event: string, ...do_not_transform_spread: Array<any | null>) {
+            __ins.emit(event, ...do_not_transform_spread);
+        }
+        const props = __props;
+        const focused = ref(props.focus);
+        const modelValue = useModel<String>(__ins.props, "modelValue");
+        const searchValue = computed({
+            set(value: string) {
+                modelValue.value = value;
+                emit('change', value);
+            },
+            get(): string {
+                return props.value ?? modelValue.value;
+            }
+        } as WritableComputedOptions<string>);
+        const contentClass = computed((): Map<string, any> => {
+            const cls = new Map<string, any>();
+            // cls.set(focused.value ? 'is-focused': 'not-focused', true)
+            cls.set('l-search__content--focused', focused.value);
+            cls.set('l-search__content--center', props.center);
+            cls.set('l-search__content--' + props.shape, true);
+            return cls;
+        });
+        const contextStyle = computed((): Map<string, any> => {
+            const style = new Map<string, any>();
+            if (props.padding != null) {
+                style.set('padding', props.padding!);
+            }
+            if (props.radius != null) {
+                style.set('border-radius', props.radius!);
+            }
+            if (props.height != null) {
+                style.set('height', props.height!);
+            }
+            if (props.bgColor != null) {
+                style.set('background', props.bgColor!);
+            }
+            return style;
+        });
+        const inputStyle = computed((): Map<string, any> => {
+            const style = new Map<string, any>();
+            if (props.fontSize != null) {
+                style.set('font-size', props.fontSize!);
+            }
+            if (props.textColor != null) {
+                style.set('color', props.textColor!);
+            }
+            return style;
+        });
+        const handleInput = (e: UniInputEvent) => {
+            let { value } = e.detail;
+            const { maxlength, maxcharacter } = props;
+            if (maxcharacter != null && maxcharacter > 0) {
+                const { characters } = characterLimit('maxcharacter', value, maxcharacter);
+                value = characters;
+            }
+            // else if(maxlength > 0) {
+            // 	const { characters } = characterLimit('maxlength', value, maxlength)
+            // 	value = characters;
+            // }
+            searchValue.value = value;
+        };
+        const handleClear = (_e: UniPointerEvent) => {
+            searchValue.value = '';
+            focused.value = true;
+            emit('clear');
+        };
+        const handleFocus = (e: UniInputFocusEvent) => {
+            const { value } = e.detail;
+            focused.value = true;
+            emit('focus', value);
+        };
+        const handleBlur = (e: UniInputBlurEvent) => {
+            const { value } = e.detail;
+            focused.value = false;
+            emit('blur', value);
+        };
+        const handleConfirm = (e: UniInputConfirmEvent) => {
+            const { value } = e.detail;
+            emit('submit', value);
+        };
+        const handleActionClick = (_e: UniPointerEvent) => {
+            emit('action-click');
+        };
+        return (): any | null => {
+            const _component_l_icon = resolveEasyComponent("l-icon", _easycom_l_icon);
+            return _cE("view", _uM({
+                class: "l-search",
+                style: _nS([_ctx.lStyle])
+            }), [
+                renderSlot(_ctx.$slots, "left"),
+                _cE("view", _uM({
+                    class: _nC(["l-search__content", unref(contentClass)]),
+                    style: _nS([unref(contextStyle)])
+                }), [
+                    renderSlot(_ctx.$slots, "left-icon", {}, (): any[] => [
+                        _ctx.leftIcon.length > 0
+                            ? _cV(_component_l_icon, _uM({
+                                key: 0,
+                                class: "l-search__icon",
+                                size: "42rpx",
+                                color: _ctx.iconColor,
+                                name: _ctx.leftIcon
+                            }), null, 8 /* PROPS */, ["color", "name"])
+                            : _cC("v-if", true)
+                    ]),
+                    _cE("input", _uM({
+                        name: "input",
+                        class: "l-search__keyword",
+                        style: _nS([unref(inputStyle), _ctx.center ? 'text-align:center' : '']),
+                        type: _ctx.type,
+                        maxlength: _ctx.maxlength,
+                        disabled: _ctx.disabled,
+                        focus: _ctx.focus,
+                        value: unref(searchValue),
+                        "confirm-type": _ctx.confirmType,
+                        "confirm-hold": _ctx.confirmHold,
+                        cursor: _ctx.cursor,
+                        "cursor-color": _ctx.cursorColor,
+                        "adjust-position": _ctx.adjustPosition,
+                        "always-embed": _ctx.alwaysEmbed,
+                        "selection-start": _ctx.selectionStart,
+                        "selection-end": _ctx.selectionEnd,
+                        "hold-keyboard": _ctx.holdKeyboard,
+                        "cursor-spacing": _ctx.cursorSpacing,
+                        placeholder: _ctx.placeholder,
+                        "placeholder-style": (_ctx.placeholderStyle ?? ' ') + (_ctx.center ? 'text-align:center' : ''),
+                        "placeholder-class": "l-search__placeholder",
+                        onInput: handleInput,
+                        onFocus: handleFocus,
+                        onBlur: handleBlur,
+                        onConfirm: handleConfirm
+                    }), null, 44 /* STYLE, PROPS, NEED_HYDRATION */, ["type", "maxlength", "disabled", "focus", "value", "confirm-type", "confirm-hold", "cursor", "cursor-color", "adjust-position", "always-embed", "selection-start", "selection-end", "hold-keyboard", "cursor-spacing", "placeholder", "placeholder-style"]),
+                    isTrue(_ctx.clearable)
+                        ? withDirectives(_cE("view", _uM({
+                            key: 0,
+                            class: _nC(["l-search__clear", _uM({
+                                    'l-search__clear--right': _ctx.$slots['right-icon'] != null
+                                })]),
+                            onClick: handleClear,
+                            "aria-role": "button",
+                            "aria-label": "清除"
+                        }), [
+                            _cV(_component_l_icon, _uM({
+                                class: "l-search__icon l-search__clear-icon",
+                                name: "close-circle-filled",
+                                size: "48rpx",
+                                color: _ctx.clearIconColor
+                            }), null, 8 /* PROPS */, ["color"])
+                        ], 2 /* CLASS */), [
+                            [vShow, unref(searchValue).length > 0]
+                        ])
+                        : _cC("v-if", true),
+                    renderSlot(_ctx.$slots, "right-icon")
+                ], 6 /* CLASS, STYLE */),
+                renderSlot(_ctx.$slots, "action", {}, (): any[] => [
+                    _ctx.action != null
+                        ? _cE("text", _uM({
+                            key: 0,
+                            class: _nC(["l-search__action", _uM({ 'l-search__action--focused': unref(focused) })]),
+                            onClick: handleActionClick
+                        }), _tD(_ctx.action), 3 /* TEXT, CLASS */)
+                        : _cC("v-if", true)
+                ])
+            ], 4 /* STYLE */);
+        };
+    }
+});
+export default __sfc__;
+export type LSearchComponentPublicInstance = InstanceType<typeof __sfc__>;
+const GenUniModulesLimeSearchComponentsLSearchLSearchStyles = [_uM([["l-search", _pS(_uM([["width", "100%"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"]]))], ["l-search__content", _pS(_uM([["flex", 1], ["alignItems", "center"], ["flexDirection", "row"], ["boxSizing", "border-box"], ["height", "80rpx"], ["borderTopWidth", "2rpx"], ["borderRightWidth", "2rpx"], ["borderBottomWidth", "2rpx"], ["borderLeftWidth", "2rpx"], ["borderTopStyle", "solid"], ["borderRightStyle", "solid"], ["borderBottomStyle", "solid"], ["borderLeftStyle", "solid"], ["borderTopColor", "rgba(0,0,0,0.04)"], ["borderRightColor", "rgba(0,0,0,0.04)"], ["borderBottomColor", "rgba(0,0,0,0.04)"], ["borderLeftColor", "rgba(0,0,0,0.04)"], ["backgroundImage", "none"], ["backgroundColor", "rgba(0,0,0,0.04)"], ["paddingTop", "16rpx"], ["paddingRight", "24rpx"], ["paddingBottom", "16rpx"], ["paddingLeft", "24rpx"]]))], ["l-search__content--focused", _pS(_uM([["borderTopColor", "rgba(0,0,0,0.04)"], ["borderRightColor", "rgba(0,0,0,0.04)"], ["borderBottomColor", "rgba(0,0,0,0.04)"], ["borderLeftColor", "rgba(0,0,0,0.04)"]]))], ["l-search__content--round", _pS(_uM([["borderTopLeftRadius", 99], ["borderTopRightRadius", 99], ["borderBottomRightRadius", 99], ["borderBottomLeftRadius", 99]]))], ["l-search__content--square", _pS(_uM([["borderTopLeftRadius", "12rpx"], ["borderTopRightRadius", "12rpx"], ["borderBottomRightRadius", "12rpx"], ["borderBottomLeftRadius", "12rpx"]]))], ["l-search__keyword", _pS(_uM([["flex", 1], ["color", "rgba(0,0,0,0.88)"], ["fontSize", 16], ["paddingLeft", "10rpx"]]))], ["l-search__placeholder", _pS(_uM([["color", "rgba(0,0,0,0.45)"]]))], ["l-search__placeholder--center", _pS(_uM([["textAlign", "center"]]))], ["l-search__icon", _pS(_uM([["color", "rgba(0,0,0,0.25)"]]))], ["l-search__clear", _pS(_uM([["position", "relative"], ["marginLeft", 10]]))], ["l-search__clear-icon", _pS(_uM([["color", "rgba(0,0,0,0.25)"]]))], ["l-search__clear--right", _pS(_uM([["marginRight", 10]]))], ["l-search__action", _pS(_uM([["marginLeft", "30rpx"], ["fontSize", 16], ["color", "#3283ff"]]))]])];
+//# sourceMappingURL=l-search.uvue.map

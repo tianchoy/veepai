@@ -1,0 +1,49 @@
+import _easycom_l_icon from '@/uni_modules/lime-icon/components/l-icon/l-icon.uvue'
+import { ref } from 'vue'
+
+
+	
+const __sfc__ = defineComponent({
+  __name: 'deviceVisitor',
+  setup(__props) {
+const __ins = getCurrentInstance()!;
+const _ctx = __ins.proxy as InstanceType<typeof __sfc__>;
+const _cache = __ins.renderCache;
+
+	const toDetail = () => {
+		uni.navigateTo({
+			url: '/pages/index/deviceShare/visitorDetail'
+		})
+	}
+
+return (): any | null => {
+
+const _component_l_icon = resolveEasyComponent("l-icon",_easycom_l_icon)
+
+  return _cE("view", _uM({ class: "container" }), [
+    _cE("view", _uM({ class: "content" }), [
+      _cE("view", _uM({
+        class: "list",
+        onClick: toDetail
+      }), [
+        _cE("text", null, "张三"),
+        _cV(_component_l_icon, _uM({
+          name: "chevron-right",
+          size: "30"
+        }))
+      ]),
+      _cE("view", _uM({ class: "list nounderline" }), [
+        _cE("text", null, "李四"),
+        _cV(_component_l_icon, _uM({
+          name: "chevron-right",
+          size: "30"
+        }))
+      ])
+    ])
+  ])
+}
+}
+
+})
+export default __sfc__
+const GenPagesIndexDeviceShareDeviceVisitorStyles = [_uM([["container", _pS(_uM([["height", "100%"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"], ["backgroundColor", "#f5f5f5"]]))], ["content", _uM([[".container ", _uM([["backgroundColor", "#ffffff"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"], ["borderTopLeftRadius", "20rpx"], ["borderTopRightRadius", "20rpx"], ["borderBottomRightRadius", "20rpx"], ["borderBottomLeftRadius", "20rpx"]])]])], ["list", _uM([[".container .content ", _uM([["paddingTop", "20rpx"], ["paddingRight", 0], ["paddingBottom", "20rpx"], ["paddingLeft", 0], ["display", "flex"], ["flexDirection", "row"], ["justifyContent", "space-between"], ["alignItems", "center"], ["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#f1f1f1"]])]])], ["nounderline", _uM([[".container .content ", _uM([["borderBottomWidth", 0], ["borderBottomStyle", "none"], ["borderBottomColor", "#000000"]])]])]])]

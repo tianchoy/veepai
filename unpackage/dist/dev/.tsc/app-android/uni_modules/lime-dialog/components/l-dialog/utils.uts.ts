@@ -1,0 +1,26 @@
+// @ts-nocheck
+
+
+
+
+export const parseToObject = (obj : any | null) : UTSJSONObject | null => {
+	if (obj == null) return null
+	if (typeof obj == 'string') {
+		return {
+			content: obj as string
+		}
+	} else if (typeof obj == 'object') {
+
+
+
+
+
+
+
+
+		return obj as UTSJSONObject
+
+
+	}
+	return null
+}
