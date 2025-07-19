@@ -35,14 +35,14 @@ open class GenPagesIndexIntelligentWatch : BasePage {
             val mobileTimeWatchLevel = ref<String>("全天")
             var currentCallback: ((value: String) -> Unit)? = null
             val peopeWatchOptions = _uA<PickerColumn>(_uA(
-                PickerColumnItem1(label = "高", value = "高"),
-                PickerColumnItem1(label = "中", value = "中"),
-                PickerColumnItem1(label = "低", value = "低")
+                PickerColumnItem(label = "高", value = "高"),
+                PickerColumnItem(label = "中", value = "中"),
+                PickerColumnItem(label = "低", value = "低")
             ))
             val typeModeWatchOptions = _uA<PickerColumn>(_uA(
-                PickerColumnItem1(label = "全天模式", value = "全天"),
-                PickerColumnItem1(label = "白天模式", value = "白天模式"),
-                PickerColumnItem1(label = "夜晚模式", value = "夜晚模式")
+                PickerColumnItem(label = "全天模式", value = "全天"),
+                PickerColumnItem(label = "白天模式", value = "白天模式"),
+                PickerColumnItem(label = "夜晚模式", value = "夜晚模式")
             ))
             val peopleWatchFun = fun(e: Boolean){
                 peopleWatch.value = e

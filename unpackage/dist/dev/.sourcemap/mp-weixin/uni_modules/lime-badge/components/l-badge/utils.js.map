@@ -1,0 +1,1 @@
+{"version":3,"file":"utils.js","sources":["uni_modules/lime-badge/components/l-badge/utils.ts"],"sourcesContent":["export function getOffsetWithMinusString(val : string):string {\r\n\treturn val.startsWith('-') ? val.replace('-', '') : `-${val}`\r\n};"],"names":[],"mappings":";AAAM,SAAU,yBAAyB,KAAY;AACpD,SAAO,IAAI,WAAW,GAAG,IAAI,IAAI,QAAQ,KAAK,EAAE,IAAI,IAAI,GAAG;AAC5D;;"}

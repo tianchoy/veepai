@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "云存储设置",
+  "usingComponents": {
+    "fui-button": "../../uni_modules/firstui-unix/components/fui-button/fui-button"
+  }
+}

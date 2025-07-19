@@ -1,0 +1,174 @@
+:host{display:flex;flex-direction:column}
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+:host {
+  display: inline-flex;
+}
+.l-checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+.l-checkbox__icon {
+  position: relative;
+  box-sizing: border-box;
+  width: var(--l-checkbox-icon-size, 40rpx);
+  height: var(--l-checkbox-icon-size, 40rpx);
+  align-self: center;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.l-checkbox__icon:after {
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  content: "";
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.l-checkbox__icon--rectangle {
+  border-radius: var(--l-checkbox-icon-border-radius, 6rpx);
+}
+.l-checkbox__icon--dot, .l-checkbox__icon--circle {
+  border-radius: 99px;
+}
+.l-checkbox__icon--rectangle, .l-checkbox__icon--dot, .l-checkbox__icon--circle {
+  background-color: var(--l-checkbox-icon-bg-color, white);
+  border: var(--l-checkbox-icon-border-width, 1rpx) solid var(--l-checkbox-border-icon-color, var(--l-gray-5, #c5c5c5));
+}
+.l-checkbox__icon--rectangle:after, .l-checkbox__icon--circle:after {
+  top: 48%;
+  left: 24%;
+  display: table;
+  width: 35%;
+  height: 60%;
+  border: calc(var(--l-checkbox-icon-size, 40rpx) / 7) solid transparent;
+  border-top: 0;
+  -webkit-border-start: 0;
+          border-inline-start: 0;
+  transform: rotate(45deg) scale(0) translate(-50%, -50%);
+  content: "";
+}
+.l-checkbox__icon--rectangle.l-checkbox__icon--checked, .l-checkbox__icon--circle.l-checkbox__icon--checked {
+  background-color: var(--l-checkbox-icon-checked-color, #3283ff);
+  border-color: var(--l-checkbox-icon-checked-color, #3283ff);
+}
+.l-checkbox__icon--rectangle.l-checkbox__icon--checked:after, .l-checkbox__icon--circle.l-checkbox__icon--checked:after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  border-color: white;
+}
+.l-checkbox__icon--rectangle.l-checkbox__icon--indeterminate, .l-checkbox__icon--circle.l-checkbox__icon--indeterminate {
+  background-color: var(--l-checkbox-icon-checked-color, #3283ff);
+  border-color: var(--l-checkbox-icon-checked-color, #3283ff);
+}
+.l-checkbox__icon--rectangle.l-checkbox__icon--indeterminate:after, .l-checkbox__icon--circle.l-checkbox__icon--indeterminate:after {
+  opacity: 1;
+  height: 0;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: scale(1) translate(-50%, -50%);
+  border-color: white;
+}
+.l-checkbox__icon--dot:after {
+  background-color: white;
+  border-radius: 99px;
+  transform: scale(0) translate(-50%, -50%);
+}
+.l-checkbox__icon--dot.l-checkbox__icon--checked {
+  background-color: var(--l-checkbox-icon-checked-color, #3283ff);
+  border-color: var(--l-checkbox-icon-checked-color, #3283ff);
+}
+.l-checkbox__icon--dot.l-checkbox__icon--checked:after {
+  opacity: 1;
+  width: 44%;
+  height: 44%;
+  transform: scale(1) translate(-50%, -50%);
+}
+.l-checkbox__icon--dot.l-checkbox__icon--indeterminate {
+  background-color: var(--l-checkbox-icon-checked-color, #3283ff);
+}
+.l-checkbox__icon--dot.l-checkbox__icon--indeterminate:after {
+  opacity: 1;
+  border-radius: 0;
+  transform: scale(1) translate(-50%, -50%);
+  width: 50%;
+  height: calc(var(--l-checkbox-icon-size, 40rpx) / 7);
+}
+.l-checkbox__icon--line:after {
+  top: 46%;
+  left: 0%;
+  inset-inline-start: 10%;
+  display: table;
+  width: 50%;
+  height: 85.7142857143%;
+  border: calc(var(--l-checkbox-icon-size, 40rpx) / 7) solid transparent;
+  border-top: 0;
+  -webkit-border-start: 0;
+          border-inline-start: 0;
+  transform: rotate(45deg) scale(0) translate(-50%, -50%);
+  content: "";
+  transition-timing-function: cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+.l-checkbox__icon--line.l-checkbox__icon--checked:after {
+  opacity: 1;
+  transform: rotate(45deg) scale(1) translate(-50%, -50%);
+  border-color: var(--l-checkbox-icon-checked-color, #3283ff);
+}
+.l-checkbox__icon--line.l-checkbox__icon--indeterminate:after {
+  opacity: 1;
+  height: 0;
+  left: 50%;
+  width: 70%;
+  transform: scale(1) translate(-50%, -50%);
+  border-color: var(--l-checkbox-icon-checked-color, #3283ff);
+}
+.l-checkbox__icon--rectangle.l-checkbox__icon--disabled, .l-checkbox__icon--circle.l-checkbox__icon--disabled, .l-checkbox__icon--dot.l-checkbox__icon--disabled {
+  border-color: var(--l-checkbox-icon-disabled-color, var(--l-gray-5, #c5c5c5));
+  background-color: var(--l-checkbox-icon-disabled-bg-color, var(--l-gray-1, #f3f3f3));
+}
+.l-checkbox__icon--rectangle.l-checkbox__icon--disabled.l-checkbox__icon--checked:after, .l-checkbox__icon--circle.l-checkbox__icon--disabled.l-checkbox__icon--checked:after, .l-checkbox__icon--dot.l-checkbox__icon--disabled.l-checkbox__icon--checked:after, .l-checkbox__icon--rectangle.l-checkbox__icon--disabled.l-checkbox__icon--indeterminate:after, .l-checkbox__icon--circle.l-checkbox__icon--disabled.l-checkbox__icon--indeterminate:after, .l-checkbox__icon--dot.l-checkbox__icon--disabled.l-checkbox__icon--indeterminate:after {
+  border-color: var(--l-checkbox-icon-disabled-color, var(--l-gray-5, #c5c5c5));
+}
+.l-checkbox__icon--dot.l-checkbox__icon--disabled.l-checkbox__icon--checked:after, .l-checkbox__icon--dot.l-checkbox__icon--disabled.l-checkbox__icon--indeterminate:after {
+  background-color: var(--l-checkbox-icon-disabled-color, var(--l-gray-5, #c5c5c5));
+}
+.l-checkbox__icon--line.l-checkbox__icon--disabled.l-checkbox__icon--checked:after, .l-checkbox__icon--line.l-checkbox__icon--disabled.l-checkbox__icon--indeterminate:after {
+  border-color: var(--l-checkbox-icon-disabled-color, var(--l-gray-5, #c5c5c5));
+}
+.l-checkbox__label {
+  padding-left: var(--l-spacer-xs, 16rpx);
+  font-size: var(--l-checkbox-font-size, 32rpx);
+  color: var(--l-text-color-1, rgba(0, 0, 0, 0.88));
+}
+.l-checkbox__label--disabled {
+  color: var(--l-checkbox-icon-disabled-color, var(--l-gray-5, #c5c5c5));
+}

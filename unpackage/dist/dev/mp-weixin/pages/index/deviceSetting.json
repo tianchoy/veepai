@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "l-icon": "../../uni_modules/lime-icon/components/l-icon/l-icon",
+    "fui-icon": "../../uni_modules/firstui-unix/components/fui-icon/fui-icon",
+    "fui-button": "../../uni_modules/firstui-unix/components/fui-button/fui-button",
+    "l-input": "../../uni_modules/lime-input/components/l-input/l-input",
+    "l-dialog": "../../uni_modules/lime-dialog/components/l-dialog/l-dialog",
+    "top-nav-bar": "../../components/TopNavBar"
+  }
+}

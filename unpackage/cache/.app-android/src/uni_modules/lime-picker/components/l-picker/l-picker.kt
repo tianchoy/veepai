@@ -84,7 +84,7 @@ open class GenUniModulesLimePickerComponentsLPickerLPicker : VueComponent, Picke
             )
             val curIndexArray = ref(_uA<Number>())
             val curValueArray = ref(pickerValue.value.slice())
-            val curItemArray: UTSArray<PickerColumnItem1> = _uA()
+            val curItemArray: UTSArray<PickerColumnItem> = _uA()
             val realColumns = computed(fun(): UTSArray<PickerColumn> {
                 val pickerColumns = pickerItemInstanceArray.map(fun(child): PickerColumn {
                     return child.options
@@ -110,7 +110,7 @@ open class GenUniModulesLimePickerComponentsLPickerLPicker : VueComponent, Picke
                     pickerItemInstanceArray.splice(index, 1)
                 }
             }
-            val updateItems = fun(item: PickerColumnItem1, index: Number, column: Number){
+            val updateItems = fun(item: PickerColumnItem, index: Number, column: Number){
                 pushAt(curIndexArray.value, column, index)
                 pushAt(curValueArray.value, column, item.value)
                 pushAt(curItemArray, column, item)
@@ -147,7 +147,7 @@ open class GenUniModulesLimePickerComponentsLPickerLPicker : VueComponent, Picke
                 curValueArray.value = _values
                 pickerValue.value = curValueArray.value.slice()
             }
-            val onPick = fun(item: PickerColumnItem1, index: Number, column: Number){
+            val onPick = fun(item: PickerColumnItem, index: Number, column: Number){
                 if (curIndexArray.value[column] == index) {
                     return
                 }
@@ -165,7 +165,7 @@ open class GenUniModulesLimePickerComponentsLPickerLPicker : VueComponent, Picke
             val onConfirm = fun(e: UniPointerEvent){
                 val values = curValueArray.value.slice()
                 val indexs = curIndexArray.value.slice()
-                val items = curItemArray.map(fun(item): PickerColumnItem1 {
+                val items = curItemArray.map(fun(item): PickerColumnItem {
                     return toRaw(item)
                 }
                 )

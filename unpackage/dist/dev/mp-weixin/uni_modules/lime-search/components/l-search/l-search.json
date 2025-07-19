@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-icon": "../../../lime-icon/components/l-icon/l-icon"
+  }
+}

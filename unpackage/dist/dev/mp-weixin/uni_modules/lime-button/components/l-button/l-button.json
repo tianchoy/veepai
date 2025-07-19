@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "l-loading": "../../../lime-loading/components/l-loading/l-loading",
+    "l-icon": "../../../lime-icon/components/l-icon/l-icon"
+  }
+}

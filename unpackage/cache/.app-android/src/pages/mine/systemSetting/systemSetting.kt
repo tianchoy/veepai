@@ -101,7 +101,7 @@ open class GenPagesMineSystemSettingSystemSetting : BasePage {
                 val _component_fui_icon = resolveEasyComponent("fui-icon", GenUniModulesFirstuiUnixComponentsFuiIconFuiIconClass)
                 val _component_fui_input = resolveEasyComponent("fui-input", GenUniModulesFirstuiUnixComponentsFuiInputFuiInputClass)
                 val _component_l_picker = resolveEasyComponent("l-picker", GenUniModulesLimePickerComponentsLPickerLPickerClass)
-                val _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup", GenUniModulesFirstuiUnixComponentsFuiBottomPopupFuiBottomPopupClass)
+                val _component_l_popup = resolveEasyComponent("l-popup", GenUniModulesLimePopupComponentsLPopupLPopupClass)
                 return _cE("view", _uM("class" to "container"), _uA(
                     _cE("view", _uM("class" to "content"), _uA(
                         _cE("view", _uM("class" to "items underline"), _uA(
@@ -155,7 +155,10 @@ open class GenPagesMineSystemSettingSystemSetting : BasePage {
                         }
                         ), 128)
                     )),
-                    _cV(_component_fui_bottom_popup, _uM("visible" to showPicker.value), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
+                    _cV(_component_l_popup, _uM("modelValue" to showPicker.value, "onUpdate:modelValue" to fun(`$event`: Boolean){
+                        showPicker.value = `$event`
+                    }
+                    , "position" to "bottom"), _uM("default" to withSlotCtx(fun(): UTSArray<Any> {
                         return _uA(
                             _cV(_component_l_picker, _uM("cancel-btn" to "取消", "confirm-btn" to "确定", "columns" to pickerOptions.value, "onCancel" to oncancel, "onConfirm" to onConfirm), null, 8, _uA(
                                 "columns"
@@ -163,7 +166,8 @@ open class GenPagesMineSystemSettingSystemSetting : BasePage {
                         )
                     }
                     ), "_" to 1), 8, _uA(
-                        "visible"
+                        "modelValue",
+                        "onUpdate:modelValue"
                     ))
                 ))
             }

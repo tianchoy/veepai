@@ -29,10 +29,10 @@
 			</view>
 		</view>
 
-		<fui-bottom-popup :visible="showPicker">
+		<l-popup v-model="showPicker" position="bottom">
 			<l-picker cancel-btn="取消" confirm-btn="确定" :columns="pickerOptions" @cancel="oncancel" @confirm="onConfirm">
 			</l-picker>
-		</fui-bottom-popup>
+		</l-popup>
 	</view>
 </template>
 
@@ -188,10 +188,6 @@
     });
 })
 
-	// onLoad(()=>{
-	// 	const res = uni.getAppAuthorizeSetting();
-	// 	console.log(res)
-	// })
 </script>
 
 <style lang="scss" scoped>

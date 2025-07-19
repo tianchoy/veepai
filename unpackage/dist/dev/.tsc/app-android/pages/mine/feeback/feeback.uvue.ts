@@ -4,7 +4,7 @@ import _easycom_l_textarea from '@/uni_modules/lime-textarea/components/l-textar
 import _easycom_l_upload from '@/uni_modules/lime-upload/components/l-upload/l-upload.uvue'
 import _easycom_fui_button from '@/uni_modules/firstui-unix/components/fui-button/fui-button.uvue'
 import _easycom_l_picker from '@/uni_modules/lime-picker/components/l-picker/l-picker.uvue'
-import _easycom_fui_bottom_popup from '@/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue'
+import _easycom_l_popup from '@/uni_modules/lime-popup/components/l-popup/l-popup.uvue'
 import { ref } from 'vue'
 	import { UploadFile } from '@/uni_modules/lime-upload';
 	import { PickerColumn ,PickerConfirmEvent} from '@/uni_modules/lime-picker';
@@ -27,6 +27,8 @@ const _cache = __ins.renderCache;
 	const showPicker = ref<boolean>(false)
 
 	const showQuestionsPicker = () => {
+		console.log('aaaa', " at pages/mine/feeback/feeback.uvue:72")
+		showPicker.value = true
 		pickerOptions.value = [
 			[
 				{
@@ -43,7 +45,7 @@ const _cache = __ins.renderCache;
 				}
 			]
 		]  as PickerColumn[]
-		showPicker.value = true
+		
 	}
 
 	const onConfirm = (context : PickerConfirmEvent) => {
@@ -69,7 +71,7 @@ const _component_l_textarea = resolveEasyComponent("l-textarea",_easycom_l_texta
 const _component_l_upload = resolveEasyComponent("l-upload",_easycom_l_upload)
 const _component_fui_button = resolveEasyComponent("fui-button",_easycom_fui_button)
 const _component_l_picker = resolveEasyComponent("l-picker",_easycom_l_picker)
-const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_easycom_fui_bottom_popup)
+const _component_l_popup = resolveEasyComponent("l-popup",_easycom_l_popup)
 
   return _cE("view", _uM({ class: "container" }), [
     _cE("view", _uM({ class: "content" }), [
@@ -171,7 +173,11 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
         onOnclick: submit
       }))
     ]),
-    _cV(_component_fui_bottom_popup, _uM({ visible: showPicker.value }), _uM({
+    _cV(_component_l_popup, _uM({
+      modelValue: showPicker.value,
+      "onUpdate:modelValue": $event => {(showPicker).value = $event},
+      position: "bottom"
+    }), _uM({
       default: withSlotCtx((): any[] => [
         _cV(_component_l_picker, _uM({
           "cancel-btn": "取消",
@@ -182,7 +188,7 @@ const _component_fui_bottom_popup = resolveEasyComponent("fui-bottom-popup",_eas
         }), null, 8 /* PROPS */, ["columns"])
       ]),
       _: 1 /* STABLE */
-    }), 8 /* PROPS */, ["visible"])
+    }), 8 /* PROPS */, ["modelValue", "onUpdate:modelValue"])
   ])
 }
 }

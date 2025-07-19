@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "流量充值",
+  "usingComponents": {
+    "fui-icon": "../../../uni_modules/firstui-unix/components/fui-icon/fui-icon",
+    "l-icon": "../../../uni_modules/lime-icon/components/l-icon/l-icon",
+    "l-progress": "../../../uni_modules/lime-progress/components/l-progress/l-progress",
+    "fui-button": "../../../uni_modules/firstui-unix/components/fui-button/fui-button",
+    "fui-radio": "../../../uni_modules/firstui-unix/components/fui-radio/fui-radio",
+    "fui-list-cell": "../../../uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell",
+    "fui-label": "../../../uni_modules/firstui-unix/components/fui-label/fui-label",
+    "fui-radio-group": "../../../uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group",
+    "fui-bottom-popup": "../../../uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup"
+  }
+}

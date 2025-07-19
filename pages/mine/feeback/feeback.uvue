@@ -47,10 +47,10 @@
 		<view class="btn-box">
 			<fui-button color="#fff" text="去充值" background="#1296db" height="80rpx" @onclick="submit"></fui-button>
 		</view>
-		<fui-bottom-popup :visible="showPicker">
-			<l-picker cancel-btn="取消" confirm-btn="确定" :columns="pickerOptions" @cancel="oncancel" @confirm="onConfirm">
+		<l-popup v-model="showPicker" position="bottom">
+				<l-picker cancel-btn="取消" confirm-btn="确定" :columns="pickerOptions" @cancel="oncancel" @confirm="onConfirm">
 			</l-picker>
-		</fui-bottom-popup>
+		</l-popup>
 	</view>
 </template>
 
@@ -69,6 +69,8 @@
 	const showPicker = ref<boolean>(false)
 
 	const showQuestionsPicker = () => {
+		console.log('aaaa')
+		showPicker.value = true
 		pickerOptions.value = [
 			[
 				{
@@ -85,7 +87,7 @@
 				}
 			]
 		]  as PickerColumn[]
-		showPicker.value = true
+		
 	}
 
 	const onConfirm = (context : PickerConfirmEvent) => {

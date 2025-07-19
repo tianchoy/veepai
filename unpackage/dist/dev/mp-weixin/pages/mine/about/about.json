@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "关于",
+  "usingComponents": {
+    "fui-icon": "../../../uni_modules/firstui-unix/components/fui-icon/fui-icon"
+  }
+}

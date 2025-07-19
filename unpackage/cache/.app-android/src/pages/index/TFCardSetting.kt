@@ -29,12 +29,12 @@ open class GenPagesIndexTFCardSetting : BasePage {
             val endTime = ref<String>("23:59")
             var currentCallback: ((value: String) -> Unit)? = null
             val vedioModeOptions = _uA<PickerColumn>(_uA(
-                PickerColumnItem1(label = "一直录像", value = "一直录像"),
-                PickerColumnItem1(label = "事件录像", value = "事件录像")
+                PickerColumnItem(label = "一直录像", value = "一直录像"),
+                PickerColumnItem(label = "事件录像", value = "事件录像")
             ))
             val pictureQualityOptions = _uA<PickerColumn>(_uA(
-                PickerColumnItem1(label = "高清", value = "高清"),
-                PickerColumnItem1(label = "超清", value = "超清")
+                PickerColumnItem(label = "高清", value = "高清"),
+                PickerColumnItem(label = "超清", value = "超清")
             ))
             val vedioMode = fun(){
                 types.value = true

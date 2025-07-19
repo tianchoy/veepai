@@ -1,0 +1,139 @@
+@import "../../../uvue.wxss";
+:host{display:flex;flex-direction:column}
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.container.data-v-52a55c74 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #f3f3f3;
+}
+.container .vedio-box.data-v-52a55c74, .container .vedio-box .video.data-v-52a55c74 {
+  width: 100%;
+}
+.container .content-box.data-v-52a55c74 {
+  padding: 30rpx 20rpx;
+}
+.container .content-box .sub-nav.data-v-52a55c74, .container .content-box .sub-nav .select.data-v-52a55c74, .container .content-box .sub-nav .today.data-v-52a55c74 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .content-box .sub-nav .today.data-v-52a55c74 {
+  width: 120rpx;
+  align-items: center;
+}
+.container .content-box .sub-nav .today .down.data-v-52a55c74 {
+  width: 25rpx;
+  height: 25rpx;
+}
+.container .content-box .sub-nav .select.data-v-52a55c74 {
+  margin-left: 10rpx;
+}
+.container .content-box .sub-nav .select .select-item.data-v-52a55c74 {
+  flex: 1;
+  background-color: #fff;
+  color: #333;
+  padding: 10rpx 20rpx;
+  border-radius: 5rpx;
+  margin: 0 5rpx;
+}
+.container .content-box .sub-nav .select .active.data-v-52a55c74 {
+  color: #fff;
+  background-color: #1296db;
+}
+.container .content-box .tab-content.data-v-52a55c74 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.container .content-box .tab-content .tab-pane.data-v-52a55c74 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+.container .content-box .tab-content .tab-pane .item-content.data-v-52a55c74 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.container .content-box .tab-content .tab-pane .item-content .item-icon.data-v-52a55c74 {
+  width: 60rpx;
+  height: 60rpx;
+}
+.container .content-box .tab-content .tab-pane .item-content .info.data-v-52a55c74 {
+  margin-left: 20rpx;
+}
+.container .content-box .tab-content .tab-pane .item-img.data-v-52a55c74 {
+  width: 100rpx;
+  height: 60rpx;
+}
+.container .calendar-box.data-v-52a55c74 {
+  width: 100%;
+  background-color: #fff;
+}
+.container .calendar-box .btn-chanel-box.data-v-52a55c74 {
+  position: absolute;
+  width: 85%;
+  bottom: 45rpx;
+  left: 60rpx;
+  border-radius: 50rpx;
+}
+.container .popup-title.data-v-52a55c74 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 40rpx;
+}
+.container .fui-scroll__wrap.data-v-52a55c74 {
+  width: 100%;
+  padding: 30rpx 0;
+  position: relative;
+}
+.container .fui-sub__title.data-v-52a55c74 {
+  text-align: center;
+  font-size: 24rpx;
+  color: #7F7F7F;
+  transform: scale(0.9);
+}
+.container .fui-scroll__view.data-v-52a55c74 {
+  width: 100%;
+  height: 50%;
+}
+.container .fui-list__cell.data-v-52a55c74 {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,1 +1,0 @@
-export default "/static/login_banner.png"

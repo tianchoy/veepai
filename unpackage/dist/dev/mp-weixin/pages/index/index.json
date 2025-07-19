@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "首页",
+  "enableVideo": true,
+  "usingComponents": {
+    "top-nav-bar": "../../components/TopNavBar"
+  }
+}

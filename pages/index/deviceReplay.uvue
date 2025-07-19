@@ -1,642 +1,650 @@
 <template>
-  <view class="container">
-    <!-- 顶部标题栏 -->
-    <view class="header">
-      <text class="title">监控视频回放</text>
-      <text class="current-time">{{ currentDate }} {{ currentTime }}</text>
-    </view>
-    
-    <!-- 日期选择滚动条 -->
-    <scroll-view class="date-scroll" scroll-x :scroll-left="dateScrollLeft">
-      <view class="date-list">
-        <view 
-          v-for="(date, index) in dateList" 
-          :key="index"
-          :class="['date-item', activeDate === date ? 'active' : '']"
-          @tap="selectDate(date)"
-        >
-          {{ date }}
-        </view>
-      </view>
-    </scroll-view>
-    
-    <!-- 视频播放区域 -->
-    <view class="video-container">
-      <video 
-        id="myVideo"
-        :src="videoSrc" 
-        :controls="true"
-        class="video-player"
-        @timeupdate="onTimeUpdate"
-        @play="onPlay"
-        @pause="onPause"
-        
-        @seeked="onSeeked"
-      ></video>
-    </view>
-    
-    <!-- 可拖动时间轴 -->
-    <view class="time-ruler-container">
-      <scroll-view 
-        class="time-ruler-scroll" 
-        scroll-x
-        :scroll-left="timeScrollLeft"
-        scroll-with-animation
-        @scroll="onTimeScroll"
-      >
-        <view 
-          class="time-ruler" 
-          :style="{ width: rulerWidth + 'px' }"
-          @touchstart="onTouchStart"
-          @touchmove="onTouchMove"
-          @touchend="onTouchEnd"
-        >
-          <!-- 时间刻度 -->
-          <view 
-            v-for="hour in 24" 
-            :key="'hour-' + hour"
-            class="hour-section"
-          >
-            <view class="hour-mark">{{ formatHour(hour - 1) }}</view>
-            <view class="minute-marks">
-              <view 
-                v-for="minute in minuteMarks" 
-                :key="'min-' + hour + '-' + minute"
-                class="minute-mark"
-                @tap="seekToTime(hour - 1, minute)"
-              >
-                <!-- 事件标记点 -->
-                <view 
-                  v-if="hasEvent(hour - 1, minute)"
-                  :class="['event-dot', getEventType(hour - 1, minute)]"
-                ></view>
-                <!-- 分钟标签 -->
-                <text v-if="minute % 15 === 0" class="minute-label">{{ minute }}</text>
-              </view>
-            </view>
-          </view>
-          
-          <!-- 播放头指示器 -->
-          <view 
-            class="playhead" 
-            :style="{ left: playheadPosition + 'px' }"
-          ></view>
-          
-          <!-- 当前时间指示器 -->
-          <view 
-            class="time-indicator" 
-            :style="{ left: playheadPosition + 'px' }"
-          >
-            {{ currentTime.split(':').slice(0, 2).join(':') }}
-          </view>
-        </view>
-      </scroll-view>
-    </view>
-    
-    <!-- 事件筛选工具栏 -->
-    <view class="filter-bar">
-      <view 
-        v-for="filter in filters" 
-        :key="filter.value"
-        :class="['filter-item', activeFilter === filter.value ? 'active' : '']"
-        @tap="selectFilter(filter.value)"
-      >
-        {{ filter.label }}
-      </view>
-    </view>
-  </view>
+	<view class="container">
+		<!-- 日期选择滚动条 -->
+		<scroll-view class="date-scroll" scroll-x :scroll-left="dateScrollLeft">
+			<view class="date-list">
+				<view v-for="(date, index) in dateList" :key="index"
+					:class="['date-item', activeDate === date ? 'active' : '']" @tap="selectDate(date)">
+					{{ date }}
+				</view>
+			</view>
+		</scroll-view>
+
+		<!-- 视频播放区域 -->
+		<view class="video-container">
+			<video id="myVideo" :src="videoSrc" :controls="true" class="video-player" @timeupdate="onTimeUpdate"
+				@play="onPlay" @pause="onPause" @durationchange="onDurationChange" @seeked="onSeeked"></video>
+		</view>
+
+		<!-- 可拖动时间轴 -->
+		<view class="time-ruler-container">
+			<scroll-view class="time-ruler-scroll" scroll-x :scroll-left="timeScrollLeft" scroll-with-animation
+				@scroll="onTimeScroll">
+				<view class="time-ruler" :style="{ width: rulerWidth + 'px' }" @touchstart="onTouchStart"
+					@touchmove="onTouchMove" @touchend="onTouchEnd">
+					<!-- 动态时间刻度 -->
+					<view v-for="(mark, index) in timeMarks" :key="'mark-' + index" :class="['time-mark', mark.type]"
+						:style="{ left: mark.position + 'px' }" @tap="seekToPosition(mark.time)">
+						<!-- 主刻度标签 -->
+						<text v-if="mark.type === 'major'" class="mark-label">{{ formatMarkTime(mark.time) }}</text>
+						<!-- 事件标记点 -->
+						<view v-if="hasEventAtTime(mark.time)" :class="['event-dot', getEventTypeAtTime(mark.time)]">
+						</view>
+					</view>
+
+					<!-- 播放头指示器 -->
+					<view class="playhead" :style="{ left: playheadPosition + 'px' }"></view>
+				</view>
+			</scroll-view>
+		</view>
+
+		<!-- 事件筛选工具栏 -->
+		<view class="filter-bar">
+			<view v-for="filter in filters" :key="filter.value"
+				:class="['filter-item', activeFilter === filter.value ? 'active' : '']"
+				@tap="selectFilter(filter.value as string)">
+				{{ filter.label }}
+			</view>
+		</view>
+	</view>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, getCurrentInstance } from 'vue'
+	import { ref, computed, onMounted, getCurrentInstance } from 'vue'
 
-class EventType {
-  date: string;
-  time: string;
-  type: string;
+	class EventType {
+		date : string;
+		time : string;
+		type : string;
 
-  constructor(date: string, time: string, type: string) {
-    this.date = date;
-    this.time = time;
-    this.type = type;
-  }
-}
-// 响应式状态
-const currentDate = ref('2024-10-21')
-const currentTime = ref('00:00:00')
-const activeDate = ref('10-21')
-const activeFilter = ref('all')
-const videoSrc = ref('https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4')
-const videoContext = ref<VideoContext | null>(null)
-const isSeeking = ref(false)
-const timeScrollLeft = ref(0)
-const dateScrollLeft = ref(0)
-const playheadPosition = ref(0)
-const videoDuration = ref(0)
-const lastSyncTime = ref(0)
-const isDragging = ref(false)
-const startX = ref(0)
-const startScrollLeft = ref(0)
-const lastDragTime = ref(0)
-const manualScrollPosition = ref(0)
-const draggedTimeInSeconds = ref(0)
-
-// 获取当前组件实例
-const instance = getCurrentInstance()
-
-// 常量配置
-const dateList = ['10-21', '10-22', '10-23', '10-24', '10-25', '10-26']
-const minuteMarks = [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55]
-const filters = [
-  { label: '只看报警', value: 'alarm' },
-  { label: '移动侦测', value: 'motion' },
-  { label: '人形侦测', value: 'human' },
-  { label: '全部', value: 'all' }
-]
-
-// 模拟事件数据
-const events = ref<EventType[]>([
-  { date: '10-21', time: '00:15', type: 'alarm' },
-  { date: '10-21', time: '00:30', type: 'motion' },
-  { date: '10-21', time: '01:45', type: 'human' },
-  { date: '10-21', time: '01:20', type: 'alarm' }
-])
-
-// 计算属性
-const rulerWidth = computed(() => 24 * 120) // 24小时 * 每小时120px
-const filteredEvents = computed<EventType[]>(() => {
-  if (activeFilter.value === 'all') return events.value
-  return events.value.filter((e) => e.type === activeFilter.value)
-})
-
-// 初始化视频上下文
-const initVideoContext = () => {
-  try {
-    videoContext.value = uni.createVideoContext('myVideo');
-    console.log('视频上下文初始化成功', videoContext.value);
-  } catch (error) {
-    console.error('创建视频上下文失败:', error);
-  }
-}
-// 加载视频数据
-const loadVideoData = (date:String) => {
-  console.log('加载日期数据:', date)
-}
+		constructor(date : string, time : string, type : string) {
+			this.date = date;
+			this.time = time;
+			this.type = type;
+		}
+	}
+	// 响应式状态
+	const currentDate = ref('2024-10-21')
+	const currentTime = ref('00:00:00')
+	const activeDate = ref('10-21')
+	const activeFilter = ref('all')
+	const videoSrc = ref('https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4')
+	const videoContext = ref<VideoContext | null>(null)
+	const isSeeking = ref(false)
+	const timeScrollLeft = ref(0)
+	const dateScrollLeft = ref(0)
+	const playheadPosition = ref(0)
+	const videoDuration = ref(0)
+	const lastSyncTime = ref(0)
+	const isDragging = ref(false)
+	const startX = ref(0)
+	const startScrollLeft = ref(0)
+	const lastDragTime = ref(0)
+	const manualScrollPosition = ref(0)
+	const draggedTimeInSeconds = ref(0)
 
 
-// 选择日期
-const selectDate = (date:String) => {
-  activeDate.value = date
-  currentDate.value = `2024-${date}`
-  loadVideoData(date)
+	// 常量配置
+	const dateList = ['10-21', '10-22', '10-23', '10-24', '10-25', '10-26']
+	const filters = [
+		{ label: '只看报警', value: 'alarm' },
+		{ label: '移动侦测', value: 'motion' },
+		{ label: '人形侦测', value: 'human' },
+		{ label: '全部', value: 'all' }
+	]
+
+	// 模拟事件数据
+	const events = ref<EventType[]>([
+		{ date: '10-21', time: '00:15', type: 'alarm' },
+		{ date: '10-21', time: '00:30', type: 'motion' },
+		{ date: '10-21', time: '01:45', type: 'human' },
+		{ date: '10-21', time: '01:20', type: 'alarm' }
+	])
+
+
+	// 计算属性
+  const rulerWidth = computed(() => {
+		const pixelsPerSecond = 3.5; 
+		return videoDuration.value * pixelsPerSecond;
+	})
+	// 每秒钟对应的像素数
+	const pixelsPerSecond = computed(() => {
+		return rulerWidth.value / 21
+	})
+
   
-  const index = dateList.indexOf(date)
-  dateScrollLeft.value = index * 80
-}
+	// 时间字符串转秒数
+	const convertTimeToSeconds = (timeStr : string) => {
+		const parts = timeStr.split(':')
+		const h = parseInt(parts[0])
+		const m = parseInt(parts[1])
+		const s = parts.length > 2 ? parseInt(parts[2]) : 0
+		return h * 3600 + m * 60 + s
+	}
+	
 
+	// 计算时间刻度
+	type TimeMark = {
+		time : number
+		position : number
+		type : string
+	}
+const timeMarks = computed(() => {
+    const marks = [] as TimeMark[]
+    const duration = videoDuration.value
+    if (duration === 0) return marks
 
-
-// 视频元数据加载完成
-// const onVideoLoaded = (e:UniVideoLoadedMetadataEvent) => {
-//   videoDuration.value = e.detail.duration;
-//   console.log('视频元数据加载完成，视频时长:', videoDuration.value, '秒');
-// }
-
-// 视频时间更新 
-const onTimeUpdate = (e:UniVideoTimeUpdateEvent) => {
-  if (isSeeking.value || isDragging.value) return
-  
-  const currentTimeInSeconds = e.detail.currentTime
-  currentTime.value = formatTime(currentTimeInSeconds)
-  
-  // 节流处理
-  const now = Date.now()
-  if (now - lastSyncTime.value < 200) return
-  lastSyncTime.value = now
-  
-  updatePlayheadPosition(currentTimeInSeconds)
-}
-
-// 更新播放头位置
-const updatePlayheadPosition = (currentTimeInSeconds) => {
-  const newPosition = currentTimeInSeconds * 2
-  playheadPosition.value = newPosition
-  
-  // 只在非手动滚动时自动滚动时间轴
-  if (Math.abs(manualScrollPosition.value - newPosition) > 60) {
-    const systemInfo = uni.getSystemInfoSync()
-    const scrollViewWidth = systemInfo.windowWidth || 375
-    const halfWidth = scrollViewWidth / 2
-    const targetScrollLeft = newPosition - halfWidth
-    
-    const maxScrollLeft = rulerWidth.value - scrollViewWidth
-    timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft))
-  }
-}
-
-// 跳转到指定时间
-const seekToTime = (hour, minute) => {
-  const timeInSeconds = hour * 3600 + minute * 60
-  seekToSeconds(timeInSeconds)
-}
-
-const seekToSeconds = (timeInSeconds) => {
-  isSeeking.value = true
-  manualScrollPosition.value = timeInSeconds * 2
-  
-  if (videoContext.value) {
-    videoContext.value.seek(timeInSeconds)
-  }
-  
-  playheadPosition.value = timeInSeconds * 2
-  currentTime.value = formatTime(timeInSeconds)
-}
-
-// 跳转完成
-const onSeeked = () => {
-  isSeeking.value = false
-}
-
-// 时间轴触摸开始
-const onTouchStart = (e) => {
-  isDragging.value = true
-  startX.value = e.touches[0].pageX
-  startScrollLeft.value = timeScrollLeft.value
-  lastDragTime.value = Date.now()
-  
-  isSeeking.value = true
-  if (videoContext.value) {
-    videoContext.value.pause()
-  }
-}
-
-// 时间轴触摸移动
-const onTouchMove = (e) => {
-  if (!isDragging.value) return
-  
-  const deltaX = e.touches[0].pageX - startX.value
-  const newScrollLeft = startScrollLeft.value - deltaX
-  
-  const systemInfo = uni.getSystemInfoSync()
-  const scrollViewWidth = systemInfo.windowWidth || 375
-  const maxScrollLeft = rulerWidth.value - scrollViewWidth
-  timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, newScrollLeft))
-  
-  // 计算当前时间位置（基于触摸点位置）
-  const touchX = e.touches[0].pageX
-  const rulerStartX = touchX - startX.value + startScrollLeft.value
-  const timeInSeconds = rulerStartX / 2
-  
-  // 更新显示
-  currentTime.value = formatTime(timeInSeconds)
-  playheadPosition.value = timeInSeconds * 2
-  manualScrollPosition.value = timeInSeconds * 2
-  
-  // 实时跳转视频(节流处理)
-  const now = Date.now()
-  if (now - lastDragTime.value > 100) {
-    if (videoContext.value) {
-      console.log('尝试跳转视频到:', timeInSeconds, '秒');
-      draggedTimeInSeconds.value = timeInSeconds
-      videoContext.value.seek(timeInSeconds)
+    let majorInterval: number;
+    if (duration <= 60) { 
+        majorInterval = 10; 
+    } else if (duration <= 300) { 
+        majorInterval = 30; 
+    } else if (duration <= 1800) { 
+        majorInterval = 60; 
+    } else if (duration <= 3600) { 
+        majorInterval = 300; 
+    } else if (duration <= 7200) { 
+        majorInterval = 600; 
+    } else { 
+        majorInterval = 1800; 
     }
-    lastDragTime.value = now
-  }
-}
 
-// 时间轴触摸结束
-const onTouchEnd = () => {
-  if (!isDragging.value) return
-  
-  // 计算最终时间位置
-  const systemInfo = uni.getSystemInfoSync()
-  const scrollViewWidth = systemInfo.windowWidth || 375
-  const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / 2
+    const minorInterval = majorInterval / 5;
 
-
-  // 精确跳转
-  if (videoContext.value) {
-    console.log('尝试跳转视频到最终时间:', draggedTimeInSeconds.value, '秒');
-    videoContext.value.seek(draggedTimeInSeconds.value)
-    videoContext.value.play()
-  }
-  
-  playheadPosition.value = timeInSeconds * 2
-  currentTime.value = formatTime(timeInSeconds)
-  manualScrollPosition.value = timeInSeconds * 2
-  
-  isDragging.value = false
-  isSeeking.value = false
-}
-
-// 时间轴滚动事件
-const onTimeScroll = (e) => {
-  if (!isDragging.value) {
-    timeScrollLeft.value = e.detail.scrollLeft
-  }
-}
-
-// 选择筛选条件
-const selectFilter = (filter) => {
-  activeFilter.value = filter
-}
-
-// 检查指定时间是否有事件
-const hasEvent = (hour, minute) => {
-  const timeStr = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
-  const events = filteredEvents.value
-  for (let i = 0; i < events.length; i++) {
-    const event = events[i]
-    if (event.date === activeDate.value && event.time.startsWith(timeStr)) {
-      return true
+    for (let time = 0; time <= duration; time += minorInterval) {
+        const isMajor = (time % majorInterval) === 0;
+        marks.push({
+            time,
+            position: (time / duration) * rulerWidth.value,
+            type: isMajor ? 'major' : 'minor'
+        });
     }
-  }
-  return false
-}
-
-// 获取事件类型
-const getEventType = (hour, minute) => {
-  const timeStr = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
-  const eventsList = events.value
-  for (let i = 0; i < eventsList.length; i++) {
-    const event = eventsList[i]
-    if (event.date === activeDate.value && event.time.startsWith(timeStr)) {
-      return event.type
-    }
-  }
-  return ''
-}
-
-// 格式化小时显示
-const formatHour = (hour) => {
-  return `${hour.toString().padStart(2, '0')}:00`
-}
-
-// 格式化时间显示
-const formatTime = (seconds) => {
-  const hrs = Math.floor(seconds / 3600)
-  const mins = Math.floor((seconds % 3600) / 60)
-  const secs = Math.floor(seconds % 60)
-  return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
-}
-
-// 播放/暂停事件
-const onPlay = () => {
-  console.log('视频开始播放')
-}
-
-const onPause = () => {
-  console.log('视频暂停')
-}
-
-// 组件生命周期
-onMounted(() => {
-  initVideoContext();
-  if (!videoContext.value) {
-    console.error('视频上下文初始化失败，请检查');
-  }
+    console.log('生成的刻度数量:', marks.length);
+    return marks;
 });
+
+
+	// 格式化刻度时间
+	const formatMarkTime = (seconds : number) => {
+		const hrs = Math.floor(seconds / 3600)
+		const mins = Math.floor((seconds % 3600) / 60)
+		const secs = Math.floor(seconds % 60)
+
+		if (hrs > 0) {
+			return `${hrs}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
+		}
+		return `${mins}:${secs.toString().padStart(2, '0')}`
+	}
+
+	// 检查指定时间是否有事件
+	const hasEventAtTime = (time : number) => {
+		return events.value.some(event => {
+			const eventTime = convertTimeToSeconds(event.time)
+			return Math.abs(eventTime - time) < 5 // 5秒容差
+		})
+	}
+
+	// 获取事件类型
+	const getEventTypeAtTime = (time : number) => {
+		const event = events.value.find(event => {
+			const eventTime = convertTimeToSeconds(event.time)
+			return Math.abs(eventTime - time) < 5 // 5秒容差
+		})
+		return event != null ? event.type : ''
+	}
+
+
+
+	const filteredEvents = computed<EventType[]>(() => {
+		if (activeFilter.value === 'all') return events.value
+		return events.value.filter((e) => e.type === activeFilter.value)
+	})
+
+	const onDurationChange = (e : UTSJSONObject) => {
+		console.log(e)
+	}
+
+	// 初始化视频上下文
+	const initVideoContext = () => {
+		try {
+			videoContext.value = uni.createVideoContext('myVideo');
+			console.log('视频上下文初始化成功', videoContext.value);
+		} catch (error) {
+			console.error('创建视频上下文失败:', error);
+		}
+	}
+	// 加载视频数据
+	const loadVideoData = (date : String) => {
+		console.log('加载日期数据:', date)
+	}
+
+
+	// 选择日期
+	const selectDate = (date : string) => {
+		activeDate.value = date
+		currentDate.value = `2024-${date}`
+		loadVideoData(date)
+
+		const index = dateList.indexOf(date)
+		dateScrollLeft.value = index * 80
+	}
+
+	// 格式化时间显示
+	const formatTime = (seconds : number) => {
+		const hrs = Math.floor(seconds / 3600)
+		const mins = Math.floor((seconds % 3600) / 60)
+		const secs = Math.floor(seconds % 60)
+		return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
+	}
+
+
+	// 更新播放头位置
+	const updatePlayheadPosition = (currentTimeInSeconds : number) => {
+		const newPosition = currentTimeInSeconds * pixelsPerSecond.value / 6
+		playheadPosition.value = newPosition
+
+		if (Math.abs(manualScrollPosition.value - newPosition) > 60) {
+			const systemInfo = uni.getSystemInfoSync()
+			const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375
+			const halfWidth = scrollViewWidth / 2
+			const targetScrollLeft = newPosition - halfWidth
+
+			const maxScrollLeft = rulerWidth.value - scrollViewWidth
+			timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft))
+		}
+	}
+
+	// 视频时间更新 
+	const onTimeUpdate = (e : UniVideoTimeUpdateEvent) => {
+		if (isSeeking.value || isDragging.value) return
+    
+		const currentTimeInSeconds = e.detail.currentTime
+		currentTime.value = formatTime(currentTimeInSeconds)
+    videoDuration.value = e.detail.duration;
+
+		// 节流处理
+		const now = Date.now()
+		if (now - lastSyncTime.value < 200) return
+		lastSyncTime.value = now
+
+		updatePlayheadPosition(currentTimeInSeconds)
+	}
+
+	const seekToSeconds = (timeInSeconds : number) => {
+		isSeeking.value = true
+		manualScrollPosition.value = timeInSeconds * 2
+
+		if (videoContext.value != null) {
+			videoContext.value.seek(timeInSeconds)
+		}
+
+		playheadPosition.value = timeInSeconds * 2
+		currentTime.value = formatTime(timeInSeconds)
+	}
+
+	// 跳转到指定时间
+	const seekToTime = (hour : number, minute : number) => {
+		const timeInSeconds = hour * 3600 + minute * 60
+		seekToSeconds(timeInSeconds)
+	}
+	// 跳转到指定位置(秒)
+	const seekToPosition = (seconds : number) => {
+		seekToSeconds(seconds)
+	}
+
+	// 跳转完成
+	const onSeeked = () => {
+		isSeeking.value = false
+	}
+
+	// 时间轴触摸开始
+	const onTouchStart = (e : TouchEvent) => {
+		isDragging.value = true
+		startX.value = e.touches[0].pageX
+		startScrollLeft.value = timeScrollLeft.value
+		lastDragTime.value = Date.now()
+
+		isSeeking.value = true
+		if (videoContext.value != null) {
+			videoContext.value.pause()
+		}
+	}
+
+	// 时间轴触摸移动
+	const onTouchMove = (e : TouchEvent) => {
+		if (!isDragging.value) return
+
+		const deltaX = e.touches[0].pageX - startX.value
+		const newScrollLeft = startScrollLeft.value - deltaX
+
+		const systemInfo = uni.getSystemInfoSync()
+		const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375
+		const maxScrollLeft = rulerWidth.value - scrollViewWidth
+		timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, newScrollLeft))
+
+		// 计算当前时间位置（基于触摸点位置）
+		const touchX = e.touches[0].pageX
+		const rulerStartX = touchX - startX.value + startScrollLeft.value
+		const timeInSeconds = rulerStartX / 2
+
+		// 更新显示
+		currentTime.value = formatTime(timeInSeconds)
+		playheadPosition.value = timeInSeconds * 2
+		manualScrollPosition.value = timeInSeconds * 2
+
+		// 实时跳转视频(节流处理)
+		const now = Date.now()
+		if (now - lastDragTime.value > 100) {
+			if (videoContext.value != null) {
+				console.log('尝试跳转视频到:', timeInSeconds, '秒');
+				draggedTimeInSeconds.value = timeInSeconds
+				videoContext.value.seek(timeInSeconds)
+			}
+			lastDragTime.value = now
+		}
+	}
+
+	// 时间轴触摸结束
+	const onTouchEnd = () => {
+		if (!isDragging.value) return
+
+		// 计算最终时间位置
+		const systemInfo = uni.getSystemInfoSync()
+		const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375
+		const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / 2
+
+
+		// 精确跳转
+		if (videoContext.value != null) {
+			console.log('尝试跳转视频到最终时间:', draggedTimeInSeconds.value, '秒');
+			videoContext.value.seek(draggedTimeInSeconds.value)
+			videoContext.value.play()
+		}
+
+		playheadPosition.value = timeInSeconds * 2
+		currentTime.value = formatTime(timeInSeconds)
+		manualScrollPosition.value = timeInSeconds * 2
+
+		isDragging.value = false
+		isSeeking.value = false
+	}
+
+	// 定义滚动事件detail类型
+	type TimeScrollDetail = {
+		scrollLeft : number
+	}
+	// 定义滚动事件类型
+	type TimeScrollEvent = {
+		detail : TimeScrollDetail
+	}
+	// 时间轴滚动事件
+	const onTimeScroll = (e : TimeScrollEvent) => {
+		if (!isDragging.value) {
+			timeScrollLeft.value = e.detail.scrollLeft
+		}
+	}
+
+	// 选择筛选条件
+	const selectFilter = (filter : string) => {
+		activeFilter.value = filter
+	}
+
+	// 检查指定时间是否有事件
+	const hasEvent = (hour : number, minute : number) => {
+		const timeStr = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
+		const events = filteredEvents.value
+		for (let i = 0; i < events.length; i++) {
+			const event = events[i]
+			if (event.date === activeDate.value && event.time.startsWith(timeStr)) {
+				return true
+			}
+		}
+		return false
+	}
+
+	// 获取事件类型
+	const getEventType = (hour : number, minute : number) => {
+		const timeStr = `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}`
+		const eventsList = events.value
+		for (let i = 0; i < eventsList.length; i++) {
+			const event = eventsList[i]
+			if (event.date === activeDate.value && event.time.startsWith(timeStr)) {
+				return event.type
+			}
+		}
+		return ''
+	}
+
+	// 格式化小时显示
+	const formatHour = (hour : number) => {
+		return `${hour.toString().padStart(2, '0')}:00`
+	}
+
+	// 播放/暂停事件
+	const onPlay = () => {
+		console.log('视频开始播放')
+
+	}
+
+	const onPause = () => {
+		console.log('视频暂停')
+	}
+
+	// 组件生命周期
+	onMounted(() => {
+		initVideoContext();
+		if (videoContext.value == null) {
+			console.error('视频上下文初始化失败，请检查');
+		}
+	});
 </script>
 
 <style>
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: #f5f5f5;
+	.container {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		background-color: #f5f5f5;
+	}
+
+	.header {
+		padding: 15px;
+		background-color: #007aff;
+		color: white;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		z-index: 10;
+	}
+
+	.title {
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.current-time {
+		font-size: 14px;
+		opacity: 0.9;
+	}
+
+
+	.date-list {
+		display: inline-flex;
+		padding: 0 10px;
+	}
+
+	.date-item {
+		padding: 8px 16px;
+		margin: 0 5px;
+		border-radius: 16px;
+		background-color: #555;
+		color: white;
+		font-size: 14px;
+		transition: all 0.2s;
+	}
+
+	.date-item.active {
+		background-color: #007aff;
+		font-weight: bold;
+		transform: scale(1.05);
+	}
+
+	.video-container {
+		width: 100%;
+		height: 250px;
+		background-color: #000;
+		position: relative;
+	}
+
+	.video-player {
+		width: 100%;
+		height: 100%;
+	}
+
+	.time-ruler-container {
+		width: 100%;
+		padding: 10px 0;
+		background-color: #333;
+		position: relative;
+		z-index: 5;
+		box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+	}
+
+	.time-ruler-scroll {
+		width: 100%;
+		height: 70px;
+		white-space: nowrap;
+	}
+
+	.time-ruler {
+		display: inline-flex;
+		height: 100%;
+		padding-left: 10px;
+		position: relative;
+		touch-action: none;
+		user-select: none;
+	}
+
+
+	.event-dot {
+		position: absolute;
+		top: 8px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		z-index: 2;
+	}
+
+	.event-dot.alarm {
+		background-color: #ff3b30;
+		box-shadow: 0 0 5px #ff3b30;
+	}
+
+	.event-dot.motion {
+		background-color: #ff9500;
+		box-shadow: 0 0 5px #ff9500;
+	}
+
+	.event-dot.human {
+		background-color: #34c759;
+		box-shadow: 0 0 5px #34c759;
+	}
+
+	.playhead {
+		position: absolute;
+		top: 0;
+		width: 2px;
+		height: 100%;
+		background-color: #007aff;
+		z-index: 10;
+		pointer-events: none;
+	}
+
+	.playhead::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -6px;
+		width: 14px;
+		height: 14px;
+		background-color: #007aff;
+		border-radius: 50%;
+		border: 2px solid white;
+		box-sizing: border-box;
+	}
+
+	.filter-bar {
+		display: flex;
+		justify-content: space-around;
+		padding: 12px 5px;
+		background-color: #333;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 20;
+		box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+	}
+
+	.filter-item {
+		padding: 8px 12px;
+		border-radius: 16px;
+		background-color: #555;
+		color: white;
+		font-size: 12px;
+		transition: all 0.2s;
+		flex: 1;
+		margin: 0 5px;
+		text-align: center;
+	}
+
+	.filter-item.active {
+		background-color: #007aff;
+		font-weight: bold;
+		transform: scale(1.05);
+	}
+
+	.time-mark {
+    position: absolute;
+    bottom: 0;
+    width: 1px;
+    background-color: #fff;
+    transform: translateX(-50%);
+    /* 确保刻度不会被隐藏 */
+    pointer-events: auto; 
 }
 
-.header {
-  padding: 15px;
-  background-color: #007aff;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 10;
+.time-mark.major {
+    height: 20px;
+    background-color: #fff;
+    width: 2px;
 }
 
-.title {
-  font-size: 18px;
-  font-weight: bold;
+.time-mark.minor {
+    height: 10px;
 }
 
-.current-time {
-  font-size: 14px;
-  opacity: 0.9;
-}
+	.mark-label {
+		position: absolute;
+		bottom: -20px;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #fff;
+		font-size: 10px;
+		white-space: nowrap;
+	}
 
-.date-scroll {
-  width: 100%;
-  white-space: nowrap;
-  background-color: #333;
-  padding: 8px 0;
-  position: relative;
-  z-index: 10;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.date-list {
-  display: inline-flex;
-  padding: 0 10px;
-}
-
-.date-item {
-  padding: 8px 16px;
-  margin: 0 5px;
-  border-radius: 16px;
-  background-color: #555;
-  color: white;
-  font-size: 14px;
-  transition: all 0.2s;
-}
-
-.date-item.active {
-  background-color: #007aff;
-  font-weight: bold;
-  transform: scale(1.05);
-}
-
-.video-container {
-  width: 100%;
-  height: 250px;
-  background-color: #000;
-  position: relative;
-}
-
-.video-player {
-  width: 100%;
-  height: 100%;
-}
-
-.time-ruler-container {
-  width: 100%;
-  padding: 10px 0;
-  background-color: #333;
-  position: relative;
-  z-index: 5;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
-}
-
-.time-ruler-scroll {
-  width: 100%;
-  height: 70px;
-  white-space: nowrap;
-}
-
-.time-ruler {
-  display: inline-flex;
-  height: 100%;
-  padding-left: 10px;
-  position: relative;
-  touch-action: none;
-  user-select: none;
-}
-
-.hour-section {
-  display: flex;
-  flex-direction: column;
-  width: 120px;
-  border-right: 1px solid #444;
-  position: relative;
-}
-
-.hour-mark {
-  color: white;
-  font-size: 12px;
-  padding: 4px 8px;
-  background-color: #444;
-  border-radius: 4px;
-  margin: 2px;
-  text-align: center;
-}
-
-.minute-marks {
-  display: flex;
-  flex: 1;
-  position: relative;
-}
-
-.minute-mark {
-  flex: 1;
-  position: relative;
-  border-right: 1px solid #444;
-}
-
-.minute-label {
-  position: absolute;
-  bottom: 5px;
-  left: 2px;
-  color: #aaa;
-  font-size: 10px;
-}
-
-.event-dot {
-  position: absolute;
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.event-dot.alarm {
-  background-color: #ff3b30;
-  box-shadow: 0 0 5px #ff3b30;
-}
-
-.event-dot.motion {
-  background-color: #ff9500;
-  box-shadow: 0 0 5px #ff9500;
-}
-
-.event-dot.human {
-  background-color: #34c759;
-  box-shadow: 0 0 5px #34c759;
-}
-
-.playhead {
-  position: absolute;
-  top: 0;
-  width: 2px;
-  height: 100%;
-  background-color: #007aff;
-  z-index: 10;
-  pointer-events: none;
-}
-
-.playhead::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -6px;
-  width: 14px;
-  height: 14px;
-  background-color: #007aff;
-  border-radius: 50%;
-  border: 2px solid white;
-  box-sizing: border-box;
-}
-
-.time-indicator {
-  position: absolute;
-  top: -25px;
-  left: 0;
-  transform: translateX(-50%);
-  background-color: #007aff;
-  color: white;
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  z-index: 11;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-.time-indicator::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 5px solid #007aff;
-}
-
-.filter-bar {
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 5px;
-  background-color: #333;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 20;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
-}
-
-.filter-item {
-  padding: 8px 12px;
-  border-radius: 16px;
-  background-color: #555;
-  color: white;
-  font-size: 12px;
-  transition: all 0.2s;
-  flex: 1;
-  margin: 0 5px;
-  text-align: center;
-}
-
-.filter-item.active {
-  background-color: #007aff;
-  font-weight: bold;
-  transform: scale(1.05);
-}
+	.event-dot {
+		position: absolute;
+		top: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		z-index: 2;
+	}
 </style>
