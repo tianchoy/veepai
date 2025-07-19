@@ -19006,14 +19006,14 @@
         new UTSJSONObject({ label: "全部", value: "all" })
       ];
       const events = vue.ref([
-        { date: "10-21", time: "00:15", type: "alarm" },
-        { date: "10-21", time: "00:30", type: "motion" },
-        { date: "10-21", time: "01:45", type: "human" },
-        { date: "10-21", time: "01:20", type: "alarm" }
+        { date: "10-21", time: "00:00:10", type: "alarm" },
+        { date: "10-21", time: "00:00:30", type: "motion" },
+        { date: "10-21", time: "00:01:45", type: "human" },
+        { date: "10-21", time: "00:01:20", type: "alarm" }
       ]);
       const rulerWidth = vue.computed(() => {
         const systemInfo = uni.getSystemInfoSync();
-        return systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
+        return systemInfo.windowWidth;
       });
       const convertTimeToSeconds = (timeStr) => {
         const parts = timeStr.split(":");
@@ -19062,19 +19062,6 @@
         }
         return "".concat(mins, ":").concat(secs.toString().padStart(2, "0"));
       };
-      const hasEventAtTime = (time) => {
-        return events.value.some((event) => {
-          const eventTime = convertTimeToSeconds(event.time);
-          return Math.abs(eventTime - time) < 5;
-        });
-      };
-      const getEventTypeAtTime = (time) => {
-        const event = UTS.arrayFind(events.value, (event2) => {
-          const eventTime = convertTimeToSeconds(event2.time);
-          return Math.abs(eventTime - time) < 5;
-        });
-        return event != null ? event.type : "";
-      };
       const filteredEvents = vue.computed(() => {
         if (activeFilter.value === "all")
           return events.value;
@@ -19085,13 +19072,13 @@
       const initVideoContext = () => {
         try {
           videoContext.value = uni.createVideoContext("myVideo");
-          uni.__log__("log", "at pages/index/deviceReplay.uvue:208", "视频上下文初始化成功", videoContext.value);
+          uni.__log__("log", "at pages/index/deviceReplay.uvue:194", "视频上下文初始化成功", videoContext.value);
         } catch (error) {
-          uni.__log__("error", "at pages/index/deviceReplay.uvue:210", "创建视频上下文失败:", error);
+          uni.__log__("error", "at pages/index/deviceReplay.uvue:196", "创建视频上下文失败:", error);
         }
       };
       const loadVideoData = (date) => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:215", "加载日期数据:", date);
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:201", "加载日期数据:", date);
       };
       const selectDate = (date) => {
         activeDate.value = date;
@@ -19110,7 +19097,7 @@
         const pixelsPerSecond = rulerWidth.value / videoDuration.value;
         playheadPosition.value = currentTimeInSeconds * pixelsPerSecond;
         const systemInfo = uni.getSystemInfoSync();
-        const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
+        const scrollViewWidth = systemInfo.windowWidth;
         const halfWidth = scrollViewWidth / 2;
         const targetScrollLeft = playheadPosition.value - halfWidth;
         const maxScrollLeft = rulerWidth.value - scrollViewWidth;
@@ -19136,6 +19123,15 @@
         }
         playheadPosition.value = timeInSeconds * 2;
         currentTime.value = formatTime(timeInSeconds);
+      };
+      const getEventPosition = (event) => {
+        const seconds = convertTimeToSeconds(event.time);
+        const pixelsPerSecond = rulerWidth.value / (videoDuration.value || 300);
+        return seconds * pixelsPerSecond;
+      };
+      const seekToEvent = (event) => {
+        const seconds = convertTimeToSeconds(event.time);
+        seekToSeconds(seconds);
       };
       const seekToTime = (hour, minute) => {
         const timeInSeconds = hour * 3600 + minute * 60;
@@ -19163,7 +19159,7 @@
         const deltaX = e2.touches[0].pageX - startX.value;
         const newScrollLeft = startScrollLeft.value - deltaX;
         const systemInfo = uni.getSystemInfoSync();
-        const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
+        const scrollViewWidth = systemInfo.windowWidth;
         const maxScrollLeft = rulerWidth.value - scrollViewWidth;
         timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, newScrollLeft));
         const touchX = e2.touches[0].pageX;
@@ -19187,7 +19183,7 @@
         if (!isDragging.value)
           return null;
         const systemInfo = uni.getSystemInfoSync();
-        const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
+        const scrollViewWidth = systemInfo.windowWidth;
         const pixelsPerSecond = rulerWidth.value / videoDuration.value;
         const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
         if (videoContext.value != null) {
@@ -19245,12 +19241,12 @@
           uni.__log__("error", "at pages/index/deviceReplay.uvue:433", "视频上下文初始化失败，请检查");
         }
       });
-      const __returned__ = { EventType, currentDate, currentTime, activeDate, activeFilter, videoSrc: videoSrc2, videoContext, isSeeking, timeScrollLeft, dateScrollLeft, playheadPosition, videoDuration, lastSyncTime, isDragging, startX, startScrollLeft, lastDragTime, manualScrollPosition, draggedTimeInSeconds, dateList, filters, events, rulerWidth, convertTimeToSeconds, timeMarks, formatMarkTime, hasEventAtTime, getEventTypeAtTime, filteredEvents, initVideoContext, loadVideoData, selectDate, formatTime, updatePlayheadPosition, onTimeUpdate, seekToSeconds, seekToTime, seekToPosition, onSeeked, onTouchStart, onTouchMove, onTouchEnd, onTimeScroll, selectFilter, hasEvent, getEventType, formatHour, onPlay, onPause };
+      const __returned__ = { EventType, currentDate, currentTime, activeDate, activeFilter, videoSrc: videoSrc2, videoContext, isSeeking, timeScrollLeft, dateScrollLeft, playheadPosition, videoDuration, lastSyncTime, isDragging, startX, startScrollLeft, lastDragTime, manualScrollPosition, draggedTimeInSeconds, dateList, filters, events, rulerWidth, convertTimeToSeconds, timeMarks, formatMarkTime, filteredEvents, initVideoContext, loadVideoData, selectDate, formatTime, updatePlayheadPosition, onTimeUpdate, seekToSeconds, getEventPosition, seekToEvent, seekToTime, seekToPosition, onSeeked, onTouchStart, onTouchMove, onTouchEnd, onTimeScroll, selectFilter, hasEvent, getEventType, formatHour, onPlay, onPause };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   });
-  const _style_0$f = { "container": { "": { "display": "flex", "flexDirection": "column", "backgroundColor": "#f5f5f5" } }, "header": { "": { "paddingTop": 15, "paddingRight": 15, "paddingBottom": 15, "paddingLeft": 15, "backgroundColor": "#007aff", "color": "#FFFFFF", "display": "flex", "justifyContent": "space-between", "alignItems": "center", "position": "relative", "zIndex": 10 } }, "title": { "": { "fontSize": 18, "fontWeight": "bold" } }, "current-time": { "": { "fontSize": 14, "opacity": 0.9 } }, "date-list": { "": { "paddingTop": 0, "paddingRight": 10, "paddingBottom": 0, "paddingLeft": 10 } }, "date-item": { "": { "paddingTop": 8, "paddingRight": 16, "paddingBottom": 8, "paddingLeft": 16, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 14, "transitionProperty": "all", "transitionDuration": "0.2s" }, ".active": { "backgroundColor": "#007aff", "fontWeight": "bold", "transform": "scale(1.05)" } }, "video-container": { "": { "width": "100%", "height": 250, "backgroundColor": "#000000", "position": "relative" } }, "video-player": { "": { "width": "100%", "height": "100%" } }, "time-ruler-container": { "": { "width": "100%", "paddingTop": 10, "paddingRight": 0, "paddingBottom": 10, "paddingLeft": 0, "backgroundColor": "#ffffff", "position": "relative", "zIndex": 5 } }, "time-ruler-scroll": { "": { "width": "100%", "height": 70, "whiteSpace": "nowrap" } }, "event-dot": { "": { "position": "absolute", "top": -15, "left": "50%", "transform": "translateX(-50%)", "width": 8, "height": 8, "zIndex": 2 }, ".alarm": { "backgroundColor": "#ff3b30", "boxShadow": "0 0 5px #ff3b30" }, ".motion": { "backgroundColor": "#ff9500", "boxShadow": "0 0 5px #ff9500" }, ".human": { "backgroundColor": "#34c759", "boxShadow": "0 0 5px #34c759" } }, "playhead": { "": { "position": "absolute", "top": 0, "width": 2, "height": "100%", "backgroundColor": "#007aff", "zIndex": 10, "pointerEvents": "none" } }, "filter-bar": { "": { "display": "flex", "justifyContent": "space-around", "paddingTop": 12, "paddingRight": 5, "paddingBottom": 12, "paddingLeft": 5, "backgroundColor": "#333333", "position": "fixed", "bottom": 0, "left": 0, "right": 0, "zIndex": 20 } }, "filter-item": { "": { "paddingTop": 8, "paddingRight": 12, "paddingBottom": 8, "paddingLeft": 12, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 12, "transitionProperty": "all", "transitionDuration": "0.2s", "flex": 1, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "textAlign": "center" }, ".active": { "backgroundColor": "#007aff", "fontWeight": "bold", "transform": "scale(1.05)" } }, "time-ruler": { "": { "display": "flex", "height": "100%", "position": "relative", "width": "100%", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#cccccc", "touchAction": "none", "userSelect": "none" } }, "time-mark": { "": { "position": "absolute", "bottom": 0, "transform": "translateX(-50%)", "pointerEvents": "auto" }, ".major": { "height": 20, "backgroundColor": "#333333", "width": 2 }, ".minor": { "height": 10, "backgroundColor": "#999999", "width": 1 } }, "@TRANSITION": { "date-item": { "property": "all", "duration": "0.2s" }, "filter-item": { "property": "all", "duration": "0.2s" } } };
+  const _style_0$f = { "container": { "": { "display": "flex", "flexDirection": "column", "height": "100%", "backgroundColor": "#f5f5f5" } }, "date-list": { "": { "display": "flex", "flexDirection": "row", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "date-item": { "": { "paddingTop": 8, "paddingRight": 16, "paddingBottom": 8, "paddingLeft": 16, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 14, "transitionProperty": "all", "transitionDuration": "0.2s" }, ".active": { "backgroundColor": "#007aff", "color": "#ffffff" } }, "video-container": { "": { "width": "100%", "height": 250, "backgroundColor": "#000000", "position": "relative" } }, "video-player": { "": { "width": "100%", "height": "100%" } }, "time-ruler-container": { "": { "width": "100%", "paddingTop": 10, "paddingRight": 0, "paddingBottom": 10, "paddingLeft": 0, "backgroundColor": "#ffffff", "position": "relative", "zIndex": 5 } }, "time-ruler-scroll": { "": { "width": "100%", "height": 70, "whiteSpace": "nowrap" } }, "event-dot": { ".alarm": { "backgroundColor": "#ff3b30", "boxShadow": "0 0 5px #ff3b30" }, ".motion": { "backgroundColor": "#ff9500", "boxShadow": "0 0 5px #ff9500" }, ".human": { "backgroundColor": "#34c759", "boxShadow": "0 0 5px #34c759" }, "": { "width": 10, "height": 10 } }, "playhead": { "": { "position": "absolute", "top": 0, "width": 2, "height": "100%", "backgroundColor": "#007aff", "zIndex": 10, "pointerEvents": "none" } }, "filter-bar": { "": { "display": "flex", "justifyContent": "space-around", "paddingTop": 12, "paddingRight": 5, "paddingBottom": 12, "paddingLeft": 5, "backgroundColor": "#333333", "position": "fixed", "bottom": 0, "left": 0, "right": 0, "zIndex": 20 } }, "filter-item": { "": { "paddingTop": 8, "paddingRight": 12, "paddingBottom": 8, "paddingLeft": 12, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 12, "transitionProperty": "all", "transitionDuration": "0.2s", "flex": 1, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "textAlign": "center" }, ".active": { "backgroundColor": "#007aff", "fontWeight": "bold", "transform": "scale(1.05)" } }, "time-ruler": { "": { "display": "flex", "height": "100%", "position": "relative", "width": "100%", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#cccccc" } }, "time-mark": { "": { "position": "absolute", "bottom": 0, "transform": "translateX(-50%)", "pointerEvents": "auto" }, ".major": { "height": 20, "backgroundColor": "#333333", "width": 2 }, ".minor": { "height": 10, "backgroundColor": "#999999", "width": 1 } }, "event-marker": { "": { "position": "absolute", "bottom": 25, "transform": "translateX(-50%)", "zIndex": 5 } }, "@TRANSITION": { "date-item": { "property": "all", "duration": "0.2s" }, "filter-item": { "property": "all", "duration": "0.2s" } } };
   function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createCommentVNode(" 日期选择滚动条 "),
@@ -19322,19 +19318,32 @@
                     mark.type === "major" ? (vue.openBlock(), vue.createElementBlock("text", {
                       key: 0,
                       class: "mark-label"
-                    })) : vue.createCommentVNode("v-if", true),
-                    vue.createCommentVNode(" 事件标记点 "),
-                    $setup.hasEventAtTime(mark.time) ? (vue.openBlock(), vue.createElementBlock(
+                    })) : vue.createCommentVNode("v-if", true)
+                  ], 14, ["onClick"]);
+                }),
+                128
+                /* KEYED_FRAGMENT */
+              )),
+              (vue.openBlock(true), vue.createElementBlock(
+                vue.Fragment,
+                null,
+                vue.renderList($setup.filteredEvents, (event, index) => {
+                  return vue.openBlock(), vue.createElementBlock("view", {
+                    key: "event-" + index,
+                    class: "event-marker",
+                    style: vue.normalizeStyle({ left: $setup.getEventPosition(event) + "px" }),
+                    onClick: vue.withModifiers(($event) => $setup.seekToEvent(event), ["stop"])
+                  }, [
+                    vue.createElementVNode(
                       "view",
                       {
-                        key: 1,
-                        class: vue.normalizeClass(["event-dot", $setup.getEventTypeAtTime(mark.time)])
+                        class: vue.normalizeClass(["event-dot", event.type])
                       },
                       null,
                       2
                       /* CLASS */
-                    )) : vue.createCommentVNode("v-if", true)
-                  ], 14, ["onClick"]);
+                    )
+                  ], 12, ["onClick"]);
                 }),
                 128
                 /* KEYED_FRAGMENT */

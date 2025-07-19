@@ -90,14 +90,14 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       new UTSJSONObject({ label: "全部", value: "all" })
     ];
     const events = common_vendor.ref([
-      { date: "10-21", time: "00:15", type: "alarm" },
-      { date: "10-21", time: "00:30", type: "motion" },
-      { date: "10-21", time: "01:45", type: "human" },
-      { date: "10-21", time: "01:20", type: "alarm" }
+      { date: "10-21", time: "00:00:10", type: "alarm" },
+      { date: "10-21", time: "00:00:30", type: "motion" },
+      { date: "10-21", time: "00:01:45", type: "human" },
+      { date: "10-21", time: "00:01:20", type: "alarm" }
     ]);
     const rulerWidth = common_vendor.computed(() => {
       const systemInfo = common_vendor.index.getSystemInfoSync();
-      return systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
+      return systemInfo.windowWidth;
     });
     const convertTimeToSeconds = (timeStr) => {
       const parts = timeStr.split(":");
@@ -137,20 +137,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       }
       return marks;
     });
-    const hasEventAtTime = (time) => {
-      return events.value.some((event) => {
-        const eventTime = convertTimeToSeconds(event.time);
-        return Math.abs(eventTime - time) < 5;
-      });
-    };
-    const getEventTypeAtTime = (time) => {
-      const event = UTS.arrayFind(events.value, (event2) => {
-        const eventTime = convertTimeToSeconds(event2.time);
-        return Math.abs(eventTime - time) < 5;
-      });
-      return event != null ? event.type : "";
-    };
-    common_vendor.computed(() => {
+    const filteredEvents = common_vendor.computed(() => {
       if (activeFilter.value === "all")
         return events.value;
       return events.value.filter((e) => {
@@ -160,13 +147,13 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const initVideoContext = () => {
       try {
         videoContext.value = common_vendor.index.createVideoContext("myVideo");
-        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:208", "视频上下文初始化成功", videoContext.value);
+        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:194", "视频上下文初始化成功", videoContext.value);
       } catch (error) {
-        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:210", "创建视频上下文失败:", error);
+        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:196", "创建视频上下文失败:", error);
       }
     };
     const loadVideoData = (date) => {
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:215", "加载日期数据:", date);
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:201", "加载日期数据:", date);
     };
     const selectDate = (date) => {
       activeDate.value = date;
@@ -185,7 +172,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       const pixelsPerSecond = rulerWidth.value / videoDuration.value;
       playheadPosition.value = currentTimeInSeconds * pixelsPerSecond;
       const systemInfo = common_vendor.index.getSystemInfoSync();
-      const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
+      const scrollViewWidth = systemInfo.windowWidth;
       const halfWidth = scrollViewWidth / 2;
       const targetScrollLeft = playheadPosition.value - halfWidth;
       const maxScrollLeft = rulerWidth.value - scrollViewWidth;
@@ -212,6 +199,15 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       playheadPosition.value = timeInSeconds * 2;
       currentTime.value = formatTime(timeInSeconds);
     };
+    const getEventPosition = (event) => {
+      const seconds = convertTimeToSeconds(event.time);
+      const pixelsPerSecond = rulerWidth.value / (videoDuration.value || 300);
+      return seconds * pixelsPerSecond;
+    };
+    const seekToEvent = (event) => {
+      const seconds = convertTimeToSeconds(event.time);
+      seekToSeconds(seconds);
+    };
     const seekToPosition = (seconds) => {
       seekToSeconds(seconds);
     };
@@ -234,7 +230,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       const deltaX = e.touches[0].pageX - startX.value;
       const newScrollLeft = startScrollLeft.value - deltaX;
       const systemInfo = common_vendor.index.getSystemInfoSync();
-      const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
+      const scrollViewWidth = systemInfo.windowWidth;
       const maxScrollLeft = rulerWidth.value - scrollViewWidth;
       timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, newScrollLeft));
       const touchX = e.touches[0].pageX;
@@ -258,7 +254,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       if (!isDragging.value)
         return null;
       const systemInfo = common_vendor.index.getSystemInfoSync();
-      const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
+      const scrollViewWidth = systemInfo.windowWidth;
       const pixelsPerSecond = rulerWidth.value / videoDuration.value;
       const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
       if (videoContext.value != null) {
@@ -314,26 +310,32 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           return common_vendor.e({
             a: mark.type === "major"
           }, mark.type === "major" ? {} : {}, {
-            b: hasEventAtTime(mark.time)
-          }, hasEventAtTime(mark.time) ? {
-            c: common_vendor.n(getEventTypeAtTime(mark.time))
-          } : {}, {
-            d: "mark-" + index,
-            e: common_vendor.n(mark.type),
-            f: mark.position + "px",
-            g: common_vendor.o(($event = null) => {
+            b: "mark-" + index,
+            c: common_vendor.n(mark.type),
+            d: mark.position + "px",
+            e: common_vendor.o(($event = null) => {
               return seekToPosition(mark.time);
             }, "mark-" + index)
           });
         }),
-        j: playheadPosition.value + "px",
-        k: rulerWidth.value + "px",
-        l: common_vendor.o(onTouchStart),
-        m: common_vendor.o(onTouchMove),
-        n: common_vendor.o(onTouchEnd),
-        o: timeScrollLeft.value,
-        p: common_vendor.o(onTimeScroll),
-        q: common_vendor.f(filters, (filter = null, k0 = null, i0 = null) => {
+        j: common_vendor.f(filteredEvents.value, (event = null, index = null, i0 = null) => {
+          return {
+            a: common_vendor.n(event.type),
+            b: "event-" + index,
+            c: getEventPosition(event) + "px",
+            d: common_vendor.o(($event = null) => {
+              return seekToEvent(event);
+            }, "event-" + index)
+          };
+        }),
+        k: playheadPosition.value + "px",
+        l: rulerWidth.value + "px",
+        m: common_vendor.o(onTouchStart),
+        n: common_vendor.o(onTouchMove),
+        o: common_vendor.o(onTouchEnd),
+        p: timeScrollLeft.value,
+        q: common_vendor.o(onTimeScroll),
+        r: common_vendor.f(filters, (filter = null, k0 = null, i0 = null) => {
           return {
             a: common_vendor.t(filter.label),
             b: filter.value,
@@ -343,7 +345,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
             }, filter.value)
           };
         }),
-        r: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        s: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

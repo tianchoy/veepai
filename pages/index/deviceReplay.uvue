@@ -27,11 +27,14 @@
 						:style="{ left: mark.position + 'px' }" @click="seekToPosition(mark.time)">
 						<!-- 主刻度标签 -->
 						<text v-if="mark.type === 'major'" class="mark-label"></text>
-						<!-- 事件标记点 -->
-						<view v-if="hasEventAtTime(mark.time)" :class="['event-dot', getEventTypeAtTime(mark.time)]">
-						</view>
+						
 					</view>
-
+					<view v-for="(event, index) in filteredEvents" :key="'event-'+index" 
+						class="event-marker"
+						:style="{ left: getEventPosition(event) + 'px' }"
+						@click.stop="seekToEvent(event)">
+						<view :class="['event-dot', event.type]"></view>
+					</view>
 					<!-- 播放头指示器 -->
 					<view class="playhead" :style="{ left: playheadPosition + 'px'}"></view>
 				</view>
@@ -62,6 +65,13 @@
 			this.time = time;
 			this.type = type;
 		}
+	}
+
+	// 计算时间刻度
+	type TimeMark = {
+		time : number
+		position : number
+		type : string
 	}
 	// 响应式状态
 	const currentDate = ref('2024-10-21')
@@ -95,20 +105,22 @@
 
 	// 模拟事件数据
 	const events = ref<EventType[]>([
-		{ date: '10-21', time: '00:15', type: 'alarm' },
-		{ date: '10-21', time: '00:30', type: 'motion' },
-		{ date: '10-21', time: '01:45', type: 'human' },
-		{ date: '10-21', time: '01:20', type: 'alarm' }
+		{ date: '10-21', time: '00:00:10', type: 'alarm' },
+		{ date: '10-21', time: '00:00:30', type: 'motion' },
+		{ date: '10-21', time: '00:01:45', type: 'human' },
+		{ date: '10-21', time: '00:01:20', type: 'alarm' }
 	])
 
 
-	// 计算属性
-const rulerWidth = computed(() => {
-  const systemInfo = uni.getSystemInfoSync()
-  return systemInfo.windowWidth != null ? systemInfo.windowWidth : 375
-})
 
-  
+
+	// 计算属性
+	const rulerWidth = computed(() => {
+		const systemInfo = uni.getSystemInfoSync()
+		return systemInfo.windowWidth
+	})
+
+
 	// 时间字符串转秒数
 	const convertTimeToSeconds = (timeStr : string) => {
 		const parts = timeStr.split(':')
@@ -117,52 +129,45 @@ const rulerWidth = computed(() => {
 		const s = parts.length > 2 ? parseInt(parts[2]) : 0
 		return h * 3600 + m * 60 + s
 	}
-	
 
-	// 计算时间刻度
-	type TimeMark = {
-		time : number
-		position : number
-		type : string
-	}
-  const timeMarks = computed<TimeMark[]>(() => {
-    const marks = [] as TimeMark[]
-    const duration = videoDuration.value
-    if (duration == 0) return marks
+	const timeMarks = computed<TimeMark[]>(() => {
+		const marks = [] as TimeMark[]
+		const duration = videoDuration.value
+		if (duration == 0) return marks
 
-    let majorInterval: number
-    if (duration <= 60) { // 1分钟以内
-      majorInterval = 10 // 每10秒一个主刻度
-    } else if (duration <= 300) { // 5分钟以内
-      majorInterval = 30 // 每30秒一个主刻度
-    } else if (duration <= 1800) { // 30分钟以内
-      majorInterval = 60 // 每分钟一个主刻度
-    } else if (duration <= 3600) { // 1小时以内
-      majorInterval = 300 // 每5分钟一个主刻度
-    } else if (duration <= 7200) { // 2小时以内
-      majorInterval = 600 // 每10分钟一个主刻度
-    } else { // 超过2小时
-      majorInterval = 1800 // 每30分钟一个主刻度
-    }
+		let majorInterval : number
+		if (duration <= 60) { // 1分钟以内
+			majorInterval = 10 // 每10秒一个主刻度
+		} else if (duration <= 300) { // 5分钟以内
+			majorInterval = 30 // 每30秒一个主刻度
+		} else if (duration <= 1800) { // 30分钟以内
+			majorInterval = 60 // 每分钟一个主刻度
+		} else if (duration <= 3600) { // 1小时以内
+			majorInterval = 300 // 每5分钟一个主刻度
+		} else if (duration <= 7200) { // 2小时以内
+			majorInterval = 600 // 每10分钟一个主刻度
+		} else { // 超过2小时
+			majorInterval = 1800 // 每30分钟一个主刻度
+		}
 
-    // 小刻度数量 
-    const minorInterval = majorInterval / 10
+		// 小刻度数量 
+		const minorInterval = majorInterval / 10
 
-    // 计算每个刻度的像素位置
-    const pixelsPerSecond = rulerWidth.value / duration
+		// 计算每个刻度的像素位置
+		const pixelsPerSecond = rulerWidth.value / duration
 
-    // 生成刻度
-    for (let time = 0; time <= duration; time += minorInterval) {
-      const isMajor = (time % majorInterval) == 0
-      marks.push({
-        time,
-        position: time * pixelsPerSecond + 3,
-        type: isMajor ? 'major' : 'minor'
-      })
-    }
-    
-    return marks
-  })
+		// 生成刻度
+		for (let time = 0; time <= duration; time += minorInterval) {
+			const isMajor = (time % majorInterval) == 0
+			marks.push({
+				time,
+				position: time * pixelsPerSecond + 3,
+				type: isMajor ? 'major' : 'minor'
+			})
+		}
+
+		return marks
+	})
 
 
 	// 格式化刻度时间
@@ -176,25 +181,6 @@ const rulerWidth = computed(() => {
 		}
 		return `${mins}:${secs.toString().padStart(2, '0')}`
 	}
-
-	// 检查指定时间是否有事件
-	const hasEventAtTime = (time : number) => {
-		return events.value.some(event => {
-			const eventTime = convertTimeToSeconds(event.time)
-			return Math.abs(eventTime - time) < 5 // 5秒容差
-		})
-	}
-
-	// 获取事件类型
-	const getEventTypeAtTime = (time : number) => {
-		const event = events.value.find(event => {
-			const eventTime = convertTimeToSeconds(event.time)
-			return Math.abs(eventTime - time) < 5 // 5秒容差
-		})
-		return event != null ? event.type : ''
-	}
-
-
 
 	const filteredEvents = computed<EventType[]>(() => {
 		if (activeFilter.value === 'all') return events.value
@@ -237,31 +223,30 @@ const rulerWidth = computed(() => {
 
 	// 更新播放头位置
 	const updatePlayheadPosition = (currentTimeInSeconds : number) => {
-    const pixelsPerSecond = rulerWidth.value / videoDuration.value
-    playheadPosition.value = currentTimeInSeconds * pixelsPerSecond
-    const systemInfo = uni.getSystemInfoSync()
-    const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375
-    const halfWidth = scrollViewWidth / 2
-    const targetScrollLeft = playheadPosition.value - halfWidth
+		const pixelsPerSecond = rulerWidth.value / videoDuration.value
+		playheadPosition.value = currentTimeInSeconds * pixelsPerSecond
+		const systemInfo = uni.getSystemInfoSync()
+		const scrollViewWidth = systemInfo.windowWidth
+		const halfWidth = scrollViewWidth / 2
+		const targetScrollLeft = playheadPosition.value - halfWidth
 
-    const maxScrollLeft = rulerWidth.value - scrollViewWidth
-    timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft))
+		const maxScrollLeft = rulerWidth.value - scrollViewWidth
+		timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft))
 	}
 
 	// 视频时间更新 
 	const onTimeUpdate = (e : UniVideoTimeUpdateEvent) => {
 		if (isSeeking.value || isDragging.value) return
-    
+
 		const currentTimeInSeconds = e.detail.currentTime
 		currentTime.value = formatTime(currentTimeInSeconds)
-    videoDuration.value = e.detail.duration;
-
+		videoDuration.value = e.detail.duration;
 		// 节流处理
 		const now = Date.now()
 		if (now - lastSyncTime.value < 200) return
 		lastSyncTime.value = now
 
-		updatePlayheadPosition(currentTimeInSeconds - 1 )
+		updatePlayheadPosition(currentTimeInSeconds - 1)
 	}
 
 	const seekToSeconds = (timeInSeconds : number) => {
@@ -275,6 +260,21 @@ const rulerWidth = computed(() => {
 		playheadPosition.value = timeInSeconds * 2
 		currentTime.value = formatTime(timeInSeconds)
 	}
+
+			// 新增的计算属性：获取事件位置
+	const getEventPosition = (event: EventType) => {
+		const seconds = convertTimeToSeconds(event.time)
+		const duration = videoDuration.value != 0 ? videoDuration.value : 300 // 默认5分钟
+		const pixelsPerSecond = rulerWidth.value / duration
+		return seconds * pixelsPerSecond
+	}
+
+	// 新增方法：跳转到事件时间点
+	const seekToEvent = (event: EventType) => {
+		const seconds = convertTimeToSeconds(event.time)
+		seekToSeconds(seconds)
+	}
+
 
 	// 跳转到指定时间
 	const seekToTime = (hour : number, minute : number) => {
@@ -312,7 +312,8 @@ const rulerWidth = computed(() => {
 		const newScrollLeft = startScrollLeft.value - deltaX
 
 		const systemInfo = uni.getSystemInfoSync()
-		const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375
+		const scrollViewWidth = systemInfo.windowWidth
+
 		const maxScrollLeft = rulerWidth.value - scrollViewWidth
 		timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, newScrollLeft))
 
@@ -320,7 +321,7 @@ const rulerWidth = computed(() => {
 		const touchX = e.touches[0].pageX
 		const rulerStartX = touchX - startX.value + startScrollLeft.value
 		const pixelsPerSecond = rulerWidth.value / videoDuration.value
-    const timeInSeconds = rulerStartX / pixelsPerSecond
+		const timeInSeconds = rulerStartX / pixelsPerSecond
 
 		// 更新显示
 		currentTime.value = formatTime(timeInSeconds)
@@ -345,9 +346,9 @@ const rulerWidth = computed(() => {
 
 		// 计算最终时间位置
 		const systemInfo = uni.getSystemInfoSync()
-		const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375
+		const scrollViewWidth = systemInfo.windowWidth
 		const pixelsPerSecond = rulerWidth.value / videoDuration.value;
-    const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
+		const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
 
 
 		// 精确跳转
@@ -439,35 +440,15 @@ const rulerWidth = computed(() => {
 	.container {
 		display: flex;
 		flex-direction: column;
-		height: 100vh;
+		height: 100%;
 		background-color: #f5f5f5;
-	}
-
-	.header {
-		padding: 15px;
-		background-color: #007aff;
-		color: white;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		position: relative;
-		z-index: 10;
-	}
-
-	.title {
-		font-size: 18px;
-		font-weight: bold;
-	}
-
-	.current-time {
-		font-size: 14px;
-		opacity: 0.9;
 	}
 
 
 	.date-list {
-		display: inline-flex;
-		padding: 0 10px;
+		display: flex;
+		flex-direction: row;
+		padding: 20rpx;
 	}
 
 	.date-item {
@@ -482,8 +463,7 @@ const rulerWidth = computed(() => {
 
 	.date-item.active {
 		background-color: #007aff;
-		font-weight: bold;
-		transform: scale(1.05);
+		color: #fff;
 	}
 
 	.video-container {
@@ -512,18 +492,6 @@ const rulerWidth = computed(() => {
 		white-space: nowrap;
 	}
 
-
-	.event-dot {
-		position: absolute;
-		top: 8px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 8px;
-		height: 8px;
-		border-radius: 50%;
-		z-index: 2;
-	}
-
 	.event-dot.alarm {
 		background-color: #ff3b30;
 		box-shadow: 0 0 5px #ff3b30;
@@ -548,6 +516,7 @@ const rulerWidth = computed(() => {
 		z-index: 10;
 		pointer-events: none;
 	}
+
 	.filter-bar {
 		display: flex;
 		justify-content: space-around;
@@ -579,42 +548,56 @@ const rulerWidth = computed(() => {
 	}
 
 	.time-ruler {
-  display: flex;
-  height: 100%;
-  position: relative;
-  width: 100%; 
-  border-bottom: 1rpx solid #ccc;
-  touch-action: none;
-  user-select: none;
-}
+		display: flex;
+		height: 100%;
+		position: relative;
+		width: 100%;
+		border-bottom: 1rpx solid #ccc;
+	}
 
-.time-mark {
-  position: absolute;
-  bottom: 0;
-  transform: translateX(-50%);
-  pointer-events: auto;
-}
+	.time-mark {
+		position: absolute;
+		bottom: 0;
+		transform: translateX(-50%);
+		pointer-events: auto;
+	}
 
-.time-mark.major {
-  height: 20px;
-  background-color: #333;
-  width: 2px;
-}
+	.time-mark.major {
+		height: 20px;
+		background-color: #333;
+		width: 2px;
+	}
 
-.time-mark.minor {
-  height: 10px;
-  background-color: #999;
-  width: 1px;
-}
+	.time-mark.minor {
+		height: 10px;
+		background-color: #999;
+		width: 1px;
+	}
+
+
+
+	.event-marker {
+		position: absolute;
+		bottom: 25px;
+		transform: translateX(-50%);
+		z-index: 5;
+	}
 
 	.event-dot {
-		position: absolute;
-		top: -15px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 8px;
-		height: 8px;
+		width: 10px;
+		height: 10px;
 		border-radius: 50%;
-		z-index: 2;
+	}
+
+	.event-dot.alarm {
+		background-color: #ff3b30;
+	}
+
+	.event-dot.motion {
+		background-color: #ff9500;
+	}
+
+	.event-dot.human {
+		background-color: #34c759;
 	}
 </style>

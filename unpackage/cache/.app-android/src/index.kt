@@ -76,7 +76,7 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
     val hosts: String = "127.0.0.1,192.168.3.34"
     val port: String = "8090"
-    val id: String = "app-android_xpgDeV"
+    val id: String = "app-android_2MoLNm"
     if (hosts == "" || port == "" || id == "") {
         return UTSPromise.resolve(false)
     }
@@ -8970,7 +8970,7 @@ open class TimeMark (
     open var type: String,
 ) : UTSObject(), IUTSSourceMap {
     override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("TimeMark", "pages/index/deviceReplay.uvue", 123, 7)
+        return UTSSourceMapPosition("TimeMark", "pages/index/deviceReplay.uvue", 71, 7)
     }
 }
 open class TimeScrollDetail (
@@ -8978,7 +8978,7 @@ open class TimeScrollDetail (
     open var scrollLeft: Number,
 ) : UTSObject(), IUTSSourceMap {
     override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("TimeScrollDetail", "pages/index/deviceReplay.uvue", 369, 7)
+        return UTSSourceMapPosition("TimeScrollDetail", "pages/index/deviceReplay.uvue", 370, 7)
     }
 }
 open class TimeScrollEvent (
@@ -8986,7 +8986,7 @@ open class TimeScrollEvent (
     open var detail: TimeScrollDetail,
 ) : UTSObject(), IUTSSourceMap {
     override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("TimeScrollEvent", "pages/index/deviceReplay.uvue", 373, 7)
+        return UTSSourceMapPosition("TimeScrollEvent", "pages/index/deviceReplay.uvue", 374, 7)
     }
 }
 val GenPagesIndexDeviceReplayClass = CreateVueComponent(GenPagesIndexDeviceReplay::class.java, fun(): VueComponentOptions {
