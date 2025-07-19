@@ -96,11 +96,8 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       { date: "10-21", time: "01:20", type: "alarm" }
     ]);
     const rulerWidth = common_vendor.computed(() => {
-      const pixelsPerSecond2 = 3.5;
-      return videoDuration.value * pixelsPerSecond2;
-    });
-    const pixelsPerSecond = common_vendor.computed(() => {
-      return rulerWidth.value / 21;
+      const systemInfo = common_vendor.index.getSystemInfoSync();
+      return systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
     });
     const convertTimeToSeconds = (timeStr) => {
       const parts = timeStr.split(":");
@@ -129,15 +126,15 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         majorInterval = 1800;
       }
       const minorInterval = majorInterval / 5;
+      const pixelsPerSecond = rulerWidth.value / duration;
       for (let time = 0; time <= duration; time += minorInterval) {
         const isMajor = time % majorInterval === 0;
         marks.push(new TimeMark({
           time,
-          position: time / duration * rulerWidth.value,
+          position: time * pixelsPerSecond,
           type: isMajor ? "major" : "minor"
         }));
       }
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:162", "生成的刻度数量:", marks.length);
       return marks;
     });
     const formatMarkTime = (seconds) => {
@@ -170,18 +167,18 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       });
     });
     const onDurationChange = (e) => {
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:204", e);
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:205", e);
     };
     const initVideoContext = () => {
       try {
         videoContext.value = common_vendor.index.createVideoContext("myVideo");
-        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:211", "视频上下文初始化成功", videoContext.value);
+        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:212", "视频上下文初始化成功", videoContext.value);
       } catch (error) {
-        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:213", "创建视频上下文失败:", error);
+        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:214", "创建视频上下文失败:", error);
       }
     };
     const loadVideoData = (date) => {
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:218", "加载日期数据:", date);
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:219", "加载日期数据:", date);
     };
     const selectDate = (date) => {
       activeDate.value = date;
@@ -197,16 +194,14 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       return `${hrs.toString().padStart(2, "0")}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
     };
     const updatePlayheadPosition = (currentTimeInSeconds) => {
-      const newPosition = currentTimeInSeconds * pixelsPerSecond.value / 6;
-      playheadPosition.value = newPosition;
-      if (Math.abs(manualScrollPosition.value - newPosition) > 60) {
-        const systemInfo = common_vendor.index.getSystemInfoSync();
-        const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
-        const halfWidth = scrollViewWidth / 2;
-        const targetScrollLeft = newPosition - halfWidth;
-        const maxScrollLeft = rulerWidth.value - scrollViewWidth;
-        timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft));
-      }
+      const pixelsPerSecond = rulerWidth.value / videoDuration.value;
+      playheadPosition.value = currentTimeInSeconds * pixelsPerSecond;
+      const systemInfo = common_vendor.index.getSystemInfoSync();
+      const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
+      const halfWidth = scrollViewWidth / 2;
+      const targetScrollLeft = playheadPosition.value - halfWidth;
+      const maxScrollLeft = rulerWidth.value - scrollViewWidth;
+      timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft));
     };
     const onTimeUpdate = (e) => {
       if (isSeeking.value || isDragging.value)
@@ -238,7 +233,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const onTouchStart = (e) => {
       isDragging.value = true;
       startX.value = e.touches[0].pageX;
-      startScrollLeft.value = timeScrollLeft.value;
+      startScrollLeft.value = startX.value;
       lastDragTime.value = Date.now();
       isSeeking.value = true;
       if (videoContext.value != null) {
@@ -256,14 +251,15 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       timeScrollLeft.value = Math.max(0, Math.min(maxScrollLeft, newScrollLeft));
       const touchX = e.touches[0].pageX;
       const rulerStartX = touchX - startX.value + startScrollLeft.value;
-      const timeInSeconds = rulerStartX / 2;
+      const pixelsPerSecond = rulerWidth.value / videoDuration.value;
+      const timeInSeconds = rulerStartX / pixelsPerSecond;
       currentTime.value = formatTime(timeInSeconds);
-      playheadPosition.value = timeInSeconds * 2;
-      manualScrollPosition.value = timeInSeconds * 2;
+      playheadPosition.value = timeInSeconds * pixelsPerSecond;
+      manualScrollPosition.value = timeInSeconds * pixelsPerSecond;
       const now = Date.now();
       if (now - lastDragTime.value > 100) {
         if (videoContext.value != null) {
-          common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:339", "尝试跳转视频到:", timeInSeconds, "秒");
+          common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:338", "尝试跳转视频到:", timeInSeconds, "秒");
           draggedTimeInSeconds.value = timeInSeconds;
           videoContext.value.seek(timeInSeconds);
         }
@@ -275,15 +271,15 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         return null;
       const systemInfo = common_vendor.index.getSystemInfoSync();
       const scrollViewWidth = systemInfo.windowWidth != null ? systemInfo.windowWidth : 375;
-      const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / 2;
+      const pixelsPerSecond = rulerWidth.value / videoDuration.value;
+      const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
       if (videoContext.value != null) {
         common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:359", "尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒");
         videoContext.value.seek(draggedTimeInSeconds.value);
         videoContext.value.play();
       }
-      playheadPosition.value = timeInSeconds * 2;
+      playheadPosition.value = timeInSeconds * pixelsPerSecond;
       currentTime.value = formatTime(timeInSeconds);
-      manualScrollPosition.value = timeInSeconds * 2;
       isDragging.value = false;
       isSeeking.value = false;
     };

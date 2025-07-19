@@ -66,15 +66,6 @@
 		height: 70px;
 		white-space: nowrap;
 }
-.time-ruler {
-		display: inline-flex;
-		height: 100%;
-		padding-left: 10px;
-		position: relative;
-		touch-action: none;
-		-webkit-user-select: none;
-		        user-select: none;
-}
 .event-dot {
 		position: absolute;
 		top: 8px;
@@ -146,31 +137,30 @@
 		font-weight: bold;
 		transform: scale(1.05);
 }
+.time-ruler {
+  display: flex;
+  height: 100%;
+  position: relative;
+  width: 100%; /* 使用屏幕宽度 */
+  touch-action: none;
+  -webkit-user-select: none;
+          user-select: none;
+}
 .time-mark {
-    position: absolute;
-    bottom: 0;
-    width: 1px;
-    background-color: #fff;
-    transform: translateX(-50%);
-    /* 确保刻度不会被隐藏 */
-    pointer-events: auto;
+  position: absolute;
+  bottom: 0;
+  transform: translateX(-50%);
+  pointer-events: auto;
 }
 .time-mark.major {
-    height: 20px;
-    background-color: #fff;
-    width: 2px;
+  height: 20px;
+  background-color: #fff;
+  width: 2px;
 }
 .time-mark.minor {
-    height: 10px;
-}
-.mark-label {
-		position: absolute;
-		bottom: -20px;
-		left: 50%;
-		transform: translateX(-50%);
-		color: #fff;
-		font-size: 10px;
-		white-space: nowrap;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 1px;
 }
 .event-dot {
 		position: absolute;

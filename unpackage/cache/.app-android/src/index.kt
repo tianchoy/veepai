@@ -8970,7 +8970,7 @@ open class TimeMark (
     open var type: String,
 ) : UTSObject(), IUTSSourceMap {
     override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("TimeMark", "pages/index/deviceReplay.uvue", 127, 7)
+        return UTSSourceMapPosition("TimeMark", "pages/index/deviceReplay.uvue", 123, 7)
     }
 }
 open class TimeScrollDetail (
