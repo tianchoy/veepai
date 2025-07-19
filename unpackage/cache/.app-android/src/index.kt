@@ -8978,7 +8978,7 @@ open class TimeScrollDetail (
     open var scrollLeft: Number,
 ) : UTSObject(), IUTSSourceMap {
     override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("TimeScrollDetail", "pages/index/deviceReplay.uvue", 373, 7)
+        return UTSSourceMapPosition("TimeScrollDetail", "pages/index/deviceReplay.uvue", 369, 7)
     }
 }
 open class TimeScrollEvent (
@@ -8986,7 +8986,7 @@ open class TimeScrollEvent (
     open var detail: TimeScrollDetail,
 ) : UTSObject(), IUTSSourceMap {
     override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("TimeScrollEvent", "pages/index/deviceReplay.uvue", 377, 7)
+        return UTSSourceMapPosition("TimeScrollEvent", "pages/index/deviceReplay.uvue", 373, 7)
     }
 }
 val GenPagesIndexDeviceReplayClass = CreateVueComponent(GenPagesIndexDeviceReplay::class.java, fun(): VueComponentOptions {

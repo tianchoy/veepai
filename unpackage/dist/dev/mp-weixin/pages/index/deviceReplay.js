@@ -109,7 +109,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const timeMarks = common_vendor.computed(() => {
       const marks = [];
       const duration = videoDuration.value;
-      if (duration === 0)
+      if (duration == 0)
         return marks;
       let majorInterval;
       if (duration <= 60) {
@@ -125,27 +125,18 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       } else {
         majorInterval = 1800;
       }
-      const minorInterval = majorInterval / 5;
+      const minorInterval = majorInterval / 10;
       const pixelsPerSecond = rulerWidth.value / duration;
       for (let time = 0; time <= duration; time += minorInterval) {
-        const isMajor = time % majorInterval === 0;
+        const isMajor = time % majorInterval == 0;
         marks.push(new TimeMark({
           time,
-          position: time * pixelsPerSecond,
+          position: time * pixelsPerSecond + 3,
           type: isMajor ? "major" : "minor"
         }));
       }
       return marks;
     });
-    const formatMarkTime = (seconds) => {
-      const hrs = Math.floor(seconds / 3600);
-      const mins = Math.floor(seconds % 3600 / 60);
-      const secs = Math.floor(seconds % 60);
-      if (hrs > 0) {
-        return `${hrs}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
-      }
-      return `${mins}:${secs.toString().padStart(2, "0")}`;
-    };
     const hasEventAtTime = (time) => {
       return events.value.some((event) => {
         const eventTime = convertTimeToSeconds(event.time);
@@ -166,19 +157,16 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         return e.type === activeFilter.value;
       });
     });
-    const onDurationChange = (e) => {
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:205", e);
-    };
     const initVideoContext = () => {
       try {
         videoContext.value = common_vendor.index.createVideoContext("myVideo");
-        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:212", "视频上下文初始化成功", videoContext.value);
+        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:208", "视频上下文初始化成功", videoContext.value);
       } catch (error) {
-        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:214", "创建视频上下文失败:", error);
+        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:210", "创建视频上下文失败:", error);
       }
     };
     const loadVideoData = (date) => {
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:219", "加载日期数据:", date);
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:215", "加载日期数据:", date);
     };
     const selectDate = (date) => {
       activeDate.value = date;
@@ -213,7 +201,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       if (now - lastSyncTime.value < 200)
         return null;
       lastSyncTime.value = now;
-      updatePlayheadPosition(currentTimeInSeconds);
+      updatePlayheadPosition(currentTimeInSeconds - 1);
     };
     const seekToSeconds = (timeInSeconds) => {
       isSeeking.value = true;
@@ -259,7 +247,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       const now = Date.now();
       if (now - lastDragTime.value > 100) {
         if (videoContext.value != null) {
-          common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:338", "尝试跳转视频到:", timeInSeconds, "秒");
+          common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:334", "尝试跳转视频到:", timeInSeconds, "秒");
           draggedTimeInSeconds.value = timeInSeconds;
           videoContext.value.seek(timeInSeconds);
         }
@@ -274,7 +262,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       const pixelsPerSecond = rulerWidth.value / videoDuration.value;
       const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
       if (videoContext.value != null) {
-        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:359", "尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒");
+        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:355", "尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒");
         videoContext.value.seek(draggedTimeInSeconds.value);
         videoContext.value.play();
       }
@@ -292,15 +280,15 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       activeFilter.value = filter;
     };
     const onPlay = () => {
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:425", "视频开始播放");
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:421", "视频开始播放");
     };
     const onPause = () => {
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:430", "视频暂停");
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:426", "视频暂停");
     };
     common_vendor.onMounted(() => {
       initVideoContext();
       if (videoContext.value == null) {
-        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:437", "视频上下文初始化失败，请检查");
+        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:433", "视频上下文初始化失败，请检查");
       }
     });
     return (_ctx = null, _cache = null) => {
@@ -321,34 +309,31 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
         e: common_vendor.o(onTimeUpdate),
         f: common_vendor.o(onPlay),
         g: common_vendor.o(onPause),
-        h: common_vendor.o(onDurationChange),
-        i: common_vendor.o(onSeeked),
-        j: common_vendor.f(timeMarks.value, (mark = null, index = null, i0 = null) => {
+        h: common_vendor.o(onSeeked),
+        i: common_vendor.f(timeMarks.value, (mark = null, index = null, i0 = null) => {
           return common_vendor.e({
             a: mark.type === "major"
-          }, mark.type === "major" ? {
-            b: common_vendor.t(formatMarkTime(mark.time))
-          } : {}, {
-            c: hasEventAtTime(mark.time)
+          }, mark.type === "major" ? {} : {}, {
+            b: hasEventAtTime(mark.time)
           }, hasEventAtTime(mark.time) ? {
-            d: common_vendor.n(getEventTypeAtTime(mark.time))
+            c: common_vendor.n(getEventTypeAtTime(mark.time))
           } : {}, {
-            e: "mark-" + index,
-            f: common_vendor.n(mark.type),
-            g: mark.position + "px",
-            h: common_vendor.o(($event = null) => {
+            d: "mark-" + index,
+            e: common_vendor.n(mark.type),
+            f: mark.position + "px",
+            g: common_vendor.o(($event = null) => {
               return seekToPosition(mark.time);
             }, "mark-" + index)
           });
         }),
-        k: playheadPosition.value + "px",
-        l: rulerWidth.value + "px",
-        m: common_vendor.o(onTouchStart),
-        n: common_vendor.o(onTouchMove),
-        o: common_vendor.o(onTouchEnd),
-        p: timeScrollLeft.value,
-        q: common_vendor.o(onTimeScroll),
-        r: common_vendor.f(filters, (filter = null, k0 = null, i0 = null) => {
+        j: playheadPosition.value + "px",
+        k: rulerWidth.value + "px",
+        l: common_vendor.o(onTouchStart),
+        m: common_vendor.o(onTouchMove),
+        n: common_vendor.o(onTouchEnd),
+        o: timeScrollLeft.value,
+        p: common_vendor.o(onTimeScroll),
+        q: common_vendor.f(filters, (filter = null, k0 = null, i0 = null) => {
           return {
             a: common_vendor.t(filter.label),
             b: filter.value,
@@ -358,7 +343,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
             }, filter.value)
           };
         }),
-        s: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
+        r: common_vendor.sei(common_vendor.gei(_ctx, ""), "view")
       };
       return __returned__;
     };

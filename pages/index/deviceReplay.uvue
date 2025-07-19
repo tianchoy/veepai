@@ -13,7 +13,7 @@
 		<!-- 视频播放区域 -->
 		<view class="video-container">
 			<video id="myVideo" :src="videoSrc" :controls="true" class="video-player" @timeupdate="onTimeUpdate"
-				@play="onPlay" @pause="onPause" @durationchange="onDurationChange" @seeked="onSeeked"></video>
+				@play="onPlay" @pause="onPause" @seeked="onSeeked"></video>
 		</view>
 
 		<!-- 可拖动时间轴 -->
@@ -24,16 +24,16 @@
 					@touchmove="onTouchMove" @touchend="onTouchEnd">
 					<!-- 动态时间刻度 -->
 					<view v-for="(mark, index) in timeMarks" :key="'mark-' + index" :class="['time-mark', mark.type]"
-						:style="{ left: mark.position + 'px' }" @tap="seekToPosition(mark.time)">
+						:style="{ left: mark.position + 'px' }" @click="seekToPosition(mark.time)">
 						<!-- 主刻度标签 -->
-						<text v-if="mark.type === 'major'" class="mark-label">{{ formatMarkTime(mark.time) }}</text>
+						<text v-if="mark.type === 'major'" class="mark-label"></text>
 						<!-- 事件标记点 -->
 						<view v-if="hasEventAtTime(mark.time)" :class="['event-dot', getEventTypeAtTime(mark.time)]">
 						</view>
 					</view>
 
 					<!-- 播放头指示器 -->
-					<view class="playhead" :style="{ left: playheadPosition + 'px' }"></view>
+					<view class="playhead" :style="{ left: playheadPosition + 'px'}"></view>
 				</view>
 			</scroll-view>
 		</view>
@@ -128,7 +128,7 @@ const rulerWidth = computed(() => {
   const timeMarks = computed(() => {
     const marks = [] as TimeMark[]
     const duration = videoDuration.value
-    if (duration === 0) return marks
+    if (duration == 0) return marks
 
     let majorInterval: number
     if (duration <= 60) { // 1分钟以内
@@ -145,18 +145,18 @@ const rulerWidth = computed(() => {
       majorInterval = 1800 // 每30分钟一个主刻度
     }
 
-    // 小刻度数量 - 每个主刻度之间4个小刻度
-    const minorInterval = majorInterval / 5
+    // 小刻度数量 
+    const minorInterval = majorInterval / 10
 
     // 计算每个刻度的像素位置
     const pixelsPerSecond = rulerWidth.value / duration
 
     // 生成刻度
     for (let time = 0; time <= duration; time += minorInterval) {
-      const isMajor = (time % majorInterval) === 0
+      const isMajor = (time % majorInterval) == 0
       marks.push({
         time,
-        position: time * pixelsPerSecond,
+        position: time * pixelsPerSecond + 3,
         type: isMajor ? 'major' : 'minor'
       })
     }
@@ -200,10 +200,6 @@ const rulerWidth = computed(() => {
 		if (activeFilter.value === 'all') return events.value
 		return events.value.filter((e) => e.type === activeFilter.value)
 	})
-
-	const onDurationChange = (e : UTSJSONObject) => {
-		console.log(e)
-	}
 
 	// 初始化视频上下文
 	const initVideoContext = () => {
@@ -265,7 +261,7 @@ const rulerWidth = computed(() => {
 		if (now - lastSyncTime.value < 200) return
 		lastSyncTime.value = now
 
-		updatePlayheadPosition(currentTimeInSeconds)
+		updatePlayheadPosition(currentTimeInSeconds - 1 )
 	}
 
 	const seekToSeconds = (timeInSeconds : number) => {
@@ -505,10 +501,9 @@ const rulerWidth = computed(() => {
 	.time-ruler-container {
 		width: 100%;
 		padding: 10px 0;
-		background-color: #333;
+		background-color: #fff;
 		position: relative;
 		z-index: 5;
-		box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
 	}
 
 	.time-ruler-scroll {
@@ -553,20 +548,6 @@ const rulerWidth = computed(() => {
 		z-index: 10;
 		pointer-events: none;
 	}
-
-	.playhead::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		left: -6px;
-		width: 14px;
-		height: 14px;
-		background-color: #007aff;
-		border-radius: 50%;
-		border: 2px solid white;
-		box-sizing: border-box;
-	}
-
 	.filter-bar {
 		display: flex;
 		justify-content: space-around;
@@ -577,7 +558,6 @@ const rulerWidth = computed(() => {
 		left: 0;
 		right: 0;
 		z-index: 20;
-		box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
 	}
 
 	.filter-item {
@@ -602,7 +582,8 @@ const rulerWidth = computed(() => {
   display: flex;
   height: 100%;
   position: relative;
-  width: 100%; /* 使用屏幕宽度 */
+  width: 100%; 
+  border-bottom: 1rpx solid #ccc;
   touch-action: none;
   user-select: none;
 }
@@ -616,13 +597,13 @@ const rulerWidth = computed(() => {
 
 .time-mark.major {
   height: 20px;
-  background-color: #fff;
+  background-color: #333;
   width: 2px;
 }
 
 .time-mark.minor {
   height: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: #999;
   width: 1px;
 }
 

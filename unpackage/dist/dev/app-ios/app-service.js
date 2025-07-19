@@ -19025,7 +19025,7 @@
       const timeMarks = vue.computed(() => {
         const marks = [];
         const duration = videoDuration.value;
-        if (duration === 0)
+        if (duration == 0)
           return marks;
         let majorInterval;
         if (duration <= 60) {
@@ -19041,13 +19041,13 @@
         } else {
           majorInterval = 1800;
         }
-        const minorInterval = majorInterval / 5;
+        const minorInterval = majorInterval / 10;
         const pixelsPerSecond = rulerWidth.value / duration;
         for (let time = 0; time <= duration; time += minorInterval) {
-          const isMajor = time % majorInterval === 0;
+          const isMajor = time % majorInterval == 0;
           marks.push(new TimeMark({
             time,
-            position: time * pixelsPerSecond,
+            position: time * pixelsPerSecond + 3,
             type: isMajor ? "major" : "minor"
           }));
         }
@@ -19082,19 +19082,16 @@
           return e2.type === activeFilter.value;
         });
       });
-      const onDurationChange = (e2) => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:205", e2);
-      };
       const initVideoContext = () => {
         try {
           videoContext.value = uni.createVideoContext("myVideo");
-          uni.__log__("log", "at pages/index/deviceReplay.uvue:212", "视频上下文初始化成功", videoContext.value);
+          uni.__log__("log", "at pages/index/deviceReplay.uvue:208", "视频上下文初始化成功", videoContext.value);
         } catch (error) {
-          uni.__log__("error", "at pages/index/deviceReplay.uvue:214", "创建视频上下文失败:", error);
+          uni.__log__("error", "at pages/index/deviceReplay.uvue:210", "创建视频上下文失败:", error);
         }
       };
       const loadVideoData = (date) => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:219", "加载日期数据:", date);
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:215", "加载日期数据:", date);
       };
       const selectDate = (date) => {
         activeDate.value = date;
@@ -19129,7 +19126,7 @@
         if (now - lastSyncTime.value < 200)
           return null;
         lastSyncTime.value = now;
-        updatePlayheadPosition(currentTimeInSeconds);
+        updatePlayheadPosition(currentTimeInSeconds - 1);
       };
       const seekToSeconds = (timeInSeconds) => {
         isSeeking.value = true;
@@ -19179,7 +19176,7 @@
         const now = Date.now();
         if (now - lastDragTime.value > 100) {
           if (videoContext.value != null) {
-            uni.__log__("log", "at pages/index/deviceReplay.uvue:338", "尝试跳转视频到:", timeInSeconds, "秒");
+            uni.__log__("log", "at pages/index/deviceReplay.uvue:334", "尝试跳转视频到:", timeInSeconds, "秒");
             draggedTimeInSeconds.value = timeInSeconds;
             videoContext.value.seek(timeInSeconds);
           }
@@ -19194,7 +19191,7 @@
         const pixelsPerSecond = rulerWidth.value / videoDuration.value;
         const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
         if (videoContext.value != null) {
-          uni.__log__("log", "at pages/index/deviceReplay.uvue:359", "尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒");
+          uni.__log__("log", "at pages/index/deviceReplay.uvue:355", "尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒");
           videoContext.value.seek(draggedTimeInSeconds.value);
           videoContext.value.play();
         }
@@ -19237,23 +19234,23 @@
         return "".concat(hour.toString().padStart(2, "0"), ":00");
       };
       const onPlay = () => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:425", "视频开始播放");
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:421", "视频开始播放");
       };
       const onPause = () => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:430", "视频暂停");
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:426", "视频暂停");
       };
       vue.onMounted(() => {
         initVideoContext();
         if (videoContext.value == null) {
-          uni.__log__("error", "at pages/index/deviceReplay.uvue:437", "视频上下文初始化失败，请检查");
+          uni.__log__("error", "at pages/index/deviceReplay.uvue:433", "视频上下文初始化失败，请检查");
         }
       });
-      const __returned__ = { EventType, currentDate, currentTime, activeDate, activeFilter, videoSrc: videoSrc2, videoContext, isSeeking, timeScrollLeft, dateScrollLeft, playheadPosition, videoDuration, lastSyncTime, isDragging, startX, startScrollLeft, lastDragTime, manualScrollPosition, draggedTimeInSeconds, dateList, filters, events, rulerWidth, convertTimeToSeconds, timeMarks, formatMarkTime, hasEventAtTime, getEventTypeAtTime, filteredEvents, onDurationChange, initVideoContext, loadVideoData, selectDate, formatTime, updatePlayheadPosition, onTimeUpdate, seekToSeconds, seekToTime, seekToPosition, onSeeked, onTouchStart, onTouchMove, onTouchEnd, onTimeScroll, selectFilter, hasEvent, getEventType, formatHour, onPlay, onPause };
+      const __returned__ = { EventType, currentDate, currentTime, activeDate, activeFilter, videoSrc: videoSrc2, videoContext, isSeeking, timeScrollLeft, dateScrollLeft, playheadPosition, videoDuration, lastSyncTime, isDragging, startX, startScrollLeft, lastDragTime, manualScrollPosition, draggedTimeInSeconds, dateList, filters, events, rulerWidth, convertTimeToSeconds, timeMarks, formatMarkTime, hasEventAtTime, getEventTypeAtTime, filteredEvents, initVideoContext, loadVideoData, selectDate, formatTime, updatePlayheadPosition, onTimeUpdate, seekToSeconds, seekToTime, seekToPosition, onSeeked, onTouchStart, onTouchMove, onTouchEnd, onTimeScroll, selectFilter, hasEvent, getEventType, formatHour, onPlay, onPause };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   });
-  const _style_0$f = { "container": { "": { "display": "flex", "flexDirection": "column", "backgroundColor": "#f5f5f5" } }, "header": { "": { "paddingTop": 15, "paddingRight": 15, "paddingBottom": 15, "paddingLeft": 15, "backgroundColor": "#007aff", "color": "#FFFFFF", "display": "flex", "justifyContent": "space-between", "alignItems": "center", "position": "relative", "zIndex": 10 } }, "title": { "": { "fontSize": 18, "fontWeight": "bold" } }, "current-time": { "": { "fontSize": 14, "opacity": 0.9 } }, "date-list": { "": { "paddingTop": 0, "paddingRight": 10, "paddingBottom": 0, "paddingLeft": 10 } }, "date-item": { "": { "paddingTop": 8, "paddingRight": 16, "paddingBottom": 8, "paddingLeft": 16, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 14, "transitionProperty": "all", "transitionDuration": "0.2s" }, ".active": { "backgroundColor": "#007aff", "fontWeight": "bold", "transform": "scale(1.05)" } }, "video-container": { "": { "width": "100%", "height": 250, "backgroundColor": "#000000", "position": "relative" } }, "video-player": { "": { "width": "100%", "height": "100%" } }, "time-ruler-container": { "": { "width": "100%", "paddingTop": 10, "paddingRight": 0, "paddingBottom": 10, "paddingLeft": 0, "backgroundColor": "#333333", "position": "relative", "zIndex": 5, "boxShadow": "0 -2px 5px rgba(0, 0, 0, 0.2)" } }, "time-ruler-scroll": { "": { "width": "100%", "height": 70, "whiteSpace": "nowrap" } }, "event-dot": { "": { "position": "absolute", "top": -15, "left": "50%", "transform": "translateX(-50%)", "width": 8, "height": 8, "zIndex": 2 }, ".alarm": { "backgroundColor": "#ff3b30", "boxShadow": "0 0 5px #ff3b30" }, ".motion": { "backgroundColor": "#ff9500", "boxShadow": "0 0 5px #ff9500" }, ".human": { "backgroundColor": "#34c759", "boxShadow": "0 0 5px #34c759" } }, "playhead": { "": { "position": "absolute", "top": 0, "width": 2, "height": "100%", "backgroundColor": "#007aff", "zIndex": 10, "pointerEvents": "none", "content::after": "''", "position::after": "absolute", "top::after": 0, "left::after": -6, "width::after": 14, "height::after": 14, "backgroundColor::after": "#007aff", "borderTopWidth::after": 2, "borderRightWidth::after": 2, "borderBottomWidth::after": 2, "borderLeftWidth::after": 2, "borderTopStyle::after": "solid", "borderRightStyle::after": "solid", "borderBottomStyle::after": "solid", "borderLeftStyle::after": "solid", "borderTopColor::after": "#FFFFFF", "borderRightColor::after": "#FFFFFF", "borderBottomColor::after": "#FFFFFF", "borderLeftColor::after": "#FFFFFF", "boxSizing::after": "border-box" } }, "filter-bar": { "": { "display": "flex", "justifyContent": "space-around", "paddingTop": 12, "paddingRight": 5, "paddingBottom": 12, "paddingLeft": 5, "backgroundColor": "#333333", "position": "fixed", "bottom": 0, "left": 0, "right": 0, "zIndex": 20, "boxShadow": "0 -2px 10px rgba(0, 0, 0, 0.3)" } }, "filter-item": { "": { "paddingTop": 8, "paddingRight": 12, "paddingBottom": 8, "paddingLeft": 12, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 12, "transitionProperty": "all", "transitionDuration": "0.2s", "flex": 1, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "textAlign": "center" }, ".active": { "backgroundColor": "#007aff", "fontWeight": "bold", "transform": "scale(1.05)" } }, "time-ruler": { "": { "display": "flex", "height": "100%", "position": "relative", "width": "100%", "touchAction": "none", "userSelect": "none" } }, "time-mark": { "": { "position": "absolute", "bottom": 0, "transform": "translateX(-50%)", "pointerEvents": "auto" }, ".major": { "height": 20, "backgroundColor": "#ffffff", "width": 2 }, ".minor": { "height": 10, "backgroundColor": "rgba(255,255,255,0.6)", "width": 1 } }, "@TRANSITION": { "date-item": { "property": "all", "duration": "0.2s" }, "filter-item": { "property": "all", "duration": "0.2s" } } };
+  const _style_0$f = { "container": { "": { "display": "flex", "flexDirection": "column", "backgroundColor": "#f5f5f5" } }, "header": { "": { "paddingTop": 15, "paddingRight": 15, "paddingBottom": 15, "paddingLeft": 15, "backgroundColor": "#007aff", "color": "#FFFFFF", "display": "flex", "justifyContent": "space-between", "alignItems": "center", "position": "relative", "zIndex": 10 } }, "title": { "": { "fontSize": 18, "fontWeight": "bold" } }, "current-time": { "": { "fontSize": 14, "opacity": 0.9 } }, "date-list": { "": { "paddingTop": 0, "paddingRight": 10, "paddingBottom": 0, "paddingLeft": 10 } }, "date-item": { "": { "paddingTop": 8, "paddingRight": 16, "paddingBottom": 8, "paddingLeft": 16, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 14, "transitionProperty": "all", "transitionDuration": "0.2s" }, ".active": { "backgroundColor": "#007aff", "fontWeight": "bold", "transform": "scale(1.05)" } }, "video-container": { "": { "width": "100%", "height": 250, "backgroundColor": "#000000", "position": "relative" } }, "video-player": { "": { "width": "100%", "height": "100%" } }, "time-ruler-container": { "": { "width": "100%", "paddingTop": 10, "paddingRight": 0, "paddingBottom": 10, "paddingLeft": 0, "backgroundColor": "#ffffff", "position": "relative", "zIndex": 5 } }, "time-ruler-scroll": { "": { "width": "100%", "height": 70, "whiteSpace": "nowrap" } }, "event-dot": { "": { "position": "absolute", "top": -15, "left": "50%", "transform": "translateX(-50%)", "width": 8, "height": 8, "zIndex": 2 }, ".alarm": { "backgroundColor": "#ff3b30", "boxShadow": "0 0 5px #ff3b30" }, ".motion": { "backgroundColor": "#ff9500", "boxShadow": "0 0 5px #ff9500" }, ".human": { "backgroundColor": "#34c759", "boxShadow": "0 0 5px #34c759" } }, "playhead": { "": { "position": "absolute", "top": 0, "width": 2, "height": "100%", "backgroundColor": "#007aff", "zIndex": 10, "pointerEvents": "none" } }, "filter-bar": { "": { "display": "flex", "justifyContent": "space-around", "paddingTop": 12, "paddingRight": 5, "paddingBottom": 12, "paddingLeft": 5, "backgroundColor": "#333333", "position": "fixed", "bottom": 0, "left": 0, "right": 0, "zIndex": 20 } }, "filter-item": { "": { "paddingTop": 8, "paddingRight": 12, "paddingBottom": 8, "paddingLeft": 12, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 12, "transitionProperty": "all", "transitionDuration": "0.2s", "flex": 1, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "textAlign": "center" }, ".active": { "backgroundColor": "#007aff", "fontWeight": "bold", "transform": "scale(1.05)" } }, "time-ruler": { "": { "display": "flex", "height": "100%", "position": "relative", "width": "100%", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#cccccc", "touchAction": "none", "userSelect": "none" } }, "time-mark": { "": { "position": "absolute", "bottom": 0, "transform": "translateX(-50%)", "pointerEvents": "auto" }, ".major": { "height": 20, "backgroundColor": "#333333", "width": 2 }, ".minor": { "height": 10, "backgroundColor": "#999999", "width": 1 } }, "@TRANSITION": { "date-item": { "property": "all", "duration": "0.2s" }, "filter-item": { "property": "all", "duration": "0.2s" } } };
   function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createCommentVNode(" 日期选择滚动条 "),
@@ -19288,7 +19285,6 @@
           onTimeupdate: $setup.onTimeUpdate,
           onPlay: $setup.onPlay,
           onPause: $setup.onPause,
-          onDurationchange: $setup.onDurationChange,
           onSeeked: $setup.onSeeked
         }, null, 40, ["src"])
       ]),
@@ -19323,16 +19319,10 @@
                     onClick: ($event) => $setup.seekToPosition(mark.time)
                   }, [
                     vue.createCommentVNode(" 主刻度标签 "),
-                    mark.type === "major" ? (vue.openBlock(), vue.createElementBlock(
-                      "text",
-                      {
-                        key: 0,
-                        class: "mark-label"
-                      },
-                      vue.toDisplayString($setup.formatMarkTime(mark.time)),
-                      1
-                      /* TEXT */
-                    )) : vue.createCommentVNode("v-if", true),
+                    mark.type === "major" ? (vue.openBlock(), vue.createElementBlock("text", {
+                      key: 0,
+                      class: "mark-label"
+                    })) : vue.createCommentVNode("v-if", true),
                     vue.createCommentVNode(" 事件标记点 "),
                     $setup.hasEventAtTime(mark.time) ? (vue.openBlock(), vue.createElementBlock(
                       "view",

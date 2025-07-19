@@ -94,7 +94,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
             val timeMarks = computed(fun(): UTSArray<TimeMark> {
                 val marks = _uA<TimeMark>()
                 val duration = videoDuration.value
-                if (duration === 0) {
+                if (duration == 0) {
                     return marks
                 }
                 var majorInterval: Number
@@ -111,13 +111,13 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 } else {
                     majorInterval = 1800
                 }
-                val minorInterval = majorInterval / 5
+                val minorInterval = majorInterval / 10
                 val pixelsPerSecond = rulerWidth.value / duration
                 run {
                     var time: Number = 0
                     while(time <= duration){
-                        val isMajor = (time % majorInterval) === 0
-                        marks.push(TimeMark(time = time, position = time * pixelsPerSecond, type = if (isMajor) {
+                        val isMajor = (time % majorInterval) == 0
+                        marks.push(TimeMark(time = time, position = time * pixelsPerSecond + 3, type = if (isMajor) {
                             "major"
                         } else {
                             "minor"
@@ -129,15 +129,6 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 return marks
             }
             )
-            val formatMarkTime = fun(seconds: Number): String {
-                val hrs = Math.floor(seconds / 3600)
-                val mins = Math.floor((seconds % 3600) / 60)
-                val secs = Math.floor(seconds % 60)
-                if (hrs > 0) {
-                    return "" + hrs + ":" + mins.toString(10).padStart(2, "0") + ":" + secs.toString(10).padStart(2, "0")
-                }
-                return "" + mins + ":" + secs.toString(10).padStart(2, "0")
-            }
             val hasEventAtTime = fun(time: Number): Boolean {
                 return events.value.some(fun(event): Boolean {
                     val eventTime = convertTimeToSeconds(event.time)
@@ -167,20 +158,17 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 )
             }
             )
-            val onDurationChange = fun(e: UTSJSONObject){
-                console.log(e, " at pages/index/deviceReplay.uvue:205")
-            }
             val initVideoContext = fun(){
                 try {
                     videoContext.value = uni_createVideoContext("myVideo", null)
-                    console.log("视频上下文初始化成功", videoContext.value, " at pages/index/deviceReplay.uvue:212")
+                    console.log("视频上下文初始化成功", videoContext.value, " at pages/index/deviceReplay.uvue:208")
                 }
                  catch (error: Throwable) {
-                    console.error("创建视频上下文失败:", error, " at pages/index/deviceReplay.uvue:214")
+                    console.error("创建视频上下文失败:", error, " at pages/index/deviceReplay.uvue:210")
                 }
             }
             val loadVideoData = fun(date: String){
-                console.log("加载日期数据:", date, " at pages/index/deviceReplay.uvue:219")
+                console.log("加载日期数据:", date, " at pages/index/deviceReplay.uvue:215")
             }
             val selectDate = fun(date: String){
                 activeDate.value = date
@@ -221,7 +209,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
                     return
                 }
                 lastSyncTime.value = now
-                updatePlayheadPosition(currentTimeInSeconds)
+                updatePlayheadPosition(currentTimeInSeconds - 1)
             }
             val seekToSeconds = fun(timeInSeconds: Number){
                 isSeeking.value = true
@@ -272,7 +260,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 val now = Date.now()
                 if (now - lastDragTime.value > 100) {
                     if (videoContext.value != null) {
-                        console.log("尝试跳转视频到:", timeInSeconds, "秒", " at pages/index/deviceReplay.uvue:338")
+                        console.log("尝试跳转视频到:", timeInSeconds, "秒", " at pages/index/deviceReplay.uvue:334")
                         draggedTimeInSeconds.value = timeInSeconds
                         videoContext.value!!.seek(timeInSeconds)
                     }
@@ -292,7 +280,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 val pixelsPerSecond = rulerWidth.value / videoDuration.value
                 val timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond
                 if (videoContext.value != null) {
-                    console.log("尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒", " at pages/index/deviceReplay.uvue:359")
+                    console.log("尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒", " at pages/index/deviceReplay.uvue:355")
                     videoContext.value!!.seek(draggedTimeInSeconds.value)
                     videoContext.value!!.play()
                 }
@@ -310,15 +298,15 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 activeFilter.value = filter
             }
             val onPlay = fun(){
-                console.log("视频开始播放", " at pages/index/deviceReplay.uvue:425")
+                console.log("视频开始播放", " at pages/index/deviceReplay.uvue:421")
             }
             val onPause = fun(){
-                console.log("视频暂停", " at pages/index/deviceReplay.uvue:430")
+                console.log("视频暂停", " at pages/index/deviceReplay.uvue:426")
             }
             onMounted(fun(){
                 initVideoContext()
                 if (videoContext.value == null) {
-                    console.error("视频上下文初始化失败，请检查", " at pages/index/deviceReplay.uvue:437")
+                    console.error("视频上下文初始化失败，请检查", " at pages/index/deviceReplay.uvue:433")
                 }
             }
             )
@@ -347,7 +335,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
                         "scroll-left"
                     )),
                     _cE("view", _uM("class" to "video-container"), _uA(
-                        _cE("video", _uM("id" to "myVideo", "src" to videoSrc.value, "controls" to true, "class" to "video-player", "onTimeupdate" to onTimeUpdate, "onPlay" to onPlay, "onPause" to onPause, "onDurationchange" to onDurationChange, "onSeeked" to onSeeked), null, 40, _uA(
+                        _cE("video", _uM("id" to "myVideo", "src" to videoSrc.value, "controls" to true, "class" to "video-player", "onTimeupdate" to onTimeUpdate, "onPlay" to onPlay, "onPause" to onPause, "onSeeked" to onSeeked), null, 40, _uA(
                             "src"
                         ))
                     )),
@@ -363,7 +351,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
                                     }
                                     ), _uA(
                                         if (mark.type === "major") {
-                                            _cE("text", _uM("key" to 0, "class" to "mark-label"), _tD(formatMarkTime(mark.time)), 1)
+                                            _cE("text", _uM("key" to 0, "class" to "mark-label"))
                                         } else {
                                             _cC("v-if", true)
                                         }
@@ -417,7 +405,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
         }
         val styles0: Map<String, Map<String, Map<String, Any>>>
             get() {
-                return _uM("container" to _pS(_uM("display" to "flex", "flexDirection" to "column", "backgroundColor" to "#f5f5f5")), "header" to _pS(_uM("paddingTop" to 15, "paddingRight" to 15, "paddingBottom" to 15, "paddingLeft" to 15, "backgroundColor" to "#007aff", "color" to "#FFFFFF", "display" to "flex", "justifyContent" to "space-between", "alignItems" to "center", "position" to "relative", "zIndex" to 10)), "title" to _pS(_uM("fontSize" to 18, "fontWeight" to "bold")), "current-time" to _pS(_uM("fontSize" to 14, "opacity" to 0.9)), "date-list" to _pS(_uM("paddingTop" to 0, "paddingRight" to 10, "paddingBottom" to 0, "paddingLeft" to 10)), "date-item" to _uM("" to _uM("paddingTop" to 8, "paddingRight" to 16, "paddingBottom" to 8, "paddingLeft" to 16, "marginTop" to 0, "marginRight" to 5, "marginBottom" to 0, "marginLeft" to 5, "borderTopLeftRadius" to 16, "borderTopRightRadius" to 16, "borderBottomRightRadius" to 16, "borderBottomLeftRadius" to 16, "backgroundColor" to "#555555", "color" to "#FFFFFF", "fontSize" to 14, "transitionProperty" to "all", "transitionDuration" to "0.2s"), ".active" to _uM("backgroundColor" to "#007aff", "fontWeight" to "bold", "transform" to "scale(1.05)")), "video-container" to _pS(_uM("width" to "100%", "height" to 250, "backgroundColor" to "#000000", "position" to "relative")), "video-player" to _pS(_uM("width" to "100%", "height" to "100%")), "time-ruler-container" to _pS(_uM("width" to "100%", "paddingTop" to 10, "paddingRight" to 0, "paddingBottom" to 10, "paddingLeft" to 0, "backgroundColor" to "#333333", "position" to "relative", "zIndex" to 5, "boxShadow" to "0 -2px 5px rgba(0, 0, 0, 0.2)")), "time-ruler-scroll" to _pS(_uM("width" to "100%", "height" to 70, "whiteSpace" to "nowrap")), "event-dot" to _uM("" to _uM("position" to "absolute", "top" to -15, "left" to "50%", "transform" to "translateX(-50%)", "width" to 8, "height" to 8, "zIndex" to 2), ".alarm" to _uM("backgroundColor" to "#ff3b30", "boxShadow" to "0 0 5px #ff3b30"), ".motion" to _uM("backgroundColor" to "#ff9500", "boxShadow" to "0 0 5px #ff9500"), ".human" to _uM("backgroundColor" to "#34c759", "boxShadow" to "0 0 5px #34c759")), "playhead" to _pS(_uM("position" to "absolute", "top" to 0, "width" to 2, "height" to "100%", "backgroundColor" to "#007aff", "zIndex" to 10, "pointerEvents" to "none", "content::after" to "''", "position::after" to "absolute", "top::after" to 0, "left::after" to -6, "width::after" to 14, "height::after" to 14, "backgroundColor::after" to "#007aff", "borderTopWidth::after" to 2, "borderRightWidth::after" to 2, "borderBottomWidth::after" to 2, "borderLeftWidth::after" to 2, "borderTopStyle::after" to "solid", "borderRightStyle::after" to "solid", "borderBottomStyle::after" to "solid", "borderLeftStyle::after" to "solid", "borderTopColor::after" to "#FFFFFF", "borderRightColor::after" to "#FFFFFF", "borderBottomColor::after" to "#FFFFFF", "borderLeftColor::after" to "#FFFFFF", "boxSizing::after" to "border-box")), "filter-bar" to _pS(_uM("display" to "flex", "justifyContent" to "space-around", "paddingTop" to 12, "paddingRight" to 5, "paddingBottom" to 12, "paddingLeft" to 5, "backgroundColor" to "#333333", "position" to "fixed", "bottom" to 0, "left" to 0, "right" to 0, "zIndex" to 20, "boxShadow" to "0 -2px 10px rgba(0, 0, 0, 0.3)")), "filter-item" to _uM("" to _uM("paddingTop" to 8, "paddingRight" to 12, "paddingBottom" to 8, "paddingLeft" to 12, "borderTopLeftRadius" to 16, "borderTopRightRadius" to 16, "borderBottomRightRadius" to 16, "borderBottomLeftRadius" to 16, "backgroundColor" to "#555555", "color" to "#FFFFFF", "fontSize" to 12, "transitionProperty" to "all", "transitionDuration" to "0.2s", "flex" to 1, "marginTop" to 0, "marginRight" to 5, "marginBottom" to 0, "marginLeft" to 5, "textAlign" to "center"), ".active" to _uM("backgroundColor" to "#007aff", "fontWeight" to "bold", "transform" to "scale(1.05)")), "time-ruler" to _pS(_uM("display" to "flex", "height" to "100%", "position" to "relative", "width" to "100%", "touchAction" to "none", "userSelect" to "none")), "time-mark" to _uM("" to _uM("position" to "absolute", "bottom" to 0, "transform" to "translateX(-50%)", "pointerEvents" to "auto"), ".major" to _uM("height" to 20, "backgroundColor" to "#ffffff", "width" to 2), ".minor" to _uM("height" to 10, "backgroundColor" to "rgba(255,255,255,0.6)", "width" to 1)), "@TRANSITION" to _uM("date-item" to _uM("property" to "all", "duration" to "0.2s"), "filter-item" to _uM("property" to "all", "duration" to "0.2s")))
+                return _uM("container" to _pS(_uM("display" to "flex", "flexDirection" to "column", "backgroundColor" to "#f5f5f5")), "header" to _pS(_uM("paddingTop" to 15, "paddingRight" to 15, "paddingBottom" to 15, "paddingLeft" to 15, "backgroundColor" to "#007aff", "color" to "#FFFFFF", "display" to "flex", "justifyContent" to "space-between", "alignItems" to "center", "position" to "relative", "zIndex" to 10)), "title" to _pS(_uM("fontSize" to 18, "fontWeight" to "bold")), "current-time" to _pS(_uM("fontSize" to 14, "opacity" to 0.9)), "date-list" to _pS(_uM("paddingTop" to 0, "paddingRight" to 10, "paddingBottom" to 0, "paddingLeft" to 10)), "date-item" to _uM("" to _uM("paddingTop" to 8, "paddingRight" to 16, "paddingBottom" to 8, "paddingLeft" to 16, "marginTop" to 0, "marginRight" to 5, "marginBottom" to 0, "marginLeft" to 5, "borderTopLeftRadius" to 16, "borderTopRightRadius" to 16, "borderBottomRightRadius" to 16, "borderBottomLeftRadius" to 16, "backgroundColor" to "#555555", "color" to "#FFFFFF", "fontSize" to 14, "transitionProperty" to "all", "transitionDuration" to "0.2s"), ".active" to _uM("backgroundColor" to "#007aff", "fontWeight" to "bold", "transform" to "scale(1.05)")), "video-container" to _pS(_uM("width" to "100%", "height" to 250, "backgroundColor" to "#000000", "position" to "relative")), "video-player" to _pS(_uM("width" to "100%", "height" to "100%")), "time-ruler-container" to _pS(_uM("width" to "100%", "paddingTop" to 10, "paddingRight" to 0, "paddingBottom" to 10, "paddingLeft" to 0, "backgroundColor" to "#ffffff", "position" to "relative", "zIndex" to 5)), "time-ruler-scroll" to _pS(_uM("width" to "100%", "height" to 70, "whiteSpace" to "nowrap")), "event-dot" to _uM("" to _uM("position" to "absolute", "top" to -15, "left" to "50%", "transform" to "translateX(-50%)", "width" to 8, "height" to 8, "zIndex" to 2), ".alarm" to _uM("backgroundColor" to "#ff3b30", "boxShadow" to "0 0 5px #ff3b30"), ".motion" to _uM("backgroundColor" to "#ff9500", "boxShadow" to "0 0 5px #ff9500"), ".human" to _uM("backgroundColor" to "#34c759", "boxShadow" to "0 0 5px #34c759")), "playhead" to _pS(_uM("position" to "absolute", "top" to 0, "width" to 2, "height" to "100%", "backgroundColor" to "#007aff", "zIndex" to 10, "pointerEvents" to "none")), "filter-bar" to _pS(_uM("display" to "flex", "justifyContent" to "space-around", "paddingTop" to 12, "paddingRight" to 5, "paddingBottom" to 12, "paddingLeft" to 5, "backgroundColor" to "#333333", "position" to "fixed", "bottom" to 0, "left" to 0, "right" to 0, "zIndex" to 20)), "filter-item" to _uM("" to _uM("paddingTop" to 8, "paddingRight" to 12, "paddingBottom" to 8, "paddingLeft" to 12, "borderTopLeftRadius" to 16, "borderTopRightRadius" to 16, "borderBottomRightRadius" to 16, "borderBottomLeftRadius" to 16, "backgroundColor" to "#555555", "color" to "#FFFFFF", "fontSize" to 12, "transitionProperty" to "all", "transitionDuration" to "0.2s", "flex" to 1, "marginTop" to 0, "marginRight" to 5, "marginBottom" to 0, "marginLeft" to 5, "textAlign" to "center"), ".active" to _uM("backgroundColor" to "#007aff", "fontWeight" to "bold", "transform" to "scale(1.05)")), "time-ruler" to _pS(_uM("display" to "flex", "height" to "100%", "position" to "relative", "width" to "100%", "borderBottomWidth" to "1rpx", "borderBottomStyle" to "solid", "borderBottomColor" to "#cccccc", "touchAction" to "none", "userSelect" to "none")), "time-mark" to _uM("" to _uM("position" to "absolute", "bottom" to 0, "transform" to "translateX(-50%)", "pointerEvents" to "auto"), ".major" to _uM("height" to 20, "backgroundColor" to "#333333", "width" to 2), ".minor" to _uM("height" to 10, "backgroundColor" to "#999999", "width" to 1)), "@TRANSITION" to _uM("date-item" to _uM("property" to "all", "duration" to "0.2s"), "filter-item" to _uM("property" to "all", "duration" to "0.2s")))
             }
         var inheritAttrs = true
         var inject: Map<String, Map<String, Any?>> = _uM()
