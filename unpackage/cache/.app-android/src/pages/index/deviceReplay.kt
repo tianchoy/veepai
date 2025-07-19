@@ -91,7 +91,7 @@ open class GenPagesIndexDeviceReplay : BasePage {
                 }
                 return h * 3600 + m * 60 + s
             }
-            val timeMarks = computed(fun(): UTSArray<TimeMark> {
+            val timeMarks = computed<UTSArray<TimeMark>>(fun(): UTSArray<TimeMark> {
                 val marks = _uA<TimeMark>()
                 val duration = videoDuration.value
                 if (duration == 0) {

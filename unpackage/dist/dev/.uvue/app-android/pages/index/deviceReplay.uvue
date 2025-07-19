@@ -79,7 +79,7 @@ const __sfc__ = defineComponent({
             return h * 3600 + m * 60 + s;
         };
         // 计算时间刻度
-        const timeMarks = computed((): TimeMark[] => {
+        const timeMarks = computed<TimeMark[]>((): TimeMark[] => {
             const marks = [] as TimeMark[];
             const duration = videoDuration.value;
             if (duration == 0)

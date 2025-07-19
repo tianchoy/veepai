@@ -89,7 +89,7 @@ const rulerWidth = computed(() => {
 	
 
 	// 计算时间刻度
-	const timeMarks = computed(() => {
+	const timeMarks = computed<TimeMark[]>(() => {
     const marks = [] as TimeMark[]
     const duration = videoDuration.value
     if (duration == 0) return marks
