@@ -5,10 +5,11 @@
 			<view class="video-container" style="border-radius: 15rpx; overflow: hidden;">
 				<video class="video" id="myVideo" :src="videoSrc" :controls="onLine" :show-play-btn="onLine"
 				:show-center-play-btn="onLine" :enable-progress-gesture="onLine" :show-fullscreen-btn="onLine"
-				:show-mute-btn="onLine" >
+				:show-mute-btn="onLine" :direction="-90" object-fit="fill">
 					
 					<view class="device-title" v-if="onLine">{{deviceTitle}}</view>
 					<view class="video-right-control" v-if="onLine">
+						// #ifdef APP-IOS || MP-WEIXIN
 						<view class="vedio-control">
 							<image class="vedio-control-icon" :src="forward" @click="toDeviceDetail"></image>
 						</view>
@@ -21,6 +22,15 @@
 						<view class="vedio-control">
 							<image class="vedio-control-icon" :src="replayIcon" @click="replay"></image>
 						</view>
+						// #endif
+
+						// #ifdef APP-ANDROID
+						<l-icon :name="forward" size="30" style="padding: 10rpx;background: rgba(255, 255, 255, .7);border-radius: 30rpx;" @click="toDeviceDetail"></l-icon>
+						<l-icon :name="errIcon" size="30" style="padding: 10rpx;background: rgba(255, 255, 255, .7);border-radius: 30rpx;" @click="errClick"></l-icon>
+						<l-icon :name="transfer" size="30" style="padding: 10rpx;background: rgba(255, 255, 255, .7);border-radius: 30rpx;" @click="transferClick"></l-icon>
+						<l-icon :name="replayIcon" size="30" style="padding: 10rpx;background: rgba(255, 255, 255, .7);border-radius: 30rpx;" @click="replay"></l-icon>
+						// #endif
+
 					</view>
 					
 					<view class="offline" v-else>
@@ -57,7 +67,7 @@
 	const playIcon = '/static/video/play.png'
 	const pauseIcon = '/static/video/pause.png'
 	const addIcon = '/static/tabbar/add.png'
-	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
+	const videoSrc = "/static/video/video.mp4"
 	const onLine = ref<boolean>(true)
 
 	const initVideoContext = () => {
@@ -142,7 +152,6 @@
 			.video {
 				width: 100%;
 				height: 100%;
-				object-fit: cover;
 				margin-bottom: 0; 
 				.device-title{
 					background:rgba(0, 0, 0, .3);

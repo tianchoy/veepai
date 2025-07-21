@@ -979,7 +979,7 @@
   const playIcon = "/static/video/play.png";
   const pauseIcon = "/static/video/pause.png";
   const addIcon = "/static/tabbar/add.png";
-  const videoSrc$1 = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
+  const videoSrc$1 = "/static/video/video.mp4";
   const _sfc_main$14 = /* @__PURE__ */ vue.defineComponent({
     __name: "index",
     setup(__props, _a) {
@@ -991,9 +991,9 @@
       const initVideoContext = () => {
         try {
           videoContext.value = uni.createVideoContext("myVideo");
-          uni.__log__("log", "at pages/index/index.uvue:66", "视频上下文初始化成功", videoContext.value);
+          uni.__log__("log", "at pages/index/index.uvue:76", "视频上下文初始化成功", videoContext.value);
         } catch (error) {
-          uni.__log__("error", "at pages/index/index.uvue:68", "创建视频上下文失败:", error);
+          uni.__log__("error", "at pages/index/index.uvue:78", "创建视频上下文失败:", error);
         }
       };
       const replay = () => {
@@ -1043,7 +1043,7 @@
       return __returned__;
     }
   });
-  const _style_0$11 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "device-title": { ".container .content .video ": { "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.3)", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx" } }, "video-right-control": { ".container .content .video ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "90%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "offline": { ".container .content .video ": { "width": "100%", "height": "100%", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)", "display": "flex", "flexDirection": "column", "alignItems": "center", "justifyContent": "center" } }, "offline-title": { ".container .content .video .offline ": { "color": "#ffffff", "marginLeft": "10rpx" } }, "time": { ".container .content .video .offline ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0, "color": "#ffffff" } }, "offline-content": { ".container .content .video .offline ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
+  const _style_0$11 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "marginBottom": 0 } }, "device-title": { ".container .content .video ": { "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.3)", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx" } }, "video-right-control": { ".container .content .video ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "90%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "offline": { ".container .content .video ": { "width": "100%", "height": "100%", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)", "display": "flex", "flexDirection": "column", "alignItems": "center", "justifyContent": "center" } }, "offline-title": { ".container .content .video .offline ": { "color": "#ffffff", "marginLeft": "10rpx" } }, "time": { ".container .content .video .offline ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0, "color": "#ffffff" } }, "offline-content": { ".container .content .video .offline ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
   function _sfc_render$13(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
@@ -1067,7 +1067,9 @@
             "show-center-play-btn": $setup.onLine,
             "enable-progress-gesture": $setup.onLine,
             "show-fullscreen-btn": $setup.onLine,
-            "show-mute-btn": $setup.onLine
+            "show-mute-btn": $setup.onLine,
+            direction: -90,
+            "object-fit": "fill"
           }, [
             $setup.onLine ? (vue.openBlock(), vue.createElementBlock(
               "view",
@@ -18992,7 +18994,7 @@
       const currentTime = vue.ref("00:00:00");
       const activeDate = vue.ref("10-21");
       const activeFilter = vue.ref("all");
-      const videoSrc2 = vue.ref("https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4");
+      const videoSrc2 = vue.ref("/static/video/video.mp4");
       const videoContext = vue.ref(null);
       const isSeeking = vue.ref(false);
       const timeScrollLeft = vue.ref(0);

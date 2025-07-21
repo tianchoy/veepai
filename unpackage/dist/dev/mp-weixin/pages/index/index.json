@@ -3,6 +3,8 @@
   "navigationBarTitleText": "首页",
   "enableVideo": true,
   "usingComponents": {
+    "l-icon": "../../uni_modules/lime-icon/components/l-icon/l-icon",
+    "fui-button": "../../uni_modules/firstui-unix/components/fui-button/fui-button",
     "top-nav-bar": "../../components/TopNavBar"
   }
 }
