@@ -1,18 +1,18 @@
 import { ref, computed, onMounted, getCurrentInstance } from 'vue';
 type TimeMark = {
-    __$originalPosition?: UTSSourceMapPosition<"TimeMark", "pages/index/deviceReplay.uvue", 71, 7>;
+    __$originalPosition?: UTSSourceMapPosition<"TimeMark", "pages/index/deviceReplay.uvue", 59, 7>;
     time: number;
     position: number;
     type: string;
 };
 // 响应式状态
 type TimeScrollDetail = {
-    __$originalPosition?: UTSSourceMapPosition<"TimeScrollDetail", "pages/index/deviceReplay.uvue", 370, 7>;
+    __$originalPosition?: UTSSourceMapPosition<"TimeScrollDetail", "pages/index/deviceReplay.uvue", 371, 7>;
     scrollLeft: number;
 };
 // 定义滚动事件类型
 type TimeScrollEvent = {
-    __$originalPosition?: UTSSourceMapPosition<"TimeScrollEvent", "pages/index/deviceReplay.uvue", 374, 7>;
+    __$originalPosition?: UTSSourceMapPosition<"TimeScrollEvent", "pages/index/deviceReplay.uvue", 375, 7>;
     detail: TimeScrollDetail;
 };
 // 时间轴滚动事件
@@ -41,7 +41,6 @@ const __sfc__ = defineComponent({
         const videoContext = ref<VideoContext | null>(null);
         const isSeeking = ref(false);
         const timeScrollLeft = ref(0);
-        const dateScrollLeft = ref(0);
         const playheadPosition = ref(0);
         const videoDuration = ref(0);
         const lastSyncTime = ref(0);
@@ -85,29 +84,26 @@ const __sfc__ = defineComponent({
             if (duration == 0)
                 return marks;
             let majorInterval: number;
-            if (duration <= 60) { // 1分钟以内
-                majorInterval = 10; // 每10秒一个主刻度
+            if (duration <= 60) {
+                majorInterval = 10;
             }
-            else if (duration <= 300) { // 5分钟以内
-                majorInterval = 30; // 每30秒一个主刻度
+            else if (duration <= 300) {
+                majorInterval = 30;
             }
-            else if (duration <= 1800) { // 30分钟以内
-                majorInterval = 60; // 每分钟一个主刻度
+            else if (duration <= 1800) {
+                majorInterval = 60;
             }
-            else if (duration <= 3600) { // 1小时以内
-                majorInterval = 300; // 每5分钟一个主刻度
+            else if (duration <= 3600) {
+                majorInterval = 300;
             }
-            else if (duration <= 7200) { // 2小时以内
-                majorInterval = 600; // 每10分钟一个主刻度
+            else if (duration <= 7200) {
+                majorInterval = 600;
             }
-            else { // 超过2小时
-                majorInterval = 1800; // 每30分钟一个主刻度
+            else {
+                majorInterval = 1800;
             }
-            // 小刻度数量 
             const minorInterval = majorInterval / 10;
-            // 计算每个刻度的像素位置
             const pixelsPerSecond = rulerWidth.value / duration;
-            // 生成刻度
             for (let time = 0; time <= duration; time += minorInterval) {
                 const isMajor = (time % majorInterval) == 0;
                 marks.push({
@@ -118,6 +114,10 @@ const __sfc__ = defineComponent({
             }
             return marks;
         });
+        const onVideoLoaded = (e: UTSJSONObject) => {
+            videoDuration.value = e['duration'] as number;
+            console.log('视频加载完成，时长:', videoDuration.value, " at pages/index/deviceReplay.uvue:155");
+        };
         // 格式化刻度时间
         const formatMarkTime = (seconds: number): string => {
             const hrs = Math.floor(seconds / 3600);
@@ -137,23 +137,21 @@ const __sfc__ = defineComponent({
         const initVideoContext = () => {
             try {
                 videoContext.value = uni.createVideoContext('myVideo');
-                console.log('视频上下文初始化成功', videoContext.value, " at pages/index/deviceReplay.uvue:194");
+                console.log('视频上下文初始化成功', videoContext.value, " at pages/index/deviceReplay.uvue:180");
             }
             catch (error: any) {
-                console.error('创建视频上下文失败:', error, " at pages/index/deviceReplay.uvue:196");
+                console.error('创建视频上下文失败:', error, " at pages/index/deviceReplay.uvue:182");
             }
         };
         // 加载视频数据
         const loadVideoData = (date: String) => {
-            console.log('加载日期数据:', date, " at pages/index/deviceReplay.uvue:201");
+            console.log('加载日期数据:', date, " at pages/index/deviceReplay.uvue:187");
         };
         // 选择日期
         const selectDate = (date: string) => {
             activeDate.value = date;
             currentDate.value = `2024-${date}`;
             loadVideoData(date);
-            const index = dateList.indexOf(date);
-            dateScrollLeft.value = index * 80;
         };
         // 格式化时间显示
         const formatTime = (seconds: number): string => {
@@ -188,25 +186,43 @@ const __sfc__ = defineComponent({
             updatePlayheadPosition(currentTimeInSeconds - 1);
         };
         const seekToSeconds = (timeInSeconds: number) => {
-            isSeeking.value = true;
-            manualScrollPosition.value = timeInSeconds * 2;
+            console.log('尝试跳转到:', timeInSeconds, '秒', " at pages/index/deviceReplay.uvue:236");
             if (videoContext.value != null) {
+                videoContext.value!.pause();
                 videoContext.value!.seek(timeInSeconds);
+                setTimeout(() => {
+                    videoContext.value?.play();
+                    console.log('跳转完成，应开始播放', " at pages/index/deviceReplay.uvue:242");
+                }, 100);
             }
-            playheadPosition.value = timeInSeconds * 2;
-            currentTime.value = formatTime(timeInSeconds);
         };
-        // 新增的计算属性：获取事件位置
+        // 获取事件位置
         const getEventPosition = (event: EventType): number => {
             const seconds = convertTimeToSeconds(event.time);
             const duration = videoDuration.value != 0 ? videoDuration.value : 300; // 默认5分钟
             const pixelsPerSecond = rulerWidth.value / duration;
             return seconds * pixelsPerSecond;
         };
-        // 新增方法：跳转到事件时间点
+        // 跳转到事件时间点
         const seekToEvent = (event: EventType) => {
             const seconds = convertTimeToSeconds(event.time);
-            seekToSeconds(seconds);
+            console.log('点击事件时间点：', seconds, '秒', '当前视频时长:', videoDuration.value, " at pages/index/deviceReplay.uvue:258");
+            if (videoContext.value == null) {
+                console.error('视频上下文未初始化', " at pages/index/deviceReplay.uvue:261");
+                return;
+            }
+            isSeeking.value = true;
+            currentTime.value = formatTime(seconds);
+            playheadPosition.value = getEventPosition(event);
+            // 先暂停再跳转
+            videoContext.value!.pause();
+            videoContext.value!.seek(seconds);
+            // 小延迟后播放确保跳转完成
+            setTimeout(() => {
+                videoContext.value?.play();
+                isSeeking.value = false;
+                console.log('应已跳转到指定位置并开始播放', " at pages/index/deviceReplay.uvue:277");
+            }, 150);
         };
         // 跳转到指定时间
         const seekToTime = (hour: number, minute: number) => {
@@ -255,7 +271,7 @@ const __sfc__ = defineComponent({
             const now = Date.now();
             if (now - lastDragTime.value > 100) {
                 if (videoContext.value != null) {
-                    console.log('尝试跳转视频到:', timeInSeconds, '秒', " at pages/index/deviceReplay.uvue:335");
+                    console.log('尝试跳转视频到:', timeInSeconds, '秒', " at pages/index/deviceReplay.uvue:338");
                     draggedTimeInSeconds.value = timeInSeconds;
                     videoContext.value!.seek(timeInSeconds);
                 }
@@ -271,9 +287,8 @@ const __sfc__ = defineComponent({
             const scrollViewWidth = systemInfo.windowWidth;
             const pixelsPerSecond = rulerWidth.value / videoDuration.value;
             const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
-            // 精确跳转
             if (videoContext.value != null) {
-                console.log('尝试跳转视频到最终时间:', draggedTimeInSeconds.value, '秒', " at pages/index/deviceReplay.uvue:356");
+                console.log('尝试跳转视频到最终时间:', draggedTimeInSeconds.value, '秒', " at pages/index/deviceReplay.uvue:357");
                 videoContext.value!.seek(draggedTimeInSeconds.value);
                 videoContext.value!.play();
             }
@@ -323,35 +338,20 @@ const __sfc__ = defineComponent({
         };
         // 播放/暂停事件
         const onPlay = () => {
-            console.log('视频开始播放', " at pages/index/deviceReplay.uvue:422");
+            console.log('视频开始播放', " at pages/index/deviceReplay.uvue:423");
         };
         const onPause = () => {
-            console.log('视频暂停', " at pages/index/deviceReplay.uvue:427");
+            console.log('视频暂停', " at pages/index/deviceReplay.uvue:428");
         };
         // 组件生命周期
         onMounted(() => {
             initVideoContext();
             if (videoContext.value == null) {
-                console.error('视频上下文初始化失败，请检查', " at pages/index/deviceReplay.uvue:434");
+                console.error('视频上下文初始化失败，请检查', " at pages/index/deviceReplay.uvue:435");
             }
         });
         return (): any | null => {
             return _cE("view", _uM({ class: "container" }), [
-                _cE("scroll-view", _uM({
-                    class: "date-scroll",
-                    "scroll-x": "",
-                    "scroll-left": dateScrollLeft.value
-                }), [
-                    _cE("view", _uM({ class: "date-list" }), [
-                        _cE(Fragment, null, RenderHelpers.renderList(dateList, (date, index, __index, _cached): any => {
-                            return _cE("view", _uM({
-                                key: index,
-                                class: _nC(['date-item', activeDate.value === date ? 'active' : '']),
-                                onClick: () => { selectDate(date); }
-                            }), _tD(date), 11 /* TEXT, CLASS, PROPS */, ["onClick"]);
-                        }), 64 /* STABLE_FRAGMENT */)
-                    ])
-                ], 8 /* PROPS */, ["scroll-left"]),
                 _cE("view", _uM({ class: "video-container" }), [
                     _cE("video", _uM({
                         id: "myVideo",
@@ -361,7 +361,9 @@ const __sfc__ = defineComponent({
                         onTimeupdate: onTimeUpdate,
                         onPlay: onPlay,
                         onPause: onPause,
-                        onSeeked: onSeeked
+                        onSeeked: onSeeked,
+                        autoplay: true,
+                        onLoadedmetadata: onVideoLoaded
                     }), null, 40 /* PROPS, NEED_HYDRATION */, ["src"])
                 ]),
                 _cE("view", _uM({ class: "time-ruler-container" }), [
@@ -413,6 +415,15 @@ const __sfc__ = defineComponent({
                         ], 36 /* STYLE, NEED_HYDRATION */)
                     ], 40 /* PROPS, NEED_HYDRATION */, ["scroll-left"])
                 ]),
+                _cE("view", _uM({ class: "date-list" }), [
+                    _cE(Fragment, null, RenderHelpers.renderList(dateList, (date, index, __index, _cached): any => {
+                        return _cE("view", _uM({
+                            key: index,
+                            class: _nC(['date-item', activeDate.value === date ? 'active' : '']),
+                            onClick: () => { selectDate(date); }
+                        }), _tD(date), 11 /* TEXT, CLASS, PROPS */, ["onClick"]);
+                    }), 64 /* STABLE_FRAGMENT */)
+                ]),
                 _cE("view", _uM({ class: "filter-bar" }), [
                     _cE(Fragment, null, RenderHelpers.renderList(filters, (filter, __key, __index, _cached): any => {
                         return _cE("view", _uM({
@@ -427,5 +438,5 @@ const __sfc__ = defineComponent({
     }
 });
 export default __sfc__;
-const GenPagesIndexDeviceReplayStyles = [_uM([["container", _pS(_uM([["display", "flex"], ["flexDirection", "column"], ["height", "100%"], ["backgroundColor", "#f5f5f5"]]))], ["date-list", _pS(_uM([["display", "flex"], ["flexDirection", "row"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]]))], ["date-item", _uM([["", _uM([["paddingTop", 8], ["paddingRight", 16], ["paddingBottom", 8], ["paddingLeft", 16], ["marginTop", 0], ["marginRight", 5], ["marginBottom", 0], ["marginLeft", 5], ["borderTopLeftRadius", 16], ["borderTopRightRadius", 16], ["borderBottomRightRadius", 16], ["borderBottomLeftRadius", 16], ["backgroundColor", "#555555"], ["color", "#FFFFFF"], ["fontSize", 14], ["transitionProperty", "all"], ["transitionDuration", "0.2s"]])], [".active", _uM([["backgroundColor", "#007aff"], ["color", "#ffffff"]])]])], ["video-container", _pS(_uM([["width", "100%"], ["height", 250], ["backgroundColor", "#000000"], ["position", "relative"]]))], ["video-player", _pS(_uM([["width", "100%"], ["height", "100%"]]))], ["time-ruler-container", _pS(_uM([["width", "100%"], ["paddingTop", 10], ["paddingRight", 0], ["paddingBottom", 10], ["paddingLeft", 0], ["backgroundColor", "#ffffff"], ["position", "relative"], ["zIndex", 5]]))], ["time-ruler-scroll", _pS(_uM([["width", "100%"], ["height", 70], ["whiteSpace", "nowrap"]]))], ["event-dot", _uM([[".alarm", _uM([["backgroundColor", "#ff3b30"], ["boxShadow", "0 0 5px #ff3b30"]])], [".motion", _uM([["backgroundColor", "#ff9500"], ["boxShadow", "0 0 5px #ff9500"]])], [".human", _uM([["backgroundColor", "#34c759"], ["boxShadow", "0 0 5px #34c759"]])], ["", _uM([["width", 10], ["height", 10]])]])], ["playhead", _pS(_uM([["position", "absolute"], ["top", 0], ["width", 2], ["height", "100%"], ["backgroundColor", "#007aff"], ["zIndex", 10], ["pointerEvents", "none"]]))], ["filter-bar", _pS(_uM([["display", "flex"], ["justifyContent", "space-around"], ["paddingTop", 12], ["paddingRight", 5], ["paddingBottom", 12], ["paddingLeft", 5], ["backgroundColor", "#333333"], ["position", "fixed"], ["bottom", 0], ["left", 0], ["right", 0], ["zIndex", 20]]))], ["filter-item", _uM([["", _uM([["paddingTop", 8], ["paddingRight", 12], ["paddingBottom", 8], ["paddingLeft", 12], ["borderTopLeftRadius", 16], ["borderTopRightRadius", 16], ["borderBottomRightRadius", 16], ["borderBottomLeftRadius", 16], ["backgroundColor", "#555555"], ["color", "#FFFFFF"], ["fontSize", 12], ["transitionProperty", "all"], ["transitionDuration", "0.2s"], ["flex", 1], ["marginTop", 0], ["marginRight", 5], ["marginBottom", 0], ["marginLeft", 5], ["textAlign", "center"]])], [".active", _uM([["backgroundColor", "#007aff"], ["fontWeight", "bold"], ["transform", "scale(1.05)"]])]])], ["time-ruler", _pS(_uM([["display", "flex"], ["height", "100%"], ["position", "relative"], ["width", "100%"], ["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#cccccc"]]))], ["time-mark", _uM([["", _uM([["position", "absolute"], ["bottom", 0], ["transform", "translateX(-50%)"], ["pointerEvents", "auto"]])], [".major", _uM([["height", 20], ["backgroundColor", "#333333"], ["width", 2]])], [".minor", _uM([["height", 10], ["backgroundColor", "#999999"], ["width", 1]])]])], ["event-marker", _pS(_uM([["position", "absolute"], ["bottom", 25], ["transform", "translateX(-50%)"], ["zIndex", 5]]))], ["@TRANSITION", _uM([["date-item", _uM([["property", "all"], ["duration", "0.2s"]])], ["filter-item", _uM([["property", "all"], ["duration", "0.2s"]])]])]])];
+const GenPagesIndexDeviceReplayStyles = [_uM([["container", _pS(_uM([["display", "flex"], ["flexDirection", "column"], ["height", "100%"], ["backgroundColor", "#f5f5f5"]]))], ["date-list", _pS(_uM([["display", "flex"], ["flexDirection", "row"], ["paddingTop", "20rpx"], ["paddingRight", "20rpx"], ["paddingBottom", "20rpx"], ["paddingLeft", "20rpx"]]))], ["date-item", _uM([["", _uM([["paddingTop", 8], ["paddingRight", 16], ["paddingBottom", 8], ["paddingLeft", 16], ["marginTop", 0], ["marginRight", 5], ["marginBottom", 0], ["marginLeft", 5], ["borderTopLeftRadius", 16], ["borderTopRightRadius", 16], ["borderBottomRightRadius", 16], ["borderBottomLeftRadius", 16], ["backgroundColor", "#555555"], ["color", "#FFFFFF"], ["fontSize", 14], ["transitionProperty", "all"], ["transitionDuration", "0.2s"]])], [".active", _uM([["backgroundColor", "#007aff"], ["color", "#ffffff"]])]])], ["video-container", _pS(_uM([["width", "100%"], ["height", 250], ["backgroundColor", "#000000"], ["position", "relative"]]))], ["video-player", _pS(_uM([["width", "100%"], ["height", "100%"]]))], ["time-ruler-container", _pS(_uM([["width", "100%"], ["paddingTop", 10], ["paddingRight", 0], ["paddingBottom", 10], ["paddingLeft", 0], ["backgroundColor", "#ffffff"], ["position", "relative"], ["zIndex", 5]]))], ["time-ruler-scroll", _pS(_uM([["width", "100%"], ["height", 70], ["whiteSpace", "nowrap"]]))], ["playhead", _pS(_uM([["position", "absolute"], ["top", 0], ["width", 2], ["height", "100%"], ["backgroundColor", "#007aff"], ["zIndex", 10], ["pointerEvents", "none"]]))], ["filter-bar", _pS(_uM([["display", "flex"], ["justifyContent", "space-around"], ["flexDirection", "row"], ["paddingTop", 12], ["paddingRight", 5], ["paddingBottom", 12], ["paddingLeft", 5], ["backgroundColor", "#ffffff"], ["zIndex", 20]]))], ["filter-item", _uM([["", _uM([["paddingTop", 8], ["paddingRight", 12], ["paddingBottom", 8], ["paddingLeft", 12], ["borderTopLeftRadius", 16], ["borderTopRightRadius", 16], ["borderBottomRightRadius", 16], ["borderBottomLeftRadius", 16], ["backgroundColor", "#555555"], ["color", "#FFFFFF"], ["fontSize", 12], ["transitionProperty", "all"], ["transitionDuration", "0.2s"], ["flex", 1], ["marginTop", 0], ["marginRight", 5], ["marginBottom", 0], ["marginLeft", 5], ["textAlign", "center"]])], [".active", _uM([["backgroundColor", "#007aff"], ["fontWeight", "bold"], ["transform", "scale(1.05)"]])]])], ["time-ruler", _pS(_uM([["display", "flex"], ["height", "100%"], ["position", "relative"], ["width", "100%"], ["borderBottomWidth", "1rpx"], ["borderBottomStyle", "solid"], ["borderBottomColor", "#cccccc"]]))], ["time-mark", _uM([["", _uM([["position", "absolute"], ["bottom", 0], ["transform", "translateX(-50%)"], ["pointerEvents", "auto"]])], [".major", _uM([["height", 20], ["backgroundColor", "#333333"], ["width", 2]])], [".minor", _uM([["height", 10], ["backgroundColor", "#999999"], ["width", 1]])]])], ["event-marker", _pS(_uM([["position", "absolute"], ["bottom", 25], ["transform", "translateX(-50%)"], ["zIndex", 5]]))], ["event-dot", _uM([["", _uM([["width", 10], ["height", 10]])], [".alarm", _uM([["backgroundColor", "#ff3b30"]])], [".motion", _uM([["backgroundColor", "#ff9500"]])], [".human", _uM([["backgroundColor", "#34c759"]])]])], ["@TRANSITION", _uM([["date-item", _uM([["property", "all"], ["duration", "0.2s"]])], ["filter-item", _uM([["property", "all"], ["duration", "0.2s"]])]])]])];
 //# sourceMappingURL=deviceReplay.uvue.map

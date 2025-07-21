@@ -47,18 +47,6 @@
 		height: 70px;
 		white-space: nowrap;
 }
-.event-dot.alarm {
-		background-color: #ff3b30;
-		box-shadow: 0 0 5px #ff3b30;
-}
-.event-dot.motion {
-		background-color: #ff9500;
-		box-shadow: 0 0 5px #ff9500;
-}
-.event-dot.human {
-		background-color: #34c759;
-		box-shadow: 0 0 5px #34c759;
-}
 .playhead {
 		position: absolute;
 		top: 0;
@@ -71,12 +59,9 @@
 .filter-bar {
 		display: flex;
 		justify-content: space-around;
+		flex-direction: row;
 		padding: 12px 5px;
-		background-color: #333;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		background-color: #fff;
 		z-index: 20;
 }
 .filter-item {

@@ -74,9 +74,9 @@ fun tryConnectSocket(host: String, port: String, id: String): UTSPromise<SocketT
     )
 }
 fun initRuntimeSocketService(): UTSPromise<Boolean> {
-    val hosts: String = "127.0.0.1,192.168.3.34"
+    val hosts: String = "127.0.0.1,192.168.3.34,169.254.32.12"
     val port: String = "8090"
-    val id: String = "app-android_2MoLNm"
+    val id: String = "app-android_cS0BZu"
     if (hosts == "" || port == "" || id == "") {
         return UTSPromise.resolve(false)
     }
@@ -157,6 +157,100 @@ val GenAppClass = CreateVueAppComponent(GenApp::class.java, fun(): VueComponentO
 }
 , fun(instance): GenApp {
     return GenApp(instance)
+}
+)
+fun isNumber(value: Any?): Boolean {
+    return _uA(
+        "Byte",
+        "UByte",
+        "Short",
+        "UShort",
+        "Int",
+        "UInt",
+        "Long",
+        "ULong",
+        "Float",
+        "Double",
+        "number"
+    ).includes(UTSAndroid.`typeof`(value))
+}
+fun isString(str: Any?): Boolean {
+    return UTSAndroid.`typeof`(str) == "string"
+}
+fun isNumeric(value: Any?): Boolean {
+    if (value == null) {
+        return false
+    }
+    if (isNumber(value)) {
+        return true
+    } else if (isString(value)) {
+        val regex = UTSRegExp("^(-)?\\d+(\\.\\d+)?\$")
+        return regex.test(value as String)
+    }
+    return false
+}
+fun isDef(value: Any?): Boolean {
+    return value != null
+}
+fun addUnit(value: String): String {
+    return addUnit(value as Any?) as String
+}
+fun addUnit(value: Number): String {
+    return addUnit(value as Any?) as String
+}
+fun addUnit(reassignedValue: Any?): String? {
+    var value = reassignedValue
+    if (!isDef(value)) {
+        return null
+    }
+    value = "" + value
+    return if (isNumeric(value)) {
+        "" + value + "px"
+    } else {
+        value
+    }
+}
+open class IconCollection (
+    @JsonNotNull
+    open var has: Boolean = false,
+    @JsonNotNull
+    open var icons: Map<String, Any?>,
+) : UTSObject(), IUTSSourceMap {
+    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
+        return UTSSourceMapPosition("IconCollection", "uni_modules/lime-icon/components/l-icon/types.uts", 1, 13)
+    }
+}
+val icons = ref<Map<String, Any?>>(Map<String, Any?>())
+val runBlock3 = run {
+    if (icons.value.size == 0) {
+        uni_getFileSystemManager().readFile(ReadFileOptions(filePath = "/uni_modules/lime-icon/static/icons.json", encoding = "utf-8", success = fun(res){
+            val obj = UTSAndroid.consoleDebugError(JSON.parseObject(res.data as String), " at uni_modules/lime-icon/components/l-icon/icons.uts:7")
+            if (obj == null) {
+                return
+            }
+            icons.value = obj.toMap()
+        }
+        , fail = fun(err) {
+            uni_showToast(ShowToastOptions(title = "lime-icon:" + err.errMsg))
+        }
+        ))
+    }
+}
+val GenUniModulesLimeIconComponentsLIconLIconClass = CreateVueComponent(GenUniModulesLimeIconComponentsLIconLIcon::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeIconComponentsLIconLIcon.inheritAttrs, inject = GenUniModulesLimeIconComponentsLIconLIcon.inject, props = GenUniModulesLimeIconComponentsLIconLIcon.props, propsNeedCastKeys = GenUniModulesLimeIconComponentsLIconLIcon.propsNeedCastKeys, emits = GenUniModulesLimeIconComponentsLIconLIcon.emits, components = GenUniModulesLimeIconComponentsLIconLIcon.components, styles = GenUniModulesLimeIconComponentsLIconLIcon.styles, setup = fun(props: ComponentPublicInstance): Any? {
+        return GenUniModulesLimeIconComponentsLIconLIcon.setup(props as GenUniModulesLimeIconComponentsLIconLIcon)
+    }
+    )
+}
+, fun(instance, renderer): GenUniModulesLimeIconComponentsLIconLIcon {
+    return GenUniModulesLimeIconComponentsLIconLIcon(instance)
+}
+)
+val GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton::class.java, fun(): VueComponentOptions {
+    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.inject, props = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.emits, components = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.components, styles = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.styles)
+}
+, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton {
+    return GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton(instance)
 }
 )
 val `default`: UTSJSONObject = object : UTSJSONObject() {
@@ -639,36 +733,6 @@ fun daysBetween(date1: Date, date2: Date): Number {
     val diffInMilliseconds = Math.abs(date2.getTime() - date1.getTime())
     return Math.floor(diffInMilliseconds / 86400000)
 }
-fun isString(str: Any?): Boolean {
-    return UTSAndroid.`typeof`(str) == "string"
-}
-fun isNumber(value: Any?): Boolean {
-    return _uA(
-        "Byte",
-        "UByte",
-        "Short",
-        "UShort",
-        "Int",
-        "UInt",
-        "Long",
-        "ULong",
-        "Float",
-        "Double",
-        "number"
-    ).includes(UTSAndroid.`typeof`(value))
-}
-fun isNumeric(value: Any?): Boolean {
-    if (value == null) {
-        return false
-    }
-    if (isNumber(value)) {
-        return true
-    } else if (isString(value)) {
-        val regex = UTSRegExp("^(-)?\\d+(\\.\\d+)?\$")
-        return regex.test(value as String)
-    }
-    return false
-}
 fun unitConvert(value: Any?, base: Number = 0): Number {
     if (isNumber(value)) {
         return value as Number
@@ -704,63 +768,6 @@ val GenUniModulesLimeDateStripComponentsLDateStripLDateStripClass = CreateVueCom
 }
 , fun(instance, renderer): GenUniModulesLimeDateStripComponentsLDateStripLDateStrip {
     return GenUniModulesLimeDateStripComponentsLDateStripLDateStrip(instance)
-}
-)
-fun isDef(value: Any?): Boolean {
-    return value != null
-}
-fun addUnit(value: String): String {
-    return addUnit(value as Any?) as String
-}
-fun addUnit(value: Number): String {
-    return addUnit(value as Any?) as String
-}
-fun addUnit(reassignedValue: Any?): String? {
-    var value = reassignedValue
-    if (!isDef(value)) {
-        return null
-    }
-    value = "" + value
-    return if (isNumeric(value)) {
-        "" + value + "px"
-    } else {
-        value
-    }
-}
-open class IconCollection (
-    @JsonNotNull
-    open var has: Boolean = false,
-    @JsonNotNull
-    open var icons: Map<String, Any?>,
-) : UTSObject(), IUTSSourceMap {
-    override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("IconCollection", "uni_modules/lime-icon/components/l-icon/types.uts", 1, 13)
-    }
-}
-val icons = ref<Map<String, Any?>>(Map<String, Any?>())
-val runBlock3 = run {
-    if (icons.value.size == 0) {
-        uni_getFileSystemManager().readFile(ReadFileOptions(filePath = "/uni_modules/lime-icon/static/icons.json", encoding = "utf-8", success = fun(res){
-            val obj = UTSAndroid.consoleDebugError(JSON.parseObject(res.data as String), " at uni_modules/lime-icon/components/l-icon/icons.uts:7")
-            if (obj == null) {
-                return
-            }
-            icons.value = obj.toMap()
-        }
-        , fail = fun(err) {
-            uni_showToast(ShowToastOptions(title = "lime-icon:" + err.errMsg))
-        }
-        ))
-    }
-}
-val GenUniModulesLimeIconComponentsLIconLIconClass = CreateVueComponent(GenUniModulesLimeIconComponentsLIconLIcon::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = "", inheritAttrs = GenUniModulesLimeIconComponentsLIconLIcon.inheritAttrs, inject = GenUniModulesLimeIconComponentsLIconLIcon.inject, props = GenUniModulesLimeIconComponentsLIconLIcon.props, propsNeedCastKeys = GenUniModulesLimeIconComponentsLIconLIcon.propsNeedCastKeys, emits = GenUniModulesLimeIconComponentsLIconLIcon.emits, components = GenUniModulesLimeIconComponentsLIconLIcon.components, styles = GenUniModulesLimeIconComponentsLIconLIcon.styles, setup = fun(props: ComponentPublicInstance): Any? {
-        return GenUniModulesLimeIconComponentsLIconLIcon.setup(props as GenUniModulesLimeIconComponentsLIconLIcon)
-    }
-    )
-}
-, fun(instance, renderer): GenUniModulesLimeIconComponentsLIconLIcon {
-    return GenUniModulesLimeIconComponentsLIconLIcon(instance)
 }
 )
 interface LDay {
@@ -3621,13 +3628,6 @@ val GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitchClass = CreateVueCompone
 }
 , fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch {
     return GenUniModulesFirstuiUnixComponentsFuiSwitchFuiSwitch(instance)
-}
-)
-val GenUniModulesFirstuiUnixComponentsFuiButtonFuiButtonClass = CreateVueComponent(GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton::class.java, fun(): VueComponentOptions {
-    return VueComponentOptions(type = "component", name = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.name, inheritAttrs = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.inheritAttrs, inject = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.inject, props = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.props, propsNeedCastKeys = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.propsNeedCastKeys, emits = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.emits, components = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.components, styles = GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton.styles)
-}
-, fun(instance, renderer): GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton {
-    return GenUniModulesFirstuiUnixComponentsFuiButtonFuiButton(instance)
 }
 )
 val default7 = "/static/mine/right.png"
@@ -8970,7 +8970,7 @@ open class TimeMark (
     open var type: String,
 ) : UTSObject(), IUTSSourceMap {
     override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("TimeMark", "pages/index/deviceReplay.uvue", 71, 7)
+        return UTSSourceMapPosition("TimeMark", "pages/index/deviceReplay.uvue", 59, 7)
     }
 }
 open class TimeScrollDetail (
@@ -8978,7 +8978,7 @@ open class TimeScrollDetail (
     open var scrollLeft: Number,
 ) : UTSObject(), IUTSSourceMap {
     override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("TimeScrollDetail", "pages/index/deviceReplay.uvue", 370, 7)
+        return UTSSourceMapPosition("TimeScrollDetail", "pages/index/deviceReplay.uvue", 371, 7)
     }
 }
 open class TimeScrollEvent (
@@ -8986,7 +8986,7 @@ open class TimeScrollEvent (
     open var detail: TimeScrollDetail,
 ) : UTSObject(), IUTSSourceMap {
     override fun `__$getOriginalPosition`(): UTSSourceMapPosition? {
-        return UTSSourceMapPosition("TimeScrollEvent", "pages/index/deviceReplay.uvue", 374, 7)
+        return UTSSourceMapPosition("TimeScrollEvent", "pages/index/deviceReplay.uvue", 375, 7)
     }
 }
 val GenPagesIndexDeviceReplayClass = CreateVueComponent(GenPagesIndexDeviceReplay::class.java, fun(): VueComponentOptions {

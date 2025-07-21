@@ -44,7 +44,7 @@
   function initRuntimeSocketService() {
     const hosts = "127.0.0.1,192.168.3.34";
     const port = "8090";
-    const id = "app-ios_dX8ZX9";
+    const id = "app-ios_awHn2H";
     let socketTask = null;
     __registerWebViewUniConsole(() => {
       return '!function(){"use strict";"function"==typeof SuppressedError&&SuppressedError;var e=["log","warn","error","info","debug"],n=e.reduce((function(e,n){return e[n]=console[n].bind(console),e}),{}),t=null,r=new Set,o={};function i(e){if(null!=t){var n=e.map((function(e){if("string"==typeof e)return e;var n=e&&"promise"in e&&"reason"in e,t=n?"UnhandledPromiseRejection: ":"";if(n&&(e=e.reason),e instanceof Error&&e.stack)return e.message&&!e.stack.includes(e.message)?"".concat(t).concat(e.message,"\\n").concat(e.stack):"".concat(t).concat(e.stack);if("object"==typeof e&&null!==e)try{return t+JSON.stringify(e)}catch(e){return t+String(e)}return t+String(e)})).filter(Boolean);n.length>0&&t(JSON.stringify(Object.assign({type:"error",data:n},o)))}else e.forEach((function(e){r.add(e)}))}function a(e,n){try{return{type:e,args:u(n)}}catch(e){}return{type:e,args:[]}}function u(e){return e.map((function(e){return c(e)}))}function c(e,n){if(void 0===n&&(n=0),n>=7)return{type:"object",value:"[Maximum depth reached]"};switch(typeof e){case"string":return{type:"string",value:e};case"number":return function(e){return{type:"number",value:String(e)}}(e);case"boolean":return function(e){return{type:"boolean",value:String(e)}}(e);case"object":try{return function(e,n){if(null===e)return{type:"null"};if(function(e){return e.$&&s(e.$)}(e))return function(e,n){return{type:"object",className:"ComponentPublicInstance",value:{properties:Object.entries(e.$.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(s(e))return function(e,n){return{type:"object",className:"ComponentInternalInstance",value:{properties:Object.entries(e.type).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return e.style&&null!=e.tagName&&null!=e.nodeName}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e).filter((function(e){var n=e[0];return["id","tagName","nodeName","dataset","offsetTop","offsetLeft","style"].includes(n)})).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(function(e){return"function"==typeof e.getPropertyValue&&"function"==typeof e.setProperty&&e.$styles}(e))return function(e,n){return{type:"object",value:{properties:Object.entries(e.$styles).map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n);if(Array.isArray(e))return{type:"object",subType:"array",value:{properties:e.map((function(e,t){return function(e,n,t){var r=c(e,t);return r.name="".concat(n),r}(e,t,n+1)}))}};if(e instanceof Set)return{type:"object",subType:"set",className:"Set",description:"Set(".concat(e.size,")"),value:{entries:Array.from(e).map((function(e){return function(e,n){return{value:c(e,n)}}(e,n+1)}))}};if(e instanceof Map)return{type:"object",subType:"map",className:"Map",description:"Map(".concat(e.size,")"),value:{entries:Array.from(e.entries()).map((function(e){return function(e,n){return{key:c(e[0],n),value:c(e[1],n)}}(e,n+1)}))}};if(e instanceof Promise)return{type:"object",subType:"promise",value:{properties:[]}};if(e instanceof RegExp)return{type:"object",subType:"regexp",value:String(e),className:"Regexp"};if(e instanceof Date)return{type:"object",subType:"date",value:String(e),className:"Date"};if(e instanceof Error)return{type:"object",subType:"error",value:e.message||String(e),className:e.name||"Error"};var t=void 0,r=e.constructor;r&&r.get$UTSMetadata$&&(t=r.get$UTSMetadata$().name);var o=Object.entries(e);(function(e){return e.modifier&&e.modifier._attribute&&e.nodeContent})(e)&&(o=o.filter((function(e){var n=e[0];return"modifier"!==n&&"nodeContent"!==n})));return{type:"object",className:t,value:{properties:o.map((function(e){return f(e[0],e[1],n+1)}))}}}(e,n)}catch(e){return{type:"object",value:{properties:[]}}}case"undefined":return{type:"undefined"};case"function":return function(e){return{type:"function",value:"function ".concat(e.name,"() {}")}}(e);case"symbol":return function(e){return{type:"symbol",value:e.description}}(e);case"bigint":return function(e){return{type:"bigint",value:String(e)}}(e)}}function s(e){return e.type&&null!=e.uid&&e.appContext}function f(e,n,t){var r=c(n,t);return r.name=e,r}var l=null,p=[],y={},g="---BEGIN:EXCEPTION---",d="---END:EXCEPTION---";function v(e){null!=l?l(JSON.stringify(Object.assign({type:"console",data:e},y))):p.push.apply(p,e)}var m=/^\\s*at\\s+[\\w/./-]+:\\d+$/;function b(){function t(e){return function(){for(var t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];var o=function(e,n,t){if(t||2===arguments.length)for(var r,o=0,i=n.length;o<i;o++)!r&&o in n||(r||(r=Array.prototype.slice.call(n,0,o)),r[o]=n[o]);return e.concat(r||Array.prototype.slice.call(n))}([],t,!0);if(o.length){var u=o[o.length-1];"string"==typeof u&&m.test(u)&&o.pop()}if(n[e].apply(n,o),"error"===e&&1===t.length){var c=t[0];if("string"==typeof c&&c.startsWith(g)){var s=g.length,f=c.length-d.length;return void i([c.slice(s,f)])}if(c instanceof Error)return void i([c])}v([a(e,t)])}}return function(){var e=console.log,n=Symbol();try{console.log=n}catch(e){return!1}var t=console.log===n;return console.log=e,t}()?(e.forEach((function(e){console[e]=t(e)})),function(){e.forEach((function(e){console[e]=n[e]}))}):function(){}}function _(e){var n={type:"WEB_INVOKE_APPSERVICE",args:{data:{name:"console",arg:e}}};return window.__uniapp_x_postMessageToService?window.__uniapp_x_postMessageToService(n):window.__uniapp_x_.postMessageToService(JSON.stringify(n))}!function(){if(!window.__UNI_CONSOLE_WEBVIEW__){window.__UNI_CONSOLE_WEBVIEW__=!0;var e="[web-view]".concat(window.__UNI_PAGE_ROUTE__?"[".concat(window.__UNI_PAGE_ROUTE__,"]"):"");b(),function(e,n){if(void 0===n&&(n={}),l=e,Object.assign(y,n),null!=e&&p.length>0){var t=p.slice();p.length=0,v(t)}}((function(e){_(e)}),{channel:e}),function(e,n){if(void 0===n&&(n={}),t=e,Object.assign(o,n),null!=e&&r.size>0){var a=Array.from(r);r.clear(),i(a)}}((function(e){_(e)}),{channel:e}),window.addEventListener("error",(function(e){i([e.error])})),window.addEventListener("unhandledrejection",(function(e){i([e])}))}}()}();';
@@ -66,7 +66,562 @@
     });
   }
   initRuntimeSocketService();
-  const icons$1 = new UTSJSONObject({
+  function isNumber$2(value) {
+    return ["Int8", "UInt8", "Int16", "UInt16", "Int32", "UInt32", "Int64", "UInt64", "Int", "UInt", "Float", "Float16", "Float32", "Float64", "Double", "number"].includes(typeof value);
+  }
+  function isString$1(str) {
+    return typeof str == "string";
+  }
+  function isNumeric$1(value) {
+    if (value == null) {
+      return false;
+    }
+    if (isNumber$2(value)) {
+      return true;
+    } else if (isString$1(value)) {
+      const regex = new RegExp("^(-)?\\d+(\\.\\d+)?$");
+      return regex.test(value);
+    }
+    return false;
+  }
+  function isDef(value) {
+    return value != null;
+  }
+  function addUnit(value) {
+    if (!isDef(value)) {
+      return null;
+    }
+    value = "".concat(value);
+    return isNumeric$1(value) ? "".concat(value, "px") : value;
+  }
+  const icons$1 = vue.ref(/* @__PURE__ */ new Map());
+  if (icons$1.value.size == 0) {
+    uni.getFileSystemManager().readFile({
+      filePath: "/uni_modules/lime-icon/static/icons.json",
+      encoding: "utf-8",
+      success: (res) => {
+        const obj = UTS.JSON.parseObject(res.data);
+        if (obj == null)
+          return null;
+        icons$1.value = obj.toMap();
+      },
+      fail(err) {
+        uni.showToast({
+          title: "lime-icon:".concat(err.errMsg)
+        });
+      }
+    });
+  }
+  const name$4 = "l-icon";
+  const IconifyURL = "https://api.iconify.design/";
+  const _sfc_main$18 = /* @__PURE__ */ vue.defineComponent({
+    __name: "l-icon",
+    props: {
+      name: {
+        type: String,
+        default: "",
+        required: true
+        // validator: (value: string) : boolean => {
+        // 	// 确保是字符串类型且不为空
+        // 	return typeof value == 'string' && value.trim().length > 0
+        // }
+      },
+      color: {
+        type: String
+        // default: ''
+      },
+      size: {
+        type: [String, Number]
+        // default: 32,
+      },
+      prefix: {
+        type: String,
+        default: ""
+      },
+      lClass: {
+        type: String,
+        default: ""
+      },
+      // 对安卓IOS无效
+      inherit: {
+        type: Boolean,
+        default: true
+      },
+      web: {
+        type: Boolean,
+        default: false
+      },
+      lStyle: {
+        type: [String, Object, Array],
+        default: ""
+      }
+    },
+    emits: ["click"],
+    setup(__props, _a) {
+      var __expose = _a.expose, __emit = _a.emit;
+      __expose();
+      const $iconsHost = uni.getStorageSync("$limeIconsHost");
+      const props = __props;
+      const emits = __emit;
+      const $iconCollection = vue.inject("$iconCollection", { has: false, icons: /* @__PURE__ */ new Map() });
+      const innerName = vue.computed(() => {
+        var _a2;
+        return (_a2 = props.name) !== null && _a2 !== void 0 ? _a2 : "";
+      });
+      const collectionIcon = vue.computed(() => {
+        return UTS.mapGet($iconCollection.icons, innerName.value);
+      });
+      const webviewRef = vue.ref(null);
+      const hasHost = vue.computed(() => {
+        return innerName.value.indexOf("/") != -1;
+      });
+      const isIconify = vue.computed(() => {
+        return !hasHost.value && innerName.value.includes(":");
+      });
+      const isImage = vue.computed(() => {
+        return /\.(jpe?g|png|gif|bmp|webp|tiff?)$/i.test(innerName.value) || /^data:image\/(jpeg|png|gif|bmp|webp|tiff);base64,/.test(innerName.value);
+      });
+      const isSVG = vue.computed(() => {
+        return /\.svg$/i.test(innerName.value) || innerName.value.startsWith("data:image/svg+xml") || innerName.value.startsWith("<svg");
+      });
+      const classes = vue.computed(() => {
+        const cls = /* @__PURE__ */ new Map();
+        cls.set("".concat(name$4, "--font"), !isImage.value && !isIconify.value && !isSVG.value);
+        cls.set("".concat(name$4, "--image"), isImage.value || isIconify.value || isSVG.value);
+        cls.set(props.prefix, props.prefix.length > 0);
+        cls.set(props.lClass, props.lClass.length > 0);
+        return cls;
+      });
+      const styles = vue.computed(() => {
+        var _a2;
+        const style = /* @__PURE__ */ new Map();
+        if (props.color != "" && props.color != null && !isImage.value && !isIconify.value) {
+          style.set("color", props.color);
+        }
+        const size = (_a2 = addUnit(props.size)) !== null && _a2 !== void 0 ? _a2 : isImage.value || isIconify.value ? "32px" : null;
+        if (size != null) {
+          if (isImage.value || isIconify.value || isSVG.value) {
+            style.set("height", size);
+            style.set("width", size);
+          } else {
+            style.set("font-size", size);
+          }
+        }
+        return style;
+      });
+      const iconCode = vue.computed(() => {
+        var _a2;
+        return (_a2 = icons$1.value.get(innerName.value)) !== null && _a2 !== void 0 ? _a2 : /[^\x00-\x7F]/.test(innerName.value) ? innerName.value : "";
+      });
+      const isError = vue.ref(false);
+      const cacheMap = /* @__PURE__ */ new Map();
+      const iconUrl = vue.computed(() => {
+        var _a2;
+        const hasIconsHost = $iconsHost != null && $iconsHost != "";
+        if (isImage.value) {
+          return hasHost.value ? innerName.value : ($iconsHost !== null && $iconsHost !== void 0 ? $iconsHost : "") + innerName.value;
+        } else if (isIconify.value) {
+          if (cacheMap.has(innerName.value) && !isError.value) {
+            return UTS.mapGet(cacheMap, innerName.value);
+          }
+          const _host = "".concat(hasIconsHost ? $iconsHost : IconifyURL);
+          const _icon = (_a2 = collectionIcon.value) !== null && _a2 !== void 0 ? _a2 : _host + "".concat(innerName.value, ".svg").replace(/:/g, "/");
+          cacheMap.set(innerName.value, _icon);
+          return _icon;
+        } else if (isSVG.value) {
+          return (/\.svg$/i.test(innerName.value) && $iconsHost != null && !hasHost.value ? $iconsHost : "") + innerName.value.replace(/'/g, '"');
+        } else {
+          return "";
+        }
+      });
+      const imageError = () => {
+        isError.value = true;
+      };
+      const imageload = () => {
+        isError.value = false;
+      };
+      const __returned__ = { name: name$4, IconifyURL, $iconsHost, props, emits, $iconCollection, innerName, collectionIcon, webviewRef, hasHost, isIconify, isImage, isSVG, classes, styles, iconCode, isError, cacheMap, iconUrl, imageError, imageload };
+      Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
+      return __returned__;
+    }
+  });
+  const _style_0$15 = { "l-icon--font": { "": { "fontFamily": "l", "textAlign": "center" } }, "@FONT-FACE": [{ "fontFamily": "l", "src": 'url("/assets/t3.9658ea31.ttf")' }] };
+  const _export_sfc = (sfc, props) => {
+    const target = sfc.__vccOpts || sfc;
+    for (const [key, val] of props) {
+      target[key] = val;
+    }
+    return target;
+  };
+  function _sfc_render$17(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      vue.Fragment,
+      null,
+      [
+        !$setup.isImage && !$setup.isIconify && !$setup.isSVG ? (vue.openBlock(), vue.createElementBlock(
+          "text",
+          {
+            key: 0,
+            class: vue.normalizeClass(["l-icon", [$setup.classes, $props.lClass]]),
+            style: vue.normalizeStyle([$setup.styles, $props.lStyle]),
+            onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("click"))
+          },
+          vue.toDisplayString($setup.iconCode),
+          7
+          /* TEXT, CLASS, STYLE */
+        )) : !$setup.isSVG && !$setup.isIconify && $setup.isImage ? (vue.openBlock(), vue.createElementBlock("image", {
+          key: 1,
+          class: vue.normalizeClass(["l-icon", [$setup.classes, $props.lClass]]),
+          style: vue.normalizeStyle([$setup.styles, $props.lStyle]),
+          src: $setup.iconUrl,
+          onClick: _cache[1] || (_cache[1] = ($event) => _ctx.$emit("click"))
+        }, null, 14, ["src"])) : vue.createCommentVNode("v-if", true),
+        vue.createCommentVNode(' <l-svg class="l-icon" :class="[classes, lClass]" :style="[styles, lStyle]" :color="color" :src="iconUrl" v-else :web="web" @error="imageError" @load="imageload" @click="$emit(\'click\')"></l-svg> ')
+      ],
+      2112
+      /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+    );
+  }
+  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$18, [["render", _sfc_render$17], ["styles", [_style_0$15]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-icon/components/l-icon/l-icon.uvue"]]);
+  function resolveEasycom(component, easycom2) {
+    return typeof component === "string" ? easycom2 : component;
+  }
+  const _sfc_main$17 = vue.defineComponent({
+    name: "fui-button",
+    emits: ["onclick"],
+    props: {
+      type: {
+        type: String,
+        default: "primary"
+      },
+      background: {
+        type: String,
+        default: ""
+      },
+      text: {
+        type: String,
+        default: ""
+      },
+      color: {
+        type: String,
+        default: ""
+      },
+      disabledBackground: {
+        type: String,
+        default: ""
+      },
+      disabledColor: {
+        type: String,
+        default: ""
+      },
+      borderWidth: {
+        type: String,
+        default: "0.5px"
+      },
+      borderColor: {
+        type: String,
+        default: ""
+      },
+      btnSize: {
+        type: String,
+        default: ""
+      },
+      width: {
+        type: String,
+        default: "100%"
+      },
+      height: {
+        type: String,
+        default: ""
+      },
+      size: {
+        type: Number,
+        default: 0
+      },
+      bold: {
+        type: Boolean,
+        default: false
+      },
+      margin: {
+        type: String,
+        default: ""
+      },
+      radius: {
+        type: String,
+        default: ""
+      },
+      plain: {
+        type: Boolean,
+        default: false
+      },
+      highlight: {
+        type: Boolean,
+        default: true
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      },
+      loading: {
+        type: Boolean,
+        default: false
+      },
+      iconColor: {
+        type: String,
+        default: "#B2B2B2"
+      },
+      activeColor: {
+        type: String,
+        default: "#FFFFFF"
+      },
+      //V1.2.6+
+      formType: {
+        type: String,
+        default: ""
+      }
+    },
+    computed: {
+      getStyl() {
+        const mp = /* @__PURE__ */ new Map();
+        mp.set("border-color", this.iconColor);
+        return mp;
+      },
+      getBackground() {
+        let color = this.background;
+        if (this.disabled && this.disabledBackground != "") {
+          color = this.disabledBackground;
+        }
+        color = this.type == "link" || this.plain ? "rgba(0,0,0,0)" : color;
+        return color;
+      },
+      getBorderColor() {
+        let color = this.borderColor;
+        if (color == "") {
+          color = this.disabled && this.disabledBackground != "" ? this.disabledBackground : this.background;
+        }
+        color = this.type == "link" ? "rgba(0,0,0,0)" : color;
+        return color;
+      },
+      getColor() {
+        let color;
+        if (this.color != "") {
+          color = this.disabled && this.disabledBackground != "" ? this.disabledColor : this.color;
+        } else {
+          if (this.disabled && this.disabledBackground != "") {
+            color = this.disabledColor == "" ? "#FFFFFF" : this.disabledColor;
+          } else {
+            color = this.type == "gray" ? "#465CFF" : "#FFFFFF";
+          }
+        }
+        return color;
+      },
+      getSize() {
+        let size = this.size;
+        if (this.btnSize != "") {
+          size = size == 0 ? 32 : size;
+          if (this.btnSize == "small") {
+            size = size > 28 ? 28 : size;
+          } else if (this.btnSize == "mini") {
+            size = size > 28 ? 24 : size;
+          }
+        }
+        return "".concat(size, "rpx");
+      },
+      getWidth() {
+        let width = this.width;
+        if (this.btnSize != "") {
+          width = new UTSJSONObject({
+            medium: "400rpx",
+            small: "200rpx",
+            mini: "120rpx"
+          })[this.btnSize];
+        }
+        return width;
+      },
+      getHeight() {
+        let height = this.height;
+        if (this.btnSize != "") {
+          height = new UTSJSONObject({
+            medium: "84rpx",
+            small: "72rpx",
+            mini: "64rpx"
+          })[this.btnSize];
+        }
+        return height;
+      }
+    },
+    watch: {
+      loading(newValue) {
+        if (newValue) {
+          this.$nextTick(() => {
+            setTimeout(() => {
+              this.startSpin();
+            }, 50);
+          });
+        } else {
+          this.endSpin();
+        }
+      }
+    },
+    data() {
+      return {
+        times: 0,
+        isSpin: false,
+        element: null,
+        hoverEle: null,
+        fuiForm: null
+      };
+    },
+    created() {
+      this.getParent("fui-form");
+    },
+    mounted() {
+      this.$nextTick(() => {
+        setTimeout(() => {
+          if (this.loading)
+            this.startSpin();
+        }, 200);
+      });
+    },
+    beforeUnmount() {
+      this.isSpin = false;
+      this.element = null;
+      this.hoverEle = null;
+    },
+    methods: {
+      handleStart() {
+        this.switchHover(true);
+      },
+      handleTap(e2) {
+        if (this.disabled)
+          return null;
+        this.$emit("onclick", e2);
+        if (this.formType != "" && this.fuiForm != null) {
+          const form = this.fuiForm;
+          form.$callMethod("buttonEvent", this.formType);
+        }
+      },
+      handleEnd() {
+        this.switchHover(false);
+      },
+      switchHover(show) {
+        if (!this.highlight || this.disabled)
+          return null;
+        if (this.hoverEle == null) {
+          this.hoverEle = this.$refs["fui_button_hover"];
+        }
+        this.hoverEle.style.setProperty("visibility", show ? "visible" : "hidden");
+      },
+      startSpin() {
+        if (this.element != null && this.isSpin)
+          return null;
+        if (this.element == null) {
+          this.element = this.$refs["fui_button_loading"];
+        }
+        this.times = this.times + 1;
+        this.element.style.setProperty("transform", "rotate(".concat(this.times * 360, "deg)"));
+        this.element.style.setProperty("transition-duration", "600ms");
+        this.isSpin = true;
+      },
+      endSpin() {
+        this.isSpin = false;
+        this.times = 0;
+        this.element.style.setProperty("transform", "rotate(".concat(this.times * 360, "deg)"));
+        this.element.style.setProperty("transition-duration", "0s");
+        this.element = null;
+      },
+      onEnd() {
+        if (this.isSpin && this.loading) {
+          this.times = this.times + 1;
+          this.element.style.setProperty("transform", "rotate(".concat(this.times * 360, "deg)"));
+        }
+      },
+      getParent(name2) {
+        if (this.$parent == null)
+          return false;
+        let parent = this.$parent;
+        let parentName = parent.$options["name"];
+        while (parentName != name2) {
+          if (parent.$parent == null)
+            return false;
+          parent = parent.$parent;
+          if (parent.$options["name"] == "")
+            return false;
+          parentName = parent.$options["name"];
+        }
+        this.fuiForm = parent;
+        return true;
+      }
+    }
+  });
+  const _style_0$14 = { "fui-button__wrap": { "": { "position": "relative", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-button__flex-1": { "": { "width": "100%" } }, "fui-button__opacity": { "": { "opacity": 0.5 } }, "fui-button__hover": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "backgroundColor": "rgba(0,0,0,0.2)", "zIndex": 2, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "visibility": "hidden", "pointerEvents": "none" } }, "fui-button__spin": { "": { "width": "32rpx", "height": "32rpx", "borderTopWidth": 2, "borderRightWidth": 2, "borderBottomWidth": 2, "borderLeftWidth": 2, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "transitionDuration": "600ms", "transitionProperty": "transform", "transitionTimingFunction": "linear", "transform": "rotate(0deg)", "boxSizing": "border-box", "marginRight": "8rpx", "position": "relative" } }, "fui-button__spin-dot": { "": { "position": "absolute", "width": "12rpx", "height": "12rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx", "left": 0, "top": 0 } }, "fui-button__text": { "": { "textAlign": "center" } }, "fui-text__bold": { "": { "fontWeight": "bold" } }, "fui-button__link": { "": { "!borderTopColor": "rgba(0,0,0,0)", "!borderRightColor": "rgba(0,0,0,0)", "!borderBottomColor": "rgba(0,0,0,0)", "!borderLeftColor": "rgba(0,0,0,0)", "!backgroundColor": "rgba(0,0,0,0)" } }, "fui-button__primary": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF", "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-button__success": { "": { "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F", "!backgroundImage": "none", "!backgroundColor": "#09BE4F" } }, "fui-button__warning": { "": { "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703", "!backgroundImage": "none", "!backgroundColor": "#FFB703" } }, "fui-button__danger": { "": { "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B", "!backgroundImage": "none", "!backgroundColor": "#FF2B2B" } }, "fui-button__purple": { "": { "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF", "!backgroundImage": "none", "!backgroundColor": "#6831FF" } }, "fui-button__gray": { "": { "!borderTopColor": "#F8F8F8", "!borderRightColor": "#F8F8F8", "!borderBottomColor": "#F8F8F8", "!borderLeftColor": "#F8F8F8", "!backgroundImage": "none", "!backgroundColor": "#F8F8F8" } }, "fui-btn__gray-color": { "": { "!color": "#465CFF" } }, "fui-button__height": { "": { "!height": "96rpx" } }, "fui-button__height-text": { "": { "!height": "96rpx", "!lineHeight": "96rpx" } }, "fui-button__size": { "": { "!fontSize": "32rpx" } }, "fui-button__radius": { "": { "!borderTopLeftRadius": "16rpx", "!borderTopRightRadius": "16rpx", "!borderBottomRightRadius": "16rpx", "!borderBottomLeftRadius": "16rpx" } }, "@TRANSITION": { "fui-button__spin": { "duration": "600ms", "property": "transform", "timingFunction": "linear" } } };
+  function _sfc_render$16(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock(
+      "view",
+      {
+        class: vue.normalizeClass(["fui-button__wrap", [$options.getWidth == "" || $options.getWidth == "100%" ? "fui-button__flex-1" : "", $props.disabled && $props.disabledBackground == "" ? "fui-button__opacity" : "", $props.background == "" && $props.disabledBackground == "" && !$props.plain ? "fui-button__".concat($props.type) : "", $props.height == "" && $props.btnSize == "" ? "fui-button__height" : "", $props.radius == "" ? "fui-button__radius" : "", $props.highlight && !$props.disabled ? "fui-button__active" : ""]]),
+        style: vue.normalizeStyle({ width: $options.getWidth, height: $options.getHeight, margin: $props.margin, borderRadius: $props.radius, background: $options.getBackground, border: "".concat($props.borderColor == "" ? "0px" : $props.borderWidth, " solid"), borderColor: $options.getBorderColor }),
+        onTouchstart: _cache[1] || (_cache[1] = (...args) => $options.handleStart && $options.handleStart(...args)),
+        onTouchend: _cache[2] || (_cache[2] = (...args) => $options.handleEnd && $options.handleEnd(...args)),
+        onTouchcancel: _cache[3] || (_cache[3] = (...args) => $options.handleEnd && $options.handleEnd(...args)),
+        onClick: _cache[4] || (_cache[4] = (...args) => $options.handleTap && $options.handleTap(...args))
+      },
+      [
+        $props.loading ? (vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            key: 0,
+            ref: "fui_button_loading",
+            onTransitionend: _cache[0] || (_cache[0] = (...args) => $options.onEnd && $options.onEnd(...args)),
+            class: "fui-button__spin",
+            style: vue.normalizeStyle($options.getStyl)
+          },
+          [
+            vue.createElementVNode(
+              "view",
+              {
+                class: "fui-button__spin-dot",
+                style: vue.normalizeStyle({ background: $props.activeColor })
+              },
+              null,
+              4
+              /* STYLE */
+            )
+          ],
+          36
+          /* STYLE, NEED_HYDRATION */
+        )) : vue.createCommentVNode("v-if", true),
+        $props.text ? (vue.openBlock(), vue.createElementBlock(
+          "text",
+          {
+            key: 1,
+            class: vue.normalizeClass(["fui-button__text", { "fui-btn__gray-color": $props.background == "" && $props.disabledBackground == "" && !$props.plain && $props.type == "gray" && $props.color == "#fff", "fui-text__bold": $props.bold, "fui-button__size": $props.size == 0 && $props.btnSize == "", "fui-button__height-text": $props.height == "" && $props.btnSize == "" }]),
+            style: vue.normalizeStyle({ fontSize: $options.getSize, color: $options.getColor, height: $options.getHeight, lineHeight: $options.getHeight })
+          },
+          vue.toDisplayString($props.text),
+          7
+          /* TEXT, CLASS, STYLE */
+        )) : vue.createCommentVNode("v-if", true),
+        vue.renderSlot(_ctx.$slots, "default"),
+        $props.highlight ? (vue.openBlock(), vue.createElementBlock(
+          "view",
+          {
+            key: 2,
+            ref: "fui_button_hover",
+            class: vue.normalizeClass(["fui-button__hover", { "fui-button__radius": $props.radius == "" }]),
+            style: vue.normalizeStyle({ borderRadius: $props.radius })
+          },
+          null,
+          6
+          /* CLASS, STYLE */
+        )) : vue.createCommentVNode("v-if", true)
+      ],
+      38
+      /* CLASS, STYLE, NEED_HYDRATION */
+    );
+  }
+  const __easycom_3$5 = /* @__PURE__ */ _export_sfc(_sfc_main$17, [["render", _sfc_render$16], ["styles", [_style_0$14]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
+  const icons = new UTSJSONObject({
     "addressbook": "",
     "addfriends-fill": "",
     "addfriends": "",
@@ -231,7 +786,7 @@
     "goods": "",
     "goods-fill": ""
   });
-  const _sfc_main$18 = vue.defineComponent({
+  const _sfc_main$16 = vue.defineComponent({
     name: "fui-icon",
     emits: ["onclick"],
     props: {
@@ -305,7 +860,7 @@
     },
     data() {
       return {
-        icons: icons$1
+        icons
       };
     },
     methods: {
@@ -316,15 +871,8 @@
       }
     }
   });
-  const _style_0$15 = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
-  const _export_sfc = (sfc, props) => {
-    const target = sfc.__vccOpts || sfc;
-    for (const [key, val] of props) {
-      target[key] = val;
-    }
-    return target;
-  };
-  function _sfc_render$17(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$13 = { "fui-icon": { "": { "fontFamily": "fuiFont" } }, "fui-icon__color": { "": { "!color": "#333333" } }, "fui-icon__active-color": { "": { "!color": "#465CFF" } }, "fui-icon__fontsize": { "": { "!fontSize": "64rpx", "!lineHeight": "64rpx" } }, "@FONT-FACE": [{ "fontFamily": "fuiFont", "src": 'url("/assets/fui-icon.9165208c.ttf")' }] };
+  function _sfc_render$15(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "text",
       {
@@ -337,11 +885,8 @@
       /* TEXT, CLASS, STYLE */
     );
   }
-  const __easycom_1$7 = /* @__PURE__ */ _export_sfc(_sfc_main$18, [["render", _sfc_render$17], ["styles", [_style_0$15]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
-  function resolveEasycom(component, easycom2) {
-    return typeof component === "string" ? easycom2 : component;
-  }
-  const _sfc_main$17 = /* @__PURE__ */ vue.defineComponent({
+  const __easycom_1$7 = /* @__PURE__ */ _export_sfc(_sfc_main$16, [["render", _sfc_render$15], ["styles", [_style_0$13]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-icon/fui-icon.uvue"]]);
+  const _sfc_main$15 = /* @__PURE__ */ vue.defineComponent({
     __name: "TopNavBar",
     props: {
       title: {
@@ -385,8 +930,8 @@
       return __returned__;
     }
   });
-  const _style_0$14 = { "custom-nav": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "100rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx", "width": "100%" } }, "nav-back": { "": { "width": "45rpx", "height": "45rpx", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "nav-item": { "": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-around" } }, "nav-title": { "": { "color": "#333333", "marginTop": 0, "marginRight": "20rpx", "marginBottom": 0, "marginLeft": "20rpx", "maxWidth": "400rpx", "textAlign": "center", "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap" } }, "nav-actions": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "nav-icon": { "": { "width": "45rpx", "height": "45rpx", "display": "flex", "alignItems": "center", "justifyContent": "center", "position": "relative", "marginLeft": "16rpx" } } };
-  function _sfc_render$16(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$12 = { "custom-nav": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "100rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx", "width": "100%" } }, "nav-back": { "": { "width": "45rpx", "height": "45rpx", "display": "flex", "alignItems": "center", "justifyContent": "center" } }, "nav-item": { "": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-around" } }, "nav-title": { "": { "color": "#333333", "marginTop": 0, "marginRight": "20rpx", "marginBottom": 0, "marginLeft": "20rpx", "maxWidth": "400rpx", "textAlign": "center", "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap" } }, "nav-actions": { "": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "nav-icon": { "": { "width": "45rpx", "height": "45rpx", "display": "flex", "alignItems": "center", "justifyContent": "center", "position": "relative", "marginLeft": "16rpx" } } };
+  function _sfc_render$14(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_1$7);
     return vue.openBlock(), vue.createElementBlock("view", { class: "custom-nav" }, [
       vue.createElementVNode("view", {
@@ -426,7 +971,7 @@
       ])
     ]);
   }
-  const TopNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$17, [["render", _sfc_render$16], ["styles", [_style_0$14]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/components/TopNavBar.uvue"]]);
+  const TopNavBar = /* @__PURE__ */ _export_sfc(_sfc_main$15, [["render", _sfc_render$14], ["styles", [_style_0$12]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/components/TopNavBar.uvue"]]);
   const forward = "/static/video/forward.png";
   const errIcon = "/static/video/error.png";
   const transfer = "/static/video/transfer.png";
@@ -435,37 +980,35 @@
   const pauseIcon = "/static/video/pause.png";
   const addIcon = "/static/tabbar/add.png";
   const videoSrc$1 = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4";
-  const _sfc_main$16 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$14 = /* @__PURE__ */ vue.defineComponent({
     __name: "index",
     setup(__props, _a) {
       var __expose = _a.expose;
       __expose();
       const deviceTitle = vue.ref("设备名称");
-      const videoRef = vue.ref(null);
-      const addDevices = () => {
-        uni.showToast({
-          title: "添加",
-          icon: "none"
-        });
+      const videoContext = vue.ref(null);
+      const onLine = vue.ref(true);
+      const initVideoContext = () => {
+        try {
+          videoContext.value = uni.createVideoContext("myVideo");
+          uni.__log__("log", "at pages/index/index.uvue:66", "视频上下文初始化成功", videoContext.value);
+        } catch (error) {
+          uni.__log__("error", "at pages/index/index.uvue:68", "创建视频上下文失败:", error);
+        }
       };
       const replay = () => {
-        uni.showToast({
-          title: "重播",
-          icon: "none"
+        uni.navigateTo({
+          url: "/pages/index/deviceReplay"
         });
-        videoRef.value.play();
-        uni.createVideoContext("myVideo").play();
       };
       const transferClick = () => {
-        uni.showToast({
-          title: "传输",
-          icon: "none"
+        uni.navigateTo({
+          url: "/pages/mine/rechargeDataTraffic/rechargeDataTraffic"
         });
       };
       const errClick = () => {
-        uni.showToast({
-          title: "警报",
-          icon: "none"
+        uni.switchTab({
+          url: "/pages/message/message"
         });
       };
       const toDeviceDetail = () => {
@@ -478,22 +1021,10 @@
         });
       };
       const pauseClick = () => {
-        videoRef.value.pause();
-        uni.createVideoContext("myVideo").pause();
+        videoContext.value.pause();
+        videoContext.value.pause();
         uni.showToast({
           title: "暂停",
-          icon: "none"
-        });
-      };
-      const vedioClick = () => {
-        uni.showToast({
-          title: "播放",
-          icon: "none"
-        });
-      };
-      const clickVdedio = () => {
-        uni.showToast({
-          title: "sss",
           icon: "none"
         });
       };
@@ -502,15 +1033,20 @@
           url: "/pages/index/addNewDevice/addNewDevice"
         });
       };
-      const __returned__ = { deviceTitle, forward, errIcon, transfer, replayIcon, playIcon, pauseIcon, addIcon, videoSrc: videoSrc$1, videoRef, addDevices, replay, transferClick, errClick, toDeviceDetail, pauseClick, vedioClick, clickVdedio, addNewDevice, get TopNavBar() {
+      vue.onMounted(() => {
+        initVideoContext();
+      });
+      const __returned__ = { deviceTitle, videoContext, forward, errIcon, transfer, replayIcon, playIcon, pauseIcon, addIcon, videoSrc: videoSrc$1, onLine, initVideoContext, replay, transferClick, errClick, toDeviceDetail, pauseClick, addNewDevice, get TopNavBar() {
         return TopNavBar;
       } };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   });
-  const _style_0$13 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-right-control": { ".container .content ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "100%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
-  function _sfc_render$15(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$11 = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column" } }, "content": { ".container ": { "position": "relative", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "width": "100%", "height": "400rpx", "overflow": "hidden" } }, "video-container": { ".container .content ": { "width": "100%", "height": "100%" } }, "video": { ".container .content ": { "width": "100%", "height": "100%", "objectFit": "cover", "marginBottom": 0 } }, "device-title": { ".container .content .video ": { "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.3)", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx" } }, "video-right-control": { ".container .content .video ": { "position": "absolute", "top": 0, "right": "10rpx", "display": "flex", "flexDirection": "column", "justifyContent": "space-around", "height": "90%", "alignItems": "center", "zIndex": 2 } }, "vedio-control": { ".container .content .video .video-right-control ": { "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" }, ".container .content .video-bottom-control ": { "marginTop": 0, "marginRight": "auto", "marginBottom": 0, "marginLeft": "auto", "width": "50rpx", "height": "50rpx", "paddingTop": "10rpx", "paddingRight": "10rpx", "paddingBottom": "10rpx", "paddingLeft": "10rpx", "borderTopLeftRadius": "25rpx", "borderTopRightRadius": "25rpx", "borderBottomRightRadius": "25rpx", "borderBottomLeftRadius": "25rpx", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)" } }, "vedio-control-icon": { ".container .content .video .video-right-control .vedio-control ": { "width": "100%", "height": "100%" }, ".container .content .video-bottom-control .vedio-control ": { "width": "100%", "height": "100%" } }, "offline": { ".container .content .video ": { "width": "100%", "height": "100%", "backgroundImage": "none", "backgroundColor": "rgba(255,255,255,0.7)", "display": "flex", "flexDirection": "column", "alignItems": "center", "justifyContent": "center" } }, "offline-title": { ".container .content .video .offline ": { "color": "#ffffff", "marginLeft": "10rpx" } }, "time": { ".container .content .video .offline ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0, "color": "#ffffff" } }, "offline-content": { ".container .content .video .offline ": { "display": "flex", "flexDirection": "row", "alignItems": "center" } }, "video-top-title": { ".container .content ": { "position": "absolute", "top": 0, "height": "60rpx", "width": "80%", "paddingTop": "15rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": "20rpx", "backgroundImage": "linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0))", "backgroundColor": "rgba(0,0,0,0)", "zIndex": 3 } }, "video-bottom-control": { ".container .content ": { "position": "absolute", "bottom": "10rpx", "left": 0, "width": "100%", "height": "50rpx", "zIndex": 1 } } };
+  function _sfc_render$13(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createVNode($setup["TopNavBar"], {
         title: "首页",
@@ -525,69 +1061,86 @@
           vue.createElementVNode("video", {
             class: "video",
             id: "myVideo",
-            title: $setup.deviceTitle,
             src: $setup.videoSrc,
-            ref: "videoRef",
-            controls: true,
-            "show-play-btn": true,
-            "show-center-play-btn": true,
-            "enable-progress-gesture": true,
-            "show-fullscreen-btn": true,
-            "show-mute-btn": true,
-            onClick: $setup.clickVdedio
-          }, null, 8, ["title"])
+            controls: $setup.onLine,
+            "show-play-btn": $setup.onLine,
+            "show-center-play-btn": $setup.onLine,
+            "enable-progress-gesture": $setup.onLine,
+            "show-fullscreen-btn": $setup.onLine,
+            "show-mute-btn": $setup.onLine
+          }, [
+            $setup.onLine ? (vue.openBlock(), vue.createElementBlock(
+              "view",
+              {
+                key: 0,
+                class: "device-title"
+              },
+              vue.toDisplayString($setup.deviceTitle),
+              1
+              /* TEXT */
+            )) : vue.createCommentVNode("v-if", true),
+            $setup.onLine ? (vue.openBlock(), vue.createElementBlock("view", {
+              key: 1,
+              class: "video-right-control"
+            }, [
+              vue.createElementVNode("view", { class: "vedio-control" }, [
+                vue.createElementVNode("image", {
+                  class: "vedio-control-icon",
+                  src: $setup.forward,
+                  onClick: $setup.toDeviceDetail
+                })
+              ]),
+              vue.createElementVNode("view", { class: "vedio-control" }, [
+                vue.createElementVNode("image", {
+                  class: "vedio-control-icon",
+                  src: $setup.errIcon,
+                  onClick: $setup.errClick
+                })
+              ]),
+              vue.createElementVNode("view", { class: "vedio-control" }, [
+                vue.createElementVNode("image", {
+                  class: "vedio-control-icon",
+                  src: $setup.transfer,
+                  onClick: $setup.transferClick
+                })
+              ]),
+              vue.createElementVNode("view", { class: "vedio-control" }, [
+                vue.createElementVNode("image", {
+                  class: "vedio-control-icon",
+                  src: $setup.replayIcon,
+                  onClick: $setup.replay
+                })
+              ])
+            ])) : (vue.openBlock(), vue.createElementBlock("view", {
+              key: 2,
+              class: "offline"
+            }, [
+              vue.createElementVNode("view", { class: "offline-content" }, [
+                vue.createVNode(_component_l_icon, {
+                  name: "link-unlink",
+                  color: "#fff"
+                }),
+                vue.createElementVNode("text", { class: "offline-title" }, "设备断线了")
+              ]),
+              vue.createElementVNode("text", { class: "time" }, "2025-07-21 14:33"),
+              vue.createVNode(_component_fui_button, {
+                color: "#1296db",
+                text: "查看帮助",
+                radius: "50rpx",
+                size: 22,
+                background: "#fff",
+                width: "120rpx",
+                height: "40rpx"
+              })
+            ]))
+          ], 8, ["controls", "show-play-btn", "show-center-play-btn", "enable-progress-gesture", "show-fullscreen-btn", "show-mute-btn"])
         ]),
-        vue.createElementVNode(
-          "view",
-          null,
-          vue.toDisplayString($setup.deviceTitle),
-          1
-          /* TEXT */
-        ),
-        vue.createElementVNode("view", { class: "video-right-control" }, [
-          vue.createElementVNode("view", { class: "vedio-control" }, [
-            vue.createElementVNode("image", {
-              class: "vedio-control-icon",
-              src: $setup.forward,
-              onClick: $setup.toDeviceDetail
-            })
-          ]),
-          vue.createElementVNode("view", { class: "vedio-control" }, [
-            vue.createElementVNode("image", {
-              class: "vedio-control-icon",
-              src: $setup.errIcon,
-              onClick: $setup.errClick
-            })
-          ]),
-          vue.createElementVNode("view", { class: "vedio-control" }, [
-            vue.createElementVNode("image", {
-              class: "vedio-control-icon",
-              src: $setup.transfer,
-              onClick: $setup.transferClick
-            })
-          ]),
-          vue.createElementVNode("view", { class: "vedio-control" }, [
-            vue.createElementVNode("image", {
-              class: "vedio-control-icon",
-              src: $setup.replayIcon,
-              onClick: $setup.replay
-            })
-          ])
-        ]),
-        vue.createElementVNode("view", { class: "video-bottom-control" }, [
-          vue.createElementVNode("view", { class: "vedio-control" }, [
-            vue.createElementVNode("image", {
-              class: "vedio-control-icon",
-              onClick: $setup.pauseClick,
-              src: $setup.pauseIcon
-            })
-          ])
-        ])
+        vue.createCommentVNode(' <view class="video-bottom-control">\r\n				<view class="vedio-control">\r\n					<image class="vedio-control-icon" @click="pauseClick" :src="pauseIcon"></image>\r\n				</view>\r\n			</view> ')
       ])
     ]);
   }
-  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$16, [["render", _sfc_render$15], ["styles", [_style_0$13]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
-  const _sfc_main$15 = /* @__PURE__ */ vue.defineComponent({
+  const PagesIndexIndex = /* @__PURE__ */ _export_sfc(_sfc_main$14, [["render", _sfc_render$13], ["styles", [_style_0$11]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/index/index.uvue"]]);
+  const _sfc_main$13 = /* @__PURE__ */ vue.defineComponent({
     __name: "l-date-strip-item",
     props: {
       dates: { type: Array, required: true, default: [] },
@@ -623,8 +1176,8 @@
     }
   });
   const _imports_0$a = "/static/dot1.png";
-  const _style_0$12 = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
-  function _sfc_render$14(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$10 = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
+  function _sfc_render$12(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -720,7 +1273,7 @@
       /* CLASS */
     );
   }
-  const __easycom_0$9 = /* @__PURE__ */ _export_sfc(_sfc_main$15, [["render", _sfc_render$14], ["styles", [_style_0$12]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip-item/l-date-strip-item.uvue"]]);
+  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$13, [["render", _sfc_render$12], ["styles", [_style_0$10]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip-item/l-date-strip-item.uvue"]]);
   function getWeekRange(date, firstDayOfWeek) {
     const start = new Date(date.getTime());
     const dayOffset = (date.getDay() - firstDayOfWeek + 7) % 7;
@@ -755,24 +1308,6 @@
     const diffInMilliseconds = Math.abs(date2.getTime() - date1.getTime());
     return Math.floor(diffInMilliseconds / (1e3 * 3600 * 24));
   }
-  function isString$1(str) {
-    return typeof str == "string";
-  }
-  function isNumber$2(value) {
-    return ["Int8", "UInt8", "Int16", "UInt16", "Int32", "UInt32", "Int64", "UInt64", "Int", "UInt", "Float", "Float16", "Float32", "Float64", "Double", "number"].includes(typeof value);
-  }
-  function isNumeric$1(value) {
-    if (value == null) {
-      return false;
-    }
-    if (isNumber$2(value)) {
-      return true;
-    } else if (isString$1(value)) {
-      const regex = new RegExp("^(-)?\\d+(\\.\\d+)?$");
-      return regex.test(value);
-    }
-    return false;
-  }
   function unitConvert(value, base = 0) {
     if (isNumber$2(value)) {
       return value;
@@ -800,7 +1335,7 @@
     }
     return 0;
   }
-  const _sfc_main$14 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$12 = /* @__PURE__ */ vue.defineComponent({
     __name: "l-date-strip",
     props: {
       firstDayOfWeek: { type: Number, required: true, default: 1 },
@@ -951,9 +1486,9 @@
       return __returned__;
     }
   });
-  const _style_0$11 = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
-  function _sfc_render$13(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_date_strip_item = resolveEasycom(vue.resolveDynamicComponent("l-date-strip-item"), __easycom_0$9);
+  const _style_0$$ = { "l-date-strip": { "": { "height": 86, "backgroundColor": "#ffffff" } }, "l-date-strip__scroll": { "": { "flexDirection": "row" } }, "l-date-strip__item": { "": { "display": "flex", "flexDirection": "row", "paddingTop": 8, "paddingRight": 0, "paddingBottom": 8, "paddingLeft": 0, "boxSizing": "border-box" } }, "l-date-strip__item--week": { "": { "flex": 1 } }, "l-date-strip__grid": { ".l-date-strip__item--week ": { "flex": 1 }, ".l-date-strip__item--none ": { "width": 50 }, "": { "display": "flex", "flexDirection": "column", "marginTop": 0, "marginRight": "4rpx", "marginBottom": 0, "marginLeft": "4rpx", "transitionDuration": "300ms", "transitionProperty": "backgroundColor,color", "transitionTimingFunction": "linear" } }, "l-date-strip__grid-prefix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 14, "color": "rgba(0,0,0,0.45)" }, ".l-date-strip__grid--none ": { "paddingBottom": 4, "paddingTop": 4 }, ".l-date-strip__grid--circle ": { "paddingBottom": 4 } }, "l-date-strip__grid-day": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "fontSize": 16, "color": "rgba(0,0,0,0.88)", "fontWeight": "bold" } }, "l-date-strip__grid-suffix": { "": { "textAlign": "center", "transitionDuration": "200ms", "transitionProperty": "color", "transitionTimingFunction": "linear", "position": "absolute", "top": "50%", "transform": "translateY(60%)", "fontSize": 12, "color": "rgba(0,0,0,0.65)" } }, "l-date-strip__grid-info": { ".l-date-strip__grid--circle ": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 }, "": { "display": "flex", "flex": 1, "justifyContent": "center", "alignItems": "center", "position": "relative" } }, "l-date-strip__grid--square": { "": { "borderTopLeftRadius": 5, "borderTopRightRadius": 5, "borderBottomRightRadius": 5, "borderBottomLeftRadius": 5, "paddingTop": 6, "paddingRight": 0, "paddingBottom": 6, "paddingLeft": 0 } }, "l-date-strip__grid--active-bg": { "": { "backgroundColor": "#3283ff" } }, "l-date-strip__grid--active-text": { "": { "color": "#FFFFFF" } }, "l-date-strip__grid--active-text-none": { "": { "color": "#3283ff" } }, "l-date-strip__grid--disabled": { "": { "opacity": 0.4 } }, "@TRANSITION": { "l-date-strip__grid": { "duration": "300ms", "property": "backgroundColor,color", "timingFunction": "linear" }, "l-date-strip__grid-prefix": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-day": { "duration": "200ms", "property": "color", "timingFunction": "linear" }, "l-date-strip__grid-suffix": { "duration": "200ms", "property": "color", "timingFunction": "linear" } } };
+  function _sfc_render$11(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_date_strip_item = resolveEasycom(vue.resolveDynamicComponent("l-date-strip-item"), __easycom_0$8);
     return $props.switchMode == "none" ? (vue.openBlock(), vue.createElementBlock("scroll-view", {
       key: 0,
       class: "l-date-strip l-date-strip__scroll",
@@ -1006,199 +1541,7 @@
       ))
     ], 44, ["current", "circular"]));
   }
-  const __easycom_0$8 = /* @__PURE__ */ _export_sfc(_sfc_main$14, [["render", _sfc_render$13], ["styles", [_style_0$11]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip/l-date-strip.uvue"]]);
-  function isDef(value) {
-    return value != null;
-  }
-  function addUnit(value) {
-    if (!isDef(value)) {
-      return null;
-    }
-    value = "".concat(value);
-    return isNumeric$1(value) ? "".concat(value, "px") : value;
-  }
-  const icons = vue.ref(/* @__PURE__ */ new Map());
-  if (icons.value.size == 0) {
-    uni.getFileSystemManager().readFile({
-      filePath: "/uni_modules/lime-icon/static/icons.json",
-      encoding: "utf-8",
-      success: (res) => {
-        const obj = UTS.JSON.parseObject(res.data);
-        if (obj == null)
-          return null;
-        icons.value = obj.toMap();
-      },
-      fail(err) {
-        uni.showToast({
-          title: "lime-icon:".concat(err.errMsg)
-        });
-      }
-    });
-  }
-  const name$4 = "l-icon";
-  const IconifyURL = "https://api.iconify.design/";
-  const _sfc_main$13 = /* @__PURE__ */ vue.defineComponent({
-    __name: "l-icon",
-    props: {
-      name: {
-        type: String,
-        default: "",
-        required: true
-        // validator: (value: string) : boolean => {
-        // 	// 确保是字符串类型且不为空
-        // 	return typeof value == 'string' && value.trim().length > 0
-        // }
-      },
-      color: {
-        type: String
-        // default: ''
-      },
-      size: {
-        type: [String, Number]
-        // default: 32,
-      },
-      prefix: {
-        type: String,
-        default: ""
-      },
-      lClass: {
-        type: String,
-        default: ""
-      },
-      // 对安卓IOS无效
-      inherit: {
-        type: Boolean,
-        default: true
-      },
-      web: {
-        type: Boolean,
-        default: false
-      },
-      lStyle: {
-        type: [String, Object, Array],
-        default: ""
-      }
-    },
-    emits: ["click"],
-    setup(__props, _a) {
-      var __expose = _a.expose, __emit = _a.emit;
-      __expose();
-      const $iconsHost = uni.getStorageSync("$limeIconsHost");
-      const props = __props;
-      const emits = __emit;
-      const $iconCollection = vue.inject("$iconCollection", { has: false, icons: /* @__PURE__ */ new Map() });
-      const innerName = vue.computed(() => {
-        var _a2;
-        return (_a2 = props.name) !== null && _a2 !== void 0 ? _a2 : "";
-      });
-      const collectionIcon = vue.computed(() => {
-        return UTS.mapGet($iconCollection.icons, innerName.value);
-      });
-      const webviewRef = vue.ref(null);
-      const hasHost = vue.computed(() => {
-        return innerName.value.indexOf("/") != -1;
-      });
-      const isIconify = vue.computed(() => {
-        return !hasHost.value && innerName.value.includes(":");
-      });
-      const isImage = vue.computed(() => {
-        return /\.(jpe?g|png|gif|bmp|webp|tiff?)$/i.test(innerName.value) || /^data:image\/(jpeg|png|gif|bmp|webp|tiff);base64,/.test(innerName.value);
-      });
-      const isSVG = vue.computed(() => {
-        return /\.svg$/i.test(innerName.value) || innerName.value.startsWith("data:image/svg+xml") || innerName.value.startsWith("<svg");
-      });
-      const classes = vue.computed(() => {
-        const cls = /* @__PURE__ */ new Map();
-        cls.set("".concat(name$4, "--font"), !isImage.value && !isIconify.value && !isSVG.value);
-        cls.set("".concat(name$4, "--image"), isImage.value || isIconify.value || isSVG.value);
-        cls.set(props.prefix, props.prefix.length > 0);
-        cls.set(props.lClass, props.lClass.length > 0);
-        return cls;
-      });
-      const styles = vue.computed(() => {
-        var _a2;
-        const style = /* @__PURE__ */ new Map();
-        if (props.color != "" && props.color != null && !isImage.value && !isIconify.value) {
-          style.set("color", props.color);
-        }
-        const size = (_a2 = addUnit(props.size)) !== null && _a2 !== void 0 ? _a2 : isImage.value || isIconify.value ? "32px" : null;
-        if (size != null) {
-          if (isImage.value || isIconify.value || isSVG.value) {
-            style.set("height", size);
-            style.set("width", size);
-          } else {
-            style.set("font-size", size);
-          }
-        }
-        return style;
-      });
-      const iconCode = vue.computed(() => {
-        var _a2;
-        return (_a2 = icons.value.get(innerName.value)) !== null && _a2 !== void 0 ? _a2 : /[^\x00-\x7F]/.test(innerName.value) ? innerName.value : "";
-      });
-      const isError = vue.ref(false);
-      const cacheMap = /* @__PURE__ */ new Map();
-      const iconUrl = vue.computed(() => {
-        var _a2;
-        const hasIconsHost = $iconsHost != null && $iconsHost != "";
-        if (isImage.value) {
-          return hasHost.value ? innerName.value : ($iconsHost !== null && $iconsHost !== void 0 ? $iconsHost : "") + innerName.value;
-        } else if (isIconify.value) {
-          if (cacheMap.has(innerName.value) && !isError.value) {
-            return UTS.mapGet(cacheMap, innerName.value);
-          }
-          const _host = "".concat(hasIconsHost ? $iconsHost : IconifyURL);
-          const _icon = (_a2 = collectionIcon.value) !== null && _a2 !== void 0 ? _a2 : _host + "".concat(innerName.value, ".svg").replace(/:/g, "/");
-          cacheMap.set(innerName.value, _icon);
-          return _icon;
-        } else if (isSVG.value) {
-          return (/\.svg$/i.test(innerName.value) && $iconsHost != null && !hasHost.value ? $iconsHost : "") + innerName.value.replace(/'/g, '"');
-        } else {
-          return "";
-        }
-      });
-      const imageError = () => {
-        isError.value = true;
-      };
-      const imageload = () => {
-        isError.value = false;
-      };
-      const __returned__ = { name: name$4, IconifyURL, $iconsHost, props, emits, $iconCollection, innerName, collectionIcon, webviewRef, hasHost, isIconify, isImage, isSVG, classes, styles, iconCode, isError, cacheMap, iconUrl, imageError, imageload };
-      Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
-      return __returned__;
-    }
-  });
-  const _style_0$10 = { "l-icon--font": { "": { "fontFamily": "l", "textAlign": "center" } }, "@FONT-FACE": [{ "fontFamily": "l", "src": 'url("/assets/t3.9658ea31.ttf")' }] };
-  function _sfc_render$12(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      vue.Fragment,
-      null,
-      [
-        !$setup.isImage && !$setup.isIconify && !$setup.isSVG ? (vue.openBlock(), vue.createElementBlock(
-          "text",
-          {
-            key: 0,
-            class: vue.normalizeClass(["l-icon", [$setup.classes, $props.lClass]]),
-            style: vue.normalizeStyle([$setup.styles, $props.lStyle]),
-            onClick: _cache[0] || (_cache[0] = ($event) => _ctx.$emit("click"))
-          },
-          vue.toDisplayString($setup.iconCode),
-          7
-          /* TEXT, CLASS, STYLE */
-        )) : !$setup.isSVG && !$setup.isIconify && $setup.isImage ? (vue.openBlock(), vue.createElementBlock("image", {
-          key: 1,
-          class: vue.normalizeClass(["l-icon", [$setup.classes, $props.lClass]]),
-          style: vue.normalizeStyle([$setup.styles, $props.lStyle]),
-          src: $setup.iconUrl,
-          onClick: _cache[1] || (_cache[1] = ($event) => _ctx.$emit("click"))
-        }, null, 14, ["src"])) : vue.createCommentVNode("v-if", true),
-        vue.createCommentVNode(' <l-svg class="l-icon" :class="[classes, lClass]" :style="[styles, lStyle]" :color="color" :src="iconUrl" v-else :web="web" @error="imageError" @load="imageload" @click="$emit(\'click\')"></l-svg> ')
-      ],
-      2112
-      /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
-    );
-  }
-  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$13, [["render", _sfc_render$12], ["styles", [_style_0$10]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-icon/components/l-icon/l-icon.uvue"]]);
+  const __easycom_0$7 = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$11], ["styles", [_style_0$$]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-date-strip/components/l-date-strip/l-date-strip.uvue"]]);
   function __awaiter(thisArg, _arguments, P2, generator) {
     function adopt(value) {
       return value instanceof P2 ? value : new P2(function(resolve) {
@@ -1764,7 +2107,7 @@
       }
     }
   }
-  const _sfc_main$12 = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$11 = /* @__PURE__ */ vue.defineComponent({
     __name: "l-daily-punch",
     props: {
       canSupplement: {
@@ -1935,8 +2278,8 @@
       return __returned__;
     }
   });
-  const _style_0$$ = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
-  function _sfc_render$11(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$_ = { "l-daily-punch": { "": { "width": "100%" } }, "calender": { "": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": 0, "marginLeft": "30rpx" } } };
+  function _sfc_render$10(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "calender" }, [
       vue.createElementVNode(
         "canvas",
@@ -1953,8 +2296,8 @@
       )
     ]);
   }
-  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$12, [["render", _sfc_render$11], ["styles", [_style_0$$]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
-  const _sfc_main$11 = vue.defineComponent({
+  const __easycom_0$6 = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["render", _sfc_render$10], ["styles", [_style_0$_]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/lime-daily-punch/components/l-daily-punch/l-daily-punch.uvue"]]);
+  const _sfc_main$10 = vue.defineComponent({
     name: "fui-bottom-popup",
     emits: ["close", "update:visible"],
     props: {
@@ -2085,8 +2428,8 @@
       }
     }
   });
-  const _style_0$_ = { "fui-bottom__popup-wrap": { "": { "position": "fixed", "left": 0, "right": 0, "top": 0, "bottom": 0, "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "center", "transitionProperty": "opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "visibility": "hidden", "borderBottomWidth": 0, "overflow": "hidden", "opacity": 0 } }, "fui-bottom__popup": { "": { "width": "100%", "transitionProperty": "transform,opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "minHeight": "20rpx", "overflow": "hidden", "transform": "translateY(100%)", "display": "flex", "flexDirection": "row", "position": "relative" } }, "fui-bp__safe-weex": { "": { "paddingBottom": 34 } }, "@TRANSITION": { "fui-bottom__popup-wrap": { "property": "opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" }, "fui-bottom__popup": { "property": "transform,opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" } } };
-  function _sfc_render$10(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$Z = { "fui-bottom__popup-wrap": { "": { "position": "fixed", "left": 0, "right": 0, "top": 0, "bottom": 0, "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "center", "transitionProperty": "opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "visibility": "hidden", "borderBottomWidth": 0, "overflow": "hidden", "opacity": 0 } }, "fui-bottom__popup": { "": { "width": "100%", "transitionProperty": "transform,opacity,visibility", "transitionTimingFunction": "ease-in-out", "transitionDuration": "0.3s", "minHeight": "20rpx", "overflow": "hidden", "transform": "translateY(100%)", "display": "flex", "flexDirection": "row", "position": "relative" } }, "fui-bp__safe-weex": { "": { "paddingBottom": 34 } }, "@TRANSITION": { "fui-bottom__popup-wrap": { "property": "opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" }, "fui-bottom__popup": { "property": "transform,opacity,visibility", "timingFunction": "ease-in-out", "duration": "0.3s" } } };
+  function _sfc_render$$(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2115,8 +2458,8 @@
       /* STYLE */
     );
   }
-  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$11, [["render", _sfc_render$10], ["styles", [_style_0$_]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue"]]);
-  const _sfc_main$10 = vue.defineComponent({
+  const __easycom_1$6 = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["styles", [_style_0$Z]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-bottom-popup/fui-bottom-popup.uvue"]]);
+  const _sfc_main$$ = vue.defineComponent({
     name: "fui-radio",
     props: {
       value: {
@@ -2281,8 +2624,8 @@
       }
     }
   });
-  const _style_0$Z = { "fui-radio__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "display": "flex", "boxSizing": "border-box", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-radio__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-radio__scale-center": { "": { "transformOrigin": "center center" } }, "fui-radio__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-radio__active-bgcolor": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-radio__color": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-radio__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-radio__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-radio__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-check__mark-circle": { "": { "width": "16rpx", "height": "16rpx", "borderTopLeftRadius": "16rpx", "borderTopRightRadius": "16rpx", "borderBottomRightRadius": "16rpx", "borderBottomLeftRadius": "16rpx" } }, "fui-radio__disabled": { "": { "opacity": 0.6 } } };
-  function _sfc_render$$(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$Y = { "fui-radio__input": { "": { "width": "40rpx", "height": "40rpx", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "display": "flex", "boxSizing": "border-box", "flexShrink": 0, "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "overflow": "hidden", "position": "relative" } }, "fui-radio__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-radio__scale-center": { "": { "transformOrigin": "center center" } }, "fui-radio__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-radio__active-bgcolor": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-radio__color": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-radio__normal-border": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-radio__background": { "": { "!backgroundImage": "none", "!backgroundColor": "#ffffff" } }, "fui-radio__mark-color": { "": { "!borderBottomColor": "#ffffff", "!borderRightColor": "#ffffff" } }, "fui-check__mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "boxSizing": "border-box", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%" } }, "fui-check__mark-circle": { "": { "width": "16rpx", "height": "16rpx", "borderTopLeftRadius": "16rpx", "borderTopRightRadius": "16rpx", "borderBottomRightRadius": "16rpx", "borderBottomLeftRadius": "16rpx" } }, "fui-radio__disabled": { "": { "opacity": 0.6 } } };
+  function _sfc_render$_(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2318,8 +2661,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$10, [["render", _sfc_render$$], ["styles", [_style_0$Z]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio/fui-radio.uvue"]]);
-  const _sfc_main$$ = vue.defineComponent({
+  const __easycom_1$5 = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["styles", [_style_0$Y]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio/fui-radio.uvue"]]);
+  const _sfc_main$_ = vue.defineComponent({
     name: "fui-list-cell",
     emits: ["onclick"],
     props: {
@@ -2424,8 +2767,8 @@
       }
     }
   });
-  const _style_0$Y = { "fui-list__cell": { "": { "position": "relative", "width": "100%", "display": "flex", "flexDirection": "row", "boxSizing": "border-box" } }, "fui-list__cell-inner": { "": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "boxSizing": "border-box" } }, "fui-cell__arrow": { "": { "height": "40rpx", "width": "40rpx", "borderTopWidth": 3, "borderRightWidth": 3, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "transform": "rotate(45deg) scale(0.5)", "borderTopLeftRadius": "4rpx", "borderTopRightRadius": "4rpx", "borderBottomRightRadius": "4rpx", "borderBottomLeftRadius": "4rpx", "flexShrink": 0, "marginLeft": "auto", "boxSizing": "border-box", "transformOrigin": "center center", "marginRight": "-5.8579rpx" } }, "fui-cell__border-top": { "": { "position": "absolute", "top": 0, "height": 0.5, "zIndex": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "pointerEvents": "none" } }, "fui-cell__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-cell__border-color": { "": { "!backgroundColor": "#EEEEEE" } }, "fui-list__cell-background": { "": { "!backgroundColor": "#FFFFFF" } }, "fui-list__cell-highlight": { "": { "!backgroundColor": "rgba(0,0,0,0.2)" } }, "fui-list__cell-padding": { "": { "!paddingTop": "32rpx", "!paddingRight": "32rpx", "!paddingBottom": "32rpx", "!paddingLeft": "32rpx" } }, "fui-list__cell-arrowcolor": { "": { "!borderTopColor": "#B2B2B2", "!borderRightColor": "#B2B2B2", "!borderBottomColor": "#B2B2B2", "!borderLeftColor": "#B2B2B2" } }, "fui-list__cell-bleft": { "": { "!left": "32rpx" } } };
-  function _sfc_render$_(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$X = { "fui-list__cell": { "": { "position": "relative", "width": "100%", "display": "flex", "flexDirection": "row", "boxSizing": "border-box" } }, "fui-list__cell-inner": { "": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "boxSizing": "border-box" } }, "fui-cell__arrow": { "": { "height": "40rpx", "width": "40rpx", "borderTopWidth": 3, "borderRightWidth": 3, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "transform": "rotate(45deg) scale(0.5)", "borderTopLeftRadius": "4rpx", "borderTopRightRadius": "4rpx", "borderBottomRightRadius": "4rpx", "borderBottomLeftRadius": "4rpx", "flexShrink": 0, "marginLeft": "auto", "boxSizing": "border-box", "transformOrigin": "center center", "marginRight": "-5.8579rpx" } }, "fui-cell__border-top": { "": { "position": "absolute", "top": 0, "height": 0.5, "zIndex": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 0", "pointerEvents": "none" } }, "fui-cell__border-bottom": { "": { "position": "absolute", "bottom": 0, "height": 1, "transform": "scaleY(0.5)", "transformOrigin": "0 100%", "zIndex": 1, "pointerEvents": "none" } }, "fui-cell__border-color": { "": { "!backgroundColor": "#EEEEEE" } }, "fui-list__cell-background": { "": { "!backgroundColor": "#FFFFFF" } }, "fui-list__cell-highlight": { "": { "!backgroundColor": "rgba(0,0,0,0.2)" } }, "fui-list__cell-padding": { "": { "!paddingTop": "32rpx", "!paddingRight": "32rpx", "!paddingBottom": "32rpx", "!paddingLeft": "32rpx" } }, "fui-list__cell-arrowcolor": { "": { "!borderTopColor": "#B2B2B2", "!borderRightColor": "#B2B2B2", "!borderBottomColor": "#B2B2B2", "!borderLeftColor": "#B2B2B2" } }, "fui-list__cell-bleft": { "": { "!left": "32rpx" } } };
+  function _sfc_render$Z(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["fui-list__cell", { "fui-list__cell-background": $props.background == "" }]),
       "hover-class": $props.highlight ? "fui-list__cell-highlight" : "",
@@ -2481,8 +2824,8 @@
       )) : vue.createCommentVNode("v-if", true)
     ], 14, ["hover-class"]);
   }
-  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$$, [["render", _sfc_render$_], ["styles", [_style_0$Y]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell.uvue"]]);
-  const _sfc_main$_ = vue.defineComponent({
+  const __easycom_1$4 = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["styles", [_style_0$X]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-list-cell/fui-list-cell.uvue"]]);
+  const _sfc_main$Z = vue.defineComponent({
     name: "fui-label",
     props: {
       //padding值：'20rpx 32rpx'
@@ -2515,8 +2858,8 @@
       }
     }
   });
-  const _style_0$X = { "fui-label__wrap": { "": { "boxSizing": "border-box" } }, "fui-label__full": { "": { "width": "100%" } } };
-  function _sfc_render$Z(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$W = { "fui-label__wrap": { "": { "boxSizing": "border-box" } }, "fui-label__full": { "": { "width": "100%" } } };
+  function _sfc_render$Y(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -2531,8 +2874,8 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$_, [["render", _sfc_render$Z], ["styles", [_style_0$X]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-label/fui-label.uvue"]]);
-  const _sfc_main$Z = vue.defineComponent({
+  const __easycom_2$5 = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["styles", [_style_0$W]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-label/fui-label.uvue"]]);
+  const _sfc_main$Y = vue.defineComponent({
     name: "fui-radio-group",
     emits: ["change", "update:modelValue"],
     props: {
@@ -2616,7 +2959,7 @@
       }
     }
   });
-  function _sfc_render$Y(_ctx, _cache, $props, $setup, $data, $options) {
+  function _sfc_render$X(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_radio_group = vue.resolveComponent("radio-group");
     return vue.openBlock(), vue.createBlock(_component_radio_group, { name: $props.name }, {
       default: vue.withCtx(() => [
@@ -2626,7 +2969,7 @@
       /* FORWARDED */
     }, 8, ["name"]);
   }
-  const __easycom_3$5 = /* @__PURE__ */ _export_sfc(_sfc_main$Z, [["render", _sfc_render$Y], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.uvue"]]);
+  const __easycom_3$4 = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-radio-group/fui-radio-group.uvue"]]);
   class DayutsConfig extends UTS.UTSType {
     static get$UTSMetadata$() {
       return {
@@ -3781,7 +4124,7 @@
       delete this.__props__;
     }
   };
-  const _sfc_main$Y = /* @__PURE__ */ vue.defineComponent({
+  const _sfc_main$X = /* @__PURE__ */ vue.defineComponent({
     __name: "message",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -3908,17 +4251,17 @@
   const _imports_0$8 = "/static/vedio.png";
   const _imports_3$2 = "/static/people.png";
   const _imports_4$1 = "/static/mobile.png";
-  const _style_0$W = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "data-strip": { ".container ": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "backgroundColor": "#ffffff", "paddingRight": "20rpx" } }, "rili": { ".container .data-strip ": { "flex": 3, "height": "95rpx" } }, "down": { ".container .data-strip ": { "width": "32rpx", "height": "32rpx" }, ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "width": "140rpx" } }, "notice": { ".container .content-box .sub-nav .select ": { "width": "48rpx", "height": "48rpx" } }, "tab-content": { ".container .content-box ": { "width": "100%", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "item-content": { ".container .content-box .tab-content ": { "width": "100%", "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginTop": "30rpx" } }, "title-box": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "30rpx" } }, "title": { ".container .content-box .tab-content .item-content .title-box ": { "fontSize": "30rpx", "color": "#333333", "fontWeight": "bold" } }, "more": { ".container .content-box .tab-content .item-content .title-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-detail": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { ".container .content-box .tab-content .item-content .item-detail ": { "display": "flex", "flexDirection": "row" } }, "device-img": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "width": "200rpx", "height": "100rpx", "marginRight": "20rpx" } }, "item-info": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "space-between" } }, "item-icon": { ".container .content-box .tab-content .item-content .item-detail ": { "width": "50rpx", "height": "50rpx" } }, "calendar-box": { ".container ": { "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
-  function _sfc_render$X(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_date_strip = resolveEasycom(vue.resolveDynamicComponent("l-date-strip"), __easycom_0$8);
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+  const _style_0$V = { "container": { "": { "width": "100%", "height": "100%", "position": "relative", "backgroundColor": "#f3f3f3" } }, "data-strip": { ".container ": { "width": "100%", "display": "flex", "flexDirection": "row", "alignItems": "center", "backgroundColor": "#ffffff", "paddingRight": "20rpx" } }, "rili": { ".container .data-strip ": { "flex": 3, "height": "95rpx" } }, "down": { ".container .data-strip ": { "width": "32rpx", "height": "32rpx" }, ".container .content-box .sub-nav .today ": { "width": "25rpx", "height": "25rpx" } }, "content-box": { ".container ": { "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "sub-nav": { ".container .content-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "today": { ".container .content-box .sub-nav ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "width": "140rpx" } }, "notice": { ".container .content-box .sub-nav .select ": { "width": "48rpx", "height": "48rpx" } }, "tab-content": { ".container .content-box ": { "width": "100%", "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "item-content": { ".container .content-box .tab-content ": { "width": "100%", "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginTop": "30rpx" } }, "title-box": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "marginBottom": "30rpx" } }, "title": { ".container .content-box .tab-content .item-content .title-box ": { "fontSize": "30rpx", "color": "#333333", "fontWeight": "bold" } }, "more": { ".container .content-box .tab-content .item-content .title-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-detail": { ".container .content-box .tab-content .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "item-left": { ".container .content-box .tab-content .item-content .item-detail ": { "display": "flex", "flexDirection": "row" } }, "device-img": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "width": "200rpx", "height": "100rpx", "marginRight": "20rpx" } }, "item-info": { ".container .content-box .tab-content .item-content .item-detail .item-left ": { "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "space-between" } }, "item-icon": { ".container .content-box .tab-content .item-content .item-detail ": { "width": "50rpx", "height": "50rpx" } }, "calendar-box": { ".container ": { "width": "100%", "backgroundColor": "#ffffff" } }, "btn-chanel-box": { ".container .calendar-box ": { "position": "absolute", "width": "85%", "bottom": "45rpx", "left": "60rpx", "borderTopLeftRadius": "50rpx", "borderTopRightRadius": "50rpx", "borderBottomRightRadius": "50rpx", "borderBottomLeftRadius": "50rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
+  function _sfc_render$W(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_l_date_strip = resolveEasycom(vue.resolveDynamicComponent("l-date-strip"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     const _component_l_daily_punch = resolveEasycom(vue.resolveDynamicComponent("l-daily-punch"), __easycom_0$6);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_1$6);
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_1$7);
     const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_1$5);
     const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_1$4);
     const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$5);
-    const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$5);
+    const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "data-strip" }, [
         vue.createElementVNode("view", { class: "rili" }, [
@@ -4116,8 +4459,8 @@
       }, 8, ["visible"])
     ]);
   }
-  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$Y, [["render", _sfc_render$X], ["styles", [_style_0$W]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
-  const _sfc_main$X = /* @__PURE__ */ vue.defineComponent({
+  const PagesMessageMessage = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["styles", [_style_0$V]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/message/message.uvue"]]);
+  const _sfc_main$W = /* @__PURE__ */ vue.defineComponent({
     __name: "mine",
     setup(__props, _a) {
       var __expose = _a.expose;
@@ -4184,8 +4527,8 @@
   const _imports_9$1 = "/static/mine/advice.png";
   const _imports_10$1 = "/static/mine/setting.png";
   const _imports_11$1 = "/static/mine/about.png";
-  const _style_0$V = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
-  function _sfc_render$W(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$U = { "container": { "": { "width": "100%", "height": "100%", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "display": "flex", "flexDirection": "column", "backgroundColor": "#f1f1f1" } }, "files": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "width": "100%", "height": "100rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "70rpx", "paddingRight": "80rpx", "paddingBottom": "70rpx", "paddingLeft": "80rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "file": { ".container .files ": { "display": "flex", "flexDirection": "column", "alignItems": "center" } }, "fileIcon": { ".container .files .file ": { "width": "48rpx", "height": "48rpx", "marginBottom": "15rpx" } }, "file-text": { ".container .files .file ": { "fontSize": "20rpx", "color": "#333333", "fontWeight": "bold" } }, "tools-list": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "15rpx", "borderTopRightRadius": "15rpx", "borderBottomRightRadius": "15rpx", "borderBottomLeftRadius": "15rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "item": { ".container .tools-list ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "height": "100rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "info": { ".container .tools-list .item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "marginLeft": "40rpx" } }, "item-icon": { ".container .tools-list .item .info ": { "width": "48rpx", "height": "48rpx" } }, "item-text": { ".container .tools-list .item .info ": { "fontSize": "25rpx", "color": "#333333", "marginLeft": "20rpx" } }, "right-icon": { ".container .tools-list .item ": { "width": "35rpx", "height": "35rpx" } }, "no-bottom": { ".container .tools-list ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
+  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "files" }, [
         vue.createElementVNode("view", {
@@ -4380,8 +4723,8 @@
       ])
     ]);
   }
-  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$X, [["render", _sfc_render$W], ["styles", [_style_0$V]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
-  const _sfc_main$W = vue.defineComponent({
+  const PagesMineMine = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["styles", [_style_0$U]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/pages/mine/mine.uvue"]]);
+  const _sfc_main$V = vue.defineComponent({
     name: "fui-switch",
     emits: ["change", "update:checked"],
     props: {
@@ -4565,8 +4908,8 @@
       }
     }
   });
-  const _style_0$U = { "fui-switch__input": { "": { "flexShrink": 0 } }, "fui-switch__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-switch__scale-center": { "": { "transformOrigin": "center center" } }, "fui-switch__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-switch__size-switch": { "": { "width": 52, "height": 32 } }, "fui-switch__size-checkbox": { "": { "width": "40rpx", "height": "40rpx" } }, "fui-switch__checkbox-self": { "": { "width": "40rpx", "height": "40rpx", "borderTopLeftRadius": 40, "borderTopRightRadius": 40, "borderBottomRightRadius": 40, "borderBottomLeftRadius": 40, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-switch__input-def": { "": { "position": "relative", "width": 52, "height": 32, "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "boxSizing": "border-box" } }, "fui-switch__normal-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#dfdfdf" } }, "fui-switch__checked-color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-switch__normal-bcolor": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-switch__input-before": { "": { "position": "absolute", "top": 0, "left": 0, "width": 50, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "transitionProperty": "transform", "transitionDuration": "0.3s" } }, "fui-switch__before-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input-after": { "": { "position": "absolute", "top": 0, "left": 0, "width": 30, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "boxShadow": "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty": "transform", "transitionDuration": "0.3s", "display": "flex", "alignItems": "center", "justifyContent": "center", "transform": "translateX(0)" } }, "fui-switch__after-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input--before": { "": { "transform": "scale(0)" } }, "fui-switch__input--after": { "": { "transform": "translateX(20px)" } }, "fui-switch__check-mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%", "boxSizing": "border-box" } }, "fui-switch__circle-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__checkbox-disabled": { "": { "opacity": 0.6 } }, "@TRANSITION": { "fui-switch__input-before": { "property": "transform", "duration": "0.3s" }, "fui-switch__input-after": { "property": "transform", "duration": "0.3s" } } };
-  function _sfc_render$V(_ctx, _cache, $props, $setup, $data, $options) {
+  const _style_0$T = { "fui-switch__input": { "": { "flexShrink": 0 } }, "fui-switch__scale-left": { "": { "transformOrigin": "0 center" } }, "fui-switch__scale-center": { "": { "transformOrigin": "center center" } }, "fui-switch__scale-right": { "": { "transformOrigin": "100% center" } }, "fui-switch__size-switch": { "": { "width": 52, "height": 32 } }, "fui-switch__size-checkbox": { "": { "width": "40rpx", "height": "40rpx" } }, "fui-switch__checkbox-self": { "": { "width": "40rpx", "height": "40rpx", "borderTopLeftRadius": 40, "borderTopRightRadius": 40, "borderBottomRightRadius": 40, "borderBottomLeftRadius": 40, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "position": "relative", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-switch__input-def": { "": { "position": "relative", "width": 52, "height": 32, "borderTopWidth": 1, "borderRightWidth": 1, "borderBottomWidth": 1, "borderLeftWidth": 1, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#CCCCCC", "borderRightColor": "#CCCCCC", "borderBottomColor": "#CCCCCC", "borderLeftColor": "#CCCCCC", "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "boxSizing": "border-box" } }, "fui-switch__normal-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#dfdfdf" } }, "fui-switch__checked-color": { "": { "!backgroundImage": "none", "!backgroundColor": "#465CFF", "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF" } }, "fui-switch__normal-bcolor": { "": { "!borderTopColor": "#CCCCCC", "!borderRightColor": "#CCCCCC", "!borderBottomColor": "#CCCCCC", "!borderLeftColor": "#CCCCCC" } }, "fui-switch__input-before": { "": { "position": "absolute", "top": 0, "left": 0, "width": 50, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "transitionProperty": "transform", "transitionDuration": "0.3s" } }, "fui-switch__before-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input-after": { "": { "position": "absolute", "top": 0, "left": 0, "width": 30, "height": 30, "borderTopLeftRadius": 15, "borderTopRightRadius": 15, "borderBottomRightRadius": 15, "borderBottomLeftRadius": 15, "boxShadow": "0 0 6rpx rgba(0, 0, 0, 0.4)", "transitionProperty": "transform", "transitionDuration": "0.3s", "display": "flex", "alignItems": "center", "justifyContent": "center", "transform": "translateX(0)" } }, "fui-switch__after-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__input--before": { "": { "transform": "scale(0)" } }, "fui-switch__input--after": { "": { "transform": "translateX(20px)" } }, "fui-switch__check-mark": { "": { "width": "20rpx", "height": "40rpx", "borderBottomStyle": "solid", "borderBottomWidth": 3, "borderBottomColor": "#FFFFFF", "borderRightStyle": "solid", "borderRightWidth": 3, "borderRightColor": "#FFFFFF", "transform": "rotate(45deg) scale(0.5)", "transformOrigin": "54% 48%", "boxSizing": "border-box" } }, "fui-switch__circle-bg": { "": { "!backgroundImage": "none", "!backgroundColor": "#FFFFFF" } }, "fui-switch__checkbox-disabled": { "": { "opacity": 0.6 } }, "@TRANSITION": { "fui-switch__input-before": { "property": "transform", "duration": "0.3s" }, "fui-switch__input-after": { "property": "transform", "duration": "0.3s" } } };
+  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -4637,342 +4980,7 @@
       /* CLASS, STYLE */
     );
   }
-  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$W, [["render", _sfc_render$V], ["styles", [_style_0$U]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
-  const _sfc_main$V = vue.defineComponent({
-    name: "fui-button",
-    emits: ["onclick"],
-    props: {
-      type: {
-        type: String,
-        default: "primary"
-      },
-      background: {
-        type: String,
-        default: ""
-      },
-      text: {
-        type: String,
-        default: ""
-      },
-      color: {
-        type: String,
-        default: ""
-      },
-      disabledBackground: {
-        type: String,
-        default: ""
-      },
-      disabledColor: {
-        type: String,
-        default: ""
-      },
-      borderWidth: {
-        type: String,
-        default: "0.5px"
-      },
-      borderColor: {
-        type: String,
-        default: ""
-      },
-      btnSize: {
-        type: String,
-        default: ""
-      },
-      width: {
-        type: String,
-        default: "100%"
-      },
-      height: {
-        type: String,
-        default: ""
-      },
-      size: {
-        type: Number,
-        default: 0
-      },
-      bold: {
-        type: Boolean,
-        default: false
-      },
-      margin: {
-        type: String,
-        default: ""
-      },
-      radius: {
-        type: String,
-        default: ""
-      },
-      plain: {
-        type: Boolean,
-        default: false
-      },
-      highlight: {
-        type: Boolean,
-        default: true
-      },
-      disabled: {
-        type: Boolean,
-        default: false
-      },
-      loading: {
-        type: Boolean,
-        default: false
-      },
-      iconColor: {
-        type: String,
-        default: "#B2B2B2"
-      },
-      activeColor: {
-        type: String,
-        default: "#FFFFFF"
-      },
-      //V1.2.6+
-      formType: {
-        type: String,
-        default: ""
-      }
-    },
-    computed: {
-      getStyl() {
-        const mp = /* @__PURE__ */ new Map();
-        mp.set("border-color", this.iconColor);
-        return mp;
-      },
-      getBackground() {
-        let color = this.background;
-        if (this.disabled && this.disabledBackground != "") {
-          color = this.disabledBackground;
-        }
-        color = this.type == "link" || this.plain ? "rgba(0,0,0,0)" : color;
-        return color;
-      },
-      getBorderColor() {
-        let color = this.borderColor;
-        if (color == "") {
-          color = this.disabled && this.disabledBackground != "" ? this.disabledBackground : this.background;
-        }
-        color = this.type == "link" ? "rgba(0,0,0,0)" : color;
-        return color;
-      },
-      getColor() {
-        let color;
-        if (this.color != "") {
-          color = this.disabled && this.disabledBackground != "" ? this.disabledColor : this.color;
-        } else {
-          if (this.disabled && this.disabledBackground != "") {
-            color = this.disabledColor == "" ? "#FFFFFF" : this.disabledColor;
-          } else {
-            color = this.type == "gray" ? "#465CFF" : "#FFFFFF";
-          }
-        }
-        return color;
-      },
-      getSize() {
-        let size = this.size;
-        if (this.btnSize != "") {
-          size = size == 0 ? 32 : size;
-          if (this.btnSize == "small") {
-            size = size > 28 ? 28 : size;
-          } else if (this.btnSize == "mini") {
-            size = size > 28 ? 24 : size;
-          }
-        }
-        return "".concat(size, "rpx");
-      },
-      getWidth() {
-        let width = this.width;
-        if (this.btnSize != "") {
-          width = new UTSJSONObject({
-            medium: "400rpx",
-            small: "200rpx",
-            mini: "120rpx"
-          })[this.btnSize];
-        }
-        return width;
-      },
-      getHeight() {
-        let height = this.height;
-        if (this.btnSize != "") {
-          height = new UTSJSONObject({
-            medium: "84rpx",
-            small: "72rpx",
-            mini: "64rpx"
-          })[this.btnSize];
-        }
-        return height;
-      }
-    },
-    watch: {
-      loading(newValue) {
-        if (newValue) {
-          this.$nextTick(() => {
-            setTimeout(() => {
-              this.startSpin();
-            }, 50);
-          });
-        } else {
-          this.endSpin();
-        }
-      }
-    },
-    data() {
-      return {
-        times: 0,
-        isSpin: false,
-        element: null,
-        hoverEle: null,
-        fuiForm: null
-      };
-    },
-    created() {
-      this.getParent("fui-form");
-    },
-    mounted() {
-      this.$nextTick(() => {
-        setTimeout(() => {
-          if (this.loading)
-            this.startSpin();
-        }, 200);
-      });
-    },
-    beforeUnmount() {
-      this.isSpin = false;
-      this.element = null;
-      this.hoverEle = null;
-    },
-    methods: {
-      handleStart() {
-        this.switchHover(true);
-      },
-      handleTap(e2) {
-        if (this.disabled)
-          return null;
-        this.$emit("onclick", e2);
-        if (this.formType != "" && this.fuiForm != null) {
-          const form = this.fuiForm;
-          form.$callMethod("buttonEvent", this.formType);
-        }
-      },
-      handleEnd() {
-        this.switchHover(false);
-      },
-      switchHover(show) {
-        if (!this.highlight || this.disabled)
-          return null;
-        if (this.hoverEle == null) {
-          this.hoverEle = this.$refs["fui_button_hover"];
-        }
-        this.hoverEle.style.setProperty("visibility", show ? "visible" : "hidden");
-      },
-      startSpin() {
-        if (this.element != null && this.isSpin)
-          return null;
-        if (this.element == null) {
-          this.element = this.$refs["fui_button_loading"];
-        }
-        this.times = this.times + 1;
-        this.element.style.setProperty("transform", "rotate(".concat(this.times * 360, "deg)"));
-        this.element.style.setProperty("transition-duration", "600ms");
-        this.isSpin = true;
-      },
-      endSpin() {
-        this.isSpin = false;
-        this.times = 0;
-        this.element.style.setProperty("transform", "rotate(".concat(this.times * 360, "deg)"));
-        this.element.style.setProperty("transition-duration", "0s");
-        this.element = null;
-      },
-      onEnd() {
-        if (this.isSpin && this.loading) {
-          this.times = this.times + 1;
-          this.element.style.setProperty("transform", "rotate(".concat(this.times * 360, "deg)"));
-        }
-      },
-      getParent(name2) {
-        if (this.$parent == null)
-          return false;
-        let parent = this.$parent;
-        let parentName = parent.$options["name"];
-        while (parentName != name2) {
-          if (parent.$parent == null)
-            return false;
-          parent = parent.$parent;
-          if (parent.$options["name"] == "")
-            return false;
-          parentName = parent.$options["name"];
-        }
-        this.fuiForm = parent;
-        return true;
-      }
-    }
-  });
-  const _style_0$T = { "fui-button__wrap": { "": { "position": "relative", "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "center", "boxSizing": "border-box", "overflow": "hidden" } }, "fui-button__flex-1": { "": { "width": "100%" } }, "fui-button__opacity": { "": { "opacity": 0.5 } }, "fui-button__hover": { "": { "position": "absolute", "left": 0, "right": 0, "top": 0, "bottom": 0, "backgroundColor": "rgba(0,0,0,0.2)", "zIndex": 2, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "visibility": "hidden", "pointerEvents": "none" } }, "fui-button__spin": { "": { "width": "32rpx", "height": "32rpx", "borderTopWidth": 2, "borderRightWidth": 2, "borderBottomWidth": 2, "borderLeftWidth": 2, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopLeftRadius": 100, "borderTopRightRadius": 100, "borderBottomRightRadius": 100, "borderBottomLeftRadius": 100, "transitionDuration": "600ms", "transitionProperty": "transform", "transitionTimingFunction": "linear", "transform": "rotate(0deg)", "boxSizing": "border-box", "marginRight": "8rpx", "position": "relative" } }, "fui-button__spin-dot": { "": { "position": "absolute", "width": "12rpx", "height": "12rpx", "borderTopLeftRadius": "8rpx", "borderTopRightRadius": "8rpx", "borderBottomRightRadius": "8rpx", "borderBottomLeftRadius": "8rpx", "left": 0, "top": 0 } }, "fui-button__text": { "": { "textAlign": "center" } }, "fui-text__bold": { "": { "fontWeight": "bold" } }, "fui-button__link": { "": { "!borderTopColor": "rgba(0,0,0,0)", "!borderRightColor": "rgba(0,0,0,0)", "!borderBottomColor": "rgba(0,0,0,0)", "!borderLeftColor": "rgba(0,0,0,0)", "!backgroundColor": "rgba(0,0,0,0)" } }, "fui-button__primary": { "": { "!borderTopColor": "#465CFF", "!borderRightColor": "#465CFF", "!borderBottomColor": "#465CFF", "!borderLeftColor": "#465CFF", "!backgroundImage": "none", "!backgroundColor": "#465CFF" } }, "fui-button__success": { "": { "!borderTopColor": "#09BE4F", "!borderRightColor": "#09BE4F", "!borderBottomColor": "#09BE4F", "!borderLeftColor": "#09BE4F", "!backgroundImage": "none", "!backgroundColor": "#09BE4F" } }, "fui-button__warning": { "": { "!borderTopColor": "#FFB703", "!borderRightColor": "#FFB703", "!borderBottomColor": "#FFB703", "!borderLeftColor": "#FFB703", "!backgroundImage": "none", "!backgroundColor": "#FFB703" } }, "fui-button__danger": { "": { "!borderTopColor": "#FF2B2B", "!borderRightColor": "#FF2B2B", "!borderBottomColor": "#FF2B2B", "!borderLeftColor": "#FF2B2B", "!backgroundImage": "none", "!backgroundColor": "#FF2B2B" } }, "fui-button__purple": { "": { "!borderTopColor": "#6831FF", "!borderRightColor": "#6831FF", "!borderBottomColor": "#6831FF", "!borderLeftColor": "#6831FF", "!backgroundImage": "none", "!backgroundColor": "#6831FF" } }, "fui-button__gray": { "": { "!borderTopColor": "#F8F8F8", "!borderRightColor": "#F8F8F8", "!borderBottomColor": "#F8F8F8", "!borderLeftColor": "#F8F8F8", "!backgroundImage": "none", "!backgroundColor": "#F8F8F8" } }, "fui-btn__gray-color": { "": { "!color": "#465CFF" } }, "fui-button__height": { "": { "!height": "96rpx" } }, "fui-button__height-text": { "": { "!height": "96rpx", "!lineHeight": "96rpx" } }, "fui-button__size": { "": { "!fontSize": "32rpx" } }, "fui-button__radius": { "": { "!borderTopLeftRadius": "16rpx", "!borderTopRightRadius": "16rpx", "!borderBottomRightRadius": "16rpx", "!borderBottomLeftRadius": "16rpx" } }, "@TRANSITION": { "fui-button__spin": { "duration": "600ms", "property": "transform", "timingFunction": "linear" } } };
-  function _sfc_render$U(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock(
-      "view",
-      {
-        class: vue.normalizeClass(["fui-button__wrap", [$options.getWidth == "" || $options.getWidth == "100%" ? "fui-button__flex-1" : "", $props.disabled && $props.disabledBackground == "" ? "fui-button__opacity" : "", $props.background == "" && $props.disabledBackground == "" && !$props.plain ? "fui-button__".concat($props.type) : "", $props.height == "" && $props.btnSize == "" ? "fui-button__height" : "", $props.radius == "" ? "fui-button__radius" : "", $props.highlight && !$props.disabled ? "fui-button__active" : ""]]),
-        style: vue.normalizeStyle({ width: $options.getWidth, height: $options.getHeight, margin: $props.margin, borderRadius: $props.radius, background: $options.getBackground, border: "".concat($props.borderColor == "" ? "0px" : $props.borderWidth, " solid"), borderColor: $options.getBorderColor }),
-        onTouchstart: _cache[1] || (_cache[1] = (...args) => $options.handleStart && $options.handleStart(...args)),
-        onTouchend: _cache[2] || (_cache[2] = (...args) => $options.handleEnd && $options.handleEnd(...args)),
-        onTouchcancel: _cache[3] || (_cache[3] = (...args) => $options.handleEnd && $options.handleEnd(...args)),
-        onClick: _cache[4] || (_cache[4] = (...args) => $options.handleTap && $options.handleTap(...args))
-      },
-      [
-        $props.loading ? (vue.openBlock(), vue.createElementBlock(
-          "view",
-          {
-            key: 0,
-            ref: "fui_button_loading",
-            onTransitionend: _cache[0] || (_cache[0] = (...args) => $options.onEnd && $options.onEnd(...args)),
-            class: "fui-button__spin",
-            style: vue.normalizeStyle($options.getStyl)
-          },
-          [
-            vue.createElementVNode(
-              "view",
-              {
-                class: "fui-button__spin-dot",
-                style: vue.normalizeStyle({ background: $props.activeColor })
-              },
-              null,
-              4
-              /* STYLE */
-            )
-          ],
-          36
-          /* STYLE, NEED_HYDRATION */
-        )) : vue.createCommentVNode("v-if", true),
-        $props.text ? (vue.openBlock(), vue.createElementBlock(
-          "text",
-          {
-            key: 1,
-            class: vue.normalizeClass(["fui-button__text", { "fui-btn__gray-color": $props.background == "" && $props.disabledBackground == "" && !$props.plain && $props.type == "gray" && $props.color == "#fff", "fui-text__bold": $props.bold, "fui-button__size": $props.size == 0 && $props.btnSize == "", "fui-button__height-text": $props.height == "" && $props.btnSize == "" }]),
-            style: vue.normalizeStyle({ fontSize: $options.getSize, color: $options.getColor, height: $options.getHeight, lineHeight: $options.getHeight })
-          },
-          vue.toDisplayString($props.text),
-          7
-          /* TEXT, CLASS, STYLE */
-        )) : vue.createCommentVNode("v-if", true),
-        vue.renderSlot(_ctx.$slots, "default"),
-        $props.highlight ? (vue.openBlock(), vue.createElementBlock(
-          "view",
-          {
-            key: 2,
-            ref: "fui_button_hover",
-            class: vue.normalizeClass(["fui-button__hover", { "fui-button__radius": $props.radius == "" }]),
-            style: vue.normalizeStyle({ borderRadius: $props.radius })
-          },
-          null,
-          6
-          /* CLASS, STYLE */
-        )) : vue.createCommentVNode("v-if", true)
-      ],
-      38
-      /* CLASS, STYLE, NEED_HYDRATION */
-    );
-  }
-  const __easycom_3$4 = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["styles", [_style_0$T]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-button/fui-button.uvue"]]);
+  const __easycom_0$5 = /* @__PURE__ */ _export_sfc(_sfc_main$V, [["render", _sfc_render$U], ["styles", [_style_0$T]], ["__file", "/Users/xyhc/Documents/veepai_uniappx/uni_modules/firstui-unix/components/fui-switch/fui-switch.uvue"]]);
   const _sfc_main$U = /* @__PURE__ */ vue.defineComponent({
     __name: "userInfo",
     setup(__props, _a) {
@@ -5065,7 +5073,7 @@
   const _style_0$S = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#f3f3f3", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "title": { ".container ": { "paddingTop": "50rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": "20rpx" } }, "title-text": { ".container .title ": { "fontSize": "30rpx", "color": "#333333" } }, "info": { ".container ": { "backgroundImage": "none", "backgroundColor": "#ffffff", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx" } }, "info-item": { ".container .info ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "icon": { ".container .info .info-item ": { "width": "30rpx", "height": "30rpx" } }, "switch-state": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "phone": { ".container .info .info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "alignItems": "center" } }, "nobottom": { ".container .info ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "200rpx" } } };
   function _sfc_render$T(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_switch = resolveEasycom(vue.resolveDynamicComponent("fui-switch"), __easycom_0$5);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "title" }, [
         vue.createElementVNode("text", { class: "title-text" }, "个人信息")
@@ -5170,7 +5178,7 @@
   const _imports_0$5 = "/static/error_big.png";
   const _style_0$R = { "container": { "": { "height": "100%", "backgroundImage": "none", "backgroundColor": "#F5F5F5", "display": "flex", "flexDirection": "column", "alignItems": "center", "paddingTop": "100rpx", "paddingRight": "100rpx", "paddingBottom": "100rpx", "paddingLeft": "100rpx" } }, "content": { ".container ": { "marginTop": "50rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "content-word": { ".container .content ": { "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0 } }, "close": { ".container ": { "width": "120rpx", "height": "120rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "width": "100%" } }, "btn": { ".container .btn-box ": { "width": "45%" } } };
   function _sfc_render$S(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("image", {
         src: _imports_0$5,
@@ -5744,7 +5752,7 @@
   function _sfc_render$Q(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_1$7);
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createVNode(_component_fui_input, {
@@ -5872,7 +5880,7 @@
   const _style_0$O = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "50rpx", "paddingRight": "20rpx", "paddingBottom": "50rpx", "paddingLeft": "20rpx" } }, "fui-input__label-size": { ".container ": { "!fontSize": "26rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "tips": { ".container ": { "marginTop": "40rpx", "marginRight": 0, "marginBottom": "40rpx", "marginLeft": 0 } }, "tips-word": { ".container .tips ": { "fontSize": "30rpx", "color": "#999999" } }, "error-msg": { ".container ": { "marginTop": "10rpx", "color": "#e64340", "fontSize": "24rpx" } } };
   function _sfc_render$P(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createVNode(_component_fui_input, {
@@ -6222,13 +6230,13 @@
   const _style_0$M = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "30rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": "20rpx" } }, "device-total": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between" } }, "device-total-title": { ".container .device-total ": { "display": "flex", "flexDirection": "row", "justifyContent": "center", "alignItems": "center" } }, "device-total-title-color": { ".container .device-total .device-total-title ": { "color": "#999999" } }, "device-info-box": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "30rpx", "paddingRight": "40rpx", "paddingBottom": "30rpx", "paddingLeft": "40rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "20rpx", "marginLeft": 0, "display": "flex", "flexDirection": "column" } }, "device-title": { ".container .device-info-box ": { "fontSize": "35rpx" } }, "device-info-item": { ".container .device-info-box ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "marginTop": "20rpx" } }, "iccid-info": { ".container .device-info-box .device-info-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "add-style": { ".container .device-info-box ": { "paddingBottom": "60rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#999999", "marginBottom": "60rpx" } }, "progess": { ".container .device-info-box ": { "marginTop": "10rpx", "marginRight": 0, "marginBottom": "10rpx", "marginLeft": 0 } }, "btn-box": { ".container ": { "marginTop": "60rpx" } }, "popup-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": 0, "paddingRight": "40rpx", "paddingBottom": 0, "paddingLeft": "40rpx" } }, "fui-scroll__wrap": { ".container ": { "width": "100%", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "position": "relative" } }, "fui-sub__title": { ".container ": { "textAlign": "center", "fontSize": "24rpx", "color": "#7F7F7F", "transform": "scale(0.9)" } }, "fui-scroll__view": { ".container ": { "width": "100%", "height": "50%" } }, "fui-list__cell": { ".container ": { "flex": 1, "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } } };
   function _sfc_render$N(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_1$7);
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     const _component_l_progress = resolveEasycom(vue.resolveDynamicComponent("l-progress"), __easycom_2$3);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_1$5);
     const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_1$4);
     const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$5);
-    const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$5);
+    const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$4);
     const _component_fui_bottom_popup = resolveEasycom(vue.resolveDynamicComponent("fui-bottom-popup"), __easycom_1$6);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "device-total" }, [
@@ -8466,7 +8474,7 @@
   function _sfc_render$L(_ctx, _cache, $props, $setup, $data, $options) {
     var _a;
     const _component_l_loading = resolveEasycom(vue.resolveDynamicComponent("l-loading"), __easycom_0$4);
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     return vue.openBlock(), vue.createElementBlock("view", {
       class: vue.normalizeClass(["l-button", $setup.classes]),
       ref: "rootRef",
@@ -8693,7 +8701,7 @@
   const _style_0$J = { "l-search": { "": { "width": "100%", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "l-search__content": { "": { "flex": 1, "alignItems": "center", "flexDirection": "row", "boxSizing": "border-box", "height": "80rpx", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "rgba(0,0,0,0.04)", "borderRightColor": "rgba(0,0,0,0.04)", "borderBottomColor": "rgba(0,0,0,0.04)", "borderLeftColor": "rgba(0,0,0,0.04)", "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.04)", "paddingTop": "16rpx", "paddingRight": "24rpx", "paddingBottom": "16rpx", "paddingLeft": "24rpx" } }, "l-search__content--focused": { "": { "borderTopColor": "rgba(0,0,0,0.04)", "borderRightColor": "rgba(0,0,0,0.04)", "borderBottomColor": "rgba(0,0,0,0.04)", "borderLeftColor": "rgba(0,0,0,0.04)" } }, "l-search__content--round": { "": { "borderTopLeftRadius": 99, "borderTopRightRadius": 99, "borderBottomRightRadius": 99, "borderBottomLeftRadius": 99 } }, "l-search__content--square": { "": { "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx" } }, "l-search__keyword": { "": { "flex": 1, "color": "rgba(0,0,0,0.88)", "fontSize": 16, "paddingLeft": "10rpx" } }, "l-search__placeholder": { "": { "color": "rgba(0,0,0,0.45)" } }, "l-search__placeholder--center": { "": { "textAlign": "center" } }, "l-search__icon": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-search__clear": { "": { "position": "relative", "marginLeft": 10 } }, "l-search__clear-icon": { "": { "color": "rgba(0,0,0,0.25)" } }, "l-search__clear--right": { "": { "marginRight": 10 } }, "l-search__action": { "": { "marginLeft": "30rpx", "fontSize": 16, "color": "#3283ff" } } };
   function _sfc_render$K(_ctx, _cache, $props, $setup, $data, $options) {
     var _a;
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -9613,7 +9621,7 @@
   function _sfc_render$G(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_button = resolveEasycom(vue.resolveDynamicComponent("l-button"), __easycom_7);
     const _component_l_search = resolveEasycom(vue.resolveDynamicComponent("l-search"), __easycom_1$3);
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     const _component_l_tab_panel = resolveEasycom(vue.resolveDynamicComponent("l-tab-panel"), __easycom_4$3);
     const _component_l_tabs = resolveEasycom(vue.resolveDynamicComponent("l-tabs"), __easycom_5$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -10560,7 +10568,7 @@
   function _sfc_render$B(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_1$7);
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     const _component_fui_checkbox = resolveEasycom(vue.resolveDynamicComponent("fui-checkbox"), __easycom_3$3);
     const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$5);
     const _component_fui_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("fui-checkbox-group"), __easycom_5$1);
@@ -11164,7 +11172,7 @@
   const _style_0$y = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#f5f5f5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .content ": { "display": "flex", "flexDirection": "row" } }, "unread": { ".container .content .item ": { "width": "20rpx", "height": "20rpx", "marginRight": "10rpx" } }, "item-content": { ".container .content .item ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1", "paddingBottom": "20rpx", "marginBottom": "20rpx", "flex": 1 } }, "item-content-bottom": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "tag-time": { ".container .content .item .item-content ": { "display": "flex", "flexDirection": "row", "alignItems": "flex-end", "justifyContent": "space-between", "marginTop": "10rpx" } }, "fui-tag__wrap": { ".container .content .item .item-content .tag-time ": { "!width": "70rpx", "!height": "40rpx", "!paddingTop": "5rpx", "!paddingRight": "10rpx", "!paddingBottom": "5rpx", "!paddingLeft": "10rpx", "!marginBottom": 0 } }, "fui-tag__text": { ".container .content .item .item-content .tag-time .fui-tag__wrap ": { "!fontSize": "22rpx" } } };
   function _sfc_render$y(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_fui_tag = resolveEasycom(vue.resolveDynamicComponent("fui-tag"), __easycom_0$3);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         (vue.openBlock(true), vue.createElementBlock(
@@ -11393,7 +11401,7 @@
   });
   const _style_0$x = { "container": { "": { "width": "100%", "height": "100%", "backgroundColor": "#F5F5F5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "l-tabs": { ".container ": { "!backgroundColor": "rgba(0,0,0,0)" } }, "list-item": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "marginTop": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "title-state": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "date-price": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "device-type": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } }, "title-style": { ".container .list-item .title-state ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .date-price ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" }, ".container .list-item .device-type ": { "fontSize": "30rpx", "color": "#000000", "fontWeight": "bold" } }, "state-style": { ".container .list-item .title-state ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .date-price ": { "fontSize": "24rpx", "color": "#FF5722" }, ".container .list-item .device-type ": { "fontSize": "24rpx", "color": "#FF5722" } }, "price": { ".container .list-item .date-price ": { "fontSize": "38rpx" } }, "btn": { ".container .list-item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-end", "paddingTop": "10rpx", "paddingRight": 0, "paddingBottom": "10rpx", "paddingLeft": 0 } } };
   function _sfc_render$x(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     const _component_l_tab_panel = resolveEasycom(vue.resolveDynamicComponent("l-tab-panel"), __easycom_4$3);
     const _component_l_tabs = resolveEasycom(vue.resolveDynamicComponent("l-tabs"), __easycom_5$2);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -15631,7 +15639,7 @@
   const _style_0$u = { "l-upload": { "": { "flex": 1, "position": "relative", "flexDirection": "row", "flexWrap": "wrap" } }, "l-upload__item": { "": { "position": "relative", "display": "flex", "width": 80, "height": 80, "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "overflow": "hidden", "alignItems": "center", "justifyContent": "center" } }, "l-upload__item--add": { "": { "backgroundImage": "none", "backgroundColor": "#f3f3f3" } }, "l-upload__item--disabled": { "": { "opacity": 0.5 } }, "l-upload__image": { "": { "width": "100%", "height": "100%" } }, "l-upload__add-icon": { "": { "fontSize": 28, "color": "rgba(0,0,0,0.25)" } }, "l-upload__delete-btn": { "": { "position": "absolute", "top": 0, "right": 0, "display": "flex", "alignItems": "center", "justifyContent": "center", "width": 20, "height": 20, "borderTopRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "backgroundColor": "rgba(0,0,0,0.65)" } }, "l-upload__progress-mask": { "": { "position": "absolute", "left": 0, "top": 0, "bottom": 0, "width": "100%", "backgroundColor": "rgba(0,0,0,0.45)", "flexDirection": "column", "alignItems": "center", "justifyContent": "center", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "paddingTop": 16, "paddingRight": 0, "paddingBottom": 16, "paddingLeft": 0 } }, "l-upload__progress-text": { "": { "fontSize": 12, "lineHeight": "20px", "marginTop": 4, "color": "#FFFFFF" } }, "l-upload__progress-loading": { "": { "alignSelf": "center" } }, "l-upload__progress-icon": { "": { "color": "#FFFFFF", "!fontSize": 24, "!width": 24 } } };
   function _sfc_render$u(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_loading = resolveEasycom(vue.resolveDynamicComponent("l-loading"), __easycom_0$4);
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -16634,7 +16642,7 @@
   const _style_0$q = { "l-popup": { "": { "position": "fixed", "transitionDuration": "300ms", "transitionProperty": "transform,opacity", "transitionTimingFunction": "ease", "backgroundColor": "#ffffff", "overflow": "visible", "opacity": 1 }, ".l-popup-fade-enter": { "opacity": 0 }, ".l-popup-fade-leave-to": { "opacity": 0 }, ".l-popup-fade-enter.l-popup--top": { "transform": "scale(1) translate(0, -100%)" }, ".l-popup-fade-leave-to.l-popup--top": { "transform": "scale(1) translate(0, -100%)" }, ".l-popup-fade-enter.l-popup--bottom": { "transform": "scale(1) translate(0, 100%)" }, ".l-popup-fade-leave-to.l-popup--bottom": { "transform": "scale(1) translate(0, 100%)" }, ".l-popup-fade-enter.l-popup--left": { "transform": "scale(1) translate(-100%, 0)" }, ".l-popup-fade-leave-to.l-popup--left": { "transform": "scale(1) translate(-100%, 0)" }, ".l-popup-fade-enter.l-popup--right": { "transform": "scale(1) translate(100%, 0)" }, ".l-popup-fade-leave-to.l-popup--right": { "transform": "scale(1) translate(100%, 0)" }, ".l-popup-fade-enter.l-popup--center": { "transform": "translate(-50%, -50%)", "opacity": 0 }, ".l-popup-fade-leave-to.l-popup--center": { "transform": "translate(-50%, -50%)", "opacity": 0 }, ".l-dialog-enter.l-popup--center": { "transform": "scale(0.6) translate(-50%, -50%)", "opacity": 0 }, ".l-dialog-leave-to.l-popup--center": { "transform": "scale(0.6) translate(-50%, -50%)", "opacity": 0 } }, "l-popup__close": { "": { "position": "absolute", "top": 0, "right": 0, "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "l-popup__close-icon": { "": { "color": "rgba(0,0,0,0.6)" } }, "l-popup--top": { "": { "top": 0, "left": 0, "right": 0, "borderBottomLeftRadius": "18rpx", "borderBottomRightRadius": "18rpx", "transform": "scale(1) translate(0, 0)" } }, "l-popup--bottom": { "": { "bottom": 0, "left": 0, "right": 0, "borderTopLeftRadius": "18rpx", "borderTopRightRadius": "18rpx", "transform": "scale(1) translate(0, 0)" } }, "l-popup--left": { "": { "top": 0, "left": 0, "bottom": 0, "transform": "scale(1) translate(0, 0)" } }, "l-popup--right": { "": { "top": 0, "right": 0, "bottom": 0, "transform": "scale(1) translate(0, 0)" } }, "l-popup--center": { "": { "top": "50%", "left": "50%", "transform": "translate(-50%, -50%)", "transformOrigin": "50% 50%", "borderTopLeftRadius": "18rpx", "borderTopRightRadius": "18rpx", "borderBottomRightRadius": "18rpx", "borderBottomLeftRadius": "18rpx" } }, "@TRANSITION": { "l-popup": { "duration": "300ms", "property": "transform,opacity", "timingFunction": "ease" } } };
   function _sfc_render$q(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_l_overlay = resolveEasycom(vue.resolveDynamicComponent("l-overlay"), __easycom_0$1);
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     return vue.openBlock(), vue.createElementBlock(
       vue.Fragment,
       null,
@@ -16740,7 +16748,7 @@
     const _component_fui_input = resolveEasycom(vue.resolveDynamicComponent("fui-input"), __easycom_2$4);
     const _component_l_textarea = resolveEasycom(vue.resolveDynamicComponent("l-textarea"), __easycom_2$2);
     const _component_l_upload = resolveEasycom(vue.resolveDynamicComponent("l-upload"), __easycom_3$2);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     const _component_l_picker = resolveEasycom(vue.resolveDynamicComponent("l-picker"), __easycom_3$1);
     const _component_l_popup = resolveEasycom(vue.resolveDynamicComponent("l-popup"), __easycom_5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -17368,7 +17376,7 @@
   });
   const _style_0$m = { "l-grid-item": { "": { "alignItems": "center", "paddingTop": "32rpx", "paddingRight": 0, "paddingBottom": "24rpx", "paddingLeft": 0, "flexDirection": "column", "backgroundImage": "none", "backgroundColor": "#ffffff", "width": "25%", "overflow": "visible" } }, "l-grid-item--bordered": { "": { "borderTopWidth": "0.5rpx", "borderRightWidth": "0.5rpx", "borderBottomWidth": "0.5rpx", "borderLeftWidth": "0.5rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#eeeeee", "borderRightColor": "#eeeeee", "borderBottomColor": "#eeeeee", "borderLeftColor": "#eeeeee" } }, "l-grid-item--horizontal": { "": { "paddingTop": "32rpx", "paddingRight": 0, "paddingBottom": "32rpx", "paddingLeft": 0, "flexDirection": "row", "justifyContent": "center" } }, "l-grid-item__content": { ".l-grid-item--horizontal ": { "marginTop": 0, "marginLeft": "24rpx" }, "": { "position": "relative", "marginTop": "16rpx" } }, "l-grid-item--hover": { "": { "backgroundColor": "rgba(0,0,0,0.02)" } }, "l-grid-item__title": { ".l-grid-item--center ": { "textAlign": "center" }, "": { "color": "rgba(0,0,0,0.88)", "fontSize": 14, "lineHeight": "44rpx" } }, "l-grid-item__description": { ".l-grid-item--center ": { "textAlign": "center" }, "": { "color": "rgba(0,0,0,0.45)", "fontSize": 12, "lineHeight": "40rpx" } }, "l-grid-item__icon": { "": { "alignItems": "center", "justifyContent": "center", "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.02)", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "width": "96rpx", "height": "96rpx" } }, "l-grid-item__image": { "": { "backgroundImage": "none", "backgroundColor": "rgba(0,0,0,0.02)", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "width": "96rpx", "height": "96rpx" } }, "l-grid-item__image--small": { "": { "width": 32, "height": 32 } }, "l-grid-item__icon--small": { "": { "width": 32, "height": 32 } }, "l-grid-item__image--middle": { "": { "width": "80rpx", "height": "80rpx" } }, "l-grid-item__icon--middle": { "": { "width": "80rpx", "height": "80rpx" } }, "l-grid-item__title--small": { "": { "fontSize": 12 } }, "l-grid-item__title--middle": { "": { "fontSize": 12 } } };
   function _sfc_render$m(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     const _component_l_badge = resolveEasycom(vue.resolveDynamicComponent("l-badge"), __easycom_1$2);
     return vue.openBlock(), vue.createElementBlock("view", {
       ref: "gridRef",
@@ -17641,7 +17649,7 @@
       return __returned__;
     }
   });
-  const _imports_0$1 = "/static/device/camera.png";
+  const _imports_0$1 = "/static/device/zxj.png";
   const _imports_1$1 = "/static/device/vedio.png";
   const _imports_2 = "/static/device/volume_1.png";
   const _imports_3 = "/static/device/voice_1.png";
@@ -17980,7 +17988,7 @@
   } }));
   const _style_0$i = { "l-input": { "": { "backgroundColor": "var(--l-input-bg-color, #fff)", "alignItems": "center", "width": "100%", "paddingTop": "var(--l-input-padding-y, 16px)", "paddingRight": "var(--l-input-padding-x, 16px)", "paddingBottom": "var(--l-input-padding-y, 16px)", "paddingLeft": "var(--l-input-padding-x, 16px)" } }, "l-input--horizontal": { "": { "flexDirection": "row" } }, "l-input--vertical": { "": { "alignItems": "stretch" } }, "l-input--border": { "": { "position": "relative" } }, "l-input--classic": { "": { "paddingTop": "var(--l-input-classic-padding-y, 12px)", "paddingRight": "var(--l-input-classic-padding-x, 16px)", "paddingBottom": "var(--l-input-classic-padding-y, 12px)", "paddingLeft": "var(--l-input-classic-padding-x, 16px)", "borderTopLeftRadius": "var(--l-input-border-radius, 12rpx)", "borderTopRightRadius": "var(--l-input-border-radius, 12rpx)", "borderBottomRightRadius": "var(--l-input-border-radius, 12rpx)", "borderBottomLeftRadius": "var(--l-input-border-radius, 12rpx)", "borderTopWidth": 0.5, "borderRightWidth": 0.5, "borderBottomWidth": 0.5, "borderLeftWidth": 0.5, "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid" } }, "l-input--classic-default": { "": { "borderTopColor": "var(--l-input-border-color,#e7e7e7)", "borderRightColor": "var(--l-input-border-color,#e7e7e7)", "borderBottomColor": "var(--l-input-border-color,#e7e7e7)", "borderLeftColor": "var(--l-input-border-color,#e7e7e7)" } }, "l-input--classic-error": { "": { "borderTopColor": "var(--l-input-error-tips-color,#FF4D4F)", "borderRightColor": "var(--l-input-error-tips-color,#FF4D4F)", "borderBottomColor": "var(--l-input-error-tips-color,#FF4D4F)", "borderLeftColor": "var(--l-input-error-tips-color,#FF4D4F)" } }, "l-input--classic-success": { "": { "borderTopColor": "var(--l-input-success-tips-color,#34c471)", "borderRightColor": "var(--l-input-success-tips-color,#34c471)", "borderBottomColor": "var(--l-input-success-tips-color,#34c471)", "borderLeftColor": "var(--l-input-success-tips-color,#34c471)" } }, "l-input--classic-warning": { "": { "borderTopColor": "var(--l-input-warning-tips-color,#ffb400)", "borderRightColor": "var(--l-input-warning-tips-color,#ffb400)", "borderBottomColor": "var(--l-input-warning-tips-color,#ffb400)", "borderLeftColor": "var(--l-input-warning-tips-color,#ffb400)" } }, "l-input--classic-disabled": { "": { "backgroundColor": "var(--l-input-disabled-bg-color, rgba(0, 0, 0, 0.04))" } }, "l-input__wrap--prefix": { "": { "flexDirection": "row", "alignItems": "center" } }, "l-input__icon--prefix": { "": { "fontSize": "44rpx", "color": "var(--l-input-prefix-icon-color, rgba(0, 0, 0, 0.88))" } }, "l-input__label": { "": { "minWidth": "var(--l-input-label-min-width, 64rpx)", "fontSize": 16, "lineHeight": "48rpx", "color": "var(--l-input-label-text-color, rgba(0, 0, 0, 0.88))", "marginRight": "32rpx" }, ".l-input--horizontal ": { "maxWidth": "var(--l-input-label-max-width, 160rpx)" }, ".l-input--vertical ": { "fontSize": 14, "paddingBottom": "8rpx" } }, "l-input__label--gap": { "": { "marginLeft": "8rpx" } }, "l-input__wrap": { "": { "justifyContent": "center", "flex": 1 } }, "l-input__content": { ".l-input__wrap ": { "flexDirection": "row", "width": "100%", "alignItems": "center" } }, "l-input__wrap--clearable-icon": { "": { "flex": "0 0 auto", "paddingLeft": "24rpx", "boxSizing": "content-box", "!fontSize": "var(--l-input-suffix-icon-size, 22px)", "!color": "var(--l-input-suffix-icon-color, rgba(0, 0, 0, 0.45))" } }, "l-input__wrap--suffix-icon": { "": { "flex": "0 0 auto", "paddingLeft": "24rpx", "boxSizing": "content-box", "!fontSize": "var(--l-input-suffix-icon-size, 22px)", "!color": "var(--l-input-suffix-icon-color, rgba(0, 0, 0, 0.45))" } }, "l-input__wrap--suffix": { "": { "flex": "0 0 auto", "paddingLeft": "24rpx", "boxSizing": "content-box" } }, "l-input__wrap--suffix-text": { "": { "fontSize": 16, "color": "var(--l-input-suffix-text-color, rgba(0, 0, 0, 0.88))" } }, "l-input__control": { "": { "flex": 1, "boxSizing": "border-box", "minWidth": 0, "minHeight": "48rpx", "marginTop": 0, "marginRight": 0, "marginBottom": 0, "marginLeft": 0, "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "color": "var(--l-input-text-color, rgba(0, 0, 0, 0.88))", "backgroundColor": "rgba(0,0,0,0)", "borderTopWidth": 0, "borderRightWidth": 0, "borderBottomWidth": 0, "borderLeftWidth": 0, "borderTopStyle": "none", "borderRightStyle": "none", "borderBottomStyle": "none", "borderLeftStyle": "none", "borderTopColor": "#000000", "borderRightColor": "#000000", "borderBottomColor": "#000000", "borderLeftColor": "#000000", "fontSize": 16 } }, "l-input__control--disabled": { "": { "color": "var(--l-input-disabled-text-color, rgba(0, 0, 0, 0.25))", "opacity": 1 } }, "l-input--left": { "": { "textAlign": "left" } }, "l-input--right": { "": { "textAlign": "right" } }, "l-input--center": { "": { "textAlign": "center" } }, "l-input__placeholder": { "": { "color": "var(--l-input-placeholder-text-color, rgba(0, 0, 0, 0.45))", "fontSize": "var(--l-input-placeholder-text-font-size, 16px)" } }, "l-input__placeholder--disabled": { "": { "fontSize": "var(--l-input-placeholder-text-font-size, 16px)", "color": "var(--l-input-disabled-text-color, rgba(0, 0, 0, 0.25))" } }, "l-input__tips": { "": { "fontSize": 12, "lineHeight": "40rpx", "paddingTop": "8rpx" } }, "l-input__tips--default": { "": { "color": "var(--l-input-tips-color, rgba(0, 0, 0, 0.45))" } }, "l-input__tips--success": { "": { "color": "var(--l-input-success-tips-color, #34c471)" } }, "l-input__tips--warning": { "": { "color": "var(--l-input-warning-tips-color, #ffb400)" } }, "l-input__tips--error": { "": { "color": "var(--l-input-error-tips-color, #FF4D4F)" } } };
   function _sfc_render$i(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     return vue.openBlock(), vue.createElementBlock(
       "view",
       {
@@ -18382,7 +18390,7 @@
   const _style_0$h = { "l-dialog": { "": { "overflow": "hidden", "width": "642rpx", "borderTopLeftRadius": "12rpx", "borderTopRightRadius": "12rpx", "borderBottomRightRadius": "12rpx", "borderBottomLeftRadius": "12rpx", "backgroundColor": "#ffffff" } }, "l-dialog__close": { "": { "position": "absolute", "top": "16rpx", "right": "16rpx", "zIndex": 1 } }, "l-dialog__close-icon": { "": { "color": "rgba(0,0,0,0.45)" } }, "l-dialog__content": { "": { "paddingTop": "64rpx", "paddingRight": "48rpx", "paddingBottom": 0, "paddingLeft": "48rpx", "maxHeight": "912rpx", "boxSizing": "border-box", "display": "flex", "flexDirection": "column", "justifyContent": "center" } }, "l-dialog__header": { "": { "textAlign": "center", "fontWeight": "bold", "fontSize": "36rpx", "lineHeight": "52rpx", "color": "rgba(0,0,0,0.88)" } }, "l-dialog__body-text": { "": { "textAlign": "center", "fontSize": "32rpx", "color": "rgba(0,0,0,0.65)", "lineHeight": "48rpx" } }, "l-dialog__body--left": { "": { "textAlign": "left" } }, "l-dialog__body--right": { "": { "textAlign": "right" } }, "l-dialog__body--gap": { "": { "marginTop": "16rpx" } }, "l-dialog__footer": { "": { "display": "flex", "paddingTop": "48rpx", "paddingRight": "48rpx", "paddingBottom": "48rpx", "paddingLeft": "48rpx" } }, "l-dialog__footer--horizontal": { "": { "flexDirection": "row", "flexWrap": "nowrap" } }, "l-dialog__footer--vertical": { "": { "flexDirection": "column-reverse", "flexWrap": "nowrap" } }, "l-dialog__button": { ".l-dialog__footer--vertical ": { "width": "100%" }, "": { "position": "relative", "flex": 1, "overflow": "hidden", "textOverflow": "ellipsis", "whiteSpace": "nowrap" } }, "l-dialog__footer--full": { "": { "paddingTop": "64rpx", "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0 } }, "l-dialog__button--horizontal": { ".l-dialog__button--horizontal+": { "marginLeft": "24rpx" } }, "l-dialog__button--vertical": { ".l-dialog__button--vertical+": { "marginBottom": "24rpx" } }, "l-dialog__button--text": { "": { "flex": 1, "borderTopLeftRadius": 0, "borderTopRightRadius": 0, "borderBottomRightRadius": 0, "borderBottomLeftRadius": 0, "borderTopWidth": 1, "borderTopStyle": "solid", "borderTopColor": "#e7e7e7", "borderLeftWidth": 1, "borderLeftStyle": "solid", "borderLeftColor": "#e7e7e7" } } };
   function _sfc_render$h(_ctx, _cache, $props, $setup, $data, $options) {
     var _a, _b, _c, _d;
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     const _component_l_button = resolveEasycom(vue.resolveDynamicComponent("l-button"), __easycom_7);
     const _component_l_popup = resolveEasycom(vue.resolveDynamicComponent("l-popup"), __easycom_5);
     return vue.openBlock(), vue.createBlock(_component_l_popup, {
@@ -18750,9 +18758,9 @@
   });
   const _style_0$g = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "device-box": { ".container ": { "marginTop": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "display": "flex", "flexDirection": "row", "justifyContent": "flex-start" } }, "device-img": { ".container .device-box ": { "width": "200rpx", "height": "200rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginRight": "20rpx" } }, "device-info": { ".container .device-box ": { "display": "flex", "flexDirection": "column", "alignItems": "flex-start", "justifyContent": "space-between" } }, "device-name-box": { ".container .device-box .device-info ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "model-uid": { ".container .device-box .device-info ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "5rpx", "paddingRight": 0, "paddingBottom": "5rpx", "paddingLeft": 0 } }, "model-uid-text": { ".container .device-box .device-info .model-uid ": { "marginLeft": "30rpx", "marginRight": "10rpx" } }, "network": { ".container .device-box .device-info ": { "color": "#999999" } }, "device-list-box": { ".container ": { "marginTop": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "item": { ".container .device-list-box ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" }, ".container .device-list-box .traffic ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "traffic": { ".container .device-list-box ": { "display": "flex", "flexDirection": "column", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "date": { ".container .device-list-box .traffic ": { "display": "flex", "flexDirection": "row", "alignItems": "center", "justifyContent": "space-between" } }, "word": { ".container .device-list-box .traffic .date ": { "color": "#999999" } }, "nounderline": { ".container .device-list-box ": { "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "btn-box": { ".container ": { "marginTop": "80rpx" } } };
   function _sfc_render$g(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_1$7);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     const _component_l_input = resolveEasycom(vue.resolveDynamicComponent("l-input"), __easycom_4$2);
     const _component_l_dialog = resolveEasycom(vue.resolveDynamicComponent("l-dialog"), __easycom_4$1);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
@@ -18988,7 +18996,6 @@
       const videoContext = vue.ref(null);
       const isSeeking = vue.ref(false);
       const timeScrollLeft = vue.ref(0);
-      const dateScrollLeft = vue.ref(0);
       const playheadPosition = vue.ref(0);
       const videoDuration = vue.ref(0);
       const lastSyncTime = vue.ref(0);
@@ -19053,6 +19060,10 @@
         }
         return marks;
       });
+      const onVideoLoaded = (e2) => {
+        videoDuration.value = e2["duration"];
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:155", "视频加载完成，时长:", videoDuration.value);
+      };
       const formatMarkTime = (seconds) => {
         const hrs = Math.floor(seconds / 3600);
         const mins = Math.floor(seconds % 3600 / 60);
@@ -19072,20 +19083,18 @@
       const initVideoContext = () => {
         try {
           videoContext.value = uni.createVideoContext("myVideo");
-          uni.__log__("log", "at pages/index/deviceReplay.uvue:194", "视频上下文初始化成功", videoContext.value);
+          uni.__log__("log", "at pages/index/deviceReplay.uvue:180", "视频上下文初始化成功", videoContext.value);
         } catch (error) {
-          uni.__log__("error", "at pages/index/deviceReplay.uvue:196", "创建视频上下文失败:", error);
+          uni.__log__("error", "at pages/index/deviceReplay.uvue:182", "创建视频上下文失败:", error);
         }
       };
       const loadVideoData = (date) => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:201", "加载日期数据:", date);
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:187", "加载日期数据:", date);
       };
       const selectDate = (date) => {
         activeDate.value = date;
         currentDate.value = "2024-".concat(date);
         loadVideoData(date);
-        const index = dateList.indexOf(date);
-        dateScrollLeft.value = index * 80;
       };
       const formatTime = (seconds) => {
         const hrs = Math.floor(seconds / 3600);
@@ -19116,22 +19125,41 @@
         updatePlayheadPosition(currentTimeInSeconds - 1);
       };
       const seekToSeconds = (timeInSeconds) => {
-        isSeeking.value = true;
-        manualScrollPosition.value = timeInSeconds * 2;
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:236", "尝试跳转到:", timeInSeconds, "秒");
         if (videoContext.value != null) {
+          videoContext.value.pause();
           videoContext.value.seek(timeInSeconds);
+          setTimeout(() => {
+            var _a2;
+            (_a2 = videoContext.value) === null || _a2 === void 0 ? null : _a2.play();
+            uni.__log__("log", "at pages/index/deviceReplay.uvue:242", "跳转完成，应开始播放");
+          }, 100);
         }
-        playheadPosition.value = timeInSeconds * 2;
-        currentTime.value = formatTime(timeInSeconds);
       };
       const getEventPosition = (event) => {
         const seconds = convertTimeToSeconds(event.time);
-        const pixelsPerSecond = rulerWidth.value / (videoDuration.value || 300);
+        const duration = videoDuration.value != 0 ? videoDuration.value : 300;
+        const pixelsPerSecond = rulerWidth.value / duration;
         return seconds * pixelsPerSecond;
       };
       const seekToEvent = (event) => {
         const seconds = convertTimeToSeconds(event.time);
-        seekToSeconds(seconds);
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:258", "点击事件时间点：", seconds, "秒", "当前视频时长:", videoDuration.value);
+        if (videoContext.value == null) {
+          uni.__log__("error", "at pages/index/deviceReplay.uvue:261", "视频上下文未初始化");
+          return null;
+        }
+        isSeeking.value = true;
+        currentTime.value = formatTime(seconds);
+        playheadPosition.value = getEventPosition(event);
+        videoContext.value.pause();
+        videoContext.value.seek(seconds);
+        setTimeout(() => {
+          var _a2;
+          (_a2 = videoContext.value) === null || _a2 === void 0 ? null : _a2.play();
+          isSeeking.value = false;
+          uni.__log__("log", "at pages/index/deviceReplay.uvue:277", "应已跳转到指定位置并开始播放");
+        }, 150);
       };
       const seekToTime = (hour, minute) => {
         const timeInSeconds = hour * 3600 + minute * 60;
@@ -19172,7 +19200,7 @@
         const now = Date.now();
         if (now - lastDragTime.value > 100) {
           if (videoContext.value != null) {
-            uni.__log__("log", "at pages/index/deviceReplay.uvue:334", "尝试跳转视频到:", timeInSeconds, "秒");
+            uni.__log__("log", "at pages/index/deviceReplay.uvue:338", "尝试跳转视频到:", timeInSeconds, "秒");
             draggedTimeInSeconds.value = timeInSeconds;
             videoContext.value.seek(timeInSeconds);
           }
@@ -19187,7 +19215,7 @@
         const pixelsPerSecond = rulerWidth.value / videoDuration.value;
         const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
         if (videoContext.value != null) {
-          uni.__log__("log", "at pages/index/deviceReplay.uvue:355", "尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒");
+          uni.__log__("log", "at pages/index/deviceReplay.uvue:357", "尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒");
           videoContext.value.seek(draggedTimeInSeconds.value);
           videoContext.value.play();
         }
@@ -19230,48 +19258,25 @@
         return "".concat(hour.toString().padStart(2, "0"), ":00");
       };
       const onPlay = () => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:421", "视频开始播放");
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:423", "视频开始播放");
       };
       const onPause = () => {
-        uni.__log__("log", "at pages/index/deviceReplay.uvue:426", "视频暂停");
+        uni.__log__("log", "at pages/index/deviceReplay.uvue:428", "视频暂停");
       };
       vue.onMounted(() => {
         initVideoContext();
         if (videoContext.value == null) {
-          uni.__log__("error", "at pages/index/deviceReplay.uvue:433", "视频上下文初始化失败，请检查");
+          uni.__log__("error", "at pages/index/deviceReplay.uvue:435", "视频上下文初始化失败，请检查");
         }
       });
-      const __returned__ = { EventType, currentDate, currentTime, activeDate, activeFilter, videoSrc: videoSrc2, videoContext, isSeeking, timeScrollLeft, dateScrollLeft, playheadPosition, videoDuration, lastSyncTime, isDragging, startX, startScrollLeft, lastDragTime, manualScrollPosition, draggedTimeInSeconds, dateList, filters, events, rulerWidth, convertTimeToSeconds, timeMarks, formatMarkTime, filteredEvents, initVideoContext, loadVideoData, selectDate, formatTime, updatePlayheadPosition, onTimeUpdate, seekToSeconds, getEventPosition, seekToEvent, seekToTime, seekToPosition, onSeeked, onTouchStart, onTouchMove, onTouchEnd, onTimeScroll, selectFilter, hasEvent, getEventType, formatHour, onPlay, onPause };
+      const __returned__ = { EventType, currentDate, currentTime, activeDate, activeFilter, videoSrc: videoSrc2, videoContext, isSeeking, timeScrollLeft, playheadPosition, videoDuration, lastSyncTime, isDragging, startX, startScrollLeft, lastDragTime, manualScrollPosition, draggedTimeInSeconds, dateList, filters, events, rulerWidth, convertTimeToSeconds, timeMarks, onVideoLoaded, formatMarkTime, filteredEvents, initVideoContext, loadVideoData, selectDate, formatTime, updatePlayheadPosition, onTimeUpdate, seekToSeconds, getEventPosition, seekToEvent, seekToTime, seekToPosition, onSeeked, onTouchStart, onTouchMove, onTouchEnd, onTimeScroll, selectFilter, hasEvent, getEventType, formatHour, onPlay, onPause };
       Object.defineProperty(__returned__, "__isScriptSetup", { enumerable: false, value: true });
       return __returned__;
     }
   });
-  const _style_0$f = { "container": { "": { "display": "flex", "flexDirection": "column", "height": "100%", "backgroundColor": "#f5f5f5" } }, "date-list": { "": { "display": "flex", "flexDirection": "row", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "date-item": { "": { "paddingTop": 8, "paddingRight": 16, "paddingBottom": 8, "paddingLeft": 16, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 14, "transitionProperty": "all", "transitionDuration": "0.2s" }, ".active": { "backgroundColor": "#007aff", "color": "#ffffff" } }, "video-container": { "": { "width": "100%", "height": 250, "backgroundColor": "#000000", "position": "relative" } }, "video-player": { "": { "width": "100%", "height": "100%" } }, "time-ruler-container": { "": { "width": "100%", "paddingTop": 10, "paddingRight": 0, "paddingBottom": 10, "paddingLeft": 0, "backgroundColor": "#ffffff", "position": "relative", "zIndex": 5 } }, "time-ruler-scroll": { "": { "width": "100%", "height": 70, "whiteSpace": "nowrap" } }, "event-dot": { ".alarm": { "backgroundColor": "#ff3b30", "boxShadow": "0 0 5px #ff3b30" }, ".motion": { "backgroundColor": "#ff9500", "boxShadow": "0 0 5px #ff9500" }, ".human": { "backgroundColor": "#34c759", "boxShadow": "0 0 5px #34c759" }, "": { "width": 10, "height": 10 } }, "playhead": { "": { "position": "absolute", "top": 0, "width": 2, "height": "100%", "backgroundColor": "#007aff", "zIndex": 10, "pointerEvents": "none" } }, "filter-bar": { "": { "display": "flex", "justifyContent": "space-around", "paddingTop": 12, "paddingRight": 5, "paddingBottom": 12, "paddingLeft": 5, "backgroundColor": "#333333", "position": "fixed", "bottom": 0, "left": 0, "right": 0, "zIndex": 20 } }, "filter-item": { "": { "paddingTop": 8, "paddingRight": 12, "paddingBottom": 8, "paddingLeft": 12, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 12, "transitionProperty": "all", "transitionDuration": "0.2s", "flex": 1, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "textAlign": "center" }, ".active": { "backgroundColor": "#007aff", "fontWeight": "bold", "transform": "scale(1.05)" } }, "time-ruler": { "": { "display": "flex", "height": "100%", "position": "relative", "width": "100%", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#cccccc" } }, "time-mark": { "": { "position": "absolute", "bottom": 0, "transform": "translateX(-50%)", "pointerEvents": "auto" }, ".major": { "height": 20, "backgroundColor": "#333333", "width": 2 }, ".minor": { "height": 10, "backgroundColor": "#999999", "width": 1 } }, "event-marker": { "": { "position": "absolute", "bottom": 25, "transform": "translateX(-50%)", "zIndex": 5 } }, "@TRANSITION": { "date-item": { "property": "all", "duration": "0.2s" }, "filter-item": { "property": "all", "duration": "0.2s" } } };
+  const _style_0$f = { "container": { "": { "display": "flex", "flexDirection": "column", "height": "100%", "backgroundColor": "#f5f5f5" } }, "date-list": { "": { "display": "flex", "flexDirection": "row", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "date-item": { "": { "paddingTop": 8, "paddingRight": 16, "paddingBottom": 8, "paddingLeft": 16, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 14, "transitionProperty": "all", "transitionDuration": "0.2s" }, ".active": { "backgroundColor": "#007aff", "color": "#ffffff" } }, "video-container": { "": { "width": "100%", "height": 250, "backgroundColor": "#000000", "position": "relative" } }, "video-player": { "": { "width": "100%", "height": "100%" } }, "time-ruler-container": { "": { "width": "100%", "paddingTop": 10, "paddingRight": 0, "paddingBottom": 10, "paddingLeft": 0, "backgroundColor": "#ffffff", "position": "relative", "zIndex": 5 } }, "time-ruler-scroll": { "": { "width": "100%", "height": 70, "whiteSpace": "nowrap" } }, "playhead": { "": { "position": "absolute", "top": 0, "width": 2, "height": "100%", "backgroundColor": "#007aff", "zIndex": 10, "pointerEvents": "none" } }, "filter-bar": { "": { "display": "flex", "justifyContent": "space-around", "flexDirection": "row", "paddingTop": 12, "paddingRight": 5, "paddingBottom": 12, "paddingLeft": 5, "backgroundColor": "#ffffff", "zIndex": 20 } }, "filter-item": { "": { "paddingTop": 8, "paddingRight": 12, "paddingBottom": 8, "paddingLeft": 12, "borderTopLeftRadius": 16, "borderTopRightRadius": 16, "borderBottomRightRadius": 16, "borderBottomLeftRadius": 16, "backgroundColor": "#555555", "color": "#FFFFFF", "fontSize": 12, "transitionProperty": "all", "transitionDuration": "0.2s", "flex": 1, "marginTop": 0, "marginRight": 5, "marginBottom": 0, "marginLeft": 5, "textAlign": "center" }, ".active": { "backgroundColor": "#007aff", "fontWeight": "bold", "transform": "scale(1.05)" } }, "time-ruler": { "": { "display": "flex", "height": "100%", "position": "relative", "width": "100%", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#cccccc" } }, "time-mark": { "": { "position": "absolute", "bottom": 0, "transform": "translateX(-50%)", "pointerEvents": "auto" }, ".major": { "height": 20, "backgroundColor": "#333333", "width": 2 }, ".minor": { "height": 10, "backgroundColor": "#999999", "width": 1 } }, "event-marker": { "": { "position": "absolute", "bottom": 25, "transform": "translateX(-50%)", "zIndex": 5 } }, "event-dot": { "": { "width": 10, "height": 10 }, ".alarm": { "backgroundColor": "#ff3b30" }, ".motion": { "backgroundColor": "#ff9500" }, ".human": { "backgroundColor": "#34c759" } }, "@TRANSITION": { "date-item": { "property": "all", "duration": "0.2s" }, "filter-item": { "property": "all", "duration": "0.2s" } } };
   function _sfc_render$f(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
-      vue.createCommentVNode(" 日期选择滚动条 "),
-      vue.createElementVNode("scroll-view", {
-        class: "date-scroll",
-        "scroll-x": "",
-        "scroll-left": $setup.dateScrollLeft
-      }, [
-        vue.createElementVNode("view", { class: "date-list" }, [
-          (vue.openBlock(), vue.createElementBlock(
-            vue.Fragment,
-            null,
-            vue.renderList($setup.dateList, (date, index) => {
-              return vue.createElementVNode("view", {
-                key: index,
-                class: vue.normalizeClass(["date-item", $setup.activeDate === date ? "active" : ""]),
-                onClick: ($event) => $setup.selectDate(date)
-              }, vue.toDisplayString(date), 11, ["onClick"]);
-            }),
-            64
-            /* STABLE_FRAGMENT */
-          ))
-        ])
-      ], 8, ["scroll-left"]),
-      vue.createCommentVNode(" 视频播放区域 "),
       vue.createElementVNode("view", { class: "video-container" }, [
         vue.createElementVNode("video", {
           id: "myVideo",
@@ -19281,10 +19286,11 @@
           onTimeupdate: $setup.onTimeUpdate,
           onPlay: $setup.onPlay,
           onPause: $setup.onPause,
-          onSeeked: $setup.onSeeked
+          onSeeked: $setup.onSeeked,
+          autoplay: true,
+          onLoadedmetadata: $setup.onVideoLoaded
         }, null, 40, ["src"])
       ]),
-      vue.createCommentVNode(" 可拖动时间轴 "),
       vue.createElementVNode("view", { class: "time-ruler-container" }, [
         vue.createElementVNode("scroll-view", {
           class: "time-ruler-scroll",
@@ -19303,7 +19309,6 @@
               onTouchend: $setup.onTouchEnd
             },
             [
-              vue.createCommentVNode(" 动态时间刻度 "),
               (vue.openBlock(true), vue.createElementBlock(
                 vue.Fragment,
                 null,
@@ -19314,7 +19319,6 @@
                     style: vue.normalizeStyle({ left: mark.position + "px" }),
                     onClick: ($event) => $setup.seekToPosition(mark.time)
                   }, [
-                    vue.createCommentVNode(" 主刻度标签 "),
                     mark.type === "major" ? (vue.openBlock(), vue.createElementBlock("text", {
                       key: 0,
                       class: "mark-label"
@@ -19348,7 +19352,6 @@
                 128
                 /* KEYED_FRAGMENT */
               )),
-              vue.createCommentVNode(" 播放头指示器 "),
               vue.createElementVNode(
                 "view",
                 {
@@ -19365,7 +19368,21 @@
           )
         ], 40, ["scroll-left"])
       ]),
-      vue.createCommentVNode(" 事件筛选工具栏 "),
+      vue.createElementVNode("view", { class: "date-list" }, [
+        (vue.openBlock(), vue.createElementBlock(
+          vue.Fragment,
+          null,
+          vue.renderList($setup.dateList, (date, index) => {
+            return vue.createElementVNode("view", {
+              key: index,
+              class: vue.normalizeClass(["date-item", $setup.activeDate === date ? "active" : ""]),
+              onClick: ($event) => $setup.selectDate(date)
+            }, vue.toDisplayString(date), 11, ["onClick"]);
+          }),
+          64
+          /* STABLE_FRAGMENT */
+        ))
+      ]),
       vue.createElementVNode("view", { class: "filter-bar" }, [
         (vue.openBlock(), vue.createElementBlock(
           vue.Fragment,
@@ -19703,7 +19720,7 @@
     const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_1$5);
     const _component_fui_list_cell = resolveEasycom(vue.resolveDynamicComponent("fui-list-cell"), __easycom_1$4);
     const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$5);
-    const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$5);
+    const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$4);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createVNode($setup["TopNavBar"], {
         title: "夜视模式",
@@ -20697,7 +20714,7 @@
   const _style_0$9 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "list": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "btn-box": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderBottomWidth": 0, "borderBottomStyle": "none", "borderBottomColor": "#000000", "marginTop": "50rpx" } } };
   const _sfc_main$9 = {};
   function _sfc_render$8(_ctx, _cache) {
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", { class: "list" }, [
@@ -20970,7 +20987,7 @@
   const _style_0$7 = { "container": { "": { "position": "relative", "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "list": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "right-item": { ".container .content .list ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0, "borderBottomWidth": "medium", "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "progress": { ".container .content ": { "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "underline": { ".container .content ": { "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "package-box": { ".container ": { "marginTop": "50rpx" } }, "product-container": { ".container .package-box ": { "display": "flex", "flexWrap": "wrap", "flexDirection": "row", "justifyContent": "space-between", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "list-item": { ".container .package-box .product-container ": { "width": "48%", "marginBottom": "30rpx", "paddingTop": "40rpx", "paddingRight": "40rpx", "paddingBottom": "40rpx", "paddingLeft": "40rpx", "boxSizing": "border-box", "backgroundImage": "none", "backgroundColor": "#ffffff", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx", "display": "flex", "flexDirection": "column", "alignItems": "center", "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#ffffff", "borderRightColor": "#ffffff", "borderBottomColor": "#ffffff", "borderLeftColor": "#ffffff" }, ".container .package-box .product-container .selected-item": { "borderTopWidth": "2rpx", "borderRightWidth": "2rpx", "borderBottomWidth": "2rpx", "borderLeftWidth": "2rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#FF5722", "borderRightColor": "#FF5722", "borderBottomColor": "#FF5722", "borderLeftColor": "#FF5722" } }, "product-name": { ".container .package-box .product-container .list-item ": { "fontSize": "30rpx" } }, "product-date": { ".container .package-box .product-container .list-item ": { "fontSize": "20rpx", "color": "#999999", "height": "50rpx", "lineHeight": "50rpx" } }, "product-price": { ".container .package-box .product-container .list-item ": { "fontSize": "30rpx", "color": "#FF5722", "fontWeight": "bold" } }, "l-tabs": { ".container ": { "!backgroundColor": "rgba(0,0,0,0)" } }, "btn-box": { ".container ": { "position": "fixed", "width": "100%", "left": 0, "bottom": 0, "height": "100rpx", "display": "flex", "flexDirection": "row" } }, "price": { ".container .btn-box ": { "flex": 1, "height": "100%", "display": "flex", "flexDirection": "row", "justifyContent": "center", "alignItems": "center", "backgroundColor": "#ffffff", "gap": "10rpx" } }, "price-title": { ".container .btn-box .price ": { "fontSize": "20rpx" } }, "price-text": { ".container .btn-box .price ": { "fontSize": "40rpx", "color": "#FF5722", "fontWeight": "bold", "marginLeft": "15rpx" } }, "btn": { ".container .btn-box ": { "flex": 1, "height": "100%" } }, "l-button": { ".container .btn-box .btn ": { "height": "100%" } } };
   function _sfc_render$6(_ctx, _cache, $props, $setup, $data, $options) {
     var _a;
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     const _component_fui_icon = resolveEasycom(vue.resolveDynamicComponent("fui-icon"), __easycom_1$7);
     const _component_l_progress = resolveEasycom(vue.resolveDynamicComponent("l-progress"), __easycom_2$3);
     const _component_fui_empty = resolveEasycom(vue.resolveDynamicComponent("fui-empty"), __easycom_3);
@@ -21731,10 +21748,10 @@
   });
   const _style_0$4 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginBottom": "50rpx" } }, "share-title": { ".container .content ": { "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "list": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "shared-title": { ".container .content .list ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": 0, "paddingRight": 0, "paddingBottom": 0, "paddingLeft": 0 } }, "shared-count": { ".container .content .list .shared-title ": { "marginLeft": "20rpx", "color": "#9d2ddf", "fontWeight": "bold" } }, "title": { ".container .content ": { "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx", "fontWeight": "bold" } }, "share-type": { ".container .content ": { "paddingTop": "30rpx", "paddingRight": "30rpx", "paddingBottom": "30rpx", "paddingLeft": "30rpx" } }, "fui-list__item": { ".container .content .share-type ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "alignItems": "center" } }, "fui-align__center": { ".container .content .share-type .fui-list__item ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "alignItems": "center" } }, "fui-text": { ".container .content .share-type .fui-list__item .fui-align__center ": { "marginLeft": "10rpx" } }, "share-content": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "flex-start", "alignItems": "center", "paddingTop": "10rpx", "paddingRight": "30rpx", "paddingBottom": "10rpx", "paddingLeft": "30rpx", "width": "100%" } }, "l-input": { ".container .content .share-content ": { "flex": 1, "borderTopWidth": "1rpx", "borderRightWidth": "1rpx", "borderBottomWidth": "1rpx", "borderLeftWidth": "1rpx", "borderTopStyle": "solid", "borderRightStyle": "solid", "borderBottomStyle": "solid", "borderLeftStyle": "solid", "borderTopColor": "#cccccc", "borderRightColor": "#cccccc", "borderBottomColor": "#cccccc", "borderLeftColor": "#cccccc", "paddingTop": "10rpx", "paddingRight": "20rpx", "paddingBottom": "10rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "10rpx", "borderTopRightRadius": "10rpx", "borderBottomRightRadius": "10rpx", "borderBottomLeftRadius": "10rpx", "marginLeft": "20rpx" } }, "visitor-box": { ".container .content ": { "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0 } }, "vistor-title": { ".container .content .visitor-box ": { "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "30rpx", "paddingLeft": 0, "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } }, "l-checkbox-group": { ".container .content .visitor-box ": { "display": "flex", "flexDirection": "row", "flexWrap": "wrap", "paddingTop": 0, "paddingRight": "20rpx", "paddingBottom": 0, "paddingLeft": "20rpx" } }, "l-checkbox": { ".container .content .visitor-box .l-checkbox-group ": { "marginTop": 0, "marginRight": "30rpx", "marginBottom": "30rpx", "marginLeft": 0 } }, "btn": { ".container ": { "marginTop": "100rpx" } } };
   function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     const _component_fui_radio = resolveEasycom(vue.resolveDynamicComponent("fui-radio"), __easycom_1$5);
     const _component_fui_label = resolveEasycom(vue.resolveDynamicComponent("fui-label"), __easycom_2$5);
-    const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$5);
+    const _component_fui_radio_group = resolveEasycom(vue.resolveDynamicComponent("fui-radio-group"), __easycom_3$4);
     const _component_l_input = resolveEasycom(vue.resolveDynamicComponent("l-input"), __easycom_4$2);
     const _component_l_checkbox = resolveEasycom(vue.resolveDynamicComponent("l-checkbox"), __easycom_1);
     const _component_l_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("l-checkbox-group"), __easycom_2);
@@ -21909,7 +21926,7 @@
   });
   const _style_0$3 = { "container": { "": { "height": "100%", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "backgroundColor": "#f5f5f5" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx" } }, "list": { ".container .content ": { "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f1f1f1" } }, "nounderline": { ".container .content ": { "borderBottomWidth": 0, "borderBottomStyle": "none", "borderBottomColor": "#000000" } } };
   function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("view", { class: "content" }, [
         vue.createElementVNode("view", {
@@ -21956,10 +21973,10 @@
   });
   const _style_0$2 = { "container": { "": { "height": "100%", "backgroundColor": "#f5f5f5", "paddingTop": "20rpx", "paddingRight": "20rpx", "paddingBottom": "20rpx", "paddingLeft": "20rpx" } }, "content": { ".container ": { "backgroundColor": "#ffffff", "paddingTop": "20rpx", "paddingRight": "30rpx", "paddingBottom": "20rpx", "paddingLeft": "30rpx", "borderTopLeftRadius": "20rpx", "borderTopRightRadius": "20rpx", "borderBottomRightRadius": "20rpx", "borderBottomLeftRadius": "20rpx", "marginTop": "20rpx", "marginRight": 0, "marginBottom": "50rpx", "marginLeft": 0 } }, "list": { ".container .content ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingTop": "20rpx", "paddingRight": 0, "paddingBottom": "20rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5" } }, "nounderline": { ".container .content ": { "borderBottomWidth": 0, "borderBottomStyle": "none", "borderBottomColor": "#000000" } }, "l-checkbox": { ".container .content ": { "width": "100%", "display": "flex", "flexDirection": "row-reverse", "justifyContent": "space-between", "paddingTop": "30rpx", "paddingRight": 0, "paddingBottom": "30rpx", "paddingLeft": 0, "borderBottomWidth": "1rpx", "borderBottomStyle": "solid", "borderBottomColor": "#f5f5f5" } }, "content-title": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center", "paddingRight": "30rpx" } }, "btn-box": { ".container ": { "display": "flex", "flexDirection": "row", "justifyContent": "space-between", "alignItems": "center" } } };
   function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$7);
+    const _component_l_icon = resolveEasycom(vue.resolveDynamicComponent("l-icon"), __easycom_0$9);
     const _component_l_checkbox = resolveEasycom(vue.resolveDynamicComponent("l-checkbox"), __easycom_1);
     const _component_l_checkbox_group = resolveEasycom(vue.resolveDynamicComponent("l-checkbox-group"), __easycom_2);
-    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$4);
+    const _component_fui_button = resolveEasycom(vue.resolveDynamicComponent("fui-button"), __easycom_3$5);
     return vue.openBlock(), vue.createElementBlock("view", { class: "container" }, [
       vue.createElementVNode("text", null, "访客信息"),
       vue.createElementVNode("view", { class: "content" }, [

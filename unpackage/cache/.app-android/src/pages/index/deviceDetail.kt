@@ -44,7 +44,7 @@ open class GenPagesIndexDeviceDetail : BasePage {
                     )),
                     _cE("view", _uM("class" to "control-big"), _uA(
                         _cE("view", _uM("class" to "big-item"), _uA(
-                            _cE("image", _uM("class" to "big-item-icon", "src" to "/static/device/camera.png"))
+                            _cE("image", _uM("class" to "big-item-icon", "src" to "/static/device/zxj.png"))
                         )),
                         _cE("view", _uM("class" to "big-item"), _uA(
                             _cE("image", _uM("class" to "big-item-icon", "src" to "/static/device/vedio.png"))

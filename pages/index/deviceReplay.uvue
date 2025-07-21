@@ -1,31 +1,16 @@
 <template>
 	<view class="container">
-		<!-- 日期选择滚动条 -->
-		<scroll-view class="date-scroll" scroll-x :scroll-left="dateScrollLeft">
-			<view class="date-list">
-				<view v-for="(date, index) in dateList" :key="index"
-					:class="['date-item', activeDate === date ? 'active' : '']" @tap="selectDate(date)">
-					{{ date }}
-				</view>
-			</view>
-		</scroll-view>
-
-		<!-- 视频播放区域 -->
 		<view class="video-container">
 			<video id="myVideo" :src="videoSrc" :controls="true" class="video-player" @timeupdate="onTimeUpdate"
-				@play="onPlay" @pause="onPause" @seeked="onSeeked"></video>
+				@play="onPlay" @pause="onPause" @seeked="onSeeked" :autoplay="true" @loadedmetadata="onVideoLoaded"></video>
 		</view>
-
-		<!-- 可拖动时间轴 -->
 		<view class="time-ruler-container">
 			<scroll-view class="time-ruler-scroll" scroll-x :scroll-left="timeScrollLeft" scroll-with-animation
 				@scroll="onTimeScroll">
 				<view class="time-ruler" :style="{ width: rulerWidth + 'px' }" @touchstart="onTouchStart"
 					@touchmove="onTouchMove" @touchend="onTouchEnd">
-					<!-- 动态时间刻度 -->
 					<view v-for="(mark, index) in timeMarks" :key="'mark-' + index" :class="['time-mark', mark.type]"
 						:style="{ left: mark.position + 'px' }" @click="seekToPosition(mark.time)">
-						<!-- 主刻度标签 -->
 						<text v-if="mark.type === 'major'" class="mark-label"></text>
 						
 					</view>
@@ -35,17 +20,20 @@
 						@click.stop="seekToEvent(event)">
 						<view :class="['event-dot', event.type]"></view>
 					</view>
-					<!-- 播放头指示器 -->
 					<view class="playhead" :style="{ left: playheadPosition + 'px'}"></view>
 				</view>
 			</scroll-view>
 		</view>
-
-		<!-- 事件筛选工具栏 -->
+		<view class="date-list">
+			<view v-for="(date, index) in dateList" :key="index"
+				:class="['date-item', activeDate === date ? 'active' : '']" @click="selectDate(date)">
+				{{ date }}
+			</view>
+		</view>
 		<view class="filter-bar">
 			<view v-for="filter in filters" :key="filter.value"
 				:class="['filter-item', activeFilter === filter.value ? 'active' : '']"
-				@tap="selectFilter(filter.value as string)">
+				@click="selectFilter(filter.value as string)">
 				{{ filter.label }}
 			</view>
 		</view>
@@ -82,7 +70,6 @@
 	const videoContext = ref<VideoContext | null>(null)
 	const isSeeking = ref(false)
 	const timeScrollLeft = ref(0)
-	const dateScrollLeft = ref(0)
 	const playheadPosition = ref(0)
 	const videoDuration = ref(0)
 	const lastSyncTime = ref(0)
@@ -111,9 +98,6 @@
 		{ date: '10-21', time: '00:01:20', type: 'alarm' }
 	])
 
-
-
-
 	// 计算属性
 	const rulerWidth = computed(() => {
 		const systemInfo = uni.getSystemInfoSync()
@@ -136,27 +120,24 @@
 		if (duration == 0) return marks
 
 		let majorInterval : number
-		if (duration <= 60) { // 1分钟以内
-			majorInterval = 10 // 每10秒一个主刻度
-		} else if (duration <= 300) { // 5分钟以内
-			majorInterval = 30 // 每30秒一个主刻度
-		} else if (duration <= 1800) { // 30分钟以内
-			majorInterval = 60 // 每分钟一个主刻度
-		} else if (duration <= 3600) { // 1小时以内
-			majorInterval = 300 // 每5分钟一个主刻度
-		} else if (duration <= 7200) { // 2小时以内
-			majorInterval = 600 // 每10分钟一个主刻度
-		} else { // 超过2小时
-			majorInterval = 1800 // 每30分钟一个主刻度
+		if (duration <= 60) { 
+			majorInterval = 10
+		} else if (duration <= 300) {
+			majorInterval = 30
+		} else if (duration <= 1800) {
+			majorInterval = 60
+		} else if (duration <= 3600) {
+			majorInterval = 300
+		} else if (duration <= 7200) { 
+			majorInterval = 600
+		} else {
+			majorInterval = 1800
 		}
 
-		// 小刻度数量 
 		const minorInterval = majorInterval / 10
 
-		// 计算每个刻度的像素位置
 		const pixelsPerSecond = rulerWidth.value / duration
 
-		// 生成刻度
 		for (let time = 0; time <= duration; time += minorInterval) {
 			const isMajor = (time % majorInterval) == 0
 			marks.push({
@@ -168,6 +149,11 @@
 
 		return marks
 	})
+
+	const onVideoLoaded = (e: UTSJSONObject) => {
+		videoDuration.value = e['duration'] as number
+		console.log('视频加载完成，时长:', videoDuration.value)
+	}
 
 
 	// 格式化刻度时间
@@ -207,9 +193,6 @@
 		activeDate.value = date
 		currentDate.value = `2024-${date}`
 		loadVideoData(date)
-
-		const index = dateList.indexOf(date)
-		dateScrollLeft.value = index * 80
 	}
 
 	// 格式化时间显示
@@ -249,19 +232,19 @@
 		updatePlayheadPosition(currentTimeInSeconds - 1)
 	}
 
-	const seekToSeconds = (timeInSeconds : number) => {
-		isSeeking.value = true
-		manualScrollPosition.value = timeInSeconds * 2
-
+	const seekToSeconds = (timeInSeconds: number) => {
+		console.log('尝试跳转到:', timeInSeconds, '秒')
 		if (videoContext.value != null) {
+			videoContext.value.pause()
 			videoContext.value.seek(timeInSeconds)
+			setTimeout(() => {
+				videoContext.value?.play()
+				console.log('跳转完成，应开始播放')
+			}, 100)
 		}
-
-		playheadPosition.value = timeInSeconds * 2
-		currentTime.value = formatTime(timeInSeconds)
 	}
 
-			// 新增的计算属性：获取事件位置
+	// 获取事件位置
 	const getEventPosition = (event: EventType) => {
 		const seconds = convertTimeToSeconds(event.time)
 		const duration = videoDuration.value != 0 ? videoDuration.value : 300 // 默认5分钟
@@ -269,10 +252,30 @@
 		return seconds * pixelsPerSecond
 	}
 
-	// 新增方法：跳转到事件时间点
+	// 跳转到事件时间点
 	const seekToEvent = (event: EventType) => {
 		const seconds = convertTimeToSeconds(event.time)
-		seekToSeconds(seconds)
+		console.log('点击事件时间点：', seconds, '秒', '当前视频时长:', videoDuration.value)
+		
+		if (videoContext.value == null) {
+			console.error('视频上下文未初始化')
+			return
+		}
+		
+		isSeeking.value = true
+		currentTime.value = formatTime(seconds)
+		playheadPosition.value = getEventPosition(event)
+		
+		// 先暂停再跳转
+		videoContext.value.pause()
+		videoContext.value.seek(seconds)
+		
+		// 小延迟后播放确保跳转完成
+		setTimeout(() => {
+			videoContext.value?.play()
+			isSeeking.value = false
+			console.log('应已跳转到指定位置并开始播放')
+		}, 150)
 	}
 
 
@@ -350,8 +353,6 @@
 		const pixelsPerSecond = rulerWidth.value / videoDuration.value;
 		const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
 
-
-		// 精确跳转
 		if (videoContext.value != null) {
 			console.log('尝试跳转视频到最终时间:', draggedTimeInSeconds.value, '秒');
 			videoContext.value.seek(draggedTimeInSeconds.value)
@@ -492,21 +493,6 @@
 		white-space: nowrap;
 	}
 
-	.event-dot.alarm {
-		background-color: #ff3b30;
-		box-shadow: 0 0 5px #ff3b30;
-	}
-
-	.event-dot.motion {
-		background-color: #ff9500;
-		box-shadow: 0 0 5px #ff9500;
-	}
-
-	.event-dot.human {
-		background-color: #34c759;
-		box-shadow: 0 0 5px #34c759;
-	}
-
 	.playhead {
 		position: absolute;
 		top: 0;
@@ -520,12 +506,9 @@
 	.filter-bar {
 		display: flex;
 		justify-content: space-around;
+		flex-direction: row;
 		padding: 12px 5px;
-		background-color: #333;
-		position: fixed;
-		bottom: 0;
-		left: 0;
-		right: 0;
+		background-color: #fff;
 		z-index: 20;
 	}
 

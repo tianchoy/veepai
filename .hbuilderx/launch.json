@@ -8,6 +8,13 @@
         {
             "playground" : "standard",
             "type" : "uni-app:app-ios"
+        },
+        {
+            "customPlaygroundType" : "device",
+            "localRepoPath" : "/Users/xyhc/Documents/veepai_uniappx/unpackage/dist/dev/app-android",
+            "packageName" : "io.dcloud.uniappx",
+            "playground" : "standard",
+            "type" : "uni-app:app-android"
         }
     ]
 }

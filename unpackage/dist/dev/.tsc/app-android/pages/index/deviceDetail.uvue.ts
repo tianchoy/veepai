@@ -65,7 +65,7 @@ return (): any | null => {
       _cE("view", _uM({ class: "big-item" }), [
         _cE("image", _uM({
           class: "big-item-icon",
-          src: "/static/device/camera.png"
+          src: "/static/device/zxj.png"
         }))
       ]),
       _cE("view", _uM({ class: "big-item" }), [

@@ -3,30 +3,42 @@
 		<TopNavBar title="首页" rightText="plussign" @rightEvent="addNewDevice" />
 		<view class="content">
 			<view class="video-container" style="border-radius: 15rpx; overflow: hidden;">
-				<video class="video" id="myVideo" :title="deviceTitle" :src="videoSrc" ref="videoRef" :controls="true" :show-play-btn="true"
-				:show-center-play-btn="true" :enable-progress-gesture="true" :show-fullscreen-btn="true"
-				:show-mute-btn="true" @click="clickVdedio" ></video>
+				<video class="video" id="myVideo" :src="videoSrc" :controls="onLine" :show-play-btn="onLine"
+				:show-center-play-btn="onLine" :enable-progress-gesture="onLine" :show-fullscreen-btn="onLine"
+				:show-mute-btn="onLine" >
+					
+					<view class="device-title" v-if="onLine">{{deviceTitle}}</view>
+					<view class="video-right-control" v-if="onLine">
+						<view class="vedio-control">
+							<image class="vedio-control-icon" :src="forward" @click="toDeviceDetail"></image>
+						</view>
+						<view class="vedio-control">
+							<image class="vedio-control-icon" :src="errIcon" @click="errClick"></image>
+						</view>
+						<view class="vedio-control">
+							<image class="vedio-control-icon" :src="transfer" @click="transferClick"></image>
+						</view>
+						<view class="vedio-control">
+							<image class="vedio-control-icon" :src="replayIcon" @click="replay"></image>
+						</view>
+					</view>
+					
+					<view class="offline" v-else>
+						<view class="offline-content">
+							<l-icon name="link-unlink" color="#fff"></l-icon>
+							<text class="offline-title">设备断线了</text>
+						</view>
+						<text class="time">2025-07-21 14:33</text>
+						<fui-button color="#1296db" text="查看帮助" radius="50rpx" :size="22" background="#fff" width="120rpx" height="40rpx"></fui-button>
+					</view>
+				</video>
 			</view>
-			<view>{{deviceTitle}}</view>
-			<view class="video-right-control">
-				<view class="vedio-control">
-					<image class="vedio-control-icon" :src="forward" @click="toDeviceDetail"></image>
-				</view>
-				<view class="vedio-control">
-					<image class="vedio-control-icon" :src="errIcon" @click="errClick"></image>
-				</view>
-				<view class="vedio-control">
-					<image class="vedio-control-icon" :src="transfer" @click="transferClick"></image>
-				</view>
-				<view class="vedio-control">
-					<image class="vedio-control-icon" :src="replayIcon" @click="replay"></image>
-				</view>
-			</view>
-			<view class="video-bottom-control">
+			
+			<!-- <view class="video-bottom-control">
 				<view class="vedio-control">
 					<image class="vedio-control-icon" @click="pauseClick" :src="pauseIcon"></image>
 				</view>
-			</view>
+			</view> -->
 		</view>
 
 	</view>
@@ -37,6 +49,7 @@
 	import TopNavBar from '@/components/TopNavBar.uvue'
 
 	const deviceTitle = ref('设备名称')
+	const videoContext = ref<VideoContext | null>(null)
 	const forward = '/static/video/forward.png'
 	const errIcon = '/static/video/error.png'
 	const transfer = '/static/video/transfer.png'
@@ -45,37 +58,31 @@
 	const pauseIcon = '/static/video/pause.png'
 	const addIcon = '/static/tabbar/add.png'
 	const videoSrc = "https://qiniu-web-assets.dcloud.net.cn/video/sample/2minute-demo.mp4"
-	const videoRef = ref(null);
+	const onLine = ref<boolean>(true)
 
-	const addDevices = () => {
-		uni.showToast({
-			title: '添加',
-			icon: 'none'
-		})
+	const initVideoContext = () => {
+		try {
+			videoContext.value = uni.createVideoContext('myVideo');
+			console.log('视频上下文初始化成功', videoContext.value);
+		} catch (error) {
+			console.error('创建视频上下文失败:', error);
+		}
 	}
-
 	const replay = () => {
-		uni.showToast({
-			title: '重播',
-			icon: 'none'
+		uni.navigateTo({
+			url:'/pages/index/deviceReplay'
 		})
-		// #ifdef APP-IOS
-		videoRef.value.play()
-		// #endif
-		uni.createVideoContext('myVideo')!!.play();
 	}
 
 	const transferClick = () => {
-		uni.showToast({
-			title: '传输',
-			icon: 'none'
+		uni.navigateTo({
+			url:'/pages/mine/rechargeDataTraffic/rechargeDataTraffic'
 		})
 	}
 
 	const errClick = () => {
-		uni.showToast({
-			title: '警报',
-			icon: 'none'
+		uni.switchTab({
+			url:'/pages/message/message'
 		})
 	}
 
@@ -91,35 +98,25 @@
 
 	const pauseClick = () => {
 		// #ifdef APP-IOS
-		videoRef.value.pause()
+		videoContext.value!!.pause()
 		// #endif
-		uni.createVideoContext('myVideo')!!.pause();
+		videoContext.value!!.pause();
 		uni.showToast({
 			title: '暂停',
 			icon: 'none'
 		})
 	}
 
-	const vedioClick = () => {
-		uni.showToast({
-			title: '播放',
-			icon: 'none'
-		})
-	}
-	
-	const clickVdedio = () => {
-		uni.showToast({
-			title:'sss',
-			icon: 'none'
-		})
-	}
-
-
 	const addNewDevice = () => {
 		uni.navigateTo({
 			url:'/pages/index/addNewDevice/addNewDevice'
 		})
 	}
+
+	// 组件生命周期
+	onMounted(() => {
+		initVideoContext();
+	});
 </script>
 
 <style lang="scss" scoped>
@@ -145,8 +142,60 @@
 			.video {
 				width: 100%;
 				height: 100%;
-				object-fit: cover; // 使视频充满容器并保持比例
-				margin-bottom: 0; // 移除底部边距
+				object-fit: cover;
+				margin-bottom: 0; 
+				.device-title{
+					background:rgba(0, 0, 0, .3);
+					padding:10rpx;
+					// #ifdef MP-WEIXIN
+					padding:25rpx;
+					// #endif
+					
+				}
+				.video-right-control {
+					position: absolute;
+					top: 0;
+					right: 10rpx;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					height: 90%;
+					align-items: center;
+					z-index: 2;
+					.vedio-control {
+						width: 50rpx;
+						height: 50rpx;
+						padding: 10rpx;
+						border-radius: 25rpx;
+						background: rgba(255, 255, 255, .7);
+						.vedio-control-icon {
+							width: 100%;
+							height: 100%;
+						}
+					}
+				}
+				.offline{
+					width: 100%;
+					height: 100%;
+					background: rgba(255,255,255, .7);
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					.offline-title{
+						color: #fff;
+						margin-left: 10rpx;
+					}
+					.time{
+						margin: 20rpx 0;
+						color: #fff;
+					}
+					.offline-content{
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+					}
+				}
 			}
 
 			.video-top-title {
@@ -161,30 +210,7 @@
 				z-index: 3; // 确保标题显示在视频上方
 			}
 
-			.video-right-control {
-				position: absolute;
-				top: 0;
-				right: 10rpx;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-around;
-				height: 100%;
-				align-items: center;
-				z-index: 2;
-
-				.vedio-control {
-					width: 50rpx;
-					height: 50rpx;
-					padding: 10rpx;
-					border-radius: 25rpx;
-					background: rgba(255, 255, 255, .7);
-
-					.vedio-control-icon {
-						width: 100%;
-						height: 100%;
-					}
-				}
-			}
+			
 
 			.video-bottom-control {
 				position: absolute;

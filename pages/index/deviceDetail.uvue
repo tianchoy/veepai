@@ -8,7 +8,7 @@
         </view>
         <view class="control-big">
             <view class="big-item">
-                <image class="big-item-icon" src="/static/device/camera.png" />
+                <image class="big-item-icon" src="/static/device/zxj.png" />
             </view>
             <view class="big-item">
                 <image class="big-item-icon" src="/static/device/vedio.png" />

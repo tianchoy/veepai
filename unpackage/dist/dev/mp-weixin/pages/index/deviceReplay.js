@@ -72,7 +72,6 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const videoContext = common_vendor.ref(null);
     const isSeeking = common_vendor.ref(false);
     const timeScrollLeft = common_vendor.ref(0);
-    const dateScrollLeft = common_vendor.ref(0);
     const playheadPosition = common_vendor.ref(0);
     const videoDuration = common_vendor.ref(0);
     const lastSyncTime = common_vendor.ref(0);
@@ -137,6 +136,10 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       }
       return marks;
     });
+    const onVideoLoaded = (e) => {
+      videoDuration.value = e["duration"];
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:155", "视频加载完成，时长:", videoDuration.value);
+    };
     const filteredEvents = common_vendor.computed(() => {
       if (activeFilter.value === "all")
         return events.value;
@@ -147,20 +150,18 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     const initVideoContext = () => {
       try {
         videoContext.value = common_vendor.index.createVideoContext("myVideo");
-        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:194", "视频上下文初始化成功", videoContext.value);
+        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:180", "视频上下文初始化成功", videoContext.value);
       } catch (error) {
-        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:196", "创建视频上下文失败:", error);
+        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:182", "创建视频上下文失败:", error);
       }
     };
     const loadVideoData = (date) => {
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:201", "加载日期数据:", date);
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:187", "加载日期数据:", date);
     };
     const selectDate = (date) => {
       activeDate.value = date;
       currentDate.value = `2024-${date}`;
       loadVideoData(date);
-      const index = dateList.indexOf(date);
-      dateScrollLeft.value = index * 80;
     };
     const formatTime = (seconds) => {
       const hrs = Math.floor(seconds / 3600);
@@ -191,22 +192,41 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       updatePlayheadPosition(currentTimeInSeconds - 1);
     };
     const seekToSeconds = (timeInSeconds) => {
-      isSeeking.value = true;
-      manualScrollPosition.value = timeInSeconds * 2;
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:236", "尝试跳转到:", timeInSeconds, "秒");
       if (videoContext.value != null) {
+        videoContext.value.pause();
         videoContext.value.seek(timeInSeconds);
+        setTimeout(() => {
+          var _a;
+          (_a = videoContext.value) === null || _a === void 0 ? null : _a.play();
+          common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:242", "跳转完成，应开始播放");
+        }, 100);
       }
-      playheadPosition.value = timeInSeconds * 2;
-      currentTime.value = formatTime(timeInSeconds);
     };
     const getEventPosition = (event) => {
       const seconds = convertTimeToSeconds(event.time);
-      const pixelsPerSecond = rulerWidth.value / (videoDuration.value || 300);
+      const duration = videoDuration.value != 0 ? videoDuration.value : 300;
+      const pixelsPerSecond = rulerWidth.value / duration;
       return seconds * pixelsPerSecond;
     };
     const seekToEvent = (event) => {
       const seconds = convertTimeToSeconds(event.time);
-      seekToSeconds(seconds);
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:258", "点击事件时间点：", seconds, "秒", "当前视频时长:", videoDuration.value);
+      if (videoContext.value == null) {
+        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:261", "视频上下文未初始化");
+        return null;
+      }
+      isSeeking.value = true;
+      currentTime.value = formatTime(seconds);
+      playheadPosition.value = getEventPosition(event);
+      videoContext.value.pause();
+      videoContext.value.seek(seconds);
+      setTimeout(() => {
+        var _a;
+        (_a = videoContext.value) === null || _a === void 0 ? null : _a.play();
+        isSeeking.value = false;
+        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:277", "应已跳转到指定位置并开始播放");
+      }, 150);
     };
     const seekToPosition = (seconds) => {
       seekToSeconds(seconds);
@@ -243,7 +263,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       const now = Date.now();
       if (now - lastDragTime.value > 100) {
         if (videoContext.value != null) {
-          common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:334", "尝试跳转视频到:", timeInSeconds, "秒");
+          common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:338", "尝试跳转视频到:", timeInSeconds, "秒");
           draggedTimeInSeconds.value = timeInSeconds;
           videoContext.value.seek(timeInSeconds);
         }
@@ -258,7 +278,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       const pixelsPerSecond = rulerWidth.value / videoDuration.value;
       const timeInSeconds = (timeScrollLeft.value + scrollViewWidth / 2) / pixelsPerSecond;
       if (videoContext.value != null) {
-        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:355", "尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒");
+        common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:357", "尝试跳转视频到最终时间:", draggedTimeInSeconds.value, "秒");
         videoContext.value.seek(draggedTimeInSeconds.value);
         videoContext.value.play();
       }
@@ -276,37 +296,27 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
       activeFilter.value = filter;
     };
     const onPlay = () => {
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:421", "视频开始播放");
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:423", "视频开始播放");
     };
     const onPause = () => {
-      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:426", "视频暂停");
+      common_vendor.index.__f__("log", "at pages/index/deviceReplay.uvue:428", "视频暂停");
     };
     common_vendor.onMounted(() => {
       initVideoContext();
       if (videoContext.value == null) {
-        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:433", "视频上下文初始化失败，请检查");
+        common_vendor.index.__f__("error", "at pages/index/deviceReplay.uvue:435", "视频上下文初始化失败，请检查");
       }
     });
     return (_ctx = null, _cache = null) => {
       const __returned__ = {
-        a: common_vendor.f(dateList, (date = null, index = null, i0 = null) => {
-          return {
-            a: common_vendor.t(date),
-            b: index,
-            c: common_vendor.n(activeDate.value === date ? "active" : ""),
-            d: common_vendor.o(($event = null) => {
-              return selectDate(date);
-            }, index)
-          };
-        }),
-        b: dateScrollLeft.value,
-        c: common_vendor.sei("myVideo", "video"),
-        d: videoSrc.value,
-        e: common_vendor.o(onTimeUpdate),
-        f: common_vendor.o(onPlay),
-        g: common_vendor.o(onPause),
-        h: common_vendor.o(onSeeked),
-        i: common_vendor.f(timeMarks.value, (mark = null, index = null, i0 = null) => {
+        a: common_vendor.sei("myVideo", "video"),
+        b: videoSrc.value,
+        c: common_vendor.o(onTimeUpdate),
+        d: common_vendor.o(onPlay),
+        e: common_vendor.o(onPause),
+        f: common_vendor.o(onSeeked),
+        g: common_vendor.o(onVideoLoaded),
+        h: common_vendor.f(timeMarks.value, (mark = null, index = null, i0 = null) => {
           return common_vendor.e({
             a: mark.type === "major"
           }, mark.type === "major" ? {} : {}, {
@@ -318,7 +328,7 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
             }, "mark-" + index)
           });
         }),
-        j: common_vendor.f(filteredEvents.value, (event = null, index = null, i0 = null) => {
+        i: common_vendor.f(filteredEvents.value, (event = null, index = null, i0 = null) => {
           return {
             a: common_vendor.n(event.type),
             b: "event-" + index,
@@ -328,13 +338,23 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
             }, "event-" + index)
           };
         }),
-        k: playheadPosition.value + "px",
-        l: rulerWidth.value + "px",
-        m: common_vendor.o(onTouchStart),
-        n: common_vendor.o(onTouchMove),
-        o: common_vendor.o(onTouchEnd),
-        p: timeScrollLeft.value,
-        q: common_vendor.o(onTimeScroll),
+        j: playheadPosition.value + "px",
+        k: rulerWidth.value + "px",
+        l: common_vendor.o(onTouchStart),
+        m: common_vendor.o(onTouchMove),
+        n: common_vendor.o(onTouchEnd),
+        o: timeScrollLeft.value,
+        p: common_vendor.o(onTimeScroll),
+        q: common_vendor.f(dateList, (date = null, index = null, i0 = null) => {
+          return {
+            a: common_vendor.t(date),
+            b: index,
+            c: common_vendor.n(activeDate.value === date ? "active" : ""),
+            d: common_vendor.o(($event = null) => {
+              return selectDate(date);
+            }, index)
+          };
+        }),
         r: common_vendor.f(filters, (filter = null, k0 = null, i0 = null) => {
           return {
             a: common_vendor.t(filter.label),
