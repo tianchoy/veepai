@@ -1,4 +1,4 @@
-import	{ ref } from 'vue'
+import { ref } from 'vue'
 	import TopNavBar from '@/components/TopNavBar.uvue'
 
 
@@ -13,12 +13,12 @@ const _cache = __ins.renderCache;
 	const flash = ref<string>('off')
 	const devicePosition = ref<string>('back')
 	const frameSize = ref<string>('medium')
-	
+
 	const goback = () => {
 		uni.navigateBack()
 	}
 
-	const handleError = (err: any) => {
+	const handleError = (err : any) => {
 		uni.showToast({
 			title: '请允许使用摄像头',
 		})
@@ -31,16 +31,33 @@ const _cache = __ins.renderCache;
 
 		uni.scanCode({
 			success(res) {
-				console.log("扫描结果：", res.result, " at pages/index/addNewDevice/addNewDevice.uvue:60");
+				console.log("扫描结果：", res.result, " at pages/index/addNewDevice/addNewDevice.uvue:62");
 			},
 			fail(err) {
-				console.error("扫描失败：", err, " at pages/index/addNewDevice/addNewDevice.uvue:63");
+				console.error("扫描失败：", err, " at pages/index/addNewDevice/addNewDevice.uvue:65");
 			}
 		});
 	}
 
 	const switchFlash = () => {
-		flash.value = flash.value == 'off' ? 'on' : 'off'
+		return new Promise<boolean>((resolve, reject) => {
+			uni.startWifi({
+				success: (res : UTSJSONObject) => {
+					console.log('启动WiFi成功', res, " at pages/index/addNewDevice/addNewDevice.uvue:74");
+					flash.value = flash.value == 'off' ? 'on' : 'off'
+					resolve(true);
+				},
+				fail: (err : UTSJSONObject) => {
+					console.error('启动WiFi失败', err, " at pages/index/addNewDevice/addNewDevice.uvue:79");
+					const errMsg = err['errMsg'] as string | null
+					uni.showModal({
+						content: errMsg ?? '操作失败',
+						showCancel: false
+					});
+					reject(new Error(errMsg ?? 'unknown error'));
+				}
+			} as UTSJSONObject);
+		});
 	}
 
 	const scanImg = () => {
@@ -49,14 +66,14 @@ const _cache = __ins.renderCache;
 			sourceType: ['album'],
 			success: (res) => {
 				uni.scanCode({
-				onlyFromCamera: false,
-				scanType: ['qrCode'],
-				success: (scanRes) => {
-					console.log('识别结果:', scanRes.result, " at pages/index/addNewDevice/addNewDevice.uvue:81");
-				},
-				fail: (err) => {
-					console.error('识别失败:', err, " at pages/index/addNewDevice/addNewDevice.uvue:84");
-				}
+					onlyFromCamera: false,
+					scanType: ['qrCode'],
+					success: (scanRes) => {
+						console.log('识别结果:', scanRes.result, " at pages/index/addNewDevice/addNewDevice.uvue:100");
+					},
+					fail: (err) => {
+						console.error('识别失败:', err, " at pages/index/addNewDevice/addNewDevice.uvue:103");
+					}
 				});
 			}
 		});
