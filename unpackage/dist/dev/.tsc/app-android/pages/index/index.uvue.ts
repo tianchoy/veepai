@@ -31,24 +31,28 @@ const _cache = __ins.renderCache;
 			console.error('创建视频上下文失败:', error, " at pages/index/index.uvue:78");
 		}
 	}
+	//回放功能
 	const replay = () => {
 		uni.navigateTo({
 			url:'/pages/index/deviceReplay'
 		})
 	}
-
+	
+	//上传下载
 	const transferClick = () => {
 		uni.navigateTo({
 			url:'/pages/mine/rechargeDataTraffic/rechargeDataTraffic'
 		})
 	}
-
+	
+	//警报事件
 	const errClick = () => {
 		uni.switchTab({
 			url:'/pages/message/message'
 		})
 	}
-
+	
+	//查看详情
 	const toDeviceDetail = () => {
 		uni.showToast({
 			title: '设备详情',
@@ -58,7 +62,8 @@ const _cache = __ins.renderCache;
 			url: '/pages/index/deviceDetail'
 		})
 	}
-
+	
+	//暂停
 	const pauseClick = () => {
 
 
@@ -69,7 +74,8 @@ const _cache = __ins.renderCache;
 			icon: 'none'
 		})
 	}
-
+	
+	//添加新的设备
 	const addNewDevice = () => {
 		uni.navigateTo({
 			url:'/pages/index/addNewDevice/addNewDevice'

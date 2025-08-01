@@ -32,7 +32,7 @@
                 font-size: 36rpx;
                 font-weight: bold;
                 padding: 40rpx 0;
-                border-bottom: 1rpx solid ##f9f9f9;
+                border-bottom: 1rpx solid #f9f9f9;
             }
             .desc{
                 font-size: 28rpx;

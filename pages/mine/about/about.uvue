@@ -79,7 +79,7 @@
 				flex-direction: row;
 				justify-content: space-between;
 				align-items: center;
-				border-bottom: 1rpx solid ##f9f9f9;
+				border-bottom: 1rpx solid #f9f9f9;
 				padding: 40rpx 0;
 			}
 		}

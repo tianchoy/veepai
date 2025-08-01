@@ -3316,7 +3316,7 @@
 		</data>
 		<key>Frameworks/unimoduleUniWifi.framework.dSYM/Contents/Resources/DWARF/unimoduleUniWifi</key>
 		<data>
-		LRzI7k4WfShffmAJzme7lQAIqBc=
+		mXvdCR98JiwhhTxX3q96RWEUxO0=
 		</data>
 		<key>Frameworks/unimoduleUniWifi.framework.dSYM/Contents/Resources/Relocations/aarch64/unimoduleUniWifi.yml</key>
 		<data>
@@ -3340,7 +3340,7 @@
 		</data>
 		<key>Frameworks/unimoduleUniWifi.framework/Info.plist</key>
 		<data>
-		L51sigswNFzflxXSFsW34bsTDSo=
+		LHSXhPBVyh10p87MNkdfZEJSIcU=
 		</data>
 		<key>Frameworks/unimoduleUniWifi.framework/Modules/module.modulemap</key>
 		<data>
@@ -3348,7 +3348,7 @@
 		</data>
 		<key>Frameworks/unimoduleUniWifi.framework/Modules/unimoduleUniWifi.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		3crU3o9mWWu5QlDA9zLNT2eLHMc=
+		C3nX2jpIq5MMy30r+7ceMWD/ggE=
 		</data>
 		<key>Frameworks/unimoduleUniWifi.framework/Modules/unimoduleUniWifi.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -3372,7 +3372,7 @@
 		</data>
 		<key>Frameworks/unimoduleUniWifi.framework/_CodeSignature/CodeResources</key>
 		<data>
-		dqZDY6u65ox4m6NXFr4CgRg1KEc=
+		zafA+6vMGN1199ow0H0saZ+K7/0=
 		</data>
 		<key>Frameworks/unimoduleUniWifi.framework/config.json</key>
 		<data>
@@ -3380,7 +3380,7 @@
 		</data>
 		<key>Frameworks/unimoduleUniWifi.framework/unimoduleUniWifi</key>
 		<data>
-		6xMkqxRm2Tpy7E/ZllUx5XLHh+Q=
+		eD6FeDSXNtNYhmaBSPazZIcvdFE=
 		</data>
 		<key>HXDependencies/app-ios-debug.json</key>
 		<data>
@@ -9222,7 +9222,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FSitUguJsQIlqvrqiaNEryKHoaGIWN9eELQH4aZlsTk=
+			PBjOltoq9YJcdKOWeYz7Ipv+eUd9AX+nWWQAVdowJfE=
 			</data>
 		</dict>
 		<key>Frameworks/unimoduleUniWifi.framework.dSYM/Contents/Resources/Relocations/aarch64/unimoduleUniWifi.yml</key>
@@ -9264,7 +9264,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/864aSGO4Def+zg37In6HNcjo8xmCzz1QTItEG7GJ/o=
+			zbHQ6GT7S0bg6Esonxp1IHBWvLzhk8Zc1DZZe0aQ8ZE=
 			</data>
 		</dict>
 		<key>Frameworks/unimoduleUniWifi.framework/Modules/module.modulemap</key>
@@ -9278,7 +9278,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yCoA5THr3dhBvcdeJkVAbMorVhjGA42X8QlZUlY4foU=
+			ur7IkAh0ggI/fC60EzytuqNnJkzlT1XMKWrcFV3tJhc=
 			</data>
 		</dict>
 		<key>Frameworks/unimoduleUniWifi.framework/Modules/unimoduleUniWifi.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -9320,7 +9320,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			R0+65i3HXT/HdLuuhj3H2U8AkaXS3NPjqdy1NyB90I8=
+			foJK6NXCtgedOJnv5ldVElxHNiP8sgaf1YDrp5Haw+k=
 			</data>
 		</dict>
 		<key>Frameworks/unimoduleUniWifi.framework/config.json</key>
@@ -9334,7 +9334,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JmDru8ikGF4JT/Nsf08K+j6FlYV3k+KuxjeduXTxXHE=
+			M5YJk1uOJ7qL9GqzhWnILtHitbd59/nQQiV1n4U3+P8=
 			</data>
 		</dict>
 		<key>HXDependencies/app-ios-debug.json</key>

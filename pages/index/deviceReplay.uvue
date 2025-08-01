@@ -11,7 +11,7 @@
 					@touchmove="onTouchMove" @touchend="onTouchEnd">
 					<view v-for="(mark, index) in timeMarks" :key="'mark-' + index" :class="['time-mark', mark.type]"
 						:style="{ left: mark.position + 'px' }" @click="seekToPosition(mark.time)">
-						<text v-if="mark.type === 'major'" class="mark-label"></text>
+						<text v-if="mark.type == 'major'" class="mark-label"></text>
 						
 					</view>
 					<view v-for="(event, index) in filteredEvents" :key="'event-'+index" 
@@ -26,13 +26,13 @@
 		</view>
 		<view class="date-list">
 			<view v-for="(date, index) in dateList" :key="index"
-				:class="['date-item', activeDate === date ? 'active' : '']" @click="selectDate(date)">
+				:class="['date-item', activeDate == date ? 'active' : '']" @click="selectDate(date)">
 				{{ date }}
 			</view>
 		</view>
 		<view class="filter-bar">
 			<view v-for="filter in filters" :key="filter.value"
-				:class="['filter-item', activeFilter === filter.value ? 'active' : '']"
+				:class="['filter-item', activeFilter == filter.value ? 'active' : '']"
 				@click="selectFilter(filter.value as string)">
 				{{ filter.label }}
 			</view>

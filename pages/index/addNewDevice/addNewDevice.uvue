@@ -58,6 +58,10 @@
 		uni.scanCode({
 			success(res) {
 				console.log("扫描结果：", res.result);
+				uni.showToast({
+					title:res.result,
+					icon:'none'
+				})
 			},
 			fail(err) {
 				console.error("扫描失败：", err);

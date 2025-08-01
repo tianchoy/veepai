@@ -440,7 +440,7 @@ return (): any | null => {
               style: _nS(_uM({ left: mark.position + 'px' })),
               onClick: () => {seekToPosition(mark.time)}
             }), [
-              mark.type === 'major'
+              mark.type == 'major'
                 ? _cE("text", _uM({
                     key: 0,
                     class: "mark-label"
@@ -471,7 +471,7 @@ return (): any | null => {
       _cE(Fragment, null, RenderHelpers.renderList(dateList, (date, index, __index, _cached): any => {
         return _cE("view", _uM({
           key: index,
-          class: _nC(['date-item', activeDate.value === date ? 'active' : '']),
+          class: _nC(['date-item', activeDate.value == date ? 'active' : '']),
           onClick: () => {selectDate(date)}
         }), _tD(date), 11 /* TEXT, CLASS, PROPS */, ["onClick"])
       }), 64 /* STABLE_FRAGMENT */)
@@ -480,7 +480,7 @@ return (): any | null => {
       _cE(Fragment, null, RenderHelpers.renderList(filters, (filter, __key, __index, _cached): any => {
         return _cE("view", _uM({
           key: filter.value,
-          class: _nC(['filter-item', activeFilter.value === filter.value ? 'active' : '']),
+          class: _nC(['filter-item', activeFilter.value == filter.value ? 'active' : '']),
           onClick: () => {selectFilter(filter.value as string)}
         }), _tD(filter.label), 11 /* TEXT, CLASS, PROPS */, ["onClick"])
       }), 64 /* STABLE_FRAGMENT */)

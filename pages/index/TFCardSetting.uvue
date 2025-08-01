@@ -154,7 +154,7 @@
 			padding: 20rpx;
 			border-radius: 20rpx;
 			.list-box{
-				border-bottom: 1rpx solid ##f9f9f9;
+				border-bottom: 1rpx solid #f9f9f9;
 				.title{
 					display: flex;
 					flex-direction: row;
@@ -169,7 +169,7 @@
 				justify-content: space-between;
 				align-items: center;
 				padding: 40rpx 20rpx;
-				border-bottom: 1rpx solid ##f9f9f9;
+				border-bottom: 1rpx solid #f9f9f9;
 				.right{
 					@extend .list;
 					padding:0;
